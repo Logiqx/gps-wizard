@@ -118,9 +118,9 @@ The table below shows how the various optimisations affect the number of proximi
 
 The combined savings of the minimum distance (>= 250m) and required angular difference (>= 90°) range from 70% on a small lake to 90% on a large expanse of water. However, these savings are purely related to the number of proximity checks / calculations being performed during the session.
 
-In reality, proximity calculations using pre-cached figures along with Pythagoras will be more than an order of magnitude faster than the regular Haversine formula (maybe more) which is computationally costly and needs to be fully evaluated for each pair of potential start and end points.
+In reality, proximity calculations using pre-cached figures along with Pythagoras will be more than an order of magnitude faster than the regular Haversine formula (maybe more) which is computationally expensive and needs to be fully evaluated for each pair of potential alpha 500 start and end points.
 
-Overall, the techniques described in this document will lead to computational overheads that are at least **two orders of magnitude** lower than a brute-force Haversine approach and the overall load will be spread far more evenly.
+Overall, the techniques described in this document will lead to computational overheads that are reduced by at least **two orders of magnitude**, when compared to a brute-force Haversine approach. The overall processor load will also be spread far more evenly over time and not result in long periods of processor-intensive calculations being performed.
 
 These benefits and savings make the approaches described in this article perfect for real-time calculations within GPS watches such as the models produced by COROS.
 
