@@ -96,7 +96,7 @@ Since alphas are essentially a "there and back" (including a gybe / turn) it is 
 
 A "safe" value to choose for the minimum required angular difference is 90°. This does not affect the alpha results produced but it vastly reduces the number of proximity checks required during a typical speedsurfing session.
 
-In most cases, 120° will suffice but I have seen identified alpha runs where 115° is required and it is plausible that 90° could potentially be required. The performance benefits from increasing the minimum angular difference further are very small, hence my choice of 90°.
+In most cases, 120° will suffice but I have identified alpha runs where 115° is required and it is plausible that 90° could potentially be required. The performance benefits from increasing the minimum angular difference further are very small, hence my choice of 90°.
 
 Computational savings (reduced number of proximity checks) can be anywhere between 60% on a small lake and 85% on a large expanse of water.
 
@@ -106,7 +106,7 @@ Computational savings (reduced number of proximity checks) can be anywhere betwe
 
 The table below shows how the various optimisations affect the number of proximity calculations required during a session.
 
-|                                                              | 20211020                                                   | 20211112                                                   | 20220404                                                    |
+|                                                              | 2021-10-20                                                   | 2021-11-12                                                   | 2022-04-04                                                    |
 | ------------------------------------------------------------ | ---------------------------------------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------- |
 | Session summary                                              | Speed session in Portland Harbor; long runs and infrequent turns. | Speed session in Portland Harbor; long runs and infrequent turns. | Foiling session on a small lake; short runs and frequent turns. |
 | # Track points                                               | 9,515                                                      | 3,275                                                      | 6,877                                                       |
