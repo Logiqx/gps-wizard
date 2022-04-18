@@ -106,9 +106,9 @@ Computational savings (reduced number of proximity checks) can be anywhere betwe
 
 The table below shows how the various optimisations affect the number of proximity calculations required during a session.
 
-| Session                                                      | 20211020                                                   | 20211112                                                   | 20220404                                                    |
+|                                                              | 20211020                                                   | 20211112                                                   | 20220404                                                    |
 | ------------------------------------------------------------ | ---------------------------------------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------- |
-| Session summary                                              | Speed session in Portland Harbor; long runs and few turns. | Speed session in Portland Harbor; long runs and few turns. | Foiling session on a small lake; short runs and many turns. |
+| Session summary                                              | Speed session in Portland Harbor; long runs and infrequent turns. | Speed session in Portland Harbor; long runs and infrequent turns. | Foiling session on a small lake; short runs and frequent turns. |
 | # Track points                                               | 9,515                                                      | 3,275                                                      | 6,877                                                       |
 | # Proximity tests without optimizations                      | 302,103                                                    | 132,046                                                    | 379,276                                                     |
 | # Proximity tests with >= 250m minimum distance              | 135,388                                                    | 64,234                                                     | 165,170                                                     |
