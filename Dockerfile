@@ -38,6 +38,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends tini=0.19.* \
 
 # Install Python libraries
 RUN pip install --no-cache-dir \
+    fitdecode==0.10.* \
+    gpxpy==1.5.* \
     matplotlib==3.5.* \
     numpy==1.21.* \
     scipy==1.7.*
