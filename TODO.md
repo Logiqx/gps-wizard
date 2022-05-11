@@ -50,17 +50,15 @@
 
 ### Investigations
 
+- Locosys checks
+  - Compare filtered and non-filtered speeds in SBN files
+  - Check for correlations using scatter charts
+    - SDOP vs VSDOP
+    - HDOP vs SDOP
+  - Search for Doppler spikes - e.g. 50 knots+ in historic GT-11 / GT-31 files
 - Determine time shifts using RMSE
   - Estimated speed vs positional speed - same GPS device
   - Estimated speeds - different GPS devices
-
-- Identify Locosys spikes - 50 knots+
-  - Need a utility to scan historic GT-11 / GT-31 files
-
-- Check for correlations - create scatter charts
-  - SDOP vs VSDOP
-  - HDOP vs SDOP
-
 - 5 Hz + 10 Hz acceleration filter
   - Create project that implements proposal on Seabreeze
   - n.b. Stuey's WK track had a 3.7 m/s<sup>2</sup> spike which slips through existing filters
