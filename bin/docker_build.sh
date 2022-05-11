@@ -10,6 +10,8 @@ DOCKER_BUILDKIT=1 docker build . --build-arg LOGIQX_DEBUG -t $IMAGE_NAME:$IMAGE_
 
 # Run unit tests
 run_py_script common_core.py
+run_py_script readers/file_reader.py
+run_py_script readers/generic_reader.py
 run_py_script readers/sbp_reader.py
 
 # Docker Tag
