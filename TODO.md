@@ -4,10 +4,9 @@
 
 #### File Readers
 
-- SBN *
+- OAO *
 - GPX *
 - FIT * - including support for COROS, Garmin, Suunto, Timex, etc.
-- OAO *
 - NMEA
 - UBX
 
@@ -56,8 +55,15 @@
 - Locosys checks
   - Compare filtered and non-filtered speeds in SBN files
   - Check for correlations using scatter charts
-    - SDOP vs VSDOP
-    - HDOP vs SDOP
+    - Accuracy information
+      - EHPE vs HDOP
+      - SDOP vs HDOP
+      - SDOP vs EHPE
+      - SDOP vs VSDOP
+      - EVPE vs VSDOP
+    - Unfiltered data
+      - SOG vs USOG
+      - COG vs UCOG
   - Search for Doppler spikes - e.g. 50 knots+ in historic GT-11 / GT-31 files
 - Determine time shifts using RMSE
   - Estimated speed vs positional speed - same GPS device
