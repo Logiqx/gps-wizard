@@ -67,6 +67,12 @@ A dedicated article will discuss the topic of [acceleration](acceleration.md) in
 
 
 
+#### Altitude Changes
+
+A dedicated article will discuss the topic of [altitude changes](altitude.md) in more detail.
+
+
+
 #### Screenshots
 
 GPSResults v6.185 applies the following default filters:
