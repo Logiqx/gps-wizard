@@ -4,26 +4,21 @@
 
 #### File Readers
 
-- GPX *
-- FIT * - including support for COROS, Garmin, Suunto, Timex, etc.
-- NMEA 
+- FIT - including support for COROS, Garmin, Suunto, Timex, etc.
+- [NMEA](https://www.gpsworld.com/what-exactly-is-gps-nmea-data)
   - GGA - e.g. time, lat, long, sats, HDOP
   - RMC - e.g. time, lat, long, SOG, COG
 
 - UBX
 
-\* = priorities
-
 
 
 #### File Writers
 
-- SBP *
-- SBN *
-- GPX *
+- SBN
+- SBP
+- GPX
 - NMEA
-
-\* = priorities
 
 
 
@@ -79,11 +74,14 @@
 
 ### Articles
 
+- Filtering
+  - Acceleration
+  
 - Variations in reported results
   - Across devices
-  
+
   - Doppler vs Positional
-  
+
 - Chipset summaries - page per chip
 
   - Note Sony UDS

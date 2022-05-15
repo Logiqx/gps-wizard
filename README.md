@@ -10,6 +10,7 @@ Some related [articles](https://logiqx.github.io/gps-wizard/) on a variety of to
 
 #### File Readers
 
+- GPX
 - OAO - Motion Mini + Motion LCD
 - SBN - Locosys SiRF Binary
   - 95-byte format without SDOP + VSDOP, GT-11
