@@ -6,7 +6,10 @@
 
 - GPX *
 - FIT * - including support for COROS, Garmin, Suunto, Timex, etc.
-- NMEA
+- NMEA 
+  - GGA - e.g. time, lat, long, sats, HDOP
+  - RMC - e.g. time, lat, long, SOG, COG
+
 - UBX
 
 \* = priorities
