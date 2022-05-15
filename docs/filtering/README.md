@@ -23,9 +23,7 @@ Notes:
 
 
 
-### Software Filters
-
-#### General
+### General
 
 |                         | GPSResults | GPS Speedreader | GpsarPro          |
 | ----------------------- | ---------- | --------------- | ----------------- |
@@ -39,7 +37,7 @@ The minimum speed filter is slightly controversial as can be see in the related 
 
 
 
-#### Maximum Speed Speed Error
+### Maximum Speed Speed Error
 
 This is derived from SDOP / SDOS (Locosys GT-31, GW-52, GW-60) or sAcc (u-blox devices such as the Motion or ESP-GPS).
 
@@ -51,7 +49,7 @@ This is derived from SDOP / SDOS (Locosys GT-31, GW-52, GW-60) or sAcc (u-blox d
 
 
 
-#### Maximum Acceleration
+### Maximum Acceleration
 
 This is derived from the change in speed between two readings. This naive calculation results in higher values for 5 Hz and 10 Hz devices.
 
@@ -67,19 +65,23 @@ A dedicated article will discuss the topic of [acceleration](acceleration.md) in
 
 
 
-#### Altitude Changes
+### Altitude Changes
 
 A dedicated article will discuss the topic of [altitude changes](altitude.md) in more detail.
 
 
 
-#### Screenshots
+### Screenshots
+
+#### GPSResults
 
 GPSResults v6.185 applies the following default filters:
 
 ![img](img/gpsresults.png)
 
 
+
+#### GPS Speedreader
 
 GPS Speedreader v1.4.3 applies the following default filters:
 
