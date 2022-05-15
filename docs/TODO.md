@@ -4,7 +4,6 @@
 
 #### File Readers
 
-- OAO *
 - GPX *
 - FIT * - including support for COROS, Garmin, Suunto, Timex, etc.
 - NMEA
