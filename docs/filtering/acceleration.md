@@ -10,9 +10,9 @@ TODO - I am yet to write this topic up!
 
 |                                        | GPSResults         | GPS Speedreader    | GpsarPro |
 | -------------------------------------- | ------------------ | ------------------ | -------- |
-| max. acceleration @ 1 Hz               | 4 m/s<sup>2</sup>  | 4 m/s<sup>2</sup>  |          |
-| max. acceleration @ 5 Hz               | 8 m/s<sup>2</sup>  | 8 m/s<sup>2</sup>  |          |
-| max. acceleration @ 10 Hz <sup>1</sup> | 10 m/s<sup>2</sup> | 16 m/s<sup>2</sup> |          |
+| max. acceleration @ 1 Hz               | 4 m/s<sup>2</sup>  | 4 m/s<sup>2</sup>  | ?        |
+| max. acceleration @ 5 Hz               | 8 m/s<sup>2</sup>  | 8 m/s<sup>2</sup>  | ?        |
+| max. acceleration @ 10 Hz <sup>1</sup> | 10 m/s<sup>2</sup> | 16 m/s<sup>2</sup> | ?        |
 
 <sup>1</sup> - The max acceleration for 10 Hz devices was increased from 8 m/s<sup>2</sup> to 10 m/s<sup>2</sup> in GPSResults v6.173.
 
