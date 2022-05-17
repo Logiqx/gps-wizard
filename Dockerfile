@@ -37,13 +37,17 @@ RUN groupadd -g ${PY_GID} ${PY_GROUP} && \
 RUN apt-get update && apt-get install -y --no-install-recommends tini=0.19.* \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python libraries
+# Install scientific libraries
 RUN pip install --no-cache-dir \
-    fitdecode==0.10.* \
-    gpxpy==1.5.* \
     matplotlib==3.5.* \
     numpy==1.21.* \
     scipy==1.7.*
+
+# Install GPS + fitness tracker libraries
+RUN pip install --no-cache-dir \
+    fitdecode==0.10.* \
+    gpxpy==1.5.* \
+    pyubx2==1.2.*
 
 # Copy project files from the builder
 USER ${PY_USER}
