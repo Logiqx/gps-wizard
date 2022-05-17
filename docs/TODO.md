@@ -38,7 +38,7 @@
   - Implement improved run detection
 - Charts
   - Speed charts - Line for estimated speed + scatter for positional speeds
-
+  - Application of central limit theorem and "sampling distribution of the sample the mean" 
 - Format conversion
   - Most useful being to convert the variety of FIT files to GPX
   - Might allow SBP output where sat, COG and HDOP are present (e.g. COROS FIT)
