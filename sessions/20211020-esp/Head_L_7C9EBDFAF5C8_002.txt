@@ -1,0 +1,93 @@
+ 7:27:44:286082300:Lost ubx frame!
+T5 MAC adress: 7C9EBDFAF5C8 SW-version 5.00 
+RTOS5, First_fix: 29 s
+Total time: 5646 s
+Total Distance: 46200 m
+Sample rate: 10 Hz
+Speed calibration: 3.60000 
+Dynamic model: Sea 
+62.716 km/h avg 5_best_runs
+63.896 km/h 10:31:14 Run: 32 S2
+63.230 km/h 10:34:57 Run: 35 S2
+63.061 km/h 10:45:49 Run: 45 S2
+62.473 km/h 10:21:47 Run: 27 S2
+60.918 km/h 10:47:53 Run: 46 S2
+60.805 km/h 10:36:32 Run: 36 S2
+60.347 km/h 10:43:2 Run: 43 S2
+59.956 km/h 10:14:5 Run: 23 S2
+59.732 km/h 10:4:31 Run: 16 S2
+60.671 km/h avg 5_best_runs
+61.782 km/h 10:31:16 Run: 32 S10
+61.505 km/h 10:35:3 Run: 35 S10
+60.594 km/h 10:45:52 Run: 45 S10
+60.059 km/h 10:21:49 Run: 27 S10
+59.414 km/h 10:36:33 Run: 36 S10
+59.054 km/h 10:47:56 Run: 46 S10
+58.734 km/h 10:41:26 Run: 42 S10
+58.506 km/h 10:4:38 Run: 16 S10
+58.422 km/h 10:14:11 Run: 23 S10
+35.187 km/h avg 5_best_runs
+35.293 km/h 10:18:13 Run: 25 S1800
+35.241 km/h 10:11:37 Run: 21 S1800
+35.236 km/h 10:12:36 Run: 22 S1800
+35.167 km/h 10:16:34 Run: 24 S1800
+34.995 km/h 10:14:20 Run: 23 S1800
+34.931 km/h 10:19:31 Run: 26 S1800
+34.738 km/h 10:20:6 Run: 27 S1800
+34.380 km/h 10:1:8 Run: 14 S1800
+34.007 km/h 10:5:28 Run: 16 S1800
+33.463 km/h avg 5_best_runs
+33.604 km/h 10:31:20 Run: 32 S3600
+33.473 km/h 10:37:33 Run: 36 S3600
+33.439 km/h 10:32:40 Run: 33 S3600
+33.405 km/h 10:33:53 Run: 34 S3600
+33.391 km/h 10:35:51 Run: 35 S3600
+33.266 km/h 10:38:1 Run: 37 S3600
+33.029 km/h 10:38:20 Run: 38 S3600
+32.669 km/h 10:38:48 Run: 39 S3600
+32.463 km/h 10:42:16 Run: 42 S3600
+62.984 km/h 10:31:15 Distance: 101.47 Msg_nr: 38105 Samples: 58 Run: 32 M100
+62.132 km/h 10:45:50 Distance: 100.10 Msg_nr: 46855 Samples: 58 Run: 45 M100
+62.116 km/h 10:35:1 Distance: 100.08 Msg_nr: 40361 Samples: 58 Run: 35 M100
+61.338 km/h 10:21:48 Distance: 100.53 Msg_nr: 32437 Samples: 59 Run: 27 M100
+59.851 km/h 10:47:55 Distance: 101.42 Msg_nr: 48108 Samples: 61 Run: 46 M100
+59.800 km/h 10:36:33 Distance: 101.33 Msg_nr: 41282 Samples: 61 Run: 36 M100
+59.413 km/h 10:43:5 Distance: 100.67 Msg_nr: 45210 Samples: 61 Run: 43 M100
+59.052 km/h 10:14:9 Distance: 100.06 Msg_nr: 27843 Samples: 61 Run: 23 M100
+58.830 km/h 10:41:23 Distance: 101.32 Msg_nr: 44186 Samples: 62 Run: 42 M100
+54.587 km/h 10:4:41 Distance: 500.38 Msg_nr: 22166 Samples: 330 Run: 16 M500
+54.517 km/h 10:35:5 Distance: 501.25 Msg_nr: 40410 Samples: 331 Run: 35 M500
+52.184 km/h 10:16:24 Distance: 500.10 Msg_nr: 29198 Samples: 345 Run: 24 M500
+52.023 km/h 10:25:54 Distance: 500.00 Msg_nr: 34891 Samples: 346 Run: 30 M500
+51.825 km/h 10:9:23 Distance: 500.98 Msg_nr: 24988 Samples: 348 Run: 20 M500
+51.617 km/h 10:0:14 Distance: 500.39 Msg_nr: 19491 Samples: 349 Run: 14 M500
+51.526 km/h 10:7:27 Distance: 500.95 Msg_nr: 23823 Samples: 350 Run: 19 M500
+51.261 km/h 10:53:21 Distance: 501.22 Msg_nr: 51367 Samples: 352 Run: 51 M500
+51.066 km/h 10:45:58 Distance: 500.73 Msg_nr: 46936 Samples: 353 Run: 45 M500
+48.322 km/h 10:26:49 Distance: 1852.35 Msg_nr: 35450 Samples: 1380 Run: 30 M1852
+46.595 km/h 10:54:39 Distance: 1852.16 Msg_nr: 52146 Samples: 1431 Run: 51 M1852
+44.609 km/h 10:27:16 Distance: 1852.50 Msg_nr: 35718 Samples: 1495 Run: 31 M1852
+44.268 km/h 9:57:37 Distance: 1853.09 Msg_nr: 17927 Samples: 1507 Run: 13 M1852
+44.205 km/h 10:9:23 Distance: 1852.92 Msg_nr: 24984 Samples: 1509 Run: 20 M1852
+43.932 km/h 10:4:40 Distance: 1852.47 Msg_nr: 22154 Samples: 1518 Run: 16 M1852
+43.380 km/h 9:33:43 Distance: 1852.09 Msg_nr: 3588 Samples: 1537 Run: 3 M1852
+42.349 km/h 9:57:51 Distance: 1852.77 Msg_nr: 18063 Samples: 1575 Run: 14 M1852
+41.708 km/h 10:43:46 Distance: 1852.52 Msg_nr: 45617 Samples: 1599 Run: 44 M1852
+34.048 km/h 48.000 m 10:8:38 Run: 0 Alfa250
+32.819 km/h 35.000 m 10:3:51 Run: 0 Alfa250
+32.692 km/h 48.000 m 10:32:29 Run: 0 Alfa250
+30.723 km/h 48.000 m 10:42:50 Run: 0 Alfa250
+30.152 km/h 49.000 m 10:36:15 Run: 0 Alfa250
+30.137 km/h 49.000 m 9:58:6 Run: 0 Alfa250
+29.237 km/h 49.000 m 9:48:12 Run: 0 Alfa250
+27.080 km/h 48.000 m 10:15:21 Run: 0 Alfa250
+26.731 km/h 49.000 m 9:51:55 Run: 0 Alfa250
+37.969 km/h 49.000 m 10:32:40 Run: 0 Alfa500
+37.879 km/h 48.000 m 10:8:52 Run: 0 Alfa500
+37.655 km/h 46.000 m 10:43:2 Run: 0 Alfa500
+35.049 km/h 49.000 m 10:4:6 Run: 0 Alfa500
+34.564 km/h 49.000 m 9:58:22 Run: 0 Alfa500
+34.103 km/h 49.000 m 10:36:27 Run: 0 Alfa500
+33.715 km/h 48.000 m 9:48:26 Run: 0 Alfa500
+30.647 km/h 48.000 m 9:52:12 Run: 0 Alfa500
+30.491 km/h 49.000 m 10:15:37 Run: 0 Alfa500
