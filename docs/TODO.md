@@ -6,19 +6,22 @@
 
 - FIT - including support for COROS, Garmin, Suunto, Timex, etc.
 - [NMEA](https://www.gpsworld.com/what-exactly-is-gps-nmea-data)
-  - GGA - e.g. time, lat, long, sats, HDOP
-  - RMC - e.g. time, lat, long, SOG, COG
-
+  - RMC - time, lat, long, SOG, COG, date
+  - GGA - time, lat, long, sats, HDOP, altitude
+  - Maybe (just maybe) also support GSA for satellite IDs, PDOP and VDOP?
 - UBX
 
 
 
 #### File Writers
 
+- KML
 - SBN
 - SBP
 - GPX
-- NMEA
+- [NMEA](https://www.gpsworld.com/what-exactly-is-gps-nmea-data)
+  - RMC - time, lat, long, SOG, COG, date
+  - GGA - time, lat, long, sats, HDOP, altitude
 
 
 
