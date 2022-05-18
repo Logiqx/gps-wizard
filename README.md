@@ -14,6 +14,7 @@ Some related [articles](https://logiqx.github.io/gps-wizard/) on a variety of to
 - OAO - "OnAndOn" Binary
   - Motion Mini + Motion LCD
   - ESP-GPS
+  - Support for GNSS frames - 0x0AD4 and 0x0AD5
 - SBN - Locosys SiRF Binary
   - 95-byte format without SDOP + VSDOP, GT-11
   - 97-byte format with SDOP + VSDOP, GT-31 onwards
