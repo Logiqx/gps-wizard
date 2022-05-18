@@ -9,7 +9,6 @@
   - RMC - time, lat, long, SOG, COG, date
   - GGA - time, lat, long, sats, HDOP, altitude
   - Maybe (just maybe) also support GSA for satellite IDs, PDOP and VDOP?
-- UBX
 
 
 
