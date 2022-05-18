@@ -11,15 +11,20 @@ Some related [articles](https://logiqx.github.io/gps-wizard/) on a variety of to
 #### File Readers
 
 - GPX
-- OAO - Motion Mini + Motion LCD + ESP-GPS
+- OAO - "OnAndOn" Binary
+  - Motion Mini + Motion LCD
+  - ESP-GPS
+
 - SBN - Locosys SiRF Binary
   - 95-byte format without SDOP + VSDOP, GT-11
   - 95-byte format with SDOP + VSDOP, GT-31 onwards
 - SBP - Locosys SiRF Binary (packed)
   - 32-byte format without SDOP + VSDOP, GT-11
   - 32-byte format with SDOP + VSDOP, GT-31 onwards
-- UBX - ESP-GPS
+- UBX - u-blox Binary
+  - ESP-GPS
   - Support for NAV-PVT messages - "Navigation position velocity time solution"
+
 
 
 
