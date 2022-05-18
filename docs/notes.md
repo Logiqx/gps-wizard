@@ -1,25 +1,5 @@
 ## Notes
 
-### Python NMEA
-
-#### pynmeagps
-
-- [PyPi](https://pypi.org/project/pynmeagps/)
-- [Docs](https://www.semuconsulting.com/pynmeagps/)
-- [GitHub](https://github.com/semuconsulting/pynmeagps)
-
-
-
-### Python UBX
-
-#### pyubx2
-
-- [PyPi](https://pypi.org/project/pyubx2/)
-- [Docs](https://www.semuconsulting.com/pyubx2/)
-- [GitHub](https://github.com/semuconsulting/pyubx2)
-
-
-
 ### Python KML
 
 #### simplekml
