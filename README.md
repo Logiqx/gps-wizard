@@ -16,7 +16,7 @@ Some related [articles](https://logiqx.github.io/gps-wizard/) on a variety of to
   - ESP-GPS
 - SBN - Locosys SiRF Binary
   - 95-byte format without SDOP + VSDOP, GT-11
-  - 95-byte format with SDOP + VSDOP, GT-31 onwards
+  - 97-byte format with SDOP + VSDOP, GT-31 onwards
 - SBP - Locosys SiRF Binary (packed)
   - 32-byte format without SDOP + VSDOP, GT-11
   - 32-byte format with SDOP + VSDOP, GT-31 onwards
