@@ -42,7 +42,7 @@
   - Most useful being to convert the variety of FIT files to GPX
   - Might allow SBP output where sat, COG and HDOP are present (e.g. COROS FIT)
 - Track collation
-  - e.g. South West Coast Path walks combined into a single GPX that provides an overall summary
+  - e.g. South West Coast Path walks combined into a single KML and / or GPX that provides an overall summary
 - Locosys Tools
   - SBP splitter - split multiple days / sessions into separate files
   - SBP / SBN username updater
