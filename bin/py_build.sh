@@ -13,6 +13,7 @@ docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/common_
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/file_reader.py >$PROJ_DIR/python/readers/file_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/generic_reader.py >$PROJ_DIR/python/readers/generic_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/gpx_reader.py >$PROJ_DIR/python/readers/gpx_reader.py
+docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/nmea_reader.py >$PROJ_DIR/python/readers/nmea_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/oao_reader.py >$PROJ_DIR/python/readers/oao_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/sirf_reader.py >$PROJ_DIR/python/readers/sirf_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/sbn_reader.py >$PROJ_DIR/python/readers/sbn_reader.py

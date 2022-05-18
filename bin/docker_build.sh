@@ -13,6 +13,7 @@ run_py_script common_core.py
 run_py_script readers/file_reader.py
 run_py_script readers/generic_reader.py
 run_py_script readers/gpx_reader.py
+run_py_script readers/nmea_reader.py
 run_py_script readers/oao_reader.py
 run_py_script readers/sirf_reader.py
 run_py_script readers/sbn_reader.py
