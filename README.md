@@ -14,7 +14,6 @@ Some related [articles](https://logiqx.github.io/gps-wizard/) on a variety of to
 - OAO - "OnAndOn" Binary
   - Motion Mini + Motion LCD
   - ESP-GPS
-
 - SBN - Locosys SiRF Binary
   - 95-byte format without SDOP + VSDOP, GT-11
   - 95-byte format with SDOP + VSDOP, GT-31 onwards
@@ -24,8 +23,6 @@ Some related [articles](https://logiqx.github.io/gps-wizard/) on a variety of to
 - UBX - u-blox Binary
   - ESP-GPS
   - Support for NAV-PVT messages - "Navigation position velocity time solution"
-
-
 
 
 
