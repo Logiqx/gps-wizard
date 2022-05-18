@@ -55,11 +55,13 @@
   - Compare filtered and non-filtered speeds in SBN files
   - Check for correlations using scatter charts
     - Accuracy information
+      - Sats vs HDOP
       - EHPE vs HDOP
       - SDOP vs HDOP
       - SDOP vs EHPE
       - SDOP vs VSDOP
       - EVPE vs VSDOP
+      - Explore fixType from u-blox - e.g. dead reckoning during crashes
     - Unfiltered data
       - SOG vs USOG
       - COG vs UCOG
