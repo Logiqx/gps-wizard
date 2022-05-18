@@ -75,18 +75,13 @@
 
 
 
-
 ### Articles
 
 - Filtering
   - Acceleration
-  
 - Variations in reported results
   - Across devices
-
   - Doppler vs Positional
-
 - Chipset summaries - page per chip
-
   - Note Sony UDS
 
