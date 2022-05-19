@@ -10,7 +10,11 @@ Some related articles are also included covering a variety of topics such as alp
 
 #### File Readers
 
-- GPX
+The following formats can all be loaded using dedicated file readers:
+
+- GPX - GPS Exchange Format
+- NMEA - National Marine Electronics Association
+  - Support for RMC and GGA sentences
 - OAO - "OnAndOn" Binary
   - Motion Mini + Motion LCD
   - ESP-GPS
@@ -23,7 +27,9 @@ Some related articles are also included covering a variety of topics such as alp
   - 32-byte format with SDOP + VSDOP, GT-31 onwards
 - UBX - u-blox Binary
   - ESP-GPS
-  - Support for NAV-PVT messages - "Navigation position velocity time solution"
+  - Support for NAV-PVT messages
+
+Note: The majority of the file readers are bespoke, instead of using freely available generic libraries. This provides vastly improved load performance.
 
 
 

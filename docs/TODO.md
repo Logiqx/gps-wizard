@@ -5,22 +5,16 @@
 #### File Readers
 
 - FIT - including support for COROS, Garmin, Suunto, Timex, etc.
-- [NMEA](https://www.gpsworld.com/what-exactly-is-gps-nmea-data)
-  - RMC - time, lat, long, SOG, COG, date
-  - GGA - time, lat, long, sats, HDOP, altitude
-  - Maybe (just maybe) also support GSA for satellite IDs, PDOP and VDOP?
 
 
 
 #### File Writers
 
+- GPX
 - KML
+- NMEA
 - SBN
 - SBP
-- GPX
-- [NMEA](https://www.gpsworld.com/what-exactly-is-gps-nmea-data)
-  - RMC - time, lat, long, SOG, COG, date
-  - GGA - time, lat, long, sats, HDOP, altitude
 
 
 
