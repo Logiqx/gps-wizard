@@ -13,11 +13,11 @@ Some related articles are also included covering a variety of topics such as alp
 The following formats can all be loaded using dedicated file readers:
 
 - GPX - GPS Exchange Format
+  - Support for GPX 1.0 and GPX 1.1
+
 - NMEA - National Marine Electronics Association
   - Support for RMC and GGA sentences
 - OAO - "OnAndOn" Binary
-  - Motion Mini + Motion LCD
-  - ESP-GPS
   - Support for GNSS frames - 0x0AD4 and 0x0AD5
 - SBN - Locosys SiRF Binary
   - 95-byte format without SDOP + VSDOP, GT-11
@@ -26,7 +26,6 @@ The following formats can all be loaded using dedicated file readers:
   - 32-byte format without SDOP + VSDOP, GT-11
   - 32-byte format with SDOP + VSDOP, GT-31 onwards
 - UBX - u-blox Binary
-  - ESP-GPS
   - Support for NAV-PVT messages
 
 Note: The majority of the file readers are bespoke, instead of using freely available generic libraries. This provides vastly improved load performance.
