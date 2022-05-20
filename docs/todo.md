@@ -9,7 +9,7 @@ Consider re-writing the following file readers to fix the slow load performance 
 - FIT reader currently uses fitdecode
 - GPX reader currently uses gpxpy
 
-Note: Experience from NMEA and UBX libraries suggest I can load improve performance by approximately an order of magnitude.
+Note: Experience from NMEA and UBX libraries suggest I can improve load performance by approximately an order of magnitude.
 
 
 
