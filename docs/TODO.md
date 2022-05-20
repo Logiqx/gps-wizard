@@ -2,7 +2,20 @@
 
 ### Core Functionality
 
+#### File Readers
+
+Consider re-writing the following file readers to fix the slow load performance caused by public libraries:
+
+- FIT reader currently uses fitdecode
+- GPX reader currently uses gpxpy
+
+Note: Experience from NMEA and UBX libraries suggest I can load improve performance by approximately an order of magnitude.
+
+
+
 #### File Writers
+
+Implement the following files writers:
 
 - GPX
 - KML
