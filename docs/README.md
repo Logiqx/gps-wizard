@@ -12,11 +12,14 @@ Some related articles are also included covering a variety of topics such as alp
 
 The following formats can all be loaded using dedicated file readers:
 
+- FIT - Flexible and Interoperable Data Transfer
+  - Support for COROS, Garmin and Suunto - see [notes](fit.md)
+
 - GPX - GPS Exchange Format
   - Support for GPX 1.0 and GPX 1.1
 
 - NMEA - National Marine Electronics Association
-  - Support for RMC and GGA sentences
+  - Support for RMC and GGA sentences - both required
 - OAO - "OnAndOn" Binary
   - Support for GNSS frames - 0x0AD4 and 0x0AD5
 - SBN - Locosys SiRF Binary

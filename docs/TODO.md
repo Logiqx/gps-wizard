@@ -2,12 +2,6 @@
 
 ### Core Functionality
 
-#### File Readers
-
-- FIT - including support for COROS, Garmin, Suunto, Timex, etc.
-
-
-
 #### File Writers
 
 - GPX
