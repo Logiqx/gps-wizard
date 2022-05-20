@@ -14,11 +14,30 @@ The official developer [page](https://developer.garmin.com/fit/overview/) is qui
 
 There are a few useful data frames, providing device information:
 
-- device_info - serial_number, manufacturer, product / garmin_product, product_name and software_version (Garmin)
-- file_creator - software_version (Garmin)
-- file_id - serial_number (not COROS), manufacturer, product / garmin_product, product_name (not Garmin)
+- device_info
+  - serial_number
+  - manufacturer
+  - product / garmin_product
+  - product_name
+  - software_version
 
-The "record" frames contain actual data such as longitude, latitude and speed.
+- file_id
+  - serial_number
+  - manufacturer
+  - product / garmin_product
+  - product_name
+
+- record
+  - timestamp
+  - position_lat
+  - position_long
+  - distance
+  - altitude / enhanced_altitude
+  - speed / enhanced_speed
+  - ... plus various other fields
+
+
+Note: The enhanced_altitude and enhanced_speed are just 32-bit versions of altitude and speed which are 16-bit, thus capable of storing larger numbers.
 
 
 
@@ -26,7 +45,7 @@ The "record" frames contain actual data such as longitude, latitude and speed.
 
 The device information frames appear to be standard for all devices from a particular brand.
 
-Garmin files contain many device_info frames but the ones that are relevant all contain a serial number.
+Garmin files always contain many device_info frames but the ones that are relevant all contain a serial number.
 
 
 |                   | COROS                              | Garmin                                 |
@@ -39,7 +58,7 @@ Garmin files contain many device_info frames but the ones that are relevant all 
 
 Notes:
 
-- COROS does not record serial number or software version at this time.
+- COROS does not record the serial number or software version at this time; May 2022.
 - Suunto and Timex do not provide a "device_info" frame.
 
 
@@ -89,7 +108,7 @@ Each brand (and sometimes model) will contain slightly different data which is i
 | hdop              | Yes <sup>1</sup>                   | -                                      | -                    | -                   | - |
 | cog               | Yes <sup>1</sup>                   | -                                      | -                    | -                   | - |
 
-<sup>0</sup> The enhanced_altitude and enhanced_speed are 32-bit versions of altitude and speed which are 16-bit, thus capable of storing larger numbers.
+<sup>0</sup> The enhanced_altitude and enhanced_speed are just 32-bit versions of altitude and speed which are 16-bit, thus capable of storing larger numbers.
 
 <sup>1</sup> The APEX Pro, VERTIX and VERTIX 2 use "[developer fields](https://developer.garmin.com/fit/cookbook/developer-data/)" to record Satellites, HDOP and COG.
 
