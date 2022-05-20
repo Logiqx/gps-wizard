@@ -12,7 +12,7 @@ The official developer [page](https://developer.garmin.com/fit/overview/) is qui
 
 ### Data Frames
 
-There are a few useful data frames, providing device information:
+There are a couple of useful data frames, providing device information:
 
 - device_info
   - serial_number
@@ -26,6 +26,8 @@ There are a few useful data frames, providing device information:
   - manufacturer
   - product / garmin_product
   - product_name
+
+Track data is is stored in "record" data frames:
 
 - record
   - timestamp
