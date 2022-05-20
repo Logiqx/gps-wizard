@@ -31,7 +31,6 @@ Garmin files contain many device_info frames but the ones that are relevant all 
 
 |                   | COROS                              | Garmin                                 |
 | :-----------------: | :----------------------------------: | :--------------------------------------: |
-|                   | APEX Pro<br />VERTIX<br />VERTIX 2 | Fenix 3<br />Fenix 5<br />Fenix 6<br />Fenix 7<br />Vivoactive 3 |
 | serial_number | - | Yes |
 | manufacturer | 294                              | 1                                   |
 | product_name | COROS APEX Pro | - |
