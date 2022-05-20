@@ -12,6 +12,7 @@ DOCKER_BUILDKIT=1 docker build . --build-arg LOGIQX_DEBUG -t $IMAGE_NAME:$IMAGE_
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/common_core.py >$PROJ_DIR/python/common_core.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/file_reader.py >$PROJ_DIR/python/readers/file_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/generic_reader.py >$PROJ_DIR/python/readers/generic_reader.py
+docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/fit_reader.py >$PROJ_DIR/python/readers/fit_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/gpx_reader.py >$PROJ_DIR/python/readers/gpx_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/nmea_reader.py >$PROJ_DIR/python/readers/nmea_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/oao_reader.py >$PROJ_DIR/python/readers/oao_reader.py
