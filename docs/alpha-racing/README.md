@@ -58,7 +58,7 @@ Using a brute-force approach to determine the possible start points within the r
 
 Proximity detection might appear to be an obvious application for the [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) but it is overkill for alpha racing. Whilst the Haversine formula is essential for navigation and when calculating long distances between two points on a globe, it is not required for alpha proximity detection.
 
-This project includes a Python notebook called "[haversine_vs_pythagoras](https://github.com/Logiqx/gps-wizard/blob/main/python/haversine_vs_pythagoras.ipynb)" which assesses the accuracy of [Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) for the calculation of distances between two points approximately 50m apart, over the entire globe using 1 degree increments in latitude (-90° to + 90°) and longitude (-180° to +180°).
+This project includes a Python notebook called "[haversine_vs_pythagoras](https://github.com/Logiqx/gps-wizard/blob/main/python/examples/haversine_vs_pythagoras.ipynb)" which assesses the accuracy of [Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) for the calculation of distances between two points approximately 50m apart, over the entire globe using 1 degree increments in latitude (-90° to + 90°) and longitude (-180° to +180°).
 
 The results of this analysis show that Pythagoras is more than accurate enough at the latitudes which have ever been windsurfed and there is no need to implement the computational expensive Haversine formula. Pythagoras produces sub-mm accuracy which is plenty good enough for 50m proximity detection.
 
@@ -132,9 +132,9 @@ All of the [sessions](https://github.com/Logiqx/gps-wizard/tree/main/sessions) b
 
 #### Python Implementation
 
-This project contains a Python notebook called "[alpha_test](https://github.com/Logiqx/gps-wizard/blob/main/python/alpha_test.ipynb)" which implements the techniques described throughout this article.
+This project contains a Python notebook called "[alpha_test](https://github.com/Logiqx/gps-wizard/blob/main/python/examples/alpha_test.ipynb)" which implements the techniques described throughout this article.
 
 The Python language was chosen for the sake of clarity; it is very readable and the notebook format allows code to be annotated with markdown. Porting this code to other languages should be straightforward and minor tweaks such as the use of a small circular buffer could also be considered for software running in real-time. The pre-calculation of values for Pythagoras is done upfront by the Python but in a GPS watch they would be performed in real-time, once per GNSS reading.
 
-The code that assesses the accuracy of Pythagoras for the purposes of alpha racing is also [available](https://github.com/Logiqx/gps-wizard/blob/main/python/haversine_vs_pythagoras.ipynb) in GitHub.
+The code that assesses the accuracy of Pythagoras for the purposes of alpha racing is also [available](https://github.com/Logiqx/gps-wizard/blob/main/python/examples/haversine_vs_pythagoras.ipynb) in GitHub.
 
