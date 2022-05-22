@@ -29,7 +29,8 @@ The following data fields are supported by the GPS Wizard readers:
 | vsdop     | vertical speed dilution of precision - SiRF | m/s     | -                | -                | -    | -    | Yes  | Yes  | -    |
 
 Notes:
-1) COG (cog), Satellites (Sat) and HDOP (hdop) are only present in COROS FIT files.
-2) COG (course), Satellites (sat), HDOP (hdop) and SOG (speed) are typically absent in GPX files.
-3) ROC (vertical_speed) is only present in Suunto FIT files.
+
+1. COG (cog), Satellites (Sat) and HDOP (hdop) are only present in COROS FIT files.
+2. COG (course), Satellites (sat), HDOP (hdop) and SOG (speed) are typically absent in GPX files.
+3. ROC (vertical_speed) is only present in Suunto FIT files.
 
