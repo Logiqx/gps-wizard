@@ -8,7 +8,7 @@ The following data fields are supported by the GPS Wizard readers:
 | cog       | course over ground                    | degrees | Yes <sup>1</sup> | Yes <sup>2</sup> | Yes  | Yes  | Yes  | Yes  | Yes  |
 | dist      | cumulative distance              | m       | Yes              | -                | -    | -    | -    | -    | -    |
 | ehpe      | estimated horizontal positional error - SiRF | m       | -                | -                | -    | Yes  | Yes  | -    | -    |
-| ele       | elevation above mean sea level        | m       | Yes              | Yes              | Yes  | Yes  | Yes  | Yes  | Yes  |
+| ele       | elevation above mean sea level        | m       | Yes <sup>3</sup> | Yes              | Yes  | Yes  | Yes  | Yes  | Yes  |
 | evpe      | estimated vertical positional error - SiRF | m       | -                | -                | -    | Yes  | Yes  | -    | -    |
 | fix       | fix type - ublox                      | -       | -                | -                | -    | -    | -    | Yes  | Yes  |
 | hacc      | horizontal accuracy - ublox           | m       | -                | -                | -    | -    | -    | Yes  | Yes  |
@@ -16,7 +16,7 @@ The following data fields are supported by the GPS Wizard readers:
 | lat       | latitude                              | degrees | Yes              | Yes              | Yes  | Yes  | Yes  | Yes  | Yes  |
 | lon       | longitude                             | degrees | Yes              | Yes              | Yes  | Yes  | Yes  | Yes  | Yes  |
 | pdop      | positional dilution of precision      | -       | -                | -                | -    | -    | -    | Yes <sup>4</sup> | Yes  |
-| roc       | rate of climb / vertical speed        | m/s     | Yes <sup>3</sup> | -                | -    | Yes  | Yes  | -    | -    |
+| roc       | rate of climb / vertical speed        | m/s     | Yes <sup>5</sup> | -                | -    | Yes  | Yes  | -    | -    |
 | sacc      | speed accuracy - ublox                | m/s     | -                | -                | -    | -    | -    | Yes  | Yes  |
 | sat       | satellites                            | -       | Yes <sup>1</sup> | Yes <sup>2</sup> | Yes  | Yes  | Yes  | Yes  | Yes  |
 | sdop      | speed dilution of precision - SiRF    | m/s     | -                | -                | -    | Yes  | Yes  | -    | -    |
@@ -32,6 +32,7 @@ Notes:
 
 1. COG (cog), Satellites (Sat) and HDOP (hdop) are only present in COROS FIT files.
 2. COG (course), Satellites (sat), HDOP (hdop) and SOG (speed) are typically absent in GPX files.
-3. ROC (vertical_speed) is only present in Suunto FIT files.
+3. Elevation (altitude) is currently absent in COROS FIT files; May 2022.
 4. OAO files produced by the ESP-GPS record PDOP in the HDOP field.
+5. ROC (vertical_speed) is only present in Suunto FIT files.
 
