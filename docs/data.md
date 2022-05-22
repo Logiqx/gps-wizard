@@ -22,7 +22,7 @@ The following data fields are supported by the GPS Wizard readers:
 | sdop      | speed dilution of precision - SiRF    | m/s     | -                | -                | -    | -    | Yes  | Yes  | -    |
 | sog       | speed over ground                     | m/s     | Yes              | Yes <sup>2</sup> | Yes  | Yes  | Yes  | Yes  | Yes  |
 | sv_ids    | space vehicle / satellite IDs         | -       | -                | -                | -    | -    | Yes  | Yes  | -    |
-| timestamp | seconds since 1 Jan 1970              | -       | Yes              | Yes              | Yes  | Yes  | Yes  | Yes  | Yes  |
+| ts | timestamp - since 1 Jan 1970 | seconds | Yes              | Yes              | Yes  | Yes  | Yes  | Yes  | Yes  |
 | ucog      | unfiltered course over ground - SiRF  | degrees | -                | -                | -    | -    | -    | Yes  | -    |
 | usog      | unfiltered speed over ground - SiRF   | m/s     | -                | -                | -    | -    | -    | Yes  | -    |
 | vacc      | vertical accuracy - ublox             | m       | -                | -                | -    | Yes  | -    | -    | Yes  |
