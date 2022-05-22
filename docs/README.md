@@ -35,6 +35,14 @@ Note: The majority of the file readers are bespoke, instead of using freely avai
 
 
 
+#### Data Fields
+
+The various data fields supported by the GPS Wizard readers are described on a separate [page](data.md).
+
+
+
+#### Future
+
 Further ideas and plans for the future are in the [TODO](todo.md) list.
 
 
