@@ -15,7 +15,7 @@ SiRFDrive fields are always set to zero on the GT-11 and GT-31, so they can safe
 | Message ID <sup>1</sup>                           | message_id           |  u1  |   -   |    -    |   -   |          -          |
 | Nav Valid <sup>2</sup>                            | nav_valid            | >u2  |   -   |    -    |   -   |          -          |
 | Nav Type <sup>3</sup>                             | nav_type             | >u2  |   -   |    -    |   -   |          -          |
-| Extended Week Number                              | extended_week_no     | >u2  |  ts   | float64 |   s   | 1 x 10<sup>-6</sup> |
+| Extended Week Number                              | extended_week_no     | >u2  |  ts   | float64 |   s   | 1 x 10<sup>-3</sup> |
 | TOW                                               | time_of_week         | >u4  |   "   |    "    |   "   |          "          |
 | UTC Year                                          | utc_year             | >u2  |   "   |    "    |   "   |          "          |
 | UTC Month                                         | utc_month            |  u1  |   "   |    "    |   "   |          "          |
@@ -23,7 +23,7 @@ SiRFDrive fields are always set to zero on the GT-11 and GT-31, so they can safe
 | UTC Hour                                          | utc_hour             |  u1  |   "   |    "    |   "   |          "          |
 | UTC Minute                                        | utc_minute           |  u1  |   "   |    "    |   "   |          "          |
 | UTC Second                                        | utc_millisecs        | >u2  |   "   |    "    |   "   |          "          |
-| Satellite ID List                                 | sv_ids               | >u4  | svids | uint32  |   -   | 1 x 10<sup>0</sup>  |
+| Satellite ID List                                 | sv_ids               | >u4  | svids | uint32  |   -   |          -          |
 | Latitude                                          | latitude             | >i4  |  lat  | float64 |  deg  | 1 x 10<sup>-7</sup> |
 | Longitude                                         | longitude            | >i4  |  lon  | float64 |  deg  | 1 x 10<sup>-7</sup> |
 | Altitude from Ellipsoid                           | altitude_ellipsoid   | >i4  |   -   |    -    |   -   |          -          |
@@ -45,7 +45,7 @@ SiRFDrive fields are always set to zero on the GT-11 and GT-31, so they can safe
 | Distance - SiRFDrive                              | distance             | >u4  |   -   |    -    |   -   |          -          |
 | Distance Error - SiRFDrive                        | distance_error       | >u2  |   -   |    -    |   -   |          -          |
 | Heading Error - SiRFDrive                         | heading_error        | >u2  |   -   |    -    |   -   |          -          |
-| Number of SVs in Fix                              | sv_count             |  u1  |  sat  |  uint8  |   -   | 1 x 10<sup>0</sup>  |
+| Number of SVs in Fix                              | sv_count             |  u1  |  sat  |  uint8  |   -   |          -          |
 | HDOP                                              | hdop                 |  u1  | hdop  | float32 |   -   | 2 x 10<sup>-1</sup> |
 | Additional Mode Info <sup>7</sup>                 | additional_mode_info |  u1  |   -   |    -    |   -   |          -          |
 | Unfiltered Speed Over Ground <sup>8</sup>         | unfiltered_sog       | >u2  | sogu  | float32 |  m/s  | 1 x 10<sup>-2</sup> |
