@@ -19,7 +19,7 @@ Detailed field mappings are available via the hyperlinks in the table header.
 | lat       | latitude                              | float64 | deg | Yes              | Yes              | Yes  | Yes  | Yes  | Yes  | Yes  |
 | lon       | longitude                             | float64 | deg | Yes              | Yes              | Yes  | Yes  | Yes  | Yes  | Yes  |
 | pdop      | positional dilution of precision      | float32 | -       | -                | -                | -    | -    | -    | Yes <sup>4</sup> | Yes  |
-| roc       | rate of climb (vertical speed)      | float32 | m/s    | Yes <sup>5</sup> | -                | -    | Yes  | Yes  | -    | -    |
+| roc       | rate of climb (vertical speed)      | float32 | m/s    | Yes <sup>5</sup> | -                | -    | Yes  | Yes  | -    | Yes  |
 | sacc      | speed accuracy - ublox                | float32 | m/s    | -                | -                | -    | -    | -    | Yes  | Yes  |
 | sat       | satellites                            | uint8 | -       | Yes <sup>1</sup> | Yes <sup>2</sup> | Yes  | Yes  | Yes  | Yes  | Yes  |
 | sdop      | speed dilution of precision - SiRF    | float32 | m/s    | -                | -                | -    | Yes  | Yes  | -    | -    |
