@@ -24,7 +24,7 @@ The majority of the data originates from the NAV-PVT (navigation position veloci
 
 Notes:
 
-1. Horizontal dilution of precision (HDOP) originates from from NAV-DOP message.
+1. Horizontal dilution of precision (HDOP) originates from the NAV-DOP message.
 2. OAO files produced by the ESP-GPS record PDOP in the HDOP field.
 
 
