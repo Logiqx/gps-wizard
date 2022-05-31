@@ -15,14 +15,14 @@ SiRFDrive fields are always set to zero on the GT-11 and GT-31, so they can safe
 | Message ID <sup>1</sup>                           | message_id           |  u1  |   -   |    -    |   -   |          -          |
 | Nav Valid <sup>2</sup>                            | nav_valid            | >u2  |   -   |    -    |   -   |          -          |
 | Nav Type <sup>3</sup>                             | nav_type             | >u2  |   -   |    -    |   -   |          -          |
-| Extended Week Number                              | extended_week_no     | >u2  |  ts   | float64 |   s   | 1 x 10<sup>-3</sup> |
-| TOW                                               | time_of_week         | >u4  |   "   |    "    |   "   |          "          |
-| UTC Year                                          | utc_year             | >u2  |   "   |    "    |   "   |          "          |
-| UTC Month                                         | utc_month            |  u1  |   "   |    "    |   "   |          "          |
-| UTC Day                                           | utc_day              |  u1  |   "   |    "    |   "   |          "          |
-| UTC Hour                                          | utc_hour             |  u1  |   "   |    "    |   "   |          "          |
-| UTC Minute                                        | utc_minute           |  u1  |   "   |    "    |   "   |          "          |
-| UTC Second                                        | utc_millisecs        | >u2  |   "   |    "    |   "   |          "          |
+| Extended Week Number                              | extended_week_no     | >u2  |   -   |    -    |   -   |          -          |
+| TOW                                               | time_of_week         | >u4  |   -   |    -    |   -   |          -          |
+| UTC Year                                          | utc_year             | >u2  |  ts   | float64 |   s   | 1 x 10<sup>-3</sup> |
+| UTC Month                                         | utc_month            |  u1  |  ts   | float64 |   s   | 1 x 10<sup>-3</sup> |
+| UTC Day                                           | utc_day              |  u1  |  ts   | float64 |   s   | 1 x 10<sup>-3</sup> |
+| UTC Hour                                          | utc_hour             |  u1  |  ts   | float64 |   s   | 1 x 10<sup>-3</sup> |
+| UTC Minute                                        | utc_minute           |  u1  |  ts   | float64 |   s   | 1 x 10<sup>-3</sup> |
+| UTC Second                                        | utc_millisecs        | >u2  |  ts   | float64 |   s   | 1 x 10<sup>-3</sup> |
 | Satellite ID List                                 | sv_ids               | >u4  | svids | uint32  |   -   |          -          |
 | Latitude                                          | latitude             | >i4  |  lat  | float64 |  deg  | 1 x 10<sup>-7</sup> |
 | Longitude                                         | longitude            | >i4  |  lon  | float64 |  deg  | 1 x 10<sup>-7</sup> |

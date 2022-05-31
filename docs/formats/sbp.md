@@ -11,7 +11,7 @@ The packed SiRF binary format consists of 32 byte messages which originate from 
 | HDOP                                 | hdop                |  u1  | hdop  | float32 |   -   | 2 x 10<sup>-1</sup> |
 | Number of SVs in Fix                 | sv_count            |  u1  |  sat  |  uint8  |   -   |          -          |
 | UTC Milliseconds                     | utc_millisecs       | <u2  |  ts   | float64 |   s   | 1 x 10<sup>-3</sup> |
-| UTC Packed Datetime <sup>1</sup>     | utc_packed_datetime | <u4  |   "   |    "    |   "   |          "          |
+| UTC Packed Datetime <sup>1</sup>     | utc_packed_datetime | <u4  |  ts   | float64 |   s   | 1 x 10<sup>-3</sup> |
 | Satellite ID List                    | sv_ids              | <u4  | svids | uint32  |   -   |          -          |
 | Latitude                             | latitude            | <i4  |  lat  | float64 |  deg  | 1 x 10<sup>-7</sup> |
 | Longitude                            | longitude           | <i4  |  lon  | float64 |  deg  | 1 x 10<sup>-7</sup> |

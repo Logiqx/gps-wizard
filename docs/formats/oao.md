@@ -1,4 +1,4 @@
-## OAO - "OnAndOn"
+## OAO - "OnAndOn" Binary
 
 ### GNSS Frames - 0x0AD4 and 0x0AD5
 
