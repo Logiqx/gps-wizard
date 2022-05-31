@@ -4,12 +4,11 @@
 
 #### File Readers
 
-Consider re-writing the following file readers to fix the slow load performance caused by public libraries:
+Thoughts to consider:
 
-- FIT reader currently uses fitdecode
-- GPX reader currently uses gpxpy
+- Re-write the GPX reader to use the lxml library. This will be a lot faster and can support COROS element names (e.g `<cog>`). 
 
-Note: Experience from NMEA and UBX libraries suggest I can improve load performance by approximately an order of magnitude.
+- Consider re-writing the FIT reader to avoid fitdecode. This could be a lot faster but will require amount of development effort.
 
 
 
@@ -17,10 +16,9 @@ Note: Experience from NMEA and UBX libraries suggest I can improve load performa
 
 Implement the following files writers:
 
+- CSV
 - GPX
 - KML
-- NMEA
-- SBN
 - SBP
 
 
@@ -41,7 +39,11 @@ Implement the following files writers:
   - Application of central limit theorem and "sampling distribution of the sample the mean" 
 - Format conversion
   - Most useful being to convert the variety of FIT files to GPX
-  - Might allow SBP output where sat, COG and HDOP are present (e.g. COROS FIT)
+  - Should allow SBP output where sat, COG and HDOP are present (e.g. COROS FIT)
+- Smart reduction
+  - Reduce tracks to minimal number of points for KML export.
+  - Needs to be smart enough to avoid corners being cut, etc.
+
 - Track collation
   - e.g. South West Coast Path walks combined into a single KML and / or GPX that provides an overall summary
 - Locosys Tools
