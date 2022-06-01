@@ -20,7 +20,7 @@ The following formats can all be loaded using dedicated file readers:
 - GPX - GPS Exchange Format
   - Support for GPX 1.0 and GPX 1.1
 
-- NMEA - National Marine Electronics Association
+- [NMEA](formats/nmea.md) - National Marine Electronics Association
   - Support for RMC and GGA sentences - both required
 - [OAO](formats/oao.md) - "OnAndOn" Binary
   - Support for GNSS frames - 0x0AD4 and 0x0AD5
