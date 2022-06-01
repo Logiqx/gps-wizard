@@ -2,16 +2,16 @@
 
 The following trackpoint elements and attributes are supported:
 
-| GPX Name                            | Description | Name |  Type   | Units |     Resolution      |
-| ----------------------------------- | ----------- | :--: | :-----: | :---: | :-----------------: |
-| Latitude                            | lat         | lat  | float64 |  deg  | 1 x 10<sup>-7</sup> |
-| Longitude                           | lon         | lon  | float64 |  deg  | 1 x 10<sup>-7</sup> |
-| Elevation <sup>1</sup>              | ele         | ele  | float64 |   m   | 1 x 10<sup>-3</sup> |
-| Date + Time                         | time        |  ts  | float64 |   s   | 1 x 10<sup>-3</sup> |
-| Course Over Ground <sup>2 3 4</sup> | course      | cog  | float32 |  deg  | 1 x 10<sup>-3</sup> |
-| Speed Over Ground <sup>2 5</sup>    | speed       | sog  | float32 |  m/s  | 1 x 10<sup>-3</sup> |
-| Satellites                          | sat         | sat  |  uint8  |   -   |          -          |
-| HDOP <sup>6</sup>                   | hdop        | hdop | float32 |   -   | 2 x 10<sup>-2</sup> |
+| GPX Name                | Description        | Name |  Type   | Units |     Resolution      |
+| ----------------------- | ------------------ | :--: | :-----: | :---: | :-----------------: |
+| lat                     | Latitude           | lat  | float64 |  deg  | 1 x 10<sup>-7</sup> |
+| lon                     | Longitude          | lon  | float64 |  deg  | 1 x 10<sup>-7</sup> |
+| ele <sup>1</sup>        | Elevation          | ele  | float64 |   m   | 1 x 10<sup>-3</sup> |
+| time                    | Date + Time        |  ts  | float64 |   s   | 1 x 10<sup>-3</sup> |
+| course <sup>2 3 4</sup> | Course Over Ground | cog  | float32 |  deg  | 1 x 10<sup>-3</sup> |
+| speed <sup>2 5</sup>    | Speed Over Ground  | sog  | float32 |  m/s  | 1 x 10<sup>-3</sup> |
+| sat                     | Satellites         | sat  |  uint8  |   -   |          -          |
+| hdop <sup>6</sup>       | HDOP               | hdop | float32 |   -   | 2 x 10<sup>-2</sup> |
 
 Notes:
 
