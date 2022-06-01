@@ -11,7 +11,7 @@ The following trackpoint elements and attributes are supported:
 | course <sup>2 3 4</sup> | Course Over Ground | cog  | float32 |  deg  | 1 x 10<sup>-3</sup> |
 | speed <sup>2 5</sup>    | Speed Over Ground  | sog  | float32 |  m/s  | 1 x 10<sup>-3</sup> |
 | sat                     | Satellites         | sat  |  uint8  |   -   |          -          |
-| hdop <sup>6</sup>       | HDOP               | hdop | float32 |   -   | 2 x 10<sup>-2</sup> |
+| hdop <sup>6</sup>       | HDOP               | hdop | float32 |   -   | 1 x 10<sup>-2</sup> |
 
 Notes:
 

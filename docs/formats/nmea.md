@@ -52,7 +52,7 @@ The first few fields are unused because they are also present in the correspondi
 | E or W                                        | -          |  -   |  -   |    -    |   -   |          -          |
 | GPS Quality Indicator                         | quality    |  u1  |  -   |    -    |   -   |          -          |
 | Number of Satellites                          | numSv      |  u1  | sat  |  uint8  |   -   |          -          |
-| Horizontal Dilution of Precision <sup>1</sup> | hdop       |  f4  | hdop | float32 |   -   | 2 x 10<sup>-2</sup> |
+| Horizontal Dilution of Precision <sup>1</sup> | hdop       |  f4  | hdop | float32 |   -   | 1 x 10<sup>-2</sup> |
 | Altitude from MSL <sup>2</sup>                | alt        |  f8  | ele  | float64 |   m   | 1 x 10<sup>-3</sup> |
 | Units of Altitude                             | altUnit    |  U1  |  -   |    -    |   -   |          -          |
 | Geoidal Separation                            | geoSep     |  f4  |  -   |    -    |   -   |          -          |
