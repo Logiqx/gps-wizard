@@ -17,7 +17,7 @@ Notes:
 
 1. Elevation does not have a fixed precision but will rarely be more than 3 decimal places.
 2. Course over ground and speed over ground are only supported by GPX 1.0.
-   - It looks like the absence of "speed" and "course" in GPX 1.1 is an oversight by Garmin.
+   - It looks like the absence of "course" and "speed" in GPX 1.1 is an oversight by Garmin.
 3. Course over ground is automatically rounded to 3 decimal places by the GPX reader.
 4. Course over ground is incorrectly named in COROS files; "cog" instead of "course".
 5. Speed over ground does not have a fixed precision but will rarely be more than 3 decimal places.
