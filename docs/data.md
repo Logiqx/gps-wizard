@@ -4,7 +4,7 @@ The table below provides a summary of the data fields populated by the GPS Wizar
 
 Detailed field mappings are available via the hyperlinks in the table header.
 
-| Name | Description                           | Type | Units   | FIT              | [GPX](formats/gpx.md) | [NMEA](formats/nmea.md) | [SPB](formats/sbp.md) | [SBN](formats/sbn.md) | [OAO](formats/oao.md) | [UBX](formats/ubx.md) |
+| Name | Description                           | Type | Units   | [FIT](formats/fit.md) | [GPX](formats/gpx.md) | [NMEA](formats/nmea.md) | [SPB](formats/sbp.md) | [SBN](formats/sbn.md) | [OAO](formats/oao.md) | [UBX](formats/ubx.md) |
 | :---------: | :------------------------------------- | :-------: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | cacc      | course accuracy - ublox               | float32 | deg | -                | -                | -    | -    | -    | Yes  | Yes  |
 | cog       | course over ground                    | float32 | deg | Yes <sup>1</sup> | Yes <sup>2</sup> | Yes  | Yes  | Yes  | Yes  | Yes  |

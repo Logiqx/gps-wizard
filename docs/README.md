@@ -14,7 +14,7 @@ Some related articles are also included covering a variety of topics such as alp
 
 The following formats can all be loaded using dedicated file readers:
 
-- FIT - Flexible and Interoperable Data Transfer
+- [FIT](formats/fit.md) - Flexible and Interoperable Data Transfer
   - Support for COROS, Garmin and Suunto - see additional [notes](fit.md)
 
 - [GPX](formats/gpx.md) - GPS Exchange Format
@@ -39,7 +39,9 @@ Note: The vast majority of the file readers are bespoke, instead of using generi
 
 #### Data Fields
 
-The various data fields supported by the GPS Wizard readers are described on a separate [page](data.md).
+The section above provides links to pages for each individual file reader, including descriptions of all the fields that are loaded into ndarrays.
+
+The various data fields supported by all of the file readers are described on a separate [page](data.md). This can provide useful when comparing the different file formats.
 
 
 
