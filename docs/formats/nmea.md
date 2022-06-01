@@ -2,7 +2,7 @@
 
 ### Overview
 
-To facilitate loading of NMEA data, RMC and GGA messages are combined into a single message.
+To facilitate the loading of NMEA data, RMC and GGA messages are combined into a single message.
 
 The combined messages are copied into standard ndarrays, converting to standard units; degrees, m/s, etc.
 
@@ -10,7 +10,7 @@ The combined messages are copied into standard ndarrays, converting to standard 
 
 ### RMC - Recommended Minimum Navigation Information
 
-The RMC message contains the most core data; latitude, longitude, speed and course.
+The RMC message contains the core data; latitude, longitude, speed and course.
 
 | NMEA Name                           | Raw Name  | Type | Name |  Type   | Units |     Resolution      |
 | ----------------------------------- | --------- | :--: | :--: | :-----: | :---: | :-----------------: |
@@ -50,7 +50,7 @@ The first few fields are unused because they are also present in the correspondi
 | N or S                                        | -          |  -   |  -   |    -    |   -   |          -          |
 | Longitude                                     | -          |  -   |  -   |    -    |   -   |          -          |
 | E or W                                        | -          |  -   |  -   |    -    |   -   |          -          |
-| GPS Quality Indicator                         | quality    |  u1  |      |         |       |                     |
+| GPS Quality Indicator                         | quality    |  u1  |  -   |    -    |   -   |          -          |
 | Number of Satellites                          | numSv      |  u1  | sat  |  uint8  |   -   |          -          |
 | Horizontal Dilution of Precision <sup>1</sup> | hdop       |  f4  | hdop | float32 |   -   | 2 x 10<sup>-2</sup> |
 | Altitude from MSL <sup>2</sup>                | alt        |  f8  | ele  | float64 |   m   | 1 x 10<sup>-3</sup> |
