@@ -17,7 +17,7 @@ The following formats can all be loaded using dedicated file readers:
 - FIT - Flexible and Interoperable Data Transfer
   - Support for COROS, Garmin and Suunto - see additional [notes](fit.md)
 
-- GPX - GPS Exchange Format
+- [GPX](formats/gpx.md) - GPS Exchange Format
   - Support for GPX 1.0 and GPX 1.1
 
 - [NMEA](formats/nmea.md) - National Marine Electronics Association
