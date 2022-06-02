@@ -6,9 +6,9 @@
 
 Thoughts to consider:
 
-- Re-write the GPX reader to use the lxml library. This will be a lot faster and can support COROS element names (e.g `<cog>`). 
+- Consider re-writing the FIT reader to avoid fitdecode.
+  - This could be a lot faster but will require a significant amount of development effort.
 
-- Consider re-writing the FIT reader to avoid fitdecode. This could be a lot faster but will require amount of development effort.
 
 
 

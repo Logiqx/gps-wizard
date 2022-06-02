@@ -33,7 +33,10 @@ The following formats can all be loaded using dedicated file readers:
 - [UBX](formats/ubx.md) - u-blox Binary
   - Support for NAV-PVT messages
 
-Note: The vast majority of the file readers are bespoke, instead of using generic NMEA, UBX, libraries. This provides vastly improved load performance, typically an order of magnitude faster.
+Notes:
+
+- The vast majority of the file readers are bespoke code, instead of using generic libraries for GPX, NMEA, UBX, etc.
+- This provides vastly improved load performance, typically an order of magnitude faster for NMEA and UBX.
 
 
 
