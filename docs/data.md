@@ -2,7 +2,7 @@
 
 The table below provides a summary of the data fields populated by the GPS Wizard file readers.
 
-Detailed field mappings are available via the hyperlinks in the table header.
+Detailed field mappings and precision / resolution are available via the hyperlinks in the table header.
 
 | Name | Description                           | Type | Units   | [FIT](formats/fit.md) | [GPX](formats/gpx.md) | [NMEA](formats/nmea.md) | [SPB](formats/sbp.md) | [SBN](formats/sbn.md) | [OAO](formats/oao.md) | [UBX](formats/ubx.md) |
 | :---------: | :------------------------------------- | :-------: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
@@ -42,13 +42,11 @@ Notes:
 
 ### Data Types
 
-Careful thought has been put into the data types:
+Careful consideration has been given to the data type of each field:
 
 1. Single and double precision floats (float32 and float64) have been used where applicable.
-
-2. Half precision floats (float16) have been avoided because they are often not implemented at a hardware level, thus slow.
-
-3. Integers were considered (e.g. units of mm or mm/s) but single and double precision floats were chosen in preference.
+2. Half precision floats (float16) are avoided because they are often unimplemented at a hardware level, thus can be slow.
+3. Integers were also considered (e.g. units of mm or mm/s) but single and double precision floats were chosen in preference.
 
 
 
@@ -56,19 +54,12 @@ Careful thought has been put into the data types:
 
 Tweaks:
 
-- Convert existing code to use the float32 types where applicable.
 - Populate fix type for more formats - e.g. SBN, GPX, NMEA
 
-Consider:
+Field additions / derivations:
 
-- Combine ehpe / hacc and evpe / vacc into a single field?
-  - May not be possible without confirming whether they are the same thing - e.g. 1 sigma
-
-Additions:
-
-- latr, lonr - radians (float64).
-- lats, lons - semicircles (int32).
-- secs - time difference in seconds.
+- latr, lonr (float64) - radians.
+- secs (float32) - time difference in seconds.
 - cogp, sogp, rocp (float32) - derived from positional data.
 - dist and distp (float64) - calculated from sog and sogp.
 
