@@ -15,10 +15,9 @@ The following trackpoint elements and attributes are supported:
 
 Notes:
 
-1. Latitude and longitude are rounded to 7 decimal places by the GPX reader; see explanation below.
+1. Latitude and longitude are rounded to 7 decimal places by the GPX reader; see comments below.
 2. Elevation does not have a fixed precision but will rarely be more than 3 decimal places.
-3. Course over ground and speed over ground are only supported by GPX 1.0.
-   - It looks like the absence of "course" and "speed" in GPX 1.1 is an oversight by Garmin.
+3. Course over ground and speed over ground are only supported by GPX 1.0; see comments below.
 4. Course over ground is automatically rounded to 3 decimal places by the GPX reader.
 5. Course over ground is incorrectly named in COROS files; "cog" instead of "course".
 6. Speed over ground does not have a fixed precision but will rarely be more than 3 decimal places.
@@ -33,6 +32,16 @@ It is worth noting that GPX files will sometimes include as many as 20 decimal p
 GPS / GNSS chips typically output the equivalent of 7 decimal places, at most. For example, SiRF and ublox binary formats both provide latitude and longitude with exactly 7 decimal places.
 
 7 decimal places provides a resolution equivalent to 1.11 cm at the equator so it should be easy to see that providing more than this level of precision is highly misleading, given the accuracy of GPS technology.
+
+
+
+### Course and Speed
+
+GPX 1.0 supports "course" and "speed" but these elements were dropped in GPX 1.1.
+
+They are very useful and unfortunately they cannot be re-constructed from longitude and latitude.
+
+It would seem that the removal of "course" and "speed" in GPX 1.1 was an oversight by Garmin.
 
 
 
