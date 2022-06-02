@@ -30,13 +30,13 @@ Notes:
 
 
 
-### Semicircles
+### Latitude and Longitude
 
 Latitude and longitude are specified in "semicircles" in FIT files, which are 32-bit signed integers.
 
 SiRF and ublox chips output 32-bit signed integers ranging from -900,000,000 to 900,000,000 for latitude (representing -90<sup>0</sup> to 90<sup>0</sup>) and -1,800,000,000 to 1,800,000,000 (representing -180<sup>0</sup> to 180<sup>0</sup>) for longitude.
 
-Pretty much all GPS / GNSS chips outputting NMEA data only provide ddmm.mm for latitude and longitude which allows for 1 million distinct values, far less than 32-bit resolution.
+GPS / GNSS chips outputting NMEA data typically provide a maximum precision of ddmm.mmmmm for latitude and dddmm.mmmmm for longitude. Since the mm before the decimal point is whole minutes (00 - 60), overall resolution is only 60% of the SiRF and ublox binary formats which provide 7 decimal digits.
 
 In principle "semicircles" use 32-bit signed integers more effectively, but in reality they have no real benefit. Scaling the outputs of a GPS / GNSS chip does not increase the resolution, it just gives the illusion of it.
 

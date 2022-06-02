@@ -67,6 +67,12 @@ Notes:
 
 
 
+### Latitude and Longitude
+
+GPS / GNSS chips outputting NMEA data typically provide a maximum precision of ddmm.mmmmm for latitude and dddmm.mmmmm for longitude. Since the mm before the decimal point is whole minutes (00 - 60), overall resolution is only 60% of the SiRF and ublox binary formats which provide 7 decimal digits.
+
+
+
 ### TODO
 
 Determining fix type from GGA quality indicator.
