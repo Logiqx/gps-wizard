@@ -27,9 +27,9 @@ Notes:
 
 ### Latitude and Longitude
 
-It is worth noting that GPX files will sometimes include as many as 20 decimal places for longitude and latitude. This is simply an artifact of the floating point arithmetic used by the code generating the GPX file.
+It is worth noting that GPX files will sometimes include as many as [30 decimal places](https://towardsdatascience.com/parsing-fitness-tracker-data-with-python-a59e7dc17418) for longitude and latitude. This is simply an artifact of the floating point arithmetic used by the code generating the GPX file.
 
-GPS / GNSS chips typically output the equivalent of 7 decimal places, at most. For example, SiRF and ublox binary formats both provide latitude and longitude with exactly 7 decimal places.
+GPS / GNSS chips typically output the equivalent of 7 decimal places. For example, SiRF and ublox binary formats both provide latitude and longitude with exactly 7 decimal places.
 
 7 decimal places provides a resolution equivalent to 1.11 cm at the equator so it should be easy to see that providing more than this level of precision is highly misleading, given the accuracy of GPS technology.
 
