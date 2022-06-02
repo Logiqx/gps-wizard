@@ -47,7 +47,7 @@ RUN pip install --no-cache-dir \
 # Install GPS + fitness tracker libraries
 RUN pip install --no-cache-dir \
     fitdecode==0.10.* \
-    gpxpy==1.5.*
+    lxml==4.7.*
 
 # Copy project files from the builder
 USER ${PY_USER}
