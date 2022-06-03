@@ -67,6 +67,18 @@ Notes:
 
 
 
+### Elevation
+
+During the testing of the GPS Wizard modules, it was observed that GPSResults uses "altitude from ellipsoid" instead of "altitude from MSL", when loading SBN files.
+
+Since the SBP format only includes "altitude from MSL", corresponding SBN and SBP files from the same session will show different altitudes in GPSResults.
+
+GPS Wizard uses "altitude from MSL" as standard, since it is available in all supported file formats; FIT, GPX, NMEA, SBN, SBP, OAO and UBX.
+
+In contrast, "altitude from ellipsoid" is only available in the SBN and UBX formats and is unavailable in FIT, GPX, NMEA, SBP and OAO.
+
+
+
 ### TODO
 
 Use navigation type to determine fix type; e.g. 2d or 3d.

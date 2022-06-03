@@ -26,3 +26,12 @@ Notes:
 
 1. Two digit years in the packed datetime are since 2000.
 
+
+
+### SDOP and VSDOP
+
+During the testing of the GPS Wizard modules, it was observed that GPSResults does not handle SDOP and VSDOP being unavailable in SBP files.
+
+This results in +/- figures of 0.000 being reported by GPSResults for SBP tracks missing SDOP and VSDOP which is incorrect / misleading.
+
+GPS Wizard will ignore the last 2 bytes of the SBP files when SDOP and VSDOP are unpopulated; e.g. GT-11 tracks.
