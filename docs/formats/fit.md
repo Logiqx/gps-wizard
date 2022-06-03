@@ -66,3 +66,15 @@ The enhanced altitude and speed could also be intended for other speed records. 
 ### Manufacturer Variations
 
 A dedicated [page](../fit.md) describes the subtle differences between FIT files from different manufacturers.
+
+
+
+### Conversion Issues
+
+During the testing of the GPS Wizard modules, it was observed that GPSBabel can have an adverse effect on FIT files.
+
+Re-saving a FIT file, without changing the format and then converting to GPX (i.e. FIT -> FIT -> GPX) results in a slightly different file to a direct FIT->GPX conversion.
+
+Some trackpoints with a speed of zero gain a non-zero speed (presumably derived from positional data) and some speeds change by 0.001 m/s.
+
+This is quite unexpected as re-saving a FIT file using GPSBabel should not have any effect on the speeds in the file.
