@@ -20,6 +20,7 @@ docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/sbn_reader.py >$PROJ_DIR/python/readers/sbn_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/sbp_reader.py >$PROJ_DIR/python/readers/sbp_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/ubx_reader.py >$PROJ_DIR/python/readers/ubx_reader.py
+docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/writers/gpx_writer.py >$PROJ_DIR/python/writers/gpx_writer.py
 
 # Clear pycache
 rm -f $PROJ_DIR/python/__pycache__/*.*.pyc

@@ -20,6 +20,7 @@ run_py_script readers/sirf_reader.py
 run_py_script readers/sbn_reader.py
 run_py_script readers/sbp_reader.py
 run_py_script readers/ubx_reader.py
+run_py_script writers/gpx_writer.py
 
 # Docker Tag
 docker tag $IMAGE_NAME:$IMAGE_TAG $IMAGE_NAME:latest
