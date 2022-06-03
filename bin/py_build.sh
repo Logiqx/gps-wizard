@@ -10,6 +10,7 @@ DOCKER_BUILDKIT=1 docker build . --build-arg LOGIQX_DEBUG -t $IMAGE_NAME:$IMAGE_
 
 # Copy the library scripts
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/core/file_reader.py >$PROJ_DIR/python/core/file_reader.py
+docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/core/track.py >$PROJ_DIR/python/core/track.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/base_reader.py >$PROJ_DIR/python/readers/base_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/fit_reader.py >$PROJ_DIR/python/readers/fit_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/gpx_reader.py >$PROJ_DIR/python/readers/gpx_reader.py
