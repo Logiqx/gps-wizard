@@ -55,6 +55,20 @@ This spurious precision is ignored by the GPS Wizard when it loads GPX files int
 
 
 
+### Precision
+
+The GPX writer will always output XML elements with the appropriate level of precision by examining all values in the track.
+
+The majority of tracks this will have the following precision:
+
+- lat and lon will typically show 7 decimal places - resolution of around 1.1 cm at the equator.
+- ele will typically show up to 3 decimal places - best resolution of 1 mm.
+- course will typically show up to 3 decimal places - best resolution of 1/1000 degree.
+- speed will typically show 2 or 3 decimal places - resolution of 1 cm/s or 1 mm/s.
+- hdop will typically show 1 or 2 decimal places.
+
+
+
 ### TODO
 
 Add support for "fix" element.
