@@ -27,7 +27,7 @@ Notes:
 
 ### Latitude and Longitude
 
-It is worth noting that GPX files will sometimes include as many as [30 decimal places](https://towardsdatascience.com/parsing-fitness-tracker-data-with-python-a59e7dc17418) for longitude and latitude. This is simply an artifact of the floating point arithmetic used by the code generating the GPX file.
+It is worth noting that GPX files will sometimes include as many as [29 or 30 decimal places](https://towardsdatascience.com/parsing-fitness-tracker-data-with-python-a59e7dc17418) for longitude and latitude. This is simply an artifact of the floating point arithmetic used by Garmin Connect, whilst generating the GPX file.
 
 GPS / GNSS chips typically output the equivalent of 7 decimal places. For example, SiRF and ublox binary formats both provide latitude and longitude with exactly 7 decimal places.
 
@@ -42,6 +42,16 @@ GPX 1.0 supports "course" and "speed" but these elements were dropped in GPX 1.1
 They are very useful and unfortunately they cannot be re-constructed from longitude and latitude.
 
 It would seem that the removal of "course" and "speed" in GPX 1.1 was an oversight by Garmin.
+
+
+
+### Elevation
+
+Elevation is recorded to the nearest 0.2m in Garmin FIT files and the same resolution in GPX files from Garmin Connect.
+
+However, GPX files from Garmin Connect will often show as many as 26 decimal places despite the true resolution being 0.2m.
+
+This spurious precision is ignored by the GPS Wizard when it loads GPX files into memory.
 
 
 
