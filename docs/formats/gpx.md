@@ -19,7 +19,7 @@ Notes:
 2. Elevation does not have a fixed precision but will rarely be more than 3 decimal places.
 3. Course over ground and speed over ground are only supported by GPX 1.0; see comments below.
 4. Course over ground is automatically rounded to 3 decimal places by the GPX reader.
-5. Course over ground is incorrectly named in COROS files; "cog" instead of "course".
+5. Course over ground is incorrectly named in COROS files and GPX exports from GPSResults; "cog" instead of "course".
 6. Speed over ground does not have a fixed precision but will rarely be more than 3 decimal places.
 7. HDOP does not have a fixed precision but will rarely be more than 2 decimal places.
 
@@ -66,6 +66,19 @@ The majority of tracks this will have the following precision:
 - course will typically show up to 3 decimal places - best resolution of 1/1000 degree.
 - speed will typically show 2 or 3 decimal places - resolution of 1 cm/s or 1 mm/s.
 - hdop will typically show 1 or 2 decimal places.
+
+
+
+### Validation
+
+Details about GPX can be found on the [TopoGrafix](https://www.topografix.com/gpx.asp) website. GPX files should match the [GPX 1.0](http://www.topografix.com/GPX/1/0/gpx.xsd) or [GPX 1.1](http://www.topografix.com/GPX/1/1/gpx.xsd) schema.
+
+It is not unusual to encounter files that do not match the schema:
+
+- The `<gpx>` element should specify `xmlns:xsi`, `xmlns`, `xsi:schemaLocation`, `creator` and `version but they are often omitted.`
+- Ordering of the XML elements is often overlooked but is denoted by `<xsd:sequence>` in the GPX schema.
+- Some GPX files name the elements incorrectly; e.g. COROS and GPSResults both generate GPX files including `<cog>` instead of `<course>`.
+- Some GPX files include elements from GPX 1.0 and GPX 1.1; e.g. COROS include `<speed>` (GPX 1.0) and `<extensions>` (GPX 1.1).
 
 
 
