@@ -14,24 +14,24 @@ Some related articles are also included covering a variety of topics such as alp
 
 The following formats can all be loaded using dedicated file readers:
 
-- [FIT](formats/fit.md) - Flexible and Interoperable Data Transfer
-  - Support for COROS, Garmin and Suunto - see additional [notes](fit.md)
+- [FIT](formats/fit.md) - Flexible and Interoperable Data Transfer.
+  - Support for COROS, Garmin and Suunto - see additional [notes](fit.md).
 
-- [GPX](formats/gpx.md) - GPS Exchange Format
-  - Support for GPX 1.0 and GPX 1.1
+- [GPX](formats/gpx.md) - GPS Exchange Format.
+  - Support for GPX 1.0 and GPX 1.1.
 
-- [NMEA](formats/nmea.md) - National Marine Electronics Association
-  - Support for RMC and GGA sentences - both required
-- [OAO](formats/oao.md) - "OnAndOn" Binary
-  - Support for GNSS frames - 0x0AD4 and 0x0AD5
-- [SBN](formats/sbn.md) - Locosys SiRF Binary
-  - 95-byte format without SDOP + VSDOP, GT-11
-  - 97-byte format with SDOP + VSDOP, GT-31 onwards
-- [SBP](formats/sbp.md) - Locosys SiRF Binary (packed)
-  - 32-byte format without SDOP + VSDOP, GT-11
-  - 32-byte format with SDOP + VSDOP, GT-31 onwards
-- [UBX](formats/ubx.md) - u-blox Binary
-  - Support for NAV-PVT messages
+- [NMEA](formats/nmea.md) - National Marine Electronics Association.
+  - Support for RMC and GGA sentences - both required.
+- [OAO](formats/oao.md) - "OnAndOn" Binary.
+  - Support for GNSS frames - 0x0AD4 and 0x0AD5.
+- [SBN](formats/sbn.md) - Locosys SiRF Binary.
+  - 95-byte format without SDOP + VSDOP, GT-11.
+  - 97-byte format with SDOP + VSDOP, GT-31 onwards.
+- [SBP](formats/sbp.md) - Locosys SiRF Binary (packed).
+  - 32-byte format without SDOP + VSDOP, GT-11.
+  - 32-byte format with SDOP + VSDOP, GT-31 onwards.
+- [UBX](formats/ubx.md) - u-blox Binary.
+  - Support for NAV-PVT messages.
 
 Notes:
 
@@ -44,9 +44,11 @@ Notes:
 
 The following formats can all be loaded using dedicated file readers:
 
-- [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) - Comma-separated Values
-- [GPX](formats/gpx.md) - GPS Exchange Format
-  - Support for GPX 1.0 since it includes course and speed
+- [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) - Comma-separated Values.
+  - Useful for adhoc analysis in Excel.
+
+- [GPX](formats/gpx.md) - GPS Exchange Format.
+  - Support for GPX 1.0 which supports course and speed, unlike GPX 1.1.
 
 
 
@@ -73,7 +75,9 @@ List of existing articles:
 
 
 
-### Utilities
+### Adhoc Utilities
 
-- Spike Finder
-- Session Organizer
+- Batch Convert.
+- Session Organizer.
+- SiRF Scanner.
+- Spike Finder.
