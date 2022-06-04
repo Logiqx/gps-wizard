@@ -78,3 +78,9 @@ Re-saving a FIT file, without changing the format and then converting to GPX (i.
 Some trackpoints with a speed of zero gain a non-zero speed (presumably derived from positional data) and some speeds change by 0.001 m/s.
 
 This is quite unexpected as re-saving a FIT file using GPSBabel should not have any effect on the speeds in the file.
+
+
+
+### TODO
+
+Add support for Timex Ironman tracks where speed and position are split into separate data records.

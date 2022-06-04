@@ -40,6 +40,16 @@ Notes:
 
 
 
+#### File Writers
+
+The following formats can all be loaded using dedicated file readers:
+
+- [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) - Comma-separated Values
+- [GPX](formats/gpx.md) - GPS Exchange Format
+  - Support for GPX 1.0 since it includes course and speed
+
+
+
 #### Data Fields
 
 The section above provides links to pages for each individual file reader, including descriptions of all the fields that are loaded into ndarrays.

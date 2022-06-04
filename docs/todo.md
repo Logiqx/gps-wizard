@@ -16,8 +16,6 @@ Thoughts to consider:
 
 Implement the following files writers:
 
-- CSV
-- GPX
 - KML
 - SBP
 
