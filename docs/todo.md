@@ -1,4 +1,4 @@
-## GPS Wizard - TODO
+## TODO
 
 ### Core Functionality
 
