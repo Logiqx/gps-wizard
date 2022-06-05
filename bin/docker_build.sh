@@ -24,6 +24,7 @@ run_py_script readers/ubx_reader.py
 run_py_script writers/base_writer.py
 run_py_script writers/csv_writer.py
 run_py_script writers/gpx_writer.py
+run_py_script writers/kml_writer.py
 
 # Docker Tag
 docker tag $IMAGE_NAME:$IMAGE_TAG $IMAGE_NAME:latest

@@ -24,6 +24,7 @@ docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/writers/base_writer.py >$PROJ_DIR/python/writers/base_writer.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/writers/csv_writer.py >$PROJ_DIR/python/writers/csv_writer.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/writers/gpx_writer.py >$PROJ_DIR/python/writers/gpx_writer.py
+docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/writers/kml_writer.py >$PROJ_DIR/python/writers/kml_writer.py
 
 # Clear pycache
 rm -f $PROJ_DIR/python/__pycache__/*.*.pyc
