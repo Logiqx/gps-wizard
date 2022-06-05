@@ -84,4 +84,15 @@ It is not unusual to encounter files that do not match the schema:
 
 ### TODO
 
-Add support for "fix" element.
+Add support for the following:
+
+- Handle multiple `<trk>` elements within a single GPX file. Currently the first one is used and others are ignored.
+- Handle multiple `<trkseg>` elements within a track.  Currently they are stored as a single track.
+- Make use of the `<fix>` element.
+
+The significance of `<trkseg>` is clarified in the GPX schema:
+
+> A Track Segment holds a list of Track Points which are logically connected in order. To represent a single GPS track where GPS reception was lost, or the GPS receiver was turned off, start a new Track Segment for each continuous span of track data.
+
+So, individual `<trkseg>` elements should be converted to individual `<LineString>` elements when saving a GPX track in [KML](kml.md) format.
+

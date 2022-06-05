@@ -16,7 +16,6 @@ Thoughts to consider:
 
 Implement the following files writers:
 
-- KML
 - SBP
 
 

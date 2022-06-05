@@ -44,11 +44,13 @@ Notes:
 
 The following formats can all be loaded using dedicated file readers:
 
-- [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) - Comma-separated Values.
+- [CSV](formats/csv.md) - Comma-separated Values.
   - Useful for adhoc analysis in Excel.
 
 - [GPX](formats/gpx.md) - GPS Exchange Format.
-  - Support for GPX 1.0 which supports course and speed, unlike GPX 1.1.
+  - Support for GPX 1.0 (released 2002) which supports course and speed, unlike GPX 1.1 (released 2004).
+- [KML](formats/kml.md) - Keyhole Markup Language.
+  - Support for KML 2.2 of the Open Geospatial Consortium (released 2008).
 
 
 
