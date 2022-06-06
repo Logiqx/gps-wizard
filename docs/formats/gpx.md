@@ -86,7 +86,6 @@ It is not unusual to encounter files that do not match the schema:
 
 Add support for the following:
 
-- Handle multiple `<trk>` elements within a single GPX file. Currently the first one is used and others are ignored.
 - Handle multiple `<trkseg>` elements within a track.  Currently they are stored as a single track.
 - Make use of the `<fix>` element.
 
