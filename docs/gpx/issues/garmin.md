@@ -16,7 +16,6 @@
 Notes:
 
 - Garmin use http://www.topografix.com/GPX/11.xsd  instead of http://www.topografix.com/GPX/1/1/gpx.xsd 
-
 - This schemaLocation issue is not detected by online validation tools because the XSD is pasted into the web page.
 - Garmin also omit the schema locations of GpxExtensions and TrackpointExtension
 
