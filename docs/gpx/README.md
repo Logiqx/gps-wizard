@@ -2,11 +2,11 @@
 
 ### Introduction
 
-[GPX](https://www.topografix.com/gpx.asp), or GPS Exchange Format, is an XML schema created by Topografix as a common GPS data format for software applications GPX comes in two main flavors with schema defining the structure and content; [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) and [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd).
+[GPX](https://www.topografix.com/gpx.asp), or GPS Exchange Format, is an XML schema created by Topografix as a common GPS data format for software applications. GPX comes in two main flavors with schema defining the structure and content; [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) and [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd).
 
 Proper use of the GPX format and compliance with the official schema are essential if attributes such as speed are to be used by popular applications such as [GPSResults](https://www.gps-speed.com/) and [GpsarPro](http://www.gpsactionreplay.com/). This is particularly important because speed calculations from positional data alone are highly suspectable to errors.
 
-An separate page discussing ["Doppler speed"](speed.md) in GPX files provides a brief overview about why it is so important that the the "doppler speed" originally calculated by the GPS receiver is recorded correctly. If not recorded correctly in the GPX file, subsequent speed analysis may be forced to perform calculations using the positional data which is highly susceptible to spurious speeds, AKA "spikes".
+A separate page discussing ["Doppler speed"](speed.md) in GPX files provides a brief overview about why it is so important that the the "doppler speed" originally calculated by the GPS receiver is recorded correctly. If not recorded correctly in the GPX file, subsequent speed analysis may be forced to perform calculations using the positional data which is highly susceptible to spurious speeds, AKA "spikes".
 
 
 
@@ -14,9 +14,9 @@ An separate page discussing ["Doppler speed"](speed.md) in GPX files provides a 
 
 [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) was released in 2002 and is still suitable for the majority of GPS-Speedsurfing applications.
 
-The GPX 1.0 schema includes support for "speed" (e.g. "doppler speed") and "course" (course over ground).
+The GPX 1.0 schema includes support for "speed" (e.g. "doppler speed") and "course" (course over ground), unlike vanilla GPX 1.1.
 
-[GPSResults](https://www.gps-speed.com/), [GpsarPro](http://www.gpsactionreplay.com/) and [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) all support GPX 1.0, including the `<speed>` and `<course>` elements.
+[GpsarPro](http://www.gpsactionreplay.com/), [GPSResults](https://www.gps-speed.com/) and [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) all support GPX 1.0, including the `<speed>` and `<course>` elements.
 
 
 
@@ -24,21 +24,21 @@ The GPX 1.0 schema includes support for "speed" (e.g. "doppler speed") and "cour
 
 [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd) was released on 9 August 2004 and improved upon the GPX 1.0 standard, introducing support for extensions.
 
-GPX 1.1 removed "speed" and "course". This may have been an oversight or perhaps their significance was not understood at the time.
+Sadly, GPX 1.1 removed "speed" and "course". This may have been an oversight or perhaps their significance was not appreciated at the time.
 
-It was not until around 2015 when Garmin finally re-introduced them in version 2 of their [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema.
+It was not until around 2015 when Garmin finally re-introduced "speed" and "course" in version 2 of their [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema.
 
 
 
 ### Validation
 
-One of the great benefits about an XML file is that it can be validated against its schema.
+One of the great benefits of an XML file is that it can be validated against a schema.
 
 Validation is deemed significant enough for it to have been listed as the first requirement on the page "[GPX for Developers](https://www.topografix.com/gpx_for_developers.asp)".
 
 #### Validation from the Command Line
 
-Topografix provide "[Validating your GPX output](https://www.topografix.com/gpx_validation.asp)" which describes why you should validate GPX output and how to validate GPX output.
+Topografix provide the page "[Validating your GPX output](https://www.topografix.com/gpx_validation.asp)" which describes why you should validate GPX output and how to validate it.
 
 I installed the recommended SAXCount tool into my Ubuntu environment using the following command:
 
@@ -52,22 +52,22 @@ Validation of a single GPX file can then be performed as follows:
 $ SAXCount -v=always -n -s -f example.gpx
 ```
 
-Note: Using SAXCount in this way will guarantee full validation with namespace processing, schema processing and full schema constraint checking, but it will not check the use of extension schema.
+Note: Using SAXCount in this way will guarantee full validation with namespace processing, schema processing and full schema constraint checking but it will not check the use of schema extensions.
 
 #### Validation using Online Tools
 
 Free online validation tools also exist where you can copy/paste XML data and the associated schema for validation:
 
-- [XML Validator](https://www.freeformatter.com/xml-validator-xsd.html) on freeformatter.com
-- [XML Validator](https://www.liquid-technologies.com/online-xsd-validator) on liquid-technologies.com
+- XML Validator at [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html)
+- XML Validator at [liquid-technologies.com](https://www.liquid-technologies.com/online-xsd-validator)
 
-Note: Using online tools in this way will typically guarantee full validation with namespace processing, schema processing and full schema constraint checking, but they will not check the use of extension schema.
+Note: Using these online tools will typically guarantee full validation with namespace processing, schema processing and full schema constraint checking but they will not check the use of extension schema. The online tools won't verify the xsi:schemaLocation attribute of the GPX file so any errors in that may go unnoticed (e.g. Garmin specify the wrong URL for the XSD).
 
 
 
 ### GPX Header
 
-The root element in the GPX file will is `<gpx>` and it is important that this is correctly populated for validation against the schema to be possible.
+The root element in the GPX file will is `<gpx>` and it is important that this is correctly populated for the validation against a schema to be possible.
 
 #### GPX 1.0
 
@@ -93,35 +93,35 @@ The root element in the GPX file will is `<gpx>` and it is important that this i
         http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
-The additional namespaces are given an alias ("tpx" in the above example) and may vary from one provider to another:
+The additional namespaces in a GPX 1.1 document are given an alias (e.g. "tpx" as above) and may vary from one provider to another:
 
-- Garmin tend to use `xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
-- Other providers often use `xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
+- Garmin tend to use ns3: `xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
+- Other providers often use gpxtpx: `xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
 
-Software reading GPX files that use the TrackPointExtension schema (or other extension schema) should not rely upon / expect the use of a specific alias.
+All software that can read GPX 1.1 files using the TrackPointExtension schema (or other extension schema) should be careful not rely upon / expect the use of a specific alias.
 
 
 
 ### Extensions
 
-The following Garmin GPX extensions (circa 2006) have been superseded:
+The following Garmin GPX extensions (circa 2006) have now been superseded:
 
-- GpxExtensions v2 - namespace [http://www.garmin.com/xmlschemas/GpxExtensions/v2](http://www.garmin.com/xmlschemas/GpxExtensions/v2) + schema [GpxExtensionsv2.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv2.xsd)
-- GpxExtensions v3 - namespace [http://www.garmin.com/xmlschemas/GpxExtensions/v3](http://www.garmin.com/xmlschemas/GpxExtensions/v3) + schema [GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
+- GpxExtensions v2 - [http://www.garmin.com/xmlschemas/GpxExtensions/v2](http://www.garmin.com/xmlschemas/GpxExtensions/v2) + [GpxExtensionsv2.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv2.xsd)
+- GpxExtensions v3 - [http://www.garmin.com/xmlschemas/GpxExtensions/v3](http://www.garmin.com/xmlschemas/GpxExtensions/v3) + [GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
 
-The following Garmin trackpoint extension (circa 2009) has been superseded:
+The following Garmin trackpoint extension (circa 2009) has also been superseded:
 
-- TrackPointExtension v1 - namespace [http://www.garmin.com/xmlschemas/TrackPointExtension/v1](http://www.garmin.com/xmlschemas/TrackPointExtension/v1) + schema [TrackPointExtensionv1.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)
+- TrackPointExtension v1 - [http://www.garmin.com/xmlschemas/TrackPointExtension/v1](http://www.garmin.com/xmlschemas/TrackPointExtension/v1) +  [TrackPointExtensionv1.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)
 
-The is the latest Garmin trackpoint extension (circa 2015) which added "speed", "course" and "bearing" to v1:
+The latest Garmin trackpoint extension is v2 (circa 2015). It added "speed", "course" and "bearing" to v1:
 
-- TrackPointExtension v2 - namespace [http://www.garmin.com/xmlschemas/TrackPointExtension/v2](http://www.garmin.com/xmlschemas/TrackPointExtension/v2) + schema [TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
+- TrackPointExtension v2 - [http://www.garmin.com/xmlschemas/TrackPointExtension/v2](http://www.garmin.com/xmlschemas/TrackPointExtension/v2) + [TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
 
 Note: TrackPointExtension v2 is the only "legitimate" way to include "speed" and "course" in a GPX 1.1 file.
 
-Other extensions include:
+Other useful Garmin extensions include:
 
-- Garmin Track stats - [http://www.garmin.com/xmlschemas/TrackStatsExtension/v1](http://www.garmin.com/xmlschemas/TrackStatsExtension/v1)
+- TrackStatsExtension - [http://www.garmin.com/xmlschemas/TrackStatsExtension/v1](http://www.garmin.com/xmlschemas/TrackStatsExtension/v1)
 
 
 
@@ -137,39 +137,43 @@ The correct element names can be determined by checking the appropriate schema; 
 
 ### Element Order
 
-This one is not so obvious but the order of elements is often significant.
+This point is not so obvious but the order of elements is often important.
 
-Search the GPX schema for `xsd:sequence` and you will see which elements must be in a specific sequence.
+Search the GPX schema for `xsd:sequence` and you will see which elements must be in a specific order / sequence.
 
 All elements within `<trkpt>` must adhere to the sequence specified in the schema:
 
 - [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) - ele, time, course, speed, geoidheight, geoidheight, etc.
 - [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd) - ele, time, geoidheight, geoidheight, etc.
 
-Note: It is the shared "wptType" of GPX 1.1 which resulted in "course" and "speed" being removed from "trkpt" elements.
+Note: It is the shared "wptType" of GPX 1.1 which resulted in "course" and "speed" being removed from the "trkpt" element.
 
 
 
 ### Speed
 
- TODO - summarise and add link to page
+If you are using GPX 1.0 then it is easy to include "speed" and "course".
+
+If you are using GPX 1.1 then you need to use v2 of the trackpoint extension and maybe the "gpxdata:speed" hack.
+
+Full details about the complexities of including speed in a GPX 1.1 file are covered in a dedicated [page](speed.md).
 
 
 
-### Providers
+### Software Providers + Hardware Manufacturers
 
-Individual pages have list the GPX issues of several providers:
+Individual pages list the GPX issues specific to individual software providers and hardware manufacturers:
 
 - [COROS](issues/coros.md) - WIP
-- [Garmin](issues/garmin.md) - WIP
-- [GPSBabel](issues/gpsbabel.md) - WIP
-- [GPSResults](issues/gpsresults.md) - WIP
-- [GPSAR](issues/gpsar.md) - aka GpsarPro - WIP
+- [Garmin](issues/garmin.md)
+- [GPSBabel](issues/gpsbabel.md)
+- [GPSResults](issues/gpsresults.md)
+- [GPSAR](issues/gpsar.md) aka GpsarPro
 - [Waterspeed](issues/waterspeed.md) - WIP
 
 
 
-The following providers are fine:
+The following software providers and hardware manufacturers are fine:
 
 - [Motion](issues/motion.md)
 - [RealSpeed](issues/realspeed.md)
