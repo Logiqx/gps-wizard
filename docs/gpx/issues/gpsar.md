@@ -17,11 +17,11 @@ The header is fine, except there is no schema location for the "gpsarPro" namesp
 
 ### Speed
 
-GpsarPro supports "speed", "hdop" and "sat" of GPX 1.0 but it does not support not "course".
+GpsarPro supports "speed", "sat" and "hdop" elements of GPX 1.0 but it does not support not "course".
 
-Supports the non-standard gpxdata:speed introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and used by [Waterspeed](https://waterspeedapp.com/).
+Supports the non-standard "gpxdata:speed" introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and used by [Waterspeed](https://waterspeedapp.com/).
 
-Does not support GPX 1.1 + Trackpoint Extensions V3 for "course" and "speed". See [document](../speed.md) for details.
+Does not support GPX 1.1 + Trackpoint Extension v2 for "course" and "speed". See [document](../speed.md) for details.
 
 
 
@@ -85,8 +85,9 @@ However, without a suitable XSD available online and specified in xsi:schemaLoca
 ### Recommendations
 
 - Upload a suitable XSD to http://www.gpsactionreplay.com/ and include it in xsi:schemaLocation.
-- Add "color" to the GpsarPro schema and rename the "color" elements to "gpsarPro:color" in the GPX.
+  - Add "color" to the GpsarPro schema and rename the "color" elements to "gpsarPro:color" in the GPX.
+  - Note: These extensions will almost certainly require the use of GPX 1.1 which adds complications, especially for speed.
 - Enhance GPX export to include `<course>`.
-- Enhance GPX export to use the prescribed element order - "ele", "time", "course", "speed", "sat", hdop".
+- Enhance GPX export to use the element order prescribed by the GPX schema - "ele", "time", "course", "speed", "sat", hdop".
 - Enhance GPX loader to recognize `<course>` (GPX 1.0) and `<cog>` (existing COROS files).
-- Enhance GPX loader to support GPX 1.1 + Trackpoint Extensions V3 for `<xxx:course>` and `<xxx:speed>`. See [document](../speed.md) for details.
+- Enhance GPX loader to support GPX 1.1 + Trackpoint Extension v2 for `<xxx:course>` and `<xxx:speed>`. See [document](../speed.md) for details.
