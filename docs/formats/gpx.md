@@ -12,6 +12,7 @@ The following trackpoint elements and attributes are supported:
 | speed <sup>3 6</sup>    | Speed Over Ground  | sog  | float32 |  m/s  | 1 x 10<sup>-3</sup> |
 | sat                     | Satellites         | sat  |  uint8  |   -   |          -          |
 | hdop <sup>7</sup>       | HDOP               | hdop | float32 |   -   | 1 x 10<sup>-2</sup> |
+| hr <sup>8</sup>         | Heart Rate         |  hr  | uint16  |   -   |          -          |
 
 Notes:
 
@@ -22,6 +23,7 @@ Notes:
 5. Course over ground is incorrectly named in COROS files and GPX exports from GPSResults; "cog" instead of "course".
 6. Speed over ground does not have a fixed precision but will rarely be more than 3 decimal places.
 7. HDOP does not have a fixed precision but will rarely be more than 2 decimal places.
+8. Heart rate is supported by the Garmin TrackPointExtension schema and ClueTrust GPXData schema.
 
 
 
@@ -37,11 +39,13 @@ GPS / GNSS chips typically output the equivalent of 7 decimal places. For exampl
 
 ### Course and Speed
 
-GPX 1.0 supports "course" and "speed" but these elements were dropped in GPX 1.1.
+GPX 1.0 supports "course" and "speed" but these elements were dropped in GPX 1.1, released in August 2004.
 
-They are very useful and unfortunately they cannot be re-constructed from longitude and latitude.
+The course and speed are very useful attributes which unfortunately cannot be re-constructed from longitude and latitude.
 
-It would seem that the removal of "course" and "speed" in GPX 1.1 was an oversight by Garmin.
+IMHO it would seem that the removal of "course" and "speed" in GPX 1.1 was an oversight by TopoGrafix.
+
+Garmin re-added support for "course" and "speed" in V2 of the [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema for use with GPX 1.1.
 
 
 
@@ -75,7 +79,7 @@ Details about GPX can be found on the [TopoGrafix](https://www.topografix.com/gp
 
 It is not unusual to encounter files that do not match the schema:
 
-- The `<gpx>` element should specify `xmlns:xsi`, `xmlns`, `xsi:schemaLocation`, `creator` and `version but they are often omitted.`
+- The `<gpx>` element should specify `version`, `creator`, `xmlns`, `xmlns:xsi` and `xsi:schemaLocation` but they are often omitted.
 - Ordering of the XML elements is often overlooked but is denoted by `<xsd:sequence>` in the GPX schema.
 - Some GPX files name the elements incorrectly; e.g. COROS and GPSResults both generate GPX files including `<cog>` instead of `<course>`.
 - Some GPX files include elements from GPX 1.0 and GPX 1.1; e.g. COROS include `<speed>` (GPX 1.0) and `<extensions>` (GPX 1.1).
