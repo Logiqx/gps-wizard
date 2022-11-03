@@ -23,9 +23,9 @@ It should really use a standard GPX 1.0 header:
 
 
 
-### Speed
+### Speed and Course
 
-Support for the "speed", "sat" and "hdop" elements of GPX 1.0 but "cog" is implemented instead of the GPX 1.0 "course".
+GPSResults supports the "speed" element of GPX 1.0 but "cog" is implemented instead of the GPX 1.0 "course".
 
 Does not support the non-standard "gpxdata:speed" introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and used by [Waterspeed](https://waterspeedapp.com/).
 
@@ -33,7 +33,7 @@ Does not support GPX 1.1 + Trackpoint Extension v2 for "course" and "speed". See
 
 
 
-### Elements
+### Element Order
 
 The order of the elements does not conform to the schema definition:
 
@@ -43,11 +43,11 @@ The order of the elements does not conform to the schema definition:
     <time>2022-09-29T10:44:55.000Z</time>
     <sat>18</sat>
     <speed>2.295</speed>
-    <course>249.859</course>
+    <cog>249.859</course>
 </trkpt>
 ```
 
-The correct order:
+The correct order is shown below, also with "cog" renamed to "course" to confirm with the GPX schema:
 ```xml
 <trkpt lat="50.154425200" lon="-5.027364900">
     <ele>-0.60</ele>
@@ -58,7 +58,7 @@ The correct order:
 </trkpt>
 ```
 
-HDOP is also absent and could be exported.
+HDOP is also absent and could be exported. The "hdop" element should appear immediately before "sat".
 
 
 

@@ -15,9 +15,9 @@ The header is fine, except there is no schema location for the "gpsarPro" namesp
 
 
 
-### Speed
+### Speed and Course
 
-GpsarPro supports "speed", "sat" and "hdop" elements of GPX 1.0 but it does not support not "course".
+GpsarPro supports the "speed" element of GPX 1.0 but it does not support not "course".
 
 Supports the non-standard "gpxdata:speed" introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and used by [Waterspeed](https://waterspeedapp.com/).
 
@@ -39,7 +39,7 @@ The order of the elements does not conform to the schema definition:
 </trkpt>
 ```
 
-The correct order:
+The correct order is shown below:
 
 ```xml
 <trkpt lat="52.0488357" lon="-0.56904">
@@ -51,7 +51,7 @@ The correct order:
 </trkpt>
 ```
 
-"course" is also absent and could be exported. It should appear immediately before "speed".
+"course" is also absent and could be exported. The "course" element should appear immediately before "speed".
 
 
 
