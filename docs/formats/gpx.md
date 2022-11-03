@@ -1,5 +1,7 @@
 ## GPX - GPS Exchange Format
 
+There is a lot of abuse / misuse of the GPX format which I have attempted to clarify / explain in a separate [document](../gpx/README.md).
+
 The following trackpoint elements and attributes are supported:
 
 | GPX Name                | Description        | Name |  Type   | Units |     Resolution      |
