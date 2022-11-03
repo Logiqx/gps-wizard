@@ -21,7 +21,7 @@ GpsarPro supports "speed", "hdop" and "sat" of GPX 1.0 but it does not support n
 
 Supports the non-standard gpxdata:speed introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and used by [Waterspeed](https://waterspeedapp.com/).
 
-Does not support GPX 1.1 + Trackpoint Extensions V3. See [document](../speed.md) for details.
+Does not support GPX 1.1 + Trackpoint Extensions V3 for "course" and "speed". See [document](../speed.md) for details.
 
 
 
@@ -89,4 +89,4 @@ However, without a suitable XSD available online and specified in xsi:schemaLoca
 - Enhance GPX export to include `<course>`.
 - Enhance GPX export to use the prescribed element order - "ele", "time", "course", "speed", "sat", hdop".
 - Enhance GPX loader to recognize `<course>` (GPX 1.0) and `<cog>` (existing COROS files).
-- Enhance GPX loader to support GPX 1.1 + Trackpoint Extensions V3 for `<xxx:course>` and `<xxx:cog>`. See [document](../speed.md) for details.
+- Enhance GPX loader to support GPX 1.1 + Trackpoint Extensions V3 for `<xxx:course>` and `<xxx:speed>`. See [document](../speed.md) for details.

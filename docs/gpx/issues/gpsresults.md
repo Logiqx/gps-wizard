@@ -93,4 +93,4 @@ It should also be noted that "username", "device", "firmware "and "serialno" are
 - Enhance GPX export to use the prescribed element order - "ele", "time", "course", "speed", "sat", hdop".
 - Enhance GPX loader to recognize `<course>` in addition to `<cog>` so that both element names are supported.
 - Enhance GPX loader to support `<gpxdata:speed>` which was introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and is used by [Waterspeed](https://waterspeedapp.com/).
-- Enhance GPX loader to support GPX 1.1 + Trackpoint Extensions V3 for `<xxx:course>` and `<xxx:cog>`. See [document](../speed.md) for details.
+- Enhance GPX loader to support GPX 1.1 + Trackpoint Extensions V3 for `<xxx:course>` and `<xxx:speed>`. See [document](../speed.md) for details.
