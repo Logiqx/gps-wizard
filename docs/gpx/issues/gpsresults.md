@@ -43,7 +43,7 @@ The order of the elements does not conform to the schema definition:
     <time>2022-09-29T10:44:55.000Z</time>
     <sat>18</sat>
     <speed>2.295</speed>
-    <cog>249.859</course>
+    <cog>249.859</cog>
 </trkpt>
 ```
 
