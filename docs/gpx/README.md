@@ -152,7 +152,7 @@ Note: It is the shared "wptType" of GPX 1.1 which resulted in "course" and "spee
 
 ### Speed
 
- TODO - link to page
+ TODO - summarise and add link to page
 
 
 
@@ -160,12 +160,12 @@ Note: It is the shared "wptType" of GPX 1.1 which resulted in "course" and "spee
 
 Individual pages have list the GPX issues of several providers:
 
-- [COROS](issues/coros.md)
-- [Garmin](issues/garmin.md)
-- [GPSBabel](issues/gpsbabel.md)
-- [GPSResults](issues/gpsresults.md)
-- [GPSAR](issues/gpsar.md) - aka GpsarPro
-- [Waterspeed](issues/waterspeed.md)
+- [COROS](issues/coros.md) - WIP
+- [Garmin](issues/garmin.md) - WIP
+- [GPSBabel](issues/gpsbabel.md) - WIP
+- [GPSResults](issues/gpsresults.md) - WIP
+- [GPSAR](issues/gpsar.md) - aka GpsarPro - WIP
+- [Waterspeed](issues/waterspeed.md) - WIP
 
 
 

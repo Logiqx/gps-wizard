@@ -13,13 +13,15 @@ The header is fine:
      xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
 ```
 
+Note: There is no schema location for the gpsarPro namespace.
+
 
 
 ### Speed
 
 Supports "speed", "hdop" and "sat" of GPX 1.0 but not "course".
 
-Supports the non-standard gpxdata:speed introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio).
+Supports the non-standard gpxdata:speed introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and used by [Waterspeed](https://waterspeedapp.com/).
 
 Does not support GPX 1.1 + Trackpoint Extensions V3.
 

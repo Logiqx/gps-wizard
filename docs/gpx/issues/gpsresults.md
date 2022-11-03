@@ -1,12 +1,23 @@
 ## GPS Exchange Format (GPX) - GPSResults
 
-### Header
+### GPX 1.0
 
-GPSResults uses its own namespace which is not correct.
+GPSResults has a tiny header and uses its own XML namespace which is not correct.
 
 ```xml
 <gpx xmlns="https://www.gps-speed.com"
      creator="GPSResults V6.185">
+```
+
+It should really use a standard GPX 1.0 header:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="GPSResults V6.185 - https://www.gps-speed.com"
+     version="1.0"
+     xmlns="http://www.topografix.com/GPX/1/0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
 ```
 
 
@@ -15,7 +26,7 @@ GPSResults uses its own namespace which is not correct.
 
 Supports "speed", "hdop" and "sat" of GPX 1.0 but uses "cog" instead of course".
 
-Supports the non-standard gpxdata:speed introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio).
+Does not support the non-standard gpxdata:speed introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and used by [Waterspeed](https://waterspeedapp.com/).
 
 Does not support GPX 1.1 + Trackpoint Extensions V3.
 
@@ -23,7 +34,7 @@ Does not support GPX 1.1 + Trackpoint Extensions V3.
 
 ### Metadata
 
-Lots of invalid metadata:
+Various pieces of metadata that do not exist in the GPX 1.0 schema:
 
 ```xml
 <metadata>
@@ -38,14 +49,15 @@ Lots of invalid metadata:
 </metadata>
 ```
 
-The elements "username", "device", "firmware "and "serialno "are invalid.
+The elements "username", "device", "firmware "and "serialno" are all invalid.
 
 
 
 ### Recommendations
 
-- Use a full header to facilitate validation.
+- Enhance the GPX export to use a standard GPX 1.0 header to facilitate validation.
+  - If custom metadata is required it would have to be via a schema extension with a suitable namespace.
 - Change GPX export to use `<course>` instead of `<cog>`.
 - Enhance GPX loader to recognize `<course>` in addition to `<cog>`.
-- Enhance GPX loader to support `<gpxdata:speed>`.
+- Enhance GPX loader to support `<gpxdata:speed>` which was introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and used by [Waterspeed](https://waterspeedapp.com/).
 - Enhance GPX loader to support GPX 1.1 + Trackpoint Extensions V3 for `<xxx:course>` and `<xxx:cog>`.
