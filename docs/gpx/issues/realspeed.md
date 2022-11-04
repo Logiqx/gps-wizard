@@ -2,7 +2,7 @@
 
 ### GPX 1.0
 
-The header is fine:
+The GPX files created by the RealSpeed are perfectly fine. They use GPX 1.0 and include the correct header:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

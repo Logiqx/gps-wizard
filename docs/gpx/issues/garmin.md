@@ -15,7 +15,7 @@
 
 Notes:
 
-- Garmin use http://www.topografix.com/GPX/11.xsd  instead of http://www.topografix.com/GPX/1/1/gpx.xsd 
+- Garmin GPX files include a bad link and use http://www.topografix.com/GPX/11.xsd  instead of http://www.topografix.com/GPX/1/1/gpx.xsd 
 - This schemaLocation issue is not detected by online validation tools because the XSD is pasted into the web page.
 - Garmin also omit the schema locations of GpxExtensions and TrackpointExtension
 
@@ -25,8 +25,8 @@ Notes:
 
 GPX files created by Garmin often include unnecessary levels of precision, far exceeding that of the GPS chips.
 
-- "lat" and "lon" = 29 decimal places but 8 decimal places = mm precision at the equator.
-- "ele" = 23 decimal places but 3 decimal places = mm precision.
+- "lat" and "lon" = 29 decimal places but 8 decimal places is mm precision at the equator.
+- "ele" = 23 decimal places but 3 decimal places is mm precision.
 
 
 

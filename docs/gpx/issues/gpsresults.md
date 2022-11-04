@@ -25,7 +25,7 @@ It should really use a standard GPX 1.0 header:
 
 ### Speed and Course
 
-GPSResults supports the "speed" element of GPX 1.0 but "cog" is implemented instead of the GPX 1.0 "course".
+GPSResults supports the "speed" element of GPX 1.0 but "cog" is implemented instead of "course".
 
 Does not support the non-standard "gpxdata:speed" introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and used by [Waterspeed](https://waterspeedapp.com/).
 
@@ -35,7 +35,7 @@ Does not support GPX 1.1 + Trackpoint Extension v2 for "course" and "speed". See
 
 ### Element Order
 
-The order of the elements does not conform to the schema definition:
+The order of the elements does not conform to the GPX schema:
 
 ```xml
 <trkpt lat="50.154425200" lon="-5.027364900">
@@ -58,7 +58,7 @@ The correct order is shown below, also with "cog" renamed to "course" to confirm
 </trkpt>
 ```
 
-HDOP is also absent and could be exported. The "hdop" element should appear immediately before "sat".
+HDOP is also absent and could be exported. The `<hdop>` element should appear immediately after `<sat>`.
 
 
 
@@ -90,7 +90,7 @@ It should also be noted that "username", "device", "firmware "and "serialno" are
   - However, GPX 1.1 has serious implications relating to the "[doppler speed](../speed.md)" so it is probably advisable to stick with GPX 1.0.
 - Change GPX export to use `<course>` instead of `<cog>` thus matching the GPX schema.
 - Enhance GPX export to include `<hdop>`.
-- Enhance GPX export to use the element order prescribed by the GPX schema - "ele", "time", "course", "speed", "sat", hdop".
+- Enhance GPX export to use the element order mandated by the GPX schema - "ele", "time", "course", "speed", "sat", hdop".
 - Enhance GPX loader to recognize `<course>` in addition to `<cog>` so that both element names are supported.
 - Enhance GPX loader to support `<gpxdata:speed>` which was introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and is used by [Waterspeed](https://waterspeedapp.com/).
 - Enhance GPX loader to support GPX 1.1 + Trackpoint Extension v2 for `<xxx:course>` and `<xxx:speed>`. See [document](../speed.md) for details.

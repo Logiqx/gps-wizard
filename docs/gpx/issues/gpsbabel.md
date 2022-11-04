@@ -28,9 +28,9 @@ The precision of various elements is unnecessarily high. For example:
 
 ### Speed
 
-It has been observed that GPSBabel will sometime calculates speed from positional data and save it in the GPX file.
+It has been observed that GPSBabel will sometimes calculate speed from positional data and save it in the GPX file. This can lead to erroneous speeds (aka "spikes") in the output GPX and is undesirable. I have personally observed this issue when converting Garmin FIT files to GPX format using GPSBabel.
 
-This can lead to erroneous speeds (aka "spikes") in the output GPX and is undesirable.
+Moral: Don't always trust file conversions to be safe!
 
 
 

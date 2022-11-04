@@ -8,7 +8,7 @@ The "doppler speed" is derived from the observable [Doppler shift](https://en.wi
 
 Conversely, speeds that are calculated retrospectively from positional data are highly susceptible to "spikes" which are erroneous speeds due to blocked signals, imperfections in the GPS receiver, etc. Sometimes these "spikes" will be very obvious (e.g. 60+ knots on a windsurfer) but other times they will be small enough for people to believe they are genuine speeds.
 
-It's worth noting that every GPS and watch manufacturer will have their own way of calculating the speed of the receiver in real-time but they will typically make use of the observable Doppler-shift (already a necessity when in order to decode the satellite data) and a [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) to reduce "noise". For convenience, this document will simply refer to "doppler speed", regardless of how the GPS receiver calculates it.
+It's worth noting that every GPS and watch manufacturer will have their own way of calculating the speed of the receiver in real-time but they will typically make use of the observable Doppler-shift (already a necessity in order to receive the satellite data) and a [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) to reduce "noise". For convenience, this document will simply refer to "doppler speed", regardless of how the GPS receiver calculates it.
 
 
 
@@ -40,7 +40,7 @@ The fastest non-Doppler speed that was not an obvious spike was 26.4 knots. The 
 
 ### GPX 1.0
 
-The [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) format of 2002 allowed "speed" (typically "doppler speed" in modern GPS receievers) to be recorded in GPX files using the `<speed>` element. The same was also true for "[course of ground](https://en.wikipedia.org/wiki/Course_(navigation))" using the `<course>` element. 
+The [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) format of 2002 allowed "speed" (typically "doppler speed" in modern GPS receivers) to be recorded in GPX files using the `<speed>` element. The same was also true for "[course of ground](https://en.wikipedia.org/wiki/Course_(navigation))" using the `<course>` element. 
 
 
 
@@ -58,7 +58,7 @@ Trace had no option but to invent a new element but they should really have crea
 
 Unfortunately the use of `<gpxdata:speed>` has now percolated into other applications, including [Waterspeed](https://waterspeedapp.com/) (for Apple devices) which means yet more GPX files being created with a non-standard approach (gpxdata:speed) which is not supported by [GPSResults](https://www.gps-speed.com/), [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/), etc.
 
-Side note: The original [GPXData](GPXData) schema / namespace was created by ClueTrust and does not support "speed" or "course" (i.e. course over ground).
+Side note: The original [GPXData](http://www.cluetrust.com/Schemas/gpxdata10.xsd) schema / namespace was created by ClueTrust and does not support "speed" or "course" (i.e. course over ground).
 
 
 
@@ -73,7 +73,7 @@ An example header:
 ```xml
 <gpx version="1.1" creator="Garmin Connect"
   xmlns="http://www.topografix.com/GPX/1/1"
-  xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+  xmlns:tpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd 
                       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd"
@@ -83,13 +83,15 @@ Trackpoints can then record speed and course (plus data such as heartrate) insid
 
 ```xml
 <extensions>
-  <gpxtpx:TrackPointExtension>
-    <gpxtpx:speed>0.5429</gpxtpx:speed>
-    <gpxtpx:course>157.19</gpxtpx:course>
-    <gpxtpx:hr>120</gpxtpx:hr>
-  </gpxtpx:TrackPointExtension>
+  <tpx:TrackPointExtension>
+    <tpx:speed>0.5429</tpx:speed>
+    <tpx:course>157.19</tpx:course>
+    <tpx:hr>120</tpx:hr>
+  </tpx:TrackPointExtension>
 </extensions>
 ```
+
+Note: The namespace prefix "tpx" is not fixed and is chosen by the GPX creator. Garmin often uses "ns3", whereas some other software providers use "gpxtpx". No assumptions should be made about namespace prefix(es) being used in GPX files.
 
 
 
@@ -113,16 +115,16 @@ Unless you really need GPX 1.1 (e.g. heartrate data being required) then it make
 
 ### Workaround using GPX 1.1
 
-If you really must use GPX 1.1 then you should use the correct approach (described earlier) but also supplement it with `<gpsdata:speed>`.
+If you really must use GPX 1.1 then you should use the correct approach (described earlier) but also supplement it with `<gpxdata:speed>`.
 
 ```xml
 <extensions>
   <gpxdata:speed>0.5429</gpxdata:speed>
-  <gpxtpx:TrackPointExtension>
-    <gpxtpx:speed>0.5429</gpxtpx:speed>
-    <gpxtpx:course>157.19</gpxtpx:course>
-    <gpxtpx:hr>120</gpxtpx:hr>
-  </gpxtpx:TrackPointExtension>
+  <tpx:TrackPointExtension>
+    <tpx:speed>0.5429</tpx:speed>
+    <tpx:course>157.19</tpx:course>
+    <tpx:hr>120</tpx:hr>
+  </tpx:TrackPointExtension>
 </extensions>
 ```
 
@@ -142,4 +144,7 @@ You will also need to add the "gpxdata" namespace and schema location to the GPX
 Notes:
 
 1) As of now, this workaround will only work for GpsarPro. It won't work for GPSResults or GPS-Speedsurfing.com.
+
 2) ClueTrust do not specify "speed" or "course" in their schema but most XML validation tools will not report an error, because they only verify items in the default XML namespace.
+
+3) The namespace prefix cannot be assumed so it could be "tpx", "gpxtpx", "gpxdata", ns3" or something else entirely. A simple solution is to ignore the namespace prefixes within `<extensions>` and use anything named "speed", "course" or "cog", regardless of their namespace prefix.

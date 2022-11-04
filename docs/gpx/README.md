@@ -6,7 +6,7 @@
 
 Proper use of the GPX format and compliance with the official schema are essential if attributes such as speed are to be used by popular applications such as [GPSResults](https://www.gps-speed.com/) and [GpsarPro](http://www.gpsactionreplay.com/). This is particularly important because speed calculations from positional data alone are highly suspectable to errors.
 
-A separate page discussing ["Doppler speed"](speed.md) in GPX files provides a brief overview about why it is so important that the the "doppler speed" originally calculated by the GPS receiver is recorded correctly. If not recorded correctly in the GPX file, subsequent speed analysis may be forced to perform calculations using the positional data which is highly susceptible to spurious speeds, AKA "spikes".
+A separate page discussing ["Doppler speed"](speed.md) in GPX files provides a brief overview about why it is so important that the "doppler speed" originally calculated by the GPS receiver is recorded correctly. If not recorded correctly in the GPX file, subsequent speed analysis may be forced to perform calculations using the positional data which is highly susceptible to spurious speeds, AKA "spikes".
 
 
 
@@ -93,12 +93,12 @@ The root element in the GPX file will is `<gpx>` and it is important that this i
         http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
-The additional namespaces in a GPX 1.1 document are given an alias (e.g. "tpx" as above) and may vary from one provider to another:
+The additional namespaces in a GPX 1.1 document are given an prefix (e.g. "tpx" as above) and may vary from one provider to another:
 
 - Garmin tend to use ns3: `xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
 - Other providers often use gpxtpx: `xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
 
-All software that can read GPX 1.1 files using the TrackPointExtension schema (or other extension schema) should be careful not rely upon / expect the use of a specific alias.
+All software that can read GPX 1.1 files using the TrackPointExtension schema (or other extension schema) should be careful not rely upon / expect the use of a specific prefix.
 
 
 
@@ -143,8 +143,8 @@ Search the GPX schema for `xsd:sequence` and you will see which elements must be
 
 All elements within `<trkpt>` must adhere to the sequence specified in the schema:
 
-- [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) - ele, time, course, speed, geoidheight, geoidheight, etc.
-- [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd) - ele, time, geoidheight, geoidheight, etc.
+- [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) - ele, time, course, speed ... sat, hdop, etc.
+- [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd) - ele, time ... sat, hdop, etc.
 
 Note: It is the shared "wptType" of GPX 1.1 which resulted in "course" and "speed" being removed from the "trkpt" element.
 
