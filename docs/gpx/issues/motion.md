@@ -13,3 +13,10 @@ The GPX files created by the Motion GPS are fine as of firmware 3084. They use G
      xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
 ```
 
+
+
+### Missing Elements
+
+It would be good to add the following elements to the GPX export:
+
+- "hdop"
