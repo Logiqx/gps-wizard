@@ -55,6 +55,19 @@ The track also include a "type" element which is not supported by GPX 1.0:
      ...
 ```
 
+Both "metadata" and "type" need to be removed if the file is to GPX 1.0 compliant.
+
+
+
+### Missing Elements
+
+The following elements could be added to trackpoints:
+
+- Elevation (m) - `<ele>`
+- Speed (m/s) - `<speed>`
+
+Elevation is available in GPX 1.0 and GPX 1.1, whereas speed is only available in GPX 1.0.
+
 
 
 ### Extensions
@@ -102,7 +115,9 @@ If the file is to be [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) compl
 - Add `version="1.0"` to the `<gpx>` element.
 - Remove the "GPXDATA" references from the header; xmlns:gpxdata and the location of gpxdata10.xsd.
 - Rename the `<cog>`elements  to `<course>.`
+- Add `<ele>` to the `<trkpt>` elements.
 - Add `<speed>` to the `<trkpt>` elements.
+- Ensure the element order mandated by the GPX 1.0 schema - “ele”, “time”, “course”, “speed”, “sat”, hdop”.
 - Remove the `<metadata>` element.
 - Remove the `<type>` element from the `<trk>` element.
 - Remove the `<extensions>` from the `<trkpt>` elements (i.e. remove heartrate and distance).
@@ -114,7 +129,9 @@ If the file is to be [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) compl
 If the file is to be [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd) compliant then do the following:
 
 - Add `version="1.1"` to the `<gpx>` element.
+- Add `<ele>` to the `<trkpt>` elements.
 - Add `<speed>` to the extensions, specifying the namespace as described in the dedicated [document](../speed.md).
 - Rename `<cog>` to `<course>` and move it into extensions in the same way as "speed".
+- Ensure the element order mandated by the GPX 1.1 schema - “ele”, “time”, “sat”, hdop”.
 - Rename `<heartrate>` to `<gpxdata:hr>`
 - Rename `<distance>` to `<gpxdata:distance>`
