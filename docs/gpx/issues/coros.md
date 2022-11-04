@@ -96,6 +96,7 @@ However, GPX 1.0 does not support extensions so this is not sufficient of GPX 1.
 There are really only two options:
 
 1) Stick to GPX 1.0 by removing "extensions" elements ("hr" and "distance") and remove "GPXDATA" references from the GPX header.
+
 2) Switch to GPX 1.1 but be sure to generate the appropriate "speed" elements as described in a dedicated [document](../speed.md).
 
 
