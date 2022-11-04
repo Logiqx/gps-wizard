@@ -164,7 +164,7 @@ Full details about the complexities of including speed in a GPX 1.1 file are cov
 
 Individual pages list the GPX issues specific to individual software providers and hardware manufacturers:
 
-- [COROS](issues/coros.md) - WIP
+- [COROS](issues/coros.md)
 - [Garmin](issues/garmin.md)
 - [GPSBabel](issues/gpsbabel.md)
 - [GPSResults](issues/gpsresults.md)
