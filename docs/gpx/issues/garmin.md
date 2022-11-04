@@ -21,6 +21,19 @@ Notes:
 
 
 
+### Missing Elements
+
+The following elements would be very useful in windsurfing tracks:
+
+- "sat" which is standard to GPX 1.0 and GPX 1.1
+- "hdop" which is standard to GPX 1.0 and GPX 1.1
+- "speed" using TrackPointExtension v2 for GPX 1.1
+- "course" using TrackPointExtension v2 for GPX 1.1
+
+Note: Speed and course are available in FIT files so they could also be included in GPX files.
+
+
+
 ### Precision
 
 GPX files created by Garmin often include unnecessary levels of precision, far exceeding that of the GPS chips.
@@ -32,7 +45,7 @@ GPX files created by Garmin often include unnecessary levels of precision, far e
 
 ### Recommendations
 
-- Fix the schema location of GPX 1.1 so that SAXCount does not report "fatal error during schema scan".
+- Fix the schema location of the XSD for GPX 1.1 so that SAXCount does not report "fatal error during schema scan".
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -40,9 +53,38 @@ GPX files created by Garmin often include unnecessary levels of precision, far e
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
      xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
-     xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+     xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+```
+
+- Add "sat" and "hdop" to the trackpoints:
+
+```xml
+<trkpt lat="52.0486800" lon="-0.5688999">
+    <ele>0</ele>
+    <time>2022-04-04T12:41:50Z</time>
+    <sat>14</sat>
+    <hdop>0.8</hdop>
+</trkpt>
+```
+
+- Add "course" and "speed" using TrackPointExtension v2:
+
+```xml
+<trkpt lat="52.0486800" lon="-0.5688999">
+    <ele>0</ele>
+    <time>2022-04-04T12:41:50Z</time>
+    <sat>14</sat>
+    <hdop>0.8</hdop>
+    <extensions>
+        <ns3:TrackPointExtension>
+            <ns3:hr>100</ns3:hr>
+            <ns3:speed>0.5429</ns3:speed>
+            <ns3:course>157.19</ns3:course>
+        </ns3:TrackPointExtension>
+    </extensions>
+</trkpt>
 ```
 
 - Consider adding the schema locations (i.e. URLs of the XSD files) for GpxExtensions and TrackPointExtension.
