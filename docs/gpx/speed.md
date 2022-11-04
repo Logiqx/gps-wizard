@@ -42,6 +42,17 @@ The fastest non-Doppler speed that was not an obvious spike was 26.4 knots. The 
 
 The [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) format of 2002 allowed "speed" (typically "doppler speed" in modern GPS receivers) to be recorded in GPX files using the `<speed>` element. The same was also true for "[course of ground](https://en.wikipedia.org/wiki/Course_(navigation))" using the `<course>` element. 
 
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <course>157.19</course>
+  <speed>0.5429</speed>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+</trkpt>
+```
+
 
 
 ### GPX 1.1
@@ -54,6 +65,18 @@ The [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) format of 2002 allowed
 
 The kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) overcame the GPX 1.1 oversight by introducing an element called `<gpxdata:speed>` as a trackpoint extension. 
 
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <gpxdata:speed>0.5429</gpxdata:speed>
+  </extensions>
+</trkpt>
+```
+
 Trace had no option but to invent a new element but they should really have created their own “trace” schema (including "speed" and "course"), declared it using a suitable xmlns:trace and xsi:schemaLocation and published the schema (defining "speed" and "course") on the web.
 
 Unfortunately the use of `<gpxdata:speed>` has now percolated into other applications, including [Waterspeed](https://waterspeedapp.com/) (for Apple devices) which means yet more GPX files being created with a non-standard approach (gpxdata:speed) which is not supported by [GPSResults](https://www.gps-speed.com/), [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/), etc.
@@ -64,34 +87,41 @@ Side note: The original [GPXData](http://www.cluetrust.com/Schemas/gpxdata10.xsd
 
 #### The "Correct" Approach
 
-Garmin have added "speed" and "course" to version 2 of their [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema, some time around 2015.
+Garmin have added "speed" and "course" to v2 of their [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema, some time around 2015.
 
 This means that with the appropriate GPX header (i.e. defining the namespace and schemaLocation) it is possible to include `<speed>` and `<course>` elements in GPX 1.1 files.
 
 An example header:
 
 ```xml
-<gpx version="1.1" creator="Garmin Connect"
-  xmlns="http://www.topografix.com/GPX/1/1"
-  xmlns:tpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd 
-                      http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd"
+<gpx creator="Garmin Connect"
+     version="1.1"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd 
+       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd"
 ```
 
 Trackpoints can then record speed and course (plus data such as heartrate) inside an `<extensions>` element:
 
 ```xml
-<extensions>
-  <tpx:TrackPointExtension>
-    <tpx:speed>0.5429</tpx:speed>
-    <tpx:course>157.19</tpx:course>
-    <tpx:hr>120</tpx:hr>
-  </tpx:TrackPointExtension>
-</extensions>
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>60</gpxtpx:hr>
+      <gpxtpx:speed>0.5429</gpxtpx:speed>
+      <gpxtpx:course>157.19</gpxtpx:course>
+    </gpxtpx:TrackPointExtension>
+  </extensions>
+</trkpt>
 ```
 
-Note: The namespace prefix "tpx" is not fixed and is chosen by the GPX creator. Garmin often uses "ns3", whereas some other software providers use "gpxtpx". No assumptions should be made about namespace prefix(es) being used in GPX files.
+Note: The prefix "gpxtpx" is not special and may be chosen by the GPX creator. Garmin sometimes use "gpxtpx"and sometimes "ns3". No assumptions should be made about prefix(es) being used in GPX files.
 
 
 
@@ -111,35 +141,55 @@ The `<speed>` element of GPX 1.0 is already supported by [GpsarPro](http://www.g
 
 Unless you really need GPX 1.1 (e.g. heartrate data being required) then it makes sense to use GPX 1.0 for GPS-Speedsurfing applications.
 
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <course>157.19</course>
+  <speed>0.5429</speed>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+</trkpt>
+```
+
 
 
 #### Workaround using GPX 1.1
 
-If you really must use GPX 1.1 then you should use the correct approach (described earlier) but also supplement it with `<gpxdata:speed>`.
+If you really must use GPX 1.1 then you should use the correct approach (described earlier) but can also supplement it with `<gpxdata:speed>`.
 
 ```xml
-<extensions>
-  <gpxdata:speed>0.5429</gpxdata:speed>
-  <tpx:TrackPointExtension>
-    <tpx:speed>0.5429</tpx:speed>
-    <tpx:course>157.19</tpx:course>
-    <tpx:hr>120</tpx:hr>
-  </tpx:TrackPointExtension>
-</extensions>
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <gpxdata:speed>0.5429</gpxdata:speed>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>60</gpxtpx:hr>
+      <gpxtpx:speed>0.5429</gpxtpx:speed>
+      <gpxtpx:course>157.19</gpxtpx:course>
+    </gpxtpx:TrackPointExtension>
+  </extensions>
+</trkpt>
 ```
 
 You will also need to add the "gpxdata" namespace and schema location to the GPX, if it is to be a valid XML document:
 
 ```xml
-<gpx version="1.1" creator="Garmin Connect"
-  xmlns="http://www.topografix.com/GPX/1/1"
-  xmlns:tpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
-  xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd 
-                      http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd
-                      http://www.topografix.com/GPX/1/0/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd"
+<gpx creator="Garmin Connect"
+     version="1.1"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
+     xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd 
+       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd
+       http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd"
 ```
+
+This still isn't 100% correct but it will avoid errors such as "XMLSyntaxError: Namespace prefix gpxdata on speed is not defined".
 
 Notes:
 
@@ -147,4 +197,4 @@ Notes:
 
 2) ClueTrust do not specify "speed" or "course" in their schema but most XML validation tools will not report an error, because they only verify items in the default XML namespace.
 
-3) The namespace prefix cannot be assumed so it could be "tpx", "gpxtpx", "gpxdata", ns3" or something else entirely. A simple solution is to ignore the namespace prefixes within `<extensions>` and use anything named "speed", "course" or "cog", regardless of their namespace prefix.
+3) The namespace prefix cannot be assumed so it could be "gpxtpx", "gpxdata", ns3" or something else entirely. A simple solution is to ignore the namespace prefixes within `<extensions>` and use anything named "speed", "course" or "cog", regardless of their namespace prefix.

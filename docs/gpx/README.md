@@ -14,9 +14,20 @@ A separate page discussing ["Doppler speed"](speed.md) in GPX files provides a b
 
 [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) was released in 2002 and is still suitable for the majority of GPS-Speedsurfing applications.
 
-The GPX 1.0 schema includes support for "speed" (e.g. "doppler speed") and "course" (course over ground), unlike vanilla GPX 1.1.
+The GPX 1.0 schema includes support for "course" (course over ground) and "speed" (e.g. "doppler speed"):
 
-[GpsarPro](http://www.gpsactionreplay.com/), [GPSResults](https://www.gps-speed.com/) and [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) all support GPX 1.0, including the `<speed>` and `<course>` elements.
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <course>157.19</course>
+  <speed>0.5429</speed>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+</trkpt>
+```
+
+[GpsarPro](http://www.gpsactionreplay.com/), [GPSResults](https://www.gps-speed.com/) and [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) all support GPX 1.0, including the `<course>` and `<speed>` elements.
 
 
 
@@ -27,6 +38,24 @@ The GPX 1.0 schema includes support for "speed" (e.g. "doppler speed") and "cour
 Sadly, GPX 1.1 removed "speed" and "course". This may have been an oversight or perhaps their significance was not appreciated at the time.
 
 It was not until around 2015 when Garmin finally re-introduced "speed" and "course" in version 2 of their [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema.
+
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>60</gpxtpx:hr>
+      <gpxtpx:speed>0.5429</gpxtpx:speed>
+      <gpxtpx:course>157.19</gpxtpx:course>
+    </gpxtpx:TrackPointExtension>
+  </extensions>
+</trkpt>
+```
+
+Note: The example above also includes `<gpxtpx:hr>` (heartrate) to illustrate how that would be included.
 
 
 
@@ -87,16 +116,13 @@ The root element in the GPX file will is `<gpx>` and it is important that this i
 <gpx creator="GPS Wizard"
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:tpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+     xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd
         http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
-The additional namespaces in a GPX 1.1 document are given an prefix (e.g. "tpx" as above) and may vary from one provider to another:
-
-- Garmin tend to use ns3: `xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
-- Other providers often use gpxtpx: `xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
+The additional namespaces in a GPX 1.1 document are given a prefix (e.g. "gpxtpx" as above) but these may vary. For example, Garmin sometimes uses "ns3" and sometimes uses "gpxtpx" for TrackPointExtension.
 
 All software that can read GPX 1.1 files using the TrackPointExtension schema (or other extension schema) should be careful not rely upon / expect the use of a specific prefix.
 
@@ -150,13 +176,40 @@ Note: It is the shared "wptType" of GPX 1.1 which resulted in "course" and "spee
 
 
 
-### Speed
+### Course and Speed
 
-If you are using GPX 1.0 then it is easy to include "speed" and "course".
+If you are using GPX 1.0 then it is easy to include course and speed:
 
-If you are using GPX 1.1 then you need to use v2 of the trackpoint extension and maybe the "gpxdata:speed" hack.
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <course>157.19</course>
+  <speed>0.5429</speed>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+</trkpt>
+```
 
-Full details about the complexities of including speed in a GPX 1.1 file are covered in a dedicated [page](speed.md).
+If you are using GPX 1.1 then you need to use v2 of the trackpoint extension:
+
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>60</gpxtpx:hr>
+      <gpxtpx:speed>0.5429</gpxtpx:speed>
+      <gpxtpx:course>157.19</gpxtpx:course>
+    </gpxtpx:TrackPointExtension>
+  </extensions>
+</trkpt>
+```
+
+Full details about the subtleties of course and speed in a GPX 1.1 file are covered in a separate [page](speed.md).
 
 
 

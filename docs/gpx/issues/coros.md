@@ -91,7 +91,7 @@ To be GPX compliant they must use the appropriate prefix and the correct element
 </extensions>
 ```
 
-However, GPX 1.0 does not support extensions so this is not sufficient of GPX 1.0 compliance.
+However, GPX 1.0 does not support extensions so this is not sufficient for GPX 1.0 compliance.
 
 There are really only two options:
 
@@ -103,9 +103,9 @@ There are really only two options:
 
 ### Recommendations
 
-The ideal scenario is to use GPX 1.0 as it is most widely supported by software in the GPS-Speedsurfing world.
+A simple option is to use GPX 1.0 as it is most widely supported by software in the GPS-Speedsurfing world.
 
-If COROS is has good reasons to use GPX 1.1 (e.g. shared code with other activities) then extensions will be required for [speed](../speed.md) to be recorded. 
+If COROS wish to use GPX 1.1 (e.g. shared code with other activities) then extensions will be required for [speed](../speed.md) to be recorded. 
 
 
 
@@ -130,9 +130,37 @@ If the file is to be [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) compl
 If the file is to be [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd) compliant then do the following:
 
 - Add `version="1.1"` to the `<gpx>` element.
+- Switch from ClueTrust GPXData to Garmin TrackPointExtension v2:
+
+```xml
+<gpx version="1.1" creator="Garmin Connect"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd 
+      http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd"
+```
+
 - Add `<ele>` to the `<trkpt>` elements.
-- Add `<speed>` to the extensions, specifying the namespace as described in the dedicated [document](../speed.md).
-- Rename `<cog>` to `<course>` and move it into extensions in the same way as "speed".
-- Ensure the element order mandated by the GPX 1.1 schema - “ele”, “time”, “sat”, hdop”.
-- Rename `<heartrate>` to `<gpxdata:hr>`
-- Rename `<distance>` to `<gpxdata:distance>`
+- Adhere to the `<trkpt>` element order mandated by GPX 1.1 - “ele”, “time”, “sat”, hdop”.
+- Rename `<heartrate>` to `<gpxtpx:hr>`.
+- Add `<gpxtpx:speed>` and `<gpxtpx:course>` to the trackpoint extensions:
+
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>60</gpxtpx:hr>
+      <gpxtpx:speed>0.5429</gpxtpx:speed>
+      <gpxtpx:course>157.19</gpxtpx:course>
+    </gpxtpx:TrackPointExtension>
+  </extensions>
+</trkpt>
+```
+
+- Note that `<cog>` was renamed  to `<gpxtpx:course>` and moved into the extensions with `<gpxtpx:speed>`.
+- Drop`<distance>` since it is basically redundant and doesn't warrant use of the ClueTrust GPXData schema.

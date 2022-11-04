@@ -2,6 +2,8 @@
 
 ### GPX 1.1
 
+Garmin tend to use GPX 1.1 but have a slight error in the schema location:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx creator="Garmin Connect"
@@ -15,7 +17,7 @@
 
 Notes:
 
-- Garmin GPX files include a bad link and use http://www.topografix.com/GPX/11.xsd  instead of http://www.topografix.com/GPX/1/1/gpx.xsd 
+- Garmin GPX files include a bad schema location which refers to http://www.topografix.com/GPX/11.xsd  instead of http://www.topografix.com/GPX/1/1/gpx.xsd 
 - This schemaLocation issue is not detected by online validation tools because the XSD is pasted into the web page.
 - Garmin also omit the schema locations of GpxExtensions and TrackpointExtension
 
@@ -23,7 +25,7 @@ Notes:
 
 ### Missing Elements
 
-The following elements would be very useful in windsurfing tracks:
+The following trackpoint elements would be very useful in windsurfing tracks:
 
 - "sat" which is standard to GPX 1.0 and GPX 1.1
 - "hdop" which is standard to GPX 1.0 and GPX 1.1
