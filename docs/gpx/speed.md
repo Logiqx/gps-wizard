@@ -50,7 +50,7 @@ The [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) format of 2002 allowed
 
 
 
-### The "Hack" Approach
+#### The "Hack" Approach
 
 The kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) overcame the GPX 1.1 oversight by introducing an element called `<gpxdata:speed>` as a trackpoint extension. 
 
@@ -62,7 +62,7 @@ Side note: The original [GPXData](http://www.cluetrust.com/Schemas/gpxdata10.xsd
 
 
 
-### The "Correct" Approach
+#### The "Correct" Approach
 
 Garmin have added "speed" and "course" to version 2 of their [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema, some time around 2015.
 
@@ -95,7 +95,7 @@ Note: The namespace prefix "tpx" is not fixed and is chosen by the GPX creator. 
 
 
 
-### Downside of the "Correct" Approach
+#### Downside of the "Correct" Approach
 
 At this time (Nov 2022), neither [GpsarPro](http://www.gpsactionreplay.com/), [GPSResults](https://www.gps-speed.com/) nor [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) support version 2 of Garmin's [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema.
 
@@ -105,7 +105,7 @@ I will suggest to Manfred (GPSResults) and Yann (GpsarPro) that they add support
 
 
 
-### Workaround using GPX 1.0
+#### Workaround using GPX 1.0
 
 The `<speed>` element of GPX 1.0 is already supported by [GpsarPro](http://www.gpsactionreplay.com/), [GPSResults](https://www.gps-speed.com/), [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) and many other popular pieces of software.
 
@@ -113,7 +113,7 @@ Unless you really need GPX 1.1 (e.g. heartrate data being required) then it make
 
 
 
-### Workaround using GPX 1.1
+#### Workaround using GPX 1.1
 
 If you really must use GPX 1.1 then you should use the correct approach (described earlier) but also supplement it with `<gpxdata:speed>`.
 
