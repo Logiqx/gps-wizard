@@ -6,7 +6,7 @@
 
 Proper use of the GPX format and compliance with the official schema are essential if attributes such as speed are to be used by popular applications such as [GPSResults](https://www.gps-speed.com/) and [GpsarPro](http://www.gpsactionreplay.com/). This is particularly important because speed calculations from positional data alone are highly suspectable to errors.
 
-A separate page discussing ["Doppler speed"](speed.md) in GPX files provides a brief overview about why it is so important that the "doppler speed" originally calculated by the GPS receiver is recorded correctly. If not recorded correctly in the GPX file, subsequent speed analysis may be forced to perform calculations using the positional data which is highly susceptible to spurious speeds, AKA "spikes".
+A separate page discussing ["Doppler speed"](speed.md) in GPX files provides a brief overview about why it is so important that the "doppler speed" originally calculated by the GNSS chip is recorded correctly. If not recorded correctly in the GPX file, subsequent speed analysis may be forced to perform calculations using the positional data which is highly susceptible to spurious speeds, AKA "spikes".
 
 
 

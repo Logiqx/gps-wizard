@@ -2,13 +2,13 @@
 
 ### Introduction
 
-The term "doppler speed" was coined by the [GPS-Speedsurfing](https://www.gps-speedsurfing.com/) community and refers to the speed that is calculated by the GPS receiver in real-time.
+The term "doppler speed" was coined by the [GPS-Speedsurfing](https://www.gps-speedsurfing.com/) community and refers to the speed that is calculated by the GNSS chip in real-time.
 
-The "doppler speed" is derived from the observable [Doppler shift](https://en.wikipedia.org/wiki/Doppler_effect) of the satellite signals. Doppler shift is always evident due to the perpetual motion of the GPS satellites and the receiver. Estimating the speed of the GPS receiver from the observable Doppler shift is far less susceptible to errors than retrospective calculations using the positional data (i.e. longitude and latitude).
+The "doppler speed" is derived from the observable [Doppler shift](https://en.wikipedia.org/wiki/Doppler_effect) of the satellite signals. Doppler shift is always evident due to the perpetual motion of the GPS satellites and the receiver. Estimating the speed of the GNSS receiver from the observable Doppler shift is far less susceptible to errors than retrospective calculations using the positional data (i.e. longitude and latitude).
 
-Conversely, speeds that are calculated retrospectively from positional data are highly susceptible to "spikes" which are erroneous speeds due to blocked signals, imperfections in the GPS receiver, etc. Sometimes these "spikes" will be very obvious (e.g. 60+ knots on a windsurfer) but other times they will be small enough for people to believe they are genuine speeds.
+Conversely, speeds that are calculated retrospectively from positional data are highly susceptible to "spikes" which are erroneous speeds due to blocked signals, imperfections in the GNSS chip, etc. Sometimes these "spikes" will be very obvious (e.g. 60+ knots on a windsurfer) but other times they will be small enough for people to believe they are genuine speeds.
 
-It's worth noting that every GPS and watch manufacturer will have their own way of calculating the speed of the receiver in real-time but they will typically make use of the observable Doppler-shift (already a necessity in order to receive the satellite data) and a [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) to reduce "noise". For convenience, this document will simply refer to "doppler speed", regardless of how the GPS receiver calculates it.
+It's worth noting that every GNSS / GPS / watch manufacturer will have their own way of calculating the speed of the receiver in real-time but they will typically make use of the observable Doppler-shift (already a necessity in order to receive the satellite data) and a [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) to reduce "noise". For convenience, this document will simply refer to "doppler speed", regardless of how the GNSS chip calculates it.
 
 
 
@@ -40,7 +40,7 @@ The fastest non-Doppler speed that was not an obvious spike was 26.4 knots. The 
 
 ### GPX 1.0
 
-The [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) format of 2002 allowed "speed" (typically "doppler speed" in modern GPS receivers) to be recorded in GPX files using the `<speed>` element. The same was also true for "[course of ground](https://en.wikipedia.org/wiki/Course_(navigation))" using the `<course>` element. 
+The [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) format of 2002 allowed "speed" (typically "doppler speed" in a modern GNSS chip) to be recorded in GPX files using the `<speed>` element. The same was also true for "[course of ground](https://en.wikipedia.org/wiki/Course_(navigation))" using the `<course>` element. 
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
