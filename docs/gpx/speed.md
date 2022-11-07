@@ -129,7 +129,7 @@ Note: The prefix "gpxtpx" is not special and may be chosen by the GPX creator. G
 
 At this time (Nov 2022), neither [GpsarPro](http://www.gpsactionreplay.com/), [GPSResults](https://www.gps-speed.com/) nor [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) support version 2 of Garmin's [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema.
 
-This means that although you can create a GPX 1.1 complaint file containing "speed" and "course" they will be ignored by most popular tools.
+This means that although you can create a GPX 1.1 compliant file containing "speed" and "course" they will be ignored by most popular tools.
 
 I will liaise with Manfred (GPSResults) and Yann (GpsarPro) regarding future support for GPX 1.1 files and version 2 of Garmin's [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema.
 

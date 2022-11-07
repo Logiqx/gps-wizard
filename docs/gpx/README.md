@@ -96,7 +96,7 @@ Note: Using these online tools will typically guarantee full validation with nam
 
 ### GPX Header
 
-The root element in the GPX file will is `<gpx>` and it is important that this is correctly populated for the validation against a schema to be possible.
+The root element in the GPX file is `<gpx>` and it is important that this is correctly populated for the validation against a schema to be possible.
 
 #### GPX 1.0
 
@@ -130,16 +130,16 @@ All software that can read GPX 1.1 files using the TrackPointExtension schema (o
 
 ### Extensions
 
-The following Garmin GPX extensions (circa 2006) have now been superseded:
+The following Garmin GPX extensions (circa 2006) have now been superseded by TrackPointExtension v1 + v2:
 
 - GpxExtensions v2 - [http://www.garmin.com/xmlschemas/GpxExtensions/v2](http://www.garmin.com/xmlschemas/GpxExtensions/v2) + [GpxExtensionsv2.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv2.xsd)
 - GpxExtensions v3 - [http://www.garmin.com/xmlschemas/GpxExtensions/v3](http://www.garmin.com/xmlschemas/GpxExtensions/v3) + [GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
 
-The following Garmin trackpoint extension (circa 2009) has also been superseded:
+The following Garmin trackpoint extension (circa 2009) has also been superseded by TrackPointExtension v2:
 
 - TrackPointExtension v1 - [http://www.garmin.com/xmlschemas/TrackPointExtension/v1](http://www.garmin.com/xmlschemas/TrackPointExtension/v1) +  [TrackPointExtensionv1.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)
 
-The latest Garmin trackpoint extension is v2 (circa 2015). It added "speed", "course" and "bearing" to v1:
+The latest Garmin trackpoint extension is v2 (circa 2015). It added "speed", "course" and "bearing" to TrackPointExtension v1:
 
 - TrackPointExtension v2 - [http://www.garmin.com/xmlschemas/TrackPointExtension/v2](http://www.garmin.com/xmlschemas/TrackPointExtension/v2) + [TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
 
@@ -191,7 +191,7 @@ If you are using GPX 1.0 then it is easy to include course and speed:
 </trkpt>
 ```
 
-If you are using GPX 1.1 then you need to use v2 of the trackpoint extension:
+If you are using GPX 1.1 then you need to use TrackPointExtension v2:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -215,7 +215,7 @@ Full details about the subtleties of course and speed in a GPX 1.1 file are cove
 
 ### Software Providers + Hardware Manufacturers
 
-Individual pages list the GPX issues specific to individual software providers and hardware manufacturers:
+Individual pages describe the GPX compliancy issues specific to individual software providers and hardware manufacturers:
 
 - [COROS](issues/coros.md)
 - [Garmin](issues/garmin.md)
@@ -226,7 +226,7 @@ Individual pages list the GPX issues specific to individual software providers a
 
 
 
-The following software providers and hardware manufacturers are fine:
+The following software providers and hardware manufacturers are GPX 1.0 compliant:
 
 - [Motion](issues/motion.md)
 - [RealSpeed](issues/realspeed.md)
