@@ -131,7 +131,7 @@ At this time (Nov 2022), neither [GpsarPro](http://www.gpsactionreplay.com/), [G
 
 This means that although you can create a GPX 1.1 complaint file containing "speed" and "course" they will be ignored by most popular tools.
 
-I will suggest to Manfred (GPSResults) and Yann (GpsarPro) that they add support for GPX 1.1 files and version 2 of Garmin's [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema.
+I will liaise with Manfred (GPSResults) and Yann (GpsarPro) regarding future support for GPX 1.1 files and version 2 of Garmin's [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema.
 
 
 
@@ -157,6 +157,8 @@ Unless you really need GPX 1.1 (e.g. heartrate data being required) then it make
 #### Workaround using GPX 1.1
 
 If you really must use GPX 1.1 then you should use the correct approach (described earlier) but can also supplement it with `<gpxdata:speed>`.
+
+This suggestion / workaround is only intended for Waterspeed so that GPX changes remain compatible with older versions of GpsarPro.
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">

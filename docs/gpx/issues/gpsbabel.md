@@ -1,6 +1,21 @@
 ## GPS Exchange Format (GPX) - GPSBabel
 
-### GPX 1.0
+### Summary
+
+The GPX 1.0 files produced by GPSBabel are fairly decent but have a few issues:
+
+- Lack of GPX 1.0 compliance due to the absence of schema locations.
+- Precision is often higher than necessary; e.g. "lat", "lon", "course", "speed", "hdop".
+- Speed is sometimes being derived from positional data.
+
+These issues are described in the next section, followed by a section listing recommendations.
+
+
+
+
+### Issues
+
+#### GPX Compliance
 
 The header is missing xmlns:xsi and xsi:schemaLocation
 
@@ -13,20 +28,33 @@ The header is missing xmlns:xsi and xsi:schemaLocation
 
 Without the schema location it is impossible to validate the GPX files using SAXCount as described by [TopoGrafix](https://www.topografix.com/gpx_validation.asp).
 
+An example of a valid GPX 1.0 header:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="GPSBabel - https://www.gpsbabel.org"
+     version="1.0"
+     xmlns="http://www.topografix.com/GPX/1/0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+```
+
+GPX 1.0 files can be validated using the method(s) described in the [overview](../README.md) document.
 
 
-### Precision
+
+#### Precision
 
 The precision of various elements is unnecessarily high. For example:
 
 - "lat" and "lon" = 9 decimal places when 8 decimal places = mm precision at the equator.
-- "course" = 6 decimal places when most GPS chips output a maximum of 3 decimal places.
-- "speed" = 6 decimal places when most GPS chips output a maximum of 3 decimal places (mm/s).
-- "hdop" = 6 decimal places when most GPS chips output a maximum of 2 decimal places.
+- "course" = 6 decimal places when most GNSS chips output a maximum of 3 decimal places.
+- "speed" = 6 decimal places when most GNSS chips output a maximum of 3 decimal places (mm/s).
+- "hdop" = 6 decimal places when most GNSS chips output a maximum of 2 decimal places.
 
 
 
-### Speed
+#### Speed
 
 It has been observed that GPSBabel will sometimes calculate speed from positional data and save it in the GPX file. This can lead to erroneous speeds (aka "spikes") in the output GPX and is undesirable. I have personally observed this issue when converting Garmin FIT files to GPX format using GPSBabel.
 
@@ -35,6 +63,8 @@ Moral: Don't always trust file conversions to be safe!
 
 
 ### Recommendations
+
+#### GPX Compliance
 
 - Add xmlns:xsi and xsi:schemaLocation to the GPX header to enable validation with SAXCount.
 
@@ -46,6 +76,10 @@ Moral: Don't always trust file conversions to be safe!
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
 ```
+
+
+
+#### GPX Improvements
 
 - Change the precision to something more appropriate:
   - "lat" and "lon" = 7 or 8 decimal places. 8 decimal places = mm precision at the equator.

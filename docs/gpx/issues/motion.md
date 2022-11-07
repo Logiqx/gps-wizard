@@ -15,8 +15,8 @@ The GPX files created by the Motion GPS are fine as of firmware 3084. They use G
 
 
 
-### Missing Elements
+### Recommendations
 
-It would be good to add the following elements to the GPX export:
+#### GPX Improvements
 
-- "hdop"
+- Add "hdop" to the GPX export.

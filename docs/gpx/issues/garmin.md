@@ -1,6 +1,20 @@
 ## GPS Exchange Format (GPX) - Garmin
 
-### GPX 1.1
+### Summary
+
+The GPX 1.1 files produced by Garmin are fairly decent but still have a few issues:
+
+- Lack of GPX 1.1 compliance due to incorrect (or missing) schema locations.
+- Missing elements; "speed", "course", "sat "and "hdop".
+- Precision is much higher than necessary; e.g. "lat", "lon "and "ele".
+
+These issues are described in the next section, followed by a section listing recommendations.
+
+
+
+### Issues
+
+#### GPX 1.1
 
 Garmin tend to use GPX 1.1 but have a slight error in the schema location:
 
@@ -17,37 +31,45 @@ Garmin tend to use GPX 1.1 but have a slight error in the schema location:
 
 Notes:
 
-- Garmin GPX files include a bad schema location which refers to http://www.topografix.com/GPX/11.xsd  instead of http://www.topografix.com/GPX/1/1/gpx.xsd 
-- This schemaLocation issue is not detected by online validation tools because the XSD is pasted into the web page.
-- Garmin also omit the schema locations of GpxExtensions and TrackpointExtension
+- Incorrect schema location which refers to http://www.topografix.com/GPX/11.xsd  instead of http://www.topografix.com/GPX/1/1/gpx.xsd 
+- This schemaLocation issue is not detected by online validation tools because the XSD is pasted directly into the web page.
+- Garmin also omit the schema locations of GpxExtensions and TrackpointExtension.
 
 
 
-### Missing Elements
+#### Missing Elements
 
-The following trackpoint elements would be very useful in windsurfing tracks:
+A variety of activity types would benefit from the following trackpoint elements:
 
-- "sat" which is standard to GPX 1.0 and GPX 1.1
-- "hdop" which is standard to GPX 1.0 and GPX 1.1
 - "speed" using TrackPointExtension v2 for GPX 1.1
 - "course" using TrackPointExtension v2 for GPX 1.1
 
-Note: Speed and course are available in FIT files so they could also be included in GPX files.
+The following trackpoint elements would also be very useful in windsurfing / speedsurfing tracks:
+
+- "sat" which is standard to GPX 1.0 and GPX 1.1
+- "hdop" which is standard to GPX 1.0 and GPX 1.1
+
+Notes:
+
+- Speed and course are already available in FIT files so they could also be included in GPX files.
+- Satellites and HDOP may not be so easy (or even possible) as they may not be available to Garmin Connect.
 
 
 
-### Precision
+#### Precision
 
-GPX files created by Garmin often include unnecessary levels of precision, far exceeding that of the GPS chips.
+GPX files created by Garmin often include ridiculously high levels of precision, far exceeding that of modern GNSS chips.
 
-- "lat" and "lon" = 29 decimal places but 8 decimal places is mm precision at the equator.
+- "lat" and "lon" = often 29 decimal places but 8 decimal places is mm precision at the equator.
 - "ele" = 23 decimal places but 3 decimal places is mm precision.
 
 
 
 ### Recommendations
 
-- Fix the schema location of the XSD for GPX 1.1 so that SAXCount does not report "fatal error during schema scan".
+#### GPX Compliance
+
+- Fix the schema location of the XSD for GPX 1.1 so that [SAXCount](https://www.topografix.com/gpx_validation.asp) does not report "fatal error during schema scan".
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -60,18 +82,13 @@ GPX files created by Garmin often include unnecessary levels of precision, far e
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
 ```
 
-- Add "sat" and "hdop" to the trackpoints:
+- Consider adding the schema locations (i.e. URLs of the XSD files) for GpxExtensions and TrackPointExtension.
 
-```xml
-<trkpt lat="52.0486800" lon="-0.5688999">
-    <ele>0</ele>
-    <time>2022-04-04T12:41:50Z</time>
-    <sat>14</sat>
-    <hdop>0.8</hdop>
-</trkpt>
-```
 
-- Add "course" and "speed" using TrackPointExtension v2:
+
+#### GPX Improvements
+
+- Add "hr" (heartrate), "course" and "speed" to trackpoints using TrackPointExtension v2:
 
 ```xml
 <trkpt lat="52.0486800" lon="-0.5688999">
@@ -89,7 +106,17 @@ GPX files created by Garmin often include unnecessary levels of precision, far e
 </trkpt>
 ```
 
-- Consider adding the schema locations (i.e. URLs of the XSD files) for GpxExtensions and TrackPointExtension.
+- Add "sat" and "hdop" to the trackpoints:
+
+```xml
+<trkpt lat="52.0486800" lon="-0.5688999">
+    <ele>0</ele>
+    <time>2022-04-04T12:41:50Z</time>
+    <sat>14</sat>
+    <hdop>0.8</hdop>
+</trkpt>
+```
+
 - Use a sensible number of decimal places:
   - "lat" and "lon" = 7 or 8 decimal places. 8 decimal places = mm precision at the equator.
   - "ele" = 2 or 3 decimal places. 3 decimal places = mm precision.
