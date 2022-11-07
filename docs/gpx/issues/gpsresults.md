@@ -23,7 +23,7 @@ These issues are described in the next section, followed by a section listing re
 
 #### Speed and Course
 
-GPSResults can loads GPX 1.0 files without any problems:
+GPSResults can load GPX 1.0 files without any problems:
 
 - Supports the "speed" and "course" elements of GPX 1.0.
 
