@@ -6,6 +6,7 @@
 
 Thoughts to consider:
 
+- Add support for heartrate to FIT reader
 - Consider re-writing the FIT reader to avoid fitdecode.
   - This could be a lot faster but will require a significant amount of development effort.
 
@@ -16,6 +17,7 @@ Thoughts to consider:
 
 Implement the following files writers:
 
+- GPX 1.1 with Garmin TrackPointExtension V2
 - SBP
 
 
