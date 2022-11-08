@@ -4,28 +4,35 @@
 
 #### File Readers
 
-Thoughts to consider:
+Thoughts relating to the FIT reader:
 
-- Add support for heartrate to FIT reader
-- Consider re-writing the FIT reader to avoid fitdecode.
+- Add support for heartrate
+- Consider re-writing the reader to avoid the fitdecode library?
   - This could be a lot faster but will require a significant amount of development effort.
+
+Thoughts relating to the GPX reader:
+
+- Add support for track segments
 
 
 
 
 #### File Writers
 
-Implement the following files writers:
+Thoughts relating to the GPX writer:
 
-- GPX 1.1 with Garmin TrackPointExtension V2
-- SBP
+- Add support for GPX 1.1 and the Garmin TrackPointExtension V2
+
+Consider adding the following writers:
+
+- Consider adding an SBP writer
 
 
 
 #### Processing
 
 - Filtering - acceleration, satellites, HDOP, SDOP
-- GP3S results - 2s, 10s, 100m, 250m, 500m, 1852m, 1/2 hour, 1 hour, alpha, distance + time.
+- GP3S results - 2s, 10s, 100m, 250m, 500m, 1852m, 1/2 hour, 1 hour, alpha, distance + time
 
 
 
