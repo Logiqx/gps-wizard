@@ -34,5 +34,3 @@ Notes:
 Thoughts:
 
 - Convert fix type from the ublox scheme (0, 1, 2, 3, 4, 5) to a standard scheme?
-- Make use of "Inertial Measurement Unit" frames; mode 0x0AD6.
-
