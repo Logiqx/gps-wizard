@@ -2,7 +2,7 @@
 
 The following data fields are supported by the FIT loader:
 
-| GPX Name                       | Description         | Name |  Type   | Units |     Resolution      |
+| FIT Name                       | Description         | Name |  Type   | Units |     Resolution      |
 | ------------------------------ | ------------------- | :--: | :-----: | :---: | :-----------------: |
 | timestamp                      | Date + Time         |  ts  | float64 |   s   |          -          |
 | position_lat <sup>1</sup>      | Latitude            | lat  | float64 |  deg  | 1 x 10<sup>-7</sup> |
@@ -16,6 +16,7 @@ The following data fields are supported by the FIT loader:
 | cog <sup>6 7</sup>             | Course Over Ground  | cog  | float32 |  deg  | 1 x 10<sup>-3</sup> |
 | Sat <sup>6</sup>               | Satellites          | sat  |  uint8  |   -   |          -          |
 | hdop <sup>6 8</sup>            | HDOP                | hdop | float32 |   -   | 1 x 10<sup>-1</sup> |
+| heart_rate                     | Heart Rate          |  hr  | uint16  |  bpm  |          -          |
 
 Notes:
 
@@ -83,4 +84,6 @@ This is quite unexpected as re-saving a FIT file using GPSBabel should not have 
 
 ### TODO
 
-Add support for Timex Ironman tracks where speed and position are split into separate data records.
+- Add support for Timex Ironman tracks where speed and position are split into separate data records.
+- Consider re-writing the reader to avoid the fitdecode library?
+  - This could be a lot faster but will require a significant amount of development effort.

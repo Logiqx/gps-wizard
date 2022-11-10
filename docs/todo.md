@@ -6,7 +6,7 @@
 
 Thoughts relating to the FIT reader:
 
-- Add support for heartrate
+- Add support for Timex Ironman tracks where speed and position are split into separate data records.
 - Consider re-writing the reader to avoid the fitdecode library?
   - This could be a lot faster but will require a significant amount of development effort.
 
