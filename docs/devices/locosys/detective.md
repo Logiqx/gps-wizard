@@ -59,7 +59,7 @@ I decided to look into this from a number of angles:
 
 #### SiRFDrive  + SiRFNavIII
 
-EHPE, EVPE and EHVE have been consistently documented since an early SiRF binary protocol document, produced by NAVMAN in [2004](pdf/sirf/SiRF_Binary_Protocol_1.x_2004_02.pdf).
+EHPE, EVPE and EHVE have been consistently documented since an early SiRF binary protocol document, produced by NAVMAN in [2004](../chipsets/sirf/pdf/SiRF_Binary_Protocol_1.x_2004_02.pdf).
 
 The SiRF binary protocol document from 2009 describes them for message ID 41 (geodetic navigation data) as follows:
 
@@ -70,7 +70,7 @@ The SiRF binary protocol document from 2009 describes them for message ID 41 (ge
 | Estimated Time Error                | 4 U   | ETE in seconds x 10<sup>2</sup> (SiRFDrive only) |
 | Estimated Horizontal Velocity Error | 2 U   | EHVE in m/s x 10<sup>2</sup> (SiRFDrive only)    |
 
-It is worth mentioning that EHPE, EVPE, ETE and EHVE were also described in the SiRF demo [user guide](pdf/sirf/SiRF_Demo_User_Guide_1.5_2007_06.pdf) in June 2007.
+It is worth mentioning that EHPE, EVPE, ETE and EHVE were also described in the SiRF demo [user guide](../chipsets/sirf/pdf/SiRF_Demo_User_Guide_1.5_2007_06.pdf) in June 2007.
 
 A SiRF proprietary NMEA output sentence called **$PSRFEPE** also includes accuracy estimates:
 
@@ -84,7 +84,7 @@ A SiRF proprietary NMEA output sentence called **$PSRFEPE** also includes accura
 
 The proprietary $PSRFEPE is available from the SiRFstar IV and SiRFstar V, but in the GW-52 and GW-60 this isn't actually significant because they will be reading message ID 41 (geodetic navigation data) using the SiRF binary protocol.
 
-Note: The SiRF binary protocol includes ETE (but not EHE) whereas the Erinome-I [documentation](pdf/sirf/Erinome-I_User_Manual_rev1.7.pdf) describing $PSRFEPE includes EHE. The one socket protocol interface control [document](pdf/sirf/One_Socket_Protocol_Interface_Control_Document_2009.pdf) from 2009 does mention EHE in the "DR NAV Status Output Message" but it is not included in the output of message ID 41.
+Note: The SiRF binary protocol includes ETE (but not EHE) whereas the Erinome-I [documentation](../chipsets/sirf/pdf/Erinome-I_User_Manual_rev1.7.pdf) describing $PSRFEPE includes EHE. The one socket protocol interface control [document](../chipsets/sirf/pdf/One_Socket_Protocol_Interface_Control_Document_2009.pdf) from 2009 does mention EHE in the "DR NAV Status Output Message" but it is not included in the output of message ID 41.
 
 
 
@@ -180,7 +180,7 @@ Let's remind ourselves of some basic facts that relate to the GT-31:
 - The SiRF binary format has included EHVE (Estimated Horizontal Velocity Error) in m/s x 10<sup>2</sup> for SiRFDrive since at least 2004.
 - The SiRFstar III was released in 2005 with support for SiRFDrive and was therefore capable of outputting EHVE.
 - The SiRF binary protocol added EPE to the list of NMEA messages for SiRFNavIII in Nov 2008. EHVE is one of the $PSRFEPE fields.
-- The GT-31 was released in 2009. It used the SiRFstar III and recorded SDOP. Tom Chalko also published his SDOP [paper](pdf/sirf/Speed_Dilution_of_Precision.pdf) in 2009.
+- The GT-31 was released in 2009. It used the SiRFstar III and recorded SDOP. Tom Chalko also published his SDOP [paper](../chipsets/sirf/pdf/Speed_Dilution_of_Precision.pdf) in 2009.
 - There were several activities relating to EPE for SiRFNavIII (e.g. $PSRFEPE, EHVE) and SDOP in 2008 / 2009, leading up to the GT-31.
 - The GT-31 firmware contains a reference to SiRFDrive which suggests that it knows about EHVE.
 - It is reasonable to conclude the GT-31 is actually recording EHVE but has referred to it as SDOP.
@@ -221,7 +221,7 @@ There is a lot of commonality between the GW-52 and GW-60 firmware. It seems mos
 
 #### GW-52
 
-Looking at the Locosys GPS modules between 2010 and 2021, only the [S4-1513](pdf/locosys/s4-1513_datasheet_v1.1.pdf) series used a SiRF chip that supported 5Hz but it could easily have been utilised in the GW-31 / GW-52.
+Looking at the Locosys GPS modules between 2010 and 2021, only the [S4-1513](pdf/s4-1513_datasheet_v1.1.pdf) series used a SiRF chip that supported 5Hz but it could easily have been utilised in the GW-31 / GW-52.
 
 - Rom based - S4-1513-2R
 - Flash based - S4-1513, S4-1513-2E
@@ -230,7 +230,7 @@ It would seem most likely that the GW-52 would have used the S4-1513 (flash), du
 
 The GW-52 can't have used the S4-0606 or S4-1612 ranges, because despite using SiRFstar IV they were 1 Hz,according to the Locosys product sheets.
 
-Table 5.2-8 ($PSRFEPE request) of the S4-1513 [datasheet](pdf/locosys/s4-1513_datasheet_v1.1.pdf) also has "undefined" where EPE would be specified, possibly to obfuscate the SiRFDrive capability. If you compare table 5.2-8 against the relevant section in the SiRF binary protocol reference you'll see that everything else matches up perfectly.
+Table 5.2-8 ($PSRFEPE request) of the S4-1513 [datasheet](pdf/s4-1513_datasheet_v1.1.pdf) also has "undefined" where EPE would be specified, possibly to obfuscate the SiRFDrive capability. If you compare table 5.2-8 against the relevant section in the SiRF binary protocol reference you'll see that everything else matches up perfectly.
 
 
 
@@ -299,35 +299,35 @@ It was also interesting to discover what processor is being used by the GW-60. I
 
 - Locosys
   - Marketing materials
-    - [GW-52 specifications v1.2](pdf/locosys/GW-52_spec_v1.2.pdf) - mentions SDOS and 99.7% certainty
-    - [GW-60 product details](pdf/locosys/GW60_EDM.pdf) - mentions SDOS and 99.7% certainty
-    - [LOCOSYSTECH product brochure](pdf/locosys/LOCOSYSTECH_DM.pdf) - includes details of the S4-1513 range of GPS modules
+    - [GW-52 specifications v1.2](pdf/GW-52_spec_v1.2.pdf) - mentions SDOS and 99.7% certainty
+    - [GW-60 product details](pdf/GW60_EDM.pdf) - mentions SDOS and 99.7% certainty
+    - [LOCOSYSTECH product brochure](pdf/LOCOSYSTECH_DM.pdf) - includes details of the S4-1513 range of GPS modules
   - GPS module data sheets
-    - [S4-0606 datasheet v1.2](pdf/locosys/s4-0606_datasheet_v1.2.pdf) - 1 Hz update rate
-    - [S4-1513 datasheet v1.1](pdf/locosys/s4-1513_datasheet_v1.1.pdf) - up to 5 Hz update rate
-    - [S4-1612 datasheet v1.4](pdf/locosys/s4-1612_datasheet_v1.4.pdf) - 1 Hz update rate
-    - [S4-1613 datasheet v1.4](pdf/locosys/s4-1613_datasheet_v1.4.pdf) - 1 Hz update rate
+    - [S4-0606 datasheet v1.2](pdf/s4-0606_datasheet_v1.2.pdf) - 1 Hz update rate
+    - [S4-1513 datasheet v1.1](pdf/s4-1513_datasheet_v1.1.pdf) - up to 5 Hz update rate
+    - [S4-1612 datasheet v1.4](pdf/s4-1612_datasheet_v1.4.pdf) - 1 Hz update rate
+    - [S4-1613 datasheet v1.4](pdf/s4-1613_datasheet_v1.4.pdf) - 1 Hz update rate
 - SiRF
   - Marketing materials
-    - [SiRFstar III product insert](pdf/sirf/GSC3LP_Product_Insert.pdf) - supports SiRFDrive
+    - [SiRFstar III product insert](../chipsets/sirf/pdf/GSC3LP_Product_Insert.pdf) - supports SiRFDrive
   - Binary protocol descriptions
-    - [One Socket Protocol Interface Control Document 2009](pdf/sirf/One_Socket_Protocol_Interface_Control_Document_2009.pdf) - includes SiRF binary protocol from Sep 2009
-    - [SiRF Binary Protocol 2.4 Nov 2008](pdf/sirf/SiRF_Binary_Protocol_2.4_2008_11.pdf) - EPE is included in message 129 (switch To NMEA protocol)
-    - [SiRF Binary Protocol 2.3 Dec 2007](pdf/sirf/SiRF_Binary_Protocol_2.3_2007_12.pdf) - EPE is not included in message 129
-    - [SiRF Binary Protocol 1.x Feb 2004](pdf/sirf/SiRF_Binary_Protocol_1.x_2004_02.pdf) - EPE is not included in message 129
+    - [One Socket Protocol Interface Control Document 2009](../chipsets/sirf/pdf/One_Socket_Protocol_Interface_Control_Document_2009.pdf) - includes SiRF binary protocol from Sep 2009
+    - [SiRF Binary Protocol 2.4 Nov 2008](../chipsets/sirf/pdf/SiRF_Binary_Protocol_2.4_2008_11.pdf) - EPE is included in message 129 (switch To NMEA protocol)
+    - [SiRF Binary Protocol 2.3 Dec 2007](../chipsets/sirf/pdf/SiRF_Binary_Protocol_2.3_2007_12.pdf) - EPE is not included in message 129
+    - [SiRF Binary Protocol 1.x Feb 2004](../chipsets/sirf/pdf/SiRF_Binary_Protocol_1.x_2004_02.pdf) - EPE is not included in message 129
   - NMEA protocol descriptions
-    - [Erinome-I User Manual rev1.7](pdf/sirf/Erinome-I_User_Manual_rev1.7.pdf) - based on SiRFstar V it details the SiRF specific NMEA sentence $PSRFEPE
-    - [GSD4e NMEA Manual May 2010](pdf/sirf/GSD4e_NMEA_Manual.pdf) - document relating to the SiRFstar IV but has no details about $PSRFEPE
+    - [Erinome-I User Manual rev1.7](../chipsets/sirf/pdf/Erinome-I_User_Manual_rev1.7.pdf) - based on SiRFstar V it details the SiRF specific NMEA sentence $PSRFEPE
+    - [GSD4e NMEA Manual May 2010](../chipsets/sirf/pdf/GSD4e_NMEA_Manual.pdf) - document relating to the SiRFstar IV but has no details about $PSRFEPE
   - SiRF Demo
-    - [SiRF Demo User Guide 1.5 Jun 2007](pdf/sirf/SiRF_Demo_User_Guide_1.5_2007_06.pdf) - table 3-6 details EHPE, EVPE, ETE, EHVE but no mention of EHE
+    - [SiRF Demo User Guide 1.5 Jun 2007](../chipsets/sirf/pdf/SiRF_Demo_User_Guide_1.5_2007_06.pdf) - table 3-6 details EHPE, EVPE, ETE, EHVE but no mention of EHE
   - Research papers
-    - [Speed Dilution of Precision](pdf/sirf/Speed_Dilution_of_Precision.pdf) - paper by Tom Chalko in 2009
-    - [Decoding of SiRF Binary Protocol](pdf/sirf/Decoding_of_SiRF_Binary_Protocol.pdf) - paper from 2011
+    - [Speed Dilution of Precision](../chipsets/sirf/pdf/Speed_Dilution_of_Precision.pdf) - paper by Tom Chalko in 2009
+    - [Decoding of SiRF Binary Protocol](../chipsets/sirf/pdf/Decoding_of_SiRF_Binary_Protocol.pdf) - paper from 2011
 - MediaTek
-  - [MT3333_Platform_NMEA_Message_Specification_V1.07](pdf/mediatek/MT3333_Platform_NMEA_Message_Specification_V1.07.pdf) - MT3333 messages, including location accuracy
-  - [M10478-M10578-NMEA_Sentence_Output](pdf/mediatek/M10478-M10578-NMEA_Sentence_Output.pdf) - MT3333 sentences, including the proprietary EPE sentence
-  - [Data_Sheet_M10478-A3](pdf/mediatek/Data_Sheet_M10478-A3.pdf) - confirms MT3333 is being used and supports 10 Hz
-  - [Data_Sheet_M10578-A3](pdf/mediatek/Data_Sheet_M10578-A3.pdf) - confirms MT3333 is being used and supports 10 Hz
+  - [MT3333_Platform_NMEA_Message_Specification_V1.07](../chipsets/mediatek/pdf/MT3333_Platform_NMEA_Message_Specification_V1.07.pdf) - MT3333 messages, including location accuracy
+  - [M10478-M10578-NMEA_Sentence_Output](../chipsets/mediatek/pdf/M10478-M10578-NMEA_Sentence_Output.pdf) - MT3333 sentences, including the proprietary EPE sentence
+  - [Data_Sheet_M10478-A3](../chipsets/mediatek/pdf/Data_Sheet_M10478-A3.pdf) - confirms MT3333 is being used and supports 10 Hz
+  - [Data_Sheet_M10578-A3](../chipsets/mediatek/pdf/Data_Sheet_M10578-A3.pdf) - confirms MT3333 is being used and supports 10 Hz
 - u-blox
-  - [u-blox 7 Receiver Description Including Protocol Specification](pdf/ublox/u-blox7-V14_ReceiverDescriptionProtocolSpec_Public.pdf)
-  - [u-blox 8 / M8 Receiver Description Including Protocol Specification](pdf/ublox/u-blox8-M8_ReceiverDescrProtSpec_UBX-13003221.pdf)
+  - [u-blox 7 Receiver Description Including Protocol Specification](../chipsets/ublox/pdf/u-blox7-V14_ReceiverDescriptionProtocolSpec_Public.pdf)
+  - [u-blox 8 / M8 Receiver Description Including Protocol Specification](../chipsets/ublox/pdf/u-blox8-M8_ReceiverDescrProtSpec_UBX-13003221.pdf)

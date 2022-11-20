@@ -49,7 +49,7 @@ SDOP / SDOS availabilty in SiRF binary data:
   - VSDOP (GT-31) was mentioned in the document by Tom Chalko but it is not mentioned alsewhere.
 
 - Suspect SDOP and SDOS are both EHVE from SiRF binary message ID 41 (geodetic navigation data).
-- The EHVE field was documented in the SiRF demo [user guide](pdf/sirf/SiRF_Demo_User_Guide_1.5_2007_06.pdf) from June 2007.
+- The EHVE field was documented in the SiRF demo [user guide](chipsets/sirf/pdf/SiRF_Demo_User_Guide_1.5_2007_06.pdf) from June 2007.
 
 Regarding the propietary SiRF NMEA message $PSRFEPE:
 

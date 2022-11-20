@@ -6,10 +6,10 @@ Inputs, outputs, estimated errors, masking and filtering.
 
 Protocol documents provide some insight into the inner workings of GPS / GNSS chips.
 
-- [SiRF Binary Protocol Reference Manual](pdf/SiRF_Binary_Protocol.pdf) - Revision 2.4, Nov 2008
+- [SiRF Binary Protocol Reference Manual](chipsets/sirf/pdf/SiRF_Binary_Protocol_2.4_2008_11.pdf) - Revision 2.4, Nov 2008
   - See "Geodetic Navigation Data – Message ID 41"
-  - [Decoding the SiRF Binary Protocol](pdf/Decoding_of_SiRF_Binary_Protocol.pdf)
-- [u-blox 8 / u-blox M8 - Receiver description - Including protocol specification](pdf/u-blox8-M8_ReceiverDescrProtSpec_UBX-13003221.pdf) - Revision 26, Nov 2021
+  - [Decoding the SiRF Binary Protocol](chipsets/sirf/pdf/Decoding_of_SiRF_Binary_Protocol.pdf)
+- [u-blox 8 / u-blox M8 - Receiver description - Including protocol specification](chipsets/ublox/pdf/u-blox8-M8_ReceiverDescrProtSpec_UBX-13003221.pdf) - Revision 26, Nov 2021
 
 
 
@@ -42,7 +42,7 @@ These can help to determine the potential accuracy of GPS readings:
 
 Simple summary - https://gisgeography.com/gps-accuracy-hdop-pdop-gdop-multipath/
 
-[paper](pdf/3381-Manuscript-11481-1-10-20151214.pdf)
+[paper](filtering/pdf/3381-Manuscript-11481-1-10-20151214.pdf)
 
 
 
@@ -186,7 +186,7 @@ SiRF command $PSRFEPE
 
 ####  SDOP + VSDOP (SiRF)
 
-[SDOP](pdf/SDOP.pdf) paper written by Tom Chalko in 2009
+[SDOP](chipsets/sirf/pdf/Speed_Dilution_of_Precision.pdf) paper written by Tom Chalko in 2009.
 
 Tom's analysis - and thus the Sirf error-values - *are* 4 SD.... the analysis targeted > 99 percentile, so that we could be extremely confident of the error-bounds. TBC - did they mean 3?
 

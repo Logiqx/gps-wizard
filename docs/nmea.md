@@ -64,7 +64,7 @@ A proprietary SiRF output sentence called **$PSRFEPE** provides accuracy estimat
 | EHVE  | Estimated Velocity Error            | m/s     |
 | EHE   | Estimated Heading Error             | degrees |
 
-The proprietary $PSRFEPE sentence is documented by [Erinome-I](pdf/sirf/Erinome-I_User_Manual_rev1.7.pdf) and was subtly documented, almost hidden away in the [SiRF Binary Protocol](pdf/sirf/SiRF_Binary_Protocol_2.4_2008_11.pdf) 2.4 of Nov 2008 and onwards. Support for the PSRFEPE sentence was also added to the [gpsd](https://github.com/ukyg9e5r6k7gubiekd6/gpsd) library in [March 2019](https://github.com/ukyg9e5r6k7gubiekd6/gpsd/blob/master/driver_nmea0183.c).
+The proprietary $PSRFEPE sentence is documented by [Erinome-I](chipsets/sirf/pdf/Erinome-I_User_Manual_rev1.7.pdf) and was subtly documented, almost hidden away in the [SiRF Binary Protocol](chipsets/sirf/pdf/SiRF_Binary_Protocol_2.4_2008_11.pdf) 2.4 of Nov 2008 and onwards. Support for the PSRFEPE sentence was also added to the [gpsd](https://github.com/ukyg9e5r6k7gubiekd6/gpsd) library in [March 2019](https://github.com/ukyg9e5r6k7gubiekd6/gpsd/blob/master/driver_nmea0183.c).
 
 $PSRFEPE has clearly been documented for SiRFNavIII since at least Nov 2008 and has been documented as being available in the  [SiRFstar IV](https://mikrokontroler.pl/wp-content/uploads/pliki/L50_GPS_Protocol_V1%200_Preliminary_20110727.pdf).
 
@@ -72,7 +72,7 @@ $PSRFEPE has clearly been documented for SiRFNavIII since at least Nov 2008 and 
 
 #### SiRF Binary Protocol
 
-EHPE, EVPE and EHVE have also been well documented since an early SiRF binary protocol document, produced by NAVMAN in [2004](pdf/sirf/SiRF_Binary_Protocol_1.x_2004_02.pdf).
+EHPE, EVPE and EHVE have also been well documented since an early SiRF binary protocol document, produced by NAVMAN in [2004](chipsets/sirf/pdf/SiRF_Binary_Protocol_1.x_2004_02.pdf).
 
 The SiRF binary protocol document from 2009 describes them for message ID 41 (geodetic navigation data) as follows:
 
@@ -83,15 +83,15 @@ The SiRF binary protocol document from 2009 describes them for message ID 41 (ge
 | Estimated Time Error                | 4 U   | ETE in seconds x 10<sup>2</sup> (SiRFDRive only) |
 | Estimated Horizontal Velocity Error | 2 U   | EHVE in m/s x 10<sup>2</sup> (SiRFDRive only)    |
 
-It is worth mentioning that EHPE, EVPE, ETE and EHVE are also described in the SiRF demo [user guide](pdf/sirf/SiRF_Demo_User_Guide_1.5_2007_06.pdf) from June 2007.
+It is worth mentioning that EHPE, EVPE, ETE and EHVE are also described in the SiRF demo [user guide](chipsets/sirf/pdf/SiRF_Demo_User_Guide_1.5_2007_06.pdf) from June 2007.
 
-Note: The SiRF binary protocol outputs ETE (but not EHE) whereas the Erinome-I [documentation]((pdf/sirf/Erinome-I_User_Manual_rev1.7.pdf)) describing $PSRFEPE includes EHE. The one socket protocol interface control [document](pdf/sirf/One_Socket_Protocol_Interface_Control_Document_2009.pdf) from 2009 mentions EHE in the "DR NAV Status Output Message" but EHE is not included in the output of message ID 41.
+Note: The SiRF binary protocol outputs ETE (but not EHE) whereas the Erinome-I [documentation]((chipsets/sirf/pdf/Erinome-I_User_Manual_rev1.7.pdf)) describing $PSRFEPE includes EHE. The one socket protocol interface control [document](chipsets/sirf/pdf/One_Socket_Protocol_Interface_Control_Document_2009.pdf) from 2009 mentions EHE in the "DR NAV Status Output Message" but EHE is not included in the output of message ID 41.
 
 
 
 #### MediaTek
 
-The MediaTek MT3333 has some [proprietary sentences](pdf/mediatek/M10478-M10578-NMEA_Sentence_Output.pdf), including the following accuracy / error estimates.
+The MediaTek MT3333 has some [proprietary sentences](chipsets/mediatek/pdf/M10478-M10578-NMEA_Sentence_Output.pdf), including the following accuracy / error estimates.
 
 **EPE** – Accuracy estimate
 
