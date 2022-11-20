@@ -6,6 +6,8 @@ Collection of (mostly) interesting links that are yet to be fully curated!
 
 ### Basics
 
+GPS positioning is sometimes referred to as [trilateration](https://en.wikipedia.org/wiki/Trilateration).
+
 - [GPS Basics](https://web.archive.org/web/20060715195054/http://telecom.tlab.ch/~zogg/Dateien/GPS_basics_u_blox_en.pdf) by Jean-Marie Zogg of u-blox (26 Mar 2002) - [local mirror](doppler/pdf/GPS_basics_u_blox_en.pdf)
   - Good detailed overview of GPS but no mention of Doppler speed
 - [An introduction to Global Navigation Satellite Systems](https://ntrs.nasa.gov/api/citations/20200000265/downloads/20200000265.pdf) by NASA (6 Jan 2020) - [local mirror](doppler/pdf/20200000265.pdf)
@@ -13,7 +15,9 @@ Collection of (mostly) interesting links that are yet to be fully curated!
 
 - [GPS Accuracy: HDOP, PDOP, GDOP, Multipath & the Atmosphere](https://gisgeography.com/gps-accuracy-hdop-pdop-gdop-multipath/) on GIS Geography
   - A well-designed GPS receiver can achieve a horizontal accuracy of 3 meters or better (95% of the time)
-- [Les 7 erreurs que fait régulièrement votre montre GPS | Montre Cardio GPS](https://www.montre-cardio-gps.fr/les-7-erreurs-que-fait-regulierement-votre-montre-gps/) - use translation to read in English
+- [The 7 errors that your GPS watch regularly makes](https://www.montre-cardio-gps.fr/les-7-erreurs-que-fait-regulierement-votre-montre-gps/) on Montre Cardio GPS
+  - Use Google translate for English
+
 
 
 
@@ -21,20 +25,27 @@ Collection of (mostly) interesting links that are yet to be fully curated!
 
 e.g. Pseudorange, Carrier phase, Doppler shift.
 
-- Observables including [Psuedorange rate](https://gnss-sdr.org/docs/sp-blocks/observables/#pseudorange-rate-measurement) on gnss-sdr.org 
-- [Noise comparison of triple frequency GNSS carrier phase, doppler and pseudorange observables](https://www.sciencedirect.com/science/article/abs/pii/S0263224119304269) by Gethin Wyn Roberts (11 May 2019)
+- [GNSS Basic Observables](https://gssc.esa.int/navipedia/index.php/GNSS_Basic_Observables#:~:text=3%20Doppler%20shift-,Pseudorange,(at%20the%20reception%20time).) on Navipedia
+- [Observables](https://gnss-sdr.org/docs/sp-blocks/observables/) on gnss-sdr.org
 - [Positioning with Android: GNSS observables](https://www.gpsworld.com/positioning-with-android-gnss-observables/)
-- [GNSS Basic Observables](https://gssc.esa.int/navipedia/index.php/GNSS_Basic_Observables#:~:text=3%20Doppler%20shift-,Pseudorange,(at%20the%20reception%20time).) -onNavipedia
+  - Nice chart showing that Doppler has less noise than pseudo range
+- [Noise comparison of triple frequency GNSS carrier phase, doppler and pseudorange observables](https://www.sciencedirect.com/science/article/abs/pii/S0263224119304269) by Gethin Wyn Roberts (11 May 2019)
+  - Full access is not available but it could be an interesting paper
+
 
 
 
 ### Doppler Speed
 
-[Google search](https://www.google.com/search?ie=UTF-8&client=ms-android-samsung-rev2&source=android-browser&q=gps+%2Bdoppler+speed) - several good articles / links
+Searches:
+
+- [Google search](https://www.google.com/search?ie=UTF-8&client=ms-android-samsung-rev2&source=android-browser&q=gps+%2Bdoppler+speed) - several good articles / links
 
 Articles:
 
 - [VBOX Automotive - How does it work? - GPS Accuracy](https://www.vboxautomotive.co.uk/index.php/en/how-does-it-work-gps-accuracy)
+  - There is a common misconception that speed measured via GPS is done so as a function of position against time
+
 - [How does a GNSS receiver estimate velocity?](https://www.google.com/url?sa=t&source=web&rct=j&url=https://insidegnss.com/wp-content/uploads/2018/01/marapr15-SOLUTIONS.pdf&ved=2ahUKEwit74Sli7H7AhVahlwKHcpQDWwQFnoECCEQAQ&usg=AOvVaw2isyKWtJnp-9Zz1naQtNms) on Inside GNSS.com - [local mirror](doppler/pdf/marapr15-SOLUTIONS.pdf)
   - [How does a GNSS receiver estimate velocity?](https://insidegnss.com/how-does-a-gnss-receiver-estimate-velocity/) Q + A
     - The former approach is the most simple to implement, but it has a meter per second–level of accuracy due to the dependence on pseudorange-based position accuracy.
@@ -43,7 +54,9 @@ Articles:
 - [Doppler Shift](https://www.e-education.psu.edu/geog862/node/1786)
   - The ability to determine the instantaneous velocity of a moving vehicle has always been a primary application of GPS and is based on the fact that the Doppler-shift frequency of a satellite’s signal is nearly proportional to its range rate.
 - [Principle of speed measurement using GPS](https://www.onosokki.co.jp/English/hp_e/products/keisoku/automotive/lc8_principle.htm) - explanation of how the ONO SOKKI [LC-8310](https://www.onosokki.co.jp/English/hp_e/products/keisoku/automotive/lc8310.htm) measures velocity
-- [GPS Determination of Course and Speed](http://www.aprs.net/vm/gps_cs.htm)
+  - The speed can be calculated extremely more precisely because it receives almost none of the influence from the ionosphere.
+
+- [GPS Determination of Course and Speed](http://www.aprs.net/vm/gps_cs.htm) by Tom Clark
 - [GPS receivers calculate speed using algorithms in the Kalman filter](http://www.gpsinformation.net/main/gpsspeed.htm) - refers to NAVSTAR GPS and mentions 999 mph limit
 - [Innovation: Doppler-Aided Positioning](https://www.gpsworld.com/gnss-systemalgorithms-methodsinnovation-doppler-aided-positioning-11601/) on GPS World
 - [Revisiting why we went to Doppler based GPS speeds](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Revisiting-why-we-went-to-Doppler-based-GPS-speeds?page=1) on Seabreeze in June 2016
@@ -58,17 +71,34 @@ Papers:
 - [High accuracy speed measurement using GPS](https://studylib.net/doc/18795194/high-accuracy-speed-measurement-using-gps) by Tom Chalko in 2007 - [local mirror](doppler/pdf/HighAccuracySpeed.pdf)
 - [GPS Estimation Algorithms for Precise Velocity](http://acl.mit.edu/papers/2002_MSEC_93.pdf) in 2002 - racing car paper about Doppler speed
   -  Significant distances can be driven (≈500 m) while only incurring a 10–20 cm positioning error without any of the difficulties associated with determining the measurement biases.
-
+- [On the relativistic Doppler Effects and high accuracy velocity determination using GPS](https://www.researchgate.net/publication/238619351_On_the_relativistic_Doppler_Effects_and_high_accuracy_velocity_determination_using_GPS) by Zhang et al (Jan 2004) - [local mirror](doppler/pdf/On_the_relativistic_Doppler_Effects_and_high_accur.pdf)
+  - An old paper that describes very well the potential for speeds derived from the Doppler observables
 - [An Overview of GNSS and GPS based Velocity Measurement in Comparison to Other Techniques](https://www.academia.edu/38076739/An_Overview_of_GNSS_and_GPS_based_Velocity_Measurement_in_Comparison_to_Other_Techniques) in 2018 - [local mirror](doppler/pdf/An_Overview_of_GNSS_and_GPS_based_Veloci.pdf)
-  - Includes references to other studies
+  - High correlation exists between GPS velocity error and acceleration and deceleration (R<sup>2</sup> > 0.70) in variable speeds meaning that the error rises in higher acceleration and decelerations.
+  - The accuracy of speed with DGPS was improved as compared tonon-differential GPS.
+  - HDOP might be used as a quality indicator for speed data reliability.
+  - Includes references to other studies.
+- [Assessment of speed and position during human locomotion using nondifferential GPS](https://pubmed.ncbi.nlm.nih.gov/18091013/) by Townshend et al (Jan 2008)
+- [Accuracy of non-differential GPS for the determination of speed over ground](https://pubmed.ncbi.nlm.nih.gov/15519597/) by Witte + Wilson (Dec 2004)
+- [Time-differenced carrier phases technique for precise GNSS velocity estimation](https://www.researchgate.net/publication/270282162_Time-differenced_carrier_phases_technique_for_precise_GNSS_velocity_estimation) - TODO
+  - Freda P., and A. Angrisano, S.Gaglione, and S. Troisi, ”Time-Differenced Carrier Phases Technique for Precise GNSS Velocity Estimation,” GPS Solutions, Doi: 10.1007/s10291-014-0425-1, 2014
+  - Classically, a stand-alone GNSS receiver estimates its velocity by forming the approximate derivative of consecutive user positions or more often by using the Doppler observable. The first method is very inaccurate, while the second one allows estimation of the order of some cm/s. The time-differenced carrier phase (TDCP) technique, which consists in differencing successive carrier phases, enables accuracies at the mm/s level. 
+  
+- [Time-Differenced Carrier Phase Technique for Precise Velocity Estimation on an Android Smartphone](https://europepmc.org/article/MED/36366212) - [local mirror](doppler/pdf/sensors-22-08514-v2.pdf)
+  - TODO
 
 - [Evaluation of the accuracy of global positioning system (GPS) speed measurement via GPS simulation](https://www.researchgate.net/publication/282867917_Evaluation_of_the_accuracy_of_global_positioning_system_GPS_speed_measurement_via_GPS_simulation) - [local mirror](doppler/pdf/002_dinesh_speed.pdf)
   - Doppler shift method is able to provide accurate results as it is insensitive to the UERE of GPS receivers.
-
 - [Evaluation of the performance of GNSS-based velocity estimation algorithms](https://satellite-navigation.springeropen.com/articles/10.1186/s43020-022-00080-4) in Sep 2022 - [local mirror](doppler/pdf/s43020-022-00080-4.pdf)
   - The method based on Doppler observations gives the accuracy in the order of cm/s.
   - When vehicle movement is in highly dynamic state, raw Doppler is the best because of its more rigorous mathematical model.
   - Thus, raw Doppler method can be applied in the scenarios where the vehicle motion state is changing greatly
+- [Vehicle's Instantaneous Velocity Reconstruction by Combining GNSS Doppler and Carrier Phase Measurements](https://ieeexplore.ieee.org/document/9416912)
+
+Summary:
+
+- Acceleration / deceleration pose a challenge
+- Static tests provides a good illustration of the difference between speed and distance / time. 
 
 
 
