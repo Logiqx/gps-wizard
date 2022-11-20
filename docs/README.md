@@ -70,11 +70,7 @@ Further ideas and plans for the future are in the [TODO](todo.md) list.
 
 ### Articles
 
-List of existing articles:
-
-- [Alpha racing](alpha-racing/README.md) - optimizing an algorithm to determine alpha racing results
-- [Filtering](filtering/README.md) - assessing the quality of GPS data and filtering out bad results
-- [GPS Exchange Format](gpx/README.md) (GPX) - clarification of GPX 1.0 and GPX 1.1, highlighting common implementation issues
+Detailed [articles](articles.md) covering a number of topics are on a separate page.
 
 
 
