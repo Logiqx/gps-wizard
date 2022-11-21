@@ -74,7 +74,26 @@ Consider adding the following writers:
     - Unfiltered data
       - SOG vs USOG
       - COG vs UCOG
+    - Coloured scatter plots
+      - HDOP vs position / speed / speed error
+    - Horizontal vs vertical
+      - Speed vs climb rate
+      - SDOP vs VSDOP - expect vsdop to be worse
+      - ehpe vs evpe (SiRF) - expect evpe to be worse
   - Search for Doppler spikes - e.g. 50 knots+ in historic GT-11 / GT-31 files
+- u-blox checks
+  - Equivalent of SiRF checks, where possible / applicable
+  - hacc vs vacc - expect vacc to be worse
+  - cacc
+  - "tunnel mode" - clever detection?
+
+- Sony
+  - repeated speeds prior to crash then zero
+
+- Check if Estimated Horizontal Position Error (SiRF) or Horizontal accuracy estimate (u-blox) are useful to identify spikes
+  - https://logiqx.github.io/gps-wizard/formats/sbn.html
+  -  https://logiqx.github.io/gps-wizard/formats/ubx.html
+- Check fix type during crash - e.g. use of dead reckoning on u-blox
 - Determine time shifts using RMSE
   - Estimated speed vs positional speed - same GPS device
   - Estimated speeds - different GPS devices
@@ -86,11 +105,18 @@ Consider adding the following writers:
 
 ### Articles
 
+- Move doppler-speed-resolution from gps-guides to gps-wizard
 - Filtering
   - Acceleration
+  - Crash detection
 - Variations in reported results
   - Across devices
   - Doppler vs Positional
 - Chipset summaries - page per chip
   - Note Sony UDS
 
+
+
+### Check Links
+
+https://validator.w3.org/checklink
