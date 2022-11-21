@@ -4,22 +4,30 @@ Collection of (mostly) interesting links that are yet to be fully curated!
 
 
 
-### Basics
+### Overviews
 
-GPS positioning is sometimes referred to as [trilateration](https://en.wikipedia.org/wiki/Trilateration).
+GPS positioning can be described as using [trilateration](https://en.wikipedia.org/wiki/Trilateration) (distances), as opposed to [triangulation](https://en.wikipedia.org/wiki/Triangulation) (angles).
+
+#### GPS / GNSS
 
 - [GPS Basics](https://web.archive.org/web/20060715195054/http://telecom.tlab.ch/~zogg/Dateien/GPS_basics_u_blox_en.pdf) by Jean-Marie Zogg of u-blox (26 Mar 2002) - [local mirror](doppler/pdf/GPS_basics_u_blox_en.pdf)
   - Good detailed overview of GPS but no mention of Doppler speed
 - [An introduction to Global Navigation Satellite Systems](https://ntrs.nasa.gov/api/citations/20200000265/downloads/20200000265.pdf) by NASA (6 Jan 2020) - [local mirror](doppler/pdf/20200000265.pdf)
   - Another good detailed overview of GNSS but no mention of Doppler speed
+- [GEOG 862: GPS and GNSS for Geospatial Professionals](https://www.e-education.psu.edu/geog862/home.html)
+  - This course cultivates a working knowledge of current and future capabilities of GPS and the emerging Global Navigation Satellite System.
+
+- Hoffmann-Wellenhof, B., and H. Lichtenegger, and J. Collins, Global Positioning System: Theory and Practice, Springer, Berlin Heidelberg New York, 1992 - BOOK
+
+#### Accuracy
+
 - [GPS Accuracy: HDOP, PDOP, GDOP, Multipath & the Atmosphere](https://gisgeography.com/gps-accuracy-hdop-pdop-gdop-multipath/) on GIS Geography
   - A well-designed GPS receiver can achieve a horizontal accuracy of 3 meters or better (95% of the time)
-- [The 7 errors that your GPS watch regularly makes](https://www.montre-cardio-gps.fr/les-7-erreurs-que-fait-regulierement-votre-montre-gps/) on Montre Cardio GPS
-  - Use Google translate for English
-- [Error analysis for GPS](https://en.wikipedia.org/wiki/Error_analysis_for_the_Global_Positioning_System) (Wikipedia)
--  [Ice sailing - Feb 2004 by Bob Dill](https://www.idniyra.org/old/articles/IceboatSailingPerformance.html)
+- [Ice sailing - Feb 2004 by Bob Dill](https://www.idniyra.org/old/articles/IceboatSailingPerformance.html)
   - "When everything is working right, GPS's are very accurate relative to most other measurement methods.  The larger issue is that they can give spurious data when things are not working properly."
-- Hoffmann-Wellenhof, B., and H. Lichtenegger, and J. Collins, Global Positioning System: Theory and Practice, Springer, Berlin Heidelberg New York, 1992 - BOOK
+- [The 7 errors that your GPS watch regularly makes](https://www.montre-cardio-gps.fr/les-7-erreurs-que-fait-regulierement-votre-montre-gps/) on Montre Cardio GPS
+  - Tip: Use Google translate for English!
+- [Error analysis for GPS](https://en.wikipedia.org/wiki/Error_analysis_for_the_Global_Positioning_System) on Wikipedia
 
 
 
@@ -89,6 +97,7 @@ e.g. Pseudorange, Carrier phase, Doppler shift.
   - [How GNSS & RTK Technology Achieve High-Precision Positioning?](https://www.fjdynamics.com/blog/91-GNSS--RTK.html)
   - [Google search](https://www.google.com/search?ie=UTF-8&client=ms-android-samsung-rev2&source=android-browser&q=rtk+velocity+estimate)
   - [simpleRTK2B using -blox ZED-F9P](https://www.ardusimple.com/question/velocity-estimation/) - [product](https://www.ardusimple.com/product/simplertk2b/)
+- Li et al. [[7](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#B7-sensors-19-03029)] applied the RD method to GPS kinematic positioning, which improved the ambiguity fixed rate and positioning accuracy.
 - [Professional opinions](https://www.gpsworld.com/high-rate-rtk-helpful-or-hypeful/) on high solution rate:
   - “We can be creatures of habit and tie ourselves to beliefs that ‘this is the way I did it and it worked then.’ People should always ask themselves the question, ‘do I still need to do it this way?"
   - "We recommend 5 Hz and higher for a moving rover, but it can be overkill for a stationary one"
@@ -101,6 +110,7 @@ e.g. Pseudorange, Carrier phase, Doppler shift.
 #### PPP
 
 - [Trimble’s Rtk And Dgps Solutions In Comparison With Precise Point Positioning | SpringerLink](https://link.springer.com/chapter/10.1007/978-3-540-85426-5_81)
+- Compared with the SPP positioning accuracy of tens of meters, the BDS-2 kinematic PPP positioning accuracy is significantly improved to the dm level. <sup>[1](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#__ffn_sectitle)</sup>
 
 #### Inertial Measurements
 

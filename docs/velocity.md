@@ -4,6 +4,82 @@ Collection of (mostly) interesting links that are yet to be fully curated!
 
 
 
+### Introduction
+
+There are four major velocity estimation methods for satellite-based applications:
+
+- Position derivation (PD)
+- Raw Doppler (RD)
+- Carrier-phase-derived Doppler (DD)
+- Time-differenced carrier phase (TDCP) methods.
+
+The introduction of the following paper (Jul 2019) gives a good overview of these four methods:
+
+- [Reducing the Effect of Positioning Errors on Kinematic Raw Doppler (RD) Velocity Estimation Using BDS-2 Precise Point Positioning](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#__ffn_sectitle)
+
+A great article [How does a GNSS receiver estimate velocity?](https://insidegnss.com/wp-content/uploads/2018/01/marapr15-SOLUTIONS.pdf) on Inside GNSS.com (Mar 2015) also describes these methods - [local mirror](doppler/pdf/marapr15-SOLUTIONS.pdf)
+
+- The text based article is [How does a GNSS receiver estimate velocity?](https://insidegnss.com/how-does-a-gnss-receiver-estimate-velocity/)
+
+
+
+### Summary of Velocity Estimation Methods
+
+#### Position derivation (PD)
+
+The PD velocity estimation method makes use of the first-order derivation of consecutive positions. If the positions are obtained by single point positioning with meter-level accuracy and the time interval is one second, a velocity of accuracy on the order of a few meters per second is possible.
+
+Previous studies prove that the velocity estimation accuracy of the PD method is highly vulnerable to the positioning accuracy and the moving condition. For example, He et al. [[1](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#B1-sensors-19-03029)] analyzed the differential GPS (DGPS) PD velocity estimation method by airborne experiments, and the maximum velocity error reached 2 m/s in the airplane taking-off stage.
+
+Another study showed the velocity accuracy of the combined GPS/BeiDou navigation satellite system (BDS) solution was improved by 39% over that of the GPS-only solution.
+
+Li et al. [[2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#B2-sensors-19-03029)] performed a comprehensive velocity estimation analysis based on three global navigation satellite system (GNSS) positioning modes, including single point positioning (SPP), pseudorange-based DGPS and carrier-phase-based real-time kinematic (RTK) in Antarctica. Experimental results showed that the RTK velocity solution achieved an accuracy of 3 mm/s in the vertical direction.
+
+
+
+#### Raw Doppler (RD)
+
+The RD velocity estimation method refers to the raw Doppler measurements for velocity determination. The Doppler frequency shifts of the received signal produced by user-satellite relative motion enables velocity accuracy of a few centimeters per second.
+
+Among the four velocity estimation methods, the RD method is most suitable for kinematic velocity estimation applications with complex movements.
+
+Zheng et al. [[6](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#B6-sensors-19-03029)] analyzed the BDS-only and GPS-only SPP RD velocity estimation method, whose stability and accuracy could be remarkably improved by the combination of GPS/BDS. Ye et al. [[11](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#B11-sensors-19-03029)] analyzed the BDS SPP-based velocity with the RD and DD methods. The static data showed that the RD accuracy was primarily related to the receiver type.
+
+The design matrix of the Doppler-based velocity model is the same as for the pseudorange case. For this reason the constellation geometry influences the velocity accuracy according to the DOP (dilution of precision).
+
+A [study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#__ffn_sectitle) in 2019 showed that RD velocity estimation can be improved using Precise Point Positioning (PPP).
+
+
+
+#### Carrier-phase-derived Doppler (DD)
+
+The DD method utilizes the Doppler measurements derived from carrier phase observations, rather than the Raw Doppler measurement in the RD method, at two consecutive epochs to calculate the velocity.
+
+This is sometimes referred to as a Time-differenced carrier phase (TCDP) algorithm for instantaneous velocity. The carrier phase measurement is used to estimate the Doppler shift and then the valocity is calculated as per the RD approach.
+
+The benefit of this approach is that the reduced noise of the carrier phase measurements yields less noisy Doppler measurements than using the “raw” Doppler directly. In turn, this generates more accurate velocity estimates
+
+ A series of studies have shown that the RD method is more suitable for kinematic applications than the DD method, whereas the DD method is best suited to static or low kinematic applications (e.g., seismic monitoring).
+
+
+
+#### Time-differenced carrier phase (TDCP) 
+
+The TDCP method takes advantage of the pseudorange and carrier phase observations at two consecutive epochs to determine the velocity. The TDCP algorithm (precise position change) is based on the time-difference of successive carrier phases to the same satellite at small data rates (≤1 hertz) to obtain delta position information. 
+
+The carrier phase ambiguity issue usually limits the use of carrier phase observables, but the TDCP technique overcomes this problem because, in the absence of cycle slips, the ambiguity is constant and is removed by differencing two consecutive carrier phase measurements.
+
+The TDCP method was first proposed by Graas [[12](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#B12-sensors-19-03029)] in 2004. Wendel et al. [[13](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#B13-sensors-19-03029)] and Soon et al. [[14](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#B14-sensors-19-03029)] applied this method to GPS/INS integrated navigation, which improved the velocity estimation accuracy in the integrated system. The GPS static experiment proved that the velocity accuracy of this method could reach the order of mm/s.
+
+
+
+#### References
+
+1) [Reducing the Effect of Positioning Errors on Kinematic Raw Doppler (RD) Velocity Estimation Using BDS-2 Precise Point Positioning](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#__ffn_sectitle)
+2)  [How does a GNSS receiver estimate velocity?](https://insidegnss.com/wp-content/uploads/2018/01/marapr15-SOLUTIONS.pdf) on Inside GNSS.com (Mar 2015)
+
+
+
 
 ### Doppler Speed
 
@@ -17,10 +93,6 @@ Collection of (mostly) interesting links that are yet to be fully curated!
 
 - [VBOX Automotive - How does it work? - GPS Accuracy](https://www.vboxautomotive.co.uk/index.php/en/how-does-it-work-gps-accuracy)
   - There is a common misconception that speed measured via GPS is done so as a function of position against time
-- [How does a GNSS receiver estimate velocity?](https://www.google.com/url?sa=t&source=web&rct=j&url=https://insidegnss.com/wp-content/uploads/2018/01/marapr15-SOLUTIONS.pdf&ved=2ahUKEwit74Sli7H7AhVahlwKHcpQDWwQFnoECCEQAQ&usg=AOvVaw2isyKWtJnp-9Zz1naQtNms) on Inside GNSS.com - [local mirror](doppler/pdf/marapr15-SOLUTIONS.pdf)
-  - [How does a GNSS receiver estimate velocity?](https://insidegnss.com/how-does-a-gnss-receiver-estimate-velocity/) Q + A
-    - The former approach is the most simple to implement, but it has a meter per second–level of accuracy due to the dependence on pseudorange-based position accuracy.
-    - In contrast, Doppler frequency shifts of the received signal produced by user-satellite relative motion enables velocity accuracy of a few centimeters per second.
 - [Doppler Shift](https://www.e-education.psu.edu/geog862/node/1786)
   - The ability to determine the instantaneous velocity of a moving vehicle has always been a primary application of GPS and is based on the fact that the Doppler-shift frequency of a satellite’s signal is nearly proportional to its range rate.
 - [Principle of speed measurement using GPS](https://www.onosokki.co.jp/English/hp_e/products/keisoku/automotive/lc8_principle.htm) - explanation of how the ONO SOKKI [LC-8310](https://www.onosokki.co.jp/English/hp_e/products/keisoku/automotive/lc8310.htm) measures velocity
@@ -40,8 +112,6 @@ Collection of (mostly) interesting links that are yet to be fully curated!
 
 #### Papers
 
-- [Reducing the Effect of Positioning Errors on Kinematic Raw Doppler (RD) Velocity Estimation Using BDS-2 Precise Point Positioning](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#__ffn_sectitle)
-  - Particularly good article giving insight into velocity estimation and how PPP might help raw doppler estimates.
 - [Evaluation of the performance of GNSS-based velocity estimation algorithms](https://satellite-navigation.springeropen.com/articles/10.1186/s43020-022-00080-4)
 - [Precise Velocity Estimation with a Stand-Alone GPS Receiver](https://www.cambridge.org/core/journals/journal-of-navigation/article/abs/precise-velocity-estimation-with-a-standalone-gps-receiver/62603128918DBBD7D64059302D1AD33A#)
 - [Modelling and assessment of Galileo and Galileo/GPS velocity determination with stand-alone receiver](https://www.cambridge.org/core/journals/journal-of-navigation/article/abs/modelling-and-assessment-of-galileo-and-galileogps-velocity-determination-with-standalone-receiver/C0C9824541B139001047AF23291B76EA)
@@ -74,7 +144,7 @@ Collection of (mostly) interesting links that are yet to be fully curated!
     A receiver-generated Doppler measurement is a measure
     of instantaneous velocity, whereas the carrier-phasederived Doppler is a measure of mean velocity between
     observation epochs. The Doppler measurement is noisier
-    than carrier-phase-derived Doppler because the receivergenerated Doppler is measured over a very small time
+    than carrier-phase-derived Doppler because the receiver generated Doppler is measured over a very small time
     interval. As carrier-phase-derived Doppler is computed
     over a longer time span than Doppler, the random noise is
     averaged and lowered. Therefore, very smooth velocity is
@@ -105,6 +175,12 @@ Collection of (mostly) interesting links that are yet to be fully curated!
 ### Hybrid
 
 - [Vehicle's Instantaneous Velocity Reconstruction by Combining GNSS Doppler and Carrier Phase Measurements](https://ieeexplore.ieee.org/document/9416912)
+
+#### PPP
+
+- [Reducing the Effect of Positioning Errors on Kinematic Raw Doppler (RD) Velocity Estimation Using BDS-2 Precise Point Positioning](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#__ffn_sectitle)
+  - Positioning error of the pseudorange-based global navigation satellite system (GNSS) single point positioning (SPP) solution affects the accuracy of the velocity estimation through the station-satellite unit cosine vector.
+  - The BDS-2 PPP RD method has better velocity estimation precision than the SPP RD method in various kinematic scenarios by 1–2 cm/s in the three directions. The vehicle-borne experimental result shows that when the observation environment becomes worse, the PPP RD method can significantly improve the velocity estimation performance. Through ship-borne and air-borne experiments, it can be seen that, when the magnitude and direction of the moving object’s velocity suffer from active changes, the PPP RD method can also provide more precise velocity than the SPP RD method.
 
 
 
