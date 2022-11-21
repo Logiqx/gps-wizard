@@ -1,4 +1,4 @@
-## GPS Links
+## GPS Links - WIP
 
 Collection of (mostly) interesting links that are yet to be fully curated!
 
@@ -12,11 +12,14 @@ GPS positioning is sometimes referred to as [trilateration](https://en.wikipedia
   - Good detailed overview of GPS but no mention of Doppler speed
 - [An introduction to Global Navigation Satellite Systems](https://ntrs.nasa.gov/api/citations/20200000265/downloads/20200000265.pdf) by NASA (6 Jan 2020) - [local mirror](doppler/pdf/20200000265.pdf)
   - Another good detailed overview of GNSS but no mention of Doppler speed
-
 - [GPS Accuracy: HDOP, PDOP, GDOP, Multipath & the Atmosphere](https://gisgeography.com/gps-accuracy-hdop-pdop-gdop-multipath/) on GIS Geography
   - A well-designed GPS receiver can achieve a horizontal accuracy of 3 meters or better (95% of the time)
 - [The 7 errors that your GPS watch regularly makes](https://www.montre-cardio-gps.fr/les-7-erreurs-que-fait-regulierement-votre-montre-gps/) on Montre Cardio GPS
   - Use Google translate for English
+- [Error analysis for GPS](https://en.wikipedia.org/wiki/Error_analysis_for_the_Global_Positioning_System) (Wikipedia)
+-  [Ice sailing - Feb 2004 by Bob Dill](https://www.idniyra.org/old/articles/IceboatSailingPerformance.html)
+  - "When everything is working right, GPS's are very accurate relative to most other measurement methods.  The larger issue is that they can give spurious data when things are not working properly."
+- Hoffmann-Wellenhof, B., and H. Lichtenegger, and J. Collins, Global Positioning System: Theory and Practice, Springer, Berlin Heidelberg New York, 1992 - BOOK
 
 
 
@@ -34,81 +37,12 @@ e.g. Pseudorange, Carrier phase, Doppler shift.
 
 
 
-
-### Doppler Speed
-
-Searches:
-
-- [Google search](https://www.google.com/search?ie=UTF-8&client=ms-android-samsung-rev2&source=android-browser&q=gps+%2Bdoppler+speed) - several good articles / links
-
-Articles:
-
-- [VBOX Automotive - How does it work? - GPS Accuracy](https://www.vboxautomotive.co.uk/index.php/en/how-does-it-work-gps-accuracy)
-  - There is a common misconception that speed measured via GPS is done so as a function of position against time
-
-- [How does a GNSS receiver estimate velocity?](https://www.google.com/url?sa=t&source=web&rct=j&url=https://insidegnss.com/wp-content/uploads/2018/01/marapr15-SOLUTIONS.pdf&ved=2ahUKEwit74Sli7H7AhVahlwKHcpQDWwQFnoECCEQAQ&usg=AOvVaw2isyKWtJnp-9Zz1naQtNms) on Inside GNSS.com - [local mirror](doppler/pdf/marapr15-SOLUTIONS.pdf)
-  - [How does a GNSS receiver estimate velocity?](https://insidegnss.com/how-does-a-gnss-receiver-estimate-velocity/) Q + A
-    - The former approach is the most simple to implement, but it has a meter per second–level of accuracy due to the dependence on pseudorange-based position accuracy.
-    - In contrast, Doppler frequency shifts of the received signal produced by user-satellite relative motion enables velocity accuracy of a few centimeters per second.
-
-- [Doppler Shift](https://www.e-education.psu.edu/geog862/node/1786)
-  - The ability to determine the instantaneous velocity of a moving vehicle has always been a primary application of GPS and is based on the fact that the Doppler-shift frequency of a satellite’s signal is nearly proportional to its range rate.
-- [Principle of speed measurement using GPS](https://www.onosokki.co.jp/English/hp_e/products/keisoku/automotive/lc8_principle.htm) - explanation of how the ONO SOKKI [LC-8310](https://www.onosokki.co.jp/English/hp_e/products/keisoku/automotive/lc8310.htm) measures velocity
-  - The speed can be calculated extremely more precisely because it receives almost none of the influence from the ionosphere.
-
-- [GPS Determination of Course and Speed](http://www.aprs.net/vm/gps_cs.htm) by Tom Clark
-- [GPS receivers calculate speed using algorithms in the Kalman filter](http://www.gpsinformation.net/main/gpsspeed.htm) - refers to NAVSTAR GPS and mentions 999 mph limit
-- [Innovation: Doppler-Aided Positioning](https://www.gpsworld.com/gnss-systemalgorithms-methodsinnovation-doppler-aided-positioning-11601/) on GPS World
-- [Revisiting why we went to Doppler based GPS speeds](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Revisiting-why-we-went-to-Doppler-based-GPS-speeds?page=1) on Seabreeze in June 2016
-
-Forums:
-
-- [Doppler GPS speed and heading](https://forums.garmin.com/developer/connect-iq/f/discussion/7609/doppler-gps-speed-and-heading) on Garmin forum
-
-Papers:
-
-- [Handheld-GPS based Speed-Measurements][https://web.archive.org/web/20120531035620/http://www.gps-results.com/GPS_Speed.pdf] by Manfred Fuchs (7 May 2007) - [local mirror](doppler/pdf/GPS_Speed.pdf)
-- [High accuracy speed measurement using GPS](https://studylib.net/doc/18795194/high-accuracy-speed-measurement-using-gps) by Tom Chalko in 2007 - [local mirror](doppler/pdf/HighAccuracySpeed.pdf)
-- [GPS Estimation Algorithms for Precise Velocity](http://acl.mit.edu/papers/2002_MSEC_93.pdf) in 2002 - racing car paper about Doppler speed
-  -  Significant distances can be driven (≈500 m) while only incurring a 10–20 cm positioning error without any of the difficulties associated with determining the measurement biases.
-- [On the relativistic Doppler Effects and high accuracy velocity determination using GPS](https://www.researchgate.net/publication/238619351_On_the_relativistic_Doppler_Effects_and_high_accuracy_velocity_determination_using_GPS) by Zhang et al (Jan 2004) - [local mirror](doppler/pdf/On_the_relativistic_Doppler_Effects_and_high_accur.pdf)
-  - An old paper that describes very well the potential for speeds derived from the Doppler observables
-- [An Overview of GNSS and GPS based Velocity Measurement in Comparison to Other Techniques](https://www.academia.edu/38076739/An_Overview_of_GNSS_and_GPS_based_Velocity_Measurement_in_Comparison_to_Other_Techniques) in 2018 - [local mirror](doppler/pdf/An_Overview_of_GNSS_and_GPS_based_Veloci.pdf)
-  - High correlation exists between GPS velocity error and acceleration and deceleration (R<sup>2</sup> > 0.70) in variable speeds meaning that the error rises in higher acceleration and decelerations.
-  - The accuracy of speed with DGPS was improved as compared tonon-differential GPS.
-  - HDOP might be used as a quality indicator for speed data reliability.
-  - Includes references to other studies.
-- [Assessment of speed and position during human locomotion using nondifferential GPS](https://pubmed.ncbi.nlm.nih.gov/18091013/) by Townshend et al (Jan 2008)
-- [Accuracy of non-differential GPS for the determination of speed over ground](https://pubmed.ncbi.nlm.nih.gov/15519597/) by Witte + Wilson (Dec 2004)
-- [Time-differenced carrier phases technique for precise GNSS velocity estimation](https://www.researchgate.net/publication/270282162_Time-differenced_carrier_phases_technique_for_precise_GNSS_velocity_estimation) - TODO
-  - Freda P., and A. Angrisano, S.Gaglione, and S. Troisi, ”Time-Differenced Carrier Phases Technique for Precise GNSS Velocity Estimation,” GPS Solutions, Doi: 10.1007/s10291-014-0425-1, 2014
-  - Classically, a stand-alone GNSS receiver estimates its velocity by forming the approximate derivative of consecutive user positions or more often by using the Doppler observable. The first method is very inaccurate, while the second one allows estimation of the order of some cm/s. The time-differenced carrier phase (TDCP) technique, which consists in differencing successive carrier phases, enables accuracies at the mm/s level. 
-  
-- [Time-Differenced Carrier Phase Technique for Precise Velocity Estimation on an Android Smartphone](https://europepmc.org/article/MED/36366212) - [local mirror](doppler/pdf/sensors-22-08514-v2.pdf)
-  - TODO
-
-- [Evaluation of the accuracy of global positioning system (GPS) speed measurement via GPS simulation](https://www.researchgate.net/publication/282867917_Evaluation_of_the_accuracy_of_global_positioning_system_GPS_speed_measurement_via_GPS_simulation) - [local mirror](doppler/pdf/002_dinesh_speed.pdf)
-  - Doppler shift method is able to provide accurate results as it is insensitive to the UERE of GPS receivers.
-- [Evaluation of the performance of GNSS-based velocity estimation algorithms](https://satellite-navigation.springeropen.com/articles/10.1186/s43020-022-00080-4) in Sep 2022 - [local mirror](doppler/pdf/s43020-022-00080-4.pdf)
-  - The method based on Doppler observations gives the accuracy in the order of cm/s.
-  - When vehicle movement is in highly dynamic state, raw Doppler is the best because of its more rigorous mathematical model.
-  - Thus, raw Doppler method can be applied in the scenarios where the vehicle motion state is changing greatly
-- [Vehicle's Instantaneous Velocity Reconstruction by Combining GNSS Doppler and Carrier Phase Measurements](https://ieeexplore.ieee.org/document/9416912)
-
-Summary:
-
-- Acceleration / deceleration pose a challenge
-- Static tests provides a good illustration of the difference between speed and distance / time. 
-
-
-
 ### Kalman Filter
 
 - [Kalman Filtering | GEOG 862: GPS and GNSS for Geospatial Professionals](https://www.e-education.psu.edu/geog862/node/1777)
 - [kalman ublox - Google Search](https://www.google.com/search?q=kalman++ublox)
   - [ublox settings for single point solution](https://portal.u-blox.com/s/question/0D52p00008HKCQICA5/ublox-settings-for-single-point-solution)
   - [M8U performance: Kalman filter, course over ground and Magnetic variation issues](https://portal.u-blox.com/s/question/0D52p00008HKDzFCAX/m8u-performance-kalman-filter-course-over-ground-and-magnetic-variation-issues)
-
 - [Practical implementation and performance assessment of an Extended Kalman Filter-based signal tracking loop](https://ieeexplore.ieee.org/document/6577275)
 
 
@@ -123,6 +57,13 @@ Summary:
 
 [GNSS augmentation - Wikipedia](https://en.m.wikipedia.org/wiki/GNSS_augmentation)
 
+#### AGPS
+
+-   Ephemeris data
+   - Switch on early!
+- Assisted GPS for quicker startup
+   - GT-11 did weird things when "move long" not answered correctly
+
 #### DGPS
 
 [Differential GPS - Wikipedia](https://en.m.wikipedia.org/wiki/Differential_GPS)
@@ -130,12 +71,40 @@ Summary:
 #### RTK
 
 - [Real-time kinematic positioning](https://en.wikipedia.org/wiki/Real-time_kinematic_positioning)
+- History
+  - [History of RTK—Part 1: A Really Tough Problem to Solve - The American Surveyor](https://amerisurv.com/2021/04/18/history-of-rtk-part-1-a-really-tough-problem-to-solve/)
+  - [History of RTK—Part 4: Birth of a Utility - The American Surveyor](https://amerisurv.com/2021/10/12/history-of-rtk-part-4-birth-of-a-utility/amp/)
 - [What is GPS RTK?](https://learn.sparkfun.com/tutorials/what-is-gps-rtk/all) by SparkFun Learn
 - [Comparison : Standard GPS/GNSS Receiver vs RTK GPS/GNSS System](https://support.swiftnav.com/support/solutions/articles/44001850808-understanding-gps-gnss-rtk-technology)
 - u-blox
   - [NEO-M8P](https://www.u-blox.com/en/product/neo-m8p-series#Documentation-&-resources?legacy=Current) modules includes RTK
   - [ZED-F9P](https://www.u-blox.com/en/product/zed-f9p-module) module includes RTK - [product summary](https://content.u-blox.com/sites/default/files/ZED-F9P_ProductSummary_UBX-17005151.pdf)
   - [Taoglas and u-blox bring centimeter-level GNSS positioning](https://www.u-blox.com/en/press-releases/taoglas-and-u-blox-bring-centimeter-level-gnss-positioning-solution-iot-applications) (7 Nov 2019)
+- Trimble
+  - [RTK Surveying Solution with VRS Now | Trimble GNSS Positioning](https://positioningservices.trimble.com/industries/survey/vrs-now/)
+- V-Box
+  - [VBOX Automotive - How does it work? - RTK](https://vboxautomotive.co.uk/index.php/en/how-does-it-work-rtk)
+- Miscellaneous links
+  - [Advantage of velocity measurements on instantaneous RTK positioning](https://www.researchgate.net/publication/225464771_Advantage_of_velocity_measurements_on_instantaneous_RTK_positioning)
+  - [How GNSS & RTK Technology Achieve High-Precision Positioning?](https://www.fjdynamics.com/blog/91-GNSS--RTK.html)
+  - [Google search](https://www.google.com/search?ie=UTF-8&client=ms-android-samsung-rev2&source=android-browser&q=rtk+velocity+estimate)
+  - [simpleRTK2B using -blox ZED-F9P](https://www.ardusimple.com/question/velocity-estimation/) - [product](https://www.ardusimple.com/product/simplertk2b/)
+- [Professional opinions](https://www.gpsworld.com/high-rate-rtk-helpful-or-hypeful/) on high solution rate:
+  - “We can be creatures of habit and tie ourselves to beliefs that ‘this is the way I did it and it worked then.’ People should always ask themselves the question, ‘do I still need to do it this way?"
+  - "We recommend 5 Hz and higher for a moving rover, but it can be overkill for a stationary one"
+  - "The rover could even have a correction age of 5 or 10 seconds, and it will use the previous package to calculate the position. Since 1-Hz base and 5-Hz rover can work without degradation of precision, there’s no need to change the base to 5 Hz.”
+  - "Autonomous applications also typically use between 10 Hz and 50Hz for GNSS, and often combine this with 100-Hz or 200-Hz IMU data. Aerospace and defense applications have demanding conditions and use 100-Hz to 200-Hz IMU data to navigate, often combined with 1-Hz, 10-Hz or 20-Hz GNSS data."
+  - "High update rates on a base station do not provide advantages except in rare cases where the base is moving. While rovers are computing movements of the rover antenna, base stations are providing GNSS satellite corrections. A rate of more than 1 Hz for a static base station does not benefit rover accuracy; it only creates a burden on the communication between base and rover. Base and rover communication needs to be optimized to reduce bandwidth requirements. This is especially true as we continue to add constellations and signals to GNSS solutions."
+  - “High rate can be considered a common default mode of operation,” said Stuart Riley, vice president, Technology – GNSS, Trimble. “Typical rover position solution rates are 5 Hz, 10 Hz and 20 Hz.”
+     "Riley noted another relevant technology that Trimble has implemented: the use of precise satellite clock and orbit corrections — such as from the Trimble RTX precise point positioning (PPP) service — to augment RTK when there is a loss of the base correction stream."
+
+#### PPP
+
+- [Trimble’s Rtk And Dgps Solutions In Comparison With Precise Point Positioning | SpringerLink](https://link.springer.com/chapter/10.1007/978-3-540-85426-5_81)
+
+#### Inertial Measurements
+
+- [RTK-quality velocity and orientation accuracy without a base-station](https://www.oxts.com/achieve-rtk-velocity-and-orientation-accuracy/)
 
 
 
@@ -186,3 +155,27 @@ Summary:
 
 [WSSRC course rules for 500m](https://www.sailspeedrecords.com/the-course-of-500-m)
 
+
+
+### Forums
+
+- [locosys vs garmin | Windsurfing Forums, page 4 - Seabreeze](https://www.seabreeze.com.au/forums/Windsurfing/Gps/locosys-vs-garmin?page=4)
+
+
+
+### Blogs
+
+- [The Windsurf Loop](https://boardsurfr.blogspot.com/search?updated-max=2022-10-23T18:59:00-04:00&max-results=4&reverse-paginate=true&m=1)
+- https://web.archive.org/web/20171120010913/mtbest.net/speed_sailing_helmet.html
+- https://web.archive.org/web/20170819093539/http://mtbest.net/GT32-resources.html
+- https://web.archive.org/web/20171022140823/http://mtbest.net/setting-up-navi-GT31.htm
+
+
+
+### Watches
+
+- [Chips in watches](https://www.dropbox.com/sh/psdyxm93y2m12j3/AABNlbBRsF2E3edvzqnnMPC4a?dl=0&preview=Test+Results+-+All+Watches.xlsx)
+- APEX 2 Pro
+  - https://the5krunner.com/2022/11/03/coros-apex-2-pro-review/
+  - https://www.reddit.com/r/Coros/comments/yl29t1/coros_launches_apex_2_and_apex_2_pro_kilian/
+  - https://www.dcrainmaker.com/2022/11/coros-apex-2-vs-apex-2-pro-in-depth-review.html
