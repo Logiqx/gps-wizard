@@ -10,14 +10,16 @@ GPS positioning can be described as using [trilateration](https://en.wikipedia.o
 
 #### GPS / GNSS
 
-- [GPS Basics](https://web.archive.org/web/20060715195054/http://telecom.tlab.ch/~zogg/Dateien/GPS_basics_u_blox_en.pdf) by Jean-Marie Zogg of u-blox (26 Mar 2002) - [local mirror](doppler/pdf/GPS_basics_u_blox_en.pdf)
-  - Good detailed overview of GPS but no mention of Doppler speed
-- [An introduction to Global Navigation Satellite Systems](https://ntrs.nasa.gov/api/citations/20200000265/downloads/20200000265.pdf) by NASA (6 Jan 2020) - [local mirror](doppler/pdf/20200000265.pdf)
-  - Another good detailed overview of GNSS but no mention of Doppler speed
+- [GPS](https://ciechanow.ski/gps/) by [Bartosz Ciechanowski](https://ciechanow.ski/)
+  - Interactive overview of how GPS works which is really quite fun!
+- [GPS MOOC (Massive Open Online Course)](https://scpnt.stanford.edu/about/gps-mooc-massive-open-online-course) from Stanford
+  - Watch the entire GPS Massive Open On-line Course on [YouTube](https://www.youtube.com/watch?v=o1Fyn_h6LKU&list=PLGvhNIiu1ubyEOJga50LJMzVXtbUq6CPo).
 - [GEOG 862: GPS and GNSS for Geospatial Professionals](https://www.e-education.psu.edu/geog862/home.html)
-  - This course cultivates a working knowledge of current and future capabilities of GPS and the emerging Global Navigation Satellite System.
-
-- Hoffmann-Wellenhof, B., and H. Lichtenegger, and J. Collins, Global Positioning System: Theory and Practice, Springer, Berlin Heidelberg New York, 1992 - BOOK
+  - Current and future capabilities of GPS and the emerging Global Navigation Satellite System.
+- [An introduction to Global Navigation Satellite Systems](https://ntrs.nasa.gov/api/citations/20200000265/downloads/20200000265.pdf) by NASA (6 Jan 2020) - [local mirror](doppler/pdf/20200000265.pdf)
+  - Good detailed overview of GNSS ending with a focus on space applications
+- [GPS Basics](https://web.archive.org/web/20060715195054/http://telecom.tlab.ch/~zogg/Dateien/GPS_basics_u_blox_en.pdf) by Jean-Marie Zogg of u-blox (26 Mar 2002) - [local mirror](doppler/pdf/GPS_basics_u_blox_en.pdf)
+  - Good detailed overview of GPS although becoming somewhat dated
 
 #### Accuracy
 
