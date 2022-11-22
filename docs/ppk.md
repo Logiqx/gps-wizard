@@ -24,7 +24,11 @@ rtk-lib
  rscording raw data ublox 8 - Google Search
  https://www.google.com/search?ie=UTF-8&client=ms-android-samsung-rev2&source=android-browser&q=rscording+raw+data+ublox+8
 
-https://www.u-blox.com/en/technologies/gnss-raw-data
+[Full raw data is only available on specific GNSS receivers ](https://www.u-blox.com/en/technologies/gnss-raw-data) of which 3 modules support RTK as well:
+
+- [NEO-M8P modules](https://www.u-blox.com/en/product/neo-m8p-series)
+- [ZED-F9P module](https://www.u-blox.com/en/product/zed-f9p-module)
+- [ZED-F9R module](https://www.u-blox.com/en/product/zed-f9r-module)
 
  ZED-F9P module | u-blox
  https://www.u-blox.com/en/product/zed-f9p-module
