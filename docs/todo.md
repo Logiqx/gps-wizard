@@ -87,6 +87,11 @@ Consider adding the following writers:
   - cacc
   - "tunnel mode" - clever detection?
 
+- Chart types
+  - [Linear Correlation](https://condor.depaul.edu/sjost/it223/documents/correlation.htm) showing linear trends and R<sup>2</sup>.
+
+  - 2D scatter plots using speed + COG and using colors for SDOP / sAcc, etc.
+  
 - Sony
   - repeated speeds prior to crash then zero
 
