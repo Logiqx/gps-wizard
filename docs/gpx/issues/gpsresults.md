@@ -12,8 +12,13 @@ The GPX files produced by GPSResults have a few issues which would be worth fixi
   - Absence of schema location.
   - Element names do not always match the GPX 1.0 schema; "cog" instead of "course".
   - Element order does not match the GPX 1.0 schema which is "ele", "time", "course", "speed", "sat", hdop".
+  - Elements called "sdop" and "vsdop" are included but are not supported by GPX 1.0.
   - The "metadata" element is used but that is part of GPX 1.1 and not available in GPX 1.0.
-- Missing element "hdop" which would be useful.
+- Perhaps consider generating GPX 1.1 files + Trackpoint Extension v2, instead of using GPX 1.0
+  - The elements "speed" and "course" (n.b. not "cog") are supported by Trackpoint Extension v2
+  - This would allow "sdop" and "vsdop" to be included as legitimate extensions
+    - A suitable XSD for these extensions should be created and published on gps-speed.com
+  - The "metadata" component can also be included, although you will need to use extensions for element unique to GPSResults.
 
 These issues are described in the next section, followed by a section listing recommendations.
 
@@ -109,12 +114,88 @@ n.b. It should also be noted that "username", "device", "firmware "and "serialno
 
 
 
+#### SDOP and VSDOP
+
+GPSResults includes SDOP and VSDOP:
+
+```xml
+<trkpt lat="53.371207100" lon="-3.190282800">
+  <ele>-2.74</ele>
+  <time>2022-02-06T11:22:06.600Z</time>
+  <sat>5</sat>
+  <speed>1.480</speed>
+  <cog>199.090</cog>
+  <hdop>1.40</hdop>
+  <sdop>0.25</sdop>
+  <vsdop>0.29</vsdop>
+  <fix>43</fix>
+</trkpt>
+```
+
+The elements "sdop" and "vsdop" have two issues:
+
+1) They are not supported by GPX 1.0 so the file should really be GPX 1.1 and use an `<extensions>` element.
+2) They are exported (+imported) in knots, rather than m/s. This is inconsistent with the "speed" (m/s) and also results in rounding errors.
+
+
+
+#### GPX 1.1
+
+If GPX 1.1 is chosen then the header will need to be updated:
+
+```xml
+<gpx creator="GPSResults V6.185 - https://www.gps-speed.com"
+     version="1.1"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+     xmlns:gpsresults="https://www.gps-speed.com/xmlschemas/GPSResults"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd 
+       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd
+       https://www.gps-speed.com/xmlschemas/GPSResults https://www.gps-speed.com/xmlschemas/GPSResults.xsd"
+```
+
+When a suitable XSD is created for SDOP and VSDOP, GPX-compliant trackpoint extensions can be used:
+
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:speed>0.5429</gpxtpx:speed>
+      <gpxtpx:course>157.19</gpxtpx:course>
+    </gpxtpx:TrackPointExtension>
+    <gpsresults:sdop>0.912</gpsresults:sdop>
+    <gpsresults:vsdop>1.112</gpsresults:vsdop>
+  </extensions>
+</trkpt>
+```
+
+
+
 ### Recommendations
 
 #### GPX Import
 
 - Enhance GPX loader to support `<gpxdata:speed>` which was introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and is used by [Waterspeed](https://waterspeedapp.com/).
 - Enhance GPX loader to support GPX 1.1 + Trackpoint Extension v2 for `<xxx:course>` and `<xxx:speed>`. See [document](../speed.md) for details.
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:speed>0.5429</gpxtpx:speed>
+      <gpxtpx:course>157.19</gpxtpx:course>
+    </gpxtpx:TrackPointExtension>
+  </extensions>
+</trkpt>
+```
 - Fix time issues - 1 hour offset vs OAO files.
 
 
@@ -125,5 +206,22 @@ n.b. It should also be noted that "username", "device", "firmware "and "serialno
   - If the "metadata" element is desired it will necessitate GPX 1.1 and a schema extension with a suitable namespace.
   - However, GPX 1.1 has implications relating to the "[doppler speed](../speed.md)" so it is probably advisable to stick with GPX 1.0.
 - Change GPX export to use `<course>` instead of `<cog>` thus matching the element name in the GPX schema.
-- Enhance GPX export to include `<hdop>`.
 - Enhance GPX export to use the element order mandated by the GPX schema - "ele", "time", "course", "speed", "sat", hdop".
+- Export "sdop" and "vsdop" using the original m/s and change the loader accordingly. This will avoid rounding issues.
+- Switch to GPX 1.1 (instead of GPX 1.0) so that "sdop" + "vsdop" and "metadata" can be included in a GPX-compliant manner.
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:speed>0.5429</gpxtpx:speed>
+      <gpxtpx:course>157.19</gpxtpx:course>
+    </gpxtpx:TrackPointExtension>
+    <gpsresults:sdop>0.912</gpsresults:sdop>
+    <gpsresults:vsdop>1.112</gpsresults:vsdop>
+  </extensions>
+</trkpt>
+```
