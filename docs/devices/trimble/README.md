@@ -1,12 +1,22 @@
 ## Trimble - TODO
 
-Trimble 5700 receiver (released 2001)
- http://www.topomet.gr/hermes-content/uploads/2007/03/trimble_5700_specs.pdf
- Trimble Maxwell 4 Custom Survey GPS Chip - now up to Maxwell 7 (https://oemgnss.trimble.com/technology/maxwell-technology/)
- RTK
- 1cm horizontal precision (2cm vertical)
- 1Hz, 2Hz, 5Hz and 10Hz positioning and data logging
-   https://www.sailspeedrecords.com/the-course-of-500-m
+Trimble 5700 receiver (released 2001) - [specification](http://www.topomet.gr/hermes-content/uploads/2007/03/trimble_5700_specs.pdf)
+
+- Weight
+   - With internal batteries, internal radio, internal battery charger, standard UHF antenna: 3 lb. (1.4kg)
+   - As entire RTK Rover with batteries for 7 hours, less than 4kg (8.8lb)
+- Trimble Maxwell 4 Custom Survey GPS Chip (RTK) - now up to [Maxwell 7](https://oemgnss.trimble.com/technology/maxwell-technology/)
+   - 1cm horizontal precision during kinematic surveying (2cm vertical)
+   - 1Hz, 2Hz, 5Hz and 10Hz positioning and data logging
+- Precise specs
+   - Static and Fast Static GPS Surveying 7 Horizontal: ±5mm + 0.5ppm RMS
+   - Real Time and Post-Processed Kinematic Surveys. Horizontal: 10mm + 1ppm RMS
+
+
+
+### WSSRC
+
+- https://www.sailspeedrecords.com/the-course-of-500-m
    "a. Receiver logging rates shall be set at 10 Hertz, which results in a GPS position every 1/10th of a second."
      "The GPS system shall provide time stamp with each position that are accurate to within .001 second."
    "b. Record claims that include a horizontal position error (hpe) of greater than 0.10 metre (one sigma) during the run shall not be accepted."
@@ -22,6 +32,9 @@ Trimble 5700 receiver (released 2001)
 
  NMEA outputs and presumably Trimble binary as well
 
+
+
+### Sailrocket Blogs
 
  trimble site:sailrocket.com
  http://www.sailrocket.com/node/207
