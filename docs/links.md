@@ -142,16 +142,31 @@ e.g. Pseudorange, Carrier phase, Doppler shift.
 
 [NEO-M8 series | u-blox](https://www.u-blox.com/en/product/neo-m8-series) - used by the Gyro-1
 
+[NEO-M9N](https://www.u-blox.com/en/product/neo-m9n-module) module (4 concurrent GNSS) uses [UBX-M9140-KB](https://www.u-blox.com/en/product/ubx-m9140-series) chip (professional grade) - https://insidegnss.com/new-4-constellation-chip-from-u-blox/
+
 
 
 #### Taoglas
 
 - [CGGBP.25.4.A.02](https://www.taoglas.com/product/cggbp-25-4-a-02-gpsglonassbeidou-patch-antenna-25mm-2/) 25 x 25 x 4mm GPS/GLONASS/GALILEO/BeiDou Patch Antenna is definitely used at Luderitz 2022 - [specification](https://www.taoglas.com/images/product_images/original_images/CGGBP.25.4.A.02.pdf)
-  - CGGBP.25.4.A.02 appears to use the [EVA-M8M-1](https://www.u-blox.com/en/product/eva-m8-series) - [product sheet](https://content.u-blox.com/sites/default/files/EVA-M8-FW3_DataSheet_%28UBX-16014189%29.pdf)
+  - CGGBP.25.4.A.02 is compatible with the [EVA-M8M-1](https://www.u-blox.com/en/product/eva-m8-series) - [product sheet](https://content.u-blox.com/sites/default/files/EVA-M8-FW3_DataSheet_%28UBX-16014189%29.pdf)
 - [CGGP.25.4.E.02](https://www.taoglas.com/product/cggp-25-4-a-02-gpsglonass-dual-band-patch-antenna-25254mm-2/) 25 x 25 x 4mm GPS/GLONASS/Galileo Patch Antenna
-  - CGGP.25.4.E.02 appears to use the MAX-M10S
+  - CGGP.25.4.E.02 s compatible with the MAX-M10S
 - [u-blox Antenna Reference Page - Taoglas](https://www.taoglas.com/taoglas-antenna-reference-guide/ublox-antenna-reference-page/?module=32838) - cross-reference Taoglas antenna with u-blox chips / modules
 - [Experiences with low cost M8N GPS modules?](https://3drpilots.com/threads/experiences-with-low-cost-m8n-gps-modules.10441/post-121945) on 3D Robotics Drone Forum- mention of the CGGBP.25.4.A.02
+
+
+
+### Mateksys
+
+- [Mateksys GNSS & Compass M9N-5883](http://www.mateksys.com/?portfolio=m9n-5883) uses the Taoglas CGGBP.25.4.A.02 and u-blox [NEO-M9N-00B](https://www.u-blox.com/en/product/neo-m9n-module) (up to 25 Hz)
+  - Appears to be used in the Luderitz devices
+  - Superseded by the [Mateksys GNSS *&* COMPASS M10-5883](http://www.mateksys.com/?portfolio=M10-5883) with different antenna and u-blox MAX-M10S
+    - 10 Hz in multi-constellation GNSS modes
+- [Mateksys GNSS M9N-CAN](http://www.mateksys.com/?portfolio=m9n-can) uses the Taoglas CGGBP.25.4.A.02 and u-blox [NEO-M9N-00B](https://www.u-blox.com/en/product/neo-m9n-module) (up to 25 Hz)
+- [Mateksys GNSS M10-L4-3100](http://www.mateksys.com/?portfolio=m10-l4-3100) uses the Taoglas CGGBP.25.4.A.02 + u-blox MAX-M10S
+  - 10 Hz in multi-constellation GNSS modes
+
 
 
 

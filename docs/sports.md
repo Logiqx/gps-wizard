@@ -42,6 +42,7 @@ A couple of videos give an quick overview of popular devices:
   - VBOX Sport only saves GGA and RMC messages, both of which are supported by [GPS Wizard](formats/nmea.md).
 
 - Firmware [history](https://www.racelogic.co.uk/_downloads/history.php?file=_downloads/history/VBS2.hst&title=VBOX%20Sport&code=Serial%20number%207015757%20onwards&version=1.1.225&date=06/2019) mentions addition of u-blox and GLONASS in 1.1.225 (Jun 2019).
+  - Suspect it may use the [MAX-8](https://www.u-blox.com/en/product/max-8-series) series or [NEO-8Q](https://www.u-blox.com/en/product/neo-8q-module) since they are amongst the few u-blox modules only supporting GPS + GLONASS.
   - Reduction from the previous 20 Hz appears to have caused some consternation in the car community.
 - It's worth noting that VBOX have written great articles on [GPS Accuracy](https://www.vboxautomotive.co.uk/index.php/en/how-does-it-work-gps-accuracy) (explaining use of Doppler shift) and [Real Time Kinematic](https://www.vboxautomotive.co.uk/index.php/en/how-does-it-work-rtk) (RTK).
 
@@ -61,6 +62,7 @@ There are two websites:
     - P-Gear P610 - 20Hz GPS/GLONASS/Beidou + 3D sensor.
     - P-Gear P610G - 10Hz GPS/GLONASS/Beidou.
   - It also mentions use of a u-blox chip for GPS / GLONASS / Beidou.
+    - Only NEO-M8P is lacking Galileo but this chip seems unlikely.
   - It is not clear whether both models use the same manufacturer.
 
 
