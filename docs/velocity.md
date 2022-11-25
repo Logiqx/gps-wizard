@@ -6,20 +6,34 @@ Collection of (mostly) interesting links that are yet to be fully curated!
 
 ### Introduction
 
-There are four major velocity estimation methods for satellite-based applications:
+There are several major velocity estimation methods for satellite-based applications, often referred to as follows:
 
 - Position derivation (PD)
 - Raw Doppler (RD)
+- Time-differenced pseudorange (TDPR)
 - Carrier-phase-derived Doppler (DD)
-- Time-differenced carrier phase (TDCP) methods.
+- Time-differenced carrier phase (TDCP)
+- Double-differenced carrier phase (DDCP)
 
-The introduction of the following paper (Jul 2019) gives a good overview of these four methods:
+You will note from the descriptions and equations that all of the Doppler and carrier phase methods are affected by positional accuracy. This is because the equations involve line-of-sight vectors to the satellites. Satellite geometry will also play a role in their accuracy so there is a loose relationship between HDOP and speed accuracy. There are quite a few papers on these specific topics but I haven't curated my list of references, yet.
 
-- [Reducing the Effect of Positioning Errors on Kinematic Raw Doppler (RD) Velocity Estimation Using BDS-2 Precise Point Positioning](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#__ffn_sectitle)
+Understanding the 5 methods listed above provides some insight into why positional errors can sometimes bleed into speed readings, even on trusted devices such as the GT-11 and GT-31.
 
-A great article [How does a GNSS receiver estimate velocity?](https://insidegnss.com/wp-content/uploads/2018/01/marapr15-SOLUTIONS.pdf) on Inside GNSS.com (Mar 2015) also describes these methods - [local mirror](doppler/pdf/marapr15-SOLUTIONS.pdf)
+Here are links to some papers which describe the common speed / velocity derivation methods.
 
-- The text based article is [How does a GNSS receiver estimate velocity?](https://insidegnss.com/how-does-a-gnss-receiver-estimate-velocity/)
+1. A great article on Inside GNSS.com (Mar 2015) also describes these methods:
+
+   - [How does a GNSS receiver estimate velocity?](https://insidegnss.com/wp-content/uploads/2018/01/marapr15-SOLUTIONS.pdf) - [local mirror](doppler/pdf/marapr15-SOLUTIONS.pdf)
+   - The text based article is [How does a GNSS receiver estimate velocity?](https://insidegnss.com/how-does-a-gnss-receiver-estimate-velocity/)
+2. The introduction of the following paper from Jul 2019 gives a good overview of the main four methods:
+   - [Reducing the Effect of Positioning Errors on Kinematic Raw Doppler (RD) Velocity Estimation Using BDS-2 Precise Point Positioning](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6651602/#__ffn_sectitle)
+3. A paper from September 2022 also provides a good overview of the main methods:
+   - [Evaluation of the performance of GNSS-based velocity estimation algorithms](https://satellite-navigation.springeropen.com/articles/10.1186/s43020-022-00080-4)
+
+
+We already know that SiRF and u-blox devices use Doppler observations and Kalman filters. Indeed, presence of a Kalman filter tells us that raw Doppler can be prone to errors. Regardless of the method of derivation, I think most would require a Kalman filter to clean the data. 
+
+I have a suspicion that some popular sports watches on the market may use TDPR and a Kalman filter. Pseudorange-rate is the first derivative of a basic GNSS observable (pseudorange) so chip designers will more than likely implement RD or TDPR imho.
 
 
 
