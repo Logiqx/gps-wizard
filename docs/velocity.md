@@ -202,6 +202,10 @@ The TDCP method was first proposed by Graas [[12](https://www.ncbi.nlm.nih.gov/p
 
 - Acceleration / deceleration pose a challenge
 - Static tests provides a good illustration of the difference between speed and distance / time.
+- Multiple GNSS improves accuracy - e.g. GPS + Beidou
+  - https://support.garmin.com/en-US/?faq=13CvcPK8Um0mekc3F2eVmA&productID=552982&tab=topics
+
+- Positional accuracy impacts speed accuracy - TODO show with real data
 - Affected by HDOP (see scatter plot)
 - When sationary, speed errors will always be positive. When moving they could be positive or negative.
 - Speed errors / noise can be reduced using a Kalman

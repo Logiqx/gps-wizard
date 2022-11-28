@@ -73,9 +73,12 @@ Here is a brief summary of the GPS / GNSS chips being used in various popular de
   - MT3333 was favoured by Garmin between 2012 and 2018; e.g. Fenix 2, [Fenix 3](devices/garmin/fenix-3/README.md), [Fenix 5](devices/garmin/fenix-5/README.md) and [Fenix 5 Plus](devices/garmin/fenix-5-plus/README.md).
   - MT3339 was used in the Suunto Spartan Trainer, released in in 2017.
 - Sony
+  - https://www.sony-semicon.com/en/products/lsi-ic/gps.html
   - CXD5603GF was popular with several manufacturers between 2018 to 2020; COROS, Garmin, Suunto and Polar.
     - There was an Issue impacting positional [accuracy](https://www.dcrainmaker.com/2021/01/gps-accuracy-impacting-devices.html) in early 2021.
     - FIT files from the COROS APEX Pro and VERTIX exhibit a number of [data issues](devices/coros/data-issues.md).
+    - https://www.japanbullet.com/technology/sony-lowers-power-consumption-of-gnss-reception-chip
+      - when operating voltage is lowered, operation becomes unstable, and sensitivity lowers
 - Airoha, subsidiary of MediaTek
   - AG3335M has gained popularity since 2021; [COROS VERTIX 2](devices/coros/vertix-2/README.md), Garmin Fenix 7, etc.
 

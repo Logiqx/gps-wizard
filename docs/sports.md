@@ -62,7 +62,7 @@ There are two websites:
     - P-Gear P610 - 20Hz GPS/GLONASS/Beidou + 3D sensor.
     - P-Gear P610G - 10Hz GPS/GLONASS/Beidou.
   - It also mentions use of a u-blox chip for GPS / GLONASS / Beidou.
-    - Only NEO-M8P is lacking Galileo but this chip seems unlikely.
+    - Only the NEO-M8P is lacking Galileo but this chip seems unlikely as it is only 5 Hz for 2 GNSS (10Hz for GPS).
   - It is not clear whether both models use the same manufacturer.
 
 
