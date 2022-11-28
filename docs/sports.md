@@ -13,7 +13,8 @@ An old article highlights some good points on early GSP performance, many of whi
 [Speed skydiving](https://en.wikipedia.org/wiki/Speed_skydiving) is a genuine sport and they have their own approved GPS device:
 
 - [FlySight](https://www.flysight.ca/) by Bionic Avionics Inc
-  - Uses the [NEO-6Q](https://www.u-blox.com/en/product/neo-6-series) which is an older generation GPS-only product from u-blox. See FlySight [schematics](http://flysight.ca/wiki/index.php/Schematics) page.
+  - Uses the [NEO-6Q](https://www.u-blox.com/en/product/neo-6-series) which is an older generation GPS-only product from u-blox.
+    - See FlySight [schematics](http://flysight.ca/wiki/index.php/Schematics) page.
   - NED north + east velocity are recorded in the CSV output, taken from UBX-NAV-PVT.
 
 A couple of statistics:
@@ -43,6 +44,7 @@ A couple of videos give an quick overview of popular devices:
 
 - Firmware [history](https://www.racelogic.co.uk/_downloads/history.php?file=_downloads/history/VBS2.hst&title=VBOX%20Sport&code=Serial%20number%207015757%20onwards&version=1.1.225&date=06/2019) mentions addition of u-blox and GLONASS in 1.1.225 (Jun 2019).
   - Suspect it may use the [MAX-8](https://www.u-blox.com/en/product/max-8-series) series or [NEO-8Q](https://www.u-blox.com/en/product/neo-8q-module) since they are amongst the few u-blox modules only supporting GPS + GLONASS.
+    - Both of these modules use the [UBX-G8020-KB](https://www.u-blox.com/en/product/ubx-g8020-chip) chip.
   - Reduction from the previous 20 Hz appears to have caused some consternation in the car community.
 - It's worth noting that VBOX have written great articles on [GPS Accuracy](https://www.vboxautomotive.co.uk/index.php/en/how-does-it-work-gps-accuracy) (explaining use of Doppler shift) and [Real Time Kinematic](https://www.vboxautomotive.co.uk/index.php/en/how-does-it-work-rtk) (RTK).
 
@@ -51,7 +53,7 @@ A couple of videos give an quick overview of popular devices:
 - [Dragy Motorsports UK](https://dragymotorsports.co.uk/)
 - [How Accurate Are DRAGY GPS Devices???](https://m.youtube.com/watch?v=LGWvSaXtSSE) by [Vancity Audi](https://www.youtube.com/@VancityAudi) (13 Jun 2021).
 - [Dragy Teardown](https://m.youtube.com/watch?v=rOkQ3qqsSKk) by [Bald Man Motors](https://www.youtube.com/@BaldManMotors) (17 Feb 2019).
-  - Confirms the [MAX-M8Q](https://www.u-blox.com/en/product/max-m8-series) series from u-blox.
+  - Confirms the [MAX-M8Q](https://www.u-blox.com/en/product/max-m8-series) module from u-blox which contains the [UBX-M8030-KT](https://www.u-blox.com/en/product/ubx-m8030-series) chip.
 
 #### P-Gear
 
@@ -63,6 +65,8 @@ There are two websites:
     - P-Gear P610G - 10Hz GPS/GLONASS/Beidou.
   - It also mentions use of a u-blox chip for GPS / GLONASS / Beidou.
     - Only the NEO-M8P is lacking Galileo but this chip seems unlikely as it is only 5 Hz for 2 GNSS (10Hz for GPS).
+    - Potentially using a u-blox [NEO-M9N-00B](https://www.u-blox.com/en/product/neo-m9n-module) GNSS module for the P-Gear P610 as it goes up to 25 Hz.
+      - u-blox [UBX-M9140-KB](https://www.u-blox.com/en/product/ubx-m9140-series) GNSS chip, supporting up to 25 Hz
   - It is not clear whether both models use the same manufacturer.
 
 
