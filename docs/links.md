@@ -140,9 +140,10 @@ e.g. Pseudorange, Carrier phase, Doppler shift.
 
 #### u-blox
 
-[NEO-M8 series | u-blox](https://www.u-blox.com/en/product/neo-m8-series) - used by the Gyro-1
+- [NEO-M8 series | u-blox](https://www.u-blox.com/en/product/neo-m8-series) - used by the Gyro-1
 
-[NEO-M9N](https://www.u-blox.com/en/product/neo-m9n-module) module (4 concurrent GNSS) uses [UBX-M9140-KB](https://www.u-blox.com/en/product/ubx-m9140-series) chip (professional grade) - https://insidegnss.com/new-4-constellation-chip-from-u-blox/
+- [NEO-M9N](https://www.u-blox.com/en/product/neo-m9n-module) module (4 concurrent GNSS)
+  - [UBX-M9140-KB](https://www.u-blox.com/en/product/ubx-m9140-series) chip (professional grade) - https://insidegnss.com/new-4-constellation-chip-from-u-blox/
 
 
 
@@ -154,19 +155,6 @@ e.g. Pseudorange, Carrier phase, Doppler shift.
   - CGGP.25.4.E.02 s compatible with the MAX-M10S
 - [u-blox Antenna Reference Page - Taoglas](https://www.taoglas.com/taoglas-antenna-reference-guide/ublox-antenna-reference-page/?module=32838) - cross-reference Taoglas antenna with u-blox chips / modules
 - [Experiences with low cost M8N GPS modules?](https://3drpilots.com/threads/experiences-with-low-cost-m8n-gps-modules.10441/post-121945) on 3D Robotics Drone Forum- mention of the CGGBP.25.4.A.02
-
-
-
-### Mateksys
-
-- [Mateksys GNSS & Compass M9N-5883](http://www.mateksys.com/?portfolio=m9n-5883) uses the Taoglas CGGBP.25.4.A.02 and u-blox [NEO-M9N-00B](https://www.u-blox.com/en/product/neo-m9n-module) (up to 25 Hz)
-  - Appears to be used in the Luderitz devices
-  - Superseded by the [Mateksys GNSS *&* COMPASS M10-5883](http://www.mateksys.com/?portfolio=M10-5883) with different antenna and u-blox MAX-M10S
-    - 10 Hz in multi-constellation GNSS modes
-- [Mateksys GNSS M9N-CAN](http://www.mateksys.com/?portfolio=m9n-can) uses the Taoglas CGGBP.25.4.A.02 and u-blox [NEO-M9N-00B](https://www.u-blox.com/en/product/neo-m9n-module) (up to 25 Hz)
-- [Mateksys GNSS M10-L4-3100](http://www.mateksys.com/?portfolio=m10-l4-3100) uses the Taoglas CGGBP.25.4.A.02 + u-blox MAX-M10S
-  - 10 Hz in multi-constellation GNSS modes
-
 
 
 
