@@ -42,7 +42,7 @@ Notes:
 
 #### File Writers
 
-The following formats can all be loaded using dedicated file readers:
+The following formats can all be saved using dedicated file readers:
 
 - [CSV](formats/csv.md) - Comma-separated Values.
   - Useful for adhoc analysis in Excel.
