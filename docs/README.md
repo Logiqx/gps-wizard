@@ -58,7 +58,7 @@ The following formats can all be saved using dedicated file readers:
 
 The section above provides links to pages for each individual file reader, including descriptions of all the fields that are loaded into ndarrays.
 
-The various data fields supported by all of the file readers are described on a separate [page](data.md). This can provide useful when comparing the different file formats.
+The various data fields supported by all of the file readers are described on a separate [page](data.md). This can prove useful when comparing the different file formats.
 
 
 
