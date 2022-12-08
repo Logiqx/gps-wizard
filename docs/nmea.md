@@ -26,6 +26,8 @@ The following are the most common NMEA sentences output by GPS / GNSS chips:
   - Includes **time** (UTC), warning, **latitude**, **longitude**, **SOG**, **COG**, date (ddmmyy)
 - **VTG** - Track made good and Ground speed (e.g. $GPVTG or $GNVTG)
   - Includes **COG** and **SOG**
+- **ZDA** - GNSS Time & Date (e.g. $GPZDA or $GNZDA)
+  - Includes **time** (UTC) and date (ddmmyyyy)
 
 \* - Minimal NMEA implementation should support GGA and RMC.
 
@@ -41,8 +43,6 @@ Less common sentences include the following:
   - Includes **time** (UTC), **latitude**, **longitude**, **sats** (0-99) and **HDOP**
 - **GST** - GPS Pseudorange Noise Statistics (e.g. $GPGST or $GNGST)
   - Includes **time** (UTC) and **standard deviations** of latitude / longitude / altitude errors (m)
-- **ZDA** - GNSS Time & Date (e.g. $GPZDA or $GNZDA)
-  - Includes **time** (UTC) and date (ddmmyyyy)
 
 
 
