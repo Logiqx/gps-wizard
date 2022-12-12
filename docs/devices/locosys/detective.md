@@ -1,5 +1,9 @@
 ## Locosys Detective Work
 
+Last updated 12 Dec 2022. Added notes relating to the availability of climb rate.
+
+
+
 ### Introduction
 
 It is reasonably well known that the Locosys GT-11 used the SiRFstar II and Locosys GT-31 used the SiRFstar III.
@@ -50,7 +54,7 @@ I decided to look into this from a number of angles:
 - Studying the timeline of the GT-31, GW-52, GW-60 and numerous GPS modules from Locosys, plus the actual GPS chips from SiRF and MediaTek.
 - Features of the likely GPS chips were researched, including the SiRFstar IV and all of the Locosysy GPS modules that used it between 2010 and 2021. 
 - I've looked at the data sheets of GPS modules from the many OEMs using the GPS / GNSS chips from SiRF and MediaTek. 
-- I've studied all of the relevant NMEA [commands and sentences](nmea.md) supported by each chip and hunted for anything resembling a speed accuracy estimate.
+- I've studied all of the relevant NMEA [commands and sentences](nmea.md) supported by each chip and hunted for anything resembling a speed accuracy estimate resembling SDOP / SDOS or ROC (rate of climb, climb rate, vertical velocity, speed up / down, etc).
 - I've looked at the firmware of the GT-31, GW-52 and GW-60 to see what clues they contain.
 
 
@@ -100,31 +104,33 @@ I started by looking at the GW-52 and GW-60, before moving on to the GT-31.
 
 The following NMEA codes were found in the GW-52 and GW-60 firmware.
 
-These sentences are enough to provide everything needed for standard logging; everything except SDOP / SDOS:
+These sentences are enough to provide everything needed for standard logging; everything except SDOP / SDOS and ROC:
 
-- GPRMC - Recommended Minimum Navigation Information
-- GPGSV - Satellites in view
-- GPGSA - GPS DOP and active satellites
-- GPGGA - Global Positioning System Fix Data
-- PLSEPE - Locosys (PLS) Estimated Positional Error
-- PLSV - Locosys (PLS)
+- GPGGA - Global positioning system fix data
+- GPGSA - GNSS DOP and active satellites
+- GPGSV - GNSS satellites in view
+- GPRMC - Recommended minimum navigation information
+- PLSEPE - Proprietary Locosys (PLS), Estimated Positional Error
+- PLSV - Proprietary Locosys (PLS). Message V
 
 Several Mediatek commands were also present in the GW-52 and GW-60 firmware:
 
-- $PMTK605*31 - Query the firmware release information. 
-- $PMTK103*30 - Cold Restart: Don't use Time, Position, Almanac / Ephemeris data. 
-- $PMTK253,0,115200*01 - Set data output format and baud rate for current port.
+- $PMTK103\*30 - Cold Restart. Don't use time, position, almanac / ephemeris data. 
+- $PMTK253,0,115200\*01 - Set data output format and baud rate for current port.
+- $PMTK605\*31 - Query the firmware release information. 
 
 None of the Mediatek commands required to change the [fix and output rate](https://forum.arduino.cc/t/gps-pmtk220-versus-pmtk300/249143) (1 Hz / 5 Hz) are present in the GW-52 or GW-60 firmware:
 
-- $PMTK220,1000*1F - Set NMEA port update rate to 1Hz
-- $PMTK220, 200*2C - Set NMEA port update rate to 5Hz
-- $PMTK300,1000,0,0,0,0*1C - Set rate of position fixing activity to 1 Hz
-- $PMTK300,200,0,0,0,0*2F - Set rate of position fixing activity to 5 Hz
+- $PMTK220,1000\*1F - Set NMEA port update rate to 1Hz
+- $PMTK220, 200\*2C - Set NMEA port update rate to 5Hz
+- $PMTK300,1000,0,0,0,0\*1C - Set rate of position fixing activity to 1 Hz
+- $PMTK300,200,0,0,0,0\*2F - Set rate of position fixing activity to 5 Hz
 
 Summary:
 
+- The MediaTek chipsets only provide NMEA outputs. They do not provide binary outputs like SiRF or u-blox.
 - There are enough NMEA commands to log standard data but they do not include anything resembling SDOP / SDOS.
+- There are no NMEA sentences to retrieve climb rate (rate of climb, vertical velocity, etc), yet the GW-52 and GW-60 both record it.
 - There is no way to toggle a MediaTek chip between 1 Hz and 5 Hz using the $PMTK commands in the firmware.
 
 
@@ -157,9 +163,9 @@ Format strings for common NMEA sentences were easily spotted. The format strings
 
 A few possible NMEA commands were also spotted, possibly for initializing the SiRFstar III or to facilitate debugging:
 
-- $PLSC - Locosys prefix?
-- $PLSR - Locosys prefix?
-- $PSRF - SiRF prefix
+- $PLSC - Proprietary Locosys (PLS). Message C
+- $PLSR - Proprietary Locosys (PLS). Message R
+- $PSRF - Proprietary SiRF prefix (SRF)
 
 The firmware included a lot of obvious debug messages and it was noted that there was also a reference to SiRFDrive.
 
@@ -183,13 +189,15 @@ Let's remind ourselves of some basic facts that relate to the GT-31:
 - The GT-31 was released in 2009. It used the SiRFstar III and recorded SDOP. Tom Chalko also published his SDOP [paper](../chipsets/sirf/pdf/Speed_Dilution_of_Precision.pdf) in 2009.
 - There were several activities relating to EPE for SiRFNavIII (e.g. $PSRFEPE, EHVE) and SDOP in 2008 / 2009, leading up to the GT-31.
 - The GT-31 firmware contains a reference to SiRFDrive which suggests that it knows about EHVE.
-- It is reasonable to conclude the GT-31 is actually recording EHVE but has referred to it as SDOP.
+- It is reasonable to conclude the SiRFstar III in the GT-31 is actually deriving SDOP either from EHVE, or is using a similar approach.
 
 Let's remind ourselves of some basic facts about the GW-52 and GW-60:
 
-- They both provide logging at 1 Hz or 5 Hz and data is only ever stored in the SiRF binary format.
+- They both provide logging at 1 Hz or 5 Hz and data is only ever output from the GW-52 / GW-60 as an SBP file.
 - They both record SDOS (standard deviation of speed). The abbreviation SDOS appeared in the Locosys GW-52 and GW-60 brochures.
-- The GW-52 and GW-60 can interpret standard NMEA sentences, which is enough for session logs (including COG, HDOP, sats, etc).
+- The MediaTek chipsets only provide NMEA outputs. They do not provide binary outputs like SiRF or u-blox.
+- The GW-52 and GW-60 can interpret standard NMEA sentences, which is enough for regular session logs (including COG, HDOP, sats, etc).
+- There are no NMEA sentences to retrieve climb rate (rate of climb, vertical velocity, etc), yet the GW-52 and GW-60 both record it.
 - The GW-52 and GW-60 both contain a small selection of $PMTK commands to initialize and restart a MediaTek GPS / GNSS chip.
 - MediaTek speed error estimates would have to appear in $PMTK sentences. There is no evidence in the GW-52 or GW-60 firmware.
 - Therefore, neither the GW-52 or GW-60 have any mechanism to receive speed error estimates from a MediaTek GPS / GNSS chip.
@@ -197,11 +205,9 @@ Let's remind ourselves of some basic facts about the GW-52 and GW-60:
 
 It's not clear why the GT-31 used the term SDOP (standard dilution of precision) for a field that has units (m/s). SDOP is definitely not a "dilution of precision" but the term may have been used because DOP was familiar to the speedsurfing community.
 
-Whilst the above facts don't prove that the GW-52 or GW-60 use a SiRF chip (like their GT-31 predecessor), these facts pretty much rule out a MediaTek chip.
+Whilst the above facts don't prove that the GW-52 or GW-60 use a SiRF chip (like their GT-31 predecessor), these facts pretty much rule out a MediaTek chip. This document has illustrated that neither SDOP / SDOS or ROC (climb rate) can be retrieved from MediaTek chipsets.
 
-The presence of proprietary MediaTek NMEA commands in the firmware do suggest the GW-52 and GW-60 can handle a MediaTek chip.
-
-However, inability to receive any speed error estimates or toggle between 1 Hz / 5 Hz indicates they don't actually ship with a MediaTek chip.
+The presence of proprietary MediaTek NMEA commands in the firmware do suggest the GW-52 and GW-60 can use a MediaTek chip. However, inability to receive any speed error estimates, climb rate, or toggle between 1 Hz / 5 Hz indicates they don't actually ship with a MediaTek chip.
 
 
 
@@ -238,15 +244,17 @@ Table 5.2-8 ($PSRFEPE request) of the S4-1513 [datasheet](pdf/s4-1513_datasheet_
 
 The GW-60 won't have used the standard Locosys S4-1513 range due to size constraints but it could easily have used the internal components, or created a custom module designed especially for the GW-60. The SiRFstar IV chip is only 3.5 x 3.2 x 0.6 mm in size!
 
-This would mean that both the GW-52 and GW-60 use the SiRFstar IV but with EHVE called SDOS. As an aside, SDOP should never really have been called "speed dilution of precision" because it is not a dilution of precision. I can understand Locosys using the term SDOS (standard deviation of speed) instead of SDOP because it is more accurate.
+This would mean that both the GW-52 and GW-60 use the SiRFstar IV but with SDOS probably derived from EHVE, or at least using similar calculations.
+
+As an aside, SDOP should never really have been called "speed dilution of precision" because it is not a dilution of precision. It is easy to understand why Locosys used the term SDOS (standard deviation of speed) instead of SDOP, because it is more accurate.
 
 
 
 ### Summary
 
-The presence of some MediaTek commands in the GW-52 and GW-60 firmware actually help to disprove possible use of a MediaTek chip. I've also yet to discover a speed error estimate being generated by any MediaTek chip. The closest I have found documented is positional estimates (horizontal, vertical, latitude, longitude and altitude) from the MediaTek MT3333.
+The presence of some MediaTek commands in the GW-52 and GW-60 firmware actually help to disprove possible use of a MediaTek chip. I've also yet to discover a speed error estimate being generated by any MediaTek chip. The closest I have found documented is positional estimates (horizontal, vertical, latitude, longitude and altitude) from the MediaTek MT3333. Climb rate is stored in SBP files, yet it is not available from MediaTek chips or NMEA.
 
-I suspect the $PMTK commands are just hangovers from development and testing of the GW-52. All of the NMEA commands and sentences are in plain sight but they are all very basic and do not include speed error estimates. The NMEA commands required to switch between 1 Hz and 5 Hz logging are also absent from the GW-52 and GW-60 firmware.
+I suspect the $PMTK commands are just hangovers from development and testing of the GW-52. All of the NMEA commands and sentences are in plain sight but they are all very basic and do not include speed error estimates. The NMEA commands required to switch between 1 Hz and 5 Hz logging via NMEA commands are also absent from the GW-52 and GW-60 firmware.
 
 Some good reasons to suspect that Locosys used the SiRFstar IV:
 
@@ -256,11 +264,11 @@ Some good reasons to suspect that Locosys used the SiRFstar IV:
   - Even if the S4-1513 module itself were not used in the GW-52, Locosys expertise could have built it around the SiRFstar IV.
 - SiRFstar IV supports SiRFdrive and thus outputs EHVE, measured in cm/s (just like SDOP and SDOS).
   - The availability of SDOP (albeit with the name SDOS) was clearly a USP in the GW-52 and GW-60 marketing brochures.
-- Discontinuation of the GW-60 coincided with discontinutation of the Locosys GPS modules utilising the SiRFstar IV chipset.
+- Discontinuation of the GW-60 coincided with discontinuation of the Locosys GPS modules utilising the SiRFstar IV chipset.
 
 I therefore feel that in all probability, Locosys would have used the SiRFstar IV in the GW-52 and GW-60.
 
-The SiRFstar IV matches up with the GW-52 and GW-60 specifications; 1 Hz + 5 Hz logging and estimation of speed errors with a resolution of 1 cm/s.
+The SiRFstar IV matches up with the GW-52 and GW-60 specifications; 1 Hz + 5 Hz logging, availability of climb rate and estimation of speed errors with a resolution of 1 cm/s.
 
 
 
@@ -272,13 +280,13 @@ Tom Chalko's SDOP paper in 2009 included the following statements:
 >
 > SDOP is a new SiRF3 parameter determined on the basis of the Kalman Filter covariance computed during each 1-second cycle of the SiRF3 chipset
 
-Recognising that Locosys probably used the SiRFstar IV chip in the GW-52 and GW-60 means we can safely assume that SDOP and SDOS are actually the same thing. It seems more than likely that they are both derived from EHVE (Estimated Horizontal Velocity Error) which was originally for SiRFDrive and subsequently used by SiRFNavIII.
+Recognizing that Locosys probably used the SiRFstar IV chip in the GW-52 and GW-60 means we can safely assume that SDOP and SDOS are actually the same thing. It seems more than likely that they are either derived from EHVE (Estimated Horizontal Velocity Error) which was originally for SiRFDrive and subsequently used by SiRFNavIII, or calculated using a similar approach.
 
 The GW-52 specification refers to SDOS and says "typical accuracy of 10s average speed measurement: ~3 cm/s, 99.7% certainty". The mention of 99.7% suggests to me that that SDOS is based on 3σ (3 standard deviations). This would seem to be consistent with the Tom's test results back in 2009. It is also worth noting that the u-blox sAcc measure is almost certainly based on 1σ due to similarly named u-blox metrics being specified as 1 standard deviation.
 
 
 
-### Addendum
+### Addendum #1
 
 After writing this article, I've opened up a broken GW-60 to see what is inside.
 
@@ -292,6 +300,13 @@ The custom GPS module (Locosys GW-60 1707) gives nothing much away. It's not any
 
 It was also interesting to discover what processor is being used by the GW-60. It is the [STM32L151V8](https://www.st.com/en/microcontrollers-microprocessors/stm32l151v8.html) lower-power microcontroller which is based on the 32-bit ARM [Cortex-M3](https://developer.arm.com/Processors/Cortex-M3). The flash memory (bottom left) is a 256M-bit (32MB) Winbond [25Q256FVEG](https://www.winbond.com/hq/product/code-storage-flash-memory/serial-nor-flash/?__locale=zh_TW&partNo=W25Q256FV).
 
+
+
+### Addendum #2
+
+The MediaTek chipsets only support NMEA, not binary like SiRF or u-blox. Whilst reviewing all of the NMEA sentences supported by SiRF, MediaTek and u-blox chipsets in Dec 2022, it was noted that none include climb rate. Climb rate is only available in binary outputs of the SiRF and u-blox chips.
+
+However, both the GW-52 and GW-60 record climb rate in their SBP output. The fact that climb rate (ROC) cannot originate from an NMEA sentence is yet another piece of evidence that neither the GW-52 or GW-60 are using a MediaTek chip.
 
 
 
