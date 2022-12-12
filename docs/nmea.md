@@ -52,9 +52,9 @@ Less common sentences include the following:
 
 Message ID 129 is used to switch the serial port from binary to NMEA protocol and specify the message output rates.
 
-Specifying the EPE message rate via message ID 129 will enable the proprietary $PSRFEPE.
+Specifying the EPE message rate via message ID 129 will enable output of the proprietary $PSRFEPE message.
 
-A proprietary SiRF output sentence called **$PSRFEPE** provides accuracy estimates:
+The $PSRFEPE message provides accuracy estimates for use in the SiRFNavIII software:
 
 | Field | Description                         | Units   |
 | ----- | ----------------------------------- | ------- |
@@ -64,9 +64,9 @@ A proprietary SiRF output sentence called **$PSRFEPE** provides accuracy estimat
 | EHVE  | Estimated Velocity Error            | m/s     |
 | EHE   | Estimated Heading Error             | degrees |
 
-The proprietary $PSRFEPE sentence is documented by [Erinome-I](chipsets/sirf/pdf/Erinome-I_User_Manual_rev1.7.pdf) and was subtly documented, almost hidden away in the [SiRF Binary Protocol](chipsets/sirf/pdf/SiRF_Binary_Protocol_2.4_2008_11.pdf) 2.4 of Nov 2008 and onwards. Support for the PSRFEPE sentence was also added to the [gpsd](https://github.com/ukyg9e5r6k7gubiekd6/gpsd) library in [March 2019](https://github.com/ukyg9e5r6k7gubiekd6/gpsd/blob/master/driver_nmea0183.c).
+The proprietary $PSRFEPE sentence is fully documented by [Erinome-I](chipsets/sirf/pdf/Erinome-I_User_Manual_rev1.7.pdf) (SiRFstar V) and was subtly documented, almost hidden away in the [SiRF Binary Protocol](chipsets/sirf/pdf/SiRF_Binary_Protocol_2.4_2008_11.pdf) 2.4 of Nov 2008 and onwards. Support for the PSRFEPE sentence was also added to the [gpsd](https://github.com/ukyg9e5r6k7gubiekd6/gpsd) library in [March 2019](https://github.com/ukyg9e5r6k7gubiekd6/gpsd/blob/master/driver_nmea0183.c).
 
-$PSRFEPE has clearly been documented for SiRFNavIII since at least Nov 2008 and has been documented as being available in the  [SiRFstar IV](https://mikrokontroler.pl/wp-content/uploads/pliki/L50_GPS_Protocol_V1%200_Preliminary_20110727.pdf).
+$PSRFEPE has been documented clearly for SiRFNavIII, since at least Nov 2008 and has also been documented as for the  [SiRFstar IV](https://mikrokontroler.pl/wp-content/uploads/pliki/L50_GPS_Protocol_V1%200_Preliminary_20110727.pdf).
 
 
 
@@ -128,7 +128,7 @@ Popular GPS / GNSS chips output a number of standard NMEA sentences:
 | **RMC**  | time, warning, lat, long, SOG, COG, date                 |        Yes         |          Yes          |       Yes        |          Yes          |                     Yes                     |                         Yes                          |
 |   VTG    | COG, SOG                                                 |        Yes         |          Yes          |       Yes        |          Yes          |                     Yes                     |                         Yes                          |
 |   ZDA    | time + date                                              |        Yes         |          Yes          |       Yes        |          Yes          |                     Yes                     |                         Yes                          |
-| $PSRFEPE | time, HDOP, EHPE, EVPE, EHVE, EHE                        |         -          |           ?           |       Yes        |           -           |                      -                      |                          -                           |
+| $PSRFEPE | time, HDOP, EHPE, EVPE, EHVE, EHE                        |         ?          |          Yes          |       Yes        |           -           |                      -                      |                          -                           |
 
 Notes:
 
