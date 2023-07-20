@@ -206,6 +206,7 @@ The TrackPointExtras schema already supports speed accuracy (akin to SOP) and ve
 
 - Enhance GPX loader to support `<gpxdata:speed>` which was introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and is used by [Waterspeed](https://waterspeedapp.com/).
 - Enhance GPX loader to support GPX 1.1 + TrackpointExtension v2 for `<xxx:course>` and `<xxx:speed>`. See [document](../speed.md) for details.
+
 ```xml
 <trkpt lat="53.371207100" lon="-3.190282800">
   <ele>-2.74</ele>
@@ -221,6 +222,7 @@ The TrackPointExtras schema already supports speed accuracy (akin to SOP) and ve
 </trkpt>
 ```
 - Enhance GPX loader to support GPX 1.1 + TrackpointExtras v1 for `<xxx:course>`, `<xxx:speed>` and the accuracy metrics. See [document](../../xmlschemas/TrackPointExtras/v1/README.md) for details.
+
 ```xml
 <trkpt lat="53.371207100" lon="-3.190282800">
   <ele>-2.74</ele>
@@ -250,6 +252,7 @@ The TrackPointExtras schema already supports speed accuracy (akin to SOP) and ve
 - Enhance GPX export to use the element order mandated by the GPX schema - "ele", "time", "course", "speed", "sat", hdop".
 - Export "sdop" and "vsdop" using the original m/s and change the loader accordingly. This will avoid rounding issues.
 - Switch to GPX 1.1 (instead of using GPX 1.0) so that SDOP ("sacc") + VSDOP ("vsacc") and metadata can be included in a GPX-compliant manner.
+
 ```xml
 <trkpt lat="53.371207100" lon="-3.190282800">
   <ele>-2.74</ele>

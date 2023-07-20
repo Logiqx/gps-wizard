@@ -57,7 +57,7 @@ It was not until around 2015 when Garmin finally re-introduced "speed" and "cour
 
 Note: The example above also includes `<gpxtpx:hr>` (heartrate) to illustrate how that would be included.
 
-In July 2023, I created the [TrackPointExtras](../xmlschemas/TrackPointExtras/v1/README.md) schema for use with GPX 1.1:
+In July 2023, I created the [TrackPointExtras](../xmlschemas/TrackPointExtras/v1/README.md) schema for use with GPX 1.1, adding "course", "speed" and accuracy estimates:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -147,7 +147,7 @@ GPX 1.1 using the TrackPointExtension schema:
 
 The additional namespaces in a GPX 1.1 document are given a prefix (e.g. "gpxtpx" as above) but these may vary. For example, Garmin sometimes uses "ns3" and sometimes uses "gpxtpx" for TrackPointExtension.
 
-GPX 1.1 using the TrackPointExtras schema:
+GPX 1.1 using the TrackPointExtras schema is a necessity if speed accuracy estimates are to be included:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
