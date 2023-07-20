@@ -2,11 +2,9 @@
 
 #### Summary
 
-This schema defines Logiqx extensions to be used with the GPX 1.1 schema.
+This schema defines Logiqx extensions to be used with the [GPX 1.1](http://www.topografix.com/GPX/1/1/gpx.xsd) schema.
 
 The root element defined by this schema is intended to be used as a child element of the "extensions" elements in the trkpt element in the GPX 1.1 schema. 
-
-The GPX 1.1 schema is available at http://www.topografix.com/GPX/1/1/gpx.xsd.
 
 
 
@@ -31,7 +29,9 @@ Element names have been intentionally kept as short as possible to avoid too muc
 
 These short names are closely related to the names used by u-blox (e.g. "hAcc" for horizontal accuracy estimate) and Quectel ("HErr" for horizontal error estimate) in their GNSS chipset documentation.
 
-I decided to choose the word "accuracy" over "error" because it is more widely used by common APIs (e.g. Android and Apple) and by GPS / GNSS chipset manufacturers such as u-blox. Some chipset manufacturers use the word "error" but for items that essentially represent the same thing; RMS or 68% confidence.
+The accuracy estimates have been named concisely (e.g. `<hacc>` and `<vacc>`) and use entirely lower case names, much like the elements `<hdop>`, `<vdop>`, and `<pdop>` in GPX 1.0 and 1.1.
+
+The word "accuracy" was chosen over "error" because it is used by common APIs (e.g. Android and Apple) and by GPS / GNSS chipset manufacturers such as u-blox. Some chipset manufacturers use the word "error" but for items that essentially represent the same thing; RMS or 68% confidence.
 
 
 
