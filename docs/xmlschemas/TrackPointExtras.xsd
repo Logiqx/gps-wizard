@@ -23,7 +23,7 @@
       <xsd:element name="course" type="degreesType">
         <xsd:annotation>
           <xsd:documentation>
-            Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing
+            Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing.
             COG is the actual direction of travel relative to due north.
             Course was available in GPX 1.0 but (possibly inadvertently) removed in GPX 1.1.
           </xsd:documentation>
