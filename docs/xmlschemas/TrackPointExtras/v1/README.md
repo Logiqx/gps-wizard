@@ -1,28 +1,46 @@
 ## TrackPointExtras
 
-#### Summary
-
-This schema defines Logiqx extensions to be used with the [GPX 1.1](http://www.topografix.com/GPX/1/1/gpx.xsd) schema.
-
-The root element defined by this schema is intended to be used as a child element of the "extensions" elements in the trkpt element in the GPX 1.1 schema. 
-
-
-
 #### Background
 
 GPS / GNSS chipsets from a number of manufacturers provide position and speed accuracy estimates; SiRF, u-blox, Broadcom, Quectel, etc.
 
 This data is typically available via proprietary NMEA sentences (e.g. `$PGLOR,...,LSQ`) or binary protocols (e.g. SiRF and UBX).
 
-The estimated location and speed accuracy information is also accessible via the Android and Apple location [APIs](../../../apis/location.md), summarised in the linked document.
+Estimated location and speed accuracy information is also available via the Android and Apple location [APIs](../../../apis/location.md), summarised in the linked document.
 
 However, GPX 1.1 provides no standard mechanism to store the accuracy estimates (or Doppler-derived course and speed), hence these GPX extensions.
 
 
 
+#### Extensions
+
+This schema defines Logiqx extensions to be used with the [GPX 1.1](http://www.topografix.com/GPX/1/1/gpx.xsd) schema.
+
+The root element defined by this schema is intended to be used as a child element of the "extensions" elements in the trkpt element.
+
+For example:
+
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <extensions>
+    <tpe:TrackPointExtras>
+      <tpe:course>157.19</tpe:course>
+      <tpe:speed>0.5429</tpe:speed>
+      <tpe:hacc>2.0</tpe:hacc>
+      <tpe:cacc>5.0</tpe:cacc>
+      <tpe:sacc>0.5</tpe:sacc>
+    </tpe:TrackPointExtras>
+  </extensions>
+</trkpt>
+```
+
+
+
 #### Decisions + Rationale
 
-Element names have been intentionally kept as short as possible to avoid too much bloat of the GPX:
+All of the element names have been intentionally kept as short as possible to avoid too much bloat of the GPX:
 
 - The elements `<course>` and `<speed>`  have been carried forward from XML 1.0, also matching the names in Garmin's [TrackpointExtensionv2](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd).
 - Estimated "accuracy" elements have been given short names - e.g. `<hacc>` is the "horizontal accuracy" estimate.
@@ -31,13 +49,13 @@ These short names are closely related to the names used by u-blox (e.g. "hAcc" f
 
 The accuracy estimates have been named concisely (e.g. `<hacc>` and `<vacc>`) and use entirely lower case names, much like the elements `<hdop>`, `<vdop>`, and `<pdop>` in GPX 1.0 and 1.1.
 
-The word "accuracy" was chosen over "error" because it is used by common APIs (e.g. Android and Apple) and by GPS / GNSS chipset manufacturers such as u-blox. Some chipset manufacturers use the word "error" but for items that essentially represent the same thing; RMS or 68% confidence.
+Note: The term "accuracy" was chosen over "error" because it is used by the [Android](https://developer.android.com/reference/android/location/Location) and [Apple](https://developer.apple.com/documentation/corelocation/cllocation) APIs, plus notable GPS / GNSS chipset manufacturers such as u-blox. Although some chipset manufacturers use the word "error" those items essentially represent the same thing; i.e. RMS or 68% confidence.
 
 
 
 #### Elements
 
-The following elements are all available in this schema. Course and speed have been made mandatory because of their importance:
+The following elements are available in this schema. Course and speed have been made mandatory because of their importance:
 
 | Name   | Description                                                  |
 | ------ | ------------------------------------------------------------ |
@@ -89,3 +107,11 @@ An example track point:
   </extensions>
 </trkpt>
 ```
+
+
+
+#### Validation
+
+Software developers should validate their GPX files during the development / testing process.
+
+Validation methods are described in a technical [overview](../../../gpx/README.md) of the GPX format.
