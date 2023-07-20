@@ -38,7 +38,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="vSpeed" type="speedType" minOccurs="0">
+      <xsd:element name="vspeed" type="speedType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Vertical speed, sometimes referred to as climb rate or rate of climb (ROC).
@@ -46,7 +46,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="hAcc" type="metersType" minOccurs="0">
+      <xsd:element name="hacc" type="metersType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.
@@ -54,7 +54,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="vAcc" type="metersType" minOccurs="0">
+      <xsd:element name="vacc" type="metersType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.
@@ -62,7 +62,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="cAcc" type="degreesType" minOccurs="0">
+      <xsd:element name="cacc" type="degreesType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Course accuracy estimate, sometimes (incorrectly) referred to as heading / bearing accuracy (or error).
@@ -70,7 +70,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="sAcc" type="speedType" minOccurs="0">
+      <xsd:element name="sacc" type="speedType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Horizontal speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.
@@ -78,7 +78,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="vsAcc" type="speedType" minOccurs="0">
+      <xsd:element name="vsacc" type="speedType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Vertical speed accuracy estimate, sometimes referred to as vertical speed / velocity error.
