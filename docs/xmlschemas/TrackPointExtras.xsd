@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+  elementFormDefault="qualified"
+  xmlns="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:annotation><xsd:documentation>
+  This schema defines Logiqx extensions to be used with the GPX 1.1 schema.
+  The root element defined by this schema is intended to be used as a child
+  element of the "extensions" elements in the trkpt element in the GPX 1.1 schema. 
+  The GPX 1.1 schema is available at http://www.topografix.com/GPX/1/1/gpx.xsd.
+  </xsd:documentation></xsd:annotation>
+
+  <xsd:element name="TrackPointExtras" type="TrackPointExtrasType" />
+
+  <xsd:complexType name="TrackPointExtrasType">
+    <xsd:annotation>
+      <xsd:documentation>
+        This type contains data fields that cannot be represented in track points in GPX 1.1 instances.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="course" type="degreesType">
+        <xsd:annotation>
+          <xsd:documentation>
+            Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing
+            COG is the actual direction of travel relative to due north.
+            Course was available in GPX 1.0 but (possibly inadvertently) removed in GPX 1.1.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="speed" type="speedType">
+        <xsd:annotation>
+          <xsd:documentation>
+            Horizontal speed, often referred to as speed over ground (SOG).
+            Typically derived from the Doppler observable and more accurate than position-derived speeds.
+            Speed was available in GPX 1.0 but (possibly inadvertently) removed in GPX 1.1.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="vSpeed" type="speedType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Vertical speed, sometimes referred to as climb rate or rate of climb (ROC).
+            Only available from some GPS / GNSS chipsets (e.g. SiRF in their binary output).
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="hAcc" type="metersType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.
+            Typically the estimated horizontal accuracy of this location at the 68th percentile confidence level.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="vAcc" type="metersType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.
+            Typically the estimated vertical accuracy of this location at the 68th percentile confidence level.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="cAcc" type="degreesType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Course accuracy estimate, sometimes (incorrectly) referred to as heading / bearing accuracy (or error).
+            Typically the estimated course accuracy at the 68th percentile confidence level.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="sAcc" type="speedType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Horizontal speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.
+            Typically the estimated horizontal speed (SOG) accuracy at the 68th percentile confidence level.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="vsAcc" type="speedType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Vertical speed accuracy estimate, sometimes referred to as vertical speed / velocity error.
+            Typically the estimated vertical speed (ROC) accuracy at the 68th percentile confidence level.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="degreesType">
+    <xsd:annotation><xsd:documentation>
+      This type contains an angle measured in degrees in a clockwise direction from the true north line.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="360"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="speedType">
+    <xsd:annotation><xsd:documentation>
+      This type contains a speed measured in meters per second.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="metersType">
+    <xsd:annotation><xsd:documentation>
+      This type contains a distance value measured in meters.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>
