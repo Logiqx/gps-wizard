@@ -57,6 +57,27 @@ It was not until around 2015 when Garmin finally re-introduced "speed" and "cour
 
 Note: The example above also includes `<gpxtpx:hr>` (heartrate) to illustrate how that would be included.
 
+In July 2023, I created the [TrackPointExtras](../xmlschemas/TrackPointExtras/v1/README.md) schema for use with GPX 1.1:
+
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <tpe:TrackPointExtras>
+      <tpe:course>157.19</tpe:course>
+      <tpe:speed>0.5429</tpe:speed>
+      <tpe:hacc>2.0</tpe:hacc>
+      <tpe:vacc>4.0</tpe:vacc>
+      <tpe:cacc>5.0</tpe:cacc>
+      <tpe:sacc>0.5</tpe:sacc>
+    </tpe:TrackPointExtras>
+  </extensions>
+</trkpt>
+```
+
 
 
 ### Validation
@@ -111,6 +132,8 @@ The root element in the GPX file is `<gpx>` and it is important that this is cor
 
 #### GPX 1.1
 
+GPX 1.1 using the TrackPointExtension schema:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx creator="GPS Wizard"
@@ -124,7 +147,22 @@ The root element in the GPX file is `<gpx>` and it is important that this is cor
 
 The additional namespaces in a GPX 1.1 document are given a prefix (e.g. "gpxtpx" as above) but these may vary. For example, Garmin sometimes uses "ns3" and sometimes uses "gpxtpx" for TrackPointExtension.
 
-All software that can read GPX 1.1 files using the TrackPointExtension schema (or other extension schema) should be careful not rely upon / expect the use of a specific prefix.
+GPX 1.1 using the TrackPointExtras schema:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="GPS Wizard"
+     version="1.1"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:tpe="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         http://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1
+                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtrasV1.xsd">
+```
+
+All software that can read GPX 1.1 files using the TrackPointExtension or TrackPointExtras schemas should be careful not rely upon / expect the use of a specific prefix.
 
 
 
@@ -148,6 +186,10 @@ Note: TrackPointExtension v2 is the only "legitimate" way to include "speed" and
 Other useful Garmin extensions include:
 
 - TrackStatsExtension - [http://www.garmin.com/xmlschemas/TrackStatsExtension/v1](http://www.garmin.com/xmlschemas/TrackStatsExtension/v1)
+
+The TrackPointExtras schema was created in July 2023. It added "speed", "course" and elements for the various accuracy estimates:
+
+- TrackPointExtras v1 - [https://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1/](https://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1/) + [TrackPointExtrasV1.xsd](http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtrasV1.xsd)
 
 
 
@@ -191,7 +233,7 @@ If you are using GPX 1.0 then it is easy to include course and speed:
 </trkpt>
 ```
 
-If you are using GPX 1.1 then you need to use TrackPointExtension v2:
+If you are using GPX 1.1 then you need to use TrackPointExtension v2: 
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -205,6 +247,23 @@ If you are using GPX 1.1 then you need to use TrackPointExtension v2:
       <gpxtpx:speed>0.5429</gpxtpx:speed>
       <gpxtpx:course>157.19</gpxtpx:course>
     </gpxtpx:TrackPointExtension>
+  </extensions>
+</trkpt>
+```
+
+Alternatively, you can use TrackPointExtras v1:
+
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <tpe:TrackPointExtras>
+      <tpe:course>157.19</tpe:course>
+      <tpe:speed>0.5429</tpe:speed>
+    </tpe:TrackPointExtras>
   </extensions>
 </trkpt>
 ```

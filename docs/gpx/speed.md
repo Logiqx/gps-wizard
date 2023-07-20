@@ -135,6 +135,51 @@ I will liaise with Manfred (GPSResults) and Yann (GpsarPro) regarding future sup
 
 
 
+#### Alternative "Correct" Approach
+
+In July 2023, I created the [TrackPointExtras](../xmlschemas/TrackPointExtras/v1/README.md) schema for use with GPX 1.1.
+
+This means that with the appropriate GPX header (i.e. defining the namespace and schemaLocation) it is possible to include `<speed>` and `<course>` elements in GPX 1.1 files, plus accuracy estimates (horizontal, course, speed, etc) .
+
+An example header:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="GPS Wizard"
+     version="1.1"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:tpe="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         http://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1
+                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtrasV1.xsd">
+```
+
+Trackpoints can then record course and speed (plus accuracy estimates) inside an `<extensions>` element:
+
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <tpe:TrackPointExtras>
+      <tpe:course>157.19</tpe:course>
+      <tpe:speed>0.5429</tpe:speed>
+      <tpe:hacc>2.0</tpe:hacc>
+      <tpe:cacc>5.0</tpe:cacc>
+      <tpe:sacc>0.5</tpe:sacc>
+    </tpe:TrackPointExtras>
+  </extensions>
+</trkpt>
+```
+
+Note: The prefix "tpe" is not special and may be chosen by the GPX creator. No assumptions should be made about specific prefix(es) being used in GPX files.
+
+
+
 #### Workaround using GPX 1.0
 
 The `<speed>` element of GPX 1.0 is already supported by [GpsarPro](http://www.gpsactionreplay.com/), [GPSResults](https://www.gps-speed.com/), [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) and many other popular pieces of software.
@@ -192,6 +237,8 @@ You will also need to add the "gpxdata" namespace and schema location to the GPX
 ```
 
 This still isn't 100% correct but it will avoid errors such as "XMLSyntaxError: Namespace prefix gpxdata on speed is not defined".
+
+A similar workaround to the one described above could also be utilised alongside the TrackPointExtras schema.
 
 Notes:
 
