@@ -101,20 +101,16 @@
 
   <xsd:simpleType name="speedType">
     <xsd:annotation><xsd:documentation>
-      This type contains a speed measured in meters per second.
+      This type contains a speed measured in meters per second. Vertical speed can be negative.
     </xsd:documentation></xsd:annotation>
-    <xsd:restriction base="xsd:decimal">
-      <xsd:minInclusive value="0"/>
-    </xsd:restriction>
+    <xsd:restriction base="xsd:decimal"/>
   </xsd:simpleType>
 
   <xsd:simpleType name="metersType">
     <xsd:annotation><xsd:documentation>
       This type contains a distance value measured in meters.
     </xsd:documentation></xsd:annotation>
-    <xsd:restriction base="xsd:decimal">
-      <xsd:minInclusive value="0"/>
-    </xsd:restriction>
+    <xsd:restriction base="xsd:decimal"/>
   </xsd:simpleType>
 
 </xsd:schema>
