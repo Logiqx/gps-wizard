@@ -11,9 +11,9 @@
   The GPX 1.1 schema is available at http://www.topografix.com/GPX/1/1/gpx.xsd.
   </xsd:documentation></xsd:annotation>
 
-  <xsd:element name="TrackPointExtras" type="TrackPointExtrasType" />
+  <xsd:element name="extras" type="extrasType" />
 
-  <xsd:complexType name="TrackPointExtrasType">
+  <xsd:complexType name="extrasType">
     <xsd:annotation>
       <xsd:documentation>
         This type contains data fields that cannot be represented in track points in GPX 1.1 instances.

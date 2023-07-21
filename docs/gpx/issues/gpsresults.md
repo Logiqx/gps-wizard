@@ -148,12 +148,12 @@ The TrackpointExtras v1 extension supports course, speed, SDOP and VSDOP as foll
   <sat>5</sat>
   <hdop>1.40</hdop>
   <extensions>
-    <tpe:TrackPointExtras>
+    <tpe:extras>
       <tpe:course>199.090</tpe:course>
       <tpe:speed>1.480<tpe:speed>
       <tpe:sacc>0.5</tpe:sacc>
       <tpe:vsacc>0.7</tpe:vsacc>
-    </tpe:TrackPointExtras>
+    </tpe:extras>
   </extensions>
 </trkpt>
 ```
@@ -188,12 +188,12 @@ The TrackPointExtras schema already supports speed accuracy (akin to SOP) and ve
   <sat>5</sat>
   <hdop>1.40</hdop>
   <extensions>
-    <tpe:TrackPointExtras>
+    <tpe:extras>
       <tpe:course>199.090</tpe:course>
       <tpe:speed>1.480<tpe:speed>
       <tpe:sacc>0.5</tpe:sacc>
       <tpe:vsacc>0.7</tpe:vsacc>
-    </tpe:TrackPointExtras>
+    </tpe:extras>
   </extensions>
 </trkpt>
 ```
@@ -230,12 +230,12 @@ The TrackPointExtras schema already supports speed accuracy (akin to SOP) and ve
   <sat>5</sat>
   <hdop>1.40</hdop>
   <extensions>
-    <tpe:TrackPointExtras>
+    <tpe:extras>
       <tpe:course>199.090</tpe:course>
       <tpe:speed>1.480<tpe:speed>
       <tpe:sacc>0.5</tpe:sacc>
       <tpe:vsacc>0.7</tpe:vsacc>
-    </tpe:TrackPointExtras>
+    </tpe:extras>
   </extensions>
 </trkpt>
 ```
@@ -260,12 +260,12 @@ The TrackPointExtras schema already supports speed accuracy (akin to SOP) and ve
   <sat>5</sat>
   <hdop>1.40</hdop>
   <extensions>
-    <tpe:TrackPointExtras>
+    <tpe:extras>
       <tpe:course>199.090</tpe:course>
       <tpe:speed>1.480<tpe:speed>
       <tpe:sacc>0.5</tpe:sacc>
       <tpe:vsacc>0.7</tpe:vsacc>
-    </tpe:TrackPointExtras>
+    </tpe:extras>
   </extensions>
 </trkpt>
 ```

@@ -66,14 +66,14 @@ In July 2023, I created the [TrackPointExtras](../xmlschemas/TrackPointExtras/v1
   <sat>6</sat>
   <hdop>1.4</hdop>
   <extensions>
-    <tpe:TrackPointExtras>
+    <tpe:extras>
       <tpe:course>157.19</tpe:course>
       <tpe:speed>0.5429</tpe:speed>
       <tpe:hacc>2.0</tpe:hacc>
       <tpe:vacc>4.0</tpe:vacc>
       <tpe:cacc>5.0</tpe:cacc>
       <tpe:sacc>0.5</tpe:sacc>
-    </tpe:TrackPointExtras>
+    </tpe:extras>
   </extensions>
 </trkpt>
 ```
@@ -260,10 +260,10 @@ Alternatively, you can use TrackPointExtras v1:
   <sat>6</sat>
   <hdop>1.4</hdop>
   <extensions>
-    <tpe:TrackPointExtras>
+    <tpe:extras>
       <tpe:course>157.19</tpe:course>
       <tpe:speed>0.5429</tpe:speed>
-    </tpe:TrackPointExtras>
+    </tpe:extras>
   </extensions>
 </trkpt>
 ```

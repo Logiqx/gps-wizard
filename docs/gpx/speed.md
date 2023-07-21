@@ -165,13 +165,13 @@ Trackpoints can then record course and speed (plus accuracy estimates) inside an
   <sat>6</sat>
   <hdop>1.4</hdop>
   <extensions>
-    <tpe:TrackPointExtras>
+    <tpe:extras>
       <tpe:course>157.19</tpe:course>
       <tpe:speed>0.5429</tpe:speed>
       <tpe:hacc>2.0</tpe:hacc>
       <tpe:cacc>5.0</tpe:cacc>
       <tpe:sacc>0.5</tpe:sacc>
-    </tpe:TrackPointExtras>
+    </tpe:extras>
   </extensions>
 </trkpt>
 ```
