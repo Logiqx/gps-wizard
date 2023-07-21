@@ -179,7 +179,7 @@ If GPX 1.1 is chosen then the header will need to be updated and should declare 
                          http://logiqx.github.io/gps-wizard/xmlschemas/tpx10.xsd">
 ```
 
-The [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) schema already supports speed accuracy (akin to SOP) and vertical speed accuracy (asking to VSDOP) estimates:
+The [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) schema already supports speed accuracy (akin to SDOP) and vertical speed accuracy (asking to VSDOP) estimates:
 
 ```xml
 <trkpt lat="53.371207100" lon="-3.190282800">
@@ -205,7 +205,19 @@ The [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) schema already suppor
 #### GPX Import
 
 - Enhance GPX loader to support `<gpxdata:speed>` which was introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and is used by [Waterspeed](https://waterspeedapp.com/).
-- Enhance GPX loader to support GPX 1.1 + TrackpointExtension v2 for `<xxx:course>` and `<xxx:speed>`. See [document](../speed.md) for details.
+
+```xml
+<trkpt lat="53.371207100" lon="-3.190282800">
+  <ele>-2.74</ele>
+  <time>2022-02-06T11:22:06.600Z</time>
+  <sat>5</sat>
+  <hdop>1.40</hdop>
+  <extensions>
+    <gpxdata:speed>1.480</gpxdata:speed>
+  </extensions>
+</trkpt>
+```
+- Enhance GPX loader to support GPX 1.1 + TrackpointExtension v2 for `<xxx:course>` and `<xxx:speed>`. See [document](../speed.md) for further details.
 
 ```xml
 <trkpt lat="53.371207100" lon="-3.190282800">
@@ -221,7 +233,7 @@ The [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) schema already suppor
   </extensions>
 </trkpt>
 ```
-- Enhance GPX loader to support GPX 1.1 + TrackpointExtras v1 for `<xxx:course>`, `<xxx:speed>` and the accuracy metrics. See [document](../../xmlschemas/tpx/1/0/README.md) for details.
+- Enhance GPX loader to support GPX 1.1 + TrackpointExtras v1 for `<xxx:course>`, `<xxx:speed>` and the accuracy metrics. See [document](../../xmlschemas/tpx/1/0/README.md) for further details.
 
 ```xml
 <trkpt lat="53.371207100" lon="-3.190282800">
