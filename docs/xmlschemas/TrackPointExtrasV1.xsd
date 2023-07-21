@@ -20,7 +20,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="course" type="degreesType">
+      <xsd:element name="course" type="courseType">
         <xsd:annotation>
           <xsd:documentation>
             Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing.
@@ -46,7 +46,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="hacc" type="metersAccuracyType" minOccurs="0">
+      <xsd:element name="hacc" type="positionalAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.
@@ -54,7 +54,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="vacc" type="metersAccuracyType" minOccurs="0">
+      <xsd:element name="vacc" type="positionalAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.
@@ -62,7 +62,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="cacc" type="degreesType" minOccurs="0">
+      <xsd:element name="cacc" type="courseAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Course accuracy estimate, sometimes (incorrectly) referred to as heading / bearing accuracy (or error).
@@ -89,9 +89,9 @@
     </xsd:sequence>
   </xsd:complexType>
 
-  <xsd:simpleType name="degreesType">
+  <xsd:simpleType name="courseType">
     <xsd:annotation><xsd:documentation>
-      This type contains an angle measured in degrees, clockwise from true north.
+      This type contains a course, measured in degrees (clockwise from true north).
     </xsd:documentation></xsd:annotation>
     <xsd:restriction base="xsd:decimal">
       <xsd:minInclusive value="0"/>
@@ -115,18 +115,28 @@
     <xsd:restriction base="xsd:decimal"/>
   </xsd:simpleType>
 
-  <xsd:simpleType name="metersAccuracyType">
+  <xsd:simpleType name="positionalAccuracyType">
     <xsd:annotation><xsd:documentation>
-      This type contains a horizontal (or vertical) distance accuracy estimate, measured in meters.
+      This type contains a positional accuracy estimate (horizontal or vertical), measured in meters.
     </xsd:documentation></xsd:annotation>
     <xsd:restriction base="xsd:decimal">
       <xsd:minInclusive value="0"/>
     </xsd:restriction>
   </xsd:simpleType>
 
+  <xsd:simpleType name="courseAccuracyType">
+    <xsd:annotation><xsd:documentation>
+      This type contains a course accuracy estimate, measured in degrees.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="180"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
   <xsd:simpleType name="speedAccuracyType">
     <xsd:annotation><xsd:documentation>
-      This type contains a horizontal (or vertical) speed accuracy estimate, measured in meters per second.
+      This type contains a speed accuracy estimate (horizontal or vertical), measured in meters per second.
     </xsd:documentation></xsd:annotation>
     <xsd:restriction base="xsd:decimal">
       <xsd:minInclusive value="0"/>
