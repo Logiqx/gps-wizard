@@ -94,6 +94,7 @@ This means that with the appropriate GPX header (i.e. defining the namespace and
 An example header:
 
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <gpx creator="Garmin Connect"
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
@@ -225,15 +226,19 @@ This suggestion / workaround is only intended for Waterspeed so that GPX changes
 You will also need to add the "gpxdata" namespace and schema location to the GPX, if it is to be a valid XML document:
 
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <gpx creator="Garmin Connect"
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
      xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+     xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd 
-       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd
-       http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         http://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.garmin.com/xmlschemas/TrackPointExtension/v2
+                         http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd
+                         http://www.cluetrust.com/XML/GPXDATA/1/0
+                         http://www.cluetrust.com/Schemas/gpxdata10.xsd">
 ```
 
 This still isn't 100% correct but it will avoid errors such as "XMLSyntaxError: Namespace prefix gpxdata on speed is not defined".
@@ -254,6 +259,24 @@ A similar workaround to the one described above could also be utilised alongside
     </tpx:extras>
   </extensions>
 </trkpt>
+```
+
+You will also need to add the "gpxdata" namespace and schema location to the GPX, if it is to be a valid XML document:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="GPS Wizard"
+     version="1.1"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0"
+     xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         http://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0
+                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx10.xsd
+                         http://www.cluetrust.com/XML/GPXDATA/1/0
+                         http://www.cluetrust.com/Schemas/gpxdata10.xsd">
 ```
 
 Notes:
