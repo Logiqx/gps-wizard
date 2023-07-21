@@ -177,7 +177,7 @@ Trackpoints can then record course and speed (plus accuracy estimates) inside an
 </trkpt>
 ```
 
-Note: The prefix "tpe" is not special and may be chosen by the GPX creator. No assumptions should be made about specific prefix(es) being used in GPX files.
+Note: The prefix "tpx" is not special and may be chosen by the GPX creator. No assumptions should be made about specific prefix(es) being used in GPX files.
 
 
 
