@@ -31,7 +31,7 @@ GPX 1.1:
 
 - Supports the non-standard "gpxdata:speed" introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and used by [Waterspeed](https://waterspeedapp.com/).
 - Does not support TrackpointExtension v2 extensions for "course" and "speed". See [document](../speed.md) for details.
-- Does not support TrackpointExtras v1 extensions for "course", "speed" and error estimates. See [document](../../xmlschemas/TrackPointExtras/v1/README.md) for details.
+- Does not support TrackpointExtras v1 extensions for "course", "speed" and error estimates. See [document](../../xmlschemas/tpx/1/0/README.md) for details.
 
 
 
@@ -128,7 +128,7 @@ The only way to extend the GPX schema is to use GPX 1.1 which leads to additiona
 - Enhance GPX loader to recognize `<course>` (GPX 1.0) and `<cog>` (produced by GPSResults and COROS).
 - Enhance GPX loader to support GPX 1.1 + TrackpointExtension v1 + v2 for `<xxx:hr>`, regardless of prefix and not just for "gpxtpx".
 - Enhance GPX loader to support GPX 1.1 + TrackpointExtension v2 for `<xxx:course>` and `<xxx:speed>`. See [document](../speed.md) for details.
-- Enhance GPX loader to support GPX 1.1 + TrackpointExtras v1 for `<xxx:course>` and `<xxx:speed>`. See [document](../../xmlschemas/TrackPointExtras/v1/README.md) for details.
+- Enhance GPX loader to support GPX 1.1 + TrackpointExtras v1 for `<xxx:course>` and `<xxx:speed>`. See [document](../../xmlschemas/tpx/1/0/README.md) for details.
 
 
 

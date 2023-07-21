@@ -80,12 +80,12 @@ GPX 1.1 compliant files should begin with something like the following:
 <gpx creator="GPS Wizard"
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          http://www.topografix.com/GPX/1/1/gpx.xsd
-                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1
-                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtrasV1.xsd">
+                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0
+                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx10.xsd">
 ```
 
 An example track point:

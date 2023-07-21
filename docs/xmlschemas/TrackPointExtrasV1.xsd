@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<xsd:schema targetNamespace="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+<xsd:schema targetNamespace="http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0"
   elementFormDefault="qualified"
-  xmlns="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+  xmlns="http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
   <xsd:annotation><xsd:documentation>

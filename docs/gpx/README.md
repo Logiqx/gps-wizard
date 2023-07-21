@@ -57,7 +57,7 @@ It was not until around 2015 when Garmin finally re-introduced "speed" and "cour
 
 Note: The example above also includes `<gpxtpx:hr>` (heartrate) to illustrate how that would be included.
 
-In July 2023, I created the [TrackPointExtras](../xmlschemas/TrackPointExtras/v1/README.md) schema for use with GPX 1.1, adding "course", "speed" and accuracy estimates:
+In July 2023, I created the [TrackPointExtras](../xmlschemas/tpx/1/0/README.md) schema for use with GPX 1.1, adding "course", "speed" and accuracy estimates:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -154,12 +154,12 @@ GPX 1.1 using the TrackPointExtras schema is a necessity if speed accuracy estim
 <gpx creator="GPS Wizard"
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          http://www.topografix.com/GPX/1/1/gpx.xsd
-                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1
-                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtrasV1.xsd">
+                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0
+                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx10.xsd">
 ```
 
 All software that can read GPX 1.1 files using the TrackPointExtension or TrackPointExtras schemas should be careful not rely upon / expect the use of a specific prefix.
@@ -189,7 +189,7 @@ Other useful Garmin extensions include:
 
 The TrackPointExtras schema was created in July 2023. It added "speed", "course" and elements for the various accuracy estimates:
 
-- TrackPointExtras v1 - [https://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1/](https://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1/) + [TrackPointExtrasV1.xsd](http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtrasV1.xsd)
+- TrackPointExtras v1 - [https://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0/](https://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0/) + [tpx10.xsd](http://logiqx.github.io/gps-wizard/xmlschemas/tpx10.xsd)
 
 
 

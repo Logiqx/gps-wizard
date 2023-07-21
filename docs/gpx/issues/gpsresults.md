@@ -35,7 +35,7 @@ GPSResults would benefit from enhancements to support "course" and "speed" in GP
 
 - Add support for the proprietary "gpxdata:speed" introduced by the Kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) and used by [Waterspeed](https://waterspeedapp.com/).
 - Add support for GPX 1.1 + TrackpointExtension v2 including "course" and "speed". See speed [article](../speed.md) for details.
-- Add support for GPX 1.1 + TrackpointExtras v1 including "course", "speed" and accuracy estimates. See [article](../../xmlschemas/TrackPointExtras/v1/README.md) for details.
+- Add support for GPX 1.1 + TrackpointExtras v1 including "course", "speed" and accuracy estimates. See [article](../../xmlschemas/tpx/1/0/README.md) for details.
 
 
 
@@ -164,22 +164,22 @@ Note: SDOP and VSDOP are in all probability using 3-sigma confidence intervals (
 
 #### GPX 1.1
 
-If GPX 1.1 is chosen then the header will need to be updated and should declare the [TrackPointExtras](../../xmlschemas/TrackPointExtras/v1/README.md) extension:
+If GPX 1.1 is chosen then the header will need to be updated and should declare the [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) extension:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx creator="GPS Wizard"
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          http://www.topografix.com/GPX/1/1/gpx.xsd
-                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1
-                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtrasV1.xsd">
+                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0
+                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx10.xsd">
 ```
 
-The [TrackPointExtras](../../xmlschemas/TrackPointExtras/v1/README.md) schema already supports speed accuracy (akin to SOP) and vertical speed accuracy (asking to VSDOP) estimates:
+The [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) schema already supports speed accuracy (akin to SOP) and vertical speed accuracy (asking to VSDOP) estimates:
 
 ```xml
 <trkpt lat="53.371207100" lon="-3.190282800">
@@ -221,7 +221,7 @@ The [TrackPointExtras](../../xmlschemas/TrackPointExtras/v1/README.md) schema al
   </extensions>
 </trkpt>
 ```
-- Enhance GPX loader to support GPX 1.1 + TrackpointExtras v1 for `<xxx:course>`, `<xxx:speed>` and the accuracy metrics. See [document](../../xmlschemas/TrackPointExtras/v1/README.md) for details.
+- Enhance GPX loader to support GPX 1.1 + TrackpointExtras v1 for `<xxx:course>`, `<xxx:speed>` and the accuracy metrics. See [document](../../xmlschemas/tpx/1/0/README.md) for details.
 
 ```xml
 <trkpt lat="53.371207100" lon="-3.190282800">

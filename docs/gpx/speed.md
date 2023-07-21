@@ -137,7 +137,7 @@ I will liaise with Manfred (GPSResults) and Yann (GpsarPro) regarding future sup
 
 #### Alternative "Correct" Approach
 
-In July 2023, I created the [TrackPointExtras](../xmlschemas/TrackPointExtras/v1/README.md) schema for use with GPX 1.1.
+In July 2023, I created the [TrackPointExtras](../xmlschemas/tpx/1/0/README.md) schema for use with GPX 1.1.
 
 This means that with the appropriate GPX header (i.e. defining the namespace and schemaLocation) it is possible to include `<speed>` and `<course>` elements in GPX 1.1 files, plus accuracy estimates (horizontal, course, speed, etc) .
 
@@ -148,12 +148,12 @@ An example header:
 <gpx creator="GPS Wizard"
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          http://www.topografix.com/GPX/1/1/gpx.xsd
-                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1
-                         http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtrasV1.xsd">
+                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0
+                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx10.xsd">
 ```
 
 Trackpoints can then record course and speed (plus accuracy estimates) inside an `<extensions>` element:
