@@ -1,4 +1,4 @@
-## XML Schema
+## XML Schemas
 
 ### TrackPointExtras
 
