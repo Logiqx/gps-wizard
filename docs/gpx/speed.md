@@ -16,7 +16,7 @@ It's worth noting that every GNSS / GPS / watch manufacturer will have their own
 
 The first example is from an Apple Watch, recorded using the Waterspeed app.
 
-There are very obvious "spikes" of around 33.7 knots, 36.9 knots and 31.3 knots present in the non-Doppler speed graph on the right.
+There are very obvious "spikes" of around 33.7 knots, 36.9 knots and 31.3 knots present in the non-Doppler speed graph (bottom).
 
 The fastest non-Doppler speed that was not an obvious spike was 23.9 knots. The fastest Doppler speed (more likely to be accurate) was 22.5 knots.
 
@@ -28,7 +28,7 @@ The fastest non-Doppler speed that was not an obvious spike was 23.9 knots. The 
 
 The second example is also from an Apple Watch, recorded using the Waterspeed app.
 
-There are very obvious "spikes" of around 42 knots and 45 knots present in the non-Doppler speed graph on the right.
+There are very obvious "spikes" of around 42 knots and 45 knots present in the non-Doppler speed graph (bottom).
 
 The fastest non-Doppler speed that was not an obvious spike was 26.4 knots. The fastest Doppler speed (more likely to be accurate) was 25.4 knots.
 
