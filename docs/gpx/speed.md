@@ -148,7 +148,7 @@ An example header:
 <gpx creator="GPS Wizard"
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:tpe="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          http://www.topografix.com/GPX/1/1/gpx.xsd
@@ -165,13 +165,13 @@ Trackpoints can then record course and speed (plus accuracy estimates) inside an
   <sat>6</sat>
   <hdop>1.4</hdop>
   <extensions>
-    <tpe:extras>
-      <tpe:course>157.19</tpe:course>
-      <tpe:speed>0.5429</tpe:speed>
-      <tpe:hacc>2.0</tpe:hacc>
-      <tpe:cacc>5.0</tpe:cacc>
-      <tpe:sacc>0.5</tpe:sacc>
-    </tpe:extras>
+    <tpx:extras>
+      <tpx:course>157.19</tpx:course>
+      <tpx:speed>0.5429</tpx:speed>
+      <tpx:hacc>2.0</tpx:hacc>
+      <tpx:cacc>5.0</tpx:cacc>
+      <tpx:sacc>0.5</tpx:sacc>
+    </tpx:extras>
   </extensions>
 </trkpt>
 ```

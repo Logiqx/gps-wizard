@@ -25,13 +25,13 @@ For example:
   <ele>7.90</ele>
   <time>2022-04-11T10:16:01Z</time>
   <extensions>
-    <tpe:extras>
-      <tpe:course>157.19</tpe:course>
-      <tpe:speed>0.5429</tpe:speed>
-      <tpe:hacc>2.0</tpe:hacc>
-      <tpe:cacc>5.0</tpe:cacc>
-      <tpe:sacc>0.5</tpe:sacc>
-    </tpe:extras>
+    <tpx:extras>
+      <tpx:course>157.19</tpx:course>
+      <tpx:speed>0.5429</tpx:speed>
+      <tpx:hacc>2.0</tpx:hacc>
+      <tpx:cacc>5.0</tpx:cacc>
+      <tpx:sacc>0.5</tpx:sacc>
+    </tpx:extras>
   </extensions>
 </trkpt>
 ```
@@ -79,7 +79,7 @@ GPX 1.1 compliant files should begin with something like the following:
 <gpx creator="GPS Wizard"
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:tpe="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          http://www.topografix.com/GPX/1/1/gpx.xsd
@@ -96,14 +96,14 @@ An example track point:
   <sat>6</sat>
   <hdop>1.4</hdop>
   <extensions>
-    <tpe:extras>
-      <tpe:course>157.19</tpe:course>
-      <tpe:speed>0.5429</tpe:speed>
-      <tpe:hacc>2.0</tpe:hacc>
-      <tpe:vacc>4.0</tpe:vacc>
-      <tpe:cacc>5.0</tpe:cacc>
-      <tpe:sacc>0.5</tpe:sacc>
-    </tpe:extras>
+    <tpx:extras>
+      <tpx:course>157.19</tpx:course>
+      <tpx:speed>0.5429</tpx:speed>
+      <tpx:hacc>2.0</tpx:hacc>
+      <tpx:vacc>4.0</tpx:vacc>
+      <tpx:cacc>5.0</tpx:cacc>
+      <tpx:sacc>0.5</tpx:sacc>
+    </tpx:extras>
   </extensions>
 </trkpt>
 ```

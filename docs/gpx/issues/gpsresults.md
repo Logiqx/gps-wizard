@@ -148,12 +148,12 @@ The TrackpointExtras v1 extension supports course, speed, SDOP and VSDOP as foll
   <sat>5</sat>
   <hdop>1.40</hdop>
   <extensions>
-    <tpe:extras>
-      <tpe:course>199.090</tpe:course>
-      <tpe:speed>1.480<tpe:speed>
-      <tpe:sacc>0.5</tpe:sacc>
-      <tpe:vsacc>0.7</tpe:vsacc>
-    </tpe:extras>
+    <tpx:extras>
+      <tpx:course>199.090</tpx:course>
+      <tpx:speed>1.480<tpx:speed>
+      <tpx:sacc>0.5</tpx:sacc>
+      <tpx:vsacc>0.7</tpx:vsacc>
+    </tpx:extras>
   </extensions>
 </trkpt>
 ```
@@ -171,7 +171,7 @@ If GPX 1.1 is chosen then the header will need to be updated and should declare 
 <gpx creator="GPS Wizard"
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:tpe="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
+     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtras/v1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          http://www.topografix.com/GPX/1/1/gpx.xsd
@@ -188,12 +188,12 @@ The TrackPointExtras schema already supports speed accuracy (akin to SOP) and ve
   <sat>5</sat>
   <hdop>1.40</hdop>
   <extensions>
-    <tpe:extras>
-      <tpe:course>199.090</tpe:course>
-      <tpe:speed>1.480<tpe:speed>
-      <tpe:sacc>0.5</tpe:sacc>
-      <tpe:vsacc>0.7</tpe:vsacc>
-    </tpe:extras>
+    <tpx:extras>
+      <tpx:course>199.090</tpx:course>
+      <tpx:speed>1.480<tpx:speed>
+      <tpx:sacc>0.5</tpx:sacc>
+      <tpx:vsacc>0.7</tpx:vsacc>
+    </tpx:extras>
   </extensions>
 </trkpt>
 ```
@@ -230,12 +230,12 @@ The TrackPointExtras schema already supports speed accuracy (akin to SOP) and ve
   <sat>5</sat>
   <hdop>1.40</hdop>
   <extensions>
-    <tpe:extras>
-      <tpe:course>199.090</tpe:course>
-      <tpe:speed>1.480<tpe:speed>
-      <tpe:sacc>0.5</tpe:sacc>
-      <tpe:vsacc>0.7</tpe:vsacc>
-    </tpe:extras>
+    <tpx:extras>
+      <tpx:course>199.090</tpx:course>
+      <tpx:speed>1.480<tpx:speed>
+      <tpx:sacc>0.5</tpx:sacc>
+      <tpx:vsacc>0.7</tpx:vsacc>
+    </tpx:extras>
   </extensions>
 </trkpt>
 ```
@@ -260,12 +260,12 @@ The TrackPointExtras schema already supports speed accuracy (akin to SOP) and ve
   <sat>5</sat>
   <hdop>1.40</hdop>
   <extensions>
-    <tpe:extras>
-      <tpe:course>199.090</tpe:course>
-      <tpe:speed>1.480<tpe:speed>
-      <tpe:sacc>0.5</tpe:sacc>
-      <tpe:vsacc>0.7</tpe:vsacc>
-    </tpe:extras>
+    <tpx:extras>
+      <tpx:course>199.090</tpx:course>
+      <tpx:speed>1.480<tpx:speed>
+      <tpx:sacc>0.5</tpx:sacc>
+      <tpx:vsacc>0.7</tpx:vsacc>
+    </tpx:extras>
   </extensions>
 </trkpt>
 ```
