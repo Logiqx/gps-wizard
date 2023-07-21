@@ -6,7 +6,7 @@ GPS / GNSS chipsets from a number of manufacturers provide position and speed ac
 
 This data is typically available via proprietary NMEA sentences (e.g. `$PGLOR,...,LSQ`) or binary protocols (e.g. SiRF and UBX).
 
-Estimated location and speed accuracy information is also available via the Android and Apple location [APIs](../../../apis/location.md), summarised in the linked document.
+Estimated location and speed accuracy information is also available via the Android and Apple location [APIs](../../../../apis/location.md), summarised in the linked document.
 
 However, GPX 1.1 provides no standard mechanism to store the accuracy estimates (or Doppler-derived course and speed), hence these GPX extensions.
 
