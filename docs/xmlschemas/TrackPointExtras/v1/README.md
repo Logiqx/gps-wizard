@@ -43,7 +43,7 @@ For example:
 All of the element names have been intentionally kept as short as possible to avoid too much bloat of the GPX:
 
 - The `<extras>` element is a complex type which ensures consistent ordering of the sub-elements.
-- The elements `<course>` and `<speed>`  have been carried forward from XML 1.0, also matching the names in Garmin's [TrackpointExtensionv2](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd).
+- The elements `<course>` and `<speed>`  have been carried forward from GPX 1.0 and also match the names in Garmin's [TrackpointExtensionv2](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd).
 - Estimated "accuracy" elements have been given short names - e.g. `<hacc>` is the "horizontal accuracy" estimate.
 
 These short names are closely related to the names used by u-blox (e.g. "hAcc" for horizontal accuracy estimate) and Quectel ("HErr" for horizontal error estimate) in their GNSS chipset documentation.
