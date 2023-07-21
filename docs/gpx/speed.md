@@ -240,6 +240,22 @@ This still isn't 100% correct but it will avoid errors such as "XMLSyntaxError: 
 
 A similar workaround to the one described above could also be utilised alongside the TrackPointExtras schema.
 
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <sat>6</sat>
+  <hdop>1.4</hdop>
+  <extensions>
+    <gpxdata:speed>0.5429</gpxdata:speed>
+    <tpx:extras>
+      <tpx:course>157.19</tpx:course>
+      <tpx:speed>0.5429</tpx:speed>
+    </tpx:extras>
+  </extensions>
+</trkpt>
+```
+
 Notes:
 
 1) As of now, this workaround will only work for GpsarPro. It won't work for GPSResults or GPS-Speedsurfing.com.

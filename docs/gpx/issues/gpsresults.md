@@ -164,7 +164,7 @@ Note: SDOP and VSDOP are in all probability using 3-sigma confidence intervals (
 
 #### GPX 1.1
 
-If GPX 1.1 is chosen then the header will need to be updated and should declare the TrackPointExtras extension:
+If GPX 1.1 is chosen then the header will need to be updated and should declare the [TrackPointExtras](../../xmlschemas/TrackPointExtras/v1/README.md) extension:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -179,7 +179,7 @@ If GPX 1.1 is chosen then the header will need to be updated and should declare 
                          http://logiqx.github.io/gps-wizard/xmlschemas/TrackPointExtrasV1.xsd">
 ```
 
-The TrackPointExtras schema already supports speed accuracy (akin to SOP) and vertical speed accuracy (asking to VSDOP) estimates:
+The [TrackPointExtras](../../xmlschemas/TrackPointExtras/v1/README.md) schema already supports speed accuracy (akin to SOP) and vertical speed accuracy (asking to VSDOP) estimates:
 
 ```xml
 <trkpt lat="53.371207100" lon="-3.190282800">
