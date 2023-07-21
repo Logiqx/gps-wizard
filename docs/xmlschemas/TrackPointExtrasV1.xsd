@@ -29,7 +29,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="speed" type="speedType">
+      <xsd:element name="speed" type="horizontalSpeedType">
         <xsd:annotation>
           <xsd:documentation>
             Horizontal speed, often referred to as speed over ground (SOG).
@@ -38,7 +38,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="vspeed" type="speedType" minOccurs="0">
+      <xsd:element name="vspeed" type="verticalSpeedType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Vertical speed, sometimes referred to as climb rate or rate of climb (ROC).
@@ -46,7 +46,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="hacc" type="metersType" minOccurs="0">
+      <xsd:element name="hacc" type="metersAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.
@@ -54,7 +54,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="vacc" type="metersType" minOccurs="0">
+      <xsd:element name="vacc" type="metersAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.
@@ -70,7 +70,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="sacc" type="speedType" minOccurs="0">
+      <xsd:element name="sacc" type="speedAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Horizontal speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.
@@ -78,7 +78,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="vsacc" type="speedType" minOccurs="0">
+      <xsd:element name="vsacc" type="speedAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Vertical speed accuracy estimate, sometimes referred to as vertical speed / velocity error.
@@ -91,7 +91,7 @@
 
   <xsd:simpleType name="degreesType">
     <xsd:annotation><xsd:documentation>
-      This type contains an angle measured in degrees in a clockwise direction from the true north line.
+      This type contains an angle measured in degrees, clockwise from true north.
     </xsd:documentation></xsd:annotation>
     <xsd:restriction base="xsd:decimal">
       <xsd:minInclusive value="0"/>
@@ -99,18 +99,38 @@
     </xsd:restriction>
   </xsd:simpleType>
 
-  <xsd:simpleType name="speedType">
+  <xsd:simpleType name="horizontalSpeedType">
     <xsd:annotation><xsd:documentation>
-      This type contains a speed measured in meters per second. Vertical speed can be negative.
+      This type contains a horizontal speed (speed over ground), measured in meters per second.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="verticalSpeedType">
+    <xsd:annotation><xsd:documentation>
+      This type contains a vertical speed (rate of climb), measured in meters per second. Positive values = ascending, negative values = descending.
     </xsd:documentation></xsd:annotation>
     <xsd:restriction base="xsd:decimal"/>
   </xsd:simpleType>
 
-  <xsd:simpleType name="metersType">
+  <xsd:simpleType name="metersAccuracyType">
     <xsd:annotation><xsd:documentation>
-      This type contains a distance value measured in meters.
+      This type contains a horizontal (or vertical) distance accuracy estimate, measured in meters.
     </xsd:documentation></xsd:annotation>
-    <xsd:restriction base="xsd:decimal"/>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="speedAccuracyType">
+    <xsd:annotation><xsd:documentation>
+      This type contains a horizontal (or vertical) speed accuracy estimate, measured in meters per second.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
   </xsd:simpleType>
 
 </xsd:schema>
