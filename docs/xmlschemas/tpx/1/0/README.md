@@ -14,9 +14,9 @@ However, GPX 1.1 provides no standard mechanism to store the accuracy estimates 
 
 #### Extensions
 
-This schema defines Logiqx extensions to be used with the [GPX 1.1](http://www.topografix.com/GPX/1/1/gpx.xsd) schema.
+This [TPX 1.0](../../../tpx10.xsd) schema defines Logiqx extensions to be used with the [GPX 1.1](http://www.topografix.com/GPX/1/1/gpx.xsd) schema.
 
-The root element defined by this schema is intended to be used as a child element of the "extensions" elements in the trkpt element.
+The "extras" element defined by this schema is intended to be used as a child element of the "extensions" elements in the trkpt element.
 
 For example:
 
@@ -115,4 +115,4 @@ An example track point:
 
 Software developers should validate their GPX files during the development / testing process.
 
-Validation methods are described in a technical [overview](../../../gpx/README.md) of the GPX format.
+Validation methods are described in a technical [overview](../../../../gpx/README.md) of the GPX format.
