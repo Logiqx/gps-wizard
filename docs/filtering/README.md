@@ -16,9 +16,12 @@ The current [rules](https://www.gps-speedsurfing.com/default.aspx?mnu=item&item=
 
 
 
-Notes:
+#### Notes
 
-- Max. acceleration was originally 3 m/s² but was updated in the GP3S rules v9.0 A2 on 1 Jan 2012.
+- Max. acceleration was originally 3 m/s² but was updated to 5 m/s² in the GP3S rules v9.0 A2 on 1 Jan 2012.
+  - GPSResults and GPS Speedreader actually implement 4 m/s² for 1 Hz devices.
+  - The [rules](https://www.gps-speedsurfing.com/default.aspx?mnu=item&item=BasicRules) on GP3S were only updated to show 5 m/s² in late 2015 / early 2016.
+  
 - Distance sailed has a minimum speed requirement of 5 knots since the GP3S rules v9.1 A2 on 12 Dec 2016.
 
 
