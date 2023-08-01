@@ -190,14 +190,14 @@
       <xsd:element name="speed"			type="horizontalSpeedType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Speed over ground (in m/s), abbreviates to SOG. Sometimes referred to as horizontal speed.
+            Speed over ground (in meters per second), abbreviates to SOG. Sometimes referred to as horizontal speed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="roc" 			type="verticalSpeedType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Rate of climb (in m/s), abbreviates to ROC. Sometimes referred to as vertical speed.
+            Rate of climb (in meters per second), abbreviates to ROC. Sometimes referred to as vertical speed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -317,6 +317,41 @@
 		  </xsd:documentation>
 		</xsd:annotation>
 	  </xsd:element>
+      <xsd:element name="hacc" type="positionalAccuracyType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Horizontal accuracy estimate (in meters), sometimes referred to as horizontal [position] error.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="vacc" type="positionalAccuracyType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Vertical accuracy estimate (in meters), sometimes referred to as vertical [position] error or altitude error.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="cacc" type="courseAccuracyType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Course accuracy estimate (in degrees), sometimes referred to as heading / bearing accuracy (or error).
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="sacc" type="speedAccuracyType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Speed accuracy estimate (in meters per second), sometimes referred to as horizontal speed / velocity error.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="racc" type="speedAccuracyType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Rate of climb accuracy estimate (in meters per second), sometimes referred to as vertical speed / velocity error.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
 
 	 <xsd:element name="extensions"		type="extensionsType"	minOccurs="0">
       <xsd:annotation>
@@ -873,6 +908,34 @@
     <xsd:restriction base="xsd:integer">
       <xsd:minInclusive value="0"/>
       <xsd:maxInclusive value="1023"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="positionalAccuracyType">
+    <xsd:annotation><xsd:documentation>
+      Represents a positional accuracy estimate (horizontal or vertical), measured in meters.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="courseAccuracyType">
+    <xsd:annotation><xsd:documentation>
+      Represents a course accuracy estimate, measured in degrees.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="180"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="speedAccuracyType">
+    <xsd:annotation><xsd:documentation>
+      Represents a speed accuracy estimate (horizontal or vertical), measured in meters per second.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
     </xsd:restriction>
   </xsd:simpleType>
 
