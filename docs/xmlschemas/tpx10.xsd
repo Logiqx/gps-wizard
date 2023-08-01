@@ -5,13 +5,75 @@
   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
   <xsd:annotation><xsd:documentation>
-  This schema defines Logiqx extensions to be used with the GPX 1.1 schema.
+  This schema defines universal extensions to be used with the GPX 1.1 schema.
   The root element defined by this schema is intended to be used as a child
   element of the "extensions" elements in the trkpt element in the GPX 1.1 schema. 
   The GPX 1.1 schema is available at http://www.topografix.com/GPX/1/1/gpx.xsd.
   </xsd:documentation></xsd:annotation>
 
+  <xsd:element name="src" type="sourceType" />
   <xsd:element name="extras" type="extrasType" />
+
+  <xsd:complexType name="sourceType" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation>
+        Source of data, included to give user some idea of reliability and accuracy of data.
+        Recommended within "rte" or "trk" elements, instead of within "rtept" or "trkpt" elements.
+        Text can also be included for backwards compatibility - e.g. "Sailmon Max".
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="manufacturer" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Product manufacturer of the device / wearable.
+            e.g. "Garmin", "Suunto", "Apple", "COROS", "Locosys", "Sailmon", etc.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="product" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Product name of the device / wearable, preferably without mentioning the product manufacturer.
+            e.g. "Fenix 5" (Garmin), "Watch Series 8" (Apple), "VERTIX 2" (COROS), "GW-60" (Locosys), "Max" (Sailmon), etc.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="serial" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Product serial number of the device / wearable.
+            e.g. "5AEDF0" (COROS).
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="version" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Firmware / software / OS version of the GPS device / wearable.
+            e.g. "13.22" (Garmin), "8.5.1" (Apple), "3.02.0" (COROS), "v1.4(B0803T)" (Locosys), "1.4.4" (Sailmon), etc.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="appname" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Software / application name used to capture / export the GPS data.
+            This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.
+            e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "Windsport", "Hoolan", etc.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="appver" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Software / application version used to capture / export the GPS data.
+            e.g. "1.6.0" (Hoolan), etc.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
 
   <xsd:complexType name="extrasType">
     <xsd:annotation>
@@ -20,28 +82,29 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="course" type="courseType">
+      <xsd:element name="course" type="courseType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing.
-            COG is the actual direction of travel relative to due north.
+            Measured in degrees, COG is the actual direction of travel relative to due north.
             Course was available in GPX 1.0 but (possibly inadvertently) removed in GPX 1.1.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="speed" type="horizontalSpeedType">
+      <xsd:element name="speed" type="horizontalSpeedType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Horizontal speed, often referred to as speed over ground (SOG).
-            Typically derived from the Doppler observable and more accurate than position-derived speeds.
+            Measured in m/s it is typically derived from the Doppler observables and far more accurate than position-derived speeds.
             Speed was available in GPX 1.0 but (possibly inadvertently) removed in GPX 1.1.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="vspeed" type="verticalSpeedType" minOccurs="0">
+      <xsd:element name="roc" type="verticalSpeedType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Vertical speed, sometimes referred to as climb rate or rate of climb (ROC).
+            Rate of climb (ROC), sometimes referred to as climb rate or vertical speed.
+            Measured in m/s, positive values indicate increasing altitude, whilst negative values indicate decreasing altitude.
             Only available from some GPS / GNSS chipsets (e.g. SiRF in their binary output).
           </xsd:documentation>
         </xsd:annotation>
@@ -50,6 +113,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.
+            Measured in meters it represents a likely accuracy of +/- the given value.
             Typically the estimated horizontal accuracy of this location at the 68th percentile confidence level.
           </xsd:documentation>
         </xsd:annotation>
@@ -58,6 +122,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.
+            Measured in meters it represents a likely accuracy of +/- the given value.
             Typically the estimated vertical accuracy of this location at the 68th percentile confidence level.
           </xsd:documentation>
         </xsd:annotation>
@@ -66,6 +131,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Course accuracy estimate, sometimes (incorrectly) referred to as heading / bearing accuracy (or error).
+            Measured in degrees it represents a likely accuracy of +/- the given value.
             Typically the estimated course accuracy at the 68th percentile confidence level.
           </xsd:documentation>
         </xsd:annotation>
@@ -74,15 +140,17 @@
         <xsd:annotation>
           <xsd:documentation>
             Horizontal speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.
+            Measured in m/s it represents a likely accuracy of +/- the given value.
             Typically the estimated horizontal speed (SOG) accuracy at the 68th percentile confidence level.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="vsacc" type="speedAccuracyType" minOccurs="0">
+      <xsd:element name="racc" type="speedAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Vertical speed accuracy estimate, sometimes referred to as vertical speed / velocity error.
-            Typically the estimated vertical speed (ROC) accuracy at the 68th percentile confidence level.
+            Rate of climb (ROC) accuracy estimate, sometimes referred to as vertical speed / velocity error.
+            Measured in m/s it represents a likely accuracy of +/- the given value.
+            Typically the estimated rate of climb (ROC) accuracy at the 68th percentile confidence level.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -110,7 +178,8 @@
 
   <xsd:simpleType name="verticalSpeedType">
     <xsd:annotation><xsd:documentation>
-      This type contains a vertical speed (rate of climb), measured in meters per second. Positive values = ascending, negative values = descending.
+      This type contains a vertical speed (rate of climb), measured in meters per second.
+      Positive values = ascending, negative values = descending.
     </xsd:documentation></xsd:annotation>
     <xsd:restriction base="xsd:decimal"/>
   </xsd:simpleType>
