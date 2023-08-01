@@ -180,6 +180,27 @@
 		  </xsd:documentation>
 		</xsd:annotation>
 	  </xsd:element>
+      <xsd:element name="course"		type="degreesType"		minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Course over ground (in degrees), abbreviates to COG. Sometimes referred to as heading or bearing.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="speed"			type="horizontalSpeedType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Speed over ground (in m/s), abbreviates to SOG. Sometimes referred to as horizontal speed.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="roc" 			type="verticalSpeedType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Rate of climb (in m/s), abbreviates to ROC. Sometimes referred to as vertical speed.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
 	  <xsd:element name="magvar"		type="degreesType"		minOccurs="0">
 		<xsd:annotation>
 		  <xsd:documentation>
@@ -810,6 +831,22 @@
       <xsd:minInclusive value="0.0"/>
       <xsd:maxExclusive value="360.0"/>
     </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="horizontalSpeedType">
+    <xsd:annotation><xsd:documentation>
+      Used for horizontal speed / speed over ground (SOG).  Units are meters per second.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="verticalSpeedType">
+    <xsd:annotation><xsd:documentation>
+      Used for vertical speed / rate of climb (ROC).  Units are meters per second. Positive = ascending, negative = descending.
+    </xsd:documentation></xsd:annotation>
+    <xsd:restriction base="xsd:decimal"/>
   </xsd:simpleType>
 
   <xsd:simpleType name="fixType">
