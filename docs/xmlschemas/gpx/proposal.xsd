@@ -217,7 +217,7 @@
 		  </xsd:documentation>
 		</xsd:annotation>
 	  </xsd:element>
-	  <xsd:element name="src"			type="xsd:string"		minOccurs="0">
+	  <xsd:element name="src"			type="sourceType"		minOccurs="0">
 		<xsd:annotation>
 		  <xsd:documentation>
 			Source of data. Included to give user some idea of reliability and accuracy of data.  "Garmin eTrex", "USGS quad Boston North", e.g.
@@ -350,7 +350,7 @@
 		  </xsd:documentation>
 		</xsd:annotation>
 	  </xsd:element>
-	  <xsd:element name="src"			type="xsd:string"	minOccurs="0">
+	  <xsd:element name="src"			type="sourceType"	minOccurs="0">
 		<xsd:annotation>
 		  <xsd:documentation>
 			Source of data. Included to give user some idea of reliability and accuracy of data.
@@ -425,7 +425,7 @@
 		  </xsd:documentation>
 		</xsd:annotation>
 	  </xsd:element>
-	  <xsd:element name="src"			type="xsd:string"		minOccurs="0">
+	  <xsd:element name="src"			type="sourceType"		minOccurs="0">
 		<xsd:annotation>
 		  <xsd:documentation>
 			Source of data. Included to give user some idea of reliability and accuracy of data.
@@ -544,6 +544,67 @@
 	  </xsd:documentation>
 	 </xsd:annotation>
 	</xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="sourceType" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation>
+        Source of data, included to give user some idea of reliability and accuracy of data.
+        Recommended within "rte" or "trk" elements, instead of within "rtept" or "trkpt" elements.
+        Text can also be included for backwards compatibility - e.g. "Sailmon Max".
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="manufacturer" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Product manufacturer of the device / wearable.
+            e.g. "Garmin", "Suunto", "Apple", "COROS", "Locosys", "Sailmon", etc.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="product" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Product name of the device / wearable, preferably without mentioning the product manufacturer.
+            e.g. "Fenix 5" (Garmin), "Watch Series 8" (Apple), "VERTIX 2" (COROS), "GW-60" (Locosys), "Max" (Sailmon), etc.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="serial" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Product serial number of the device / wearable.
+            e.g. "5AEDF0" (COROS).
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="version" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Firmware / software / OS version of the GPS device / wearable.
+            e.g. "13.22" (Garmin), "8.5.1" (Apple), "3.02.0" (COROS), "v1.4(B0803T)" (Locosys), "1.4.4" (Sailmon), etc.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="appname" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Software / application name used to capture / export the GPS data.
+            This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.
+            e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "Windsport", "Hoolan", etc.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="appver" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Software / application version used to capture / export the GPS data.
+            e.g. "1.6.0" (Hoolan), etc.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
   </xsd:complexType>
 
   <xsd:complexType name="linkType">
