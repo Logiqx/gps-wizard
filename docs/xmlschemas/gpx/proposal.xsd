@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsd:schema
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://www.topografix.com/GPX/1/1"
-	targetNamespace="http://www.topografix.com/GPX/1/1"
+	xmlns="http://www.tbc.com/GPX/1/1/1"
+	targetNamespace="http://www.tbc.com/GPX/1/1/1"
 	elementFormDefault="qualified">
 
 <xsd:annotation>
  <xsd:documentation>
-  GPX schema version 1.1 - For more information on GPX and this schema, visit http://www.topografix.com/gpx.asp
+  GPX schema version 1.1.1 *PROPOSAL* - For more information on GPX and this schema, visit http://www.tbc.com/gpx.asp
 
   GPX uses the following conventions: all coordinates are relative to the WGS84 datum.  All measurements are in metric units.
  </xsd:documentation>
@@ -66,7 +66,7 @@
 	 </xsd:element>
 	</xsd:sequence>
 
-	<xsd:attribute name="version" type="xsd:string" use="required" fixed="1.1">
+	<xsd:attribute name="version" type="xsd:string" use="required" fixed="1.1.1">
      <xsd:annotation>
       <xsd:documentation>
 		You must include the version number in your GPX document.
