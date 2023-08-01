@@ -7,8 +7,14 @@
 
 <xsd:annotation>
  <xsd:documentation>
-  GPX schema version 1.1.1 *PROPOSAL* - For more information on GPX and this schema, visit http://www.tbc.com/gpx.asp
+  *** PROPOSAL ***
+  GPX schema version 1.1.1 - For more information on GPX and this schema, visit http://www.topografix.com/gpx.asp
 
+  *** IMPORTANT ***
+  - This schema is simply a proposal and should not be used for anything other than general discussion.
+  - It has not yet been reviewed, approved or accepted by Topografix and it is not to be used instead of GPX 1.1.
+  - Discussion of this proposal should take place on the GPX Developers Forum, visit https://groups.io/g/gpx
+  
   GPX uses the following conventions: all coordinates are relative to the WGS84 datum.  All measurements are in metric units.
  </xsd:documentation>
 </xsd:annotation>
