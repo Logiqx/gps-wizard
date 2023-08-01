@@ -139,7 +139,7 @@
       <xsd:element name="sacc" type="speedAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Horizontal speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.
+            Speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.
             Measured in m/s it represents a likely accuracy of +/- the given value.
             Typically the estimated horizontal speed (SOG) accuracy at the 68th percentile confidence level.
           </xsd:documentation>
