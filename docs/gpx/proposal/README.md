@@ -74,7 +74,7 @@ A number of sports and activities already benefit from the Doppler-derived speed
 - Motorsport - custom devices (e.g. [Dragy](https://dragymotorsports.co.uk/), [VBOX Sport](https://www.vboxmotorsport.co.uk/index.php/en/vbox-sport), [P-GEAR](https://pgearmotorsports.com/)) for things like 1/4 mile speeds and 0-60 mph times.
 - Land speed records - on-board speedometer (e.g. [Bloodhound SSC](https://www.bloodhoundlsr.com/) which uses a custom version of the [Motion GPS](https://www.motion-gps.com/))
 
-The devices listed above will export the Doppler-derived speeds (and accuracy estimates) when using their proprietary binary formats, or CSV files. Since there is no "standard" way to record the Doppler-derived speeds in GPX 1.1 compliant files, it often leads to important data items being discarded or lost when using GPX files.
+The devices listed above will export the Doppler-derived speeds (and accuracy estimates) when using their proprietary binary formats, or CSV files. Since there is no "standard" way to record the Doppler-derived speeds in GPX 1.1 compliant files, it often leads to useful data items being discarded or lost when using GPX files.
 
 It should be noted that numerous other sports can potentially benefit from Doppler-derived speeds from phone and watch apps. For example:
 
