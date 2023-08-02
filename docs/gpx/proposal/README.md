@@ -146,7 +146,7 @@ It is very easy for developer to overlook the importance of Doppler-derived spee
 This proposal is pretty simple, basically to incorporate the extensions from the TrackPointExtras schema into the existing GPX 1.1 schema:
 
 - Re-introduce `<course>` and `<speed>`, fully compatible with GPX 1.0.
-- Introduce the accuracy estimates provided by numerous chipsets and [location](../../apis/location.md) services (e.g. Apple and Android). **\***
+- Introduce the accuracy estimates provided by numerous GPS / GNSS chipsets and [location](../../apis/location.md) services (e.g. Apple and Android). **\***
 - Additional source information; `<manufacturer>`, `<product>`, `<serial>`, `<version>`, `<appname>` and `<appver> in ` `<src>` elements.
 - There is an argument for calling this GPX 1.1.1 as there are absolutely no breaking changes / compatibility issues with GPX 1.1.
 
@@ -213,6 +213,7 @@ These links are just to get people started:
 
 - GNSS observables
   - [GNS-SDR](https://gnss-sdr.org/docs/sp-blocks/observables/) - An open-source Global Navigation Satellite Systems software-defined receiver.
-  - [European Space Agency (ESA)](https://gssc.esa.int/navipedia/index.php/GNSS_Basic_Observables) - The reference for Global Navigation Satellite Systems
+  - [European Space Agency (ESA)](https://gssc.esa.int/navipedia/index.php/GNSS_Basic_Observables) - The reference for Global Navigation Satellite Systems.
 - Derivation of velocity / speed
-  - [InsideGNSS](https://insidegnss.com/wp-content/uploads/2018/01/marapr15-SOLUTIONS.pdf) - How does a GNSS receiver estimate velocity?
+  - [InsideGNSS](https://insidegnss.com/wp-content/uploads/2018/01/marapr15-SOLUTIONS.pdf) - How does a GNSS receiver estimate velocity? Mar / Apr 2015.
+  - [Evaluation of the performance of GNSS-based velocity estimation algorithms](https://satellite-navigation.springeropen.com/articles/10.1186/s43020-022-00080-4) - JI Li et al. 2022.
