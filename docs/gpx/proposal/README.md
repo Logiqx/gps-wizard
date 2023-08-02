@@ -78,6 +78,8 @@ The devices listed above will export the Doppler-derived speeds (and accuracy es
 
 It should be noted that numerous other sports can potentially benefit from Doppler-derived speeds from phone and watch apps. For example:
 
+- Kitesurfing
+- Wingfoiling
 - Cycling
 - Skiing
 - Snowboarding
@@ -157,9 +159,9 @@ This proposal is pretty simple, basically to incorporate the extensions from the
 I have created and example schema for discussion purposes:
 
 - The example schema is available on [GitHub](https://github.com/Logiqx/gps-wizard/blob/main/docs/xmlschemas/gpx/proposal.xsd) but as stated, it is simply a proposal and should not be used for anything other than general discussion.
-- The proposal incorporates the [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) into GPX 1.1, with slimmed down the comments in keeping with the existing GPX 1.1 schema.
+- The proposal incorporates the [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) into GPX 1.1, with slimmed down comments in keeping with the existing GPX 1.1 schema.
 
-After further discussion on the [GPX developers forum](https://groups.io/g/gpx) (and subsequent tweaking), the GPX 1.1.1 schema would also benefit from consistent use of whitespace, which is currently a mix of tabs and spaces.
+After further discussion on the [GPX developers forum](https://groups.io/g/gpx) (and subsequent tweaking of the proposal), the GPX 1.1.1 schema would also benefit from consistent use of whitespace, which is currently a mix of tabs and spaces.
 
 
 
@@ -169,18 +171,18 @@ It is important to emphasise that existing files that are already GPX 1.1 compli
 
 Existing software will therefore be able to load / import GPX 1.1.1 files without any issues:
 
-- Software that recognises `<course>` and `<speed>` in GPX 1.0 files will also recognise them in GPX 1.1.1 files.
-- Software that recognises `<src>` elements will also recognise them fine in GPX 1.1.1 due to the use of mixed content.
+- Existing software that recognises `<course>` and `<speed>` in GPX 1.0 files will probably recognise them in GPX 1.1.1 files.
+- Existing software that recognises `<src>` elements will also recognise them fine in GPX 1.1.1 due to the use of mixed content.
 - Existing software does not appear to rely upon the GPX version being either "1.0" or "1.1", so far as I have been able to determine.
 
-Preliminary GPX 1.1.1 testing was successful in several applications. Both `<course>` and `<speed>` were loaded successfully into the following speedsurfing applications, plus Strava:
+Preliminary GPX 1.1.1 testing has been successful in several applications. Both `<course>` and `<speed>` were loaded successfully into the following speedsurfing applications, and GPX 1.1.1 files could be imported to Strava:
 
 - [GPSResults](https://www.gps-speed.com/)
 - [GpsarPro](http://gpsactionreplay.free.fr/)
 - [GPS Speedreader](https://ecwindfest.org/GPS/GPSSpeedreader.html)
 - [Strava](https://strava.com/)
 
-n.b. Strava does not (currently) make use of the `<speed>` elements in GPX files and simply calculates speed from positional data. This results in large inconsistencies with sessions posted to websites such as [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) or [GPS Team Challenge](https://www.gpsteamchallenge.com.au/). The difference in approach typically boosts max speeds and results in more frequent reporting of large spikes.
+n.b. Strava does not (currently) make use of the `<speed>` elements in GPX files and it simply calculates speed from the positional data. This results in large inconsistencies with sessions posted to websites such as [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) or [GPS Team Challenge](https://www.gpsteamchallenge.com.au/). The use of position-derived speeds typically results in a boost of max speeds and often results in large spikes being reported as the max speed.
 
 
 
@@ -189,15 +191,15 @@ n.b. Strava does not (currently) make use of the `<speed>` elements in GPX files
 The GPX 1.1.1 proposal has been described at some length but can be summarised as follows:
 
 - Addition of `<course>`, `<speed>` in a way that is consistent with GPX 1.0.
-  - Most existing software that can utilise `<course>` and `<speed>` in GPX 1.0 files will automatically utilise them in GPX 1.1.1.
+  - Most existing software that can utilise `<course>` and `<speed>` in GPX 1.0 files will probably recognise them in GPX 1.1.1.
 - Addition of accuracy estimates in a way that is consistent with GPX 1.0 and 1.1 items such as "horizontal dilution of precision", etc.
-  - Accuracy estimates will not interfere with existing apps but can be obviously used by applications that understand their meaning / utility.
+  - Accuracy estimates will not interfere with existing apps but can be obviously used by applications that understand their utility.
 - Addition of device / source information via the existing `<src>` elements.
   - Use of [mixed content](https://www.w3schools.com/xml/schema_complex_mixed.asp) ensures forwards and backwards compatibility with existing software and applications.
 - Existing GPX 1.1 compliant files are also GPX 1.1.1 compliant, simply by changing the `<gpx>` attributes (e.g. schema and version).
-  - Existing software only needs to tweak the `<gpx>` element to reflect GPX 1.1.1 if they want to start including `<course>` and `<speed>`.
+  - Existing software need only tweak the `<gpx>` element for GPX 1.1.1 if they want to start including `<course>` and `<speed>`.
 
-So, that's just about everything in detail, perhaps more than strictly necessary.
+So, that's pretty much everything in quite a lot of detail, perhaps more detail than strictly necessary!
 
 My apologies for the total length of this proposal, but I felt it worth covering the "who, what, when, where, why, and how".
 
@@ -209,8 +211,8 @@ Please join the [GPX developers forum](https://groups.io/g/gpx) if you wish disc
 
 These links are just to get people started:
 
-- Observables
+- GNSS observables
   - [GNS-SDR](https://gnss-sdr.org/docs/sp-blocks/observables/) - An open-source Global Navigation Satellite Systems software-defined receiver.
   - [European Space Agency (ESA)](https://gssc.esa.int/navipedia/index.php/GNSS_Basic_Observables) - The reference for Global Navigation Satellite Systems
-- Velocity / speed
+- Derivation of velocity / speed
   - [InsideGNSS](https://insidegnss.com/wp-content/uploads/2018/01/marapr15-SOLUTIONS.pdf) - How does a GNSS receiver estimate velocity?
