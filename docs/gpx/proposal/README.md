@@ -4,19 +4,22 @@
 
 This proposal is to add some useful GPS / GNSS data items to the GPX standard; e.g. "course", "speed", accuracy estimates and device information.
 
-I've tried to be quite thorough in this article so that the benefits of this additional data are readily apparent. Apologies for the rather lengthy document.
+I've tried to be quite thorough in this article so that the benefits of this additional data are clearly apparent. Apologies for the rather lengthy document.
 
 What is included:
 
-- This is solely about data originating from the GPS / GNSS chips in modern GPS devices and wearables.
+- This is solely about useful data originating from the GPS / GNSS chips in modern consumer devices, phones and wearables.
+
+What is NOT included:
+
 - This is not about data originating from other sensors (e.g. accelerometers, electronic compasses, heart rate monitors, thermometers, etc).
 - This is unrelated to any previous proposal(s) to incorporate existing extensions into the GPX standard (e.g. heart rate, temperature, etc).
 
-Notes about interoperability and compatibility with existing software and existing GPX files:
+Interoperability / compatibility of the proposal with existing software and GPX 1.0 / GPX 1.1 files:
 
 - The inclusion of "course" and "speed" are entirely consistent / compatible with GPX 1.0.
 - The other data items (e.g. accuracy estimates) have been added in such a way as to ensure forwards and backwards compatibility with GPX 1.1.
-- There is no obligation for companies to change their existing products or software, but they do have the option to adopt the new format very easily.
+- There is no obligation for companies to change existing products or software, but they have the option to adopt the new features very easily.
 
 
 
@@ -33,9 +36,7 @@ The overall process can be summarised as two separate steps:
    - **Carrier phase** is a measurement of the beat frequency between the received carrier of the satellite signal and a receiver-generated reference frequency.
    - **Doppler shift** is the change in frequency for the receiver antenna moving relative to the satellite antenna.
 2. Determination of a PVT solution from the raw "observables" obtained during the first step:
-
    - **Position and time** are derived primarily from the **pseudo-range** observables via [trilateration](https://en.wikipedia.org/wiki/Trilateration).
-
    - **Course** over ground (COG) and **speed** over ground (SOG) are derived from a 3D velocity, (typically) derived from the **doppler shift** observables.
 
 The important point to highlight is that GPS / GNSS chipsets do not calculate velocity / speed from the positional data. In essence, position and velocity are calculated independently and speeds derived from the doppler shift observables are far more accurate / robust than speeds derived from positional data.
@@ -55,7 +56,6 @@ The high accuracy of Doppler-derived speeds from GNSS receivers has been known t
 A couple of articles were written in 2007 whilst initially studying the Doppler-derived speeds produced by the [Locosys](https://www.locosystech.com/en/product/gps-handheld-data-logger-gt-31.html) GT-11 (SiRF Star II chipset):
 
 - [High accuracy speed measurement using GPS](https://studylib.net/doc/18795194/high-accuracy-speed-measurement-using-gps) by Tom Chalko PhD
-
 - [Handheld-GPS based Speed-Measurements](https://web.archive.org/web/20120531035620/http://www.gps-results.com/GPS_Speed.pdf) by Manfred Fuchs PhD
 
 Official times / speeds of world record attempts at the annual [Luderitz Speed Challenge](https://luderitz-speed.com/) use video timing. However, GPS / GNSS times from custom devices such as the [Motion GPS](https://www.motion-gps.com/) are typically +/- 0.05 knots of the official video-timed results over the 500m course.
