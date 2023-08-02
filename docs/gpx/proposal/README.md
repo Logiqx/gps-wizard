@@ -15,7 +15,7 @@ What is NOT included:
 - This is not about data originating from other sensors (e.g. accelerometers, electronic compasses, heart rate monitors, thermometers, etc).
 - This is unrelated to any previous proposal(s) to incorporate existing extensions into the GPX standard (e.g. heart rate, temperature, etc).
 
-Interoperability / compatibility of the proposal with existing software and GPX 1.0 / GPX 1.1 files:
+Interoperability / compatibility of the proposal with existing software and GPX 1.0 / GPX 1.1 files is of the upmost importance:
 
 - The inclusion of "course" and "speed" are entirely consistent / compatible with GPX 1.0.
 - The other data items (e.g. accuracy estimates) have been added in such a way as to ensure forwards and backwards compatibility with GPX 1.1.
@@ -60,7 +60,7 @@ A couple of articles were written in 2007 whilst initially studying the Doppler-
 
 Official times / speeds of world record attempts at the annual [Luderitz Speed Challenge](https://luderitz-speed.com/) use video timing. However, GPS / GNSS times from custom devices such as the [Motion GPS](https://www.motion-gps.com/) are typically +/- 0.05 knots of the official video-timed results over the 500m course.
 
-It's worth noting that the majority of the speedsurfing community use custom devices (e.g. [Motion GPS](https://www.motion-gps.com/)) which output their data in a binary format, including the Doppler-derived speed and speed accuracy estimate. However, with the advent of 3rd party apps for smart phones and watches it makes a lot of sense to support Doppler-derived speeds and the various accuracy estimates to be included in "standard" GPX files.
+It's worth noting that the majority of the speedsurfing community use custom devices (e.g. [Motion GPS](https://www.motion-gps.com/)) which output their data in a binary format, including the Doppler-derived speed and speed accuracy estimate. However, with the advent of 3rd party apps for smart phones and watches it makes a lot of sense for the Doppler-derived speeds and the various accuracy estimates to be included in "standard" GPX files.
 
 
 
