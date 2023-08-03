@@ -213,6 +213,42 @@ Note: Since it is a "mixed" type you can still include a simple string to descri
 
 
 
+### Examples of GPX 1.1.1
+
+An example trackpoint including course, speed and accuracy estimates:
+
+```xml
+<trkpt lat="50.5710623" lon="-2.4563484">
+  <ele>7.90</ele>
+  <time>2022-04-11T10:16:01Z</time>
+  <course>157.19</course>
+  <speed>0.5429</speed>
+  <hacc>2.0</hacc>
+  <vacc>4.0</vacc>
+  <cacc>5.0</cacc>
+  <sacc>0.5</sacc>
+</trkpt>
+```
+
+The `<src>` element of GPX 1.1.1 is a "mixed" type to provide forwards and backwards compatibility with GPX 1.1:
+
+```xml
+<trk>
+  <src>
+    Apple Watch Series 8
+    <manufacturer>Apple</manufacturer>
+    <product>Watch Series 8</product>
+    <serial>123456789</serial>
+    <version>8.5.1</version>
+    <appname>Hoolan</appname>
+    <appver>1.6.0</appver>
+  </src>
+  <trkseg>...</trkseg>
+</trk>
+```
+
+
+
 ### Compatibility of GPX 1.1.1
 
 It is important to emphasise that existing files that are already GPX 1.1 compliant will also be GPX 1.1.1 compliant.
