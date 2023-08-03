@@ -22,11 +22,35 @@
         Text can also be included for backwards compatibility - e.g. "Sailmon Max".
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:sequence>
+    <xsd:sequence>	<!-- elements must appear in this order -->
+      <xsd:element name="device" type="deviceType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Information about the GPS device / wearable.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="application" type="applicationType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Information about the software / application used to capture + export the GPS data.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="deviceType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Device information, included to give user some idea of reliability and accuracy of data.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>	<!-- elements must appear in this order -->
       <xsd:element name="manufacturer" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Product manufacturer of the device / wearable.
+            Manufacturer of the GPS device / wearable.
             e.g. "Garmin", "Suunto", "Apple", "COROS", "Locosys", "Sailmon", etc.
           </xsd:documentation>
         </xsd:annotation>
@@ -34,7 +58,7 @@
       <xsd:element name="product" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Product name of the device / wearable, preferably without mentioning the product manufacturer.
+            Product name of the GPS device / wearable, preferably without mentioning the product manufacturer.
             e.g. "Fenix 5" (Garmin), "Watch Series 8" (Apple), "VERTIX 2" (COROS), "GW-60" (Locosys), "Max" (Sailmon), etc.
           </xsd:documentation>
         </xsd:annotation>
@@ -42,8 +66,16 @@
       <xsd:element name="serial" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Product serial number of the device / wearable.
+            Serial number of the GPS device / wearable.
             e.g. "5AEDF0" (COROS).
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Name of the GPS device / wearable, typically chosen by the owner.
+            e.g. "Nathan's Apple Watch".
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -55,24 +87,82 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="appname" type="xsd:string" minOccurs="0">
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="applicationType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Application information, included to give user some idea of reliability and accuracy of data.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>	<!-- elements must appear in this order -->
+      <xsd:element name="developer" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Software / application name used to capture / export the GPS data.
+            Developer of the software / application used to capture + export the GPS data.
+            This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.
+            e.g. "Garmin", "Suunto", "COROS", "Massimiliano Picchi", "Matthias Koch", "Hoolan Ltd", etc.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="product" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Product name of the software / application used to capture + export the GPS data.
             This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.
             e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "Windsport", "Hoolan", etc.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="appver" type="xsd:string" minOccurs="0">
+      <xsd:element name="link" type="linkType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Software / application version used to capture / export the GPS data.
+            Link to the software / application used to capture + export the GPS data.
+            e.g. "https://www.hoolan.app/" with href element.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="version" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Version of the software / application used to capture + export the GPS data.
             e.g. "1.6.0" (Hoolan), etc.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="linkType">
+   <xsd:annotation>
+    <xsd:documentation>
+	 A link to an external resource (Web page, digital photo, video clip, etc) with additional information.
+    </xsd:documentation>
+   </xsd:annotation>
+   <xsd:sequence>	<!-- elements must appear in this order -->
+    <xsd:element name="text"		type="xsd:string"		minOccurs="0">
+	 <xsd:annotation>
+	  <xsd:documentation>
+		Text of hyperlink.
+	  </xsd:documentation>
+	 </xsd:annotation>
+	</xsd:element>
+    <xsd:element name="type"		type="xsd:string"		minOccurs="0">
+	 <xsd:annotation>
+	  <xsd:documentation>
+		Mime type of content (image/jpeg)
+	  </xsd:documentation>
+	 </xsd:annotation>
+	</xsd:element>
+   </xsd:sequence>
+   <xsd:attribute name="href" type="xsd:anyURI" use="required">
+	 <xsd:annotation>
+	  <xsd:documentation>
+		URL of hyperlink.
+	  </xsd:documentation>
+	 </xsd:annotation>
+	</xsd:attribute>
   </xsd:complexType>
 
   <xsd:complexType name="extrasType">
@@ -81,7 +171,7 @@
         This type contains data fields that cannot be represented in track points in GPX 1.1 instances.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:sequence>
+    <xsd:sequence>	<!-- elements must appear in this order -->
       <xsd:element name="course" type="courseType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>

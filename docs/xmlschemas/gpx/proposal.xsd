@@ -616,25 +616,56 @@
         Text can also be included for backwards compatibility - e.g. "Garmin eTrex".
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:sequence>
+    <xsd:sequence>	<!-- elements must appear in this order -->
+      <xsd:element name="device" type="deviceType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Information about the GPS device / wearable.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="application" type="applicationType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Information about the software / application used to capture + export the GPS data.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="deviceType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Device information, included to give user some idea of reliability and accuracy of data.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>	<!-- elements must appear in this order -->
       <xsd:element name="manufacturer" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Product manufacturer of the device / wearable.
+            Manufacturer of the GPS device / wearable.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="product" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Product name of the device / wearable, preferably without mentioning the product manufacturer.
+            Product name of the GPS device / wearable, preferably without mentioning the product manufacturer.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="serial" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Product serial number of the device / wearable.
+            Serial number of the GPS device / wearable.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Name of the GPS device / wearable, typically chosen by the owner.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -645,17 +676,41 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="appname" type="xsd:string" minOccurs="0">
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="applicationType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Application information, included to give user some idea of reliability and accuracy of data.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>	<!-- elements must appear in this order -->
+      <xsd:element name="developer" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Software / application name used to capture / export the GPS data.
+            Developer of the software / application used to capture + export the GPS data.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="appver" type="xsd:string" minOccurs="0">
+      <xsd:element name="product" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Software / application version used to capture / export the GPS data.
+            Product name of the software / application used to capture + export the GPS data.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="link" type="linkType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Link to the software / application used to capture + export the GPS data.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="version" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Version of the software / application used to capture + export the GPS data.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
