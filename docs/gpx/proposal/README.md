@@ -192,6 +192,7 @@ The following accuracy elements can all be added to `<wpt>`, `<rtept>` and `<trk
 | `<sacc>` | Speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.<br/>`Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal speed (SOG) accuracy at the 68th percentile confidence level. |
 | `<racc>` | Rate of climb (ROC) accuracy estimate, sometimes referred to as vertical speed / velocity error.<br/>Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated rate of climb (ROC) accuracy at the 68th percentile confidence level. |
 
+
 #### Source Elements
 
 GPX 1.0 and 1.1 both support `<src>` elements in `<wpt>`, `<rte>`, `<rtept>`, `<trk>`, and `<trkpt>` elements.
