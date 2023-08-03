@@ -110,7 +110,7 @@ The GpxExtensions schema was subsequently split up into separate extensions, e.g
 
 It is notable that TrackPointExtension v2 (circa 2015) introduced `<speed>`, `<course>` and `<bearing>`, providing a "proper" way to include course and speed in GPX 1.1 files.
 
-Sadly, adoption of TrackPointExtension v2 for `<course>` and `<speed>`  in GPX 1.1 files is not evident for the big brands; Garmin, Suunto, COROS, etc.
+Sadly, adoption of TrackPointExtension v2 for `<course>` and `<speed>`  in GPX 1.1 files is not evident for the big brands (e.g. Garmin, Suunto, COROS) or within 3rd party apps for smartphones and smartwatches.
 
 #### TrackPointExtras (TPX)
 
@@ -126,7 +126,7 @@ It also includes additional `<src>` information for the `<device>` such as `<man
 
 One of the issues with the use of extensions for common elements such as `<course>` and `<speed>` is the lack of consistency:
 
-- Most applications do not include `<course>` and `<speed>` in their GPX exports. This includes big brands such as Garmin, Suunto and COROS.
+- Most applications do not include `<course>` and `<speed>` in their GPX exports. This includes big brands and 3d party app developers.
 - Some applications include `<course>` and `<speed>` in the `<trkpt>` elements (not `<extensions>`) which is helpful, but it is not GPX 1.1 compliant.
 - Some applications make use of `<extensions>` but often refer to non-existent or undeclared schemas / namespaces - e.g. `<gpxdata:speed>`
 - Few (if any) applications use Garmin's TrackPointExtension V2 schema to include `<course>` and `<speed>` in GPX 1.1 files.
@@ -147,8 +147,8 @@ This proposal is pretty simple, basically to incorporate the extensions from the
 
 - Re-introduce `<course>` and `<speed>`, fully compatible with GPX 1.0.
 - Introduce the accuracy estimates provided by numerous GPS / GNSS chipsets and [location](../../apis/location.md) services (e.g. Apple and Android). **\***
-- Additional source information; `<manufacturer>`, `<product>`, `<serial>`, and `<version>` in  `<device>` elements.
-- There is an argument for calling this GPX 1.1.1 as there are absolutely no breaking changes / compatibility issues with GPX 1.1.
+- Additional source information;  e.g. `<manufacturer>`, `<product>`, `<serial>`, and `<version>` in  `<device>` elements.
+- There is a reasonable argument for calling this GPX 1.1.1 as there are absolutely no breaking changes / compatibility issues with GPX 1.1.
 
 **\*** - what the accuracy estimates actually represent and their applications is outside of the scope of this document. Suffice to say, they typically represent the likely error (+/-) in terms or RMS, or 1-sigma / 68% (and sometimes, 3-sigma / 99.7%). They are device dependent, hence the additional `<src>` source information in this proposal.
 
