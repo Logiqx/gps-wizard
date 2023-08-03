@@ -92,7 +92,7 @@ The speed output by a GPS / GNSS receiver is slightly less useful when worn on a
 
 GPX 1.0 was released in 2002 as a light-weight XML data format for the interchange of GPS data.
 
-GPX 1.1 was released on 9 August 2004 and improved upon the existing GPX 1.0 standard. Notable changes were the introduction of `<extensions>` and a number of existing elements that were previously under `<gpx>` were that were tweaked and moved into the `<metadata>` element.
+GPX 1.1 was released on 9 August 2004 and improved upon the existing GPX 1.0 standard. Notable changes were the introduction of `<extensions>` and a number of existing elements that were previously under `<gpx>` that were tweaked and moved into the `<metadata>` element.
 
 Waypoints, routes and tracks were largely unchanged in GPX 1.1, aside from `<url>` elements being replaced by `<link>` elements and the introduction of `<extensions>`. However, `<course>` and `<speed>` were inadvertently dropped from the `<trkpt>` elements.
 
@@ -175,8 +175,8 @@ They are all optional, although `<course>` and `<speed>` are highly recommended 
 
 | Name       | Description                                                  |
 | ---------- | ------------------------------------------------------------ |
-| `<course>` | Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing.<br/>Measured in degrees, COG is the actual direction of travel relative to due north.<br/>Course was available in GPX 1.0 but (possibly inadvertently) removed in GPX 1.1. |
-| `<speed>`  | Horizontal speed, often referred to as speed over ground (SOG).<br/>Measured in m/s it is typically derived from the Doppler observables and far more accurate than position-derived speeds.<br/>Speed was available in GPX 1.0 but (possibly inadvertently) removed in GPX 1.1. |
+| `<course>` | Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing.<br/>Measured in degrees, COG is the actual direction of travel relative to due north.<br/>Course was available in GPX 1.0 but inadvertently removed in GPX 1.1. |
+| `<speed>`  | Horizontal speed, often referred to as speed over ground (SOG).<br/>Measured in m/s it is typically derived from the Doppler observables and far more accurate than position-derived speeds.<br/>Speed was available in GPX 1.0 but inadvertently removed in GPX 1.1. |
 | `<roc>`    | Rate of climb (ROC), sometimes referred to as climb rate or vertical speed.<br/>Measured in m/s, positive values indicate increasing altitude, whilst negative values indicate decreasing altitude.<br/>Only available from some GPS / GNSS chipsets (e.g. SiRF in their binary output). |
 
 
@@ -255,7 +255,7 @@ The new `<src>` element of GPX 1.1.1 is a "mixed" type to provide forwards and b
 
 It is important to emphasise that existing files that are already GPX 1.1 compliant will also be GPX 1.1.1 compliant.
 
-Existing software will therefore be able to load / import GPX 1.1.1 files without any issues:
+Existing software should be expected to load / import GPX 1.1.1 files without any issues:
 
 - Existing software that recognises `<course>` and `<speed>` in GPX 1.0 files will almost certainly recognise them in GPX 1.1.1 files.
 - Existing software that recognises `<src>` elements will also recognise them fine in GPX 1.1.1 due to the use of mixed content.
