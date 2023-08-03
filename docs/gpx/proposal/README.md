@@ -15,7 +15,7 @@ What is NOT included:
 - This is not about data originating from other sensors (e.g. accelerometers, electronic compasses, heart rate monitors, thermometers, etc).
 - This is unrelated to any previous proposal(s) to incorporate existing extensions into the GPX standard (e.g. heart rate, temperature, etc).
 
-Interoperability / compatibility of the proposal with existing software and GPX 1.0 / GPX 1.1 files is of the upmost importance:
+Interoperability / compatibility of the proposal with existing software and GPX 1.0 / GPX 1.1 files is of the utmost importance:
 
 - The inclusion of "course" and "speed" are entirely consistent / compatible with GPX 1.0.
 - The other data items (e.g. accuracy estimates) have been added in such a way as to ensure forwards and backwards compatibility with GPX 1.1.
@@ -71,8 +71,8 @@ A number of sports and activities already benefit from the Doppler-derived speed
 - Speedsailing - custom devices (e.g. [Motion GPS](https://www.motion-gps.com/)) and watch / phone apps (e.g. [Waterspeed](https://waterspeedapp.com/) and [WindsportTracker](https://www.windsporttracker.com/))
 - Regatta racing - custom devices (e.g. [Sailmon](https://sailmon.com/) or [Vakaros](https://vakaros.com/)) which are used for live tracking (e.g. world championships, olympics, etc)
 - Sky diving - custom devices (e.g. [Flysight](https://www.flysight.ca/)) for glide statistics, etc.
-- Motorsport - custom devices (e.g. [Dragy](https://dragymotorsports.co.uk/), [VBOX Sport](https://www.vboxmotorsport.co.uk/index.php/en/vbox-sport), [P-GEAR](https://pgearmotorsports.com/)) for things like 1/4 mile speeds and 0-60 mph times.
-- Land speed records - on-board speedometer (e.g. [Bloodhound SSC](https://www.bloodhoundlsr.com/) which uses a custom version of the [Motion GPS](https://www.motion-gps.com/))
+- Motorsport - custom devices (e.g. [Dragy](https://dragymotorsports.co.uk/), [VBOX Sport](https://www.vboxmotorsport.co.uk/index.php/en/vbox-sport), [P-GEAR](https://pgearmotorsports.com/)) for things like 1/4 mile times and 0-60 mph times.
+- Land speed records - onboard speedometer (e.g. [Bloodhound SSC](https://www.bloodhoundlsr.com/) which uses a custom version of the [Motion GPS](https://www.motion-gps.com/))
 
 The devices listed above will export the Doppler-derived speeds (and accuracy estimates) when using their proprietary binary formats, or CSV files. Since there is no "standard" way to record the Doppler-derived speeds in GPX 1.1 compliant files, it often leads to useful data items being discarded or lost when using GPX files.
 
@@ -141,7 +141,7 @@ I wrote about the [GPX format](../README.md) and provided further details about 
 
 Shortly after drafting the [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) schema, I started to contemplate whether it should actually become part of the GPX standard.
 
-It is very easy for a developer to overlook the importance of Doppler-derived speed provided by GPS / GNSS chips, since it is not part of the GPX 1.1 standard. The natural inclination is to assume that it can be re-created from the positional data. I've touched on this topic earlier in this document.
+It is very easy for a developer to overlook the importance of Doppler-derived speed provided by GPS / GNSS chips, since it is not part of the GPX 1.1 standard. The natural inclination is to assume that speed can be regenerated from the positional data. However, this assumption doesn't hold true because position and speed are calculated independently.
 
 This proposal is pretty simple, basically to incorporate the extensions from the [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) schema into the existing GPX 1.1 schema:
 
@@ -224,7 +224,7 @@ An example trackpoint including course, speed and accuracy estimates:
   <ele>7.90</ele>
   <time>2022-04-11T10:16:01Z</time>
   <course>157.19</course>
-  <speed>0.5429</speed>
+  <speed>0.543</speed>
   <hacc>2.0</hacc>
   <vacc>4.0</vacc>
   <cacc>5.0</cacc>

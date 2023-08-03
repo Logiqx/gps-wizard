@@ -27,7 +27,7 @@ For example:
   <extensions>
     <tpx:extras>
       <tpx:course>157.19</tpx:course>
-      <tpx:speed>0.5429</tpx:speed>
+      <tpx:speed>0.543</tpx:speed>
       <tpx:hacc>2.0</tpx:hacc>
       <tpx:vacc>4.0</tpx:vacc>
       <tpx:cacc>5.0</tpx:cacc>
