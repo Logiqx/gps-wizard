@@ -53,8 +53,8 @@ A more elaborate `<src>` element is also provided to give some idea of reliabili
         <tpx:version>8.5.1</tpx:version>
       </tpx:device>
       <tpx:application>
-        <tpx:appname>Hoolan</tpx:appname>
-        <tpx:appver>1.6.0</tpx:appver>
+        <tpx:name>Hoolan</tpx:name>
+        <tpx:version>1.6.0</tpx:version>
         <tpx:link>
           <tpx:href>https://www.hoolan.app/</tpx:href>
         </tpx:link>
@@ -175,8 +175,8 @@ It is recommended that source information be provided within the `<trk>` element
         <tpx:version>8.5.1</tpx:version>
       </tpx:device>
       <tpx:application>
-        <tpx:appname>Hoolan</tpx:appname>
-        <tpx:appver>1.6.0</tpx:appver>
+        <tpx:name>Hoolan</tpx:name>
+        <tpx:version>1.6.0</tpx:version>
         <tpx:link>
           <tpx:href>https://www.hoolan.app/</tpx:href>
         </tpx:link>

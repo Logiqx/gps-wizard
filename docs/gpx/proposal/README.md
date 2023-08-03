@@ -118,7 +118,7 @@ The [TPX](../../xmlschemas/tpx/1/0/README.md) schema was created in July 2023, p
 
 The extension schema includes `<course>`, `<speed>`, `<roc>` (rate of climb), plus various accuracy estimates for use within `<trkpt>` `<extensions>`.
 
-It also includes additional `<src>` information such as `<manufacturer>`, `<product>`, `<serial>`, `<version>`, `<appname>` and `<appver>`.
+It also includes additional `<src>` information for the `<device>` such as `<manufacturer>`, `<product>`, `<serial>`, `<version>`, etc.
 
 
 
@@ -147,7 +147,7 @@ This proposal is pretty simple, basically to incorporate the extensions from the
 
 - Re-introduce `<course>` and `<speed>`, fully compatible with GPX 1.0.
 - Introduce the accuracy estimates provided by numerous GPS / GNSS chipsets and [location](../../apis/location.md) services (e.g. Apple and Android). **\***
-- Additional source information; `<manufacturer>`, `<product>`, `<serial>`, `<version>`, `<appname>` and `<appver>` in  `<src>` elements.
+- Additional source information; `<manufacturer>`, `<product>`, `<serial>`, and `<version>` in  `<device>` elements.
 - There is an argument for calling this GPX 1.1.1 as there are absolutely no breaking changes / compatibility issues with GPX 1.1.
 
 **\*** - what the accuracy estimates actually represent and their applications is outside of the scope of this document. Suffice to say, they typically represent the likely error (+/-) in terms or RMS, or 1-sigma / 68% (and sometimes, 3-sigma / 99.7%). They are device dependent, hence the additional `<src>` source information in this proposal.
