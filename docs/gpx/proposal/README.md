@@ -130,7 +130,7 @@ One of the issues with the use of extensions for common elements such as `<cours
 - Some applications include `<course>` and `<speed>` in the `<trkpt>` elements (not `<extensions>`) which is helpful, but it is not GPX 1.1 compliant.
 - Some applications make use of `<extensions>` but often refer to non-existent or undeclared schemas / namespaces - e.g. `<gpxdata:speed>`
 - Few (if any) applications use Garmin's TrackPointExtension V2 schema to include `<course>` and `<speed>` in GPX 1.1 files.
-- To add further confusion, some apps generate multiple variations of GPX files such as Waterspeed which currently offers 4 different options!
+- To add further confusion, some apps generate multiple variations of GPX files such as [Waterspeed](https://waterspeedapp.com/) which currently offers 4 different GPX exports!
 
 I wrote about the [GPX format](../README.md) and provided further details about [speed in GPX files](../speed.md) earlier in 2023, whilst investigating GPX compatibility issues affecting the speedsurfing community.
 
@@ -141,13 +141,13 @@ I wrote about the [GPX format](../README.md) and provided further details about 
 
 Shortly after drafting the [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) schema, I started to contemplate whether it should actually become part of the GPX standard.
 
-It is very easy for developer to overlook the importance of Doppler-derived speed provided by GPS / GNSS chips, since it is not part of the GPX 1.1 standard. The natural inclination is to assume that it can be re-created from the positional data. I've touched on this topic earlier in this document.
+It is very easy for a developer to overlook the importance of Doppler-derived speed provided by GPS / GNSS chips, since it is not part of the GPX 1.1 standard. The natural inclination is to assume that it can be re-created from the positional data. I've touched on this topic earlier in this document.
 
-This proposal is pretty simple, basically to incorporate the extensions from the TrackPointExtras schema into the existing GPX 1.1 schema:
+This proposal is pretty simple, basically to incorporate the extensions from the [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) schema into the existing GPX 1.1 schema:
 
 - Re-introduce `<course>` and `<speed>`, fully compatible with GPX 1.0.
 - Introduce the accuracy estimates provided by numerous GPS / GNSS chipsets and [location](../../apis/location.md) services (e.g. Apple and Android). **\***
-- Additional source information; `<manufacturer>`, `<product>`, `<serial>`, `<version>`, `<appname>` and `<appver> in ` `<src>` elements.
+- Additional source information; `<manufacturer>`, `<product>`, `<serial>`, `<version>`, `<appname>` and `<appver>` in  `<src>` elements.
 - There is an argument for calling this GPX 1.1.1 as there are absolutely no breaking changes / compatibility issues with GPX 1.1.
 
 **\*** - what the accuracy estimates actually represent and their applications is outside of the scope of this document. Suffice to say, they typically represent the likely error (+/-) in terms or RMS, or 1-sigma / 68% (and sometimes, 3-sigma / 99.7%). They are device dependent, hence the additional `<src>` source information in this proposal.
@@ -156,12 +156,60 @@ This proposal is pretty simple, basically to incorporate the extensions from the
 
 ### Example Schema for GPX 1.1.1
 
-I have created and example schema for discussion purposes:
+I have created an example schema for discussion purposes:
 
 - The example schema is available on [GitHub](https://github.com/Logiqx/gps-wizard/blob/main/docs/xmlschemas/gpx/proposal.xsd) but as stated, it is simply a proposal and should not be used for anything other than general discussion.
 - The proposal incorporates the [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) into GPX 1.1, with slimmed down comments in keeping with the existing GPX 1.1 schema.
 
 After further discussion on the [GPX developers forum](https://groups.io/g/gpx) (and subsequent tweaking of the proposal), the GPX 1.1.1 schema would also benefit from consistent use of whitespace, which is currently a mix of tabs and spaces.
+
+
+
+### Additions to GPX 1.1.1
+
+#### COG, SOG and ROC
+
+The following course and elements can be all be added to `<wpt>`, `<rtept>` and `<trkpt>` elements in the proposed GPX 1.1.1.
+
+They are all optional, although `<course>` and `<speed>` are strongly recommended.
+
+| Name       | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| `<course>` | Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing.<br/>Measured in degrees, COG is the actual direction of travel relative to due north.<br/>Course was available in GPX 1.0 but (possibly inadvertently) removed in GPX 1.1. |
+| `<speed>`  | Horizontal speed, often referred to as speed over ground (SOG).<br/>Measured in m/s it is typically derived from the Doppler observables and far more accurate than position-derived speeds.<br/>Speed was available in GPX 1.0 but (possibly inadvertently) removed in GPX 1.1. |
+| `<roc>`    | Rate of climb (ROC), sometimes referred to as climb rate or vertical speed.<br/>Measured in m/s, positive values indicate increasing altitude, whilst negative values indicate decreasing altitude.<br/>Only available from some GPS / GNSS chipsets (e.g. SiRF in their binary output). |
+
+
+#### Accuracy Estimates
+
+The following accuracy elements can be all be added to `<wpt>`, `<rtept>` and `<trkpt>` elements in the proposed GPX 1.1.1.
+
+| Name       | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| `<hacc>`   | Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal accuracy of this location at the 68th percentile confidence level. |
+| `<vacc>`   | Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated vertical accuracy of this location at the 68th percentile confidence level. |
+| `<cacc>`   | Course accuracy estimate, sometimes (incorrectly) referred to as heading / bearing accuracy (or error).<br/>Measured in degrees it represents a likely accuracy of +/- the given value.<br/>Typically the estimated course accuracy at the 68th percentile confidence level. |
+| `<sacc>`   | Speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.<br/>Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal speed (SOG) accuracy at the 68th percentile confidence level. |
+| `<racc>`   | Rate of climb (ROC) accuracy estimate, sometimes referred to as vertical speed / velocity error.<br/>Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated rate of climb (ROC) accuracy at the 68th percentile confidence level. |
+
+#### Source Elements
+
+GPX 1.0 and 1.1 both support `<src>` elements in `<wpt>`, `<rte>`, `<rtept>`, `<trk>`, and `<trkpt>` elements.
+
+These are simply `xsd:string` types and may contain values such as "Garmin eTrex" or "Sailmon Max".
+
+The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element to be used within `<extensions>` elements:
+
+| Name             | Description                                                  |
+| ---------------- | ------------------------------------------------------------ |
+| `<manufacturer>` | Product manufacturer of the device / wearable.<br/>e.g. "Garmin", "Suunto", "Apple", "COROS", "Locosys", "Sailmon", etc. |
+| `<product>`      | Product name of the device / wearable, preferably without mentioning the product manufacturer.<br/>e.g. "Fenix 5" (Garmin), "Watch Series 8" (Apple), "VERTIX 2" (COROS), "GW-60" (Locosys), "Max" (Sailmon), etc. |
+| `<serial>`       | Product serial number of the device / wearable.<br/>e.g. "5AEDF0" (COROS). |
+| `<version>`      | Firmware / software / OS version of the GPS device / wearable.<br/>e.g. "13.22" (Garmin), "8.5.1" (Apple), "3.02.0" (COROS), "v1.4(B0803T)" (Locosys), "1.4.4" (Sailmon), etc. |
+| `<appname>`      | Software / application name used to capture / export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "Windsport", "Hoolan", etc. |
+| `<appver>`       | Software / application version used to capture / export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
+
+Note: Since it is a "mixed" type you can still include a simple string to describe the device, such as "Garmin Fenix 5".
 
 
 
@@ -171,9 +219,9 @@ It is important to emphasise that existing files that are already GPX 1.1 compli
 
 Existing software will therefore be able to load / import GPX 1.1.1 files without any issues:
 
-- Existing software that recognises `<course>` and `<speed>` in GPX 1.0 files will probably recognise them in GPX 1.1.1 files.
+- Existing software that recognises `<course>` and `<speed>` in GPX 1.0 files will almost certainly recognise them in GPX 1.1.1 files.
 - Existing software that recognises `<src>` elements will also recognise them fine in GPX 1.1.1 due to the use of mixed content.
-- Existing software does not appear to rely upon the GPX version being either "1.0" or "1.1", so far as I have been able to determine.
+- Existing software does not appear to rely upon the GPX version being either "1.0" or "1.1", so far as I have been able to ascertain.
 
 Preliminary GPX 1.1.1 testing has been successful in several applications. Both `<course>` and `<speed>` were loaded successfully into the following speedsurfing applications, and GPX 1.1.1 files could be imported to Strava:
 
@@ -191,7 +239,7 @@ n.b. Strava does not (currently) make use of the `<speed>` elements in GPX files
 The GPX 1.1.1 proposal has been described at some length but can be summarised as follows:
 
 - Addition of `<course>`, `<speed>` in a way that is consistent with GPX 1.0.
-  - Most existing software that can utilise `<course>` and `<speed>` in GPX 1.0 files will probably recognise them in GPX 1.1.1.
+  - Most existing software that can utilise `<course>` and `<speed>` in GPX 1.0 files will almost certainly recognise them in GPX 1.1.1.
 - Addition of accuracy estimates in a way that is consistent with GPX 1.0 and 1.1 items such as "horizontal dilution of precision", etc.
   - Accuracy estimates will not interfere with existing apps but can be obviously used by applications that understand their utility.
 - Addition of device / source information via the existing `<src>` elements.
@@ -216,4 +264,4 @@ These links are just to get people started:
   - [European Space Agency (ESA)](https://gssc.esa.int/navipedia/index.php/GNSS_Basic_Observables) - The reference for Global Navigation Satellite Systems.
 - Derivation of velocity / speed
   - [InsideGNSS](https://insidegnss.com/wp-content/uploads/2018/01/marapr15-SOLUTIONS.pdf) - How does a GNSS receiver estimate velocity? Mar / Apr 2015.
-  - [Evaluation of the performance of GNSS-based velocity estimation algorithms](https://satellite-navigation.springeropen.com/articles/10.1186/s43020-022-00080-4) - JI Li et al. 2022.
+  - [Evaluation of the performance of GNSS-based velocity estimation algorithms](https://satellite-navigation.springeropen.com/articles/10.1186/s43020-022-00080-4) - Ji Li et al. 2022.
