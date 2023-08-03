@@ -213,11 +213,12 @@ The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element containin
 
 **`<application>`** contains the following optional elements:
 
-| Name        | Description                                                  |
-| ----------- | ------------------------------------------------------------ |
-| `<name>`    | Software / application name used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "Windsport", "Hoolan", etc. |
-| `<version>` | Software / application version used to capture + export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
-| `<link>`    | GPX `<link>` element for the application used to capture + export the GPS data:<br/>e.g. "`<href>https://www.hoolan.app/</href>`" |
+| Name          | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| `<developer>` | Software / application developer used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Massimiliano Picchi", "Matthias Koch", "Hoolan Ltd", etc. |
+| `<product>`   | Software / application name used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "WindsportTracker", "Hoolan", etc. |
+| `<version>`   | Software / application version used to capture + export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
+| `<link>`      | GPX `<link>` element for the application used to capture + export the GPS data:<br/>e.g. "`<href>https://www.hoolan.app/</href>`" |
 
 Note: Since the `<src>` element is a "mixed" type you can still include a simple string to describe the device, such as "Garmin Fenix 5".
 
@@ -256,7 +257,8 @@ The new `<src>` element of GPX 1.1.1 is a "mixed" type to provide forwards and b
       <version>8.5.1</version>
     </device>
     <application>
-      <name>Hoolan</name>
+      <developer>Hoolan Ltd</developer>
+      <product>Hoolan</product>
       <version>1.6.0</version>
       <link>
         <href>https://www.hoolan.app/</href>
