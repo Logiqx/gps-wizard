@@ -1,6 +1,6 @@
 ## TrackPointExtras
 
-#### Background
+### Background
 
 GPS / GNSS chipsets from a number of manufacturers provide position and speed accuracy estimates; SiRF, u-blox, Broadcom, Qualcomm, Quectel, etc.
 
@@ -12,7 +12,7 @@ However, GPX 1.1 provides no standard mechanism to store the accuracy estimates 
 
 
 
-#### Extensions
+### Extensions
 
 This [TPX 1.0](../../../tpx10.xsd) schema defines universal extensions to be used with the [GPX 1.1](http://www.topografix.com/GPX/1/1/gpx.xsd) schema.
 
@@ -45,12 +45,20 @@ A more elaborate `<src>` element is also provided to give some idea of reliabili
   <extensions>
     <tpx:src>
       Apple Watch Series 8
-      <tpx:manufacturer>Apple</tpx:manufacturer>
-      <tpx:product>Watch Series 8</tpx:product>
-      <tpx:serial>123456789</tpx:serial>
-      <tpx:version>8.5.1</tpx:version>
-      <tpx:appname>Hoolan</tpx:appname>
-      <tpx:appver>1.6.0</tpx:appver>
+      <tpx:device>
+        <tpx:manufacturer>Apple</tpx:manufacturer>
+        <tpx:product>Watch Series 8</tpx:product>
+        <tpx:serial>123456789</tpx:serial>
+        <tpx:name>Nathan's Apple Watch</tpx:name>
+        <tpx:version>8.5.1</tpx:version>
+      </tpx:device>
+      <tpx:application>
+        <tpx:appname>Hoolan</tpx:appname>
+        <tpx:appver>1.6.0</tpx:appver>
+        <tpx:link>
+          <tpx:href>https://www.hoolan.app/</tpx:href>
+        </tpx:link>
+      </tpx:application>
     </tpx:src>
   </extensions>
 </trk>
@@ -58,7 +66,7 @@ A more elaborate `<src>` element is also provided to give some idea of reliabili
 
 
 
-#### Decisions + Rationale
+### Decisions + Rationale
 
 All of the element names have been intentionally kept as short as possible to avoid too much bloat of the GPX:
 
@@ -76,22 +84,32 @@ Note: The term "accuracy" has been chosen over "error" because it is used by the
 
 
 
-#### Trackpoint Elements
+### Trackpoint Extensions
 
-The following extensions are available in this schema. All of the elements are optional, although `<course>` and `<speed>` are strongly recommended.
+#### COG, SOG and ROC
 
-| Name   | Description                                                  |
-| ------ | ------------------------------------------------------------ |
-| course | Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing.<br/>Measured in degrees, COG is the actual direction of travel relative to due north.<br/>Course was available in GPX 1.0 but inadvertently removed in GPX 1.1. |
-| speed  | Horizontal speed, often referred to as speed over ground (SOG).<br/>Measured in m/s it is typically derived from the Doppler observables and far more accurate than position-derived speeds.<br/>Speed was available in GPX 1.0 but inadvertently removed in GPX 1.1. |
-| roc    | Rate of climb (ROC), sometimes referred to as climb rate or vertical speed.<br/>Measured in m/s, positive values indicate increasing altitude, whilst negative values indicate decreasing altitude.<br/>Only available from some GPS / GNSS chipsets (e.g. SiRF in their binary output). |
-| hacc   | Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal accuracy of this location at the 68th percentile confidence level. |
-| vacc   | Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated vertical accuracy of this location at the 68th percentile confidence level. |
-| cacc   | Course accuracy estimate, sometimes (incorrectly) referred to as heading / bearing accuracy (or error).<br/>Measured in degrees it represents a likely accuracy of +/- the given value.<br/>Typically the estimated course accuracy at the 68th percentile confidence level. |
-| sacc   | Speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.<br/>Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal speed (SOG) accuracy at the 68th percentile confidence level. |
-| racc   | Rate of climb (ROC) accuracy estimate, sometimes referred to as vertical speed / velocity error.<br/>Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated rate of climb (ROC) accuracy at the 68th percentile confidence level. |
+The following elements can all be added to `<wpt>`, `<rtept>` and `<trkpt>` elements, under `<extensions>`.
+
+They are all optional, although `<course>` and `<speed>` are highly recommended in GPX files using TPX extensions.
+
+| Name       | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| `<course>` | Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing.<br/>Measured in degrees, COG is the actual direction of travel relative to due north.<br/>Course was available in GPX 1.0 but inadvertently removed in GPX 1.1. |
+| `<speed>`  | Horizontal speed, often referred to as speed over ground (SOG).<br/>Measured in m/s it is typically derived from the Doppler observables and far more accurate than position-derived speeds.<br/>Speed was available in GPX 1.0 but inadvertently removed in GPX 1.1. |
+| `<roc>`    | Rate of climb (ROC), sometimes referred to as climb rate or vertical speed.<br/>Measured in m/s, positive values indicate increasing altitude, whilst negative values indicate decreasing altitude.<br/>Only available from some GPS / GNSS chipsets (e.g. SiRF in their binary output). |
 
 
+#### Accuracy Estimates
+
+The following accuracy elements can all be added to `<wpt>`, `<rtept>` and `<trkpt>` elements, under `<extensions>`.
+
+| Name     | Description                                                  |
+| -------- | ------------------------------------------------------------ |
+| `<hacc>` | Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal accuracy of this location at the 68th percentile confidence level. |
+| `<vacc>` | Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated vertical accuracy of this location at the 68th percentile confidence level. |
+| `<cacc>` | Course accuracy estimate, sometimes (incorrectly) referred to as heading / bearing accuracy (or error).<br/>Measured in degrees it represents a likely accuracy of +/- the given value.<br/>Typically the estimated course accuracy at the 68th percentile confidence level. |
+| `<sacc>` | Speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.<br/>`Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal speed (SOG) accuracy at the 68th percentile confidence level. |
+| `<racc>` | Rate of climb (ROC) accuracy estimate, sometimes referred to as vertical speed / velocity error.<br/>Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated rate of climb (ROC) accuracy at the 68th percentile confidence level. |
 
 #### Source Elements
 
@@ -99,22 +117,31 @@ GPX 1.0 and 1.1 both support `<src>` elements in `<wpt>`, `<rte>`, `<rtept>`, `<
 
 These are simply `xsd:string` types and may contain values such as "Garmin eTrex" or "Sailmon Max".
 
-This schema introduces a more sophisticated `<src>` element to be used within `<extensions>` elements:
+The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element containing `<device>` and `<application>`.
 
-| Name         | Description                                                  |
-| ------------ | ------------------------------------------------------------ |
-| manufacturer | Product manufacturer of the device / wearable.<br/>e.g. "Garmin", "Suunto", "Apple", "COROS", "Locosys", "Sailmon", etc. |
-| product      | Product name of the device / wearable, preferably without mentioning the product manufacturer.<br/>e.g. "Fenix 5" (Garmin), "Watch Series 8" (Apple), "VERTIX 2" (COROS), "GW-60" (Locosys), "Max" (Sailmon), etc. |
-| serial       | Product serial number of the device / wearable.<br/>e.g. "5AEDF0" (COROS). |
-| version      | Firmware / software / OS version of the GPS device / wearable.<br/>e.g. "13.22" (Garmin), "8.5.1" (Apple), "3.02.0" (COROS), "v1.4(B0803T)" (Locosys), "1.4.4" (Sailmon), etc. |
-| appname      | Software / application name used to capture / export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "Windsport", "Hoolan", etc. |
-| appver       | Software / application version used to capture / export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
+**`<device>`** contains the following optional elements:
 
-Note: Since it is a "mixed" type you can still include a simple string to describe the device, such as "Garmin Fenix 5"
+| Name             | Description                                                  |
+| ---------------- | ------------------------------------------------------------ |
+| `<manufacturer>` | Product manufacturer of the device / wearable.<br/>e.g. "Garmin", "Suunto", "Apple", "COROS", "Locosys", "Sailmon", etc. |
+| `<product>`      | Product name of the device / wearable, preferably without mentioning the product manufacturer.<br/>e.g. "Fenix 5" (Garmin), "Watch Series 8" (Apple), "VERTIX 2" (COROS), "GW-60" (Locosys), "Max" (Sailmon), etc. |
+| `<serial>`       | Product serial number of the device / wearable.<br/>e.g. "5AEDF0" (COROS). |
+| `<name>`         | Name of the GPS device / wearable, typically chosen by the owner.<br/>e.g. "Nathan's Apple Watch". |
+| `<version>`      | Firmware / software / OS version of the GPS device / wearable.<br/>e.g. "13.22" (Garmin), "8.5.1" (Apple), "3.02.0" (COROS), "v1.4(B0803T)" (Locosys), "1.4.4" (Sailmon), etc. |
+
+**`<application>`** contains the following optional elements:
+
+| Name        | Description                                                  |
+| ----------- | ------------------------------------------------------------ |
+| `<name>`    | Software / application name used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "Windsport", "Hoolan", etc. |
+| `<version>` | Software / application version used to capture + export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
+| `<link>`    | GPX `<link>` element for the application used to capture + export the GPS data:<br/>e.g. "`<href>https://www.hoolan.app/</href>`" |
+
+Note: Since the `<src>` element is a "mixed" type you can still include a simple string to describe the device, such as "Garmin Fenix 5".
 
 
 
-#### Usage
+### Usage
 
 GPX 1.1 compliant files should begin with something like the following:
 
@@ -139,12 +166,20 @@ It is recommended that source information be provided within the `<trk>` element
   <extensions>
     <tpx:src>
       Apple Watch Series 8
-      <tpx:manufacturer>Apple</tpx:manufacturer>
-      <tpx:product>Watch Series 8</tpx:product>
-      <tpx:serial>123456789</tpx:serial>
-      <tpx:version>8.5.1</tpx:version>
-      <tpx:appname>Hoolan</tpx:appname>
-      <tpx:appver>1.6.0</tpx:appver>
+      <tpx:device>
+        <tpx:manufacturer>Apple</tpx:manufacturer>
+        <tpx:product>Watch Series 8</tpx:product>
+        <tpx:serial>123456789</tpx:serial>
+        <tpx:name>Nathan's Apple Watch</tpx:name>
+        <tpx:version>8.5.1</tpx:version>
+      </tpx:device>
+      <tpx:application>
+        <tpx:appname>Hoolan</tpx:appname>
+        <tpx:appver>1.6.0</tpx:appver>
+        <tpx:link>
+          <tpx:href>https://www.hoolan.app/</tpx:href>
+        </tpx:link>
+      </tpx:application>
     </tpx:src>
   </extensions>
 </trk>
@@ -173,7 +208,7 @@ Track points should always include course and speed when available. Ideally they
 
 
 
-#### Validation
+### Validation
 
 Software developers should validate their GPX files during the development / testing process.
 

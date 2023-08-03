@@ -184,13 +184,13 @@ They are all optional, although `<course>` and `<speed>` are highly recommended 
 
 The following accuracy elements can all be added to `<wpt>`, `<rtept>` and `<trkpt>` elements in the proposed GPX 1.1.1.
 
-| Name       | Description                                                  |
-| ---------- | ------------------------------------------------------------ |
-| `<hacc>`   | Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal accuracy of this location at the 68th percentile confidence level. |
-| `<vacc>`   | Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated vertical accuracy of this location at the 68th percentile confidence level. |
-| `<cacc>`   | Course accuracy estimate, sometimes (incorrectly) referred to as heading / bearing accuracy (or error).<br/>Measured in degrees it represents a likely accuracy of +/- the given value.<br/>Typically the estimated course accuracy at the 68th percentile confidence level. |
-| `<sacc>`   | Speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.<br/>Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal speed (SOG) accuracy at the 68th percentile confidence level. |
-| `<racc>`   | Rate of climb (ROC) accuracy estimate, sometimes referred to as vertical speed / velocity error.<br/>Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated rate of climb (ROC) accuracy at the 68th percentile confidence level. |
+| Name     | Description                                                  |
+| -------- | ------------------------------------------------------------ |
+| `<hacc>` | Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal accuracy of this location at the 68th percentile confidence level. |
+| `<vacc>` | Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated vertical accuracy of this location at the 68th percentile confidence level. |
+| `<cacc>` | Course accuracy estimate, sometimes (incorrectly) referred to as heading / bearing accuracy (or error).<br/>Measured in degrees it represents a likely accuracy of +/- the given value.<br/>Typically the estimated course accuracy at the 68th percentile confidence level. |
+| `<sacc>` | Speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.<br/>`Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal speed (SOG) accuracy at the 68th percentile confidence level. |
+| `<racc>` | Rate of climb (ROC) accuracy estimate, sometimes referred to as vertical speed / velocity error.<br/>Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated rate of climb (ROC) accuracy at the 68th percentile confidence level. |
 
 #### Source Elements
 
@@ -198,18 +198,27 @@ GPX 1.0 and 1.1 both support `<src>` elements in `<wpt>`, `<rte>`, `<rtept>`, `<
 
 These are simply `xsd:string` types and may contain values such as "Garmin eTrex" or "Sailmon Max".
 
-The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element:
+The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element containing `<device>` and `<application>`.
+
+**`<device>`** contains the following optional elements:
 
 | Name             | Description                                                  |
 | ---------------- | ------------------------------------------------------------ |
 | `<manufacturer>` | Product manufacturer of the device / wearable.<br/>e.g. "Garmin", "Suunto", "Apple", "COROS", "Locosys", "Sailmon", etc. |
 | `<product>`      | Product name of the device / wearable, preferably without mentioning the product manufacturer.<br/>e.g. "Fenix 5" (Garmin), "Watch Series 8" (Apple), "VERTIX 2" (COROS), "GW-60" (Locosys), "Max" (Sailmon), etc. |
 | `<serial>`       | Product serial number of the device / wearable.<br/>e.g. "5AEDF0" (COROS). |
+| `<name>`         | Name of the GPS device / wearable, typically chosen by the owner.<br/>e.g. "Nathan's Apple Watch". |
 | `<version>`      | Firmware / software / OS version of the GPS device / wearable.<br/>e.g. "13.22" (Garmin), "8.5.1" (Apple), "3.02.0" (COROS), "v1.4(B0803T)" (Locosys), "1.4.4" (Sailmon), etc. |
-| `<appname>`      | Software / application name used to capture / export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "Windsport", "Hoolan", etc. |
-| `<appver>`       | Software / application version used to capture / export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
 
-Since the `<src>` element is a "mixed" type you can still include a simple string to describe the device, such as "Garmin Fenix 5".
+**`<application>`** contains the following optional elements:
+
+| Name        | Description                                                  |
+| ----------- | ------------------------------------------------------------ |
+| `<name>`    | Software / application name used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "Windsport", "Hoolan", etc. |
+| `<version>` | Software / application version used to capture + export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
+| `<link>`    | GPX `<link>` element for the application used to capture + export the GPS data:<br/>e.g. "`<href>https://www.hoolan.app/</href>`" |
+
+Note: Since the `<src>` element is a "mixed" type you can still include a simple string to describe the device, such as "Garmin Fenix 5".
 
 This approach will help ensure forward and backward compatibility with existing software.
 
@@ -238,12 +247,20 @@ The new `<src>` element of GPX 1.1.1 is a "mixed" type to provide forwards and b
 <trk>
   <src>
     Apple Watch Series 8
-    <manufacturer>Apple</manufacturer>
-    <product>Watch Series 8</product>
-    <serial>123456789</serial>
-    <version>8.5.1</version>
-    <appname>Hoolan</appname>
-    <appver>1.6.0</appver>
+    <device>
+      <manufacturer>Apple</manufacturer>
+      <product>Watch Series 8</product>
+      <serial>123456789</serial>
+      <name>Nathan's Apple Watch</name>
+      <version>8.5.1</version>
+    </device>
+    <application>
+      <name>Hoolan</name>
+      <version>1.6.0</version>
+      <link>
+        <href>https://www.hoolan.app/</href>
+      </link>
+    </application>
   </src>
   <trkseg>...</trkseg>
 </trk>
