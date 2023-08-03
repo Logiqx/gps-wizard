@@ -205,9 +205,9 @@ The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element containin
 
 | Name             | Description                                                  |
 | ---------------- | ------------------------------------------------------------ |
-| `<manufacturer>` | Product manufacturer of the device / wearable.<br/>e.g. "Garmin", "Suunto", "Apple", "COROS", "Locosys", "Sailmon", etc. |
-| `<product>`      | Product name of the device / wearable, preferably without mentioning the product manufacturer.<br/>e.g. "Fenix 5" (Garmin), "Watch Series 8" (Apple), "VERTIX 2" (COROS), "GW-60" (Locosys), "Max" (Sailmon), etc. |
-| `<serial>`       | Product serial number of the device / wearable.<br/>e.g. "5AEDF0" (COROS). |
+| `<manufacturer>` | Manufacturer of the GPS device / wearable.<br/>e.g. "Garmin", "Suunto", "Apple", "COROS", "Locosys", "Sailmon", etc. |
+| `<product>`      | Product name of the GPS device / wearable, preferably without mentioning the product manufacturer.<br/>e.g. "Fenix 5" (Garmin), "Watch Series 8" (Apple), "VERTIX 2" (COROS), "GW-60" (Locosys), "Max" (Sailmon), etc. |
+| `<serial>`       | Serial number of the GPS device / wearable.<br/>e.g. "5AEDF0" (COROS). |
 | `<name>`         | Name of the GPS device / wearable, typically chosen by the owner.<br/>e.g. "Nathan's Apple Watch". |
 | `<version>`      | Firmware / software / OS version of the GPS device / wearable.<br/>e.g. "13.22" (Garmin), "8.5.1" (Apple), "3.02.0" (COROS), "v1.4(B0803T)" (Locosys), "1.4.4" (Sailmon), etc. |
 
@@ -215,10 +215,10 @@ The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element containin
 
 | Name          | Description                                                  |
 | ------------- | ------------------------------------------------------------ |
-| `<developer>` | Software / application developer used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Massimiliano Picchi", "Matthias Koch", "Hoolan Ltd", etc. |
-| `<product>`   | Software / application name used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "WindsportTracker", "Hoolan", etc. |
-| `<link>`      | GPX `<link>` element for the application used to capture + export the GPS data:<br/>e.g. "`<href>https://www.hoolan.app/</href>`" |
-| `<version>`   | Software / application version used to capture + export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
+| `<developer>` | Developer of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Massimiliano Picchi", "Matthias Koch", "Hoolan Ltd", etc. |
+| `<product>`   | Product name of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "WindsportTracker", "Hoolan", etc. |
+| `<link>`      | Link to the software / application used to capture + export the GPS data.<br/>e.g. "`<href>https://www.hoolan.app/</href>`" |
+| `<version>`   | Version of the software / application used to capture + export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
 
 Note: Since the `<src>` element is a "mixed" type you can still include a simple string to describe the device, such as "Garmin Fenix 5".
 
