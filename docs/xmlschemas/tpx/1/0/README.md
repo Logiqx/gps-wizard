@@ -55,10 +55,10 @@ A more elaborate `<src>` element is also provided to give some idea of reliabili
       <tpx:application>
         <tpx:developer>Hoolan Ltd</tpx:developer>
         <tpx:product>Hoolan</tpx:product>
-        <tpx:version>1.6.0</tpx:version>
         <tpx:link>
           <tpx:href>https://www.hoolan.app/</tpx:href>
         </tpx:link>
+        <tpx:version>1.6.0</tpx:version>
       </tpx:application>
     </tpx:src>
   </extensions>
@@ -137,8 +137,8 @@ The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element containin
 | ------------- | ------------------------------------------------------------ |
 | `<developer>` | Software / application developer used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Massimiliano Picchi", "Matthias Koch", "Hoolan Ltd", etc. |
 | `<product>`   | Software / application name used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "WindsportTracker", "Hoolan", etc. |
-| `<version>`   | Software / application version used to capture + export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
 | `<link>`      | GPX `<link>` element for the application used to capture + export the GPS data:<br/>e.g. "`<href>https://www.hoolan.app/</href>`" |
+| `<version>`   | Software / application version used to capture + export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
 
 Note: Since the `<src>` element is a "mixed" type you can still include a simple string to describe the device, such as "Garmin Fenix 5".
 
@@ -179,10 +179,10 @@ It is recommended that source information be provided within the `<trk>` element
       <tpx:application>
         <tpx:developer>Hoolan Ltd</tpx:developer>
         <tpx:product>Hoolan</tpx:product>
-        <tpx:version>1.6.0</tpx:version>
         <tpx:link>
           <tpx:href>https://www.hoolan.app/</tpx:href>
         </tpx:link>
+        <tpx:version>1.6.0</tpx:version>
       </tpx:application>
     </tpx:src>
   </extensions>
