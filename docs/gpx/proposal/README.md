@@ -165,13 +165,13 @@ After further discussion on the [GPX developers forum](https://groups.io/g/gpx) 
 
 
 
-### Additions to GPX 1.1.1
+### New Elements in GPX 1.1.1
 
 #### COG, SOG and ROC
 
-The following course and elements can be all be added to `<wpt>`, `<rtept>` and `<trkpt>` elements in the proposed GPX 1.1.1.
+The following elements can all be added to `<wpt>`, `<rtept>` and `<trkpt>` elements in the GPX 1.1.1 proposal.
 
-They are all optional, although `<course>` and `<speed>` are strongly recommended.
+They are all optional, although `<course>` and `<speed>` are highly recommended in GPX 1.1.1 files.
 
 | Name       | Description                                                  |
 | ---------- | ------------------------------------------------------------ |
@@ -182,7 +182,7 @@ They are all optional, although `<course>` and `<speed>` are strongly recommende
 
 #### Accuracy Estimates
 
-The following accuracy elements can be all be added to `<wpt>`, `<rtept>` and `<trkpt>` elements in the proposed GPX 1.1.1.
+The following accuracy elements can all be added to `<wpt>`, `<rtept>` and `<trkpt>` elements in the proposed GPX 1.1.1.
 
 | Name       | Description                                                  |
 | ---------- | ------------------------------------------------------------ |
@@ -198,7 +198,7 @@ GPX 1.0 and 1.1 both support `<src>` elements in `<wpt>`, `<rte>`, `<rtept>`, `<
 
 These are simply `xsd:string` types and may contain values such as "Garmin eTrex" or "Sailmon Max".
 
-The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element to be used within `<extensions>` elements:
+The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element:
 
 | Name             | Description                                                  |
 | ---------------- | ------------------------------------------------------------ |
@@ -209,7 +209,9 @@ The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element to be use
 | `<appname>`      | Software / application name used to capture / export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "Windsport", "Hoolan", etc. |
 | `<appver>`       | Software / application version used to capture / export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
 
-Note: Since it is a "mixed" type you can still include a simple string to describe the device, such as "Garmin Fenix 5".
+Since the `<src>` element is a "mixed" type you can still include a simple string to describe the device, such as "Garmin Fenix 5".
+
+This approach will help ensure forward and backward compatibility with existing software.
 
 
 
@@ -230,7 +232,7 @@ An example trackpoint including course, speed and accuracy estimates:
 </trkpt>
 ```
 
-The `<src>` element of GPX 1.1.1 is a "mixed" type to provide forwards and backwards compatibility with GPX 1.1:
+The new `<src>` element of GPX 1.1.1 is a "mixed" type to provide forwards and backwards compatibility with GPX 1.1:
 
 ```xml
 <trk>
