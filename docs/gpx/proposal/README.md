@@ -287,7 +287,7 @@ The GPX 1.1.1 proposal has been described at some length but can be summarised a
 
 So, that's pretty much everything in quite a lot of detail, perhaps more detail than strictly necessary!
 
-My apologies for the total length of this proposal, but I felt it worth covering the "who, what, when, where, why, and how".
+My apologies for the total length of this proposal, but I felt it worth covering the "[who, what, when, where, why, and how](https://en.wikipedia.org/wiki/Five_Ws)".
 
 Please join the [GPX developers forum](https://groups.io/g/gpx) if you wish discuss this proposal and / or provide any feedback. Many thanks!
 
