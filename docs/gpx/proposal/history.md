@@ -30,7 +30,7 @@ The [TPX](../../xmlschemas/tpx/1/0/README.md) schema was created in July 2023, p
 
 The extension schema includes `<course>`, `<speed>`, `<roc>` (rate of climb), plus various accuracy estimates for use within `<trkpt>` `<extensions>`.
 
-It also includes additional `<src>` information for the `<device>` such as `<manufacturer>`, `<product>`, `<serial>`, `<version>`, etc.
+It also includes additional `<src>` information for the hardware and software such as `<manufacturer>`, `<product>`, `<serial>`, `<version>`, etc.
 
 
 
@@ -45,5 +45,4 @@ One of the issues with the use of extensions for common elements such as `<cours
 - To add further confusion, some apps generate multiple variations of GPX files such as [Waterspeed](https://waterspeedapp.com/) which currently offers 4 different GPX exports!
 
 I wrote about the [GPX format](../README.md) and provided further details about [speed in GPX files](../speed.md) earlier in 2023, whilst investigating GPX compatibility issues affecting the speedsurfing community.
-
 

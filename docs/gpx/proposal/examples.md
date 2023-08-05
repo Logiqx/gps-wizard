@@ -23,21 +23,21 @@ The new `<src>` element of GPX 1.1.1 is a "mixed" type to provide forwards and b
 <trk>
   <src>
     Apple Watch Series 8
-    <device>
+    <hardware>
       <manufacturer>Apple</manufacturer>
       <product>Watch Series 8</product>
       <serial>123456789</serial>
       <name>Nathan's Apple Watch</name>
       <version>8.5.1</version>
-    </device>
-    <application>
+    </hardware>
+    <software>
       <developer>Hoolan Ltd</developer>
-      <product>Hoolan</product>
+      <application>Hoolan</application>
       <link>
         <href>https://www.hoolan.app/</href>
       </link>
       <version>1.6.0</version>
-    </application>
+    </software>
   </src>
   <trkseg>...</trkseg>
 </trk>

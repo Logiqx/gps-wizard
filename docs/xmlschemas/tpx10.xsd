@@ -30,7 +30,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="application" type="applicationType" minOccurs="0">
+      <xsd:element name="software" type="softwareType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
             Information about the software / application used to capture + export the GPS data.
@@ -51,7 +51,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Manufacturer of the GPS device / wearable.
-            e.g. "Garmin", "Suunto", "Apple", "COROS", "Locosys", "Sailmon", etc.
+            e.g. "Apple"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -59,7 +59,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Product name of the GPS device / wearable, preferably without mentioning the product manufacturer.
-            e.g. "Fenix 5" (Garmin), "Watch Series 8" (Apple), "VERTIX 2" (COROS), "GW-60" (Locosys), "Max" (Sailmon), etc.
+            e.g. "Watch Series 8"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -67,7 +67,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Serial number of the GPS device / wearable.
-            e.g. "5AEDF0" (COROS).
+            e.g. "123456789"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -75,7 +75,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Name of the GPS device / wearable, typically chosen by the owner.
-            e.g. "Nathan's Apple Watch".
+            e.g. "Nathan's Apple Watch"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -83,14 +83,14 @@
         <xsd:annotation>
           <xsd:documentation>
             Firmware / software / OS version of the GPS device / wearable.
-            e.g. "13.22" (Garmin), "8.5.1" (Apple), "3.02.0" (COROS), "v1.4(B0803T)" (Locosys), "1.4.4" (Sailmon), etc.
+            e.g. "8.5.1"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
 
-  <xsd:complexType name="applicationType">
+  <xsd:complexType name="softwareType">
     <xsd:annotation>
       <xsd:documentation>
         Application information, included to give user some idea of reliability and accuracy of data.
@@ -102,16 +102,16 @@
           <xsd:documentation>
             Developer of the software / application used to capture + export the GPS data.
             This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.
-            e.g. "Garmin", "Suunto", "COROS", "Massimiliano Picchi", "Matthias Koch", "Hoolan Ltd", etc.
+            e.g. "Hoolan Ltd"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="product" type="xsd:string" minOccurs="0">
+      <xsd:element name="application" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Product name of the software / application used to capture + export the GPS data.
+            Name of the software / application used to capture + export the GPS data.
             This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.
-            e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "Windsport", "Hoolan", etc.
+            e.g. "Hoolan"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -127,7 +127,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Version of the software / application used to capture + export the GPS data.
-            e.g. "1.6.0" (Hoolan), etc.
+            e.g. "1.6.0"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>

@@ -52,14 +52,14 @@ A more elaborate `<src>` element is also provided to give some idea of reliabili
         <tpx:name>Nathan's Apple Watch</tpx:name>
         <tpx:version>8.5.1</tpx:version>
       </tpx:device>
-      <tpx:application>
+      <tpx:software>
         <tpx:developer>Hoolan Ltd</tpx:developer>
-        <tpx:product>Hoolan</tpx:product>
+        <tpx:application>Hoolan</tpx:application>
         <tpx:link>
           <tpx:href>https://www.hoolan.app/</tpx:href>
         </tpx:link>
         <tpx:version>1.6.0</tpx:version>
-      </tpx:application>
+      </tpx:software>
     </tpx:src>
   </extensions>
 </trk>
@@ -117,30 +117,30 @@ The following accuracy elements can all be added to `<wpt>`, `<rtept>` and `<trk
 
 GPX 1.0 and 1.1 both support `<src>` elements in `<wpt>`, `<rte>`, `<rtept>`, `<trk>`, and `<trkpt>` elements.
 
-These are simply `xsd:string` types and may contain values such as "Garmin eTrex" or "Sailmon Max".
+These are simply `xsd:string` types and may contain values such as "Apple Watch Series 8".
 
-The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element containing `<device>` and `<application>`.
+The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element containing `<device>` and `<software>`.
 
 **`<device>`** contains the following optional elements:
 
 | Name             | Description                                                  |
 | ---------------- | ------------------------------------------------------------ |
-| `<manufacturer>` | Manufacturer of the GPS device / wearable.<br/>e.g. "Garmin", "Suunto", "Apple", "COROS", "Locosys", "Sailmon", etc. |
-| `<product>`      | Product name of the GPS device / wearable, preferably without mentioning the product manufacturer.<br/>e.g. "Fenix 5" (Garmin), "Watch Series 8" (Apple), "VERTIX 2" (COROS), "GW-60" (Locosys), "Max" (Sailmon), etc. |
-| `<serial>`       | Serial number of the GPS device / wearable.<br/>e.g. "5AEDF0" (COROS). |
+| `<manufacturer>` | Manufacturer of the GPS device / wearable.<br/>e.g. "Apple"  |
+| `<product>`      | Product name of the GPS device / wearable, preferably without mentioning the product manufacturer.<br/>e.g. "Watch Series 8" |
+| `<serial>`       | Serial number of the GPS device / wearable.<br/>e.g. "123456789" |
 | `<name>`         | Name of the GPS device / wearable, typically chosen by the owner.<br/>e.g. "Nathan's Apple Watch". |
-| `<version>`      | Firmware / software / OS version of the GPS device / wearable.<br/>e.g. "13.22" (Garmin), "8.5.1" (Apple), "3.02.0" (COROS), "v1.4(B0803T)" (Locosys), "1.4.4" (Sailmon), etc. |
+| `<version>`      | Firmware / software / OS version of the GPS device / wearable.<br/>e.g. "8.5.1" |
 
-**`<application>`** contains the following optional elements:
+**`<software>`** contains the following optional elements:
 
-| Name          | Description                                                  |
-| ------------- | ------------------------------------------------------------ |
-| `<developer>` | Developer of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Massimiliano Picchi", "Matthias Koch", "Hoolan Ltd", etc. |
-| `<product>`   | Product name of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Garmin", "Suunto", "COROS", "Waterspeed", "WindsportTracker", "Hoolan", etc. |
-| `<link>`      | Link to the software / application used to capture + export the GPS data:<br/>e.g. "`<href>https://www.hoolan.app/</href>`" |
-| `<version>`   | Version of the software / application used to capture + export the GPS data.<br/>e.g. "1.6.0" (Hoolan), etc. |
+| Name            | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| `<developer>`   | Developer of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Hoolan Ltd" |
+| `<application>` | Name of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Hoolan" |
+| `<link>`        | Link to the software / application used to capture + export the GPS data:<br/>e.g. "`<href>https://www.hoolan.app/</href>`" |
+| `<version>`     | Version of the software / application used to capture + export the GPS data.<br/>e.g. "1.6.0" |
 
-Note: Since the `<src>` element is a "mixed" type you can still include a simple string to describe the device, such as "Garmin Fenix 5".
+Note: Since the `<src>` element is a "mixed" type you can still include a simple string to describe the device, such as "Apple Watch Series 8".
 
 
 
@@ -176,14 +176,14 @@ It is recommended that source information be provided within the `<trk>` element
         <tpx:name>Nathan's Apple Watch</tpx:name>
         <tpx:version>8.5.1</tpx:version>
       </tpx:device>
-      <tpx:application>
+      <tpx:software>
         <tpx:developer>Hoolan Ltd</tpx:developer>
-        <tpx:product>Hoolan</tpx:product>
+        <tpx:application>Hoolan</tpx:application>
         <tpx:link>
           <tpx:href>https://www.hoolan.app/</tpx:href>
         </tpx:link>
         <tpx:version>1.6.0</tpx:version>
-      </tpx:application>
+      </tpx:software>
     </tpx:src>
   </extensions>
 </trk>

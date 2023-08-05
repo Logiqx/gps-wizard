@@ -17,7 +17,7 @@ Preliminary GPX 1.1.1 testing has been successful in several applications. Both 
 - [GPS Speedreader](https://ecwindfest.org/GPS/GPSSpeedreader.html)
 - [Strava](https://strava.com/)
 
-n.b. Strava does not (currently) make use of the `<speed>` elements in GPX files and it simply calculates speed from the positional data. This results in large inconsistencies with sessions posted to websites such as [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) or [GPS Team Challenge](https://www.gpsteamchallenge.com.au/). The use of position-derived speeds typically results in a boost of max speeds and often results in large spikes being reported as the max speed.
+n.b. Strava does not (currently) make use of the `<speed>` elements in GPX files and it simply calculates speed from the positional data.
 
 
 
