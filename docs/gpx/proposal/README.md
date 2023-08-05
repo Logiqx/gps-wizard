@@ -2,6 +2,8 @@
 
 The original proposal has now been split into separate shorter documents for easier reading.
 
+This should be regarded as a living document, further changes are planned but have not yet been applied.
+
 Feel free to browse is any order and use the browser back-button to return to this page:
 
 - Background

@@ -11,7 +11,7 @@ They are all optional, although `<course>` and `<speed>` are highly recommended 
 | Name       | Description                                                  |
 | ---------- | ------------------------------------------------------------ |
 | `<course>` | Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing.<br/>Measured in degrees, COG is the actual direction of travel relative to due north.<br/>Course was available in GPX 1.0 but inadvertently removed in GPX 1.1. |
-| `<speed>`  | Horizontal speed, often referred to as speed over ground (SOG).<br/>Measured in m/s it is typically derived from the Doppler observables and far more accurate than position-derived speeds.<br/>Speed was available in GPX 1.0 but inadvertently removed in GPX 1.1. |
+| `<speed>`  | Horizontal speed, often referred to as speed over ground (SOG).<br/>Measured in m/s it is the best estimate of speed from the GPS / GNSS chipset.<br/>Speed was available in GPX 1.0 but inadvertently removed in GPX 1.1. |
 | `<roc>`    | Rate of climb (ROC), sometimes referred to as climb rate or vertical speed.<br/>Measured in m/s, positive values indicate increasing altitude, whilst negative values indicate decreasing altitude.<br/>Only available from some GPS / GNSS chipsets (e.g. SiRF in their binary output). |
 
 
