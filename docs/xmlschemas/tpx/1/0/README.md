@@ -2,7 +2,7 @@
 
 ### Background
 
-GPS / GNSS chipsets from a number of manufacturers provide position and speed accuracy estimates; SiRF, u-blox, Broadcom, Qualcomm, Quectel, etc.
+GPS / GNSS chipsets from a number of manufacturers provide position and speed accuracy estimates; SiRF, u-blox, Broadcom, Qualcomm, etc.
 
 This data is typically available via binary protocols (e.g. SiRF and UBX) or proprietary NMEA sentences (e.g. `$PGLOR,...,LSQ`).
 
