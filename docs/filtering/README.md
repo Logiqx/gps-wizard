@@ -44,11 +44,11 @@ The minimum speed filter is slightly controversial as can be see in the related 
 
 This is derived from SDOP / SDOS (Locosys GT-31, GW-52, GW-60) or sAcc (u-blox devices such as the Motion or ESP-GPS).
 
-|                          | GPSResults | GPS Speedreader | GpsarPro  |
-| ------------------------ | ---------- | --------------- | --------- |
-| max. speed error @ 1 Hz  | 2.0 knots  | 2.0 knots       | 2.0 knots |
-| max. speed error @ 5 Hz  | 4.0 knots  | 4.0 knots       | 2.0 knots |
-| max. speed error @ 10 Hz | 4.0 knots  | 4.0 knots       | 2.0 knots |
+|                          | GPSResults | GPS Speedreader (SiRF) | GPS Speedreader (UBX) | GpsarPro  |
+| ------------------------ | ---------- | ---------------------- | --------------------- | --------- |
+| max. speed error @ 1 Hz  | 2.0 knots  | 2.0 knots              | 1.2 knots             | 2.0 knots |
+| max. speed error @ 5 Hz  | 4.0 knots  | 4.0 knots              | 1.2 knots             | 2.0 knots |
+| max. speed error @ 10 Hz | 4.0 knots  | 4.0 knots              | 1.2 knots             | 2.0 knots |
 
 
 
@@ -61,10 +61,12 @@ A dedicated article will discuss the topic of [acceleration](acceleration.md) in
 |       | GPSResults | GPS Speedreader | GpsarPro |
 | ----- | ---------- | --------------- | -------- |
 | max. acceleration @ 1 Hz | 4 m/s<sup>2</sup>  | 4 m/s<sup>2</sup> | ? |
-| max. acceleration @ 5 Hz | 8 m/s<sup>2</sup>  | 8 m/s<sup>2</sup> | ? |
-| max. acceleration @ 10 Hz <sup>1</sup> | 10 m/s<sup>2</sup> | 16 m/s<sup>2</sup> | ? |
+| max. acceleration @ 5 Hz | 7.5 m/s<sup>2</sup> | 8 m/s<sup>2</sup> | ? |
+| max. acceleration @ 10 Hz <sup>1</sup> | 15 m/s<sup>2</sup> | 16 m/s<sup>2</sup> | ? |
 
 <sup>1</sup> - The max acceleration for 10 Hz devices was increased from 8 m/s<sup>2</sup> to 10 m/s<sup>2</sup> in GPSResults v6.173.
+
+<sup>2</sup> - The max acceleration for 5 Hz and 10 Hz devices was observed to be 7.5 m/s<sup>2</sup> and 15 m/s<sup>2</sup> in GPSResults V6.187.
 
 
 
