@@ -3,9 +3,12 @@
 ### FocalPoint
 
 - [Are GPS running watches accurate? Why your watch, phone & apps often get it wrong](https://www.youtube.com/watch?v=K0kVrB_4omo) with Dr Ramsey Faragher
+
 - [Enabling the Next Generation of GPS Technology with Supercorrelation](https://www.youtube.com/watch?v=WDATFeVTUHs) with Dr Ramsey Faragher
 
+- [Why you can’t trust Strava to help you run your backyard COVID marathon](https://focalpointpositioning.com/insights/why-you-cant-trust-strava-to-help-you-run-your-backyard-covid-marathon)
 
+  
 
 ### Kalman Filters
 
