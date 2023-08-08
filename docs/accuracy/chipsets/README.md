@@ -1,26 +1,49 @@
+## Chipsets
+
+### Overview
+
+- [GNSS Chip and Module Unit Shipment to Top 2.2 Billion Units by 2027](https://www.eetasia.com/gnss-chip-and-module-unit-shipment-to-top-2-2-trillion-units-by-2027/)
+> GNSS integrated in SoC or modem for smartphones - mainly by **Qualcomm**, **Mediatek**, **Intel**, **Samsung**, and **Hi-Silicon**.
+>
+> GNSS standalone chipset is smartwatches - mainly by **Broadcom**, **Sony**, and **Airoha**.
+>
+> Samsung and Wear OS smartwatches have embedded integrated GNSS solutions provided by **Samsung** and **Qualcomm**.
+
+
+
 ### Broadcom
 
-#### BCM47755
+#### BCM4775x
 
-First generation dual frequency GNSS receiver:
+World's first dual frequency GNSS receiver:
 
-- [Third-Generation GNSS Location Hub with Dual Frequency Support](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47755) on Broadcom
+- [Product Brief](https://docs.broadcom.com/docs/12379501) 20/09/2017 - BCM47752KUB1G, BCM47754KUBG, BCM47755KUB1G, BCM47758KUB1G
+- BCM47755 - [Third-Generation GNSS Location Hub with Dual Frequency Support](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47755) on Broadcom
 - [Broadcom announces world’s first dual frequency GNSS receiver for smartphones](https://www.euspa.europa.eu/newsroom/news/broadcom-announces-world%E2%80%99s-first-dual-frequency-gnss-receiver-smartphones) on EUSPA
+- [Broadcom Highly-Accurate, Low-Power GPS Chips to Reach Market in 2018](https://www.eweek.com/mobile/power-saving-highly-accurate-broadcom-mobile-gps-chips-coming-in-2018/)
+- [Swift Navigation Introduces Starling with Broadcom’s BCM47755 Chip](https://www.swiftnav.com/news/swift-navigation-introduces-starling-gnss-positioning-engine-and-availability-broadcoms-dual) - press release
 - [Android GNSS Measurements - Inside the BCM47755](https://www.researchgate.net/publication/329581011_Android_GNSS_Measurements_-_Inside_the_BCM47755) on ResearchGate
   - [Time-Differenced Carrier Phase Technique for Precise Velocity Estimation on an Android Smartphone](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9655395/) (Xiaomi Mi8) - Angrisano 2022
+- NMEA revealed lists undocumented [PGLOR](https://gpsd.gitlab.io/gpsd/NMEA.html#_pglor_quectel) messages, found in Quectel LC79D.
+  - Includes [PGLOR](https://gpsd.gitlab.io/gpsd/NMEA.html#_pglor_quectel) messages in NMEA
 
-- NMEA revealed lists undocumented [PGLOR](https://gpsd.gitlab.io/gpsd/NMEA.html#_pglor_quectel) messages, found in LC79D.
 - Quectel_LC29D_GNSS_Protocol_Specification_V1.0 lists PGLOR_SPD, PGLOR_FIX, PGLOR_SAT, **PGLOR_LSQ**, PGLOR_PWR, PGLOR_STA
 
 
 
 #### BCM47765
 
-Second generation dual frequency GNSS receiver:
+Second generation dual frequency GNSS chip:
 
 - [Second Generation Dual-Frequency GNSS chip](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47765) on Broadcom
 - [Product Brief](https://docs.broadcom.com/doc/12379501) on Broadcom
 - Quectel_LC29D_GNSS_Protocol_Specification_V1.0 lists PGLOR_SPD, PGLOR_FIX, PGLOR_SAT, **PGLOR_LSQ**, PGLOR_PWR, PGLOR_STA
+
+
+
+#### BCM4778
+
+- [Ultra-Low Power Dual-frequency L1L5 GNSS Receiver Product Brief](https://docs.broadcom.com/docs/4778-PB1) 22/09/2021
 
 
 
@@ -97,6 +120,14 @@ MC20&MC30_GNSS_Protocol_Specification_V1.2 - 2018-08-29
 
 - ZDA (17), MCHN (18)
 
+
+
+### Intel
+
+#### XMM 7360
+
+- [Intel Corporation Launches New LTE and Connectivity Solutions](https://www.fool.com/investing/general/2015/03/03/intel-corporation-launches-new-lte-and-connectivit.aspx)
+  - "Intel is also offering an in-house GNSS solution, as well as an in-house NFC solution. I believe the former comes from Intel's acquisition of ST-Ericsson's GNSS solutions"
 
 
 
