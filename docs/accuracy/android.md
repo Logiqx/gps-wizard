@@ -34,3 +34,6 @@
 
 
 
+#### Dual Frequency
+
+- [Dual-frequency GNSS on Android devices](https://barbeau.medium.com/dual-frequency-gnss-on-android-devices-152b8826e1c) - mentions the Broadcom BCM47755
