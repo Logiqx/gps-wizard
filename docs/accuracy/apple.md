@@ -2,7 +2,7 @@
 
 Summary:
 
-- Series 3 is TBC - could be almost anybody - Broadcomm, Quelcomm, MediaTek, etc.
+- Series 3 is TBC - could be almost anything - Broadcomm, Quelcomm, MediaTek, etc.
 - Series 4 is TBC - suspect **Intel** [XMM7560](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7560-brief.html)
 - Series 5 is TBC - suspect **Intel** [XMM7660](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7660-brief.html)
 - Series 6 confirmed to use **Broadcom** BCM47754
@@ -70,7 +70,7 @@ Technical specifications for [Series 6](https://support.apple.com/kb/SP826) and 
 Teardown - [Wearables: Apple Watch Series 6 evolution](https://www.reverse-costing.com/teardown-notes/apple-watch-series-6-evolution/):
 
 - Apple processor
-- **Broadcom** [BCM47754](chipsets/README.md) chipset (BCM47754KUBG)
+- **Broadcom** [BCM47754](chipsets/README.md) chipset (BCM47754KUBG) - not capable of dual frequency
 - Broadcom BCM15924 sensing SOC
 - Teardown suggest series 5 (or even 4) also included Broadcom GNSS chip
 

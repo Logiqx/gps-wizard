@@ -2,7 +2,18 @@
 
 ### Watches
 
-https://en.wikipedia.org/wiki/Samsung_Galaxy_Watch_series
+https://en.wikipedia.org/wiki/Samsung_Galaxy_Watch_series provides links to detailed pages - including processors
+
+
+
+- Gear sport - Broadcom BCM4752
+- Galaxy Watch - Broadcom BCM47758
+- Galaxy Watch Active - Broadcom BCM47758
+- Galaxy Watch Active 2 - Samsung Exynos 9110
+- Galaxy Watch 3 - Samsung Exynos 9110
+- Galaxy Watch 4 - Samsung Exynos W920
+- Galaxy Watch 5 - Samsung Exynos W920
+- Galaxy Watch 6 - Samsung Exynos W930
 
 
 
@@ -17,16 +28,44 @@ https://en.wikipedia.org/wiki/Samsung_Galaxy_Watch_series
 
 #### Galaxy Watch and Galaxy Watch Active
 
-- [Teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+Watch+Teardown/117519) from Feb 2019 shows **Broadcom BCM47758** 
+- Exynos 9110 processor which supports GNSS; GPS, GLONASS, Beidou, Galileo
+- [Teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+Watch+Teardown/117519) from Feb 2019 shows **Broadcom BCM47758**
 - BCM47758 also mentioned on on [Wiki](https://en.wikipedia.org/wiki/Samsung_Galaxy_Watch_series) page
-- Maybe in Galaxy Watch Active 2 as well (released in Sep 2019, added cellular)
+- BCM47758 used in Galaxy Watch Active as well (released in Mar 2019, added cellular)
 
 
 
 #### Galaxy Watch 3
 
 - August 2020
-- [Teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+Watch3+Teardown/135891) from Aug 2020 links to **Broadcom BCM47755**
+- Exynos 9110 which supports GNSS; GPS, GLONASS, Beidou, Galileo
+- [Teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+Watch3+Teardown/135891) from Aug 2020 links mentions Broadcom GNSS Location Hub, linking to BCM4775x page
+  - The [Wiki](https://en.wikipedia.org/wiki/Samsung_Galaxy_Watch_series) does not mention BCM4775 after Mar 2019 - Galaxy Watch Active
+
+
+
+
+#### Galaxy Watch 4
+
+- [Teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+Watch4+and+Watch4+Classic+Teardown/144595) identifies Samsung [Exynos W920](https://semiconductor.samsung.com/processor/wearable-processor/exynos-w920/) processor
+  - GPS, GLONASS, Beidou, Galileo
+
+
+
+
+#### Galaxy Watch 5
+
+[Wiki](https://en.wikipedia.org/wiki/Samsung_Galaxy_Watch_5) identifies Samsung [Exynos W920](https://semiconductor.samsung.com/processor/wearable-processor/exynos-w920/) processor
+
+- GPS, GLONASS, Beidou, Galileo
+
+
+
+#### Galaxy Watch 6
+
+[Wiki](https://en.wikipedia.org/wiki/Samsung_Galaxy_Watch_6) identifies Samsung [Exynos W930](https://semiconductor.samsung.com/processor/wearable-processor/exynos-w930/) processor
+
+- GPS, GLONASS, Beidou, Galileo
 
 
 
@@ -148,7 +187,7 @@ Released Feb 2022
 - Qualcom Snapdragon 8 Gen 1
 - Samsung [Exynos 2200](https://semiconductor.samsung.com/processor/mobile-processor/exynos-2200/) includes GNSS (GPS, GLONASS, BeiDou, Galileo)
   - GPSTest database calls the GNSS hardware "S.LSI,K401" (unique to S22)
-    - Other Samsung GNSS hardware includes the "S.LSI,K050" (unique to A53 and A33)
+    - Other Samsung GNSS hardware includes the "S.LSI,K050" (unique to A53 and A33) which is the [Exynos 1280](https://semiconductor.samsung.com/processor/mobile-processor/exynos-1280/)
   - No longer uses Broadcom chipset
 
 

@@ -17,7 +17,7 @@
 
 
 
-### BCM4774
+#### BCM4774
 
 - Used in Samsung Galaxy S7, S8, and Galaxy Note 8
 
@@ -29,15 +29,18 @@ Fourth generation multi-constellation Global Navigation Satellite System (GNSS)
 
 [Broadcom website](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47531)
 
+Used in some models of the Samsung Galaxy Tab
+
 
 
 #### BCM4775x
 
 World's first dual frequency GNSS receiver:
 
-- Used in Apple Watch Series 6
-- Used in Xiaomi Mi 8 and Mix 3 (note that "lite" models just use the Snapdragon)
-- Used in Samsung Galaxy S9, S10, S20, S21.
+- BCM47754 used in Apple Watch Series 6
+- BCM47755 used in Xiaomi Mi 8 and Mix 3 (note that "lite" models just use the Snapdragon)
+- BCM47752 used in Samsung Galaxy S9, S10
+- BCM47755 used in Samsung Galaxy S20, S21
 - [Product Brief](https://docs.broadcom.com/docs/12379501) 20/09/2017 - BCM47752KUB1G, BCM47754KUBG, BCM47755KUB1G, BCM47758KUB1G
 - BCM47755 - [Third-Generation GNSS Location Hub with Dual Frequency Support](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47755) on Broadcom
 - [Broadcom announces world’s first dual frequency GNSS receiver for smartphones](https://www.euspa.europa.eu/newsroom/news/broadcom-announces-world%E2%80%99s-first-dual-frequency-gnss-receiver-smartphones) on EUSPA
@@ -52,12 +55,12 @@ World's first dual frequency GNSS receiver:
 
 
 
-#### BCM4776
+#### BCM4776x
 
 Second generation dual frequency GNSS chip - e.g. BCM47764, BCM47765:
 
-- Used in Apple Watch Series 7
-  - Need to confirm whether series 8 uses BCM4776x or BCM4778.
+- BCM47764 used in Apple Watch Series 7
+  - TODO - Need to confirm whether series 8 uses BCM4776x or BCM4778.
 
 - Used in Google Pixel 6 and 7
 - [Second Generation Dual-Frequency GNSS chip](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47765) on Broadcom
@@ -70,7 +73,8 @@ Second generation dual frequency GNSS chip - e.g. BCM47764, BCM47765:
 
 Third generation dual frequency GNSS chip:
 
-- Need to confirm whether Apple Watch Series 8 uses BCM4776x or BCM4778.
+- TODO - Need to confirm whether Apple Watch Series 8 uses BCM4776x (like series 7) or BCM4778.
+- Dual frequency is only available on Apple Watch Ultra
 - [Ultra-Low Power Dual-frequency L1L5 GNSS Receiver Product Brief](https://docs.broadcom.com/docs/4778-PB1) 22/09/2021
 - [Broadcom launches its lowest power GNSS receiver for mobile, wearables](https://www.gpsworld.com/broadcom-launches-its-lowest-power-gnss-receiver-for-mobile-wearables/)
 - [Product brief](https://docs.broadcom.com/doc/4778-PB1) on Broadcom
