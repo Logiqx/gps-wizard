@@ -79,19 +79,21 @@ Summary:
 
 June 2010
 
-[EE times](https://www.eetimes.com/samsungs-galaxy-s-smartphone-whats-under-the-amoled/) - **Broadcom** BCM4751 
+- Samsung Exynos 3310
+  - [EE times](https://www.eetimes.com/samsungs-galaxy-s-smartphone-whats-under-the-amoled/) - **Broadcom** BCM4751 (GPS + GLONASS)
 
 
 
-#### Galaxy S2
+#### Galaxy S II
 
 May 2011
 
-TODO - presumably the BCM4751
+- Samsung Exynos 4210
+  - Presumably the **Broadcom** BCM4751 (used in S and S III)
 
 
 
-#### Galaxy S3
+#### Galaxy S III
 
 May 2012
 
@@ -99,13 +101,13 @@ May 2012
 
   - GLONASS, Beidou, GPS
 
-- Samsung Exynos 4412
+- Samsung [Exynos 4412](https://semiconductor.samsung.com/processor/mobile-processor/exynos-4-quad-4412/)
 
   - **Broadcom** BCM4751
 
   - [rando website](https://wiki.postmarketos.org/wiki/Samsung_Galaxy_S_III_(samsung-m0)#GPS)
 
-  - [teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+S+III+Teardown/9391) - **Broadcom** BCM4751 (BCM47511) Integrated Monolithic GNSS Receiver
+  - [teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+S+III+Teardown/9391) - **Broadcom** BCM4751 (BCM47511)
 
 
 
@@ -117,7 +119,7 @@ Apr 2013
 - **Qualcomm** Snapdragon 600
   - [teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+S4+Teardown/13947) + [another](https://www.ifixit.com/News/4608/samsung-galaxy-s4-teardown)
 
-- Samsung Exynos 5410
+- Samsung [Exynos 5410](https://semiconductor.samsung.com/processor/mobile-processor/exynos-5-octa-5410/)
   - [teardown](https://www.techinsights.com/blog/samsung-galaxy-s4-teardown) - **Broadcom** BCM4752 (BCM47521)
   - [wiki](https://en.wikipedia.org/wiki/Samsung_Galaxy_S4)
 
@@ -131,8 +133,8 @@ Apr 2014 - [wiki](https://en.wikipedia.org/wiki/Samsung_Galaxy_S5)
 [teardown of S5 mini](https://www.ifixit.com/Teardown/Samsung+Galaxy+S5+Mini+Teardown/27579)
 
 - **Qualcomm** Snapdragon 801 or 805
-- Samsung Exynos 5422
-  - **Broadcom** BCM4752 (BCM475201UB) Integrated Multi-Constellation GNSS Receiver
+- Samsung [Exynos 5422](https://semiconductor.samsung.com/processor/mobile-processor/exynos-5-octa-5422/)
+  - **Broadcom** BCM4752 (BCM475201UB)
 
 
 
@@ -147,8 +149,9 @@ Released Apr 2015
 - Samsung [Exynos 7420](https://semiconductor.samsung.com/processor/mobile-processor/exynos-7-octa-7420/)
   - [teardown](https://ko.ifixit.com/Teardown/Samsung+Galaxy+S6+Teardown/39174?revisionid=HEAD)
   - **Broadcom** BCM4773 but blank in the GPSTest database
+    - GPS, GLONASS, SBAS, QZSS and BeiDou
 - [S6 review](https://www.anandtech.com/show/9146/the-samsung-galaxy-s6-and-s6-edge-review/12) - Apr 2015
-  - "In the case of the Galaxy S6, we see a **Broadcom BCM4773** location chipset"
+  - In the case of the Galaxy S6, we see a **Broadcom** BCM4773 location chipset
   - GPS, Beidou, and GLONASS
 
 
@@ -179,8 +182,9 @@ Released Mar 2017 - [spec](https://www.gsmarena.com/samsung_galaxy_s8-8161.php)
 
 - Samsung [Exynos 8895](https://semiconductor.samsung.com/processor/mobile-processor/exynos-9-series-8895/) added GNSS (GPS, GLONASS, BeiDou)
 
-  - **Broadcom** BCM4774
-
+  - Exynos GPS not used though...
+  - **Broadcom** BCM4774 - TBC - where did I find this out
+  
   
 
 #### Galaxy S9
@@ -191,6 +195,7 @@ There were two different chipset variants of the S9/S9+
 
 - **Qualcomm** Snapdragon 845 (USA & China)
 - Samsung [Exynos 9810](https://semiconductor.samsung.com/processor/mobile-processor/exynos-9-series-9810/) (EMEA) includes GNSS (GPS, GLONASS, BeiDou)
+  - Exynos GPS not used though...
   - [Teardown](https://www.techinsights.com/blog/samsung-galaxy-s9-teardown) (Techinsights) shows the **Broadcom** BCM47752 GNSS Receiver
   - [GPS receiver on Exynos model](https://forum.xda-developers.com/t/gps-receiver-on-exynos-model.3748641/) contains some early insights
 
