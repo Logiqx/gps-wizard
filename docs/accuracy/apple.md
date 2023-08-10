@@ -2,24 +2,30 @@
 
 Summary:
 
-- Series 3 (Sep 2017) is TBC - could be almost anything - Broadcomm, Quelcomm, MediaTek, etc.
-- Series 4 (Sep 2018) is TBC - suspect **Intel** [XMM7560](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7560-brief.html)
-- Series 5 (Sep 2019) is TBC - suspect **Intel** [XMM7660](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7660-brief.html)
-- Series 6 (Sep 2020) - confirmed to use **Broadcom** BCM47754
-- SE "1st Gen" (Sep 2020) - suspect **Broadcom** BCM47754 as released with Series 6
-- Series 7 (Oct 2021) - confirmed to use **Broadcom** BCM47764
-- Series 8 (Sep 2022) is TBC - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
-- SE "2nd Gen" (Sep 2022) is TBC - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
+- Series 3 (Sep 2017) - could be almost anything - Intel, Broadcomm, Qualcomm, MediaTek, etc.
+- Series 4 (Sep 2018) - suspect **Intel** XMM7560 like the iPhone XS / XR
+- Series 5 (Sep 2019) - suspect **Intel** XMM7660 like the iPhone 11
+- Series 6 (Sep 2020) - confirmed as **Broadcom** BCM47754
+- SE "1st Gen" (Sep 2020) - suspect **Broadcom** BCM47754, just like the Series 6
+- Series 7 (Oct 2021) - confirmed as **Broadcom** BCM47764
+- Series 8 (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
+- SE "2nd Gen" (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
 
-Links
+Links:
 
 - [Comparison of models](https://en.wikipedia.org/wiki/Apple_Watch#Comparison_of_models) on Wikipedia
 
 
 
+#### Series 1
+
+[teardown](https://www.ifixit.com/Teardown/Apple+Watch+Teardown/40655)
+
+
+
 #### Series 2
 
-[teardown]
+[teardown](https://www.ifixit.com/Teardown/Apple+Watch+Series+2+Teardown/67385)
 
 
 
@@ -28,7 +34,7 @@ Links
 Released in Sep 2017
 
 - [teardown](https://www.ifixit.com/Teardown/Apple+Watch+Series+3+Teardown/97521) shows an ST Microelectronics [ST33G1M2](http://www.st.com/content/ccc/resource/technical/document/data_brief/81/c6/7d/4e/ae/23/4e/72/DM00095982.pdf/files/DM00095982.pdf/jcr:content/translations/en.DM00095982.pdf) 32 bit MCU so the GPS chip must be separate
-- Broadcom and Qualcomm components are [inside](https://seekingalpha.com/article/4113383-qualcomm-inside-apple-watch-series-3) the watch so it could be either supplier (or even someone like MediaTek)
+- Broadcom and Qualcomm components are [inside](https://seekingalpha.com/article/4113383-qualcomm-inside-apple-watch-series-3) the watch so it could be either supplier (or someone like Intel or MediaTek)
 - Bosch gyro + accelerometer (FY LEE C7P)
 
 
@@ -45,7 +51,7 @@ Technical specifications for [Series 4](https://support.apple.com/kb/SP778) - GP
 [Teardown: Apple Watch Series 4 | Electronics360](https://electronics360.globalspec.com/article/13473/teardown-apple-watch-series-4)
 
 - GNSS chip unidentified - maybe Broadcom, Qualcomm or **Intel**
-  - Since the teardown shows an Intel baseband processor, suspect it is being used for GNSS
+  - Since the teardown shows an Intel baseband processor with integrated RF transceiver, suspect it is being used for GNSS
 
 - Broadcom BCM15922 sensing SOC
 
@@ -63,7 +69,7 @@ Technical specifications for [Series 5](https://support.apple.com/kb/SP808) just
 
 GNSS chip unidentified - maybe Broadcom, Qualcomm or **Intel**
 
-- Since the series 4 teardown shows an Intel baseband processor, suspect it is being used for GNSS
+- Series 4 teardown shows an Intel baseband processor with integrated RF transceiver, so suspect it is being used for GNSS
 
 
 
@@ -107,6 +113,8 @@ Technical specifications for [Series 8](https://support.apple.com/kb/SP878) and 
 Series 8 and ultra support Glonass but SE (2nd generation) does not.
 
 Maybe uses a newish Broadcom chip - e.g. BCM47764 (like series 7), BCM47765, or BCM4778?
+
+[teardown of ultra](https://www.gsmarena.com/ifixit_takes_apart_an_apple_watch_ultra_finds_it_difficult_to_repair-news-55956.php)
 
 
 
