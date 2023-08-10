@@ -115,41 +115,59 @@ Maybe uses a newish Broadcom chip - e.g. BCM47764 (like series 7), BCM47765, or 
 [Where is a navigation chip in my iPhone?](https://medium.com/@ilyakorogodin/where-is-a-navigation-chip-in-my-iphone-92ab55a61863) by Ilya Korogodin May 2022
 
 - iPhone 3G released Jul 2008 used the [Infineon PMB 2525 Hammer-head II](http://datasheet.elcodis.com/pdf2/118/83/1188394/pmb2525.pdf) and was GPS only
-- iPhone 4 (GSM) released Jun 2010 used the **Broadcom** BCM4750 and was GPS only
-- iPhone 4 (CDMA) released Jun 2010 used the **Qualcomm** MDM6600 and was GPS only
-- iPhone 4S released in Oct 2011 added support for GLONASS using the **Qualcomm** MDM6610
+- iPhone 4
+  - GSM released Jun 2010 used the **Broadcom** [BCM4750](https://web.archive.org/web/20100124164839/https://www.broadcom.com/products/GPS/GPS-Silicon-Solutions/BCM4750) and was GPS only (up to 2 Hz) - [product brief](http://www.droid-developers.org/images/e/e5/BCM4750.pdf)
+  - CDMA released Jun 2010 used the **Qualcomm** MDM6600 baseband processor and was GPS only - main role was as a modem
+    - Fuses a multichannel analog transceiver HJ11-VF535–200 and a multisystem digital baseband processor HJ11-VJ130 into a single module
+    - The solution was named by Qualcomm as IZat gpsOneGen 8.
+- iPhone 4S released in Oct 2011
+  - **Qualcomm** MDM6610 baseband processor 
+  - Added support for GLONASS but only enabled in cases of weak GPS signals or a low number of visible GPS satellites
+  - [teardown](https://www.macrumors.com/2011/10/13/iphone-4s-teardown-underway/) identifies the MDM6610 and refers to the MDM6600 in the CDMA iPhone 4
 
 > As we can see, the fusion of GNSS and telecommunication functions in a single chip became mainstream. Since the iPhone 4 model, we cannot isolate a special GNSS chip: repair it, calculate the cost, calculate power consumption, and so on. The GNSS receiver disappeared as a separated object.
 
-- iPhone 5 released Sep 2012 used the **Qualcomm** MDM9615 chip (gpsOneGen 8A)
-  - In contrast to MDM6610 it is just a digital baseband processor, analogue processing was taken out to Qualcomm RTR8600.
-- iPhone 5S, 5C released Sep 2013 began to support Beidou
-  - iPhones 5S and 5C use a **Qualcomm** [WTR1605L](https://investor.qualcomm.com/news-events/press-releases/detail/63/qualcomm-introduces-28nm-mass-market-ltedc-hspa-chipsets) RF transceiver instead of the RTR one
+- iPhone 5 released Sep 2012
+  - **Qualcomm** MDM9615 Snapdragon X5 LTE Modem (IZat gpsOneGen 8A) - [fun fact](https://disruptive.asia/qualcomm-chip-iphone-5-android/)
+  - In contrast to MDM6610, MDM9615 is just a digital baseband processor
+  - The analogue processing was taken out to the Qualcomm RTR8600 RF transceiver.  
+- iPhone 5S, 5C released Sep 2013, adding support for BeiDou - [teardown](https://www.ifixit.com/Teardown/iPhone+5s+Teardown/17383)
+  - **Qualcomm** MDM9615 Snapdragon X5 LTE Modem
+  - iPhones 5S and 5C used a Qualcomm [WTR1605L](https://investor.qualcomm.com/news-events/press-releases/detail/63/qualcomm-introduces-28nm-mass-market-ltedc-hspa-chipsets) RF transceiver instead of the RTR8600
 - iPhone 6 released Sep 2014
-  - Baseband processor was replaced by **Qualcomm** MDM9625M (IZat gpsOneGen 8B)
-  - Assisted GPS and GLONASS - [Apple](https://support.apple.com/kb/SP705?locale=en_GB)
+  - **Qualcomm** [MDM9625](https://www.qualcomm.com/products/technology/modems/snapdragon-modems-4g-lte-x5) Snapdragon X5 LTE Modem (IZat gpsOneGen 8B) with WTR1625L RF transceiver - [teardown](https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213)
+  - A-GPS and GLONASS but no mention of BeiDou - [Apple](https://support.apple.com/kb/SP705?locale=en_GB)
 - iPhone 7 release Sep 2016 had two versions
-  - One used an **Intel** PMB9943 (aka Intel XMM7360)
-  - Was the other **Qualcomm**?
+  - **Intel** [XMM7360](https://www.intel.com/content/www/us/en/products/sku/66649/intel-xmm-7360/specifications.html) LTE Modem paired with two Intel SMARTi 5 RF transceivers (PMB5750)
+    - AT&T and T-Mobile - [teardown](https://www.macrumors.com/2016/09/16/iphone-7-chipworks-teardown/)
+  - **Qualcomm** [MDM9645](https://www.qualcomm.com/products/technology/modems/snapdragon-modems-4g-lte-x12) Snapdragon X12 LTE Modem with Qualcomm WTR3925 RF transceiver - see [teardown](https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382) 
+    - Verizon and Sprint, due to lack of support for CDMA from Intel because of licensing issues
   - Assisted GPS, GLONASS, Galileo, and QZSS - [Apple](https://support.apple.com/kb/SP743?locale=en_GB)
-
-- iPhone 8 and X released in Sep / Nov 2017 had **Qualcomm** and **Intel** versions
-  - Built-in GPS/GNSS - [Apple](https://support.apple.com/kb/SP767?locale=en_GB)
-
-- iPhone XS and XR released Oct / Nov 2018 replaced Qualcomm completely:
-  - **Intel** PMB9955 ([XMM7560](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7560-brief.html)) is used and supports all GNSS systems: GPS, GLONASS, Galileo and Beidou.
-- iPhone 11 released in Sep 2019 has an **Intel** X927YD2Q ([XMM7660](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7660-brief.html))
-- iPhone 12 released Oct 2020 used the **Qualcomm** Snapdragon X55 modem (plus Qualcomm [SDR865](https://insidegnss.com/qualcomms-new-chip-more-power-more-features-same-ol-gnss/) RF transceiver)
+- iPhone 8 and X released in Sep / Nov 2017 had several versions:
+  - **Intel** XMM7560 modem - TBC
+    - AT&T and T-Mobile
+  - **Qualcomm** [MDM9655](https://www.qualcomm.com/products/technology/modems/snapdragon-modems-4g-lte-x16) Snapdragon X16 LTE Modem with Qualcomm RF transceiver - see [teardown](https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481)
+    - Verizon and Sprint, due to lack of support for CDMA from Intel because of licensing issues
+  - "Built-in GPS/GNSS" - [Apple](https://support.apple.com/kb/SP767?locale=en_GB)
+- iPhone XS and XR released Oct / Nov 2018 replaced Qualcomm completely, due to CDMA support:
+  - **Intel** [XMM7560](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7560-brief.html) modem - GPS, GLONASS, Galileo and Beidou
+- iPhone 11 released in Sep 2019
+  - **Intel** [XMM7660](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7660-brief.html) modem paired with Intel 5765 P10 A15 08B13 H1925 RF transceiver - GPS, Galileo, GLONASS, and BeiDou
+- iPhone 12 released Oct 2020
+  - **Qualcomm** Snapdragon [X55](https://www.qualcomm.com/products/technology/modems/snapdragon-x55-5g-modem) 5G modem-RF system, plus Qualcomm [SDR865](https://www.techinsights.com/blog/analysis-qualcomms-snapdragon-sdr865-transceiver-supporting-5g-sub-6-ghz-and-lte-services) RF transceiver - [WikiChip](https://en.wikichip.org/wiki/qualcomm/snapdragon_800/865?utm_content=cmp-true) / [Inside GNSS](https://insidegnss.com/qualcomms-new-chip-more-power-more-features-same-ol-gnss/)
   - GPS, GLONASS, Galileo, QZSS and BeiDou - [Apple](https://www.apple.com/uk/iphone-12/specs/)
-
-- iPhone 13 released Sep 2021 used **Qualcomm** Snapdragon X60 modem (plus Qualcomm SDR868 RF transceiver)
-  - [teardown](https://uk.pcmag.com/mobile-phones/135925/teardown-confirms-qualcomm-modems-in-the-iphone-13-pro)
-- iPhone 14 released Sep 2022 **Qualcomm** Snapdragon X65 modem and Qualcomm RF transceiver
-  - [Inside GNSS](https://insidegnss.com/snapdragon-modem-rf-systems-power-telits-new-5g-m-2-module)
-
-
+- iPhone 13 released Sep 2021
+  - **Qualcomm** Snapdragon [X60](https://www.qualcomm.com/products/technology/modems/snapdragon-x60-5g-modem) 5G modem-RF system, plus Qualcomm [SDR868](https://www.techinsights.com/products/bfr-2102-801) RF transceiver
+  - [teardown summary](https://uk.pcmag.com/mobile-phones/135925/teardown-confirms-qualcomm-modems-in-the-iphone-13-pro) + [teardown](https://www.ifixit.com/Teardown/iPhone+13+Pro+Teardown/144928)
+- iPhone 14 released Sep 2022
+  - **Qualcomm** Snapdragon [X65](https://www.qualcomm.com/products/technology/modems/snapdragon-x65-5g-modem-rf-system) 5G modem-RF system, plus (presumably) Qualcomm RF transceiver
+  - [Inside GNSS](https://insidegnss.com/snapdragon-modem-rf-systems-power-telits-new-5g-m-2-module) - different product but maybe relevant
 
 > So, how does a regular navigation receiver look in 2022? It has dissolved in telecommunication chips. The chips are developed by a few big companies.
+
+Note about the Qualcomm Snapdragon [X75](https://www.qualcomm.com/products/technology/modems/snapdragon-x75-5g-modem-rf-system) 5G Modem-RF System:
+
+- "Snapdragon X75 is designed for superior 5G performance and AI-based GNSS location accuracy"
 
 
 
