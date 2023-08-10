@@ -36,4 +36,5 @@
 
 #### Dual Frequency
 
-- [Dual-frequency GNSS on Android devices](https://barbeau.medium.com/dual-frequency-gnss-on-android-devices-152b8826e1c) - mentions the Broadcom BCM47755
+- [Dual-frequency GNSS on Android devices](https://barbeau.medium.com/dual-frequency-gnss-on-android-devices-152b8826e1c) - blog post discusses the Broadcom BCM47755
+- [Android devices that support raw GNSS measurements](https://developer.android.com/guide/topics/sensors/gnss#supported-devices) on Android developer site

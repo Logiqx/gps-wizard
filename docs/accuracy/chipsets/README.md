@@ -13,10 +13,31 @@
 
 ### Broadcom
 
+[GNSS/GPS SoCs](https://www.broadcom.com/products/wireless/gnss-gps-socs)
+
+
+
+### BCM4774
+
+- Used in Samsung Galaxy S7, S8, and Galaxy Note 8
+
+
+
+#### BCM47531
+
+Fourth generation multi-constellation Global Navigation Satellite System (GNSS)
+
+[Broadcom website](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47531)
+
+
+
 #### BCM4775x
 
 World's first dual frequency GNSS receiver:
 
+- Used in Apple Watch Series 6
+- Used in Xiaomi Mi 8 and Mix 3 (note that "lite" models just use the Snapdragon)
+- Used in Samsung Galaxy S9, S10, S20, S21.
 - [Product Brief](https://docs.broadcom.com/docs/12379501) 20/09/2017 - BCM47752KUB1G, BCM47754KUBG, BCM47755KUB1G, BCM47758KUB1G
 - BCM47755 - [Third-Generation GNSS Location Hub with Dual Frequency Support](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47755) on Broadcom
 - [Broadcom announces world’s first dual frequency GNSS receiver for smartphones](https://www.euspa.europa.eu/newsroom/news/broadcom-announces-world%E2%80%99s-first-dual-frequency-gnss-receiver-smartphones) on EUSPA
@@ -31,19 +52,28 @@ World's first dual frequency GNSS receiver:
 
 
 
-#### BCM47765
+#### BCM4776
 
-Second generation dual frequency GNSS chip:
+Second generation dual frequency GNSS chip - e.g. BCM47764, BCM47765:
 
+- Used in Apple Watch Series 7
+  - Need to confirm whether series 8 uses BCM4776x or BCM4778.
+
+- Used in Google Pixel 6 and 7
 - [Second Generation Dual-Frequency GNSS chip](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47765) on Broadcom
-- [Product Brief](https://docs.broadcom.com/doc/12379501) on Broadcom
+- Cannot find product brief...
 - Quectel_LC29D_GNSS_Protocol_Specification_V1.0 lists PGLOR_SPD, PGLOR_FIX, PGLOR_SAT, **PGLOR_LSQ**, PGLOR_PWR, PGLOR_STA
 
 
 
 #### BCM4778
 
+Third generation dual frequency GNSS chip:
+
+- Need to confirm whether Apple Watch Series 8 uses BCM4776x or BCM4778.
 - [Ultra-Low Power Dual-frequency L1L5 GNSS Receiver Product Brief](https://docs.broadcom.com/docs/4778-PB1) 22/09/2021
+- [Broadcom launches its lowest power GNSS receiver for mobile, wearables](https://www.gpsworld.com/broadcom-launches-its-lowest-power-gnss-receiver-for-mobile-wearables/)
+- [Product brief](https://docs.broadcom.com/doc/4778-PB1) on Broadcom
 
 
 
@@ -128,6 +158,56 @@ MC20&MC30_GNSS_Protocol_Specification_V1.2 - 2018-08-29
 
 - [Intel Corporation Launches New LTE and Connectivity Solutions](https://www.fool.com/investing/general/2015/03/03/intel-corporation-launches-new-lte-and-connectivit.aspx)
   - "Intel is also offering an in-house GNSS solution, as well as an in-house NFC solution. I believe the former comes from Intel's acquisition of ST-Ericsson's GNSS solutions"
+
+
+
+### Qualcomm
+
+[Wiki](https://en.wikipedia.org/wiki/List_of_Qualcomm_Snapdragon_systems_on_chips#Snapdragon_8_Series) lists various models
+
+
+
+#### Snapdragon 845
+
+See [product overview](https://www.qualcomm.com/products/mobile/snapdragon/smartphones/snapdragon-8-series-mobile-platforms/snapdragon-845-mobile-platform).
+
+- Xiaomi Mi 8 uses BCM47755, not the Snapdragon GNSS
+  - [Observation Quality Assessment and Performance of GNSS Standalone Positioning with Code Pseudoranges of Dual-Frequency Android Smartphones](https://www.researchgate.net/publication/350177748_Observation_Quality_Assessment_and_Performance_of_GNSS_Standalone_Positioning_with_Code_Pseudoranges_of_Dual-Frequency_Android_Smartphones) by Robustelli at et al. Mar 2021
+  - [Inherent Limitations of Smartphone GNSS Positioning and Effective Methods to Increase the Accuracy Utilizing Dual-Frequency Measurements](https://www.researchgate.net/publication/366335309_Inherent_Limitations_of_Smartphone_GNSS_Positioning_and_Effective_Methods_to_Increase_the_Accuracy_Utilizing_Dual-Frequency_Measurements) by Yun et al. Dec 2022
+- Galaxy S9 (non-Exynos) uses Snapdragon GNSS
+
+
+
+#### Snapdragon 855
+
+Supports dual frequency according to [product overview](https://www.qualcomm.com/products/mobile/snapdragon/smartphones/snapdragon-8-series-mobile-platforms/snapdragon-855-mobile-platform).
+
+Used [Barbeau](https://barbeau.medium.com/dual-frequency-gnss-on-android-devices-152b8826e1c) article to determine that hAcc, vAcc and sAcc are supported.
+
+- Exynos S10 has hAcc (8.0), vAcc (0.0), but sAcc blank (not moving).
+- LG G8 ThinQ shows hAcc (5.4), vAcc (8.2), and sAcc (0.2)
+- Xiaomi Mi 9 shows hAcc (3.8), vAcc (2.5), sAcc (0.1) 
+  - Questionable whether it is using the 855 when I look at the GPSTest database
+- Lenovo Z6 Pro and Youth Edition shows hAcc (1.4), vAcc (0.0), but sAcc blank (not moving).
+- OnePlus 7T shows hAcc (12.4), vAcc (8.2) and sAcc (0.4)
+- [Galaxy S10](https://barbeau.medium.com/galaxy-s10-pics-from-a-sprint-store-in-tampa-fl-for-the-sm-g973xu-model-b040c819b87a) shows hAcc (8.8), vAcc (7.1) and sAcc (0.1)
+
+
+
+#### Snapdragon 865
+
+- Used in iPhone 12
+
+- [InsideGNSS](https://insidegnss.com/qualcomms-new-chip-more-power-more-features-same-ol-gnss/)
+
+
+
+#### Snapdragon 868
+
+Used in iPhone 13 with [X60](https://www.macrumors.com/2021/02/24/iphone-13-snapdragon-x60-5g-modem/) 5G modem - [teardown](https://uk.pcmag.com/mobile-phones/135925/teardown-confirms-qualcomm-modems-in-the-iphone-13-pro)
+
+Not listed on the Wiki?
+
 
 
 

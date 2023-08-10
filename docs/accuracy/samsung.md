@@ -1,11 +1,47 @@
 ## Samsung
 
+### Watches
+
+https://en.wikipedia.org/wiki/Samsung_Galaxy_Watch_series
+
+
+
+#### Gear Sport
+
+- 2017-ish
+- [Teardown](https://gethypoxic.com/blogs/technical/samsung-gear-sport-teardown) shows **Broadcom BCM4752**
+  - BCM4752 was also in an early version of the Galaxy Tab Active
+
+
+
+
+#### Galaxy Watch and Galaxy Watch Active
+
+- [Teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+Watch+Teardown/117519) from Feb 2019 shows **Broadcom BCM47758** 
+- BCM47758 also mentioned on on [Wiki](https://en.wikipedia.org/wiki/Samsung_Galaxy_Watch_series) page
+- Maybe in Galaxy Watch Active 2 as well (released in Sep 2019, added cellular)
+
+
+
+#### Galaxy Watch 3
+
+- August 2020
+- [Teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+Watch3+Teardown/135891) from Aug 2020 links to **Broadcom BCM47755**
+
+
+
 ### Phones
+
+**IMPORTANT** - turn off duty cycling!
+
+
 
 #### Galaxy S6
 
 Released Apr 2015
 
+- Samsung [Exynos 7420](https://semiconductor.samsung.com/processor/mobile-processor/exynos-7-octa-7420/)
+  - Broadcom BCM4773 but blank in the GPSTest database
 - [S6 review](https://www.anandtech.com/show/9146/the-samsung-galaxy-s6-and-s6-edge-review/12) - Apr 2015
   - "In the case of the Galaxy S6, we see a **Broadcom BCM4773** location chipset"
   - GPS, Beidou, and GLONASS
@@ -15,6 +51,10 @@ Released Apr 2015
 #### Galaxy S7
 
 Released Feb 2016
+
+- Snapdragon 820
+- Samsung [Exynos 8890](https://semiconductor.samsung.com/processor/mobile-processor/exynos-8-octa-8890/) does not include GNSS
+  - Broadcom BCM4774
 
 - [GNSS smartphones positioning: advances, challenges, opportunities, and future perspectives](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8604560/) in 2021
   - [Precise GNSS for Everyone: Precise Positioning Using Raw GPS Measurements from Android Smartphones](https://www.researchgate.net/publication/309645977_Precise_GNSS_for_Everyone_Precise_Positioning_Using_Raw_GPS_Measurements_from_Android_Smartphones) 2016
@@ -26,9 +66,13 @@ Released Feb 2016
 
 #### Galaxy S8
 
-Released Mar 2017
+Released Mar 2017 - [spec](https://www.gsmarena.com/samsung_galaxy_s8-8161.php)
 
-- Thought use the **Broadcom BCM4774** like the S7
+- Snapdragon 835
+
+- Samsung [Exynos 8895](https://semiconductor.samsung.com/processor/mobile-processor/exynos-9-series-8895/) added GNSS (GPS, GLONASS, BeiDou)
+
+  - Broadcom BCM4774
 
   
 
@@ -38,8 +82,8 @@ Released Feb 2018
 
 There were two different chipset variants of the S9/S9+
 
-- Qualcomm Snapdragon 845 (U.S., Latin America, Chinese, and Japanese markets)
-- Samsung Exynos 9810 (European and other markets)
+- Qualcomm Snapdragon 845 (USA & China)
+- Samsung [Exynos 9810](https://semiconductor.samsung.com/processor/mobile-processor/exynos-9-series-9810/) (EMEA) includes GNSS (GPS, GLONASS, BeiDou)
   - [Teardown](https://www.techinsights.com/blog/samsung-galaxy-s9-teardown) (Techinsights) shows the **Broadcom BCM47752** GNSS Receiver
   - [GPS receiver on Exynos model](https://forum.xda-developers.com/t/gps-receiver-on-exynos-model.3748641/) contains some early insights
 
@@ -49,8 +93,13 @@ There were two different chipset variants of the S9/S9+
 
 Released Mar 2019
 
-- Qualcomm Snapdragon 855 (U.S., Latin America, Chinese, and Japanese markets)
-  - Appears to support dual band so maybe the **Broadcom BCM47755** GNSS Receiver
+- Qualcomm Snapdragon 855 (USA & China)
+  - Supports dual frequency
+
+- Samsung [Exynos 9820](https://semiconductor.samsung.com/processor/mobile-processor/exynos-9-series-9820/) (EMEA) does not mention GNSS
+  - **Broadcom BCM47752** (BCM47752KLB1G) - [teardown](https://www.techinsights.com/blog/samsung-galaxy-s10-teardown)
+  - Supports hAcc, vAcc and sAcc
+
 
 
 
@@ -58,7 +107,18 @@ Released Mar 2019
 
 Released Mar 2020
 
-- Supports dual frequency
+- Qualcomm Snapdragon 865 (USA & China)
+  - Supports dual frequency
+
+- Samsung [Exynos 990](https://semiconductor.samsung.com/processor/mobile-processor/exynos-990/) (EMEA) does not mention GNSS
+  - Paired with the Broadcom BCM47755
+  - Supports dual frequency in some phones + regions
+  - Supports hAcc, vAcc, sAcc - [link](https://medium.com/@vstorm_90991/this-is-a-screenshot-from-the-exynos-version-of-samsung-galaxy-note20-ultra-ee14f261a462)
+
+- Supports dual frequency according to [Android developer site](https://developer.android.com/guide/topics/sensors/gnss#supported-devices)
+  - Exynos version provides accumulated delta range (ADR) / carrier phase.
+  - Snapdragon version does not provide ADR.
+
 
 
 
@@ -66,15 +126,38 @@ Released Mar 2020
 
 Released Jan 2021
 
+- Qualcomm Snapdragon 888 (USA & China)
+  - Supports dual frequency
+  - Supports hAcc, vAcc, sAcc - [link](https://barbeau.medium.com/dual-frequency-gnss-on-android-devices-152b8826e1c)
+
+- Samsung [Exynos 2100](https://semiconductor.samsung.com/processor/mobile-processor/exynos-2100/) (EMEA) does not mention GNSS
+  - Paired with the Broadcom BCM47755
+  - Supports dual frequency in some phones + regions
+  - Supports hAcc, vAcc, sAcc - [link](https://medium.com/@mars.roman/samsung-s21-ultra-european-version-exynos-2100-chip-c20d00ff86e6)
+
+- Supports dual frequency according to [Android developer site](https://developer.android.com/guide/topics/sensors/gnss#supported-devices)
+  - Exynos version provides accumulated delta range (ADR) / carrier phase.
+  - Snapdragon version does not provide ADR.
+
 
 
 #### Galaxy S22
 
 Released Feb 2022
 
+- Qualcom Snapdragon 8 Gen 1
+- Samsung [Exynos 2200](https://semiconductor.samsung.com/processor/mobile-processor/exynos-2200/) includes GNSS (GPS, GLONASS, BeiDou, Galileo)
+  - GPSTest database calls the GNSS hardware "S.LSI,K401" (unique to S22)
+    - Other Samsung GNSS hardware includes the "S.LSI,K050" (unique to A53 and A33)
+  - No longer uses Broadcom chipset
+
 
 
 #### Galaxy S23
 
 Released Feb 2023
+
+- Qualcom Snapdragon 8 Gen 2 - special version specific to Samsung
+  - Qualcomm GNSS Gen9
+  - aidl-impl GNSS
 
