@@ -2,14 +2,17 @@
 
 Summary:
 
-- Series 3 (Sep 2017) - could be almost anything - Intel, Broadcomm, Qualcomm, MediaTek, etc.
+- Series 3 (Sep 2017) - could be almost anything - Intel, Broadcom, Qualcomm, MediaTek, etc.
 - Series 4 (Sep 2018) - suspect **Intel** XMM7560 like the iPhone XS / XR
 - Series 5 (Sep 2019) - suspect **Intel** XMM7660 like the iPhone 11
 - Series 6 (Sep 2020) - confirmed as **Broadcom** BCM47754
-- SE "1st Gen" (Sep 2020) - suspect **Broadcom** BCM47754, just like the Series 6
+  - SE "1st Gen" (Sep 2020) - suspect **Broadcom** BCM47754, just like the Series 6
+
 - Series 7 (Oct 2021) - confirmed as **Broadcom** BCM47764
 - Series 8 (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
-- SE "2nd Gen" (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
+  - SE "2nd Gen" (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
+  - Ultra (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
+
 
 Links:
 
