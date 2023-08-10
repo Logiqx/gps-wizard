@@ -97,7 +97,7 @@ May 2011
 
 May 2012
 
-- **Qualcomm** [Snapdragon 400](https://www.qualcomm.com/products/mobile/snapdragon/smartphones/snapdragon-4-series-mobile-platforms/snapdragon-processors-400) - [wiki](https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III)
+- **Qualcomm** [Snapdragon 400](https://www.Qualcomm.com/products/mobile/snapdragon/smartphones/snapdragon-4-series-mobile-platforms/snapdragon-processors-400) - [wiki](https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III)
 
   - GLONASS, Beidou, GPS
 
@@ -143,7 +143,7 @@ Apr 2014 - [wiki](https://en.wikipedia.org/wiki/Samsung_Galaxy_S5)
 
 Released Apr 2015
 
-- **Qualcomm** [Snapdragon 810](https://www.qualcomm.com/products/mobile/snapdragon/smartphones/snapdragon-8-series-mobile-platforms/snapdragon-processors-810)
+- **Qualcomm** [Snapdragon 810](https://www.Qualcomm.com/products/mobile/snapdragon/smartphones/snapdragon-8-series-mobile-platforms/snapdragon-processors-810)
   - GLONASS, Beidou, GPS
 
 - Samsung [Exynos 7420](https://semiconductor.samsung.com/processor/mobile-processor/exynos-7-octa-7420/)
@@ -259,7 +259,7 @@ Released Jan 2021
 
 Released Feb 2022
 
-- **Qualcom** Snapdragon 8 Gen 1
+- **Qualcomm** Snapdragon 8 Gen 1
 - **Samsung** [Exynos 2200](https://semiconductor.samsung.com/processor/mobile-processor/exynos-2200/) includes GNSS (GPS, GLONASS, BeiDou, Galileo)
   - GPSTest database calls the GNSS hardware "S.LSI,K401" (unique to S22)
     - Other Samsung GNSS hardware includes the "S.LSI,K050" (unique to A53 and A33) which is the [Exynos 1280](https://semiconductor.samsung.com/processor/mobile-processor/exynos-1280/)
@@ -271,7 +271,7 @@ Released Feb 2022
 
 Released Feb 2023
 
-- Qualcom Snapdragon 8 Gen 2 - special version specific to Samsung
+- Qualcomm Snapdragon 8 Gen 2 - special version specific to Samsung
   - **Qualcomm** GNSS Gen9
   - aidl-impl GNSS
 
