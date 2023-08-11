@@ -146,8 +146,8 @@ A quick summary:
 |         | hAcc                        | vAcc                        | sAcc                        | cAcc                        |
 | ------- | --------------------------- | --------------------------- | --------------------------- | --------------------------- |
 | Android | Android 1.0<br />(Sep 2008) | Android 8.0<br />(Aug 2017) | Android 8.0<br />(Aug 2017) | Android 8.0<br />(Aug 2017) |
-| iOS     | iOS 2.0<br />(Jul 2008)     | iOS 2.0<br />(Jul 2008)     | iOS 10.0<br />(Sep 2016)    | iOS 10.0<br />(Sep 2016)    |
-| watchOS | watchOS 2.0<br />(Sep 2015) | watchOS 2.0<br />(Sep 2015) | watchOS 3.0<br />(Sep 2016) | watchOS 6.2<br />(2020)     |
+| iOS     | iOS 2.0<br />(Jul 2008)     | iOS 2.0<br />(Jul 2008)     | iOS 10.0<br />(Sep 2016)    | iOS 13.4<br />(Mar 2020)    |
+| watchOS | watchOS 2.0<br />(Sep 2015) | watchOS 2.0<br />(Sep 2015) | watchOS 3.0<br />(Sep 2016) | watchOS 6.2<br />(Mar 2020) |
 
 
 
