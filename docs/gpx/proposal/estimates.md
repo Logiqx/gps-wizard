@@ -26,7 +26,7 @@ This can be illustrated visually with a diagram which shows the [UERE](https://w
 
 A simple way to think of the positional error estimate is as the UERE multiplied by the [dilution of precision](https://en.wikipedia.org/wiki/Dilution_of_precision_(navigation)) (DOP). In practice the positional accuracy estimates will usually be determined using the covariance matrix of the LSQ or Kalman [filter](https://insidegnss.com/wp-content/uploads/2018/01/marapr13-Solutions.pdf).
 
-Note: The image above is helpful when discussing horizontal and vertical positional accuracy. Speed accuracy can also be derived using a similar principle, but is dependent on the URRE (user range rate error) and the method used to determine velocity. This will typically be dependent on the stability of the doppler observable that is used when determining the velocity of the receiver.
+Note: The image above is helpful when discussing horizontal and vertical positional accuracy. Speed accuracy can also be derived using a similar principle, but is dependent on the UERRE (user equivalent range rate error) and the method used to determine velocity. This will typically be dependent on the stability of the doppler observable that is used when determining the velocity of the receiver.
 
 
 
@@ -49,7 +49,7 @@ The accuracy estimates will typically be derived from the covariance matrix of t
 
 This [study](https://www.foi.se/rest-api/report/FOI-R--3840--SE) was conducted using two u-blox 6 receivers and the content of the [GST](https://gpsd.gitlab.io/gpsd/NMEA.html#_gst_gps_pseudorange_noise_statistics) (GNSS Pseudorange Noise Statistics) message to determine the horizontal accuracy estimate (hAcc) as 1-sigma.
 
-Blue shows the actual horizontal position error, and green shows the estimated horizontal error. These graphs have been provided illustrate the usefulness of estimated accuracy / errors, without going into a lengthy study or analysis.
+Blue shows the actual horizontal position error, and green shows the estimated horizontal error. These graphs have been included to illustrate the usefulness of estimated accuracy / errors, without going into a lengthy study or analysis.
 
 The most important thing that accuracy estimates do is to highlight any abnormalities and when the quality of the PVT solution is compromised.
 
@@ -140,8 +140,8 @@ Since around 2016 or 2017, accuracy estimates (including speed accuracy) have be
 
 A quick summary:
 
-- Horizontal accuracy estimates have been available from Apple and Android since about 2008
-- Speed accuracy estimates have been available from Apple and Android since about 2016 or 2017
+- Horizontal accuracy estimates have been available from Apple and Android since 2008
+- Speed accuracy estimates have been available from Apple and Android since around 2016 or 2017
 
 |         | hAcc                        | vAcc                        | sAcc                        | cAcc                        |
 | ------- | --------------------------- | --------------------------- | --------------------------- | --------------------------- |
