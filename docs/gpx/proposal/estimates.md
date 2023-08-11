@@ -87,7 +87,7 @@ The following is a list of popular chipset manufacturers who are known to produc
 
 #### NMEA Sentences
 
-Standard NMEA sentences provide horizontal and vertical accuracy accuracy estimates:
+Standard NMEA sentences provide horizontal and vertical (position) accuracy estimates:
 
 - [**GBS**](https://gpsd.gitlab.io/gpsd/NMEA.html#_gbs_gps_satellite_fault_detection) - GNSS Satellite Fault Detection
   - Includes latitude, longitude, altitude errors (1-sigma)
@@ -98,18 +98,19 @@ Standard NMEA sentences provide horizontal and vertical accuracy accuracy estima
 - [**EPE**](http://ozzmaker.com/wp-content/uploads/2016/08/M10478-M10578-NMEA_Sentence_Output.pdf) - Estimated Position Errors
   - Horizontal and vertical accuracy estimates (probably 1-sigma)
 
+Note: latitude / longitude accuracy can be converted to horizontal accuracy using hAcc = √ (latAcc<sup>2</sup> + lonAcc<sup>2</sup>)
 
-Note: latitude / longitude accuracy estimates can be converted to horizontal accuracy estimates using hAcc = √ (latAcc<sup>2</sup> + lonAcc<sup>2</sup>)
-
-Proprietary NMEA sentences:
+Proprietary NMEA sentences including horizontal and vertical (position) accuracy estimates:
 
 - [**PGRME**](https://gpsd.gitlab.io/gpsd/NMEA.html#_pgrme_garmin_estimated_error) (Garmin) - Estimated Error Information
   - Includes estimated horizontal position error (HPE) + vertical position error (VPE)
+- **PUBX,0** (x-box) - Position
+  - Includes Horizontal and vertical accuracy estimates (1-sigma)
+
+Proprietary NMEA sentences also including speed accuracy estimates:
 
 - **PSRFEPE** (SiRF) - Estimated Position Errors
   - Includes EHPE, EVPE, EHVE, EHE
-- **PUBX,0** (x-box) - Position
-  - Includes Horizontal and vertical accuracy estimates (1-sigma)
 - [PGLOR](https://gpsd.gitlab.io/gpsd/NMEA.html#_pglor_quectel) (Broadcom) - LSQ (least squares)
   - PGLOR originates from the Broadcom GNSS chips within Quectel GNSS modules
   - Includes HErr, AltErr, HSpdErr, VSpdErr, and TrkAngErr (stated as RMS in the Quectel documentation, rather than 1-sigma)
@@ -122,7 +123,7 @@ Proprietary NMEA sentences:
 
 #### Binary Outputs
 
-Various manufacturers are also known to provide accuracy estimates in their binary outputs:
+Various manufacturers are also known to provide position and speed accuracy estimates in their binary outputs:
 
 - Rockwell - EHPE, EVPE, EHVE (1-sigma)
 - Swift Navigation - hAcc, vAcc, sAcc, rAcc, cAcc (1-sigma)
@@ -142,6 +143,7 @@ A quick summary:
 
 - Horizontal accuracy estimates have been available from Apple and Android since 2008
 - Speed accuracy estimates have been available from Apple and Android since around 2016 or 2017
+- Course accuracy estimates have been available from Apple since 2020
 
 |         | hAcc                        | vAcc                        | sAcc                        | cAcc                        |
 | ------- | --------------------------- | --------------------------- | --------------------------- | --------------------------- |
