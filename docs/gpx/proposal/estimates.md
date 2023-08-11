@@ -1,6 +1,6 @@
 ## Proposal for GPX
 
-### Estimating Accuracy / Errors
+### Estimated Accuracy / Errors
 
 #### Background
 
