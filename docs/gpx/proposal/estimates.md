@@ -4,11 +4,9 @@
 
 #### Background
 
-GPS / GNSS chipsets can often generate accuracy estimates as part of their PVT (position / velocity / time) solution.
+GPS / GNSS chipsets can often generate accuracy estimates as part of their PVT (position / velocity / time) solutions.
 
-These accuracy estimates are easily accessible nowadays, especially via the location APIs of Android and Apple devices since around 2016 / 2017.
-
-These estimates can provide great value but there is currently no standard / agreed way to store them in a GPX 1.1 file without using extensions.
+These accuracy estimates are easily accessible nowadays, especially via the location APIs of Android and Apple devices since around 2016 / 2017. These estimates can provide great value but there is currently no standard / agreed way to store them in a GPX 1.1 file without using extensions.
 
 There is a great opportunity for the GPX schema to include accuracy estimates, facilitating a "standard" method for their storage and exchange.
 
@@ -26,9 +24,9 @@ This can be illustrated visually with a diagram which shows the [UERE](https://w
 
 
 
-A simple way to think of the positional error estimate is as the UERE multiplied by the [dilution of precision](https://en.wikipedia.org/wiki/Dilution_of_precision_(navigation)) (DOP). In practice the positional accuracy estimates will probably be determined using the covariance matrix of the LSQ or Kalman [filter](https://insidegnss.com/wp-content/uploads/2018/01/marapr13-Solutions.pdf).
+A simple way to think of the positional error estimate is as the UERE multiplied by the [dilution of precision](https://en.wikipedia.org/wiki/Dilution_of_precision_(navigation)) (DOP). In practice the positional accuracy estimates will usually be determined using the covariance matrix of the LSQ or Kalman [filter](https://insidegnss.com/wp-content/uploads/2018/01/marapr13-Solutions.pdf).
 
-Note: The image above is helpful when discussing horizontal and vertical positional accuracy. Speed accuracy can be derived using a similar principle, but is dependent on the URRE (user range rate error) and the velocity method. This will typically be dependent on the stability of the doppler observable.
+Note: The image above is helpful when discussing horizontal and vertical positional accuracy. Speed accuracy can be derived using a similar principle, but is dependent on the URRE (user range rate error) and the method used to determine velocity. This will typically be dependent on the stability of the doppler observable that is used when determining the velocity of the receiver.
 
 
 
@@ -36,12 +34,12 @@ Note: The image above is helpful when discussing horizontal and vertical positio
 
 The accuracy estimates will typically be derived from the covariance matrix of the LSQ / Kalman filter but they do have their limitations:
 
-- Firstly, they can ignore systemic biases which may not be easily identified
+- Firstly, they can be unaware of systemic biases which may not be easily identified
   - Such biases may not be apparent within the residuals of the LSQ / Kalman filter
-- The accuracy estimates are almost certainly being produced from covariance matrix of the LSQ / Kalman filter
-  - They will typically represent the amount of certainty in the final solution using 1-sigma (i.e. 68%)
-- The accuracy estimates must NOT be used to infer the precise accuracy of the position / speed
-  - They will however indicate when something abnormal has occurred and are very useful for software filtering
+- The accuracy estimates are typically produced from covariance matrix of the LSQ / Kalman filter
+  - They therefore represent the amount of certainty in the final solution, typically as 1-sigma (i.e. 68% confidence)
+- The accuracy estimates must NOT be used to infer the precise accuracy of the position / speed that was calculated
+  - They will however indicate when something abnormal has occurred and are thus useful for software filters
 - The accuracy estimates must NOT be used to compare the accuracy of different devices
   - They are however useful within the context of single / multiple sessions from a single device
 
@@ -51,7 +49,7 @@ The accuracy estimates will typically be derived from the covariance matrix of t
 
 This [study](https://www.foi.se/rest-api/report/FOI-R--3840--SE) was conducted using two u-blox 6 receivers and the content of the [GST](https://gpsd.gitlab.io/gpsd/NMEA.html#_gst_gps_pseudorange_noise_statistics) (GNSS Pseudorange Noise Statistics) message to determine the horizontal accuracy estimate (hAcc) as 1-sigma.
 
-Blue shows the actual horizontal position error, and green shows the estimated horizontal error. Hopefully these two graphs clearly illustrate the usefulness of estimated accuracy / error without going into a lengthy study or analysis.
+Blue shows the actual horizontal position error, and green shows the estimated horizontal error. These graphs have been provided illustrate the usefulness of estimated accuracy / errors, without going into a lengthy study or analysis.
 
 ![img](hacc.png)
 
@@ -64,7 +62,7 @@ The availability of accuracy estimates can be categorised in the following ways:
 - GPS / GNSS chipsets
 - NMEA sentences
 - Binary outputs
-- Location services within the operating system - e.g. Android, iOS, iWatch, etc.
+- Location services provided by operating systems - e.g. Android, iOS, iWatch, etc.
 
 
 
@@ -87,24 +85,36 @@ The following is a list of popular chipset manufacturers who are known to produc
 
 #### NMEA Sentences
 
-Standard NMEA sentences to derive horizontal and vertical accuracy:
+Standard NMEA sentences provide horizontal and vertical accuracy accuracy estimates:
 
-- [**GBS**](https://gpsd.gitlab.io/gpsd/NMEA.html#_gbs_gps_satellite_fault_detection) - GNSS Satellite Fault Detection - includes latitude, longitude, altitude errors (1-sigma)
+- [**GBS**](https://gpsd.gitlab.io/gpsd/NMEA.html#_gbs_gps_satellite_fault_detection) - GNSS Satellite Fault Detection
+  - Includes latitude, longitude, altitude errors (1-sigma)
   - This message outputs the results of the "Receiver Autonomous Integrity Monitoring" algorithm (RAIM)
-- [**GST**](https://gpsd.gitlab.io/gpsd/NMEA.html#_gst_gps_pseudorange_noise_statistics) - GNSS Pseudorange Noise Statistics - includes UERE, latitude, longitude, altitude errors (1-sigma)
-- [**EPE**](http://ozzmaker.com/wp-content/uploads/2016/08/M10478-M10578-NMEA_Sentence_Output.pdf) - Accuracy Estimates - Horizontal and vertical accuracy estimates - probably 1-sigma
+- [**GST**](https://gpsd.gitlab.io/gpsd/NMEA.html#_gst_gps_pseudorange_noise_statistics) - GNSS Pseudorange Noise Statistics
+  - Includes UERE, latitude, longitude, altitude errors (1-sigma)
 
-Note: latitude / longitude accuracy estimates can be converted to horizontal accuracy using hAcc = √ (latAcc<sup>2</sup> + lonAcc<sup>2</sup>)
+- [**EPE**](http://ozzmaker.com/wp-content/uploads/2016/08/M10478-M10578-NMEA_Sentence_Output.pdf) - Estimated Position Errors
+  - Horizontal and vertical accuracy estimates (probably 1-sigma)
+
+
+Note: latitude / longitude accuracy estimates can be converted to horizontal accuracy estimates using hAcc = √ (latAcc<sup>2</sup> + lonAcc<sup>2</sup>)
 
 Proprietary NMEA sentences:
 
-- [**PGRME**](https://gpsd.gitlab.io/gpsd/NMEA.html#_pgrme_garmin_estimated_error) (Garmin) - Estimated Error Information - includes estimated horizontal position error (HPE) + vertical position error (VPE)
-- **PSRFEPE** (SiRF) - EHPE, EVPE, EHVE, EHE
-- **PUBX,0** (x-box) - Horizontal and vertical accuracy estimates (1-sigma)
-- [PGLOR](https://gpsd.gitlab.io/gpsd/NMEA.html#_pglor_quectel) (Broadcom) - LSQ (Least squares) message includes HErr, AltErr, HSpdErr, VSpdErr, and TrkAngErr (RMS)
-  - RMS stated in documentation but comparable to 1-sigma (68% of 1-dimension, 63% for 2-dimensions)
+- [**PGRME**](https://gpsd.gitlab.io/gpsd/NMEA.html#_pgrme_garmin_estimated_error) (Garmin) - Estimated Error Information
+  - Includes estimated horizontal position error (HPE) + vertical position error (VPE)
 
-- [**PJLTS**](https://gpsd.gitlab.io/gpsd/NMEA.html#_pjlts_jackson_labs_time_and_3d_velocity) - Jackson Labs Time and 3D velocity includes speed accuracy estimate (1-sigma)
+- **PSRFEPE** (SiRF) - Estimated Position Errors
+  - Includes EHPE, EVPE, EHVE, EHE
+- **PUBX,0** (x-box) - Position
+  - Includes Horizontal and vertical accuracy estimates (1-sigma)
+- [PGLOR](https://gpsd.gitlab.io/gpsd/NMEA.html#_pglor_quectel) (Broadcom) - LSQ (least squares)
+  - PGLOR originates from the Broadcom GNSS chips within Quectel GNSS modules
+  - Includes HErr, AltErr, HSpdErr, VSpdErr, and TrkAngErr (stated as RMS in the Quectel documentation, rather than 1-sigma)
+  - RMS stated in the Quectel documentation but is comparable to 1-sigma; 68% of 1-dimension, 63% for 2-dimensions
+- [**PJLTS**](https://gpsd.gitlab.io/gpsd/NMEA.html#_pjlts_jackson_labs_time_and_3d_velocity) (Jackson Labs) - Time and speed
+  - Includes speed accuracy estimate (1-sigma)
+
 
 
 
@@ -118,18 +128,18 @@ Various manufacturers are also known to provide accuracy estimates in their bina
   - Locosys also provide SDOS (standard deviation of speed) and VSDOS (vertical standard deviation of speed) using SiRF chipsets (1-sigma)
 - u-blox - hAcc, vAcc, sAcc, cAcc (1-sigma)
 
-It is also likely that SoC offerings from the likes of Qualcomm and Samsung bypass NMEA by using binary protocols.
+It is also likely that SoCs from the likes of Qualcomm and Samsung provide accuracy estimates via binary protocols.
 
 
 
 #### Location Services
 
-Since around 2016 or 2017, accuracy estimates (including speed accuracy) have been readily available on Android and Apple devices via their [location](../../apis/location.md) services. The table below shows when the various accuracy estimates became available on Android and Apple devices.
+Since around 2016 or 2017, accuracy estimates (including speed accuracy) have been readily available on Android and Apple devices via their [location services](../../apis/location.md). The table below shows when the various accuracy estimates were added to the Android and Apple operating systems.
 
 A quick summary:
 
-- Horizontal accuracy estimates have been available from Android and iOS since about 2008
-- Speed accuracy estimates have been available from iOS / watchOS and Android since about 2016 or 2017
+- Horizontal accuracy estimates have been available from Android and Apple since about 2008
+- Speed accuracy estimates have been available from Apple and Android since about 2016 or 2017
 
 |         | hAcc                        | vAcc                        | sAcc                        | cAcc                        |
 | ------- | --------------------------- | --------------------------- | --------------------------- | --------------------------- |
@@ -141,14 +151,15 @@ A quick summary:
 
 ### Summary
 
-This document provides some basic information about the various accuracy estimates available from GPS / GNSS chipsets:
+This document provides some basic information about the 1-sigma accuracy estimates available from GPS / GNSS chipsets:
 
-- Horizontal and vertical position
-- Horizontal speed, vertical speed and course
+- Horizontal and vertical position (m)
+- Horizontal speed, vertical speed (m/s)
+- Course (degrees)
 
-These accuracy estimates are quite widely available via NMEA sentences and binary protocols. Since around 2016 or 2017 they have also been available on Android and Apple devices, probably accounting for the majority of GPS / GNSS receivers in use today.
+These accuracy estimates are widely available via NMEA sentences and binary protocols. Around 2016 or 2017, speed accuracy estimates were also added to Apple and Android devices, which probably account for the majority of GPS / GNSS receivers in use today.
 
-The majority of the available documentation refers to the estimates being 1-sigma. This level of certainty is mentioned in the Android documentation but is absent in the Apple documentation. I suspect Apple are multiplying by some factor, possibly doubling to give 2-sigma.
+The majority of the available documentation refers to the accuracy estimates being 1-sigma. A 68% confidence level (i.e. 1-sigma) is mentioned in the Android documentation but is absent in the Apple documentation. I suspect Apple are multiplying the 1-sigma value provided by the GNSS chipset (e.g. Broadcom, Qualcomm or Intel) by some factor to produce something resembling 2-sigma (95% confidence).
 
 There is a separate page about the accuracy estimates available from the Android and Apple [location services](../../apis/location.md).
 
@@ -156,9 +167,7 @@ There is a separate page about the accuracy estimates available from the Android
 
 ### Proposal
 
-There is a real opportunity for adding accuracy estimates to the GPX standard so that people can make use of them when exchanging data.
+There is an opportunity to add accuracy estimates to the GPX standard so that people can make use of them when exchanging data. The wording used in the GPX schema documentation is obviously a topic for discussion.
 
-The wording used in the GPX documentation is obviously a point for discussion, but I feel that values should be stored without any adjustments.
-
-Device manufacturers may adjust the 1-sigma values (e.g. Apple), but I think the estimates are best stored as provided within the GPX file.
+I feel that accuracy estimates should be stored without any adjustments. Device manufacturers may adjust the 1-sigma values (e.g. Apple), but I think the estimates are best stored as provided within the GPX file.
 
