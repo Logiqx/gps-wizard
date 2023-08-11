@@ -95,13 +95,12 @@ Standard NMEA sentences provide horizontal and vertical (position) accuracy esti
 - [**GST**](https://gpsd.gitlab.io/gpsd/NMEA.html#_gst_gps_pseudorange_noise_statistics) - GNSS Pseudorange Noise Statistics
   - Includes UERE, latitude, longitude, altitude errors (1-sigma)
 
-- [**EPE**](http://ozzmaker.com/wp-content/uploads/2016/08/M10478-M10578-NMEA_Sentence_Output.pdf) - Estimated Position Errors
-  - Horizontal and vertical accuracy estimates (probably 1-sigma)
-
 Note: latitude / longitude accuracy can be converted to horizontal accuracy using hAcc = √ (latAcc<sup>2</sup> + lonAcc<sup>2</sup>)
 
 Proprietary NMEA sentences including horizontal and vertical (position) accuracy estimates:
 
+- [**EPE**](http://ozzmaker.com/wp-content/uploads/2016/08/M10478-M10578-NMEA_Sentence_Output.pdf) (MediaTek) - Estimated Position Errors
+  - Horizontal and vertical accuracy estimates (probably 1-sigma)
 - [**PGRME**](https://gpsd.gitlab.io/gpsd/NMEA.html#_pgrme_garmin_estimated_error) (Garmin) - Estimated Error Information
   - Includes estimated horizontal position error (HPE) + vertical position error (VPE)
 - **PUBX,0** (x-box) - Position
