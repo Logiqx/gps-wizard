@@ -66,5 +66,5 @@ Accuracy information can be found in the [CLLocation](https://developer.apple.co
 
 ​	The accuracy of the course value (compass heading), measured in degrees.
 
-​    Added in iOS 13.4 (2020) and watchOS 6.2 (2020)
+​    Added in iOS 13.4 (2020) and watchOS 6.2 (Mar 2020)
 
