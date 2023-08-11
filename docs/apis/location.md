@@ -12,23 +12,33 @@ Accuracy information can be found in the [Location](https://developer.android.co
 
 ​	Returns the estimated horizontal accuracy radius in meters of this location at the 68th percentile confidence level.
 
+​    Added in Android 8.0
+
 #### [getBearingAccuracyDegrees()](https://developer.android.com/reference/android/location/Location#getBearingAccuracyDegrees())
 
 ​	Returns the estimated bearing accuracy in degrees of this location at the 68th percentile confidence level.
 
 ​	Note: The word "bearing" is used instead of "course". It's incorrect to use the word bearing.
 
+​    Added in Android 8.0
+
 #### [getMslAltitudeAccuracyMeters()](https://developer.android.com/reference/android/location/Location#getMslAltitudeAccuracyMeters())
 
 ​	Returns the estimated Mean Sea Level altitude accuracy in meters of this location at the 68th percentile confidence level.
+
+​    Added in Android 14
 
 #### [getSpeedAccuracyMetersPerSecond()](https://developer.android.com/reference/android/location/Location#getSpeedAccuracyMetersPerSecond())
 
 ​	Returns the estimated speed accuracy in meters per second of this location at the 68th percentile confidence level.
 
+​    Added in Android 8.0
+
 #### [getVerticalAccuracyMeters()](https://developer.android.com/reference/android/location/Location#getVerticalAccuracyMeters())
 
 ​	Returns the estimated altitude accuracy in meters of this location at the 68th percentile confidence level.
+
+​    Added in Android 8.0
 
 
 
