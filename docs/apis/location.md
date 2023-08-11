@@ -2,6 +2,10 @@
 
 The following APIs include accuracy information.
 
+A 68% confidence level (i.e. 1-sigma) is mentioned in the Android documentation but is absent in the Apple documentation.
+
+I suspect Apple are multiplying the 1-sigma value provided by the GNSS chipset (e.g. Broadcom, Qualcomm or Intel) by some factor to produce something resembling 2-sigma (95% confidence).
+
 
 
 ### Android

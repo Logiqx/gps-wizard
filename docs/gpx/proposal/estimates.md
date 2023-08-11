@@ -37,7 +37,7 @@ The accuracy estimates will typically be derived from the covariance matrix of t
 - Firstly, they can be unaware of systemic biases which may not be easily identified
   - Such biases may not be apparent within the residuals of the LSQ / Kalman filter
 - The accuracy estimates are typically produced using the covariance matrix of the LSQ / Kalman filter
-  - They therefore represent the amount of certainty in the final solution, usually as 1-sigma (i.e. 68% confidence)
+  - They therefore represent the amount of confidence in the final solution, usually as 1-sigma (i.e. 68% confidence)
 - The accuracy estimates must NOT be used to infer the precise accuracy of the PVT solution
   - They will however indicate when something abnormal has occurred and are thus extremely useful to software filters
 - The accuracy estimates must NOT be used to compare the accuracy of different receivers
