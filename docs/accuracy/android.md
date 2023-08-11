@@ -1,6 +1,8 @@
 ### Android
 
 - [android.location](https://developer.android.com/reference/android/location/package-summary) classes used to produce CSV from the GPSTest app on Galaxy A51:
+  - hAcc was available in Android 1.0
+    - vAcc, sAcc, cAcc were added in Android 8.0 (Aug 2017)
   - NMEA - [NMEA Listener](https://developer.android.com/reference/android/location/OnNmeaMessageListener)
     - Galaxy S7 - Broadcom BCM4774
       - GSA, GSV, GGA, RMC. Does not include GLL or VTG. Nor does it include GST or GBS
