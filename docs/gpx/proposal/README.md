@@ -9,7 +9,7 @@ Feel free to browse is any order and use the browser back-button to return to th
 - Background
   - [Quick introduction and overview of GPS / GNSS](intro.md)
   - [The use of estimated speed in sport](speed.md)
-  - Accuracy / error estimates - TODO
+  - [Estimating accuracy / errors](estimates.md)
   - [History of GPX 1.1 and GPX extensions](history.md)
 - Proposal
   - [Example schema for GPX 1.1.1](enhancements.md)
