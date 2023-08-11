@@ -22,12 +22,6 @@ Accuracy information can be found in the [Location](https://developer.android.co
 
 ​    Added in Android 8.0
 
-#### [getMslAltitudeAccuracyMeters()](https://developer.android.com/reference/android/location/Location#getMslAltitudeAccuracyMeters())
-
-​	Returns the estimated Mean Sea Level altitude accuracy in meters of this location at the 68th percentile confidence level.
-
-​    Added in Android 14
-
 #### [getSpeedAccuracyMetersPerSecond()](https://developer.android.com/reference/android/location/Location#getSpeedAccuracyMetersPerSecond())
 
 ​	Returns the estimated speed accuracy in meters per second of this location at the 68th percentile confidence level.
