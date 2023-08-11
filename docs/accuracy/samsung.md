@@ -109,6 +109,12 @@ May 2012
 
   - [teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+S+III+Teardown/9391) - **Broadcom** BCM4751 (BCM47511)
 
+  - Features on my Galaxy S III (GT-I9305, Android 4.4.4), according to GPSTest
+    - GPS and GLONASS
+    - Estimated hAcc is reported as "E H Acc"
+    - No vAcc - support added in Android 8.0
+    - No sAcc or bAcc - support added in Android 8.0
+
 
 
 
@@ -162,10 +168,13 @@ Released Feb 2016
 
 - **Qualcomm** Snapdragon 820
   - [teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+S7+Teardown/56686)
-
 - Samsung [Exynos 8890](https://semiconductor.samsung.com/processor/mobile-processor/exynos-8-octa-8890/) does not include GNSS
   - **Broadcom** BCM4774
-
+  - Features on my Galaxy S7 (SM-G930F, Android 8.0.0), according to GPSTest
+    - GPS, GLONASS, BeiDou
+    - Estimated hAcc is typically in 2m increments - e.g. 4.0, 6.0, 8.0 but 3.0 has been observed.
+    - No vAcc accompanying hAcc - support added in Android 8.0 but maybe not in Samsung or BCM4774?
+    - No sAcc or bAcc (blank) - support added in Android 8.0 but maybe not in Samsung or BCM4774?
 - [GNSS smartphones positioning: advances, challenges, opportunities, and future perspectives](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8604560/) in 2021
   - [Precise GNSS for Everyone: Precise Positioning Using Raw GPS Measurements from Android Smartphones](https://www.researchgate.net/publication/309645977_Precise_GNSS_for_Everyone_Precise_Positioning_Using_Raw_GPS_Measurements_from_Android_Smartphones) 2016
     - They used Samsung Galaxy S7 smartphone with the Broadcom BCM4774
@@ -183,7 +192,7 @@ Released Mar 2017 - [spec](https://www.gsmarena.com/samsung_galaxy_s8-8161.php)
 - Samsung [Exynos 8895](https://semiconductor.samsung.com/processor/mobile-processor/exynos-9-series-8895/) added GNSS (GPS, GLONASS, BeiDou)
 
   - Exynos GPS not used though...
-  - **Broadcom** BCM4774 - TBC - where did I find this out
+  - **Broadcom** BCM4774 - confirmed using GPSTest database
   
   
 

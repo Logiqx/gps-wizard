@@ -17,9 +17,39 @@
 
 
 
+#### BCM4751
+
+- Used in Samsung Galaxy S, S II and S III
+- Features on my Samsung Galaxy S III (GT-I9305, Android 4.4.4), according to GPSTest
+  - GPS and GLONASS
+  - Estimated hAcc is reported as "E H Acc"
+  - No vAcc - support added in Android 8.0
+  - No sAcc or bAcc - support added in Android 8.0
+
+
+
+#### BCM4752
+
+- Used in Samsung Galaxy S4 and S5
+- Used in Samsung Gear Sport
+
+
+
+#### BCM4776
+
+- Used in Samsung Galaxy S7, S8, and Galaxy Note 8
+
+
+
 #### BCM4774
 
 - Used in Samsung Galaxy S7, S8, and Galaxy Note 8
+- Features on my Samsung Galaxy S7 (SM-G930F, Android 8.0.0), according to GPSTest
+  - GPS, GLONASS and BeiDou
+  - Estimated hAcc is typically in 2m increments - e.g. 4.0, 6.0, 8.0 but 3.0 has been observed.
+  - No vAcc accompanying hAcc - support added in Android 8.0 but maybe not in Samsung or BCM4774?
+  - No sAcc or bAcc (blank) - support added in Android 8.0 but maybe not in Samsung or BCM4774?
+
 
 
 
@@ -39,8 +69,9 @@ World's first dual frequency GNSS receiver:
 
 - BCM47754 used in Apple Watch Series 6
 - BCM47755 used in Xiaomi Mi 8 and Mix 3 (note that "lite" models just use the Snapdragon)
-- BCM47752 used in Samsung Galaxy S9, S10
-- BCM47755 used in Samsung Galaxy S20, S21
+- BCM47752 used in Samsung Galaxy S9, S10, Note 9 and Note 10
+- BCM47755 used in Samsung Galaxy S20, S21, Note 20. Sometimes in Note 10 according to GPSTest Database
+- BCM47758 used in Samsung Galaxy Watch, Watch Active. Probably used in Galaxy Watch Active 2 and Watch 3 as well.
 - [Product Brief](https://docs.broadcom.com/docs/12379501) 20/09/2017 - BCM47752KUB1G, BCM47754KUBG, BCM47755KUB1G, BCM47758KUB1G
 - BCM47755 - [Third-Generation GNSS Location Hub with Dual Frequency Support](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47755) on Broadcom
 - [Broadcom announces world’s first dual frequency GNSS receiver for smartphones](https://www.euspa.europa.eu/newsroom/news/broadcom-announces-world%E2%80%99s-first-dual-frequency-gnss-receiver-smartphones) on EUSPA
