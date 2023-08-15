@@ -245,6 +245,13 @@ Not listed on the Wiki?
 
 
 
+### MediaTek
+
+#### MT6631
+
+Used in some Samsung A-series phones, but no other manufacturers according to GPSTest database.
+
+
 
 ### AirPrime XM/XA Series
 

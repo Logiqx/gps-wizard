@@ -217,10 +217,11 @@ Released Mar 2019
 - **Qualcomm** Snapdragon 855 (USA & China)
   - [teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+S10+and+S10e+Teardown/120331)
   - Supports dual frequency
-  
 - Samsung [Exynos 9820](https://semiconductor.samsung.com/processor/mobile-processor/exynos-9-series-9820/) (EMEA) does not mention GNSS
   - **Broadcom** BCM47752 (BCM47752KLB1G) - [teardown](https://www.techinsights.com/blog/samsung-galaxy-s10-teardown) + [another](https://www.chiprebel.com/galaxy-s10-teardown/)
   - Supports hAcc, vAcc and sAcc
+
+n.b. Samsung Galaxy S10 Lite always has Snapdragon 855, unlike other [S10 models](https://www.samsung.com/uk/support/mobile-devices/what-is-the-s10-lite/)
 
 
 
