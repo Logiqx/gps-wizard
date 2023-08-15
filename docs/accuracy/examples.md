@@ -6,8 +6,8 @@ GPSTest forum - https://groups.google.com/g/gpstest_android
   - GT-11 (SiRF Star II) = 2.52
   - GT-31 (SiRF Star III) = 0.72, comparable to u-blox
   - Motion (u-blox M8) = 0.776, comparable to SiRF Star III
-  - Apple Watch Series 5 = 4.0 (maybe doubled to give 2-sigma)
-  - Apple Watches (others) = 4.75 (maybe doubled to give 2-sigma)
+  - Apple Watch Series 5 = 4.0 (maybe multiplied by 4 to give 4-sigma)
+  - Apple Watches (others) = 4.75 (maybe multiplied by 4 to give 4-sigma)
 - EVPE / vAcc medians:
   - GT-11 (SiRF Star II) = 4.48 (factor 1.77)
   - GT-31 (SiRF Star III) = 1.03 (factor = 1.431), comparable to u-blox
@@ -23,5 +23,5 @@ GPSTest forum - https://groups.google.com/g/gpstest_android
   - Motion (u-blox M8) = 0.172 m/s (0.33 knots), comparable to SiRF Star III.
     - FILTER = 1.2 knots (regardless of frequency).
   - Apple Watch Series 5 = ~0.3 (maybe not doubled)
-  - Apple Watches (others) = ~1.1 - 1.2 (maybe 0.5 m/s  doubled to give 2-sigma), comparable to 2 x SiRF Star IV in GW-60 when moving)
+  - Apple Watches (others) = ~1.1 - 1.2 (maybe 0.5 m/s multiplied by 4 to give 4-sigma), comparable to 2 x SiRF Star IV in GW-60 when moving)
 

@@ -164,7 +164,7 @@ These accuracy estimates are typically available via NMEA sentences and / or bin
 
 The vast majority of the available documentation refers to accuracy estimates being 1-sigma. A 68% confidence level is mentioned in the Android documentation but is absent in the Apple documentation.
 
-I suspect Apple are multiplying the 1-sigma value provided by the GNSS chipset (e.g. Broadcom, Qualcomm or Intel) by some factor to produce a higher confidence level. This might simply be a case of multiplying by 2 to provide 2-sigma (95% confidence).
+I suspect that Apple are multiplying the 1-sigma value provided by the GNSS chipset (e.g. Broadcom, Qualcomm or Intel) by a constant value to produce an estimate that is more intuitive to end users; e.g. 2-sigma (95% confidence) or 4-sigma (99.99% confidence).
 
 There is a separate page about the accuracy estimates available from the Android and Apple [location services](../../apis/location.md).
 

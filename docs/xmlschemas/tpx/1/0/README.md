@@ -81,7 +81,7 @@ These short names are closely related to the names used by u-blox (e.g. "hAcc" f
 
 The accuracy estimates have been named concisely (e.g. `<hacc>` and `<vacc>`) and use entirely lower case names for consistency with the GPX schema, much like the elements `<hdop>`, `<vdop>`, and `<pdop>` in GPX 1.0 and 1.1.
 
-Note: The term "accuracy" has been chosen over "error" because it is used by the [Android](https://developer.android.com/reference/android/location/Location) and [Apple](https://developer.apple.com/documentation/corelocation/cllocation) APIs, plus notable GPS / GNSS chipset manufacturers such as u-blox. Although some chipset manufacturers use the word "error" those items essentially represent the same thing. It typically represents RMS, 1-sigma or 68% confidence, sometimes 3-sigma or 99.7% confidence.
+Note: The term "accuracy" has been chosen over "error" because it is used by the [Android](https://developer.android.com/reference/android/location/Location) and [Apple](https://developer.apple.com/documentation/corelocation/cllocation) APIs, plus notable GPS / GNSS chipset manufacturers such as u-blox. Although some chipset manufacturers use the word "error" those items essentially represent the same thing. It represents RMS, 1-sigma or 68% confidence.
 
 
 
