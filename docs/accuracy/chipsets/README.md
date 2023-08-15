@@ -35,9 +35,9 @@
 
 
 
-#### BCM4776
+#### BCM4773
 
-- Used in Samsung Galaxy S7, S8, and Galaxy Note 8
+- Used in Samsung Galaxy S6
 
 
 
@@ -52,25 +52,14 @@
 
 
 
-
-#### BCM47531
-
-Fourth generation multi-constellation Global Navigation Satellite System (GNSS)
-
-[Broadcom website](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47531)
-
-Used in some models of the Samsung Galaxy Tab
-
-
-
 #### BCM4775x
 
 World's first dual frequency GNSS receiver:
 
+- BCM47752 used in Exynos versions of Samsung Galaxy S9, S10, Note 9 and Note 10.
 - BCM47754 used in Apple Watch Series 6
-- BCM47755 used in Xiaomi Mi 8 and Mix 3 (note that "lite" models just use the Snapdragon)
-- BCM47752 used in Samsung Galaxy S9, S10, Note 9 and Note 10
-- BCM47755 used in Samsung Galaxy S20, S21, Note 20. Sometimes in Note 10 according to GPSTest Database
+- BCM47755 used in Exynos versions of Samsung Galaxy S20, S21, Note 20. Sometimes in Note 10 according to GPSTest Database.
+- BCM47755 also used in Xiaomi Mi 8 and Mix 3 (note that "lite" models just use the Snapdragon)
 - BCM47758 used in Samsung Galaxy Watch, Watch Active. Probably used in Galaxy Watch Active 2 and Watch 3 as well.
 - [Product Brief](https://docs.broadcom.com/docs/12379501) 20/09/2017 - BCM47752KUB1G, BCM47754KUBG, BCM47755KUB1G, BCM47758KUB1G
 - BCM47755 - [Third-Generation GNSS Location Hub with Dual Frequency Support](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47755) on Broadcom
@@ -90,10 +79,10 @@ World's first dual frequency GNSS receiver:
 
 Second generation dual frequency GNSS chip - e.g. BCM47764, BCM47765:
 
-- BCM47764 used in Apple Watch Series 7
+- BCM47764 used in Apple Watch Series 7 and possible Apple Watch Series 8
   - TODO - Need to confirm whether series 8 uses BCM4776x or BCM4778.
 
-- Used in Google Pixel 6 and 7
+- Used in Google Pixel 6 / 6a / 6 Pro and 7 / 7a / 7 Pro
 - [Second Generation Dual-Frequency GNSS chip](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47765) on Broadcom
 - Cannot find product brief...
 - Quectel_LC29D_GNSS_Protocol_Specification_V1.0 lists PGLOR_SPD, PGLOR_FIX, PGLOR_SAT, **PGLOR_LSQ**, PGLOR_PWR, PGLOR_STA
@@ -109,6 +98,16 @@ Third generation dual frequency GNSS chip:
 - [Ultra-Low Power Dual-frequency L1L5 GNSS Receiver Product Brief](https://docs.broadcom.com/docs/4778-PB1) 22/09/2021
 - [Broadcom launches its lowest power GNSS receiver for mobile, wearables](https://www.gpsworld.com/broadcom-launches-its-lowest-power-gnss-receiver-for-mobile-wearables/)
 - [Product brief](https://docs.broadcom.com/doc/4778-PB1) on Broadcom
+
+
+
+#### BCM47531
+
+Fourth generation multi-constellation Global Navigation Satellite System (GNSS)
+
+[Broadcom website](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47531)
+
+Used in some models of the Samsung Galaxy Tab
 
 
 
@@ -267,8 +266,8 @@ AirPrime_XM_XA_Series_Software_User_Guide_r3
 
 PMTK500 GNSS FIX CONTROL ACK
 
-- HAcc: One-sigma estimated Horizontal position accuracy mask at which point a suitable fix is deemed to have been obtained and the receiver may prematurely switch into its minimum power sleep mode. (m)
-- VAcc: One-sigma estimated Vertical position accuracy mask at which point a suitable fix is deemed to have been obtained and the receiver may prematurely switch into its minimum power sleep mode. (m)
+- HAcc: 1-sigma estimated Horizontal position accuracy mask at which point a suitable fix is deemed to have been obtained and the receiver may prematurely switch into its minimum power sleep mode. (m)
+- VAcc: 1-sigma estimated Vertical position accuracy mask at which point a suitable fix is deemed to have been obtained and the receiver may prematurely switch into its minimum power sleep mode. (m)
 
 
 

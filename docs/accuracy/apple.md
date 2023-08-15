@@ -169,10 +169,10 @@ Maybe uses a newish Broadcom chip - e.g. BCM47764 (like series 7), BCM47765, or 
   - GPS, GLONASS, Galileo, QZSS and BeiDou - [Apple](https://www.apple.com/uk/iphone-12/specs/)
 - iPhone 13 released Sep 2021
   - **Qualcomm** Snapdragon [X60](https://www.qualcomm.com/products/technology/modems/snapdragon-x60-5g-modem) 5G modem-RF system, plus Qualcomm [SDR868](https://www.techinsights.com/products/bfr-2102-801) RF transceiver
-  - [teardown summary](https://uk.pcmag.com/mobile-phones/135925/teardown-confirms-qualcomm-modems-in-the-iphone-13-pro) + [teardown](https://www.ifixit.com/Teardown/iPhone+13+Pro+Teardown/144928)
+  - [teardown summary](https://uk.pcmag.com/mobile-phones/135925/teardown-confirms-qualcomm-modems-in-the-iphone-13-pro) + [teardown](https://www.ifixit.com/Teardown/iPhone+13+Pro+Teardown/144928) - [Apple](https://www.apple.com/uk/iphone-13/specs/)
 - iPhone 14 released Sep 2022
   - **Qualcomm** Snapdragon [X65](https://www.qualcomm.com/products/technology/modems/snapdragon-x65-5g-modem-rf-system) 5G modem-RF system, plus (presumably) Qualcomm RF transceiver
-  - [Inside GNSS](https://insidegnss.com/snapdragon-modem-rf-systems-power-telits-new-5g-m-2-module) - different product but maybe relevant
+  - [Inside GNSS](https://insidegnss.com/snapdragon-modem-rf-systems-power-telits-new-5g-m-2-module) - different product but maybe relevant - [Apple](https://www.apple.com/uk/iphone-14/specs/)
 
 > So, how does a regular navigation receiver look in 2022? It has dissolved in telecommunication chips. The chips are developed by a few big companies.
 

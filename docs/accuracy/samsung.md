@@ -203,6 +203,8 @@ Released Feb 2018
 There were two different chipset variants of the S9/S9+
 
 - **Qualcomm** Snapdragon 845 (USA & China)
+  - Only used in Samsung devices according to GPSTest database
+
 - Samsung [Exynos 9810](https://semiconductor.samsung.com/processor/mobile-processor/exynos-9-series-9810/) (EMEA) includes GNSS (GPS, GLONASS, BeiDou)
   - Exynos GPS not used though...
   - [Teardown](https://www.techinsights.com/blog/samsung-galaxy-s9-teardown) (Techinsights) shows the **Broadcom** BCM47752 GNSS Receiver
@@ -217,6 +219,7 @@ Released Mar 2019
 - **Qualcomm** Snapdragon 855 (USA & China)
   - [teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+S10+and+S10e+Teardown/120331)
   - Supports dual frequency
+  - Only used in Samsung devices according to GPSTest database
 - Samsung [Exynos 9820](https://semiconductor.samsung.com/processor/mobile-processor/exynos-9-series-9820/) (EMEA) does not mention GNSS
   - **Broadcom** BCM47752 (BCM47752KLB1G) - [teardown](https://www.techinsights.com/blog/samsung-galaxy-s10-teardown) + [another](https://www.chiprebel.com/galaxy-s10-teardown/)
   - Supports hAcc, vAcc and sAcc
