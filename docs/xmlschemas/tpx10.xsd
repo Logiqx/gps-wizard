@@ -175,72 +175,56 @@
       <xsd:element name="course" type="courseType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing.
-            Measured in degrees, COG is the actual direction of travel relative to due north.
-            Course was available in GPX 1.0 but (possibly inadvertently) removed in GPX 1.1.
+            Course over ground (COG) in degrees is the actual direction of travel relative to due north. COG is an independent measurement from position, so it is possible (and not an error) for the difference between two successive positions to be inconsistent with the COG values.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="speed" type="horizontalSpeedType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Horizontal speed, often referred to as speed over ground (SOG).
-            Measured in m/s it is typically derived from the Doppler observables and far more accurate than position-derived speeds.
-            Speed was available in GPX 1.0 but (possibly inadvertently) removed in GPX 1.1.
+            Speed over ground (SOG) in m/s is the horizontal speed calculated by the GPS / GNSS chipset. SOG is an independent measurement from position, so it is possible (and not an error) for the difference between two successive positions to be inconsistent with the SOG values.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="roc" type="verticalSpeedType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Rate of climb (ROC), sometimes referred to as climb rate or vertical speed.
-            Measured in m/s, positive values indicate increasing altitude, whilst negative values indicate decreasing altitude.
-            Only available from some GPS / GNSS chipsets (e.g. SiRF in their binary output).
+            Rate of climb (ROC) in m/s is the vertical speed calculated by the GPS / GNSS chipset. ROC is an independent measurement from position, so it is possible (and not an error) for the difference between two successive positions to be inconsistent with the ROC values.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="hacc" type="positionalAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.
-            Measured in meters it represents a likely accuracy of +/- the given value.
-            Typically the estimated horizontal accuracy of this location at the 68th percentile confidence level.
+            Horizontal error estimate in meters, such that the difference from the true position and the reported position is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="vacc" type="positionalAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.
-            Measured in meters it represents a likely accuracy of +/- the given value.
-            Typically the estimated vertical accuracy of this location at the 68th percentile confidence level.
+            Vertical error estimate in meters, such that the difference from the true position and the reported position is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="cacc" type="courseAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Course accuracy estimate, sometimes (incorrectly) referred to as heading / bearing accuracy (or error).
-            Measured in degrees it represents a likely accuracy of +/- the given value.
-            Typically the estimated course accuracy at the 68th percentile confidence level.
+            Course over ground (COG) error estimate in degrees, such that the difference from the true COG and the reported COG is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="sacc" type="speedAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.
-            Measured in m/s it represents a likely accuracy of +/- the given value.
-            Typically the estimated horizontal speed (SOG) accuracy at the 68th percentile confidence level.
+            Speed over ground (SOG) error estimate in m/s, such that the difference from the true SOG and the reported SOG is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="racc" type="speedAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Rate of climb (ROC) accuracy estimate, sometimes referred to as vertical speed / velocity error.
-            Measured in m/s it represents a likely accuracy of +/- the given value.
-            Typically the estimated rate of climb (ROC) accuracy at the 68th percentile confidence level.
+            Rate of climb (ROC) error estimate in m/s, such that the difference from the true ROC and the reported ROC is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>

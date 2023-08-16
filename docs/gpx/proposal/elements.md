@@ -6,26 +6,28 @@
 
 The following elements can all be added to `<wpt>`, `<rtept>` and `<trkpt>` elements in the GPX 1.1.1 proposal.
 
-They are all optional, although `<course>` and `<speed>` are highly recommended in GPX 1.1.1 files.
+They are all optional, although the values of `<course>` and `<speed>` as provided by the GPS / GNSS chipset are highly recommended in GPX 1.1.1 files.
 
 | Name       | Description                                                  |
 | ---------- | ------------------------------------------------------------ |
-| `<course>` | Course over ground (COG), sometimes (incorrectly) referred to as heading or bearing.<br/>Measured in degrees, COG is the actual direction of travel relative to due north.<br/>Course was available in GPX 1.0 but inadvertently removed in GPX 1.1. |
-| `<speed>`  | Horizontal speed, often referred to as speed over ground (SOG).<br/>Measured in m/s it is the best estimate of speed from the GPS / GNSS chipset.<br/>Speed was available in GPX 1.0 but inadvertently removed in GPX 1.1. |
-| `<roc>`    | Rate of climb (ROC), sometimes referred to as climb rate or vertical speed.<br/>Measured in m/s, positive values indicate increasing altitude, whilst negative values indicate decreasing altitude.<br/>Only available from some GPS / GNSS chipsets (e.g. SiRF in their binary output). |
+| `<course>` | Course over ground (COG) in degrees is the actual direction of travel relative to due north.<br/>COG is an independent measurement from position, so it is possible (and not an error) for the difference between two successive positions to be inconsistent with the COG values. |
+| `<speed>`  | Speed over ground (SOG) in m/s is the horizontal speed calculated by the GPS / GNSS chipset.<br/>SOG is an independent measurement from position, so it is possible (and not an error) for the difference between two successive positions to be inconsistent with the SOG values. |
+| `<roc>`    | Rate of climb (ROC) in m/s is the vertical speed calculated by the GPS / GNSS chipset.<br/>ROC is an independent measurement from position, so it is possible (and not an error) for the difference between two successive positions to be inconsistent with the ROC values. |
 
 
 #### Accuracy Estimates
 
 The following accuracy elements can all be added to `<wpt>`, `<rtept>` and `<trkpt>` elements in the proposed GPX 1.1.1.
 
+These are available from a variety of NMEA sentences, binary messages and location services provided by Apple and Android.
+
 | Name     | Description                                                  |
 | -------- | ------------------------------------------------------------ |
-| `<hacc>` | Horizontal accuracy estimate, sometimes referred to as horizontal [position] error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal accuracy of this location at the 68th percentile confidence level. |
-| `<vacc>` | Vertical accuracy estimate, sometimes referred to as vertical [position] error or altitude error.<br/>Measured in meters it represents a likely accuracy of +/- the given value.<br/>Typically the estimated vertical accuracy of this location at the 68th percentile confidence level. |
-| `<cacc>` | Course accuracy estimate, sometimes (incorrectly) referred to as heading / bearing accuracy (or error).<br/>Measured in degrees it represents a likely accuracy of +/- the given value.<br/>Typically the estimated course accuracy at the 68th percentile confidence level. |
-| `<sacc>` | Speed accuracy estimate, sometimes referred to as horizontal speed / velocity error.<br/>Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated horizontal speed (SOG) accuracy at the 68th percentile confidence level. |
-| `<racc>` | Rate of climb (ROC) accuracy estimate, sometimes referred to as vertical speed / velocity error.<br/>Measured in m/s it represents a likely accuracy of +/- the given value.<br/>Typically the estimated rate of climb (ROC) accuracy at the 68th percentile confidence level. |
+| `<hacc>` | Horizontal error estimate in meters, such that the difference from the true position and the reported position is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
+| `<vacc>` | Vertical error estimate in meters, such that the difference from the true position and the reported position is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
+| `<cacc>` | Course over ground (COG) error estimate in degrees, such that the difference from the true COG and the reported COG is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
+| `<sacc>` | Speed over ground (SOG) error estimate in m/s, such that the difference from the true SOG and the reported SOG is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
+| `<racc>` | Rate of climb (ROC) error estimate in m/s, such that the difference from the true ROC and the reported ROC is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
 
 
 #### Source Elements
