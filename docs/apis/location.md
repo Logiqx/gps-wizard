@@ -44,6 +44,12 @@ Accuracy information can be found in the [Location](https://developer.android.co
 
 Accuracy information can be found in the [CLLocation](https://developer.apple.com/documentation/corelocation/cllocation) class.
 
+The Apple documentation says that locations with an accuracy >=50 meters should filtered out when creating [workout routes](https://developer.apple.com/documentation/healthkit/workouts_and_activity_rings/creating_a_workout_route#2955567):
+
+> Because raw Core Location data can contain a significant amount of noise, your app needs to filter out any inaccurate locations before adding them to the route builder. Don't add any locations whose accuracy is greater than 50 meters.
+
+
+
 #### [horizontalAccuracy](https://developer.apple.com/documentation/corelocation/cllocation/1423599-horizontalaccuracy)
 
 ​	The radius of uncertainty for the location, measured in meters.
