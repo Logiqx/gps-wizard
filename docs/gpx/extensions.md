@@ -74,7 +74,7 @@ Schema: [https://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd](https://www
 
 Referred to by "OS Maps" app, but unused in my GPX exports:
 
-```xmlns:gs="http://www.topografix.com/GPX/gpx_style/0/2"```
+`xmlns:gs="http://www.topografix.com/GPX/gpx_style/0/2"`
 
 
 
@@ -132,11 +132,11 @@ Contains the following generic trackpoint items:
 
 Used by Garmin Connect, G7ToWin and Waterspeed.
 
-```xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"```
+`xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
 
 Used by Garmin Connect:
 
-```xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"```
+`xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
 
 Notes:
 
@@ -163,11 +163,11 @@ Contains the following generic trackpoint items:
 
 Sometimes declared in GPX files from Garmin Connect but seemingly unused:
 
-```xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3"```
+`xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3"`
 
 Used by G7ToWin for "DisplayColor" of a track:
 
-```xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"```
+`xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"`
 
 Notes:
 
@@ -197,7 +197,7 @@ Contains the following generic trackpoint items:
 
 Used by COROS and Waterspeed:
 
-```xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"```
+`xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"`
 
 Notes:
 
@@ -212,7 +212,7 @@ Namespace: [https://ordnancesurvey.co.uk/public/schema/route/0.1](https://ordnan
 
 Used by "OS Maps" app:
 
-```xmlns:os="https://ordnancesurvey.co.uk/public/schema/route/0.1"```
+`xmlns:os="https://ordnancesurvey.co.uk/public/schema/route/0.1"`
 
 
 
@@ -222,7 +222,7 @@ Namespace: https://graphhopper.com/public/schema/gpx/1.1
 
 Referred to by "OS Maps" app but apparently unused in my GPX exports:
 
-```xmlns:gh="https://graphhopper.com/public/schema/gpx/1.1"```
+`xmlns:gh="https://graphhopper.com/public/schema/gpx/1.1"`
 
 
 
@@ -230,7 +230,7 @@ Referred to by "OS Maps" app but apparently unused in my GPX exports:
 
 Used by GpsarPro:
 
-```xmlns:gpsarPro="http://www.gpsactionreplay.com/xml"```
+`xmlns:gpsarPro="http://www.gpsactionreplay.com/xml"`
 
 
 
@@ -238,8 +238,12 @@ Used by GpsarPro:
 
 GPX files using schema extensions were identified on my laptop using the following Linux command:
 
-```find . -name "*gpx" -exec grep xmlns: {} \; | sed 's/ /\n/g' | grep xmlns: | sed 's/[\r>]//g' | sort -u```
+```sh
+find . -name "*gpx" -exec grep xmlns: {} \; | sed 's/ /\n/g' | grep xmlns: | sed 's/[\r>]//g' | sort -u
+```
 
 Files using a specific extension schema were identified as follows:
 
-```find . -name '*.gpx' -exec grep -Hc ':gpxx' {} \; | grep -v :0$```
+```sh
+find . -name '*.gpx' -exec grep -Hc ':gpxx' {} \; | grep -v :0$
+```
