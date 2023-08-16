@@ -77,7 +77,7 @@ All of the element names have been intentionally kept as short as possible to av
 
 - Estimated "accuracy" elements have been given short names - e.g. `<hacc>` is the "horizontal accuracy" estimate.
 
-These short names are closely related to the names used by u-blox (e.g. "hAcc" for horizontal accuracy estimate) and Quectel ("HErr" for horizontal error estimate) in their GNSS chipset documentation.
+These short names are closely related to the names used by u-blox (e.g. "hAcc" for horizontal accuracy estimate) and Broadcom ("HErr" for horizontal error estimate) in their GNSS chipset documentation.
 
 The accuracy estimates have been named concisely (e.g. `<hacc>` and `<vacc>`) and use entirely lower case names for consistency with the GPX schema, much like the elements `<hdop>`, `<vdop>`, and `<pdop>` in GPX 1.0 and 1.1.
 
@@ -108,11 +108,11 @@ These are available from a variety of NMEA sentences, binary messages and locati
 
 | Name     | Description                                                  |
 | -------- | ------------------------------------------------------------ |
-| `<hacc>` | Horizontal error estimate in meters, such that the difference from the true position and the reported position is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
-| `<vacc>` | Vertical error estimate in meters, such that the difference from the true position and the reported position is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
-| `<cacc>` | Course over ground (COG) error estimate in degrees, such that the difference from the true COG and the reported COG is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
-| `<sacc>` | Speed over ground (SOG) error estimate in m/s, such that the difference from the true SOG and the reported SOG is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
-| `<racc>` | Rate of climb (ROC) error estimate in m/s, such that the difference from the true ROC and the reported ROC is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
+| `<hacc>` | Horizontal accuracy / error estimate in meters, such that the difference from the true position and the reported position is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
+| `<vacc>` | Vertical accuracy / error estimate in meters, such that the difference from the true position and the reported position is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
+| `<cacc>` | Course over ground (COG) accuracy / error estimate in degrees, such that the difference from the true COG and the reported COG is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
+| `<sacc>` | Speed over ground (SOG) accuracy / error estimate in m/s, such that the difference from the true SOG and the reported SOG is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
+| `<racc>` | Rate of climb (ROC) accuracy / error estimate in m/s, such that the difference from the true ROC and the reported ROC is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed. |
 
 
 #### Source Elements

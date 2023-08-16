@@ -326,35 +326,35 @@
       <xsd:element name="hacc" type="positionalAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Horizontal error estimate in meters, such that the difference from the true position and the reported position is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
+            Horizontal accuracy / error estimate in meters, such that the difference from the true position and the reported position is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="vacc" type="positionalAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Vertical error estimate in meters, such that the difference from the true position and the reported position is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
+            Vertical accuracy / error estimate in meters, such that the difference from the true position and the reported position is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="cacc" type="courseAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Course over ground (COG) error estimate in degrees, such that the difference from the true COG and the reported COG is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
+            Course over ground (COG) accuracy / error estimate in degrees, such that the difference from the true COG and the reported COG is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="sacc" type="speedAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Speed over ground (SOG) error estimate in m/s, such that the difference from the true SOG and the reported SOG is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
+            Speed over ground (SOG) accuracy / error estimate in m/s, such that the difference from the true SOG and the reported SOG is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="racc" type="speedAccuracyType" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            Rate of climb (ROC) error estimate in m/s, such that the difference from the true ROC and the reported ROC is less than the error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
+            Rate of climb (ROC) accuracy / error estimate in m/s, such that the difference from the true ROC and the reported ROC is less than the accuracy / error estimate 68% of the time. 68% corresponds to 1-sigma of a normal distribution, but this does not imply that errors are independent or normally distributed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
