@@ -182,7 +182,7 @@ Notes:
 
 #### ClueTrust
 
-Namespace: http://www.cluetrust.com/XML/GPXDATA/1/0
+Namespace: [http://www.cluetrust.com/XML/GPXDATA/1/0](http://www.cluetrust.com/XML/GPXDATA/1/0)
 
 Schema: [http://www.cluetrust.com/Schemas/gpxdata10.xsd](http://www.cluetrust.com/Schemas/gpxdata10.xsd)
 
@@ -218,7 +218,7 @@ Used by "OS Maps" app:
 
 #### Graphhopper
 
-Namespace: https://graphhopper.com/public/schema/gpx/1.1
+Namespace: [https://graphhopper.com/public/schema/gpx/1.1](https://graphhopper.com/public/schema/gpx/1.1)
 
 Referred to by "OS Maps" app but apparently unused in my GPX exports:
 
