@@ -5,12 +5,53 @@
     - vAcc, sAcc, cAcc were added in Android 8.0 (Aug 2017)
   - NMEA - [NMEA Listener](https://developer.android.com/reference/android/location/OnNmeaMessageListener)
     - Galaxy S7 - Broadcom BCM4774
-      - GSA, GSV, GGA, RMC. Does not include GLL or VTG. Nor does it include GST or GBS
-      - **PGLOR** - RID (once... version information), STA (GLL status) and PFM (infrequent... platform status)
+      - Common - GGA, GSA, GSV, RMC
+        - GGA - $GPGGA
+        - GSA - $BDGSA, $GAGSA, $GNGSA, $GPGSA, $QZGSA, $IMGSA
+        - GSV - $GLGSV, $GPGSV
+        - RMC - $GPRMC
+        - Does <u>not</u> include VTG.
+      - Less common - DTM, GLL, GNS, ZDA
+        - Does <u>not</u> include DTM, GLL, GNS or ZDA
+      - Special - GBS, GST
+        - Does <u>not</u> include GBS or GST
+      - Proprietary - GLOR
+        - $PGLOR
+          - RID (once... version information)
+          - STA (GLL status)
+          - PFM (infrequent... platform status)
+    - Galaxy S10 Lite - Qualcomm Snapdragon 855
+      - Common - GGA, GSA, GSV, RMC, VTG
+        - GGA - $GNGGA
+        - GSA - $GNGSA
+        - GSV - $GAGSV, $GBGSV, $GLGSV, $GPGSV
+        - RMC - $GNRMC
+        - VTG - $GNVTG
+      - Less common - DTM, GLL, GNS, ZDA
+        - DTM - $GNDTM
+        - GNS - $GNGNS
+        - Does <u>not</u> include GLL or ZDA
+      - Special - GBS, GST
+        - Does <u>not</u> include GBS or GST
+      - Proprietary - PS (Snapdragon)
+        - MSG - $PSMSG
     - Galaxy A53 - Samsung Exynos 1280
-      - GSA, GSV, GGA, GLL, RMC, VTG. Does not include GBS or GST
-      - EVT (infrequent... date, time and one integer)
-      - PSAMCLK (maybe clock info), PSAMID (infrequent... version), PSAMSA (time + lat + lon)
+      - Common - GGA, GSA, GSV, RMC, VTG
+        - GGA - $GPGGA
+        - GSA - $BDGSA, $GAGSA, $GNGSA, $GPGSA
+        - GSV - $BDGSV, $GAGSV, $GLGSV, $GPGSV
+        - RMC - $GPRMC
+        - VTG - $GPVTG
+      - Less common - DTM, GLL, GNS, ZDA
+        - GLL - $GPGLL
+        - Does <u>not</u> include DTM, GNS or ZDA
+      - Special - GBS, GST
+        - EVT - $GPEVT (infrequent... date, time and one integer)
+        - Does <u>not</u> include GBS or GST
+      - Proprietary - PSAM (Samsung)
+        - CLK - $PSAMCLK (maybe clock info)
+        - ID - $PSAMID (infrequent... version)
+        - SA - $PSAMSA (time + lat + lon)
       - Thoughts
         - Maybe Android is only sending certain NMEA messages to the listener? Perhaps it filters out PGLOR?
         - Maybe the raw + accuracy data is internal to the Exynos 1280, thus being absent from NMEA?
@@ -28,7 +69,6 @@
   - Messages (Nav) - [GnssNavigationMessage](https://developer.android.com/reference/android/location/GnssNavigationMessage)
     - Nav,Svid,Type,Status,MessageId,Sub-messageId,Data(Bytes)
     - Note: It's possible to get these online after the event
-  
 - Articles
   - Use of Kalman filter on [maddevs](https://maddevs.io/blog/reduce-gps-data-error-on-android-with-kalman-filter-and-accelerometer/)
   - [Measuring GNSS accuracy on Android devices](https://barbeau.medium.com/measuring-gnss-accuracy-on-android-devices-6824492a1389) by  Sean Barbeau Jul 2019
