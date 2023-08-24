@@ -46,19 +46,28 @@ Example third party phone / watch app:
 ```xml
 <trk>
   <src>
-    Apple Watch Series 8
+    Samsung Galaxy A53
     <hardware>
-      <manufacturer>Apple</manufacturer>
-      <product>Watch Series 8</product>
-      <serial>123456789</serial>
-      <name>Mike's Apple Watch</name>
-      <version>8.5.1</version>
+      <manufacturer>Samsung</manufacturer>
+      <product>Galaxy A53</product>
+      <model>SM-A536BZKNEUB</model>
+      <serial>ABCDE9ABC9X</serial>
+      <name>Mike's A53</name>
+      <version>android13-5.10.136</version>
     </hardware>
     <software>
-      <developer>Freesoft Forever</developer>
-      <application>GPS Logger</application>
-      <link href="https://apps.apple.com/us/app/gps-logger/id123456789" />
-      <version>1.1.0</version>
+      <developer>barbeauDev</developer>
+      <application>GPSTest</application>
+      <link href="https://github.com/barbeau/gpstest">
+        <text>GitHub</text>
+      </link>
+      <link href="https://play.google.com/store/apps/details?id=com.android.gpstest">
+        <text>Google Play</text>
+      </link>
+      <link href="https://f-droid.org/packages/com.android.gpstest.osmdroid/">
+        <text>F-Droid</text>
+      </link>
+      <version>3.10.3</version>
     </software>
   </src>
   <trkseg>...</trkseg>

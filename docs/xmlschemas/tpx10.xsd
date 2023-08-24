@@ -51,7 +51,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Manufacturer of the GPS device / wearable.
-            e.g. "Apple"
+            >e.g. "Samsung"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -59,7 +59,15 @@
         <xsd:annotation>
           <xsd:documentation>
             Product name of the GPS device / wearable, preferably without mentioning the product manufacturer.
-            e.g. "Watch Series 8"
+            e.g. "Galaxy A53"
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="model" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Model number of the GPS device / wearable.
+            e.g. "‎SM-A536BZKNEUB"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -67,7 +75,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Serial number of the GPS device / wearable.
-            e.g. "123456789"
+            e.g. "ABCDE9ABC9X"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -75,7 +83,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Name of the GPS device / wearable, typically chosen by the owner.
-            e.g. "Nathan's Apple Watch"
+            e.g. "Mike's A53"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -83,7 +91,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Firmware / software / OS version of the GPS device / wearable.
-            e.g. "8.5.1"
+            e.g. "android13-5.10-A536BXXS7CWG2"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -102,7 +110,7 @@
           <xsd:documentation>
             Developer of the software / application used to capture + export the GPS data.
             This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.
-            e.g. "Hoolan Ltd"
+            e.g. "barbeauDev"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -111,15 +119,15 @@
           <xsd:documentation>
             Name of the software / application used to capture + export the GPS data.
             This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.
-            e.g. "Hoolan"
+            e.g. "GPSTest"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="link" type="linkType" minOccurs="0">
+      <xsd:element name="link" type="linkType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
             Link to the software / application used to capture + export the GPS data.
-            e.g. "https://www.hoolan.app/" with href element.
+            e.g. href="https://github.com/barbeau/gpstest"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -127,7 +135,7 @@
         <xsd:annotation>
           <xsd:documentation>
             Version of the software / application used to capture + export the GPS data.
-            e.g. "1.6.0"
+            e.g. "3.10.3"
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>

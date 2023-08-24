@@ -655,6 +655,13 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+      <xsd:element name="model" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Model number of the GPS device / wearable.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
       <xsd:element name="serial" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
@@ -700,7 +707,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="link" type="linkType" minOccurs="0">
+      <xsd:element name="link" type="linkType" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
             Link to the software / application used to capture + export the GPS data.
