@@ -27,7 +27,7 @@ Example of a custom-built GPS logger using a Beitian BE-280 / u-blox M10:
   <src>
     ESP-GPS
     <hardware>
-      <manufacturer>Beitain</manufacturer>
+      <manufacturer>Beitian</manufacturer>
       <product>BE-280</product>
       <name>K888 ESP</name>
     </hardware>
