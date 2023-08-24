@@ -10,12 +10,13 @@ Existing software should be expected to load / import GPX 1.1.1 files without an
 - Existing software that recognises `<src>` elements will also recognise them fine in GPX 1.1.1 due to the use of mixed content.
 - Existing software does not appear to rely upon the GPX version being either "1.0" or "1.1", so far as I have been able to ascertain.
 
-Preliminary GPX 1.1.1 testing has been successful in several applications. Both `<course>` and `<speed>` were loaded successfully into the following speedsurfing applications, and GPX 1.1.1 files could be imported to Strava:
+Preliminary GPX 1.1.1 testing has been successful in several applications. Both `<course>` and `<speed>` were loaded successfully into the following speedsurfing applications, and GPX 1.1.1 files could be imported to Strava and Google My Maps:
 
 - [GPSResults](https://www.gps-speed.com/)
 - [GpsarPro](http://gpsactionreplay.free.fr/)
 - [GPS Speedreader](https://ecwindfest.org/GPS/GPSSpeedreader.html)
 - [Strava](https://strava.com/)
+- [Google My Maps](https://www.google.com/maps/d/)
 
 n.b. Strava does not (currently) make use of the `<speed>` elements in GPX files and it simply calculates speed from the positional data.
 
