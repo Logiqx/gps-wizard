@@ -45,17 +45,17 @@ The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element containin
 | `<manufacturer>` | Manufacturer of the GPS device / wearable.<br/>e.g. "Apple"  |
 | `<product>`      | Product name of the GPS device / wearable, preferably without mentioning the product manufacturer.<br/>e.g. "Watch Series 8" |
 | `<serial>`       | Serial number of the GPS device / wearable.<br/>e.g. "123456789" |
-| `<name>`         | Name of the GPS device / wearable, typically chosen by the owner.<br/>e.g. "Nathan's Apple Watch" |
+| `<name>`         | Name of the GPS device / wearable, typically chosen by the owner.<br/>e.g. "Mike's Apple Watch" |
 | `<version>`      | Firmware / software / OS version of the GPS device / wearable.<br/>e.g. "8.5.1" |
 
 **`<software>`** contains the following optional elements:
 
 | Name            | Description                                                  |
 | --------------- | ------------------------------------------------------------ |
-| `<developer>`   | Developer of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Hoolan Ltd" |
-| `<application>` | Name of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Hoolan" |
-| `<link>`        | GPX link to the software / application used to capture + export the GPS data.<br/>e.g. `<link href="https://www.hoolan.app/" />` |
-| `<version>`     | Version of the software / application used to capture + export the GPS data.<br/>e.g. "1.6.0" |
+| `<developer>`   | Developer of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "John Smith" |
+| `<application>` | Name of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "GPS Logger" |
+| `<link>`        | GPX link to the software / application used to capture + export the GPS data.<br/>e.g. `<link href="https://apps.apple.com/us/app/gps-logger/id123456789" />` |
+| `<version>`     | Version of the software / application used to capture + export the GPS data.<br/>e.g. "1.1.0" |
 
 Note: Since the `<src>` element is a "mixed" type you can still include a simple string to describe the device, such as "Apple Watch Series 8".
 

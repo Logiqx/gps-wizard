@@ -17,7 +17,31 @@ An example trackpoint including course, speed and accuracy estimates:
 </trkpt>
 ```
 
-The new `<src>` element of GPX 1.1.1 is a "mixed" type to provide forwards and backwards compatibility with GPX 1.1:
+The new `<src>` element of GPX 1.1.1 is a "mixed" type to provide forwards and backwards compatibility with GPX 1.1.
+
+Example of a custom-built GPS logger using a Beitian BE-280 / u-blox M10:
+
+
+```xml
+<trk>
+  <src>
+    ESP-GPS
+    <hardware>
+      <manufacturer>Beitain</manufacturer>
+      <product>BE-280</product>
+      <name>K888 ESP</name>
+    </hardware>
+    <software>
+      <application>ESP-GPS</application>
+      <link href="https://github.com/RP6conrad/ESP-GPS-Logger" />
+      <version>5.75</version>
+    </software>
+  </src>
+  <trkseg>...</trkseg>
+</trk>
+```
+
+Example third party phone / watch app:
 
 ```xml
 <trk>
@@ -27,14 +51,14 @@ The new `<src>` element of GPX 1.1.1 is a "mixed" type to provide forwards and b
       <manufacturer>Apple</manufacturer>
       <product>Watch Series 8</product>
       <serial>123456789</serial>
-      <name>Nathan's Apple Watch</name>
+      <name>Mike's Apple Watch</name>
       <version>8.5.1</version>
     </hardware>
     <software>
-      <developer>Hoolan Ltd</developer>
-      <application>Hoolan</application>
-      <link href="https://www.hoolan.app/" />
-      <version>1.6.0</version>
+      <developer>John Smith</developer>
+      <application>GPS Logger</application>
+      <link href="https://apps.apple.com/us/app/gps-logger/id123456789" />
+      <version>1.1.0</version>
     </software>
   </src>
   <trkseg>...</trkseg>
