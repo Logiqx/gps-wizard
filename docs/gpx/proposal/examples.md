@@ -33,9 +33,7 @@ The new `<src>` element of GPX 1.1.1 is a "mixed" type to provide forwards and b
     <software>
       <developer>Hoolan Ltd</developer>
       <application>Hoolan</application>
-      <link>
-        <href>https://www.hoolan.app/</href>
-      </link>
+      <link href="https://www.hoolan.app/" />
       <version>1.6.0</version>
     </software>
   </src>
