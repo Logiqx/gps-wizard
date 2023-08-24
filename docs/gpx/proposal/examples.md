@@ -55,7 +55,7 @@ Example third party phone / watch app:
       <version>8.5.1</version>
     </hardware>
     <software>
-      <developer>John Smith</developer>
+      <developer>Freesoft Forever</developer>
       <application>GPS Logger</application>
       <link href="https://apps.apple.com/us/app/gps-logger/id123456789" />
       <version>1.1.0</version>

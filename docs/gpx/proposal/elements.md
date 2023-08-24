@@ -52,7 +52,7 @@ The GPX 1.1.1 proposal introduces a more sophisticated `<src>` element containin
 
 | Name            | Description                                                  |
 | --------------- | ------------------------------------------------------------ |
-| `<developer>`   | Developer of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "John Smith" |
+| `<developer>`   | Developer of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "Freesoft Forever" |
 | `<application>` | Name of the software / application used to capture + export the GPS data.<br/>This may match the "creator" attribute but unlike "creator", it should persist after (possible) post-processing.<br/>e.g. "GPS Logger" |
 | `<link>`        | GPX link to the software / application used to capture + export the GPS data.<br/>e.g. `<link href="https://apps.apple.com/us/app/gps-logger/id123456789" />` |
 | `<version>`     | Version of the software / application used to capture + export the GPS data.<br/>e.g. "1.1.0" |
