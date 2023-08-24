@@ -13,7 +13,13 @@ Feel free to browse is any order and use the browser back-button to return to th
   - [History of GPX 1.1 and GPX extensions](history.md)
     - [Common elements in GPX extensions](../extensions.md)
 - Proposal
-  - [Example schema for GPX 1.1.1](enhancements.md)
-  - [New elements in GPX 1.1.1](elements.md)
-  - [Examples of GPX 1.1.1](examples.md)
-  - [Compatibility and summary of GPX 1.1.1](summary.md)
+  - [Example schema](enhancements.md) for GPX 1.1.1
+  - [New elements](elements.md) for GPX 1.1.1
+  - [Examples](examples.md) of GPX 1.1.1
+  - [Compatibility and summary](summary.md) of GPX 1.1.1
+- Additional suggestions
+  - Sensors
+    - [Health](health.md) elements
+    - [Nautical and aeronautical](nautical.md) elements
+    - [Weather and water](weather.md) elements
+  - [Fix type](fix-type.md)
