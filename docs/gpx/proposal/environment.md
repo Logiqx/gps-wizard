@@ -11,11 +11,11 @@ Elements such as temperature and water depth have been suggested for the GPX sta
 | depth    | Water depth in metres (m)                                    |
 | pressure | Barometric pressure in hPa or millibars                      |
 | rhum     | Relative humidity in percent (%)                             |
-| winddir  | True wind direction relative to true north in degrees        |
-| windspd  | True wind speed in metres per second (m/s)                   |
+| twd      | True wind direction (TWD) relative to true north in degrees  |
+| tws      | True wind speed (TWS) in metres per second (m/s)             |
 | wtemp    | Water temperature degrees centigrade (° C)                   |
 
-Note: Beyond the list above, there are several wind and tide elements which also need to be considered.
+Note: Beyond the list above, there are tidal elements which also need to be considered.
 
 
 
@@ -35,6 +35,7 @@ Note: Beyond the list above, there are several wind and tide elements which also
 - Garmin
   - GPX extensions
     - TrackPointExtension v2 - [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
+  - Sailing Terminology and Definitions - [article](https://support.garmin.com/en-GB/?faq=e5LwusViLZ95VTDwn2Alt7)
 - ClueTrust
   - GPXData - [schema](http://www.cluetrust.com/Schemas/gpxdata10.xsd) download - search for `<xsd:complexType name="dataPointType">`
 - Sailmon
