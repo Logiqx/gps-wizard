@@ -7,7 +7,7 @@ Nautical and aeronautical elements have been suggested.
 | Name    | Description                                                  |
 | ------- | ------------------------------------------------------------ |
 | aspeed  | Air speed is the speed of an aircraft relative to the air in m/s |
-| heading | Vessel heading, differs from course made good due to effects of wind and water current in degrees |
+| heading | Heading is the direction in which the craft's bow or nose is pointed, relative to true north in degrees |
 | heel    | [heel](https://en.wikipedia.org/wiki/Ship_motions#Roll) is the offset or deviation from normal roll in degrees |
 | roll    | [roll](https://en.wikipedia.org/wiki/Ship_motions#Roll) is the tilting rotation of a vessel about its longitudinal / X axis in degrees |
 | pitch   | [pitch](https://en.wikipedia.org/wiki/Ship_motions#Pitch) is the up/down rotation of a vessel about its transverse / Y axis in degrees |

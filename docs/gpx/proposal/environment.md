@@ -11,7 +11,7 @@ Elements such as temperature and water depth have been suggested for the GPX sta
 | depth    | Water depth in metres (m)                                    |
 | pressure | Barometric pressure in hPa or millibars                      |
 | rhum     | Relative humidity in percent (%)                             |
-| winddir  | True wind direction relative to due north in degrees         |
+| winddir  | True wind direction relative to true north in degrees        |
 | windspd  | True wind speed in metres per second (m/s)                   |
 | wtemp    | Water temperature degrees centigrade (° C)                   |
 

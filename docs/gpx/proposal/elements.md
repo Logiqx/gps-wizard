@@ -10,7 +10,7 @@ They are all optional, although the values of `<course>` and `<speed>` as provid
 
 | Name       | Description                                                  |
 | ---------- | ------------------------------------------------------------ |
-| `<course>` | Course over ground (COG) in degrees is the actual direction of travel relative to due north.<br/>COG is an independent measurement from position, so it is possible (and not an error) for the difference between two successive positions to be inconsistent with the COG values. |
+| `<course>` | Course over ground (COG) in degrees is the actual direction of travel relative to true north.<br/>COG is an independent measurement from position, so it is possible (and not an error) for the difference between two successive positions to be inconsistent with the COG values. |
 | `<speed>`  | Speed over ground (SOG) in m/s is the horizontal speed calculated by the GPS / GNSS chipset.<br/>SOG is an independent measurement from position, so it is possible (and not an error) for the difference between two successive positions to be inconsistent with the SOG values. |
 | `<roc>`    | Rate of climb (ROC) in m/s is the vertical speed calculated by the GPS / GNSS chipset.<br/>ROC is an independent measurement from position, so it is possible (and not an error) for the difference between two successive positions to be inconsistent with the ROC values. |
 
