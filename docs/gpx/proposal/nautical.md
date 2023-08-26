@@ -8,7 +8,7 @@ Nautical and aeronautical elements have been suggested.
 | ------- | ------------------------------------------------------------ |
 | heading | Vessel heading, differs from course made good due to effects of wind and water current. |
 
-Wind and water data is listed in a separate [weather and water](weather.md) document.
+Wind and tide data is listed in a separate [environment](environment.md) document.
 
 
 
