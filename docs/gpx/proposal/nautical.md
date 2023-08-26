@@ -7,7 +7,7 @@ Nautical and aeronautical elements have been suggested.
 | Name    | Description                                                  |
 | ------- | ------------------------------------------------------------ |
 | heading | Vessel heading, differs from course made good due to effects of wind and water current. |
-| heel    | [heel](https://en.wikipedia.org/wiki/Ship_motions#Roll) offset or deviation from normal roll |
+| heel    | [heel](https://en.wikipedia.org/wiki/Ship_motions#Roll) is the offset or deviation from normal roll |
 | roll    | [roll](https://en.wikipedia.org/wiki/Ship_motions#Roll) is the tilting rotation of a vessel about its longitudinal / X axis |
 | pitch   | [pitch](https://en.wikipedia.org/wiki/Ship_motions#Pitch) is the up/down rotation of a vessel about its transverse / Y axis |
 | trim    | [trim](https://en.wikipedia.org/wiki/Ship_motions#Pitch) is the offset or deviation from normal pitch |
