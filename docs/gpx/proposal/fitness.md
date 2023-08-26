@@ -4,7 +4,7 @@
 
 The addition of core outputs from fitness and cycling sensors has been suggested.
 
-| element | Description                                                  |
+| Name    | Description                                                  |
 | ------- | ------------------------------------------------------------ |
 | cad     | Cadence - cycling (rpm), swimming / rowing (stroke rate), or running (steps per minute) |
 | dist    | Total distance in meters (m)                                 |
