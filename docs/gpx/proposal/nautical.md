@@ -15,15 +15,15 @@ Nautical and aeronautical elements have been suggested.
 
 There are also some running totals available:
 
-| Name      | Description                        |
-| --------- | ---------------------------------- |
-| wdistance | Total water distance in meters (m) |
+| Name  | Description                                     |
+| ----- | ----------------------------------------------- |
+| wdist | Cumulative distance through water in meters (m) |
 
 Wind and tide measurements will be listed in the [environment](environment.md) document.
 
 Notes:
 
-- "wdistance" is akin to "distance" in the [fitness](fitness.md) metrics and is available from the [VLW](https://gpsd.gitlab.io/gpsd/NMEA.html#_vlw_distance_traveled_through_water) sentence of NMEA
+- "wdist" is akin to the "dist" metric in on the [fitness](fitness.md) page and is available from the [VLW](https://gpsd.gitlab.io/gpsd/NMEA.html#_vlw_distance_traveled_through_water) sentence of NMEA
 - This list ignores NMEA trawler data such as [TDS](https://gpsd.gitlab.io/gpsd/NMEA.html#_tds_trawl_door_spread_distance), [TFI](https://gpsd.gitlab.io/gpsd/NMEA.html#_tfi_trawl_filling_indicator), [TPC](https://gpsd.gitlab.io/gpsd/NMEA.html#_tpc_trawl_position_cartesian_coordinates), [TPR](https://gpsd.gitlab.io/gpsd/NMEA.html#_tpr_trawl_position_relative_vessel), and [TPT](https://gpsd.gitlab.io/gpsd/NMEA.html#_tpt_trawl_position_true)
 
 

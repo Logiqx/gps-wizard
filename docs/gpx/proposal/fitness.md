@@ -15,12 +15,12 @@ Instantaneous readings:
 
 Summary statistics for each moment in time:
 
-| element  | Description                                 |
-| -------- | ------------------------------------------- |
-| distance | Total distance in meters (m)                |
-| gain     | Total elevation gain in meters (m)          |
-| steps    | Total steps - walking, hiking, running, etc |
-| strokes  | Total strokes - swimming or rowing          |
+| element | Description                                 |
+| ------- | ------------------------------------------- |
+| dist    | Total distance in meters (m)                |
+| gain    | Total elevation gain in meters (m)          |
+| steps   | Total steps - walking, hiking, running, etc |
+| strokes | Total strokes - swimming or rowing          |
 
 
 
