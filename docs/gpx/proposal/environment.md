@@ -4,13 +4,17 @@
 
 Elements such as temperature and water depth have been suggested for the GPX standard:
 
-| element | Description       |
-| ------- | ----------------- |
-| atemp   | Air temperature   |
-| depth   | Depth             |
-| wtemp   | Water temperature |
+| element   | Description         |
+| --------- | ------------------- |
+| atemp     | Air temperature     |
+| depth     | Depth               |
+| pressure  | Barometric pressure |
+| windangle | True wind angle     |
+| winddir   | True wind direction |
+| windspeed | True wind speed     |
+| wtemp     | Water temperature   |
 
-Note: Beyond atemp, depth and wtemp there are many wind and tide elements that need to be considered.
+Note: Beyond the list above, there are several wind and tide elements which also need to be considered.
 
 
 
@@ -32,3 +36,5 @@ Note: Beyond atemp, depth and wtemp there are many wind and tide elements that n
     - TrackPointExtension v2 - [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
 - ClueTrust
   - GPXData - [schema](http://www.cluetrust.com/Schemas/gpxdata10.xsd) download - search for `<xsd:complexType name="dataPointType">`
+- Sailmon
+  - Max - [Live data](https://sailmon.com/max/#1675689499683-c73158df-1d1313e9-e463)
