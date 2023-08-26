@@ -8,13 +8,13 @@ This document summarises  the behavior of Garmin Connect, BaseCamp and MapSource
   - i.e. `xmlns="http://www.topografix.com/GPX/1/0"` or `xmlns="http://www.topografix.com/GPX/1/1"`
 
 - Connect is very relaxed when importing GPX 1.0 and GPX 1.1 files, so long as `xmlns` refers to GPX 1.0 or 1.1
-  - The relaxed GPX import of Connect is fully tolerant of files conforming to future GPX 1.1.1 / 1.2 / 2.0 schemas.
+  - The relaxed GPX import of Connect is fully tolerant of files conforming to future GPX 1.1.1 / 1.2 schemas.
 
 - BaseCamp is very relaxed when importing GPX 1.0 files, but very strict when importing GPX 1.1 files.
-  - The relaxed GPX 1.0 import of BaseCamp can be used as a simple workaround for files conforming to GPX 1.1.1 / 1.2 / 2.0 schemas.
+  - The relaxed GPX 1.0 import of BaseCamp can be used as a simple workaround for files conforming to GPX 1.1.1 / 1.2 schemas.
 
 - MapSource is equally strict for GPX 1.0 and GPX 1.1 files. It is however an old product that was last updated in October 2010.
-  - GPX 1.1.1 / 1.2 / 2.0 files would need to be converted to GPX 1.0 or 1.1 using a tool such as GPSBabel.
+  - GPX 1.1.1 / 1.2 files would need to be converted to GPX 1.0 or 1.1 using a tool such as GPSBabel.
 
 
 
@@ -97,7 +97,7 @@ Non-standard GPX 1.1 elements are basically ignored by the GPX import.
 
 
 
-#### GPX 1.1.1 / 1.2 / 2.0
+#### GPX 1.1.1 / 1.2
 
 Connect will only import GPX files when  `xmlns` is `"http://www.topografix.com/GPX/1/0"` or `"http://www.topografix.com/GPX/1/1"`.
 
@@ -105,12 +105,11 @@ This is potentially problematic because you can't refer to future versions of th
 
 - `xmlns="http://www.topografix.com/GPX/1/1/1"`
 - `xmlns="http://www.topografix.com/GPX/1/2"`
-- `xmlns="http://www.topografix.com/GPX/2/0"`
 
 However, there is a simple workaround to import newer versions of GPX files into Connect:
 
 - Using `xmlns="http://www.topografix.com/GPX/1/0"` (or `".../GPX/1/1"`) allows for pretty much any XML elements, in any order!
-  - This is obviously a hack, but this one-liner would allow GPX 1.1.1 / 1.2 / 2.0 files to be imported into Connect.
+  - This is obviously a hack, but this one-liner would allow GPX 1.1.1 / 1.2 files to be imported into Connect.
   - `<speed>` and `<course>` could potentially be utilised by the Garmin software, since they are in the same place as GPX 1.0.
   - The GPX version number could still be set as appropriate - e.g. `version="1.1.1"`, it would just be the `xmlns` that would be misleading.
   - `xsi:schemaLocation` can specify the correct location(s) of any XSD file(s) - both the core GPX schema and any extensions.
@@ -259,7 +258,7 @@ Notes:
 
 
 
-#### GPX 1.1.1 / 1.2 / 2.0
+#### GPX 1.1.1 / 1.2
 
 BaseCamp will only import GPX files when  `xmlns` is `"http://www.topografix.com/GPX/1/0"` or `"http://www.topografix.com/GPX/1/1"`.
 
@@ -267,12 +266,11 @@ This is potentially problematic because you can't refer to future versions of th
 
 - `xmlns="http://www.topografix.com/GPX/1/1/1"`
 - `xmlns="http://www.topografix.com/GPX/1/2"`
-- `xmlns="http://www.topografix.com/GPX/2/0"`
 
 However, there is a simple workaround to import newer versions of GPX files into BaseCamp :
 
 - Using `xmlns="http://www.topografix.com/GPX/1/0"` allows for pretty much any XML elements, in any order!
-  - This is obviously a hack, but this one-liner would allow GPX 1.1.1 / 1.2 / 2.0 files to be imported into BaseCamp.
+  - This is obviously a hack, but this one-liner would allow GPX 1.1.1 / 1.2 files to be imported into BaseCamp.
   - `<speed>` and `<course>` could potentially be utilised by the Garmin software, since they are in the same place as GPX 1.0.
   - The GPX version number could still be set as appropriate - e.g. `version="1.1.1"`, it would just be the `xmlns` that would be misleading.
   - `xsi:schemaLocation` can specify the correct location(s) of any XSD file(s) - both the core GPX schema and any extensions.
@@ -384,7 +382,7 @@ Notes:
 
 
 
-#### GPX 1.1.1 / 1.2 / 2.0
+#### GPX 1.1.1 / 1.2
 
 MapSource will only import GPX files when  `xmlns` is `"http://www.topografix.com/GPX/1/0"` or `"http://www.topografix.com/GPX/1/1"`.
 
@@ -392,7 +390,6 @@ This is problematic because you can't refer to future versions of the GPX standa
 
 - `xmlns="http://www.topografix.com/GPX/1/1/1"`
 - `xmlns="http://www.topografix.com/GPX/1/2"`
-- `xmlns="http://www.topografix.com/GPX/2/0"`
 
 At this time, I cannot see a workaround, other than converting newer formats to GPX 1.0 or 1.1 using a tool such as GPSBabel.
 
@@ -407,13 +404,13 @@ The final version of MapSource was version [6.16.3](https://www8.garmin.com/supp
 - BaseCamp and MapSource will only import / load files referencing the GPX 1.0 or 1.1 namespaces.
   - i.e. `xmlns="http://www.topografix.com/GPX/1/0"` or `xmlns="http://www.topografix.com/GPX/1/1"`
 - BaseCamp is very relaxed when importing GPX 1.0 files, but very strict when importing GPX 1.1 files.
-  - The relaxed GPX 1.0 import of BaseCamp can be used as a simple workaround for files conforming to GPX 1.1.1 / 1.2 / 2.0.
+  - The relaxed GPX 1.0 import of BaseCamp can be used as a simple workaround for files conforming to GPX 1.1.1 / 1.2.
 - MapSource is equally strict for GPX 1.0 and GPX 1.1 files. It is however an old product that was last updated in October 2010.
-  - GPX 1.1.1 / 1.2 / 2.0 files would need to be converted to GPX 1.0 or 1.1 using a tool such as GPSBabel.
+  - GPX 1.1.1 / 1.2 files would need to be converted to GPX 1.0 or 1.1 using a tool such as GPSBabel.
 
 
 
-### GPX 1.1.1 / 1.2 / 2.0
+### GPX 1.1.1 / 1.2
 
 Files conforming to GPX 1.1.1 would be expected to have a valid GPX header:
 
@@ -439,6 +436,6 @@ GPX 1.1.1 files can easily be loaded into BaseCamp, simply by changing the `xmln
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1/1 http://www.topografix.com/GPX/1/1/1/gpx.xsd">
 ```
 
-Whilst this may be wrong, it is a simple way to load a GPX 1.1.1 / 1.2 / 2.0 file into BaseCamp without any further modifications.
+Whilst this may be wrong, it is a simple way to load a GPX 1.1.1 / 1.2 file into BaseCamp without any further modifications.
 
 In the future, Garmin can potentially support `xmlns="http://www.topografix.com/GPX/1/1/1"` simply by using their "relaxed" GPX import.
