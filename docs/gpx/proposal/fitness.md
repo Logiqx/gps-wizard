@@ -8,7 +8,7 @@ Instantaneous readings:
 
 | element | Description                                                  |
 | ------- | ------------------------------------------------------------ |
-| cad     | Cadence - cycling (rpm), running (steps per minute), or rowing (stroke rate) |
+| cad     | Cadence - cycling (rpm), running (steps per minute), swimming or rowing (stroke rate) |
 | hr      | Heart rate (bpm)                                             |
 | power   | Power (watts)                                                |
 | sensor  | Sensor for cadence - e.g. "bike" (wheel), or "pod" (pedometer) |
@@ -20,7 +20,7 @@ Summary statistics for each moment in time:
 | distance | Total distance (m)                          |
 | gain     | Total elevation gain (m)                    |
 | steps    | Total steps - walking, hiking, running, etc |
-| strokes  | Total strokes - rowing                      |
+| strokes  | Total strokes - swimming or rowing          |
 
 
 
