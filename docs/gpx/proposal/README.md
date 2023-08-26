@@ -17,6 +17,8 @@ Feel free to browse is any order and use the browser back-button to return to th
   - [New elements](elements.md) for GPX 1.1.1
   - [Examples](examples.md) of GPX 1.1.1
   - [Compatibility and summary](summary.md) of GPX 1.1.1
+- Investigations
+  - [Garmin testing](garmin.md) - e.g. BaseCamp
 - Additional suggestions
   - Sensors
     - [Health](health.md) elements
