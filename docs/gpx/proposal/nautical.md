@@ -22,5 +22,10 @@ Wind and water data is listed in a separate [weather and water](weather.md) docu
 
 #### References
 
-- [Aug 24](https://groups.io/g/gpx/message/47)
-- Common [extensions](../extensions.md)
+- GPX developers list
+  - [Aug 24](https://groups.io/g/gpx/message/47)
+- GPX proposal
+  - Summary of common GPX [extensions](../extensions.md)
+- Garmin
+  - GPX extensions
+    - TrackPointExtension v2 - [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) - search for "bearing"

@@ -21,6 +21,13 @@ Weather, wind and water elements have been suggested.
 
 #### References
 
-- [Aug 24](https://groups.io/g/gpx/message/47)
-- [Aug 5](https://groups.io/g/gpx/message/35)
-- Common [extensions](../extensions.md)
+- GPX developers list
+  - [Aug 24](https://groups.io/g/gpx/message/47)
+  - [Aug 5](https://groups.io/g/gpx/message/35)
+- GPX proposal
+  - Summary of common GPX [extensions](../extensions.md)
+- Garmin
+  - GPX extensions
+    - TrackPointExtension v2 - [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
+- ClueTrust
+  - GPXData - [schema](http://www.cluetrust.com/Schemas/gpxdata10.xsd) download - search for `<xsd:complexType name="dataPointType">`
