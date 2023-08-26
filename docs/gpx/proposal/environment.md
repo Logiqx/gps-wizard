@@ -16,9 +16,9 @@ Elements such as temperature and water depth have been suggested for the GPX sta
 
 Omissions:
 
-- There is no need for wind chill, because it can be calculated from air temperature and wind speed
-- There is no need for dew point or heat index, because they can be calculated from air temperature and relative humidity
-- There is no need for true wind angle (TWA), because it can be calculated from true wind direction (TWD) and heading
+- There is no need for wind chill, because it is calculated from air temperature and wind speed
+- There is no need for dew point or heat index, because they are calculated from air temperature and relative humidity
+- There is no need for true wind angle (TWA), because it is calculated from true wind direction (TWD) and heading
 
 
 

@@ -29,7 +29,7 @@ The GPX 1.1.1 proposal has been described at some length but can be summarised a
 - Addition of `<course>`, `<speed>` in a way that is consistent with GPX 1.0.
   - Most existing software that can utilise `<course>` and `<speed>` in GPX 1.0 files will almost certainly recognise them in GPX 1.1.1.
 - Addition of accuracy estimates in a way that is consistent with GPX 1.0 and 1.1 items such as "horizontal dilution of precision", etc.
-  - Accuracy estimates will not interfere with existing apps but can be obviously used by applications that understand their utility.
+  - Accuracy estimates will not interfere with existing apps but can obviously be used by applications that understand their utility.
 - Addition of device / source information via the existing `<src>` elements.
   - Use of [mixed content](https://www.w3schools.com/xml/schema_complex_mixed.asp) ensures forwards and backwards compatibility with existing software and applications.
 - Existing GPX 1.1 compliant files are also GPX 1.1.1 compliant, simply by changing the `<gpx>` attributes (e.g. schema and version).
