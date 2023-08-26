@@ -14,7 +14,7 @@ Nautical and aeronautical elements have been suggested.
 
 Wind and tide measurements will be listed in the [environment](environment.md) document.
 
-Note: "yaw" and "set" are not required because "heading" is another name for [set](https://en.wikipedia.org/wiki/Ship_motions#Yaw). The word "heading" is perhaps more widely recognised than "set".
+Note: "yaw" and "set" are not required because "heading" is another name for "[set](https://en.wikipedia.org/wiki/Ship_motions#Yaw)".
 
 
 
