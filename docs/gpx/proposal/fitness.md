@@ -16,7 +16,7 @@ The addition of core outputs from fitness and cycling sensors has been suggested
 
 Notes:
 
-- Sensor data can be added to the `<src>` [element](elements.md) in this proposal
+- Sensor type(s) can be added to the `<src>` [element](elements.md) in this proposal
   - Cadence / steps / strokes - e.g. "bike", "phone", "pod" , "watch", etc.
   - Elevation - e.g "baro" or "gps"
   - Heart rate - e.g. "chest", or "wrist"
