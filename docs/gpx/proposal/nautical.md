@@ -14,17 +14,17 @@ Nautical and aeronautical elements have been suggested.
 | set     | Direction of water / current, relative to true north in degrees (°) |
 | wspeed  | Water speed / boat speed is the speed of a vessel through the water in meters per second (m/s) |
 
-There are also some running totals available:
+Cumulative metrics:
 
-| Name  | Description                                     |
-| ----- | ----------------------------------------------- |
-| wdist | Cumulative distance through water in meters (m) |
+| Name  | Description                                    |
+| ----- | ---------------------------------------------- |
+| wdist | Total distance through the water in meters (m) |
 
 Omissions:
 
-- There is no need for velocity made good (VMG) since it is calculated from speed over ground (SOG) and true wind direction (TWD)
+- There is no need for velocity made good (VMG) since it is derived from speed over ground (SOG) and true wind direction (TWD)
 - This list ignores NMEA trawler data such as [TDS](https://gpsd.gitlab.io/gpsd/NMEA.html#_tds_trawl_door_spread_distance), [TFI](https://gpsd.gitlab.io/gpsd/NMEA.html#_tfi_trawl_filling_indicator), [TPC](https://gpsd.gitlab.io/gpsd/NMEA.html#_tpc_trawl_position_cartesian_coordinates), [TPR](https://gpsd.gitlab.io/gpsd/NMEA.html#_tpr_trawl_position_relative_vessel), and [TPT](https://gpsd.gitlab.io/gpsd/NMEA.html#_tpt_trawl_position_true)
-- This list ignores NMWA 2000 [engine data](https://www8.garmin.com/manuals/webhelp/GUID-1415AAD0-FE63-42A6-8F8D-DB713D616122/EN-US/GUID-8C9B7F1D-846C-4FE3-A78C-65D38F17D2D2.html) and the [RPM](https://gpsd.gitlab.io/gpsd/NMEA.html#_rpm_revolutions) sentence in NMEA 0183
+- This list ignores [engine data](https://www8.garmin.com/manuals/webhelp/GUID-1415AAD0-FE63-42A6-8F8D-DB713D616122/EN-US/GUID-8C9B7F1D-846C-4FE3-A78C-65D38F17D2D2.html) in NMEA 2000 and the [RPM](https://gpsd.gitlab.io/gpsd/NMEA.html#_rpm_revolutions) sentence in NMEA 0183
 
 
 
@@ -35,8 +35,7 @@ Omissions:
 - GPX proposal
   - Summary of common GPX [extensions](../extensions.md)
 - Garmin
-  - GPX extensions
-    - TrackPointExtension v2 - [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) - search for "bearing"
+  - TrackPointExtension v2 - [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) - search for "bearing"
   - Sailing Terminology and Definitions - [article](https://support.garmin.com/en-GB/?faq=e5LwusViLZ95VTDwn2Alt7)
   - Set and drift - [explanation](https://support.garmin.com/en-GB/?faq=eYNMvRuppZ2torMWs2pEk6)
 - NMEA 0183
@@ -50,8 +49,7 @@ Omissions:
   - Aircraft flight dynamics - [introduction](https://en.wikipedia.org/wiki/Aircraft_flight_dynamics)
   - Ships motions - [rotational](https://en.wikipedia.org/wiki/Ship_motions#Rotational) motions
   - Set and drift - [article](https://en.wikipedia.org/wiki/Set_and_drift)
-- Devices
-  - Sailmon
-    - Max - [live data](https://sailmon.com/max/#1675689499683-c73158df-1d1313e9-e463) - display shows heel and pitch, although CSV export calls them heel and trim
-  - Vakaros
-    - Atlas 2 - [tech specs](https://vakaros.com/en-eu/pages/tech-specs) - core measurements are position, velocity, heading, heel, pitch, and barometric pressure
+- Sailmon
+  - Max - [live data](https://sailmon.com/max/#1675689499683-c73158df-1d1313e9-e463) - display shows heel and pitch, although CSV export calls them heel and trim
+- Vakaros
+  - Atlas 2 - [tech specs](https://vakaros.com/en-eu/pages/tech-specs) - core measurements are position, velocity, heading, heel, pitch, and barometric pressure

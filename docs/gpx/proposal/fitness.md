@@ -13,12 +13,12 @@ Instantaneous readings:
 | power   | Power (watts)                                                |
 | sensor  | Sensor for cadence - e.g. "bike" (wheel), or "pod" (pedometer) |
 
-Summary statistics for each moment in time:
+Cumulative metrics:
 
 | element | Description                                 |
 | ------- | ------------------------------------------- |
 | dist    | Total distance in meters (m)                |
-| gain    | Total elevation gain in meters (m)          |
+| elegain | Total elevation gain in meters (m)          |
 | steps   | Total steps - walking, hiking, running, etc |
 | strokes | Total strokes - swimming or rowing          |
 

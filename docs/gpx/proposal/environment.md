@@ -7,10 +7,10 @@ Elements such as temperature and water depth have been suggested for the GPX sta
 | element | Description                                                  |
 | ------- | ------------------------------------------------------------ |
 | atemp   | Air temperature in degrees centigrade (° C)                  |
-| baro    | Barometric pressure in hectopascals (hPa), sometimes called millibars (mbar) |
+| baro    | Barometric pressure in hectopascals (hPa)                    |
 | depth   | Depth of water in metres (m)                                 |
 | hum     | Relative humidity as a percentage (%)                        |
-| twd     | True wind direction (TWD), relative to true north in degrees |
+| twd     | True wind direction (TWD), relative to true north in degrees (°) |
 | tws     | True wind speed (TWS) in metres per second (m/s)             |
 | wtemp   | Water temperature in degrees centigrade (° C)                |
 
@@ -30,8 +30,7 @@ Omissions:
 - GPX proposal
   - Summary of common GPX [extensions](../extensions.md)
 - Garmin
-  - GPX extensions
-    - TrackPointExtension v2 - [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
+  - TrackPointExtension v2 - [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
   - Sailing Terminology and Definitions - [article](https://support.garmin.com/en-GB/?faq=e5LwusViLZ95VTDwn2Alt7)
 - ClueTrust
   - GPXData - [schema](http://www.cluetrust.com/Schemas/gpxdata10.xsd) download - search for `<xsd:complexType name="dataPointType">`
@@ -41,10 +40,9 @@ Omissions:
   - Garmin - [data types](https://www8.garmin.com/manuals/webhelp/GUID-1415AAD0-FE63-42A6-8F8D-DB713D616122/EN-US/GUID-FACE3DF9-D18C-43B2-A586-B14F670077E1.html)
 - Sailmon
   - Max - [Live data](https://sailmon.com/max/#1675689499683-c73158df-1d1313e9-e463)
-- Airmar
-  - 200WX-IPX7 - [data outputs](https://www.airmar.com/Product/200WX-IPX7)
-    - [$WIMDA](http://www.nuovamarea.net/blog/wimda) - standard meteorological composite
-    - [$WIMWD](http://www.nuovamarea.net/blog/wimwd) - wind direction and speed, with respect to north
-    - $WIMWR - relative wind direction and speed
-    - $WIMWT - theoretical wind direction and speed
-    - [$WIMWV](http://www.nuovamarea.net/blog/wimwv) - wind speed and angle, in relation to the vessel's bow / centerline
+- Airmar 200WX-IPX7 - [data outputs](https://www.airmar.com/Product/200WX-IPX7)
+  - [$WIMDA](http://www.nuovamarea.net/blog/wimda) - standard meteorological composite
+  - [$WIMWD](http://www.nuovamarea.net/blog/wimwd) - wind direction and speed, with respect to north
+  - $WIMWR - relative wind direction and speed
+  - $WIMWT - theoretical wind direction and speed
+  - [$WIMWV](http://www.nuovamarea.net/blog/wimwv) - wind speed and angle, in relation to the vessel's bow / centerline
