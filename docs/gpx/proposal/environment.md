@@ -1,8 +1,8 @@
 ## Proposal for GPX
 
-### Weather, Wind and Water Elements
+### Environment
 
-Weather, wind and water elements have been suggested.
+Elements such as temperature and water depth have been suggested for the GPX standard:
 
 | element | Description       |
 | ------- | ----------------- |
@@ -10,12 +10,13 @@ Weather, wind and water elements have been suggested.
 | depth   | Depth             |
 | wtemp   | Water temperature |
 
+Note: Beyond atemp, depth and wtemp there are many wind and tide elements that need to be considered.
+
 
 
 #### TODO
 
-- Beyond atemp, depth and wtemp there are many weather, wind and water elements to be considered.
-- Need to review [NMEA 2000 data types](https://www8.garmin.com/manuals/webhelp/GUID-1415AAD0-FE63-42A6-8F8D-DB713D616122/EN-US/GUID-FACE3DF9-D18C-43B2-A586-B14F670077E1.html) for wind/water speed/direction sensors for boating and aviation.
+- Need to review [NMEA 2000 data types](https://www8.garmin.com/manuals/webhelp/GUID-1415AAD0-FE63-42A6-8F8D-DB713D616122/EN-US/GUID-FACE3DF9-D18C-43B2-A586-B14F670077E1.html) for wind and tide sensors, primarily for for nautical and aeronautical activities.
 
 
 

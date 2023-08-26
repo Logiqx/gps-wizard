@@ -20,8 +20,8 @@ Feel free to browse is any order and use the browser back-button to return to th
 - Investigations
   - [Garmin testing](garmin.md) - Connect, BaseCamp, MapSource
 - Additional suggestions
-  - Sensors
-    - [Health](health.md) elements
-    - [Nautical and aeronautical](nautical.md) elements
-    - [Weather and water](weather.md) elements
+  - Sensor data
+    - [Environment](environment.md) - e.g. temperature, water depth, wind, and tide
+    - [Fitness](fitness.md) - e.g. cadence, heart rate, and power
+    - [Nautical and aeronautical](nautical.md) - e.g. heading
   - [Fix type](fix-type.md)

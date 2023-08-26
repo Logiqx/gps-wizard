@@ -1,6 +1,6 @@
 ## Proposal for GPX
 
-### Health Elements
+### Fitness Sensors
 
 The addition of core outputs from fitness and cycling sensors has been suggested.
 
