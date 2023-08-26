@@ -4,23 +4,22 @@
 
 The addition of core outputs from fitness and cycling sensors has been suggested.
 
-Instantaneous readings:
-
 | element | Description                                                  |
 | ------- | ------------------------------------------------------------ |
-| cad     | Cadence - cycling (rpm), running (steps per minute), swimming or rowing (stroke rate) |
-| hr      | Heart rate (bpm)                                             |
+| cad     | Cadence - cycling (rpm), swimming / rowing (stroke rate), or running (steps per minute) |
+| dist    | Total distance in meters (m)                                 |
+| elegain | Total elevation gain in meters (m)                           |
+| hr      | Heart rate in beats per minute (bpm)                         |
 | power   | Power (watts)                                                |
-| sensor  | Sensor for cadence - e.g. "bike" (wheel), or "pod" (pedometer) |
+| steps   | Total steps - walking, hiking, running, etc                  |
+| strokes | Total strokes - swimming or rowing                           |
 
-Cumulative metrics:
+Notes:
 
-| element | Description                                 |
-| ------- | ------------------------------------------- |
-| dist    | Total distance in meters (m)                |
-| elegain | Total elevation gain in meters (m)          |
-| steps   | Total steps - walking, hiking, running, etc |
-| strokes | Total strokes - swimming or rowing          |
+- Sensor data can be added to the `<src>` [element](elements.md) in this proposal
+  - Cadence / steps / strokes - e.g. "bike", "phone", "pod" , "watch", etc.
+  - Elevation - e.g "baro" or "gps"
+  - Heart rate - e.g. "chest", or "wrist"
 
 
 

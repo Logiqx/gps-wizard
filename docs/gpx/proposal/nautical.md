@@ -7,18 +7,17 @@ Nautical and aeronautical elements have been suggested.
 | Name    | Description                                                  |
 | ------- | ------------------------------------------------------------ |
 | aspeed  | Air speed is the speed of an aircraft relative to the air in meters per second (m/s) |
-| drift   | Speed of water / current in meters per second (m/s)          |
-| heading | Direction in which the aircraft's nose or vessel's bow is pointed, relative to true north in degrees (°) |
-| pitch   | Fore / aft rotation of a aircraft or vessel (trim) about its transverse axis in degrees (°) |
-| roll    | Tilting rotation of a aircraft or vessel (heel) about its longitudinal axis in degrees (°) |
-| set     | Direction of water / current, relative to true north in degrees (°) |
+| drift   | Speed of the water / current in meters per second (m/s)      |
+| heading | Direction in which the nose or bow is pointed, relative to true north in degrees (°) |
+| pitch   | Fore / aft rotation of an aircraft or vessel (trim) about its transverse axis in degrees (°) |
+| roll    | Tilting of an aircraft or vessel (heel) about its longitudinal axis in degrees (°) |
+| set     | Direction of the water / current, relative to true north in degrees (°) |
+| wdist   | Total distance through the water in meters (m) |
 | wspeed  | Water speed / boat speed is the speed of a vessel through the water in meters per second (m/s) |
 
-Cumulative metrics:
+Notes:
 
-| Name  | Description                                    |
-| ----- | ---------------------------------------------- |
-| wdist | Total distance through the water in meters (m) |
+- wdist is akin to the "dist" metric (total distance) in the [fitness](fitness.md) document
 
 Omissions:
 
