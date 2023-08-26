@@ -15,10 +15,6 @@ Nautical and aeronautical elements have been suggested.
 | wdist   | Total distance through the water in meters (m) |
 | wspeed  | Water speed / boat speed is the speed of a vessel through the water in meters per second (m/s) |
 
-Notes:
-
-- wdist is akin to the "dist" metric (total distance) in the [fitness](fitness.md) document
-
 Omissions:
 
 - There is no need for velocity made good (VMG) since it is derived from speed over ground (SOG) and true wind direction (TWD)
