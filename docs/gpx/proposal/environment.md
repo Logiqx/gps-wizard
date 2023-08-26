@@ -4,14 +4,14 @@
 
 Elements such as temperature and water depth have been suggested for the GPX standard:
 
-| element   | Description                            |
-| --------- | -------------------------------------- |
-| atemp     | Air temperature (° C)                  |
-| depth     | Water depth (m)                        |
-| pressure  | Barometric pressure (hPa or millibars) |
-| winddir   | True wind direction (degrees)          |
-| windspeed | True wind speed (m/s)                  |
-| wtemp     | Water temperature (° C)                |
+| element  | Description                                         |
+| -------- | --------------------------------------------------- |
+| atemp    | Air temperature (° C)                               |
+| depth    | Water depth (m)                                     |
+| pressure | Barometric pressure (hPa or millibars)              |
+| wdir     | True wind direction relative to due north (degrees) |
+| wspeed   | True wind speed (m/s)                               |
+| wtemp    | Water temperature (° C)                             |
 
 Note: Beyond the list above, there are several wind and tide elements which also need to be considered.
 
