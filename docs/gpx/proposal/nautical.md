@@ -1,6 +1,6 @@
 ## Proposal for GPX
 
-### Nautical Elements
+### Nautical and Aeronautical
 
 Nautical and aeronautical elements have been suggested.
 
@@ -11,7 +11,6 @@ Nautical and aeronautical elements have been suggested.
 | heading | Direction in which the aircraft's nose or vessel's bow is pointed, relative to true north in degrees (°) |
 | pitch   | Fore / aft rotation of a aircraft or vessel (trim) about its transverse axis in degrees (°) |
 | roll    | Tilting rotation of a aircraft or vessel (heel) about its longitudinal axis in degrees (°) |
-| rot     | Rate of turn (ROT) in degrees per minute (° / min)           |
 | set     | Direction of water / current, relative to true north in degrees (°) |
 | wspeed  | Water speed / boat speed is the speed of a vessel through the water in meters per second (m/s) |
 

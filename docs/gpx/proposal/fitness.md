@@ -1,6 +1,6 @@
 ## Proposal for GPX
 
-### Fitness Sensors
+### Fitness Metrics
 
 The addition of core outputs from fitness and cycling sensors has been suggested.
 

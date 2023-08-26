@@ -12,9 +12,9 @@ Elements such as temperature and water depth have been suggested for the GPX sta
 | hum     | Relative humidity as a percentage (%)                        |
 | twd     | True wind direction (TWD), relative to true north in degrees |
 | tws     | True wind speed (TWS) in metres per second (m/s)             |
-| wtemp   | Water temperature degrees centigrade (° C)                   |
+| wtemp   | Water temperature in degrees centigrade (° C)                |
 
-Notes:
+Omissions:
 
 - There is no need for wind chill, because it can be calculated from air temperature and wind speed
 - There is no need for dew point or heat index, because they can be calculated from air temperature and relative humidity
