@@ -20,7 +20,7 @@ This document summarises  the behavior of Garmin Connect, BaseCamp and MapSource
 
 ### Garmin Connect
 
-These findings are based on modification to a fairly simple  GPX file, tweaking the `<gpx>` attributes and the contents of a single`<trkpt>` element.
+These findings are based on modificationsto a fairly simple  GPX file, tweaking the `<gpx>` attributes and the contents of a single`<trkpt>` element.
 
 To summarise:
 
@@ -91,9 +91,9 @@ Notes:
 
 #### GPX 1.1
 
-What has been written above also applies to GPX 1.1 files - i.e. `xmlns="http://www.topografix.com/GPX/1/0"`
+What has been written above also applies to GPX 1.1 files - i.e. `xmlns="http://www.topografix.com/GPX/1/1"`
 
-Non-standard GPX 1.1 content is basically ignored by the GPX import.
+Non-standard GPX 1.1 elements are basically ignored by the GPX import.
 
 
 
@@ -109,7 +109,7 @@ This is potentially problematic because you can't refer to future versions of th
 
 However, there is a simple workaround to import newer versions of GPX files into Connect:
 
-- `xmlns="http://www.topografix.com/GPX/1/0"` (or `".../GPX/1/1"`) allows for pretty much any XML elements, in any order!
+- Using `xmlns="http://www.topografix.com/GPX/1/0"` (or `".../GPX/1/1"`) allows for pretty much any XML elements, in any order!
   - This is obviously a hack, but this one-liner would allow GPX 1.1.1 / 1.2 / 2.0 files to be imported into Connect.
   - `<speed>` and `<course>` could potentially be utilised by the Garmin software, since they are in the same place as GPX 1.0.
   - The GPX version number could still be set as appropriate - e.g. `version="1.1.1"`, it would just be the `xmlns` that would be misleading.
@@ -121,7 +121,7 @@ The workaround is a little ugly but in the medium-term, Garmin could perhaps twe
 
 ### Garmin BaseCamp
 
-These findings are based on modification to a fairly simple  GPX file, tweaking the `<gpx>` attributes and the contents of a single`<trkpt>` element.
+These findings are based on modifications to a fairly simple  GPX file, tweaking the `<gpx>` attributes and the contents of a single`<trkpt>` element.
 
 To summarise:
 
@@ -271,7 +271,7 @@ This is potentially problematic because you can't refer to future versions of th
 
 However, there is a simple workaround to import newer versions of GPX files into BaseCamp :
 
-- `xmlns="http://www.topografix.com/GPX/1/0"` allows for pretty much any XML elements, in any order!
+- Using `xmlns="http://www.topografix.com/GPX/1/0"` allows for pretty much any XML elements, in any order!
   - This is obviously a hack, but this one-liner would allow GPX 1.1.1 / 1.2 / 2.0 files to be imported into BaseCamp.
   - `<speed>` and `<course>` could potentially be utilised by the Garmin software, since they are in the same place as GPX 1.0.
   - The GPX version number could still be set as appropriate - e.g. `version="1.1.1"`, it would just be the `xmlns` that would be misleading.
