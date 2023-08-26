@@ -4,16 +4,15 @@
 
 Elements such as temperature and water depth have been suggested for the GPX standard:
 
-| element  | Description                                                  |
-| -------- | ------------------------------------------------------------ |
-| atemp    | Air temperature in degrees centigrade (° C)                  |
-| ahum     | Absolute humidity in grams per cubic meter (g / m<sup>3</sup>) |
-| depth    | Water depth in metres (m)                                    |
-| pressure | Barometric pressure in hPa or millibars                      |
-| rhum     | Relative humidity in percent (%)                             |
-| twd      | True wind direction (TWD) relative to true north in degrees  |
-| tws      | True wind speed (TWS) in metres per second (m/s)             |
-| wtemp    | Water temperature degrees centigrade (° C)                   |
+| element  | Description                                                 |
+| -------- | ----------------------------------------------------------- |
+| atemp    | Air temperature in degrees centigrade (° C)                 |
+| depth    | Water depth in metres (m)                                   |
+| pressure | Air / water pressure in hectopascals (hPa)                  |
+| humidity | Relative humidity as a percentage (%)                       |
+| twd      | True wind direction (TWD) relative to true north in degrees |
+| tws      | True wind speed (TWS) in metres per second (m/s)            |
+| wtemp    | Water temperature degrees centigrade (° C)                  |
 
 Note: Beyond the list above, there are tidal elements which also need to be considered.
 
