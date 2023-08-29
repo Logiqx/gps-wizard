@@ -10,16 +10,40 @@ The addition of core outputs from fitness and cycling sensors has been suggested
 | dist    | Total distance in meters (m)                                 |
 | elegain | Total elevation gain in meters (m)                           |
 | hr      | Heart rate in beats per minute (bpm)                         |
-| power   | Power (watts)                                                |
+| power   | Power in watts (W)                                           |
 | steps   | Total steps - walking, hiking, running, etc                  |
 | strokes | Total strokes - swimming or rowing                           |
 
-Notes:
+The type of sensor(s) used can be potentially be recorded inside the extended `<src>` [element](elements.md) of this proposal:
 
-- Sensor type(s) can be added to the `<src>` [element](elements.md) in this proposal
-  - Cadence / steps / strokes - e.g. "bike", "phone", "pod" , "watch", etc.
-  - Elevation gain - e.g "baro" or "gps"
-  - Heart rate - e.g. "chest", or "wrist"
+| Name    | Possible Sources                        |
+| ------- | --------------------------------------- |
+| cad     | bike, phone, pod, rower or watch        |
+| dist    | gps, hybrid <sup>\*</sup>, pod or wheel |
+| elegain | baro or gps                             |
+| hr      | chest or watch                          |
+| speed   | gps, hybrid <sup>\*</sup> or wheel      |
+| steps   | phone, pod or watch                     |
+| strokes | rower or watch                          |
+
+\* examples of hybrid could be gps + pod or gps + wheel.
+
+Sensor information could look something like this in the `<src>` element:
+
+```xml
+<src>
+  <sensors>
+    <cad>pod</cad>
+    <dist>gps</dist>
+    <elegain>baro</elegain>
+    <hr>watch</hr>
+    <speed>gps</speed>
+    <steps>pod</steps>
+  </sensors>
+</src>
+```
+
+Sensor information would supplement the [device](elements.md) information already proposed - i.e. manufacturer, product, model, etc.
 
 
 
