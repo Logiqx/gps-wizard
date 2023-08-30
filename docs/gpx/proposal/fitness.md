@@ -18,7 +18,7 @@ The type of sensor(s) used can be potentially be recorded inside the extended `<
 
 | Name    | Possible Sources                        |
 | ------- | --------------------------------------- |
-| cad     | bike, phone, pod, rower or watch        |
+| cad     | crank, phone, pod, rower or watch       |
 | dist    | gps, hybrid <sup>\*</sup>, pod or wheel |
 | elegain | baro or gps                             |
 | hr      | chest or watch                          |
@@ -44,6 +44,16 @@ Sensor information could look something like this in the `<src>` element:
 ```
 
 Sensor information would supplement the [device](elements.md) information already proposed - i.e. manufacturer, product, model, etc.
+
+Thought: This could also be used to state how elevation was derived, if known:
+
+```xml
+<src>
+  <sensors>
+    <ele>baro</ele>
+  </sensors>
+</src>
+```
 
 
 
