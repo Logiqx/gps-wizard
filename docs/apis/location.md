@@ -68,6 +68,8 @@ The Apple documentation says that locations with an accuracy >=50 meters should 
 
 ​	The validity of the altitude values, and their estimated uncertainty, measured in meters.
 
+​	A positive `verticalAccuracy` value represents an uncertainty that’s approximately 68 percent, or one standard deviation, above and below the altitude values.
+
 ​	Added in iOS 2.0 (Jul 2008) and watchOS 2.0 (Sep 2015)
 
 #### [speedAccuracy](https://developer.apple.com/documentation/corelocation/cllocation/3524340-speedaccuracy)
