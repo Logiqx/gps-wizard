@@ -2,6 +2,8 @@
 
 Summary:
 
+- Series 1 (Sep 2016) - no GPS
+- Series 2 (Sep 2016) - could be almost anything
 - Series 3 (Sep 2017) - could be almost anything - Intel, Broadcom, Qualcomm, MediaTek, etc.
 - Series 4 (Sep 2018) - suspect **Intel** XMM7560 like the iPhone XS / XR
 - Series 5 (Sep 2019) - suspect **Intel** XMM7660 like the iPhone 11
@@ -24,11 +26,15 @@ Links:
 
 [teardown](https://www.ifixit.com/Teardown/Apple+Watch+Teardown/40655)
 
+Apple [specification](https://support.apple.com/kb/sp745?locale=en_GB) confirms lack of support for GPS
+
 
 
 #### Series 2
 
 [teardown](https://www.ifixit.com/Teardown/Apple+Watch+Series+2+Teardown/67385)
+
+Apple [specification](https://support.apple.com/kb/SP746?locale=en_GB) says it supports GPS and GLONASS
 
 
 
