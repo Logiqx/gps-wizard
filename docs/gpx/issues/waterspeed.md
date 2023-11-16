@@ -37,13 +37,13 @@ This example has been fixed by hand to ensure compliance with the GPX 1.1 schema
     <name>Waterspeed Activity 450bce8c-04cc-4dfc-8360-a55aade3f1c8
 </name>
     <trkseg>
-      <trkpt lat="50.5712706949" lon="-2.4565614465">
+      <trkpt lat="50.5712707" lon="-2.4565614">
         <ele>0</ele>
         <time>2022-10-29T12:55:24.000Z</time>
         <extensions>
           <gpxtpx:TrackPointExtension>
             <gpxtpx:hr>120</gpxtpx:hr>
-            <gpxtpx:speed>0.0028</gpxtpx:speed>
+            <gpxtpx:speed>0.003</gpxtpx:speed>
             <gpxtpx:course>248.19</gpxtpx:course>
           </gpxtpx:TrackPointExtension>
         </extensions>
@@ -120,13 +120,13 @@ The schemas for GPX and the Garmin TrackPointExtension have defined a strict ord
 This example illustrates the correct ordering for elevation, time, heart rate, speed and course:
 
 ```xml
-<trkpt lat="50.5712706949" lon="-2.4565614465">
+<trkpt lat="50.5712707" lon="-2.4565614">
   <ele>0</ele>
   <time>2022-10-29T12:55:24.000Z</time>
   <extensions>
     <gpxtpx:TrackPointExtension>
       <gpxtpx:hr>120</gpxtpx:hr>
-      <gpxtpx:speed>0.0028</gpxtpx:speed>
+      <gpxtpx:speed>0.003</gpxtpx:speed>
       <gpxtpx:course>248.19</gpxtpx:course>
     </gpxtpx:TrackPointExtension>
   </extensions>
