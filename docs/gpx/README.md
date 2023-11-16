@@ -282,6 +282,7 @@ Individual pages describe the GPX compliancy issues specific to individual softw
 - [GPSResults](issues/gpsresults.md)
 - [GPSAR](issues/gpsar.md) aka GpsarPro
 - [Waterspeed](issues/waterspeed.md)
+- [WindsportTracker](issues/windsport.md) aka WST
 
 
 
