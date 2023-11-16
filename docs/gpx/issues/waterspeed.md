@@ -176,14 +176,8 @@ Ideally, elevation as calculated by the GPS / GNSS receiver should be recorded.
 
 #### Data Values
 
-- Timestamps are out by one hour in the GPSAR export
+- Timestamps are out by one hour in the GPSAR export, differing from the 3 other GPX exports
   - All times in GPX files should be in UTC and not specific to one application
-- Precision of lat / lon is higher than required
-  - 10 decimal places is equivalent to a resolution of 0.011 mm, which massively exceeds the accuracy of GPS / GNSS
-  - 8 decimals would be more than adequate, precision of 1.1 mm
-- Precision of speed is higher than required
-  - 4 decimal places is equivalent to a resolution of 0.1 mm/s, which massively exceeds the accuracy of GPS / GNSS
-  - 3 decimals would be more than adequate, precision of 1 mm/s
 
 
 
