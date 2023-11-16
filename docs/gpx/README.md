@@ -281,7 +281,7 @@ Individual pages describe the GPX compliancy issues specific to individual softw
 - [GPSBabel](issues/gpsbabel.md)
 - [GPSResults](issues/gpsresults.md)
 - [GPSAR](issues/gpsar.md) aka GpsarPro
-- [Waterspeed](issues/waterspeed.md) - WIP
+- [Waterspeed](issues/waterspeed.md)
 
 
 
