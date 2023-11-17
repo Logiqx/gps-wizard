@@ -34,8 +34,7 @@ This example has been fixed by hand to ensure compliance with the GPX 1.1 schema
     <time>2022-10-29T12:55:24.000Z</time>
   </metadata>
   <trk>
-    <name>Waterspeed Activity 450bce8c-04cc-4dfc-8360-a55aade3f1c8
-</name>
+    <name>Waterspeed Activity 450bce8c-04cc-4dfc-8360-a55aade3f1c8</name>
     <trkseg>
       <trkpt lat="50.5712707" lon="-2.4565614">
         <ele>0</ele>
@@ -185,17 +184,97 @@ Ideally, elevation as calculated by the GPS / GNSS receiver should be recorded.
 
 Use of `<gpxdata:speed>` invalidates a GPX files so it should be avoided. In the not too distant future GPSAR, GPSResults, and GPS-Speedsurfing should be expected to support `<gpxtpx:speed>`, now that the topic has been brought to their attention.
 
-There may be a transition period where both `<gpxdata:speed>` and `<gpxtpx:speed>` are included in a single GPX file (e.g. uploads to GPS-Speedsurfing), but this should be regarded as a temporary measure. The inclusion of `<gpxdata:speed>` in GPX exports will definitely be regarded as invalid by Garmin software which requires strict GPX-compliance.
+There may be a transition period where both `<gpxdata:speed>` and `<gpxtpx:speed>` are included in a single GPX file (e.g. uploads to GPS-Speedsurfing), but this should be regarded as a temporary measure. The inclusion of `<gpxdata:speed>` in GPX exports will potentially be regarded as invalid by any Garmin software which requires strict GPX-compliance.
 
 In the future, there will be no requirement for `<gpxdata:speed>`. GPX files including `<gpxtpx:speed>` are fully compliant with the schemas for GPX 1.1 and TrackPointExtension v2.
 
 
 
+### Suggestion
+
+I would suggest updating Waterspeed to two offer just GPX exports:
+
+1) Universal GPX export to replace the GPX exports for Strava, Google and Garmin
+2) Modified GPX export, including `<gpxdata:speed>` as well as `<gpxtpx:speed>` but in a way that can still be validated
+
+The second export would be for GPSAR and GPS-Speedsurfing.com, until such time as they no longer require `<gpxdata:speed>`. It has the advantage of being compatible with existing software, but also allows GPSAR and GPS-Speedsurfing.com to smoothly transition to the universal GPX export.
+
+
+
+#### GPX - Universal
+
+This would be a full-compliant GPX file as described in this document. The GPX header would be as follows:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Waterspeed"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd
+       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+```
+
+A trackpoint would only require `<gpxtpx:speed>` for speed:
+
+```xml
+<trkpt lat="50.5712707" lon="-2.4565614">
+  <ele>0</ele>
+  <time>2022-10-29T12:55:24.000Z</time>
+  <extensions>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>120</gpxtpx:hr>
+      <gpxtpx:speed>0.003</gpxtpx:speed>
+      <gpxtpx:course>248.19</gpxtpx:course>
+    </gpxtpx:TrackPointExtension>
+  </extensions>
+</trkpt>
+```
+
+
+
+#### GPX - GPSAR
+
+This would be a modified version of the universal GPX export. The GPX header would be as follows:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Waterspeed"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+     xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd">
+```
+
+Note the addition of `xmlns:gpxdata` in the GPX header, and removal of the schema location for TrackPointExtension/v2. This will ensure that the GPX can be validated but in a way that does not enforce strict checks for `<gpxtpx:TrackPointExtension>`.
+
+A trackpoint would use `<gpxtpx:speed>` and `<gpxdata:speed>` for speed:
+
+```xml
+<trkpt lat="50.5712707" lon="-2.4565614">
+  <ele>0</ele>
+  <time>2022-10-29T12:55:24.000Z</time>
+  <extensions>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:hr>120</gpxtpx:hr>
+      <gpxtpx:speed>0.003</gpxtpx:speed>
+      <gpxtpx:course>248.19</gpxtpx:course>
+      <gpxdata:speed>0.003</gpxdata:speed>
+    </gpxtpx:TrackPointExtension>
+  </extensions>
+</trkpt>
+```
+
+The presence of `<gpxtpx:speed>` and `<gpxdata:speed>` will mean that this export is suitable for the existing versions of GPSAR and GPS-Speedsurfing, but they can transition to `<gpxtpx:speed>` in the future. Eventually, the GPSAR export will become redundant and can be removed from Waterspeed.
+
+
+
 ### Summary
 
-Ensuring that GPX exports from Waterspeed are GPX-compliant will mean that the 4 existing GPX exports can replaced with a single GPX export.
+Ensuring that GPX exports from Waterspeed are GPX-compliant will mean that the 4 existing GPX exports can replaced with a single GPX export in the longer term. To allow for a smooth transition to this single format an additional GPSAR export is also suggested, as described earlier.
 
-The changes are all relatively straightforward to implement, and validation of GPX files during development is extremely simple using [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html).
+All of the changes are all relatively straightforward to implement, and validation of GPX files during development is extremely easy using [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html). Both of the exports described in the previous section (universal GPX and GPSAR) should pass the online validation.
 
 I hope this information is helpful, and I hope the Waterspeed developer(s) can find the time to implement these changes.
 
