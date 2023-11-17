@@ -203,7 +203,7 @@ The second export would be for GPSAR and GPS-Speedsurfing.com, until such time a
 
 #### GPX - Universal
 
-This would be a full-compliant GPX file as described in this document. The GPX header would be as follows:
+This would be a fully compliant GPX file as described in this document. The GPX header would be as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -274,7 +274,7 @@ The presence of `<gpxtpx:speed>` and `<gpxdata:speed>` will mean that this expor
 
 Ensuring that GPX exports from Waterspeed are GPX-compliant will mean that the 4 existing GPX exports can replaced with a single GPX export in the longer term. To allow for a smooth transition to this single format an additional GPSAR export is also suggested, as described earlier.
 
-All of the changes are all relatively straightforward to implement, and validation of GPX files during development is extremely easy using [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html). Both of the exports described in the previous section (universal GPX and GPSAR) should pass the online validation.
+All of the changes are relatively straightforward to implement, and validation of GPX files during development is extremely easy using [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html). Both of the exports described in the previous section (universal GPX and GPSAR) should pass the online validation.
 
 I hope this information is helpful, and I hope the Waterspeed developer(s) can find the time to implement these changes.
 
