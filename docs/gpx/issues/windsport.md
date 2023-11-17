@@ -37,7 +37,7 @@ This example has been fixed by hand to ensure compliance with the GPX 1.0 schema
 </gpx>
 ```
 
-Note: The URL in `xsi:schemaLocation` is pointing at a "lax" version of the GPX 1.0 schema that does not mandate an XSD for the WST extensions.
+Note: The URL in `xsi:schemaLocation` is pointing at a "lax" version of the GPX 1.0 schema that does not mandate an XSD for the WST extensions. The link to `https://logiqx.github.io` should only be used during the development and testing of WST, not for public releases of WST.
 
 
 
@@ -87,6 +87,8 @@ geoidheight can however be calculated by WST, feel free to [Google](https://www.
 geoid height = height above ellipsoid - height above geoid
 ```
 
+Note that I have not checked whether WST uses height above ellipsoid, or height above geoid for elevation. The correct one to use is height above the geoid, commonly referred to as height above MSL.
+
 
 
 #### Precision
@@ -113,7 +115,7 @@ The `<trkpt>` elements contain `<trkptwst>` elements:
 <trkptwst accuracy="12" elapsedrealtimenanos="0" />
 ```
 
-GPX 1.0 allows for extensions after the standard elements, but they must belong to a different namespace:
+GPX 1.0 allows for extensions after the standard `<trkpt>` elements, but they must have a different namespace:
 
 ```xml
 <wst:trkpt accuracy="12" elapsedrealtimenanos="0" />
@@ -125,23 +127,25 @@ The `<trk>` element also contains a `<wst>` element:
 <wst version="1" recordtype="RECORD" sessiontype="FREERIDE" rating="2" uuid="ce304c15-df1a-4cc0-8f30-7a3eeafbc720" startTime="2022-11-19T17:22:14.15Z" endTime="2022-11-19T17:28:25.132Z" id="/t4/zT4qofHBiYd3bRvuRQ==&#10;" device="SM-G930F" />
 ```
 
-GPX 1.0 does not allow for extensions to the `<trk>` element, but extensions can go at the bottom of the GPX file (see earlier example):
+GPX 1.0 does not allow for extensions to the `<trk>` element, but extensions can go at the bottom of the GPX file:
 
 ```xml
 <wst:gpx version="1" recordtype="RECORD" sessiontype="FREERIDE" rating="2" uuid="ce304c15-df1a-4cc0-8f30-7a3eeafbc720" startTime="2022-11-19T17:22:14.15Z" endTime="2022-11-19T17:28:25.132Z" id="/t4/zT4qofHBiYd3bRvuRQ==&#10;" device="SM-G930F" />
 ```
 
+Note that this also requires a different namespace.
+
 
 
 #### Timestamps
 
-Timestamps are showing the time zone applicable at the time of recording:
+Timestamps in GPX files from WST are showing the time zone applicable at the time of recording:
 
 ```xml
 <time>2003-04-05T18:22:16.184+01:00</time>
 ```
 
-This is perfectly valid, although most GPS / GNSS loggers record the time as UTC.
+This is perfectly valid, although most GPS / GNSS loggers record the time as UTC. It's conceivable that some applications may not make use of the time zone that is supplied when they read GPX files (`+01:00` in this example).
 
 
 
@@ -149,11 +153,11 @@ This is perfectly valid, although most GPS / GNSS loggers record the time as UTC
 
 Since the GPX exports of WST are based on GPX 1.0 the `<speed>` elements will be recognised by GPSResults, Gpsar, GPS Speedreader, KA72, etc.
 
-However, they are not actually GPX 1.0 compliant and as such can be improved. Garmin such as Basecamp currently rejects GPX files from WST.
+However, they are not actually GPX 1.0 compliant and as such can be improved. Garmin's Basecamp currently rejects GPX files created by WST.
 
-Applying the changes above will ensure that GPX files from WST can be loaded into most other software, including products by Garmin.
+Applying the changes described above will ensure that GPX files from WST can be loaded into most software, including products by Garmin.
 
-Validation can be performed by validating against `gpx-lax.xsd` which does not mandate an XSD for the WST extensions.
+Validation can be performed against `gpx-lax.xsd` which does not mandate an XSD for the WST extensions.
 
 
 
