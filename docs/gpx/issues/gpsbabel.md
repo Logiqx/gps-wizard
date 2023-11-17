@@ -2,22 +2,22 @@
 
 ### Summary
 
-The GPX 1.0 files produced by GPSBabel are fairly decent but have a few issues:
+The GPX 1.0 files produced by GPSBabel are pretty decent, but can potentially be improved:
 
-- Lack of GPX 1.0 compliance due to the absence of schema locations.
-- Precision is often higher than necessary; e.g. "lat", "lon", "course", "speed", "hdop".
-- Speed is sometimes being derived from positional data.
+- Addition of schema location(s) to the `<gpx>` element
+- Reduction of precision for `<course>`, `<speed>` and `<hdop>`
+- Do not impute `<speed>` from positional data
 
-These issues are described in the next section, followed by a section listing recommendations.
-
-
+These topics are described in more detail in the following sections.
 
 
-### Issues
 
-#### GPX Compliance
 
-The header is missing xmlns:xsi and xsi:schemaLocation
+### Discussion
+
+#### Schema Location
+
+The header is missing `xmlns:xsi` and `xsi:schemaLocation` which are recommended by the GPX [guidance](https://www.topografix.com/gpx_for_developers.asp):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -28,7 +28,7 @@ The header is missing xmlns:xsi and xsi:schemaLocation
 
 Without the schema location it is impossible to validate the GPX files using SAXCount as described by [TopoGrafix](https://www.topografix.com/gpx_validation.asp).
 
-An example of a valid GPX 1.0 header:
+An example of a GPX 1.0 file specifying `xmlns:xsi` and `xsi:schemaLocation`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -45,28 +45,31 @@ GPX 1.0 files can be validated using the method(s) described in the [overview](.
 
 #### Precision
 
-The precision of various elements is unnecessarily high. For example:
+The precision of various elements is probably too high:
 
-- "lat" and "lon" = 9 decimal places when 8 decimal places = mm precision at the equator.
-- "course" = 6 decimal places when most GNSS chips output a maximum of 3 decimal places.
-- "speed" = 6 decimal places when most GNSS chips output a maximum of 3 decimal places (mm/s).
-- "hdop" = 6 decimal places when most GNSS chips output a maximum of 2 decimal places.
+- `<course>` = 6 decimal places. Most GNSS chips output a maximum of 3 decimal places
+- `<speed>` = 6 decimal places. Most GNSS chips output a maximum of 3 decimal places, equating to a precision of 1 mm/s
+  - Some sources will have converted a speed in knots or km/h to m/s, giving the illusion of higher precision
+
+- `<hdop>` = 6 decimal places. Most GNSS chips output a maximum of 2 decimal places
+
+The precision of latitude and longitude are fine as they are suitable for technologies such as RTK:
+
+- "lat" and "lon" = 9 decimal places, equating to a precision of around 0.11 mm
 
 
 
 #### Speed
 
-It has been observed that GPSBabel will sometimes calculate speed from positional data and save it in the GPX file. This can lead to erroneous speeds (aka "spikes") in the output GPX and is undesirable. I have personally observed this issue when converting Garmin FIT files to GPX format using GPSBabel.
-
-Moral: Don't always trust file conversions to be safe!
+It has been observed that GPSBabel will sometimes impute speed from positional data and save it in the GPX file. This can lead to erroneous speeds (aka "spikes") in the output GPX and is undesirable. I have personally observed this issue when converting Garmin FIT files to GPX format using GPSBabel.
 
 
 
 ### Recommendations
 
-#### GPX Compliance
+#### Schema Location
 
-- Add xmlns:xsi and xsi:schemaLocation to the GPX header to enable validation with SAXCount.
+- Add `xmlns:xsi` and `xsi:schemaLocation` to the GPX header to enable validation with SAXCount and other tools:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -79,11 +82,17 @@ Moral: Don't always trust file conversions to be safe!
 
 
 
-#### GPX Improvements
+#### Precision
 
-- Change the precision to something more appropriate:
-  - "lat" and "lon" = 7 or 8 decimal places. 8 decimal places = mm precision at the equator.
-  - "course" = 3 decimal places.
-  - "speed" = 3 decimal places (mm/s).
-  - "hdop" = 2 decimal places.
-- Do not calculate speed from latitude and longitude. If speed is absent for any trackpoints, do not calculate it.
+Reduce the precision of the following elements:
+- `<course>` = 3 decimal places
+- `<speed>` = 3 decimal places, equating to a precision of 1 mm/s
+- `<hdop>` = 2 decimal places
+
+
+
+#### Speed
+
+Do not impute speed from latitude and longitude (well, not by default).
+
+If speed is absent for any trackpoints, it should simply be omitted.
