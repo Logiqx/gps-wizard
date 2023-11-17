@@ -10,26 +10,34 @@ This example has been fixed by hand to ensure compliance with the GPX 1.0 schema
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<gpx version="1.0" creator="WindsportsTracker" xmlns="http://www.topografix.com/GPX/1/0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/0 https://www.topografix.com/GPX/1/0/gpx.xsd">
-   <time>2022-11-19T17:22:14.15Z</time>
-   <trk>
-      <name>Windsport Back Home</name>
-      <trkseg>
-         <trkpt lat="50.565995350" lon="-2.452116667">
-            <ele>66</ele>
-            <time>2003-04-05T18:22:16.184+01:00</time>
-            <course>308</course>
-            <speed>0.8020791</speed>
-            <src>gps</src>
-            <sat>0</sat>
-            <hdop>1.0</hdop>
-            <vdop>1.5</vdop>
-            <pdop>1.8</pdop>
-         </trkpt>
-      </trkseg>
-   </trk>
+<gpx version="1.0" creator="WindsportsTracker"
+     xmlns="http://www.topografix.com/GPX/1/0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:wst="https://www.windsporttracker.com/"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/0 https://logiqx.github.io/gps-wizard/xmlschemas/gpx/1/0/gpx-lax.xsd">
+  <time>2022-11-19T17:22:14.15Z</time>
+  <trk>
+    <name>Windsport Back Home</name>
+    <trkseg>
+      <trkpt lat="50.565995350" lon="-2.452116667">
+        <ele>66</ele>
+        <time>2003-04-05T18:22:16.184+01:00</time>
+        <course>308</course>
+        <speed>0.8020791</speed>
+        <src>gps</src>
+        <sat>0</sat>
+        <hdop>1.0</hdop>
+        <vdop>1.5</vdop>
+        <pdop>1.8</pdop>
+        <wst:trkpt accuracy="12" elapsedrealtimenanos="0" />
+      </trkpt>
+    </trkseg>
+  </trk>
+  <wst:gpx version="1" recordtype="RECORD" sessiontype="FREERIDE" rating="2" uuid="ce304c15-df1a-4cc0-8f30-7a3eeafbc720" startTime="2022-11-19T17:22:14.15Z" endTime="2022-11-19T17:28:25.132Z" id="/t4/zT4qofHBiYd3bRvuRQ==&#10;" device="SM-G930F" />
 </gpx>
 ```
+
+Note: The URL in `xsi:schemaLocation` is pointing at a "lax" version of the GPX 1.0 schema that does not mandate an XSD for the WST extensions.
 
 
 
@@ -51,14 +59,17 @@ The `xsi:schemaLocation` was not defined correctly:
      xmlns:n0="xsi">
 ```
 
-The proper syntax is shown below:
+The proper syntax is shown below, using the official GPX 1.0 schema location:
 
 ```xml
 <gpx version="1.0" creator="WindsportsTracker"
      xmlns="http://www.topografix.com/GPX/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:wst="https://www.windsporttracker.com/"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/0 https://www.topografix.com/GPX/1/0/gpx.xsd">
 ```
+
+Note the addition of `xmlns:wst` for the extensions to GPX 1.0.
 
 
 
@@ -102,16 +113,22 @@ The `<trkpt>` elements contain `<trkptwst>` elements:
 <trkptwst accuracy="12" elapsedrealtimenanos="0" />
 ```
 
-The `<trk>` element contains a `<wst>` element:
+GPX 1.0 allows for extensions after the standard elements, but they must belong to a different namespace:
+
+```xml
+<wst:trkpt accuracy="12" elapsedrealtimenanos="0" />
+```
+
+The `<trk>` element also contains a `<wst>` element:
 
 ```xml
 <wst version="1" recordtype="RECORD" sessiontype="FREERIDE" rating="2" uuid="ce304c15-df1a-4cc0-8f30-7a3eeafbc720" startTime="2022-11-19T17:22:14.15Z" endTime="2022-11-19T17:28:25.132Z" id="/t4/zT4qofHBiYd3bRvuRQ==&#10;" device="SM-G930F" />
 ```
 
-GPX 1.0 allows for extensions after the standard elements, but they must belong to a different namespace and have a suitable XSD:
+GPX 1.0 does not allow for extensions to the `<trk>` element, but extensions can go at the bottom of the GPX file (see earlier example):
 
 ```xml
-<wst:trkptwst accuracy="12" elapsedrealtimenanos="0" />
+<wst:gpx version="1" recordtype="RECORD" sessiontype="FREERIDE" rating="2" uuid="ce304c15-df1a-4cc0-8f30-7a3eeafbc720" startTime="2022-11-19T17:22:14.15Z" endTime="2022-11-19T17:28:25.132Z" id="/t4/zT4qofHBiYd3bRvuRQ==&#10;" device="SM-G930F" />
 ```
 
 
@@ -132,5 +149,11 @@ This is perfectly valid, although most GPS / GNSS loggers record the time as UTC
 
 Since the GPX exports of WST are based on GPX 1.0 the `<speed>` elements will be recognised by GPSResults, Gpsar, GPS Speedreader, KA72, etc.
 
-However, they are not actually GPX 1.0 compliant and as such can be improved. Garmin software is likely to reject GPX files exported from WST.
+However, they are not actually GPX 1.0 compliant and as such can be improved. Garmin such as Basecamp currently rejects GPX files from WST.
+
+Applying the changes above will ensure that GPX files from WST can be loaded into most other software, including products by Garmin.
+
+Validation can be performed by validating against `gpx-lax.xsd` which does not mandate an XSD for the WST extensions.
+
+
 
