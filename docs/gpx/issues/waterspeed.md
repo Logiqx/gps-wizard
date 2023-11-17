@@ -67,7 +67,7 @@ If these changes are implemented within the Waterspeed application then a single
 The URL for the GPX schema at topografix needed to be fixed in `xsi:schemaLocation`:
 
 ```xml
-<gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd>
+<gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd">
 ```
 
 n.b. This is the https endpoint because freeformatter.com does not support 301 redirects at this time.
