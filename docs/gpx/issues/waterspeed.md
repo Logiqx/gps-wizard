@@ -244,10 +244,11 @@ This would be a modified version of the universal GPX export. The GPX header wou
      xmlns="http://www.topografix.com/GPX/1/1"
      xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
      xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd">
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd
+       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
-Note the addition of `xmlns:gpxdata` in the GPX header, and removal of the schema location for TrackPointExtension/v2. This will ensure that the GPX can be validated but in a way that does not enforce strict checks for `<gpxtpx:TrackPointExtension>`.
+Note the addition of `xmlns:gpxdata` in the GPX header but the lack of a corresponding XSD in `xsi:schemaLocation`.
 
 A trackpoint would use `<gpxtpx:speed>` and `<gpxdata:speed>` for speed:
 
@@ -260,8 +261,8 @@ A trackpoint would use `<gpxtpx:speed>` and `<gpxdata:speed>` for speed:
       <gpxtpx:hr>120</gpxtpx:hr>
       <gpxtpx:speed>0.003</gpxtpx:speed>
       <gpxtpx:course>248.19</gpxtpx:course>
-      <gpxdata:speed>0.003</gpxdata:speed>
     </gpxtpx:TrackPointExtension>
+    <gpxdata:speed>0.003</gpxdata:speed>
   </extensions>
 </trkpt>
 ```
