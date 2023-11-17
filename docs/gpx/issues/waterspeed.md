@@ -192,10 +192,10 @@ In the future, there will be no requirement for `<gpxdata:speed>`. GPX files inc
 
 ### Suggestion
 
-I would suggest updating Waterspeed to two offer just GPX exports:
+I would suggest updating Waterspeed to offer just two GPX exports:
 
-1) Universal GPX export to replace the GPX exports for Strava, Google and Garmin
-2) Modified GPX export, including `<gpxdata:speed>` as well as `<gpxtpx:speed>` but in a way that can still be validated
+1. Universal GPX export to replace the GPX exports for Strava, Google and Garmin
+2. Modified GPX export, including `<gpxdata:speed>` as well as `<gpxtpx:speed>` but in a way that can still be validated
 
 The second export would be for GPSAR and GPS-Speedsurfing.com, until such time as they no longer require `<gpxdata:speed>`. It has the advantage of being compatible with existing software, but also allows GPSAR and GPS-Speedsurfing.com to smoothly transition to the universal GPX export.
 
