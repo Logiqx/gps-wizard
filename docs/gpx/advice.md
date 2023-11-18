@@ -77,3 +77,28 @@ However, GPX readers should search for all representations of distance, if they 
 | 1.1         | `<gpxdata:distance>` | `<extensions>` |  Y   |   Y    | ClueTrust |
 | (1.1)       | `<distance>`         | `<extensions>` |  N   |   N    | COROS     |
 
+
+
+### Namespaces
+
+#### gpxtpx
+
+`xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
+
+- G7ToWin as far back as 2007 use `xmlns:gpxtpx`
+- GPSBabel reference files
+- Waterspeed
+
+
+
+#### ns3
+
+`xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
+
+- Garmin Connect
+
+
+
+### Links
+
+- [Garmin extension for speed](https://code.google.com/archive/p/toolsdotnet/wikis/gpx.wiki) on gps.wiki
