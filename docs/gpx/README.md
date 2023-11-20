@@ -14,7 +14,7 @@ A separate page discussing ["Doppler speed"](speed.md) in GPX files provides a b
 
 [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) was released in 2002 and is still suitable for the majority of GPS-Speedsurfing applications.
 
-The GPX 1.0 schema includes support for "course" (course over ground) and "speed" (e.g. "doppler speed"):
+The GPX 1.0 schema includes support for `<course>` (course over ground) and `<speed>` (speed over ground):
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -35,9 +35,9 @@ The GPX 1.0 schema includes support for "course" (course over ground) and "speed
 
 [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd) was released on 9 August 2004 and improved upon the GPX 1.0 standard, introducing support for `<extensions>`.
 
-Sadly, GPX 1.1 removed the `<speed>` and `<course>` elements. This change was unintentional, so speed and course now require the use of `<extensions>`.
+Unfortunately the `<speed>` and `<course>` elements were accidentally removed from GPX 1.1, necessitating the use of `<extensions>`.
 
-It was not until around 2015 when Garmin released a [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) that included speed and course.
+It was not until some time around 2015 when Garmin released a GPX extension [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) that supported speed and course.
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -55,7 +55,7 @@ It was not until around 2015 when Garmin released a [schema](https://www8.garmin
 </trkpt>
 ```
 
-Note: The example above also includes `<gpxtpx:hr>` (heart rate) to illustrate how that can also be included.
+Note: The example above also includes `<gpxtpx:hr>`, simply to illustrate how heart rate can also be included in GPX 1.1.
 
 Another approach that can sometimes be seen is the use of an element called `<gpxdata:speed>`. 
 
@@ -71,7 +71,7 @@ Another approach that can sometimes be seen is the use of an element called `<gp
 </trkpt>
 ```
 
-Whilst it is not defined in the ClueTrust schema, `<gpxdata:speed>` does not cause validation issues, because the GPX 1.1 schema uses `processContents="lax"` for elements within `<extensions>`.
+Whilst speed is not defined in the ClueTrust schema, `<gpxdata:speed>` does not cause validation issues, because the GPX 1.1 schema uses `processContents="lax"` for elements within `<extensions>`.
 
 
 
@@ -103,17 +103,19 @@ Note: Using SAXCount in this way will guarantee full validation with namespace p
 
 Free online validation tools also exist where you can copy/paste XML data and the associated schema for validation:
 
-- XML Validator at [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html)
+One of the better ones is the XML Validator at [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html) which supports online XSD files, although it does not handle [301](https://en.wikipedia.org/wiki/HTTP_301) redirects.
 
-Note: Use these online tools will typically guarantee full validation with namespace processing, schema processing and full schema constraint checking but they do not always check the use of extensions. Online tools often won't verify the `xsi:schemaLocation` attribute of the GPX file so errors may go unnoticed (e.g. Garmin specify the wrong URL for the XSD).
+Note: Use of online tools will typically guarantee full validation against the GPX schema but they will not always check the use of extensions. Online tools often won't verify the `xsi:schemaLocation` attribute of the GPX file so errors may go unnoticed (e.g. Garmin specify the wrong URL for the XSD). You should try some invalid use of extensions to determine what is being validated.
 
 
 
 ### GPX Header
 
-The root element in the GPX file is `<gpx>` and it is important that this is correctly populated for the validation against a schema to be possible.
+The root element in the GPX file is `<gpx>` is quite crucial and as it makes validation against the GPX schema possible.
 
 #### GPX 1.0
+
+This is a valid `<gpx>` element for a GPX 1.0 file:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -121,12 +123,12 @@ The root element in the GPX file is `<gpx>` and it is important that this is cor
      version="1.0"
      xmlns="http://www.topografix.com/GPX/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/0 https://www.topografix.com/GPX/1/0/gpx.xsd">
 ```
 
 #### GPX 1.1
 
-GPX 1.1 using the TrackPointExtension schema:
+This is a valid `<gpx>` element for a GPX 1.1 file which is using the TrackPointExtension schema:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -135,11 +137,11 @@ GPX 1.1 using the TrackPointExtension schema:
      xmlns="http://www.topografix.com/GPX/1/1"
      xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd
-        http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd
+        http://www.garmin.com/xmlschemas/TrackPointExtension/v2 https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
-The additional namespaces in a GPX 1.1 document are given a prefix (e.g. "gpxtpx" as above) but these may vary. For example, Garmin typically uses "ns3", whereas other tools use "gpxtpx" for TrackPointExtension.
+The additional namespaces in a GPX 1.1 document are given a prefix (e.g. "gpxtpx" as above) but these may vary. For example, Garmin Connect typically uses "ns3", whereas other software often use "gpxtpx" for TrackPointExtension.
 
 
 
@@ -149,11 +151,11 @@ The additional namespaces in a GPX 1.1 document are given a prefix (e.g. "gpxtpx
 
 Garmin's latest trackpoint extension is v2 (circa 2015). It introduced "speed", "course" and "bearing":
 
-- TrackPointExtension v2 - [http://www.garmin.com/xmlschemas/TrackPointExtension/v2](http://www.garmin.com/xmlschemas/TrackPointExtension/v2) + [TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
+- TrackPointExtension v2 - http://www.garmin.com/xmlschemas/TrackPointExtension/v2 / [TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
 
 The original version of TrackPointExtension (circa 2009) is still being used by various pieces of software:
 
-- TrackPointExtension v1 - [http://www.garmin.com/xmlschemas/TrackPointExtension/v1](http://www.garmin.com/xmlschemas/TrackPointExtension/v1) +  [TrackPointExtensionv1.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)
+- TrackPointExtension v1 - http://www.garmin.com/xmlschemas/TrackPointExtension/v1 /  [TrackPointExtensionv1.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)
 
 
 
@@ -161,17 +163,17 @@ The original version of TrackPointExtension (circa 2009) is still being used by 
 
 The following Garmin GPX extensions (circa 2006) have all been superseded by TrackPointExtension v1 + v2:
 
-- GpxExtensions v3 - [http://www.garmin.com/xmlschemas/GpxExtensions/v3](http://www.garmin.com/xmlschemas/GpxExtensions/v3) + [GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
-- GpxExtensions v2 - [http://www.garmin.com/xmlschemas/GpxExtensions/v2](http://www.garmin.com/xmlschemas/GpxExtensions/v2) + [GpxExtensionsv2.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv2.xsd)
+- GpxExtensions v3 - http://www.garmin.com/xmlschemas/GpxExtensions/v3 / [GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
+- GpxExtensions v2 - http://www.garmin.com/xmlschemas/GpxExtensions/v2 / [GpxExtensionsv2.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv2.xsd)
 - GpxExtensions v1 - removed from the web
 
 
 
 #### ClueTrust
 
-The extension by ClueTrust is also quite popular and used as a kind of "hack" for inclusion of speed:
+The extension by ClueTrust is also popular and sometimes used for the `<gpxdata:speed>` hack:
 
-- GPXDATA - http://www.cluetrust.com/XML/GPXDATA/1/0 / [https://www.cluetrust.com/Schemas/gpxdata10.xsd](https://www.cluetrust.com/Schemas/gpxdata10.xsd)
+- GPXDATA - http://www.cluetrust.com/XML/GPXDATA/1/0 / [gpxdata10.xsd](https://www.cluetrust.com/Schemas/gpxdata10.xsd)
 
 
 
@@ -202,7 +204,7 @@ Note: It is the shared "wptType" of GPX 1.1 which resulted in "course" and "spee
 
 ### Course and Speed
 
-If you are using GPX 1.0 then it is easy to include course and speed:
+If you are using GPX 1.0 then it is easy to include `<course>` and `<speed>`:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -215,7 +217,7 @@ If you are using GPX 1.0 then it is easy to include course and speed:
 </trkpt>
 ```
 
-If you are using GPX 1.1 then you need to use TrackPointExtension v2: 
+If you are using GPX 1.1 then you probably need to use TrackPointExtension v2: 
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -233,7 +235,7 @@ If you are using GPX 1.1 then you need to use TrackPointExtension v2:
 </trkpt>
 ```
 
-Alternatively, you can use an interim approach for speed, so long as the `gpxdata` namespace has been defined:
+Alternatively you can use `<gpxdata:speed>`, so long as the `gpxdata` namespace has been defined:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -247,7 +249,7 @@ Alternatively, you can use an interim approach for speed, so long as the `gpxdat
 </trkpt>
 ```
 
-Full details about the subtleties of course and speed in GPX 1.1 files are covered in a separate [page](speed.md).
+Full details about the subtleties of course and speed in GPX 1.1 files are covered in a separate [document](speed.md).
 
 
 
