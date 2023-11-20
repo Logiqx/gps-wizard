@@ -41,15 +41,11 @@ GPS / GNSS chips typically output the equivalent of 7 decimal places. For exampl
 
 ### Course and Speed
 
-GPX 1.0 supports "course" and "speed" but these elements were dropped in GPX 1.1, released in August 2004.
+GPX 1.0 supports `<course>` and `<speed>` but these elements were accidentally dropped in GPX 1.1, released in August 2004.
 
 The course and speed are very useful attributes which unfortunately cannot be re-constructed from longitude and latitude.
 
-IMHO it would seem that the removal of "course" and "speed" in GPX 1.1 was an oversight by TopoGrafix.
-
-Garmin re-added support for "course" and "speed" in V2 of the [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema for use with GPX 1.1.
-
-In July 2023, I created the [TrackPointExtras](../xmlschemas/tpx/1/0/README.md) schema for use with GPX 1.1, adding "course", "speed" and accuracy estimates:
+Garmin added support for course and speed in V2 of the [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema for use with GPX 1.1.
 
 
 
