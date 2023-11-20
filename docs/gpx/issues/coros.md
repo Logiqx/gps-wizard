@@ -163,13 +163,13 @@ An elevation of "0" should not be included in trackpoints, unless the elevation 
 
 When elevation is unknown, it should be omitted from the trackpoint.
 
-Ideally, elevation as calculated by the GPS / GNSS receiver always should be recorded, even for Windsurfing and Speedsurfing. The `<ele>` element is supposed to represent height above the geoid (aka MSL), and benefits from 2 decimal places.
+Ideally, elevation as calculated by the GPS / GNSS receiver should always be recorded, even for Windsurfing and Speedsurfing. The `<ele>` element is supposed to represent height above the geoid (aka MSL), and benefits from 2 decimal places.
 
 
 
 #### Distance
 
-The inclusion of distance within `<extensions>` is beneficial, although it would benefit from 2 decimal places:
+The inclusion of distance within `<extensions>` is beneficial, although it would desirable to show 2 decimal places:
 
 ```xml
 <extensions>
@@ -191,6 +191,13 @@ The `<speed>` element was accidentally removed from GPX 1.1 when it was being de
 
 Use of `<gpxdata:speed>` has been prevalent for quite some years and is supported by a number of speedsailing applications. Whilst it is not defined in ClueTrust's GPXDATA schema `<gpxdata:speed>` does not cause validation issues, because the GPX 1.1 schema uses `processContents="lax"` for elements within `<extensions>`.
 
+```xml
+<extensions>
+ <gpxdata:distance>5.67</gpxdata:distance>
+ <gpxdata:speed>12.345</gpxdata:speed>
+</extensions>
+```
+
 The only alternative to this approach is Garmin's TrackPointExtension v2, which I am assuming COROS would not wish to use within their GPX exports. Although `<gpxdata:speed>` isn't defined in the ClueTrust XSD, it does provide a workable solution without relying upon the Garmin extension. The units for `<gpxdata:speed>` are m/s, just like `<speed>` in GPX 1.0. 
 
 
@@ -201,7 +208,7 @@ The `<course>` element was accidentally removed from GPX 1.1 when it was being d
 
 However, it is not possible to use `<gpxdata:course>` because that element serves a completely different purpose, and does not represent course over ground. Although course is supported by Garmin's TrackPointExtension v2, I am assuming COROS would not wish to use that extension within their GPX exports.
 
-For this reason, I would suggest that `<cog>` is simply removed from the COROS exports, until such time as there is a legitimate way to include it in GPX 1.1 files. I am working alongside the original GPX developers to create a variety of official extensions for the GPX standard. I will notify COROS when this work is complete.
+For this reason, I would suggest that `<cog>` is simply removed from the COROS exports, until such time as there is a legitimate way to include it in GPX 1.1 files. I am working alongside the original GPX developers to create a variety of official extensions for the GPX standard. I will notify COROS when this work is complete, and there is an official way to include course over ground.
 
 
 
@@ -216,7 +223,7 @@ The `<ele>` element is supported by GPX and should be the very first element in 
 </trkpt>
 ```
 
-Ideally, elevation should be really be included for all activities, including Windsurfing and Speedsurfing.
+Ideally, elevation should be included for all activities, including Windsurfing and Speedsurfing.
 
 The `<ele>` element is supposed to represent height above the geoid (aka MSL), and benefits from 2 decimal places.
 
@@ -224,7 +231,7 @@ The `<ele>` element is supposed to represent height above the geoid (aka MSL), a
 
 #### Satellites and HDOP
 
-The `<sat>` and `<hdop>` elements are supported by GPX and should be immediately above `<extensions>`:
+The `<sat>` and `<hdop>` elements are supported by GPX and should be below the `<time>` element:
 
 ```xml
 <trkpt lat="53.3713950" lon="-3.1900331">
@@ -232,11 +239,6 @@ The `<sat>` and `<hdop>` elements are supported by GPX and should be immediately
   <time>2022-02-06T11:16:54Z</time>
   <sat>13</sat>
   <hdop>1.2</hdop>
-  <extensions>
-    <gpxdata:hr>101</gpxdata:hr>
-    <gpxdata:distance>5.67</gpxdata:distance>
-    <gpxdata:speed>12.345</gpxdata:speed>
- </extensions>
 </trkpt>
 ```
 
@@ -262,11 +264,11 @@ Note about satellites taken from [GitHub](https://github.com/Logiqx/gp3s-coros/i
 
 ### Summary
 
-This document describes what it would take to ensure that GPX exports from COROS are fully compliant with GPX 1.1. This has a number of technical advantages, including full compatibility with even the strictest of applications that support GPX files.
+This document describes how to make the GPX exports from COROS be fully compliant with GPX 1.1. This has a number of technical advantages, including full compatibility with even the strictest of applications that support GPX files, such as Garmin's Basecamp.
 
-All of the changes are straightforward to implement, and validation of GPX files during development / testing is extremely easy using [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html). You can copy / paste the example code at the top of this document to try it out.
+All of the changes are straightforward to implement, and validation of GPX files during development / testing is extremely easy using [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html). You can copy / paste the GPX example from the top of this document when trying out the freeformatter service.
 
-The addition of `<gpxdata:speed>` provides huge benefits to the speedsailing community. An overview of why speed is so important can be found on a separate [page](../speed.md). Although the examples are from an Apple Watch the issue of "spikes" is common to all GPS / GNSS receivers, including COROS.  
+The addition of `<gpxdata:speed>` provides huge benefits to the speedsailing community. An overview of why speed is so important can be found on a separate [document](../speed.md). Although the examples are from an Apple Watch the issue of "spikes" in the positional data is common to all GPS / GNSS receivers, including COROS watches.  
 
 I hope this information is helpful, and COROS developer(s) can be assigned some time to implement these changes, especially the addition of `<gpxdata:speed>` so that we can eliminate a number of data quality issues in the speedsailing community.
 
