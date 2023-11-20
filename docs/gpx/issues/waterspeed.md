@@ -24,12 +24,15 @@ This example has been fixed by hand to ensure compliance with the GPX 1.1 schema
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<gpx version="1.1" creator="Waterspeed"
+<gpx version="1.1"
+     creator="Waterspeed"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xmlns="http://www.topografix.com/GPX/1/1"
      xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd
-       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.garmin.com/xmlschemas/TrackPointExtension/v2
+                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
   <metadata>
     <time>2022-10-29T12:55:24.000Z</time>
   </metadata>
@@ -91,8 +94,10 @@ n.b. TrackPointExtension/v2 is the only public GPX extension that supports speed
 The URL for the Garmin extension needs to be added to `xsi:schemaLocation`:
 
 ```xml
-<gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd
-       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+<gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.garmin.com/xmlschemas/TrackPointExtension/v2
+                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
 n.b. The subdomain hosting the Garmin extensions is now https://www8.garmin.com.
@@ -211,8 +216,10 @@ This would be a fully compliant GPX file as described in this document. The GPX 
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xmlns="http://www.topografix.com/GPX/1/1"
      xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd
-       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.garmin.com/xmlschemas/TrackPointExtension/v2 
+                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
 A trackpoint would only require `<gpxtpx:speed>` for speed:
@@ -244,8 +251,10 @@ This would be a modified version of the universal GPX export. The GPX header wou
      xmlns="http://www.topografix.com/GPX/1/1"
      xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
      xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd
-       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.garmin.com/xmlschemas/TrackPointExtension/v2 
+                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
 Note the addition of `xmlns:gpxdata` in the GPX header but the lack of a corresponding XSD in `xsi:schemaLocation`.

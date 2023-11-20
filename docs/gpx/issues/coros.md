@@ -24,8 +24,10 @@ This example has been fixed by hand to ensure compliance with the GPX 1.1 schema
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
      xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd
-         http://www.cluetrust.com/XML/GPXDATA/1/0 https://www.cluetrust.com/Schemas/gpxdata10.xsd"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.cluetrust.com/XML/GPXDATA/1/0 
+                         https://www.cluetrust.com/Schemas/gpxdata10.xsd"
      creator="Coros Wearables"
      version="1.1">
   <metadata>
@@ -68,8 +70,10 @@ The `<gpx>` element needs be be tweaked as follows:
 <gpx xmlns="http://www.topografix.com/GPX/1/1"
      xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd
-         http://www.cluetrust.com/XML/GPXDATA/1/0 https://www.cluetrust.com/Schemas/gpxdata10.xsd"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.cluetrust.com/XML/GPXDATA/1/0 
+                         https://www.cluetrust.com/Schemas/gpxdata10.xsd"
      creator="Coros Wearables"
      version="1.1">
 ```

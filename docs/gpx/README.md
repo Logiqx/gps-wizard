@@ -272,4 +272,4 @@ The following software providers and hardware manufacturers are GPX 1.0 complian
 - [Hoolan](issues/hoolan.md)
 - [Motion](issues/motion.md)
 - [RealSpeed](issues/realspeed.md)
-- Sailmon - although they do not include speed or course
+- [Sailmon](issues/sailmon.md) - although they do not include speed or course
