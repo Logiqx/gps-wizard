@@ -103,7 +103,7 @@ Note: Using SAXCount in this way will guarantee full validation with namespace p
 
 Free online validation tools also exist where you can copy/paste XML data and the associated schema for validation:
 
-One of the better ones is the XML Validator at [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html) which supports online XSD files, although it does not handle [301](https://en.wikipedia.org/wiki/HTTP_301) redirects.
+One of the better ones is the XML Validator at [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html) which supports online XSD files, although it does not handle [301](https://en.wikipedia.org/wiki/HTTP_301) redirects. This can be worked around by specifying the actual URL of the XSD file, typically HTTPS.
 
 Note: Use of online tools will typically guarantee full validation against the GPX schema but they will not always check the use of extensions. Online tools often won't verify the `xsi:schemaLocation` attribute of the GPX file so errors may go unnoticed (e.g. Garmin specify the wrong URL for the XSD). You should try some invalid use of extensions to determine what is being validated.
 
@@ -235,7 +235,7 @@ If you are using GPX 1.1 then you probably need to use TrackPointExtension v2:
 </trkpt>
 ```
 
-Alternatively you can use `<gpxdata:speed>`, so long as the `gpxdata` namespace has been defined:
+Under specific circumstances you may use `<gpxdata:speed>`, so long as the `gpxdata` namespace is properly defined:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
