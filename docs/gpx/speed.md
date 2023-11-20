@@ -63,7 +63,24 @@ The [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) format of 2002 allowed
 
 #### The Interim Approach
 
-The kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) overcame the GPX 1.1 oversight using an element called `<gpxdata:speed>` as a trackpoint extension. 
+The kickstarter [Trace](https://www.kickstarter.com/projects/activereplay/trace-the-most-advanced-activity-monitor-for-actio) overcame the GPX 1.1 oversight using an element called `<gpxdata:speed>` as a trackpoint extension.
+
+An example header:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Demo App"
+     version="1.1"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.cluetrust.com/XML/GPXDATA/1/0
+                         https://www.cluetrust.com/Schemas/gpxdata10.xsd">
+```
+
+The track points can then include `<gpxdata:speed>` as follows:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -183,11 +200,11 @@ You will also need to add the "gpxdata" namespace and schema location to the GPX
      xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
-                         shttp://www.topografix.com/GPX/1/1/gpx.xsd
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v2
-                         shttp://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd
+                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd
                          http://www.cluetrust.com/XML/GPXDATA/1/0
-                         shttp://www.cluetrust.com/Schemas/gpxdata10.xsd">
+                         https://www.cluetrust.com/Schemas/gpxdata10.xsd">
 ```
 
 Notes:
