@@ -36,8 +36,6 @@ The fastest non-Doppler speed that was not an obvious spike was 26.4 knots. The 
 
 
 
-
-
 ### GPX 1.0
 
 The [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) format of 2002 allowed speed (typically "doppler speed" in a modern GNSS chip) to be recorded in GPX files using the `<speed>`element. The same was also true for [course of ground](https://en.wikipedia.org/wiki/Course_(navigation)) (COG) using the `<course>` element. 

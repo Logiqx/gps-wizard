@@ -2,7 +2,7 @@
 
 ### Introduction
 
-[GPX](https://www.topografix.com/gpx.asp), or GPS Exchange Format, is an XML schema created by Topografix as a common GPS data format for software applications. GPX comes in two main flavors with schema defining the structure and content; [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) and [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd).
+[GPX](https://www.topografix.com/gpx.asp), or GPS Exchange Format, is an XML schema hosted by Topografix as a common GPS data format for software applications. GPX comes in two main flavors with schema defining the structure and content; [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) and [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd).
 
 Proper use of the GPX format and compliance with the official schema are essential if attributes such as speed are to be used by popular applications such as [GPSResults](https://www.gps-speed.com/) and [GpsarPro](http://www.gpsactionreplay.com/). This is particularly important because speed calculations from positional data alone are highly suspectable to errors.
 
@@ -33,11 +33,11 @@ The GPX 1.0 schema includes support for "course" (course over ground) and "speed
 
 ### GPX 1.1
 
-[GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd) was released on 9 August 2004 and improved upon the GPX 1.0 standard, introducing support for extensions.
+[GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd) was released on 9 August 2004 and improved upon the GPX 1.0 standard, introducing support for `<extensions>`.
 
-Sadly, GPX 1.1 removed "speed" and "course". This may have been an oversight or perhaps their significance was not appreciated at the time.
+Sadly, GPX 1.1 removed the `<speed>` and `<course>` elements. This change was unintentional, so speed and course now require the use of `<extensions>`.
 
-It was not until around 2015 when Garmin finally re-introduced "speed" and "course" in version 2 of their [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema.
+It was not until around 2015 when Garmin released a [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) that included speed and course.
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -55,9 +55,9 @@ It was not until around 2015 when Garmin finally re-introduced "speed" and "cour
 </trkpt>
 ```
 
-Note: The example above also includes `<gpxtpx:hr>` (heartrate) to illustrate how that would be included.
+Note: The example above also includes `<gpxtpx:hr>` (heart rate) to illustrate how that can also be included.
 
-In July 2023, I created the [TrackPointExtras](../xmlschemas/tpx/1/0/README.md) schema for use with GPX 1.1, adding "course", "speed" and accuracy estimates:
+Another approach that can sometimes be seen is the use of an element called `<gpxdata:speed>`. 
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -66,17 +66,12 @@ In July 2023, I created the [TrackPointExtras](../xmlschemas/tpx/1/0/README.md) 
   <sat>6</sat>
   <hdop>1.4</hdop>
   <extensions>
-    <tpx:extras>
-      <tpx:course>157.19</tpx:course>
-      <tpx:speed>0.5429</tpx:speed>
-      <tpx:hacc>2.0</tpx:hacc>
-      <tpx:vacc>4.0</tpx:vacc>
-      <tpx:cacc>5.0</tpx:cacc>
-      <tpx:sacc>0.5</tpx:sacc>
-    </tpx:extras>
+    <gpxdata:speed>0.5429</gpxdata:speed>
   </extensions>
 </trkpt>
 ```
+
+Whilst it is not defined in the ClueTrust schema, `<gpxdata:speed>` does not cause validation issues, because the GPX 1.1 schema uses `processContents="lax"` for elements within `<extensions>`.
 
 
 
@@ -109,9 +104,8 @@ Note: Using SAXCount in this way will guarantee full validation with namespace p
 Free online validation tools also exist where you can copy/paste XML data and the associated schema for validation:
 
 - XML Validator at [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html)
-- XML Validator at [liquid-technologies.com](https://www.liquid-technologies.com/online-xsd-validator)
 
-Note: Using these online tools will typically guarantee full validation with namespace processing, schema processing and full schema constraint checking but they will not check the use of extension schema. The online tools won't verify the xsi:schemaLocation attribute of the GPX file so any errors in that may go unnoticed (e.g. Garmin specify the wrong URL for the XSD).
+Note: Use these online tools will typically guarantee full validation with namespace processing, schema processing and full schema constraint checking but they do not always check the use of extensions. Online tools often won't verify the `xsi:schemaLocation` attribute of the GPX file so errors may go unnoticed (e.g. Garmin specify the wrong URL for the XSD).
 
 
 
@@ -145,51 +139,39 @@ GPX 1.1 using the TrackPointExtension schema:
         http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
-The additional namespaces in a GPX 1.1 document are given a prefix (e.g. "gpxtpx" as above) but these may vary. For example, Garmin sometimes uses "ns3" and sometimes uses "gpxtpx" for TrackPointExtension.
-
-GPX 1.1 using the TrackPointExtras schema is a necessity if speed accuracy estimates are to be included:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<gpx creator="GPS Wizard"
-     version="1.1"
-     xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
-                         http://www.topografix.com/GPX/1/1/gpx.xsd
-                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0
-                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx10.xsd">
-```
-
-All software that can read GPX 1.1 files using the TrackPointExtension or TrackPointExtras schemas should be careful not rely upon / expect the use of a specific prefix.
+The additional namespaces in a GPX 1.1 document are given a prefix (e.g. "gpxtpx" as above) but these may vary. For example, Garmin typically uses "ns3", whereas other tools use "gpxtpx" for TrackPointExtension.
 
 
 
 ### Extensions
 
-The following Garmin GPX extensions (circa 2006) have now been superseded by TrackPointExtension v1 + v2:
+#### TrackPointExtension
 
-- GpxExtensions v2 - [http://www.garmin.com/xmlschemas/GpxExtensions/v2](http://www.garmin.com/xmlschemas/GpxExtensions/v2) + [GpxExtensionsv2.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv2.xsd)
-- GpxExtensions v3 - [http://www.garmin.com/xmlschemas/GpxExtensions/v3](http://www.garmin.com/xmlschemas/GpxExtensions/v3) + [GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
-
-The following Garmin trackpoint extension (circa 2009) has also been superseded by TrackPointExtension v2:
-
-- TrackPointExtension v1 - [http://www.garmin.com/xmlschemas/TrackPointExtension/v1](http://www.garmin.com/xmlschemas/TrackPointExtension/v1) +  [TrackPointExtensionv1.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)
-
-The latest Garmin trackpoint extension is v2 (circa 2015). It added "speed", "course" and "bearing" to TrackPointExtension v1:
+Garmin's latest trackpoint extension is v2 (circa 2015). It introduced "speed", "course" and "bearing":
 
 - TrackPointExtension v2 - [http://www.garmin.com/xmlschemas/TrackPointExtension/v2](http://www.garmin.com/xmlschemas/TrackPointExtension/v2) + [TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
 
-Note: TrackPointExtension v2 is the only "legitimate" way to include "speed" and "course" in a GPX 1.1 file.
+The original version of TrackPointExtension (circa 2009) is still being used by various pieces of software:
 
-Other useful Garmin extensions include:
+- TrackPointExtension v1 - [http://www.garmin.com/xmlschemas/TrackPointExtension/v1](http://www.garmin.com/xmlschemas/TrackPointExtension/v1) +  [TrackPointExtensionv1.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)
 
-- TrackStatsExtension - [http://www.garmin.com/xmlschemas/TrackStatsExtension/v1](http://www.garmin.com/xmlschemas/TrackStatsExtension/v1)
 
-The TrackPointExtras schema was created in July 2023. It added "speed", "course" and elements for the various accuracy estimates:
 
-- TrackPointExtras v1 - [https://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0/](https://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0/) + [tpx10.xsd](http://logiqx.github.io/gps-wizard/xmlschemas/tpx10.xsd)
+#### GpxExtensions
+
+The following Garmin GPX extensions (circa 2006) have all been superseded by TrackPointExtension v1 + v2:
+
+- GpxExtensions v3 - [http://www.garmin.com/xmlschemas/GpxExtensions/v3](http://www.garmin.com/xmlschemas/GpxExtensions/v3) + [GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
+- GpxExtensions v2 - [http://www.garmin.com/xmlschemas/GpxExtensions/v2](http://www.garmin.com/xmlschemas/GpxExtensions/v2) + [GpxExtensionsv2.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv2.xsd)
+- GpxExtensions v1 - removed from the web
+
+
+
+#### ClueTrust
+
+The extension by ClueTrust is also quite popular and used as a kind of "hack" for inclusion of speed:
+
+- GPXDATA - http://www.cluetrust.com/XML/GPXDATA/1/0 / [https://www.cluetrust.com/Schemas/gpxdata10.xsd](https://www.cluetrust.com/Schemas/gpxdata10.xsd)
 
 
 
@@ -251,7 +233,7 @@ If you are using GPX 1.1 then you need to use TrackPointExtension v2:
 </trkpt>
 ```
 
-Alternatively, you can use TrackPointExtras v1:
+Alternatively, you can use an interim approach for speed, so long as the `gpxdata` namespace has been defined:
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -260,15 +242,12 @@ Alternatively, you can use TrackPointExtras v1:
   <sat>6</sat>
   <hdop>1.4</hdop>
   <extensions>
-    <tpx:extras>
-      <tpx:course>157.19</tpx:course>
-      <tpx:speed>0.5429</tpx:speed>
-    </tpx:extras>
+    <gpxdata:speed>0.5429</gpxdata:speed>
   </extensions>
 </trkpt>
 ```
 
-Full details about the subtleties of course and speed in a GPX 1.1 file are covered in a separate [page](speed.md).
+Full details about the subtleties of course and speed in GPX 1.1 files are covered in a separate [page](speed.md).
 
 
 
@@ -291,3 +270,4 @@ The following software providers and hardware manufacturers are GPX 1.0 complian
 - [Hoolan](issues/hoolan.md)
 - [Motion](issues/motion.md)
 - [RealSpeed](issues/realspeed.md)
+- Sailmon - although they do not include speed or course
