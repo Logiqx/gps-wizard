@@ -49,6 +49,9 @@ The GPX files created by Hoolan do include an appropriate header, as shown in th
 - GpxExtensions v3 is not required
   - `xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" `
   - `xsi:schemaLocation` containing `GpxExtensions/v3` and `GpxExtensionsv3.xsd`
+- Precision can be reduced for some elements
+  - `lat` and `lon` only require 7 decimal places
+  - `<gpxtpx:speed>` only requires 3 decimal places
 - The following elements are not present, but might be considered in the future
   - `<ele>`
   - `<gpxdata:course>`

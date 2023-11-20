@@ -267,7 +267,7 @@ Individual pages describe the GPX compliancy issues specific to individual softw
 
 
 
-The following software providers and hardware manufacturers are GPX 1.0 compliant:
+The following software providers and hardware manufacturers are GPX 1.0 or 1.1 compliant:
 
 - [Hoolan](issues/hoolan.md)
 - [Motion](issues/motion.md)

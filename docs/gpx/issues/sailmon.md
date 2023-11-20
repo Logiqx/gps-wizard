@@ -36,4 +36,6 @@ The GPX files created by Sailmon do include an appropriate header, as shown in t
 
 - Sailmon uses [phpGPX](https://github.com/Sibyx/phpGPX) to create its GPX exports which support TrackPointExtension [v1](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd) and [v2](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
 - Some suggestions / requests for Sailmon have been documented as [observations](https://logiqx.github.io/gps-details/sailmon/)
+  - One of the main suggestions is the use `<gpxtpx:speed>` from TrackPointExtension v2
+
 
