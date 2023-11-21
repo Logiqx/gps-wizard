@@ -58,7 +58,8 @@ The `xsi:schemaLocation` was not defined correctly:
      creator="WindsportsTracker"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xmlns="http://www.topografix.com/GPX/1/0"
-     n0:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd"
+     n0:schemaLocation="http://www.topografix.com/GPX/1/0
+                        http://www.topografix.com/GPX/1/0/gpx.xsd"
      xmlns:n0="xsi">
 ```
 
@@ -70,7 +71,8 @@ The proper syntax is shown below, using the official GPX 1.0 schema location:
      xmlns="http://www.topografix.com/GPX/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xmlns:wst="https://www.windsporttracker.com/"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/0 https://www.topografix.com/GPX/1/0/gpx.xsd">
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/0
+                         https://www.topografix.com/GPX/1/0/gpx.xsd">
 ```
 
 Note the addition of `xmlns:wst` for the extensions to GPX 1.0.

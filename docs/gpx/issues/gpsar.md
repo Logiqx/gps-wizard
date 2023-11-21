@@ -57,7 +57,8 @@ The header is ok, except there is no schema location for the "gpsarPro" namespac
      xmlns="http://www.topografix.com/GPX/1/0"
      xmlns:gpsarPro="http://www.gpsactionreplay.com/xml"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/0
+                         http://www.topografix.com/GPX/1/0/gpx.xsd">
 ```
 
 

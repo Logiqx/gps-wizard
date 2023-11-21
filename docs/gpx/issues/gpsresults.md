@@ -59,7 +59,8 @@ GPSResults should really use a standard GPX 1.0 header:
      version="1.0"
      xmlns="http://www.topografix.com/GPX/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/0
+                         http://www.topografix.com/GPX/1/0/gpx.xsd">
 ```
 
 
