@@ -44,8 +44,8 @@ The GPX files created by Hoolan do include an appropriate header, as shown in th
 ### Notes
 
 - TrackPointExtension v2
-  - `<gpxdata:speed>` was also added to the GPX export in v1.8.0 on 5 Sep 2023
-  - `<gpxdata:hr>` was also added to the GPX export in v1.9.0 on 7 Nov 2023
+  - `<gpxdata:speed>` was added to the GPX export in v1.8.0 on 5 Sep 2023
+  - `<gpxdata:hr>` was added to the GPX export in v1.9.0 on 7 Nov 2023
 - GpxExtensions v3 is not required
   - `xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" `
   - `xsi:schemaLocation` containing `GpxExtensions/v3` and `GpxExtensionsv3.xsd`
