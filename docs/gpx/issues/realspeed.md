@@ -37,6 +37,9 @@ RealSpeed is no longer under development, so the following observations are unli
   - `<speed>`
   - `<sat>`
   - `<hdop>`
+- The elevation element is always zero, not a true elevation:
+  - `<ele>0</ele>`
+
 - The `<time>` element is incorrect, using a colon instead of a dot for milliseconds:
   - `<time>2008-01-14T20:46:24:00Z</time>`
 

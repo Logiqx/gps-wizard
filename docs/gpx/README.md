@@ -269,7 +269,7 @@ Individual pages describe the GPX compliancy issues specific to individual softw
 
 The following software providers and hardware manufacturers are GPX 1.0 or 1.1 compliant:
 
-- [Hoolan](issues/hoolan.md)
+- [Hoolan](issues/hoolan.md) - although it does not include `<ele>` or `<gpxtpx:course>`
 - [Motion](issues/motion.md)
-- [RealSpeed](issues/realspeed.md)
-- [Sailmon](issues/sailmon.md) - although they do not include speed or course
+- [RealSpeed](issues/realspeed.md) - although it does not include `<ele>`, `<course>`, `<speed>`, `<sat>` or `<hdop>`
+- [Sailmon](issues/sailmon.md) - although it does not include `<ele>`, `<gpxtpx:speed>`, `<gpxtpx:course>`
