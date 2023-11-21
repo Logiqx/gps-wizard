@@ -1,22 +1,25 @@
 ## GPS Exchange Format (GPX) - Garmin
 
-### Summary
+### Background
 
-The GPX 1.1 files produced by Garmin are fairly decent but still have a few issues:
+This document describes a number of desirable changes to the GPX exports produced by Garmin:
 
-- Lack of GPX 1.1 compliance due to incorrect (or missing) schema locations.
-- Missing elements; "speed", "course", "sat "and "hdop".
-- Precision is much higher than necessary; e.g. "lat", "lon "and "ele".
+1. Ensuring GPX exports are compliant with the GPX 1.1 standard
+2. Ensuring the XSD files for GPX extensions are accessible
+3. Appropriate precision for elements such as `<ele>`, `<lat>`, and `<lon>`
+4. Inclusion of speed and course in the GPX exports
 
-These issues are described in the next section, followed by a section listing recommendations.
+The [GPX home](https://www.topografix.com/gpx_validation.asp) page summarises the importance of GPX validation and best practices. It is very simple and straightforward to ensure the Garmin exports are fully compliant with the GPX 1.1 standard. This document describes how to achieve the goal of GPX compliance / compatibility.
+
+The addition of speed and course to GPX exports is also very desirable, and straightforward. The inclusion of speeds in GPX 1.1 files would be beneficial to a number of sports and is described towards the end of this document. 
 
 
 
-### Issues
+### Validation
 
-#### GPX 1.1
+There are numerous ways to check compliance and validate a GPX file against the XSD. Several approaches are described at the [GPX home](https://www.topografix.com/gpx_validation.asp), but the simplest approach is to use an online validator such as the one at [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html).
 
-Garmin tend to use GPX 1.1 but have a slight error in the schema location:
+This example has been fixed by hand to ensure compliance with the GPX 1.1 schema. Simply paste it into the [XML Validator](https://www.freeformatter.com/xml-validator-xsd.html) and press "Validate XML".
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -26,50 +29,139 @@ Garmin tend to use GPX 1.1 but have a slight error in the schema location:
      xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
      xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd">
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.garmin.com/xmlschemas/GpxExtensions/v3
+                         https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd
+                         http://www.garmin.com/xmlschemas/TrackPointExtension/v1
+                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+  <metadata>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-06-11T12:23:41.000Z</time>
+  </metadata>
+  <trk>
+    <name>Weymouth and Portland Windsurf</name>
+    <type>windsurfing</type>
+    <trkseg>
+      <trkpt lat="50.57713455520570278167724609375" lon="-2.46620426885783672332763671875">
+        <ele>2.2000000476837158203125</ele>
+        <time>2022-06-11T12:23:41.000Z</time>
+        <extensions>
+          <ns3:TrackPointExtension>
+            <ns3:atemp>25.0</ns3:atemp>
+            <ns3:hr>97</ns3:hr>
+          </ns3:TrackPointExtension>
+        </extensions>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
+```
+
+
+
+### Issues
+
+#### Schema Locations
+
+The exports from Garmin Connect have an issue with the URL in `<xsi:schemaLocation>`:
+
+```xml
+<gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         http://www.topografix.com/GPX/11.xsd">
+```
+
+The correct schema location for GPX 1.1 is as follows:
+
+```xml
+<gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd">
+```
+Ideally the schema location of TrackPointExtension v1 should also be added for clarity:
+
+```xml
+<gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.garmin.com/xmlschemas/TrackPointExtension/v1
+                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+```
+
+
+
+#### Redundant Namespace
+
+The following namespace appears to be redundant in the GPX exports of Garmin Connect:
+
+```xml
+<gpx xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
+```
+
+The namespace can either be removed, or the URL can be added to the `xsi:schemaLocation` attribute:
+
+```xml
+<gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.garmin.com/xmlschemas/GpxExtensions/v3
+                         https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd
+                         http://www.garmin.com/xmlschemas/TrackPointExtension/v1
+                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+```
+
+
+
+#### 301 Redirects
+
+There is an issue with the server redirects on the Garmin website. For example:
+
+```
+http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd ->
+https://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd ->
+https://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd/ ->
+https://www.garmin.com/en-US
+```
+
+The correct redirects should be as follows:
+
+```
+http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd ->
+https://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd ->
+https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd
+```
+
+
+
+#### Excessive Precision
+
+GPX files created by Garmin Connect use far too much precision:
+
+```xml
+<trkpt lat="50.57713455520570278167724609375" lon="-2.46620426885783672332763671875">
+  <ele>2.2000000476837158203125</ele>
+</trkpt>
+```
+
+An appropriate level of precision for typical GNSS receivers is as follows:
+
+```xml
+<trkpt lat="50.5771346" lon="-2.4662043">
+  <ele>2.20</ele>
+</trkpt>
 ```
 
 Notes:
 
-- Incorrect schema location which refers to http://www.topografix.com/GPX/11.xsd  instead of http://www.topografix.com/GPX/1/1/gpx.xsd 
-- This schemaLocation issue is not detected by online validation tools because the XSD is pasted directly into the web page.
-- Garmin also omit the schema locations of GpxExtensions and TrackpointExtension.
+- `lat` and `lon` - 7 decimal places is equivalent to a precision of 1.11 cm, so no more than 7 or 8 are required
+- `<ele>` - 2 decimal places is equivalent to a precision of 1 cm, so no more than 2 or 3 are required
 
 
 
-#### Missing Elements
+### Speed and Course
 
-A variety of activity types would benefit from the following trackpoint elements:
+A variety of activities would greatly benefit from speed and course elements in GPX exports.
 
-- "speed" using TrackPointExtension v2 for GPX 1.1
-- "course" using TrackPointExtension v2 for GPX 1.1
-
-The following trackpoint elements would also be very useful in windsurfing / speedsurfing tracks:
-
-- "sat" which is standard to GPX 1.0 and GPX 1.1
-- "hdop" which is standard to GPX 1.0 and GPX 1.1
-
-Notes:
-
-- Speed and course are already available in FIT files so they could also be included in GPX files.
-- Satellites and HDOP may not be so easy (or even possible) as they may not be available to Garmin Connect.
-
-
-
-#### Precision
-
-GPX files created by Garmin often include ridiculously high levels of precision, far exceeding that of modern GNSS chips.
-
-- "lat" and "lon" = often 29 decimal places but 8 decimal places is mm precision at the equator.
-- "ele" = 23 decimal places but 3 decimal places is mm precision.
-
-
-
-### Recommendations
-
-#### GPX Compliance
-
-- Fix the schema location of the XSD for GPX 1.1 so that [SAXCount](https://www.topografix.com/gpx_validation.asp) does not report "fatal error during schema scan".
+This would only require a minor change to the `<gpx>` element, switching to `TrackPointExtension/v2`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -79,44 +171,32 @@ GPX files created by Garmin often include ridiculously high levels of precision,
      xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
      xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         http://www.garmin.com/xmlschemas/GpxExtensions/v3
+                         https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd
+                         http://www.garmin.com/xmlschemas/TrackPointExtension/v2
+                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
-- Consider adding the schema locations (i.e. URLs of the XSD files) for GpxExtensions and TrackPointExtension.
-
-
-
-#### GPX Improvements
-
-- Add "hr" (heartrate), "course" and "speed" to trackpoints using TrackPointExtension v2:
+With the `<gpx>` element referring to `TrackPointExtension/v2` it is then possible to include `<ns3:speed>` and `<ns3:course>`:
 
 ```xml
-<trkpt lat="52.0486800" lon="-0.5688999">
-    <ele>0</ele>
-    <time>2022-04-04T12:41:50Z</time>
-    <sat>14</sat>
-    <hdop>0.8</hdop>
-    <extensions>
-        <ns3:TrackPointExtension>
-            <ns3:hr>100</ns3:hr>
-            <ns3:speed>0.5429</ns3:speed>
-            <ns3:course>157.19</ns3:course>
-        </ns3:TrackPointExtension>
-    </extensions>
+<trkpt lat="50.5771346" lon="-2.4662043">
+  <ele>2.20</ele>
+  <time>2022-06-11T12:23:41.000Z</time>
+  <extensions>
+    <ns3:TrackPointExtension>
+      <ns3:atemp>25.0</ns3:atemp>
+      <ns3:hr>97</ns3:hr>
+      <ns3:speed>10.78</ns3:speed>
+      <ns3:course>248.2</ns3:course>
+    </ns3:TrackPointExtension>
+  </extensions>
 </trkpt>
 ```
 
-- Add "sat" and "hdop" to the trackpoints:
+Speed and course are already available in the FIT exports, so they should also be possible in GPX exports.
 
-```xml
-<trkpt lat="52.0486800" lon="-0.5688999">
-    <ele>0</ele>
-    <time>2022-04-04T12:41:50Z</time>
-    <sat>14</sat>
-    <hdop>0.8</hdop>
-</trkpt>
-```
-
-- Use a sensible number of decimal places:
-  - "lat" and "lon" = 7 or 8 decimal places. 8 decimal places = mm precision at the equator.
-  - "ele" = 2 or 3 decimal places. 3 decimal places = mm precision.
+- The precision of `<ns3:speed>` should be either 2 or 3 decimal places, equivalent of 1 cm/s or 1 mm/s
+- The precision of `<ns3:course>` should be either 1 or 2 decimal places
