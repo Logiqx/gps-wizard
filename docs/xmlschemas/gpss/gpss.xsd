@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="http://www.gps-speed.com/gpx" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.gps-speed.com/gpx" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:documentation> This schema defines gps-speed extensions to be used with the GPX 1.0 schema. </xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="metadata" type="metadataType">
+    <xsd:annotation>
+      <xsd:documentation> Metadata for use within trk elements. </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="sdop" type="xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation> Speed DOP for use within trkpt elements. </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="vsdop" type="xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation> Vertical speed DOP for use within trkpt elements. </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="cdop" type="xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation> Course DOP for use within trkpt elements. </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="fix" type="xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation> Fix for use within trkpt elements. </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="metadataType">
+    <xsd:annotation>
+      <xsd:documentation> Information about the GNSS receiver. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <!--  elements must appear in this order  -->
+      <xsd:element name="link" type="linkType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation> URLs associated with the location described in the file. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="username" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> Username of the GNSS receiver. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="device" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> Device type of the GNSS receiver. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="firmware" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> Firmware of the GNSS receiver. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="serialno" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> Serial number of the GNSS receiver. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="linkType">
+    <xsd:annotation>
+      <xsd:documentation> A link to an external resource. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <!--  elements must appear in this order  -->
+      <xsd:element name="text" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> Text of hyperlink. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="type" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation> Mime type of content (image/jpeg). </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="href" type="xsd:anyURI" use="required">
+      <xsd:annotation>
+        <xsd:documentation> URL of hyperlink. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+</xsd:schema>
