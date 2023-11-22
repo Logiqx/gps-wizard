@@ -226,6 +226,7 @@ The original GPX export from GpsarPro does not make use of any indentation:
       <trkpt lat="50.571193" lon="-2.4565465">
         <ele>3.196</ele>
         <time>2023-11-13T13:55:50.200Z</time>
+        <course>23.75</course>
         <speed>0.079</speed>
         <sat>12</sat>
         <hdop>2.53</hdop>
@@ -234,6 +235,7 @@ The original GPX export from GpsarPro does not make use of any indentation:
       <trkpt lat="50.5712273" lon="-2.456548">
         <ele>4.08</ele>
         <time>2023-11-13T15:47:14Z</time>
+        <course>21.75</course>
         <speed>0.014</speed>
         <sat>24</sat>
         <hdop>0.875</hdop>
