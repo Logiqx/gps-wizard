@@ -2,17 +2,11 @@
 
 ### Background
 
-Waterspeed currently provides 4 different GPX exports, pertaining to 4 different applications but this really should not be necessary:
+GPX is a clearly defined standard with a public XSD, specifying how to create GPX files that are compatible with any application. Waterspeed currently provides four different GPX exports, but this really should not be necessary.
+
+When the GPX exports from Waterspeed are [validated](https://www.topografix.com/gpx_validation.asp) it is clear that all four all have issues. Different applications are tolerant of different issues in GPX files, but a single GPX-compliant file would be suitable for any application.
 
 ![img](img/waterspeed.png)
-
-
-
-GPX is a clearly defined standard with a public XSD, specifying how to create GPX files that are compatible with any application.
-
-When the GPX exports from Waterspeed are inspected, it can be seen that none of them are actually GPX-compliant.
-
-Different applications are tolerant of different issues in GPX files, but a single GPX-compliant file would be suitable for any application.
 
 
 
