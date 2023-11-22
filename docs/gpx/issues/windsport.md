@@ -2,6 +2,10 @@
 
 ### Background
 
+The [GPX home](https://www.topografix.com/gpx_validation.asp) page summarises the importance of GPX validation and best practices. It is very simple and straightforward to ensure the WindsportTracker exports are compliant with the GPX 1.0 standard. This document describes how to achieve the goal of GPX compliance / compatibility.
+
+
+
 ### GPX Validation
 
 There are numerous ways to check compliance and validate a GPX file against the XSD. Several approaches are described at the [GPX home](https://www.topografix.com/gpx_validation.asp), but the simplest approach is to use an online validator such as the one at [freeformatter.com](https://www.freeformatter.com/xml-validator-xsd.html).
