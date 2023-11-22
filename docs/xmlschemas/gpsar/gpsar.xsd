@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<xsd:schema
+  xmlns="http://www.gpsactionreplay.com/xml"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.gpsactionreplay.com/xml"
+  elementFormDefault="qualified">
+
+  <xsd:annotation>
+    <xsd:documentation>
+      This schema defines GpsarPro extensions to be used with the GPX 1.0 schema.
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:element name="color" type="xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation>
+        Color is for use within trk elements.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="nGPS" type="xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation>
+        nGPS is for use within trk elements.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="maxNoDataDuration" type="xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation>
+        Maximum no data duration is for use within trk elements.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="satsInView" type="xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation>
+        Satellites in view is for use within trkpt elements.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="annotations" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>
+        Annotations are for use within the root element.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+</xsd:schema>
