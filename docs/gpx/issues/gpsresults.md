@@ -175,7 +175,7 @@ If GPX 1.1 is chosen then the header will need to be updated and should declare 
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          http://www.topografix.com/GPX/1/1/gpx.xsd
                          http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0
-                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx10.xsd">
+                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0/tpx.xsd">
 ```
 
 The [TrackPointExtras](../../xmlschemas/tpx/1/0/README.md) schema already supports speed accuracy (akin to SDOP) and vertical speed accuracy (asking to VSDOP) estimates:
