@@ -8,9 +8,9 @@ This table is to keep track of progress for each application:
 | -------------------------------- | :---------: | :---------: | :-----: | :---------: | :--------: | :--: | :------------------------------------------------------- |
 | [COROS](coros.md)                |     1.1     |      Y      |    Y    |      Y      |     Y      | (Y)  | Video conference with COROS is yet to be scheduled       |
 | [Garmin Connect](garmin.md)      |     1.1     |      Y      |    Y    |      Y      |     N      |  N   | Todo                                                     |
-| [GPSAR](gpsar.md)                |     1.0     |     (Y)     |    Y    |      Y      |     Y      | (Y)  | Agreed reader for Garmin v2. Yet to discuss GPX writer   |
+| [GPSAR](gpsar.md)                |     1.0     |     (Y)     |    Y    |      Y      |     Y      | (Y)  | Agreed reader for Garmin v2. Writer changes TBC          |
 | [GPSBabel](gpsbabel.md)          |     1.0     |      N      |    Y    |      Y      |     N      |  N   | Todo                                                     |
-| [GPSResults](gpsresults.md)      |     1.0     |     (Y)     |    Y    |     (Y)     |     Y      | (Y)  | Agreed reader for Garmin v2. Yet to discuss GPX writer   |
+| [GPSResults](gpsresults.md)      |     1.0     |     (Y)     |    Y    |     (Y)     |    (Y)     | (Y)  | Agreed reader for Garmin v2. Yet to discuss GPX writer   |
 | [Hoolan](hoolan.md)              |     1.1     |      Y      |   (N)   |      Y      |     Y      |  -   | Confirmed valid GPX 1.1. Minor tweaks are still possible |
 | KA72                             |      -      |      -      |    -    |      -      |     Y      |  ?   | Suggested reader for Garmin v2. No feedback yet          |
 | [Motion](motion.md)              |     1.0     |      N      |    N    |      Y      |     Y      |  -   | Confirmed valid GPX 1.0. No need for further changes     |
