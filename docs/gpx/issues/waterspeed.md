@@ -30,7 +30,7 @@ This example has been fixed by hand to ensure compliance with the GPX 1.1 schema
      xmlns="http://www.topografix.com/GPX/1/1"
      xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
-                         https://www.topografix.com/GPX/1/1/gpx.xsd
+                         https://www.topografix.com/GPX/1/1/gpx-strict.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v2
                          https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
   <metadata>
@@ -54,6 +54,8 @@ This example has been fixed by hand to ensure compliance with the GPX 1.1 schema
   </trk>
 </gpx>
 ```
+
+Note: The use of `gpx-strict.xsd` ensures the contents of `<extensions>` is fully validated. The `gpx-strict.xsd` reference should only be used during testing / development and `gpx.xsd` should be used in production.
 
 
 
@@ -187,11 +189,11 @@ Ideally, elevation as calculated by the GPS / GNSS receiver should be recorded.
 
 ### Speed
 
-Use of `<gpxdata:speed>` invalidates a GPX files so it should be avoided. In the not too distant future GPSAR, GPSResults, and GPS-Speedsurfing should be expected to support `<gpxtpx:speed>`, now that the topic has been brought to their attention.
+The use of `<gpxdata:speed>` should be regarded as an interim solution, since it will result in errors when validating GPX files against `gpx-strict.xsd`. However, in the not too distant future GPSAR, GPSResults, and GPS-Speedsurfing will all support `<gpxtpx:speed>` and will not require `<gpxdata:speed>` to be present in GPX files.
 
-There may be a transition period where both `<gpxdata:speed>` and `<gpxtpx:speed>` are included in a single GPX file (e.g. uploads to GPS-Speedsurfing), but this should be regarded as a temporary measure. The inclusion of `<gpxdata:speed>` in GPX exports will potentially be regarded as invalid by any Garmin software which requires strict GPX-compliance.
+There will be a transitional period where both `<gpxdata:speed>` and `<gpxtpx:speed>` should be included in a single GPX file (e.g. uploads to GPS-Speedsurfing), but this should be regarded as an interim solution. The inclusion of `<gpxdata:speed>` in GPX exports should be accepted by all major software, including Garmin products.
 
-In the future, there will be no requirement for `<gpxdata:speed>`. GPX files including `<gpxtpx:speed>` are fully compliant with the schemas for GPX 1.1 and TrackPointExtension v2.
+In the future, there will be no requirement for `<gpxdata:speed>`. GPX files including `<gpxtpx:speed>` are fully compliant with the schemas for GPX 1.1 and TrackPointExtension v2 and will pass the "strict" validation of `gps-strict.xsd`. 
 
 
 
@@ -200,7 +202,7 @@ In the future, there will be no requirement for `<gpxdata:speed>`. GPX files inc
 I would suggest updating Waterspeed to offer just two GPX exports:
 
 1. Universal GPX export to replace the GPX exports for Strava, Google and Garmin
-2. Modified GPX export, including `<gpxdata:speed>` as well as `<gpxtpx:speed>` but in a way that can still be validated
+2. Modified GPX export, including `<gpxdata:speed>` as well as `<gpxtpx:speed>`
 
 The second export would be for GPSAR and GPS-Speedsurfing.com, until such time as they no longer require `<gpxdata:speed>`. It has the advantage of being compatible with existing software, but also allows GPSAR and GPS-Speedsurfing.com to smoothly transition to the universal GPX export.
 
