@@ -38,15 +38,6 @@ This example has been fixed by hand to ensure compliance with the GPX 1.0 schema
         <hdop>2.53</hdop>
         <gpsarPro:satsInView>-1</gpsarPro:satsInView>
       </trkpt>
-      <trkpt lat="50.5712273" lon="-2.456548">
-        <ele>4.08</ele>
-        <time>2023-11-13T15:47:14Z</time>
-        <course>21.75</course>
-        <speed>0.014</speed>
-        <sat>24</sat>
-        <hdop>0.875</hdop>
-        <gpsarPro:satsInView>-1</gpsarPro:satsInView>
-      </trkpt>
     </trkseg>
   </trk>
   <gpsarPro:annotations />
