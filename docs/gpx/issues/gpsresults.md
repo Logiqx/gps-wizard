@@ -250,7 +250,7 @@ The GPX reader should be able to recognise the following variations of SOG.
 - `<trkpt>` / `<speed>`
   - GPX 1.0
 - `<trkpt>` / `<extensions>` / `<gpxdata:speed>`
-  - Suunto, GPSAR exports
+  - Suunto
 - `<trkpt>` / `<extensions>` / `<gpxtpx:TrackPointExtension>` / `<gpxtpx:speed>`
   - Waterspeed (Strava and Google), Hoolan
 - `<trkpt>` / `<extensions>` / `<gpxtpx:TrackPointExtension>` / `<gpxdata:speed>`
@@ -322,7 +322,7 @@ Ensuring the exports of GPSResults are compliant with GPX 1.0 is pretty straight
   - The GPX reader should support elements with and without the `gpss` prefix to ensure backwards compatibility
 - Making all of these changes will ensure that the GPSResults exports are GPX 1.0 compliant
   - Applications that currently reject GPSResults exports will accept future exports - e.g. Garmin BaseCamp
-- Changes to the GPX reader will ensure forwards and backwards compatibility with existing GPX files
-  - Elements with and without the `gpss` prefix
 - Adding read support for all representations of speed and course will ensure compatibility with many GPX files
   - Support for `<course>`, `<speed>`, `<gpxdata:speed>`, `<gpxtpx:speed>`, `<gpxtpx:course>`
+- Additional fixes to the GPX reader are also beneficial
+  - e.g. Timestamp issue when daylight saving is in place

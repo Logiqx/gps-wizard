@@ -247,7 +247,7 @@ The GPX reader should be able to recognise the following variations of SOG.
 - `<trkpt>` / `<speed>`
   - GPX 1.0
 - `<trkpt>` / `<extensions>` / `<gpxdata:speed>`
-  - Suunto, GPSAR exports
+  - Suunto
 - `<trkpt>` / `<extensions>` / `<gpxtpx:TrackPointExtension>` / `<gpxtpx:speed>`
   - Waterspeed (Strava and Google), Hoolan
 - `<trkpt>` / `<extensions>` / `<gpxtpx:TrackPointExtension>` / `<gpxdata:speed>`
