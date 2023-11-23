@@ -32,8 +32,7 @@ However, GPX readers should search for all representations of COG, if they wish 
 | ----------- | ----------------- | ------------------------------------------- | :---: | :----------------------------------------------------------: | :---------------------------------------------------------- |
 | 1.0         | `<course>`    | .                                           | Y | Y | Original representation                  |
 | 1.1         | `<course>`   | .                                           | N | N | Common hack                   |
-| (1.1) | `<cog>` | . | N | N | COROS |
-| 1.1         | `<gpxdata:course>` | `<extensions>`                              | N | (N) | Invented for Suunto + GPSAR<br />- TBC |
+| (1.1) | `<cog>` | . | N | N | - GPSResults<br />- COROS |
 | 1.1         | `<gpxtpx:course>` | `<extensions>/<gpxtpx:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Waterspeed (Strava + Google) |
 
 
