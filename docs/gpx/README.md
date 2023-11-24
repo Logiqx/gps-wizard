@@ -258,21 +258,28 @@ Full details about the subtleties of course and speed in GPX 1.1 files are cover
 
 ### Software Providers + Hardware Manufacturers
 
-Individual pages describe the GPX compliancy issues specific to individual software providers and hardware manufacturers:
+Individual pages describe the GPX compliancy issues specific to individual applications and devices:
 
-- [COROS](issues/coros.md)
-- [Garmin](issues/garmin.md)
-- [GPSBabel](issues/gpsbabel.md)
-- [GPSResults](issues/gpsresults.md)
-- [GPSAR](issues/gpsar.md) aka GpsarPro
-- [Waterspeed](issues/waterspeed.md)
-- [WindsportTracker](issues/windsport.md) aka WST
+- [COROS](issues/coros.md) - GPX 1.1 but needs fixes
+- [Garmin](issues/garmin.md) - GPX 1.1 but needs fixes
+- [GPSBabel](issues/gpsbabel.md) - GPX 1.0
+- [GPSResults](issues/gpsresults.md) - GPX 1.0 but needs fixes
+- [GPSAR](issues/gpsar.md) aka GpsarPro - GPX 1.0 but needs fixes
+- [Waterspeed](issues/waterspeed.md) - GPX 1.1 but needs fixes
+- [WindsportTracker](issues/windsport.md) aka WST - GPX 1.0 but needs fixes
 
 
 
-The following software providers and hardware manufacturers are GPX 1.0 or 1.1 compliant:
+The following applications and devices are GPX 1.0 compliant:
+
+- [ESP-GPS](issues/esp-gps.md) - could use spaces for indentation
+- [Motion](issues/motion.md) - could use spaces for indentation
+- [RealSpeed](issues/realspeed.md) - although it does not include `<ele>`, `<course>`, `<speed>`, `<sat>` or `<hdop>`
+
+
+
+The following applications are GPX 1.1 compliant:
 
 - [Hoolan](issues/hoolan.md) - although it does not include `<ele>` or `<gpxtpx:course>`
-- [Motion](issues/motion.md)
-- [RealSpeed](issues/realspeed.md) - although it does not include `<ele>`, `<course>`, `<speed>`, `<sat>` or `<hdop>`
 - [Sailmon](issues/sailmon.md) - although it does not include `<ele>`, `<gpxtpx:speed>`, `<gpxtpx:course>`
+

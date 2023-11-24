@@ -35,3 +35,4 @@ They use GPX 1.0 and include the correct header as shown in the example below:
 
 - GPX 1.0 compliance was introduced in firmware 3084 on 26 May 2022
 - HDOP was added to GPX exports in firmware 3181 on 9 Nov 2022
+- Could use two spaces instead of tabs for indentation

@@ -7,6 +7,7 @@ This table is to keep track of progress for each application:
 | Application                      | GPX Version | Extensions? | Issues? | Documented? | Contacted? | WIP? | Status                                                   |
 | -------------------------------- | :---------: | :---------: | :-----: | :---------: | :--------: | :--: | :------------------------------------------------------- |
 | [COROS](coros.md)                |     1.1     |      Y      |    Y    |      Y      |     Y      | (Y)  | Video conference with COROS is yet to be scheduled       |
+| [ESP-GPS](esp-gps.md)            |     1.0     |      N      |   (N)   |      Y      |     Y      | (Y)  | Confirmed valid GPX 1.0. Suggested indentation via PR    |
 | [Garmin Connect](garmin.md)      |     1.1     |      Y      |    Y    |      Y      |     N      |  N   | Todo                                                     |
 | [GPSAR](gpsar.md)                |     1.0     |     (Y)     |    Y    |      Y      |     Y      | (Y)  | Agreed reader for Garmin v2. Writer changes TBC          |
 | [GPSBabel](gpsbabel.md)          |     1.0     |      N      |    Y    |      Y      |     N      |  N   | Todo                                                     |
