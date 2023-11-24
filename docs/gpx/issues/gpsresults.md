@@ -306,11 +306,11 @@ It should be noted that this doesn't happen for all files. It happens for a test
 
 #### Accuracy
 
-It has been noted that not all of the VSDOP, CDOP do not appear to be loaded from GPX files.
+It has been noted that `<vsdop>` and `<cdop>` do not appear to be loaded from GPX files.
 
 When GPSResults reads a GPX file that contains `<vsdop>` or `<cdop>` they do not appear in a subsequent GPX export.
 
-The GPX reader should support all four custom fields, both with and without the `gpss` prefix:
+The GPX reader should support all four custom fields with `<trkpt>`, both with and without the `gpss` prefix:
 
 - `<sdop>`, `<vsdop>`, `<cdop>`, `<fix>`
 - `<gpss:sdop>`, `<gpss:vsdop>`, `<gpss:cdop>`, `<gpss:fix>`
@@ -320,8 +320,6 @@ The GPX reader should support all four custom fields, both with and without the 
 #### Units
 
 SDOP and VSDOP should use m/s as units but there appears to be a bug, multiplying the knots value by 1.852.
-
-Exporting an SBP or OAO as GPX and reloading results in the +/- figures changing slightly, presumably rounding errors.
 
 This can easily be fixed for the reading and writing  of `<gpss:sdop>` and `<gpss:vsdop>`
 
@@ -335,12 +333,12 @@ This can easily be fixed for the reading and writing  of `<gpss:sdop>` and `<gps
 Ensuring the exports of GPSResults are compliant with GPX 1.0 is pretty straightforward:
 
 - Suitable schema is available at [`https://logiqx.github.io/gps-wizard/xmlschemas/gpsar/gpss.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/gpss/gpss.xsd)
-  - This should be uploaded to a folder on `https://www.gps-speed.com`
+  - This should be uploaded to a folder on `https://www.gps-speed.com` and referenced by GPX files
 - Changes to the GPX writer are relatively straightforward but will necessitate some tweaks to the GPX reader
   - The GPX reader should support elements with and without the `gpss` prefix to ensure backwards compatibility
 - Making all of these changes will ensure that the GPSResults exports are GPX 1.0 compliant
   - Applications that currently reject GPSResults exports will accept future exports - e.g. Garmin BaseCamp
 - Adding read support for all representations of speed and course will ensure compatibility with many GPX files
   - Support for `<course>`, `<speed>`, `<gpxdata:speed>`, `<gpxtpx:speed>`, `<gpxtpx:course>`
-- Additional fixes to the GPX reader are also beneficial
-  - e.g. Timestamp issue when daylight saving is in place
+- Various other tweaks / fixes of the GPX reader are also beneficial, as described within this document
+  - e.g. Times being wrong by 1 hour when daylight saving is in place
