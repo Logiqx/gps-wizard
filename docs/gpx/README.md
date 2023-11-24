@@ -264,7 +264,7 @@ Individual pages describe the GPX compliancy issues specific to individual appli
 - [Garmin](issues/garmin.md) - GPX 1.1 but needs fixes
 - [GPSBabel](issues/gpsbabel.md) - GPX 1.0
 - [GPSResults](issues/gpsresults.md) - GPX 1.0 but needs fixes
-- [GPSAR](issues/gpsar.md) aka GpsarPro - GPX 1.0 but needs fixes
+- [GpsarPro](issues/gpsar.md) aka GPSAR - GPX 1.0 but needs fixes
 - [Waterspeed](issues/waterspeed.md) - GPX 1.1 but needs fixes
 - [WindsportTracker](issues/windsport.md) aka WST - GPX 1.0 but needs fixes
 
@@ -283,3 +283,6 @@ The following applications are GPX 1.1 compliant:
 - [Hoolan](issues/hoolan.md) - although it does not include `<ele>` or `<gpxtpx:course>`
 - [Sailmon](issues/sailmon.md) - although it does not include `<ele>`, `<gpxtpx:speed>`, `<gpxtpx:course>`
 
+
+
+There is a separate [page](issues/README.md) with a summary of all these applications and devices. 
