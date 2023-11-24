@@ -32,6 +32,9 @@ The GPX files created by Hoolan do include an appropriate header, as shown in th
           <gpxtpx:TrackPointExtension>
             <gpxtpx:speed>0.8672264218330383</gpxtpx:speed>
           </gpxtpx:TrackPointExtension>
+          <gpxtpx:TrackPointExtension>
+            <gpxtpx:hr>153</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
         </extensions>
       </trkpt>
     </trkseg>
@@ -49,6 +52,9 @@ The GPX files created by Hoolan do include an appropriate header, as shown in th
 - GpxExtensions v3 is not required
   - `xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" `
   - `xsi:schemaLocation` containing `GpxExtensions/v3` and `GpxExtensionsv3.xsd`
+- The `<gpxtpx:TrackPointExtension>` element appears twice inside each `<trkpt>` element
+  - It appears once for `<gpxtpx:speed>`and once for `<gpxtpx:hr>`
+  - It is only required once, so long as the ordering is `<gpxtpx:hr>` then `<gpxtpx:speed>`
 - Precision can be reduced for some elements
   - `lat` and `lon` only require 7 decimal places
   - `<gpxtpx:speed>` only requires 3 decimal places
