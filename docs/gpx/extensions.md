@@ -58,9 +58,9 @@ Note: I searched on Google using the query "site:http://www.topografix.com/GPX".
 
 #### GPX Overlay 0.3
 
-Namespace: [https://www.topografix.com/GPX/gpx_overlay/0/3/](https://www.topografix.com/GPX/gpx_overlay/0/3/)
+Namespace: [http://www.topografix.com/GPX/gpx_overlay/0/3/](http://www.topografix.com/GPX/gpx_overlay/0/3/)
 
-Schema: [http://www.topografix.com/GPX/gpx_overlay/0/3/gpx_overlay.xsd](http://www.topografix.com/GPX/gpx_overlay/0/3/gpx_overlay.xsd)
+Schema: [https://www.topografix.com/GPX/gpx_overlay/0/3/gpx_overlay.xsd](https://www.topografix.com/GPX/gpx_overlay/0/3/gpx_overlay.xsd)
 
 Note: GPX Overlay 0.3 imports GPX Style 0.2
 
@@ -184,7 +184,7 @@ Notes:
 
 Namespace: [http://www.cluetrust.com/XML/GPXDATA/1/0](http://www.cluetrust.com/XML/GPXDATA/1/0)
 
-Schema: [http://www.cluetrust.com/Schemas/gpxdata10.xsd](http://www.cluetrust.com/Schemas/gpxdata10.xsd)
+Schema: [https://www.cluetrust.com/Schemas/gpxdata10.xsd](https://www.cluetrust.com/Schemas/gpxdata10.xsd)
 
 Contains the following generic trackpoint items:
 

@@ -14,7 +14,7 @@ However, GPX 1.1 provides no standard mechanism to store the accuracy estimates 
 
 ### Extensions
 
-This [TPX 1.0](tpx.xsd) schema defines universal extensions to be used with the [GPX 1.1](http://www.topografix.com/GPX/1/1/gpx.xsd) schema.
+This [TPX 1.0](tpx.xsd) schema defines universal extensions to be used with the [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd) schema.
 
 The "extras" element defined by this schema is intended to be used as a child element of the "extensions" elements in the trkpt element.
 
@@ -158,9 +158,9 @@ GPX 1.1 compliant files should begin with something like the following:
      xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
-                         http://www.topografix.com/GPX/1/1/gpx.xsd
+                         https://www.topografix.com/GPX/1/1/gpx.xsd
                          http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0
-                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0/tpx.xsd">
+                         https://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0/tpx.xsd">
 ```
 
 It is recommended that source information be provided within the `<trk>` element:

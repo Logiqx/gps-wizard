@@ -75,7 +75,7 @@ The majority of tracks this will have the following precision:
 
 ### Validation
 
-Details about GPX can be found on the [TopoGrafix](https://www.topografix.com/gpx.asp) website. GPX files should match the [GPX 1.0](http://www.topografix.com/GPX/1/0/gpx.xsd) or [GPX 1.1](http://www.topografix.com/GPX/1/1/gpx.xsd) schema.
+Details about GPX can be found on the [TopoGrafix](https://www.topografix.com/gpx.asp) website. GPX files should match the [GPX 1.0](https://www.topografix.com/GPX/1/0/gpx.xsd) or [GPX 1.1](https://www.topografix.com/GPX/1/1/gpx.xsd) schema.
 
 It is not unusual to encounter files that do not match the schema:
 
