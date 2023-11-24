@@ -250,9 +250,9 @@ The GPX reader should be able to recognise the following variations of SOG.
 - `<trkpt>` / `<speed>`
   - GPX 1.0
 - `<trkpt>` / `<extensions>` / `<gpxdata:speed>`
-  - Suunto
+  - Suunto, COROS (proposed)
 - `<trkpt>` / `<extensions>` / `<gpxtpx:TrackPointExtension>` / `<gpxtpx:speed>`
-  - Waterspeed (Strava and Google), Hoolan
+  - Garmin, Waterspeed (Strava and Google), Hoolan, Sailmon (proposed)
 - `<trkpt>` / `<extensions>` / `<gpxtpx:TrackPointExtension>` / `<gpxdata:speed>`
   - Waterspeed (GPSAR)
 
@@ -269,7 +269,7 @@ The GPX reader should be able to recognise the following variations of COG.
 - `<trkpt>` / `<cog>`
   - GPSResults, COROS
 - `<trkpt>` / `<extensions>` / `<gpxtpx:TrackPointExtension>` / `<gpxtpx:course>`
-  - Waterspeed (Strava and Google), Hoolan (future release)
+  - Garmin, Waterspeed (Strava and Google), Hoolan (proposed), Sailmon (proposed)
 
 Note: Technically speaking the namespace prefix  `gpxtpx` can be chosen by the GPX creator.
 
