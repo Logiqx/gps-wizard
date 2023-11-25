@@ -4,42 +4,60 @@
 
 The GPX files created by Realspeed are almost compliant with the GPX 1.0 schema.
 
-The GPX files created by Realspeed do include an appropriate header, as shown in the example below:
+The example below has been slightly sanitized, introducing standard formatting / indentation:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<gpx creator="RealSpeed V1924 - http://www.intellimass.com"
-     version="1.0"
-     xmlns="http://www.topografix.com/GPX/1/0"
+<gpx xmlns="http://www.topografix.com/GPX/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     version="1.0"
+     creator="RealSpeed V1928 - http://www.intellimass.com"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
-  <time>2008-01-14T20:46:24:00Z</time>
+  <time>2023-11-27T13:35:47Z</time>
   <trk>
-    <name>"13-1-8 2008-01-13"</name>
+    <name>"k888_168603881_20201226_173349"</name>
     <trkseg>
-      <trkpt lat="+52.0482444760" lon="-.5684995650">
-        <ele>0</ele>
-        <time>2008-01-13T11:47:35Z</time>
+      <trkpt lat="+50.5854658000" lon="-2.4711146000">
+        <ele>-5</ele>
+        <time>2020-12-25T11:38:06.200Z</time>
+        <speed>1.69</speed>
+        <HDOP>2.2</HDOP>
+        <sat>5</sat>
       </trkpt>
     </trkseg>
   </trk>
 </gpx>
 ```
 
+The original GPX file created by RealSpeed is not suitably formatted, especially for the `<trkpt>` elements:
 
+```xml
+<?xml version="1.0"?>
+<gpx version="1.0" creator="RealSpeed V1928 - http://www.intellimass.com"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.topografix.com/GPX/1/0"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+  <time>2023-11-27T13:35:47Z</time>
+<trk>
+<name>"k888_168603881_20201226_173349"</name>
+<trkseg>
+<trkpt lat="+50.5854658000" lon="-2.4711146000"> <ele>-5</ele> <time>2020-12-25T11:38:06.200Z</time> <speed>1.69</speed> <HDOP>2.2</HDOP> <sat>5</sat> </trkpt>
+</trkseg>
+</trk>
+</gpx>
+```
+
+ 
 
 ### Notes
 
 RealSpeed is no longer under development, so the following observations are unlikely to change:
 
-- The following elements are not present:
-  - `<course>`
-  - `<speed>`
-  - `<sat>`
-  - `<hdop>`
-- The elevation element is always zero, not a true elevation:
-  - `<ele>0</ele>`
+- The `<course>` element is not present
+- The `<hdop>` element is incorrectly named `<HDOP>` and is in the wrong position
+  - The `<hdop>` element should be listed after the `<sat>` element to be valid GPX
 
-- The `<time>` element is incorrect, using a colon instead of a dot for milliseconds:
-  - `<time>2008-01-14T20:46:24:00Z</time>`
+- There is no proper formatting, which makes the file look somewhat unsightly! 
+
+
 

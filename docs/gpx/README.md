@@ -272,9 +272,9 @@ Individual pages describe the GPX compliancy issues specific to individual appli
 
 The following applications and devices are GPX 1.0 compliant:
 
-- [ESP-GPS](issues/esp-gps.md) - could use spaces for indentation
-- [Motion](issues/motion.md) - could use spaces for indentation
-- [RealSpeed](issues/realspeed.md) - although it does not include `<ele>`, `<course>`, `<speed>`, `<sat>` or `<hdop>`
+- [ESP-GPS](issues/esp-gps.md)
+- [Motion](issues/motion.md) - although could use spaces for indentation
+- [RealSpeed](issues/realspeed.md) - although could do with formatting and addition of `<course>`
 
 
 
