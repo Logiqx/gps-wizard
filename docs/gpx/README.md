@@ -55,7 +55,10 @@ It was not until some time around 2015 when Garmin released a GPX extension [sch
 </trkpt>
 ```
 
-Note: The example above also includes `<gpxtpx:hr>`, simply to illustrate how heart rate can also be included in GPX 1.1.
+Notes:
+
+- The example above also includes `<gpxtpx:hr>`, simply to illustrate how heart rate can also be included in GPX 1.1
+- Garmin uses the namespace prefix `ns3` so it would be `<ns3:speed>` and `<ns3:course>`
 
 Another approach that can sometimes be seen is the use of an element called `<gpxdata:speed>`. 
 
@@ -237,6 +240,11 @@ If you are using GPX 1.1 then you probably need to use TrackPointExtension v2:
   </extensions>
 </trkpt>
 ```
+
+Notes:
+
+- The example above also includes `<gpxtpx:hr>`, simply to illustrate how heart rate can also be included in GPX 1.1
+- Garmin uses the namespace prefix `ns3` so it would be `<ns3:speed>` and `<ns3:course>`
 
 Under specific circumstances you may use `<gpxdata:speed>`, so long as the `gpxdata` namespace is properly defined:
 

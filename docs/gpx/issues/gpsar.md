@@ -266,12 +266,22 @@ The GPX reader should be able to recognise the following variations of SOG.
   - GPX 1.0
 - `<trkpt>` / `<extensions>` / `<gpxdata:speed>`
   - Suunto, COROS (proposed)
-- `<trkpt>` / `<extensions>` / `<gpxtpx:TrackPointExtension>` / `<gpxtpx:speed>`
-  - Garmin, Waterspeed (Strava and Google), Hoolan, Sailmon (proposed)
 - `<trkpt>` / `<extensions>` / `<gpxtpx:TrackPointExtension>` / `<gpxdata:speed>`
   - Waterspeed (GPSAR)
+- `<trkpt>` / `<extensions>` / `<gpxtpx:TrackPointExtension>` / `<gpxtpx:speed>`
+  - Waterspeed (Strava and Google), Hoolan, Sailmon (proposed)
+- `<trkpt>` / `<extensions>` / `<ns3:TrackPointExtension>` / `<ns3:speed>`
+  - Garmin (proposed)
 
-Note: Technically speaking the namespace prefixes  `gpxtpx` and `gpxdata` can be chosen by the GPX creator.
+The namespaces would be as follows:
+
+```xml
+xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"
+xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v2
+```
+
+Note: Technically speaking the namespace prefix (e.g. `gpxdata`, `gpxtpx` or `ns3`) can be chosen by the GPX creator.
 
 
 
@@ -284,9 +294,18 @@ The GPX reader should be able to recognise the following variations of COG.
 - `<trkpt>` / `<cog>`
   - GPSResults, COROS
 - `<trkpt>` / `<extensions>` / `<gpxtpx:TrackPointExtension>` / `<gpxtpx:course>`
-  - Garmin, Waterspeed (Strava and Google), Hoolan (proposed), Sailmon (proposed)
+  - Waterspeed (Strava and Google), Hoolan (proposed), Sailmon (proposed)
+- `<trkpt>` / `<extensions>` / `<ns3:TrackPointExtension>` / `<ns3:course>`
+  - Garmin (proposed)
 
-Note: Technically speaking the namespace prefix  `gpxtpx` can be chosen by the GPX creator.
+The namespaces would be as follows:
+
+```xml
+xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v2
+```
+
+Note: Technically speaking the namespace prefix  (e.g. `gpxtpx` or `ns3`) can be chosen by the GPX creator.
 
 
 

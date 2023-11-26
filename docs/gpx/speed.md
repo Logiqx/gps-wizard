@@ -133,7 +133,12 @@ Trackpoints can then include speed and course (plus data such as heartrate) insi
 </trkpt>
 ```
 
-Note: The prefix "gpxtpx" is not special and may be chosen by the GPX creator. A number of applications use "gpxtpx"and Garmin files typically use "ns3". No assumptions should be made about prefix(es) being used in GPX files.
+Notes:
+
+- The prefix "gpxtpx" is not special and may be chosen by the GPX creator
+- Numerous applications use `gpxtpx` as a namespace prefix so it would be `<gpxtpx:speed>`
+- Garmin Connect typically uses `ns3` as a namespace prefix so it would be `<ns3:speed>` 
+- No assumptions should be made about prefix(es) being used in GPX files
 
 
 
