@@ -20,9 +20,9 @@ However, GPX readers should search for all representations of SOG, if they wish 
 | ----------- | ----------------- | ------------------------------------------- | :---: | :----------------------------------------------------------: | :---------------------------------------------------------- |
 | 1.0         | `<speed>`         | .                                           | Y | Y | Original representation                  |
 | 1.1         | `<speed>`         | .                                           | N | N | Possible hack but rarely seen |
-| 1.1         | `<gpxdata:speed>` | `<extensions>`                              | N | (N) | Invented for Suunto by GPSAR<br />- Motion GPS, prior to FW 3085 |
+| 1.1         | `<gpxdata:speed>` | `<extensions>`                              | N | (N) | Various applications, originally used by Suunto for GPSAR |
 | 1.1         | `<gpxdata:speed>` | `<extensions>/<gpxtpx:TrackPointExtension>` | N | N | Invalidates TrackPointExtension<br />- Waterspeed (GPSAR) |
-| 1.1         | `<gpxtpx:speed>`  | `<extensions>/<gpxtpx:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Hoolan<br />- Waterspeed (Strava + Google) |
+| 1.1         | `<gpxtpx:speed>`  | `<extensions>/<gpxtpx:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Hoolan<br />- Waterspeed (Strava)<br />- Waterspeed (Google) |
 | 1.1 | `<ns3:speed>` | `<extensions>/<ns3:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Garmin (proposed) |
 
 Namespaces:
@@ -47,7 +47,7 @@ However, GPX readers should search for all representations of COG, if they wish 
 | 1.1         | `<course>`   | .                                           | N | N | Possible hack but rarely seen |
 | 1.0 | `<cog>` | . | N | N | Wrong name:<br />- GPSResults |
 | 1.1 | `<cog>` | . | N | N | Wrong name:<br />- COROS |
-| 1.1         | `<gpxtpx:course>` | `<extensions>/<gpxtpx:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Waterspeed (Strava + Google) |
+| 1.1         | `<gpxtpx:course>` | `<extensions>/<gpxtpx:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />-- Waterspeed (Strava)<br />- Waterspeed (Google) |
 | 1.1 | `<ns3:course>` | `<extensions>/<ns3:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Garmin (proposed) |
 
 Namespaces:
