@@ -56,17 +56,17 @@ Using a brute-force approach to determine the possible start points within the r
 
 #### Proximity Detection
 
-Proximity detection might appear to be an obvious application for the [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) but it is overkill for alpha racing. Whilst the Haversine formula is essential for navigation and when calculating long distances between two points on a globe, it is not required for alpha proximity detection.
+Proximity detection might appear to be an obvious application for the [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) or [Vincenty's formulae](https://en.wikipedia.org/wiki/Vincenty%27s_formulae) but they are overkill for alpha racing. Whilst either the Haversine formula or Vincenty's formulae are essential for navigation and when calculating long distances between two points on a globe, they are not required for alpha proximity detection.
 
 This project includes a Python notebook called "[haversine_vs_pythagoras](https://github.com/Logiqx/gps-wizard/blob/main/python/examples/haversine_vs_pythagoras.ipynb)" which assesses the accuracy of [Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) for the calculation of distances between two points approximately 50m apart, over the entire globe using 1 degree increments in latitude (-90° to + 90°) and longitude (-180° to +180°).
 
-The results of this analysis show that Pythagoras is more than accurate enough at the latitudes which have ever been windsurfed and there is no need to implement the computational expensive Haversine formula. Pythagoras produces sub-mm accuracy which is plenty good enough for 50m proximity detection.
+The results of this analysis show that Pythagoras is more than accurate enough at the latitudes which have ever been windsurfed and there is no need to implement the computational expensive Haversine formula or Vincenty's formulae. Pythagoras produces sub-mm accuracy which is plenty good enough for 50m proximity detection.
 
 
 
 #### One-Time Calculations
 
-A big advantage of using Pythagoras instead of Haversine is that the number of relatively [costly trig functions](https://latkin.org/blog/2014/11/09/a-simple-benchmark-of-various-math-operations/) (e.g. sin, cos, asin) are reduced during each proximity calculation. These savings add up over time because the search for possible alphas needs to occur after every single reading from the GNSS receiver.
+A big advantage of using Pythagoras instead of the Haversine formula or Vincenty's formulae is that the number of relatively [costly trig functions](https://latkin.org/blog/2014/11/09/a-simple-benchmark-of-various-math-operations/) (e.g. sin, cos, asin) are reduced during each proximity calculation. These savings add up over time because the search for possible alphas needs to occur after every single reading from the GNSS receiver.
 
 However, this saving in itself is not the biggest advantage. The biggest advantage is that the only remaining trig functions (e.g. calculating the distance from east-west, per degree of longitude at a given latitude, using "cos") can be cached / buffered and only ever needs to be done once.
 
@@ -118,9 +118,9 @@ The table below shows how the various optimisations affect the number of proximi
 
 The combined savings of the minimum distance (>= 250m) and required angular difference (>= 90°) range from 70% on a small lake to 90% on a large expanse of water. However, these savings are purely related to the number of proximity checks / calculations being performed during the session.
 
-In reality, proximity calculations using pre-cached figures along with Pythagoras will be more than an order of magnitude faster than the regular Haversine formula (maybe more) which is computationally expensive and needs to be fully evaluated for each pair of potential alpha 500 start and end points.
+In reality, proximity calculations using pre-cached figures along with Pythagoras will be more than an order of magnitude faster than the regular Haversine formula and Vincenty's formulae (maybe more) which are computationally expensive and need to be fully evaluated for each pair of potential alpha 500 start and end points.
 
-Overall, the techniques described in this document will lead to computational overheads that are reduced by at least **two orders of magnitude**, when compared to a brute-force Haversine approach. The overall processor load will also be spread far more evenly over time and not result in long periods of processor-intensive calculations being performed.
+Overall, the techniques described in this document will lead to computational overheads that are reduced by at least **two orders of magnitude**, when compared to a brute-force Haversine / Vincenty approaches. The overall processor load will also be spread far more evenly over time and not result in long periods of processor-intensive calculations being performed.
 
 These benefits and savings make the approaches described in this article perfect for real-time calculations within GPS watches such as the models produced by COROS.
 
