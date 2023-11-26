@@ -260,8 +260,8 @@ Full details about the subtleties of course and speed in GPX 1.1 files are cover
 
 Individual pages describe the GPX compliancy issues specific to individual applications and devices:
 
-- [COROS](issues/coros.md) - GPX 1.1 but needs fixes
-- [Garmin](issues/garmin.md) - GPX 1.1 but needs fixes
+- [COROS](issues/coros.md) - GPX 1.1 but does not include `<gpxdata:speed>` and needs fixes
+- [Garmin](issues/garmin.md) - GPX 1.1 but does not include `<ns3:speed>` and needs fixes
 - [GPSBabel](issues/gpsbabel.md) - GPX 1.0
 - [GPSResults](issues/gpsresults.md) - GPX 1.0 but needs fixes
 - [GpsarPro](issues/gpsar.md) aka GPSAR - GPX 1.0 but needs fixes
@@ -273,8 +273,8 @@ Individual pages describe the GPX compliancy issues specific to individual appli
 The following applications and devices are GPX 1.0 compliant:
 
 - [ESP-GPS](issues/esp-gps.md)
-- [Motion](issues/motion.md) - although could use spaces for indentation
-- [RealSpeed](issues/realspeed.md) - although could do with formatting and addition of `<course>`
+- [Motion](issues/motion.md) - although it could use spaces (instead of tabs) for indentation
+- [RealSpeed](issues/realspeed.md) - although it does not include `<course>` and could do with formatting
 
 
 
