@@ -2,7 +2,11 @@
 
 ### Readers
 
-The following sections provide guidance for GPX readers.
+The following sections are to provide guidance for GPX readers.
+
+Common elements such as speed, course, and heartrate may be represented in a number of different ways.
+
+This document catalogues the different representations of these elements that need to be supported by GPX readers.
 
 
 
@@ -16,7 +20,7 @@ However, GPX readers should search for all representations of SOG, if they wish 
 | ----------- | ----------------- | ------------------------------------------- | :---: | :----------------------------------------------------------: | :---------------------------------------------------------- |
 | 1.0         | `<speed>`         | .                                           | Y | Y | Original representation                  |
 | 1.1         | `<speed>`         | .                                           | N | N | Possible hack but rarely seen |
-| 1.1         | `<gpxdata:speed>` | `<extensions>`                              | N | (N) | Invented for Suunto + GPSAR<br />- Motion GPS, prior to FW 3085 |
+| 1.1         | `<gpxdata:speed>` | `<extensions>`                              | N | (N) | Invented for Suunto by GPSAR<br />- Motion GPS, prior to FW 3085 |
 | 1.1         | `<gpxdata:speed>` | `<extensions>/<gpxtpx:TrackPointExtension>` | N | N | Invalidates TrackPointExtension<br />- Waterspeed (GPSAR) |
 | 1.1         | `<gpxtpx:speed>`  | `<extensions>/<gpxtpx:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Hoolan<br />- Waterspeed (Strava + Google) |
 | 1.1 | `<ns3:speed>` | `<extensions>/<ns3:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Garmin (proposed) |
@@ -41,8 +45,8 @@ However, GPX readers should search for all representations of COG, if they wish 
 | ----------- | ----------------- | ------------------------------------------- | :---: | :----------------------------------------------------------: | :---------------------------------------------------------- |
 | 1.0         | `<course>`    | .                                           | Y | Y | Original representation                  |
 | 1.1         | `<course>`   | .                                           | N | N | Possible hack but rarely seen |
-| 1.0 | `<cog>` | . | N | N | - GPSResults |
-| 1.1 | `<cog>` | . | N | N | - COROS |
+| 1.0 | `<cog>` | . | N | N | Wrong name:<br />- GPSResults |
+| 1.1 | `<cog>` | . | N | N | Wrong name:<br />- COROS |
 | 1.1         | `<gpxtpx:course>` | `<extensions>/<gpxtpx:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Waterspeed (Strava + Google) |
 | 1.1 | `<ns3:course>` | `<extensions>/<ns3:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Garmin (proposed) |
 
@@ -63,11 +67,10 @@ However, GPX readers should search for all representations of heart rate, if the
 
 | GPX version | Element        | Path           | XSD? | Valid? | Comment                                                      |
 | ----------- | -------------- | -------------- | :--: | :----: | :----------------------------------------------------------- |
-| 1.1         | `<gpxdata:hr>` | `<extensions>` |  Y   |   Y    | ClueTrust                                                    |
-| 1.1         | `<gpxtpx:hr>`  | `<extensions>` |  Y   |   Y    | TrackPointExtension v1 + v2<br />- Hoolan<br />- Waterspeed (Strava + Google + GPSAR) |
-| 1.1         | `<ns3:hr>`     | `<extensions>` |  Y   |   Y    | TrackPointExtension v1 + v2<br />- Garmin Connect<br />- Waterspeed (Garmin) |
 | 1.1         | `<heartrate>`  | `<extensions>` |  N   |   N    | ClueTrust<br />- COROS (legacy)                              |
 | 1.1         | `<gpxdata:hr>` | `<extensions>` |  Y   |   Y    | ClueTrust<br />- COROS (future)                              |
+| 1.1         | `<gpxtpx:hr>`  | `<extensions>` |  Y   |   Y    | TrackPointExtension v1 + v2<br />- Hoolan<br />- Waterspeed (Strava + Google + GPSAR) |
+| 1.1         | `<ns3:hr>`     | `<extensions>` |  Y   |   Y    | TrackPointExtension v1 + v2<br />- Garmin Connect<br />- Waterspeed (Garmin) |
 
 Namespaces:
 
@@ -119,9 +122,16 @@ Namespaces:
 
 ### Namespaces
 
+#### gpxdata
+
+- Numerous apps make use of the ClueTrust extension as a speed hack - e.g. `<gpxdata:speed>` 
+- V1 is `xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0"`
+
+
+
 #### gpxtpx
 
-- G7ToWin as far back as 2007 used `xmlns:gpxtpx`
+- G7ToWin files as as far back as 2007 have used `xmlns:gpxtpx`
 - GPSBabel reference files use `xmlns:gpxtpx`
 - Waterspeed uses `xmlns:gpxtpx`
 - V1 is `xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"`
