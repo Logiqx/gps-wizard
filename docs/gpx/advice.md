@@ -47,7 +47,7 @@ However, GPX readers should search for all representations of COG, if they wish 
 | 1.1         | `<course>`   | .                                           | N | N | Possible hack but rarely seen |
 | 1.0 | `<cog>` | . | N | N | Wrong name:<br />- GPSResults |
 | 1.1 | `<cog>` | . | N | N | Wrong name:<br />- COROS |
-| 1.1         | `<gpxtpx:course>` | `<extensions>/<gpxtpx:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />-- Waterspeed (Strava)<br />- Waterspeed (Google) |
+| 1.1         | `<gpxtpx:course>` | `<extensions>/<gpxtpx:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Waterspeed (Strava)<br />- Waterspeed (Google) |
 | 1.1 | `<ns3:course>` | `<extensions>/<ns3:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Garmin (proposed) |
 
 Namespaces:
@@ -69,7 +69,7 @@ However, GPX readers should search for all representations of heart rate, if the
 | ----------- | -------------- | -------------- | :--: | :----: | :----------------------------------------------------------- |
 | 1.1         | `<heartrate>`  | `<extensions>` |  N   |   N    | ClueTrust<br />- COROS (legacy)                              |
 | 1.1         | `<gpxdata:hr>` | `<extensions>` |  Y   |   Y    | ClueTrust<br />- COROS (future)                              |
-| 1.1         | `<gpxtpx:hr>`  | `<extensions>` |  Y   |   Y    | TrackPointExtension v1 + v2<br />- Hoolan<br />- Waterspeed (Strava + Google + GPSAR) |
+| 1.1         | `<gpxtpx:hr>`  | `<extensions>` |  Y   |   Y    | TrackPointExtension v1 + v2<br />- Hoolan<br />- Waterspeed (Strava)<br />- Waterspeed (Google)<br />- Waterspeed (GPSAR) |
 | 1.1         | `<ns3:hr>`     | `<extensions>` |  Y   |   Y    | TrackPointExtension v1 + v2<br />- Garmin Connect<br />- Waterspeed (Garmin) |
 
 Namespaces:
