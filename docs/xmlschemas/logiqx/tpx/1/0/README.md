@@ -155,12 +155,12 @@ GPX 1.1 compliant files should begin with something like the following:
 <gpx creator="GPS Wizard"
      version="1.1"
      xmlns="http://www.topografix.com/GPX/1/1"
-     xmlns:tpx="http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0"
+     xmlns:tpx="http://logiqx.github.io/gpx-ideas/xmlschemas/logiqx/tpx/1/0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          https://www.topografix.com/GPX/1/1/gpx.xsd
-                         http://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0
-                         https://logiqx.github.io/gps-wizard/xmlschemas/tpx/1/0/tpx.xsd">
+                         http://logiqx.github.io/gpx-ideas/xmlschemas/logiqx/tpx/1/0
+                         https://logiqx.github.io/gpx-ideas/xmlschemas/logiqx/tpx/1/0/tpx.xsd">
 ```
 
 It is recommended that source information be provided within the `<trk>` element:
@@ -218,4 +218,4 @@ Track points should always include course and speed when available. Ideally they
 
 Software developers should validate their GPX files during the development / testing process.
 
-Validation methods are described in a technical [overview](../../../../gpx/README.md) of the GPX format.
+Validation methods are described in a technical [overview](https://logiqx.github.io/gps-wizard/gpx/) of the GPX format.
