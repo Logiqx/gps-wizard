@@ -41,7 +41,7 @@ Prior to NMEA 4.10:
 
 Notes:
 
-- The sentence ID may be $BDGSA, $GAGSA, $GBGSA, $GLGSA, $GNGSA, $GPGSA, $IMGSA, $NCGSA, $QZGSA.
+- The sentence ID may be $BDGSA, $GAGSA, $GBGSA, $GIGSA, $GLGSA, $GNGSA, $GPGSA, $IMGSA, $NCGSA, $PQGSA, $QZGSA.
 - Receivers may emit more than 12 quadruples (more than three GSV sentences), even though NMEA-0813 doesn’t allow this.
 - The final sentence may include data for less than 4 satellites, if the number of visible satellites is not divisible by 4.
 - GSV sentences include carrier-to-noise density ratio (C/N<sub>0</sub>) for each SV in dB-Hz. See related [article](https://insidegnss.com/measuring-gnss-signal-strength/) for further information.
