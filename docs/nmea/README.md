@@ -2,17 +2,17 @@
 
 ### Introduction
 
-Pretty much all GPS chipsets are [NMEA-0183](https://gpsd.gitlab.io/gpsd/NMEA.html) compliant which is a simple text based protocol.
+Pretty much all GPS / GNSS chipsets are [NMEA-0183](https://en.wikipedia.org/wiki/NMEA_0183) compliant which is a simple text based protocol. NMEA-0183 is a closed standard which is available for purchase from the NMEA [website](https://www.nmea.org/nmea-0183.html), and it is not freely available to the public.
 
-You can find an [overview](https://receiverhelp.trimble.com/alloy-gnss/en-us/NMEA-0183messages_MessageOverview.html) of NMEA-0183 messages on the Trimble website.
-
-Full details about the NMEA-0183 standard itself can be found on the NMEA [website](https://www.nmea.org/nmea-0183.html).
+This website contains details that have been gleaned from a variety of open sources, including [NMEA revealed](https://gpsd.gitlab.io/gpsd/NMEA.html) and entirely independently of the official / commercial documentation. You can also find a decent overview of NMEA-0183 messages on the [Trimble](https://receiverhelp.trimble.com/alloy-gnss/en-us/NMEA-0183messages_MessageOverview.html) website.
 
 
 
-### Universal Sentences
+### Notable Sentences
 
-The following are universal NMEA sentences output by practically all GPS / GNSS chipsets:
+#### Universal Sentences
+
+The following are NMEA sentences are practically universal, likely to be output by all GPS / GNSS chipsets:
 
 - **[GGA](messages/gga.md)** - Global Positioning System Fix Data (e.g. $GPGGA or $GNGGA)
   - Includes **time** (UTC), **latitude**, **longitude**, status, **sats** (00-12), **HDOP**, **altitude**
@@ -23,27 +23,30 @@ The following are universal NMEA sentences output by practically all GPS / GNSS 
 - **[RMC](messages/rmc.md)** - Recommended Minimum Navigation Information (e.g. $GPRMC or $GNRMC)
   - Includes **time** (UTC), warning, **latitude**, **longitude**, **SOG**, **COG**, date (ddmmyy)
 
-A minimal NMEA implementation should support the GGA and RMC sentences.
+Click on the links above for full details about each NMEA sentence.
+
+A minimal NMEA implementation should support at least the GGA and RMC sentences.
 
 
 
-### Common Sentences
+#### Common Sentences
 
-The following are the most common NMEA sentences output by GPS / GNSS chips:
+The following are pretty common NMEA sentences and are output by many GPS / GNSS chipsets:
 
-- **GNS** - Fix data (e.g. $GPGNS or $GNGNS)
-  - Includes **time** (UTC), **latitude**, **longitude**, **sats** (0-99) and **HDOP**
 - **[GLL](messages/gll.md)** - Geographic Position - Latitude/Longitude (e.g. $GPGLL or $GNGLL)
   - Includes **time** (UTC), **latitude** and **longitude**, warning
+- **GNS** - Fix data (e.g. $GPGNS or $GNGNS)
+  - Includes **time** (UTC), **latitude**, **longitude**, **sats** (0-99) and **HDOP**
 - **[VTG](messages/vtg.md)** - Track made good and Ground speed (e.g. $GPVTG or $GNVTG)
   - Includes **COG** and **SOG**
 - **[ZDA](messages/zda.md)** - GNSS Time & Date (e.g. $GPZDA or $GNZDA)
   - Includes **time** (UTC) and date (ddmmyyyy)
 
+Click on the links above for full details about each NMEA sentence.
 
 
 
-### GPS / GNSS Chipsets
+#### Support from Chipsets
 
 Some example GPS / GNSS chipsets and their support for common NMEA sentences:
 
@@ -105,3 +108,4 @@ Some of these are described on a separate [page](proprietary/README.md).
 A number of NMEA sentences may be output by specific manufacturers which give an idea about PVT accuracy.
 
 Some of these are described on a separate [page](../accuracy/nmea/README.md).
+
