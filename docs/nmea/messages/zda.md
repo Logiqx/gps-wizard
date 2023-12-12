@@ -2,7 +2,7 @@
 
 ### Summary
 
-This is one of the 7 sentences commonly emitted by GPS / GNSS units.
+This is one of the sentences commonly supported by GPS / GNSS receivers.
 
 The ZDA sentence contains the UTC day, month, year and local time zone.
 
@@ -31,6 +31,7 @@ The ZDA sentence contains the UTC day, month, year and local time zone.
 
 Notes:
 
+- The sentence ID will be $GPZDA or $GNZDA.
 - The zone hours and mins is often fixed at 00 since GPS / GNSS receivers do not typically know the local time zone.
 
 

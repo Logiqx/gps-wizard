@@ -2,7 +2,7 @@
 
 ### Summary
 
-This is one of the 7 sentences commonly emitted by GPS / GNSS units.
+This is one of the sentences always supported by GPS / GNSS receivers.
 
 The RMC sentence contains the time, date, position, course and speed data provided by the GPS / GNSS receiver.
 
@@ -48,6 +48,7 @@ Prior to NMEA 2.3:
 
 Notes:
 
+- The sentence ID will be $GPRMC or $GNRMC.
 - The [positioning mode](../lookups/pos-mode.md) indicator (field 12) was added for the FAA in NMEA 2.3.
 - The [navigational status](../lookups/nav-status.md) indicator (field 13) was added in NMEA 4.10.
 

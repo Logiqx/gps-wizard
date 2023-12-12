@@ -13,12 +13,12 @@ Navigational status was added to the following messages in NMEA 4.10:
 | Message ID                            | Description                                |
 | ------------------------------------- | ------------------------------------------ |
 | [GLL](../messages/gll.md)<sup>1</sup> | Geographic Position - Latitude / Longitude |
-| GNS                                   |                                            |
+| [GNS](../messages/gns.md)             | Global Positioning System Fix Data         |
 | [RMC](../messages/rmc.md)             | Recommended Minimum GNSS Data              |
 
 Notes:
 
-- GLL<sup>1</sup> - The addition of the navigational status indicator to GLL is still to be confirmed.
+- GLL<sup>1</sup> - The addition of the navigational status indicator to GLL is speculative and still to be confirmed.
 
 
 

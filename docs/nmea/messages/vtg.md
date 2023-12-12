@@ -2,11 +2,13 @@
 
 ### Summary
 
-This is one of the 7 sentences commonly emitted by GPS / GNSS units.
+This is one of the sentences commonly supported by GPS / GNSS receivers.
 
-The VTG sentence conveys the track made good / course over ground (COG) and the speed relative to the ground (SOG).
+The VTG sentence conveys the track made good / course over ground (COG) and the speed over ground (SOG).
 
 There are two forms of VTG which can be distinguished by field 2, which will be the fixed text 'T' in the newer form.
+
+All of the fields in VTG are also present in [RMC](rmc.md), or can be derived from RMC.
 
 
 
@@ -40,6 +42,7 @@ Prior to NMEA 2.3:
 
 Notes:
 
+- The sentence ID will be $GPVTG or $GNVTG.
 - The [positioning mode](../lookups/pos-mode.md) indicator (field 9) was added for the FAA in NMEA 2.3.
 
 

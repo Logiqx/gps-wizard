@@ -2,7 +2,7 @@
 
 ### Summary
 
-This is one of the 7 sentences commonly emitted by GPS / GNSS units.
+This is one of the sentences always supported by GPS / GNSS receivers.
 
 The GSA sentence includes GPS / GNSS receiver operating mode, satellites used for navigation, and DOP values.
 
@@ -40,6 +40,7 @@ Prior to NMEA 4.10:
 
 Notes:
 
+- The sentence ID may be $BDGSA, $GAGSA, $GBGSA, $GLGSA, $GNGSA, $GPGSA, $IMGSA, $NCGSA, $QZGSA.
 - If less than 12 SVs are used for navigation, the remaining fields are left empty.
 - If more than 12 SVs are used for navigation, only the IDs of the first 12 are output.
 - The GNSS [system ID](../lookups/system-id.md) (field 18) was added in NMEA 4.10.

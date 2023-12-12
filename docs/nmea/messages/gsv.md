@@ -2,7 +2,7 @@
 
 ### Summary
 
-This is one of the 7 sentences commonly emitted by GPS / GNSS units.
+This is one of the sentences always supported by GPS / GNSS receivers.
 
 The GSV sentences include the SV ID, elevation, azimuth, and signal strength (C/No) values for up to 4 satellites.
 
@@ -41,6 +41,7 @@ Prior to NMEA 4.10:
 
 Notes:
 
+- The sentence ID may be $BDGSA, $GAGSA, $GBGSA, $GLGSA, $GNGSA, $GPGSA, $IMGSA, $NCGSA, $QZGSA.
 - Receivers may emit more than 12 quadruples (more than three GSV sentences), even though NMEA-0813 doesn’t allow this.
 - The final sentence may include data for less than 4 satellites, if the number of visible satellites is not divisible by 4.
 - GSV sentences include carrier-to-noise density ratio (C/N<sub>0</sub>) for each SV in dB-Hz. See related [article](https://insidegnss.com/measuring-gnss-signal-strength/) for further information.

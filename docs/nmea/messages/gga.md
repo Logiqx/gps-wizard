@@ -2,9 +2,14 @@
 
 ### Summary
 
-This is one of the 7 sentences commonly emitted by GPS / GNSS units.
+This is one of the sentences always supported by GPS / GNSS receivers.
 
 The GGA sentence includes time, position and fix related data for a GPS / GNSS receiver.
+
+Notes about the number of satellites in use:
+
+- The maximum number of SVs (satellites) reported by GGA may be limited to 12.
+- The [GNS](gns.md) sentence (if available) will correctly report the actual number of satellites in use.
 
 
 
@@ -26,7 +31,7 @@ The GGA sentence includes time, position and fix related data for a GPS / GNSS r
 | 4    | Longitude       | dddmm.mmmm  | 00630.3371 | Longitude, typically 4 or 5 dp. Leading zeros are always included |
 | 5    | EW              | character   | W          | Hemispherical orientation E or W (east or west)              |
 | 6    | Quality         | digit       | 1          | [Quality](../lookups/quality.md) indicator                   |
-| 7    | Num SV          | numeric     | 12         | Number of space vehicles (satellites) in use                 |
+| 7    | Num SV          | numeric     | 12         | Number of space vehicles (satellites) in use (00-12)         |
 | 8    | HDOP            | numeric     | 3.2        | Horizontal dilution of precision (HDOP), typically 1 or 2 dp |
 | 9    | Elevation       | numeric     | 3.04       | Antenna altitude above/below mean-sea-level, typically 1 or 2 dp |
 | 10   | Elevation unit  | character   | M          | Fixed field. M = meters                                      |
@@ -38,11 +43,9 @@ The GGA sentence includes time, position and fix related data for a GPS / GNSS r
 
 Notes:
 
-- The NMEA specification indicates that the GGA message is GPS-specific.
-  - u-blox receivers support the output of a GGA message for each of the talker IDs.
-  - If a u-blox receiver is configured for multi-GNSS, GNGGA will be generated from the multi-GNSS solution.
-  - For multi-GNSS use, it is recommended that the NMEA-GNS message is used instead.
+- The sentence ID will be $GPGGA or $GNGGA.
 - Jackson Labs replace the [quality](../lookups/quality.md) indicator with GPSDO status.
+- Some chipsets will limit the number of satellites to 12, so check for [GNS](gns.md) which does not have the limit.
 - Ellipsoid altitude = MSL altitude + Geoid separation, according to SiRF documentation.
 - The DGPS age and station (fields 13 + 14) are absent in the example from "NMEA Revealed".
 

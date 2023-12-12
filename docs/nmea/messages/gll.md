@@ -2,9 +2,11 @@
 
 ### Summary
 
-This is one of the 7 sentences commonly emitted by GPS / GNSS units.
+This is one of the sentences commonly supported by GPS / GNSS receivers.
 
 The GLL sentence includes latitude and longitude, with time of position fix and status.
+
+All of the fields in GLL are also present in [RMC](rmc.md).
 
 
 
@@ -36,9 +38,8 @@ Prior to NMEA 2.3:
 
 Notes:
 
+- The sentence ID will be $GPGLL or $GNGLL.
 - The [positioning mode](../lookups/pos-mode.md) indicator (field 7) was added for the FAA in NMEA 2.3.
-- The [navigational status](../lookups/nav-status.md) indicator (not listed above) may have been added in NMEA 4.10. TBC
-
 
 
 
