@@ -98,3 +98,10 @@ These include $PGLOR, $PQ\*, $PSAM\*, $PSMSG, $PSRFEPE, and $PSSGR
 
 Some of these are described on a separate [page](proprietary/README.md).
 
+
+
+### Accuracy Estimates
+
+A number of NMEA sentences may be output by specific manufacturers which give an idea about PVT accuracy.
+
+Some of these are described on a separate [page](../accuracy/nmea/README.md).

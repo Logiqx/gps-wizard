@@ -1,3 +1,5 @@
+## Solution Accuracy
+
 ### NMEA
 
 GBS, GST and GRS are all supported by the UBX chipsets.
