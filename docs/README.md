@@ -20,7 +20,7 @@ The following formats can all be loaded using dedicated file readers:
   - Support for GPX 1.0 and GPX 1.1 - see additional [notes](gpx/README.md).
   - Future ideas / proposals for GPX - see [link](/gpx-ideas/)
 - [NMEA](formats/nmea.md) - National Marine Electronics Association.
-  - Support for RMC and GGA sentences - both required, see additional [notes](nmea.md).
+  - Support for RMC and GGA sentences - both required, see additional [notes](nmea/README.md).
 - [OAO](formats/oao.md) - "OnAndOn" Binary.
   - Support for GNSS frames - 0x0AD4 and 0x0AD5.
 - [SBN](formats/sbn.md) - Locosys SiRF Binary.
