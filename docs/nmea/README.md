@@ -117,7 +117,7 @@ Some of these are described on a separate [page](rare.md).
 
 A number of proprietary NMEA sentences may be output by specific manufacturers.
 
-These include $PGLOR, $PQ\*, $PSAM\*, $PSMSG, $PSRFEPE, and $PSSGR
+These include $PGLOR, $PQ\*, $PSAM\*, $PSMSG, $PSRF\*, and $PSSGR
 
 Some of these are described on a separate [page](proprietary/README.md).
 
