@@ -187,8 +187,9 @@ Notes:
 Determining the satellites in use for each system:
 
 - When available use the [talker ID](../lookups/talker-id.md) to distinguish between different GNSS.
-  - Take account of how `$GNGSA` is used by the Broadcom BCM4774 - i.e. combined GPS and GLONASS.
-    - Therefore need to de-duplicate the SV IDs (or PRNs).
+  - Different vendors may use `$GNGSA` to report GNSS or GLONASS satellites that are active.
+  - Must cope with `$GPGSA` and `$GNGSA` from chipsets such as the Broadcom BCM4774.
+    - GPS satellites are reported in both on the BCM4774, so de-duplication is required.
 - When available use the [system ID](../lookups/system-id.md) (field 18) to distinguish between different GNSS.
   - Field 18 will probably be the system ID when all GSA sentences are `$GNGSA`.
   - Need to de-duplicate the SV IDs (or PRNs) on multi-band receivers.
