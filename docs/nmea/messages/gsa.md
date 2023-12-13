@@ -44,11 +44,11 @@ Prior to NMEA 4.10:
 
 Notes:
 
-- The sentence ID may be $BDGSA, $GAGSA, $GBGSA, $GIGSA, $GLGSA, $GNGSA, $GPGSA, $GQGSA, $IMGSA, $NCGSA, $QZGSA.
+- The [talker ID](../lookups/talker-id.md) may be BD, GA, GB, GI, GL, GN, GP, GQ, IM, NC or QZ.
 - If less than 12 SVs are used for navigation, the remaining fields are left empty.
 - If more than 12 SVs are used for navigation, only the IDs of the first 12 are output.
 - The system ID (field 18) was added in NMEA 4.10.
-- Multi-band receivers may use field 18 to represent the signal ID, relying on the talker ID to identify the GNSS constellation.
+- Multi-band receivers may use field 18 to represent the signal ID, using the talker ID to identify the GNSS constellation.
 
 
 
