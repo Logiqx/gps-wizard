@@ -1,4 +1,4 @@
-## GNS - Global Navigation Satellite System Fix Data
+## GNS - Global Navigation Satellite System
 
 ### Summary
 

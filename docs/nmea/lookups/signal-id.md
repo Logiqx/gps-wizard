@@ -12,11 +12,16 @@ Signal identifiers are only valid when combined with a GNSS [system identifier](
 
 Signal ID was added to the following messages in NMEA 4.10:
 
-| Message ID                | Description             |
-| ------------------------- | ----------------------- |
-| GBS                       |                         |
-| GRS                       |                         |
-| [GSV](../messages/gsv.md) | GNSS Satellites in View |
+| Message ID                   | Description                    |
+| ---------------------------- | ------------------------------ |
+| GBS                          | GPS Satellite Fault Detection  |
+| GRS                          | GPS Range Residuals            |
+| [GSA](../messages/gsa.md) \* | GNSS DOP and Active Satellites |
+| [GSV](../messages/gsv.md)    | GNSS Satellites in View        |
+
+Notes:
+
+- GSA does not officially include signal ID, but some multi-band receivers do include it in their NMEA output.
 
 
 

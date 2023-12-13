@@ -1,4 +1,4 @@
-## GGA - Global Positioning System Fix Data
+## GGA - GNSS Fix
 
 ### Summary
 

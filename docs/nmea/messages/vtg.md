@@ -1,4 +1,4 @@
-## VTG - Velocity and Track Made Good
+## VTG - Velocity and Track made Good
 
 ### Summary
 

@@ -15,17 +15,17 @@ A minimal NMEA implementation should support the [GGA](messages/gga.md) and [RMC
 The following NMEA sentences can be considered universal, apparently supported by all GPS / GNSS chipsets.
 
 
-#### [GGA](messages/gga.md) - Global Positioning System Fix Data
+#### [GGA](messages/gga.md) - GNSS Fix
 
 - Includes **time** (UTC), **latitude**, **longitude**, status, **sats** (00-12), **HDOP**, **altitude**.
 - The maximum number of SVs (satellites) reported may be limited to 12, depending on the GPS / GNSS chipset.
 
-#### [GSA](messages/gsa.md) - GPS DOP and active satellites
+#### [GSA](messages/gsa.md) - GNSS Satellites Active
 
 - Includes mode (2d / 3d), **satellite and signal IDs**, **PDOP, HDOP, VDOP**.
 - Some manufacturers have made proprietary modifications to the GSA sentence for multi-band receivers.
 
-#### [GSV](messages/gsv.md) - Satellites in view
+#### [GSV](messages/gsv.md) - GNSS Satellites in View
 
 - Includes SVs for each constellation / signal and elevation + azimuth of each SV.
 - Support for different signals from each satellite was added in NMEA 4.10.
@@ -44,22 +44,22 @@ The following NMEA sentences are relatively common, supported by many GPS / GNSS
 
 Most of the fields in these sentences are also available in GGA or GSV.
 
-#### **[GLL](messages/gll.md)** - Geographic Position - Latitude/Longitude
+#### **[GLL](messages/gll.md)** - Geographic Latitude + Longitude
 
 - The GLL sentence includes **latitude** and **longitude**, with **time** of position fix and status
 - All of the fields in GLL are also present in [RMC](messages/rmc.md).
 
-#### **[GNS](messages/gns.md)** - Global Navigation Satellite System Fix Data
+#### **[GNS](messages/gns.md)** - Global Navigation Satellite System
 
 - Includes **time** (UTC), **latitude**, **longitude**, **sats** (0-99) and **HDOP**.
 - The GNS sentence is a tweaked version of [GGA](messages/gga.md), reporting the correct number of SVs (satellites).
 
-#### **[VTG](messages/vtg.md)** - Track made good and Ground speed
+#### **[VTG](messages/vtg.md)** - Velocity and Track made Good
 
 - Includes **COG** and **SOG.**
 - All of the fields in VTG are also present in [RMC](messages/rmc.md), or can be derived from RMC.
 
-#### **[ZDA](messages/zda.md)** - GNSS Time & Date
+#### **[ZDA](messages/zda.md)** - Zone Date and Time
 
 - Includes **time** (UTC) and **date** (ddmmyyyy).
 - This sentence may also provide the local time zone, if known by the GPS / GNSS receiver.

@@ -1,4 +1,4 @@
-## ZDA - Time and Date
+## ZDA - Zone Date and Time
 
 ### Summary
 

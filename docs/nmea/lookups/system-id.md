@@ -10,11 +10,11 @@ The GNSS system identifier (aka "system ID") was added to several messages in NM
 
 System ID was added to the following messages in NMEA 4.10:
 
-| Message ID                | Description                    |
-| ------------------------- | ------------------------------ |
-| GBS                       |                                |
-| GRS                       |                                |
-| [GSA](../messages/gsa.md) | GNSS DOP and Active Satellites |
+| Message ID                                                   | Description                    |
+| ------------------------------------------------------------ | ------------------------------ |
+| GBS | GPS Satellite Fault Detection |
+| GRS | GPS Range Residuals |
+| [GSA](../messages/gsa.md)                                    | GNSS DOP and Active Satellites |
 
 
 
@@ -30,3 +30,7 @@ GNSS system IDs reported in NMEA 4.10 (and newer):
 | 4         | BeiDou                | People's Republic of China | Global                  |
 | 5         | QZSS                  | Government of Japan        | Regional - Asia-Pacific |
 | 6         | NavIC, formerly IRNSS | Government of India        | Regional - India        |
+
+Note:
+
+- Trimble have been using a system ID of 0 for QZSS - see [GBS](https://receiverhelp.trimble.com/alloy-gnss/en-us/NMEA-0183messages_gbs.html), [GRS](https://receiverhelp.trimble.com/alloy-gnss/en-us/NMEA-0183messages_grs.html), and [GSA](https://receiverhelp.trimble.com/alloy-gnss/en-us/NMEA-0183messages_gsa.html)
