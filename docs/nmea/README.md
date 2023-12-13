@@ -107,7 +107,7 @@ Notes:
 
 A number of rare NMEA sentences may be output by specific manufacturers.
 
-These include $DTM, $GBS, and $GST.
+These include $EPE, $DTM, $GBS, and $GST.
 
 Some of these are described on a separate [page](rare.md).
 
@@ -115,11 +115,11 @@ Some of these are described on a separate [page](rare.md).
 
 ### Proprietary Sentences
 
-A number of proprietary NMEA sentences may be output by specific manufacturers.
+A number of proprietary NMEA sentences may be output by specific vendors / manufacturers.
 
-These include $PGLOR, $PQ\*, $PSAM\*, $PSMSG, $PSRF\*, and $PSSGR
+These include $PGLOR, $PGRM\*, $PJL\*, $PQ\*, $PSAM\*, $PSMSG, $PSRF\*, $PSSGR, \$PUBX.
 
-Some of these are described on a separate [page](proprietary/README.md).
+These vendor specific extensions are summarised on a separate [page](proprietary/README.md).
 
 
 
@@ -127,5 +127,5 @@ Some of these are described on a separate [page](proprietary/README.md).
 
 A number of NMEA sentences may be output by specific manufacturers which give an idea about PVT accuracy.
 
-Some of these are described on a separate [page](../accuracy/nmea/README.md).
+Some of these accuracy estimates are described on a separate [page](../accuracy/nmea/README.md).
 
