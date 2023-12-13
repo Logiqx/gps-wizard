@@ -93,8 +93,8 @@ $GNGSA,A,3,66,67,68,77,85,,,,,,,,1.5,0.8,1.3*20
 Notes:
 
 - Talker ID does not distinguish the different GNSS constellations:
-  - $GPGSA reports the GPS satellites in use.
-  - $GNGSA reports the GPS and GLONASS satellites in use.
+  - `$GPGSA` reports the GPS satellites in use.
+  - `$GNGSA` reports the GPS and GLONASS satellites in use.
 
 - It is therefore necessary to de-duplicate the PRNs for each GNSS.
 
@@ -113,11 +113,7 @@ $BDGSA,A,3,205,209,211,214,216,233,,,,,,,0.6,0.4,0.6*29
 
 Notes:
 
-- Talker ID distinguishes the different GNSS constellations:
-  - $GPGSA reports the GPS satellites in use.
-  - $GNGSA reports the GLONASS satellites in use.
-  - $GAGSA reports the Galileo satellites in use.
-  - $BDGSA reports the BeiDou satellites in use.
+- [Talker ID](../lookups/talker-id.md) distinguishes the different GNSS constellations.
 - The GSA sentences from the Exynos 1280 are reporting PRNs.
 
 
@@ -135,7 +131,7 @@ $GNGSA,A,3,207,210,223,225,232,237,240,241,,,,,0.8,0.4,0.6,4*3A
 
 Notes:
 
-- Talker ID $GNGSA is used for all of the GNSS constellations.
+- `$GNGSA` is used for all of the GNSS constellations.
   - Field 18 specifies the [system ID](../lookups/system-id.md).
 - The GSA sentences from the Exynos 1380 are reporting PRNs.
 
@@ -154,7 +150,7 @@ $GNGSA,A,3,02,03,04,08,14,17,19,21,32,,,,0.7,0.5,0.6,1*31
 
 Notes:
 
-- Talker ID $GNGSA is used for all of the GNSS constellations.
+- `$GNGSA` is used for all of the GNSS constellations.
   - Field 18 specifies the [system ID](../lookups/system-id.md).
 - The GSA sentences for Galileo and BeiDou are reporting satellite IDs, not PRNs.
 
@@ -178,15 +174,11 @@ $BDGSA,A,3,211,219,221,222,234,236,244,245,246,,,,1.8,0.9,1.5*1F
 
 Notes:
 
-- Talker ID distinguishes the different GNSS constellations:
-  - $GPGSA reports the GPS satellites in use.
-  - $GAGSA reports the Galileo satellites in use.
-  - $GNGSA reports the GLONASS satellites in use.
-  - $BDGSA reports the BeiDou satellites in use.
-- Field 18 is only present for some rows and specifies the signal ID.
+- [Talker ID](../lookups/talker-id.md) distinguishes the different GNSS constellations.
+- Field 18 is only present for some rows but when present it indicates the signal ID.
   - The [signal ID](../lookups/signal-id.md) is only included when it is not the default signal.
-- To determine the number of satellites being used some de-duplication will be required.
-- The BCM4776 also outputs $PSSGR,GSA which is like $GPGSA, but includes system ID and signal ID.
+- To determine the actual number of satellites being used, some de-duplication will be required.
+- The BCM4776 also outputs `$PSSGR,GSA` which is like `$GPGSA`, but includes system ID and signal ID.
 
 
 
@@ -195,14 +187,14 @@ Notes:
 Determining the satellites in use for each system:
 
 - When available use the [talker ID](../lookups/talker-id.md) to distinguish between different GNSS.
-  - Take account of how $GNGSA is used by the Broadcom BCM4774 - i.e. combined GPS and GLONASS.
+  - Take account of how `$GNGSA` is used by the Broadcom BCM4774 - i.e. combined GPS and GLONASS.
     - Therefore need to de-duplicate the SV IDs (or PRNs).
 - When available use the [system ID](../lookups/system-id.md) (field 18) to distinguish between different GNSS.
-  - Field 18 will probably be the system ID when all GSA sentences are $GNGSA.
+  - Field 18 will probably be the system ID when all GSA sentences are `$GNGSA`.
   - Need to de-duplicate the SV IDs (or PRNs) on multi-band receivers.
 - When available use the [signal ID](../lookups/signal-id.md) (field 18) to distinguish between signals - e.g. Broadcom BCM4776
   - Field 18 will probably be the signal ID when GSA sentences are present for different talker IDs.
-  - Sometimes $PSSGR,GSA will also be available which is like GSA but includes system ID and signal ID.
+  - Sometimes `$PSSGR,GSA` will also be available which is like GSA but includes system ID and signal ID.
 - In addition to the above, consider the possibility of system ID and signal ID both being present in GSA.
   - It is not inconceivable that some vendors may use fields 18 and 19 for system ID and signal ID.
 - Vendors may use either SV IDs or PRNs in the GSA output, so code needs to be aware of this subtlety.
