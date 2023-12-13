@@ -14,12 +14,12 @@ The order of the characters indicates the systems; GPS, GLONASS, Galileo, BeiDou
 
 The positioning mode indicator is used by the following messages:
 
-| Message ID                | Description                                |
-| ------------------------- | ------------------------------------------ |
-| [GLL](../messages/gll.md) | Geographic Position - Latitude / Longitude |
-| GNS                       |                                            |
-| [RMC](../messages/rmc.md) | Recommended Minimum GNSS Data              |
-| [VTG](../messages/vtg.md) | Velocity and Track Made Good               |
+| Message ID                | Description                        |
+| ------------------------- | ---------------------------------- |
+| [GLL](../messages/gll.md) | Geodetic Latitude + Longitude      |
+| [GNS](../messages/gns.md) | Global Navigation Satellite System |
+| [RMC](../messages/rmc.md) | Recommended Minimum GNSS Data      |
+| [VTG](../messages/vtg.md) | Velocity and Track made Good       |
 
 
 

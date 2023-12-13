@@ -14,9 +14,9 @@ Signal ID was added to the following messages in NMEA 4.10:
 
 | Message ID                   | Description                    |
 | ---------------------------- | ------------------------------ |
-| GBS                          | GPS Satellite Fault Detection  |
-| GRS                          | GPS Range Residuals            |
-| [GSA](../messages/gsa.md) \* | GNSS DOP and Active Satellites |
+| GBS                          | GNSS Satellite Fault Detection |
+| GRS                          | GNSS Residuals                 |
+| [GSA](../messages/gsa.md) \* | GNSS Active Satellites         |
 | [GSV](../messages/gsv.md)    | GNSS Satellites in View        |
 
 Notes:

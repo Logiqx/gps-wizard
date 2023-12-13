@@ -4,6 +4,8 @@
 
 The GNSS system identifier (aka "system ID") was added to several messages in NMEA 4.10.
 
+One might argue that system ID is slightly redundant, due to the presence of a [talker ID](talker-id.md) for all sentences.
+
 
 
 ### Messages
@@ -12,9 +14,13 @@ System ID was added to the following messages in NMEA 4.10:
 
 | Message ID                                                   | Description                    |
 | ------------------------------------------------------------ | ------------------------------ |
-| GBS | GPS Satellite Fault Detection |
-| GRS | GPS Range Residuals |
-| [GSA](../messages/gsa.md)                                    | GNSS DOP and Active Satellites |
+| GBS | GNSS Satellite Fault Detection |
+| GRS | GNSS Residuals |
+| [GSA](../messages/gsa.md)                                    | GNSS Active Satellites |
+
+Notes:
+
+- GSV does not include system ID, but the [talker ID](talker-id.md) serves the same purpose.
 
 
 

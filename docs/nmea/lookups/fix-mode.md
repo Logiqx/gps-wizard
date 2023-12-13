@@ -8,9 +8,9 @@ The fix mode reports whether the fix was no good, sufficient for 2D, or sufficie
 
 
 
-### Proprietary Messages
+### Proprietary Sentences
 
-In addition to the [GSA](../messages/gsa.md) message, positioning mode is associated with a number of vendor-specific messages:
+In addition to the [GSA](../messages/gsa.md) sentence, positioning mode is associated with a number of vendor-specific messages:
 
 | Message ID | Description                         |
 | ---------- | ----------------------------------- |

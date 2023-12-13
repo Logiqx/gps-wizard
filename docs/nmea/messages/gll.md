@@ -1,4 +1,4 @@
-## GLL - Geographic Latitude + Longitude
+## GLL - Geodetic Latitude + Longitude
 
 ### Summary
 
