@@ -203,4 +203,6 @@ Determining the satellites in use for each system:
 - When available use the [signal ID](../lookups/signal-id.md) (field 18) to distinguish between signals - e.g. Broadcom BCM4776
   - Field 18 will probably be the signal ID when GSA sentences are present for different talker IDs.
   - Sometimes $PSSGR,GSA will also be available which is like GSA but includes system ID and signal ID.
+- In addition to the above, consider the possibility of system ID and signal ID both being present in GSA.
+  - It is not inconceivable that some vendors may use fields 18 and 19 for system ID and signal ID.
 - Vendors may use either SV IDs or PRNs in the GSA output, so code needs to be aware of this subtlety.
