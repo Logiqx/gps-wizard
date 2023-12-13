@@ -107,7 +107,7 @@ Notes:
 
 A number of rare NMEA sentences may be output by specific manufacturers.
 
-These include $EPE, $DTM, $GBS, and $GST.
+These include $DTM, $EPE, $GBS, $GRS and $GST.
 
 Some of these are described on a separate [page](rare.md).
 
