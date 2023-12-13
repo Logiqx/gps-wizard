@@ -56,9 +56,9 @@ lat / lon - squaring
 
 ### Origins of Error Estimates
 
-[Chipsets](chipsets/README.md)
+- [Chipsets](chipsets/README.md)
 
-[NMEA](nmea/README.md)
+- [NMEA](nmea/README.md)
 
-[Binary](binary/README.md)
+- [Binary](binary/README.md)
 
