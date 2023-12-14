@@ -158,6 +158,14 @@ Ideally, elevation as calculated by the GPS / GNSS receiver should be recorded.
 
 
 
+#### Speed and Course
+
+A speed or course of "-1" should not be included in trackpoints.
+
+When speed or course is unknown, it should be omitted from the trackpoint.
+
+
+
 ### Additional Observations
 
 #### GPX Compliance
