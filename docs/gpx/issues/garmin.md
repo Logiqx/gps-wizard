@@ -200,7 +200,7 @@ With the `<gpx>` element referring to `TrackPointExtension/v2` it is then possib
 </trkpt>
 ```
 
-Speed and course are already available in the FIT exports, so they should also be possible in GPX exports.
+Speed and course are already available in the FIT and TCX exports, so they should also be possible in GPX exports.
 
 - The precision of `<ns3:speed>` should be either 2 or 3 decimal places, equivalent of 1 cm/s or 1 mm/s
 - The precision of `<ns3:course>` should be either 1 or 2 decimal places
