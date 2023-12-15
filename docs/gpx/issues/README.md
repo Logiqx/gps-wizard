@@ -7,8 +7,8 @@ This table is to keep track of GPX progress for each application / device:
 | Application                      | GPX Version | Extensions? | Issues? | Documented? | Contacted? | WIP? | Status                                                   |
 | -------------------------------- | :---------: | :---------: | :-----: | :---------: | :--------: | :--: | :------------------------------------------------------- |
 | [COROS](coros.md)                |     1.1     |      Y      |    Y    |      Y      |     Y      | (Y)  | Video conference with COROS is yet to be scheduled       |
-| [ESP-GPS](esp-gps.md)            |     1.0     |      N      |    N    |      Y      |     Y      |  N   | Confirmed valid GPX 1.0. PR was merged for indentation   |
-| [Garmin Connect](garmin.md)      |     1.1     |      Y      |    Y    |      Y      |     N      |  N   | Todo - Suggest compliance and use of Garmin v2           |
+| [ESP-GPS](esp-gps.md)            |     1.0     |      N      |    N    |      Y      |     Y      |  -   | Confirmed valid GPX 1.0. PR was merged for indentation   |
+| [Garmin Connect](garmin.md)      |     1.1     |      Y      |    Y    |      Y      |     Y      |  ?   | Posted to the Garmin forum - http://tinyurl.com/3ehurya2 |
 | [GpsarPro](gpsar.md)             |     1.0     |      Y      |    Y    |      Y      |     Y      | (Y)  | Agreed reader for Garmin v2. Writer changes TBC          |
 | [GPSBabel](gpsbabel.md)          |     1.0     |      N      |    Y    |      Y      |     N      |  N   | Todo - Suggest compliance                                |
 | [GPSResults](gpsresults.md)      |     1.0     |      Y      |    Y    |      Y      |     Y      | (Y)  | Agreed reader for Garmin v2. Writer changes TBC          |
