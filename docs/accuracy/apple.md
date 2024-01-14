@@ -14,6 +14,9 @@ Summary:
 - Series 8 (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
   - SE "2nd Gen" (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
   - Ultra (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
+- Series 9 (Sep 2023) - unknown
+  - Ultra 2 (Sep 2023) - unknown
+
 
 
 Links:
@@ -191,4 +194,6 @@ Note about the Qualcomm Snapdragon [X75](https://www.qualcomm.com/products/techn
 ### Future
 
 - [Apple plans to drop key Broadcom chip to use in-house design](https://www.japantimes.co.jp/news/2023/01/10/business/apple-in-house-chip-plans/) -  The Japan Times
+  - Mentions replacing Broadcom and Qualcomm components but not sure of they mean GNSS.
+
 
