@@ -54,4 +54,4 @@ The TCX [schema](https://www8.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd
 
 GPS Wizard is capable of reading TCX files which contain multiple activities, including multisport activities. Each activity within the TCX is simply treated as a separate track by GPS Wizard, so a single TCX may be regarded as containing multiple tracks.
 
-Laps have now meaning within GPS Wizard, so an activity within a TCX file is simply a single track containing a collection of track points. De-duplication has been implemented, such as when the last point of one lap is identical to the first point of the next lap.  
+Laps have no meaning within GPS Wizard, so an activity within a TCX file is simply a single track containing a collection of track points. De-duplication has been implemented, such as when the last point of one lap is identical to the first point of the following lap.  
