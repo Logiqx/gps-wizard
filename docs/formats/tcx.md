@@ -48,7 +48,10 @@ It should be noted that the native TCX units are m/s, but COROS are using km/h. 
 
 
 
-### TODO
+### TCX vs GPX
 
-De-duplication of trackpoints, due to the implementation of laps within TCX files.
+The TCX [schema](https://www8.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd) clearly draws some inspiration from the GPX [schema](https://www.topografix.com/gpx/1/1/gpx.xsd). There are however some fundamental differences in structure, primarily around the concepts of activities, laps, and tracks.
 
+GPS Wizard is capable of reading TCX files which contain multiple activities, including multisport activities. Each activity within the TCX is simply treated as a separate track by GPS Wizard, so a single TCX may be regarded as containing multiple tracks.
+
+Laps have now meaning within GPS Wizard, so an activity within a TCX file is simply a single track containing a collection of track points. De-duplication has been implemented, such as when the last point of one lap is identical to the first point of the next lap.  
