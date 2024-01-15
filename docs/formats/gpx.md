@@ -86,16 +86,24 @@ It is not unusual to encounter files that do not match the schema:
 
 
 
-### TODO
+### Track Segments
 
-Add support for the following:
-
-- Handle multiple `<trkseg>` elements within a track.  Currently they are stored as a single track.
-- Make use of the `<fix>` element.
+GPS Wizard is capable of reading GPX files which contain multiple tracks, but it does not support track segments.
 
 The significance of `<trkseg>` is clarified in the GPX schema:
 
 > A Track Segment holds a list of Track Points which are logically connected in order. To represent a single GPS track where GPS reception was lost, or the GPS receiver was turned off, start a new Track Segment for each continuous span of track data.
 
-So, individual `<trkseg>` elements should be converted to individual `<LineString>` elements when saving a GPX track in [KML](kml.md) format.
+Track segments are not supported by GPS Wizard, so each track is simply treated as a collection of track points. De-duplication has been implemented like for TCX, such as the last point of one track segment matching the first point of the next segment. 
+
+The lack of support for track segments is not hugely significant but in an ideal world, individual `<trkseg>` elements should be converted to individual `<LineString>` elements when saving a GPX file in [KML](kml.md) format.
+
+
+
+### TODO
+
+Maybe add support for the following:
+
+- The standard `<fix>` element, and perhaps the new extension(s) for GNSS fix types.
+
 
