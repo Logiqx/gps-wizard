@@ -29,6 +29,8 @@ The following formats can all be loaded using dedicated file readers:
 - [SBP](formats/sbp.md) - Locosys SiRF Binary (packed).
   - 32-byte format without SDOP + VSDOP, GT-11.
   - 32-byte format with SDOP + VSDOP, GT-31 onwards.
+- [TCX](formats/tcx.md) - Training Center XML.
+  - Support for TrainingCenterDatabase and ActivityExtension.
 - [UBX](formats/ubx.md) - u-blox Binary.
   - Support for NAV-PVT messages.
 
