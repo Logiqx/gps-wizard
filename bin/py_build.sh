@@ -20,6 +20,7 @@ docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/sirf_reader.py >$PROJ_DIR/python/readers/sirf_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/sbn_reader.py >$PROJ_DIR/python/readers/sbn_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/sbp_reader.py >$PROJ_DIR/python/readers/sbp_reader.py
+docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/tcx_reader.py >$PROJ_DIR/python/readers/tcx_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/readers/ubx_reader.py >$PROJ_DIR/python/readers/ubx_reader.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/writers/base_writer.py >$PROJ_DIR/python/writers/base_writer.py
 docker run --rm --entrypoint cat $IMAGE_NAME:$IMAGE_TAG $WORK_DIR/python/writers/csv_writer.py >$PROJ_DIR/python/writers/csv_writer.py
