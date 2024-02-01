@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="http://www.windsporttracker.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.windsporttracker.com/" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:documentation> This schema defines WindsportTracker extensions to be used with the GPX 1.0 / 1.1 schema. </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:element name="trkwst" type="trkwstType" />
+  <xsd:element name="trkptwst" type="trkptwstType" />
+
+  <xsd:complexType name="trkwstType">
+    <xsd:annotation>
+      <xsd:documentation> WST extras for the track </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="version" type="versionType" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Version </xsd:documentation>
+	  </xsd:annotation>
+	</xsd:attribute>
+    <xsd:attribute name="recordtype" type="recordType" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Record type - e.g. RECORD </xsd:documentation>
+	  </xsd:annotation>
+	</xsd:attribute>
+    <xsd:attribute name="sessiontype" type="sessionType" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Session type - e.g. FREERIDE </xsd:documentation>
+	  </xsd:annotation>
+	</xsd:attribute>
+    <xsd:attribute name="rating" type="ratingType" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Rating - 1 to 5 </xsd:documentation>
+	  </xsd:annotation>
+	</xsd:attribute>
+    <xsd:attribute name="uuid" type="uuidType" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> UUID - e.g. ce304c15-df1a-4cc0-8f30-7a3eeafbc720 </xsd:documentation>
+	  </xsd:annotation>
+	</xsd:attribute>
+    <xsd:attribute name="startTime" type="xsd:dateTime" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Start time of the session </xsd:documentation>
+	  </xsd:annotation>
+	</xsd:attribute>
+    <xsd:attribute name="endTime" type="xsd:dateTime" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Start time of the session </xsd:documentation>
+	  </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="id" type="xsd:anyURI" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> ID of the session - e.g. /t4/zT4qofHBiYd3bRvuRQ==&#10; </xsd:documentation>
+	  </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="trkptwstType">
+    <xsd:annotation>
+      <xsd:documentation> WST extras for trackpoints </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="accuracy" type="accuracyType" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Horizontal accuracy in meters (68% confidence) </xsd:documentation>
+	  </xsd:annotation>
+	</xsd:attribute>
+    <xsd:attribute name="elapsedrealtimenanos" type="elapsedTimeType" use="required">
+	  <xsd:annotation>
+	    <xsd:documentation> Elapsed real time in nanoseconds </xsd:documentation>
+	  </xsd:annotation>
+	</xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:simpleType name="versionType">
+    <xsd:annotation>
+      <xsd:documentation> Version </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="1.0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="recordType">
+    <xsd:annotation>
+      <xsd:documentation> Record type </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="RECORD"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="sessionType">
+    <xsd:annotation>
+      <xsd:documentation> Session type </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="FREERIDE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ratingType">
+    <xsd:annotation>
+      <xsd:documentation> Rating - 1 to 5 </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="1"/>
+      <xsd:maxInclusive value="5"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="uuidType">
+    <xsd:annotation>
+      <xsd:documentation> UUID </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="([0-9]|[a-f]){8}-([0-9]|[a-f]){4}-([0-9]|[a-f]){4}-([0-9]|[a-f]){4}-([0-9]|[a-f]){12}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="accuracyType">
+    <xsd:annotation>
+      <xsd:documentation> Horizontal accuracy in meters (68% confidence) </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0.0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="elapsedTimeType">
+    <xsd:annotation>
+      <xsd:documentation> Elapsed real time in nanoseconds </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>
