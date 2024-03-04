@@ -50,8 +50,8 @@ SiRFDrive fields are always set to zero on the GT-11 and GT-31, so they can safe
 | Additional Mode Info <sup>7</sup>                 | additional_mode_info |  u1  |   -   |    -    |   -   |          -          |
 | Unfiltered Speed Over Ground <sup>8</sup>         | unfiltered_sog       | >u2  | sogu  | float32 |  m/s  | 1 x 10<sup>-2</sup> |
 | Unfiltered Course Over Ground <sup>8</sup>        | unfiltered_cog       | >u2  | cogu  | float32 |  m/s  | 1 x 10<sup>-2</sup> |
-| Speed Dilution of Precision <sup>9</sup>          | sdop                 |  u1  | sdop  | float32 |  m/s  | 1 x 10<sup>-2</sup> |
-| Vertical Speed Dilution of Precision <sup>9</sup> | vsdop                |  u1  | vsdop | float32 |  m/s  | 1 x 10<sup>-2</sup> |
+| Speed Dilution of Precision <sup>9</sup>          | sdop                 |  u1  | ehve  | float32 |  m/s  | 1 x 10<sup>-2</sup> |
+| Vertical Speed Dilution of Precision <sup>9</sup> | vsdop                |  u1  | evve  | float32 |  m/s  | 1 x 10<sup>-2</sup> |
 
 Notes:
 

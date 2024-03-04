@@ -16,10 +16,10 @@ The majority of the data originates from the NAV-PVT (navigation position veloci
 | UTC Time                      | utc_time            | <u8  |  ts  | float64 |   s   | 1 x 10<sup>-3</sup> |
 | Fix                           | fix                 |  u1  | fix  |  uint8  |   -   |          -          |
 | Satellites                    | satellites          |  u1  | sat  |  uint8  |   -   |          -          |
-| Speed Accuracy                | speed_accuracy      | <u4  | sacc | float32 |  m/s  | 1 x 10<sup>-3</sup> |
-| Horizontal Accuracy           | horizontal_accuracy | <u4  | hacc | float32 |   m   | 1 x 10<sup>-3</sup> |
-| Vertical Accuracy             | vertical_accuracy   | <u4  | vacc | float32 |   m   | 1 x 10<sup>-3</sup> |
-| Heading Accuracy              | heading_accuracy    | <u4  | cacc | float32 |  deg  | 1 x 10<sup>-3</sup> |
+| Speed Accuracy                | speed_accuracy      | <u4  | ehve | float32 |  m/s  | 1 x 10<sup>-3</sup> |
+| Horizontal Accuracy           | horizontal_accuracy | <u4  | ehpe | float32 |   m   | 1 x 10<sup>-3</sup> |
+| Vertical Accuracy             | vertical_accuracy   | <u4  | evpe | float32 |   m   | 1 x 10<sup>-3</sup> |
+| Heading Accuracy              | heading_accuracy    | <u4  | ece  | float32 |  deg  | 1 x 10<sup>-3</sup> |
 | Horizontal DOP <sup>1 2</sup> | hdop                | <u2  | hdop | float32 |   -   | 1 x 10<sup>-2</sup> |
 
 Notes:

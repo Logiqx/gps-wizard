@@ -19,8 +19,8 @@ The packed SiRF binary format consists of 32 byte messages which originate from 
 | Speed Over Ground (SOG)              | sog                 | <u2  |  sog  | float32 |  m/s  | 1 x 10<sup>-2</sup> |
 | Course Over Ground (COG, True)       | cog                 | <u2  |  cog  | float32 |  deg  | 1 x 10<sup>-2</sup> |
 | Climb Rate                           | climb_rate          | <i2  |  roc  | float32 |  m/s  | 1 x 10<sup>-2</sup> |
-| Speed Dilution of Precision          | sdop                |  u1  | sdop  | float32 |  m/s  | 1 x 10<sup>-2</sup> |
-| Vertical Speed Dilution of Precision | vsdop               |  u1  | vsdop | float32 |  m/s  | 1 x 10<sup>-2</sup> |
+| Speed Dilution of Precision          | sdop                |  u1  | ehve  | float32 |  m/s  | 1 x 10<sup>-2</sup> |
+| Vertical Speed Dilution of Precision | vsdop               |  u1  | evve  | float32 |  m/s  | 1 x 10<sup>-2</sup> |
 
 Notes:
 
