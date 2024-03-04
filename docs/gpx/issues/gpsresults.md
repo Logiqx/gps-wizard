@@ -27,7 +27,7 @@ This example has been fixed by hand to ensure compliance with the GPX 1.0 schema
      xsi:schemaLocation="http://www.topografix.com/GPX/1/0
                          https://www.topografix.com/GPX/1/0/gpx.xsd
                          http://www.gps-speed.com/gpx
-                         https://logiqx.github.io/gps-wizard/xmlschemas/gpss/gpss.xsd">
+                         https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpss/gpss.xsd">
   <trk>
     <name>exported tracks</name>
     <gpss:metadata>
@@ -57,7 +57,7 @@ This example has been fixed by hand to ensure compliance with the GPX 1.0 schema
 </gpx>
 ```
 
-Note: The link to `https://logiqx.github.io` should be replaced with a link to `https://www.gps-speed.com` once [`gpss.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/gpss/gpss.xsd) is available on the gps-speed website.
+Note: The link to `https://logiqx.github.io` should be replaced with a link to `https://www.gps-speed.com` once [`gpss.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpss/gpss.xsd) is available on the gps-speed website.
 
 
 
@@ -98,13 +98,13 @@ The `xsi:schemaLocation` needs to specify the XSD location for the gps-speed ext
      xsi:schemaLocation="http://www.topografix.com/GPX/1/0
                          https://www.topografix.com/GPX/1/0/gpx.xsd
                          http://www.gps-speed.com/gpx
-                         https://logiqx.github.io/gps-wizard/xmlschemas/gpss/gpss.xsd">
+                         https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpss/gpss.xsd">
 ```
 
 Notes: 
 
 - The link to `https://www.topografix.com` uses HTTPS because it is the official location and avoids a 301 redirect. The namespace remains HTTP which is an immutable property of the GPX 1.0 schema
-- The link to `https://logiqx.github.io` should be replaced with a link to `https://www.gps-speed.com` once [`gpss.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/gpss/gpss.xsd) is available on the gps-speed website
+- The link to `https://logiqx.github.io` should be replaced with a link to `https://www.gps-speed.com` once [`gpss.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpss/gpss.xsd) is available on the gps-speed website
 
 
 
@@ -154,7 +154,7 @@ Custom elements can appear immediately before the first `<trkseg>` element, or i
 </trk>
 ```
 
-The `gpss` elements shown above are defined in the extension schema [`gpss.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/gpss/gpss.xsd) which is based on the definitions in GPX 1.1
+The `gpss` elements shown above are defined in the extension schema [`gpss.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpss/gpss.xsd) which is based on the definitions in GPX 1.1
 
 Making this change will also require a tweak to the GPX reader, so that it recognises `<gpss:metadata>` as well as `<metadata>`.
 
@@ -233,7 +233,7 @@ GPX 1.0 does allow for custom elements, so long as they use a different namespac
 <gpss:fix>43</gpss:fix>
 ```
 
-The `gpss` elements shown above have been defined in the extension schema [`gpss.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/gpss/gpss.xsd)
+The `gpss` elements shown above have been defined in the extension schema [`gpss.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpss/gpss.xsd)
 
 Making this change will require a tweak to the GPX reader, so that it recognises these fields with or without the `gpss` prefix.
 
@@ -351,7 +351,7 @@ This can easily be fixed for the reading and writing  of `<gpss:sdop>` and `<gps
 
 Ensuring the exports of GPSResults are compliant with GPX 1.0 is pretty straightforward:
 
-- Suitable schema is available at [`https://logiqx.github.io/gps-wizard/xmlschemas/gpsar/gpss.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/gpss/gpss.xsd)
+- Suitable schema is available at [`https://logiqx.github.io/gps-wizard/xmlschemas/gpsar/gpss.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpss/gpss.xsd)
   - This should be uploaded to a folder on `https://www.gps-speed.com` and referenced by GPX files
 - Changes to the GPX writer are relatively straightforward but will necessitate some tweaks to the GPX reader
   - The GPX reader should support elements with and without the `gpss` prefix to ensure backwards compatibility

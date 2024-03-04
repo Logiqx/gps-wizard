@@ -20,7 +20,7 @@ This example has been fixed by hand to ensure compliance with the GPX 1.0 schema
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xmlns:wst="https://www.windsporttracker.com/"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/0
-                         https://logiqx.github.io/gps-wizard/xmlschemas/gpx/1/0/gpx-lax.xsd">
+                         https://logiqx.github.io/gps-wizard/xmlschemas/topografix/gpx/1/0/gpx-lax.xsd">
   <time>2022-11-19T17:22:14.15Z</time>
   <trk>
     <name>Windsport Back Home</name>

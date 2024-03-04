@@ -22,7 +22,7 @@ This example has been fixed by hand to ensure compliance with the GPX 1.0 schema
      xsi:schemaLocation="http://www.topografix.com/GPX/1/0
                          https://www.topografix.com/GPX/1/0/gpx.xsd
                          http://www.gpsactionreplay.com/xml
-                         https://logiqx.github.io/gps-wizard/xmlschemas/gpsar/gpsar.xsd">
+                         https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpsar/gpsar.xsd">
   <trk>
     <name>no name 1</name>
     <gpsarPro:color>-65536</gpsarPro:color>
@@ -44,7 +44,7 @@ This example has been fixed by hand to ensure compliance with the GPX 1.0 schema
 </gpx>
 ```
 
-Note: The link to `https://logiqx.github.io` should be replaced with a link to `http://www.gpsactionreplay.com` once [`gpsar.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/gpsar/gpsar.xsd) is available on the GpsarPro website.
+Note: The link to `https://logiqx.github.io` should be replaced with a link to `http://www.gpsactionreplay.com` once [`gpsar.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpsar/gpsar.xsd) is available on the GpsarPro website.
 
 
 
@@ -85,13 +85,13 @@ The `xsi:schemaLocation` needs to specify the XSD location for the GpsarPro exte
      xsi:schemaLocation="http://www.topografix.com/GPX/1/0
                          https://www.topografix.com/GPX/1/0/gpx.xsd
                          http://www.gpsactionreplay.com/xml
-                         https://logiqx.github.io/gps-wizard/xmlschemas/gpsar/gpsar.xsd">
+                         https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpsar/gpsar.xsd">
 ```
 
 Notes: 
 
 - The link to `https://www.topografix.com` uses HTTPS because it is the official location and avoids a 301 redirect. The namespace remains HTTP which is an immutable property of the GPX 1.0 schema
-- The link to `https://logiqx.github.io` should be replaced with a link to `http://www.gpsactionreplay.com` once [`gpsar.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/gpsar/gpsar.xsd) is available on the GpsarPro website
+- The link to `https://logiqx.github.io` should be replaced with a link to `http://www.gpsactionreplay.com` once [`gpsar.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpsar/gpsar.xsd) is available on the GpsarPro website
 
 
 
@@ -313,7 +313,7 @@ Note: Technically speaking the namespace prefix  (e.g. `gpxtpx` or `ns3`) can be
 
 Ensuring the exports of GpsarPro are compliant with GPX 1.0 is pretty straightforward:
 
-- Suitable schema is available at [`https://logiqx.github.io/gps-wizard/xmlschemas/gpsar/gpsar.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/gpsar/gpsar.xsd)
+- Suitable schema is available at [`https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpsar/gpsar.xsd`](https://logiqx.github.io/gps-wizard/xmlschemas/logiqx/gpsar/gpsar.xsd)
   - This should be uploaded to a folder on `http://www.gpsactionreplay.com`
 - Aside from renaming `<color>` to `<gpsarPro:color>`, nothing else will impact the GPX reader
   - The GPX reader should support both `<color>` and `<gpsarPro:color>` to ensure backwards compatibility
