@@ -1,0 +1,138 @@
+{
+  "Paths": {
+    "InputDir": "../gps-spikes/gpslogs",
+    "OutputDir": "../gps-spikes/docs/gallery",
+    "SubDir": "gt-11"
+  },
+  "Extensions": [
+    ".fit",
+    ".oao",
+    ".sbn",
+    ".sbp",
+    ".ubx"
+  ],
+  "Chipsets": {
+    "SiRF": [
+      ".sbn",
+      ".sbp"
+    ],
+    "UBX": [
+      ".oao",
+      ".ubx"
+    ]
+  },
+  "Charts": {
+    "Default": [
+      {
+        "title": "Speed over Ground (SOG)",
+        "label": "Speed (knots)",
+        "field": "sog",
+        "scale": 1.9438
+      },
+      {
+        "title": "Number of Satellites",
+        "label": "Satellites",
+        "field": "sat"
+      },
+      {
+        "title": "Horizontal Dilution of Precision (HDOP)",
+        "label": "HDOP",
+        "field": "hdop"
+      },
+      {
+        "title": "Positional Dilution of Precision (PDOP)",
+        "label": "PDOP",
+        "field": "pdop"
+      },
+      {
+        "title": "Estimated Horizontal Position Error (EHPE)",
+        "label": "EHPE (m)",
+        "field": "ehpe"
+      },
+      {
+        "title": "Estimated Horizontal Velocity Error (EHPE)",
+        "label": "EHVE (knots)",
+        "field": "ehve",
+        "scale": 1.9438
+      }
+    ],
+    "SiRF": [
+      {
+        "title": "Speed over Ground (SOG)",
+        "label": "Speed (knots)",
+        "field": "sog",
+        "scale": 1.9438
+      },
+      {
+        "title": "Number of Satellites",
+        "label": "Satellites",
+        "field": "sat"
+      },
+      {
+        "title": "Horizontal Dilution of Precision (HDOP)",
+        "label": "HDOP",
+        "field": "hdop"
+      },
+      {
+        "title": "Estimated Horizontal Position Error (EHPE)",
+        "label": "EHPE (m)",
+        "field": "ehpe"
+      },
+      {
+        "title": "Standard Deviation of Speed (SDOS)",
+        "label": "SDOS (knots)",
+        "field": "ehve",
+        "scale": 1.9438
+      }
+    ],
+    "UBX": [
+      {
+        "title": "Speed over Ground (SOG)",
+        "label": "Speed (knots)",
+        "field": "sog",
+        "scale": 1.9438
+      },
+      {
+        "title": "Number of Satellites",
+        "label": "Satellites",
+        "field": "sat"
+      },
+      {
+        "title": "Horizontal Dilution of Precision (HDOP)",
+        "label": "HDOP",
+        "field": "hdop"
+      },
+      {
+        "title": "Positional Dilution of Precision (PDOP)",
+        "label": "PDOP",
+        "field": "pdop"
+      },
+      {
+        "title": "Horizontal Accuracy (hAcc)",
+        "label": "hAcc (m)",
+        "field": "ehpe"
+      },
+      {
+        "title": "Speed Accuracy (sAcc)",
+        "label": "sAcc (knots)",
+        "field": "ehve",
+        "scale": 1.9438
+      }
+    ]
+  },
+  "Filters": {
+    "Default": {
+      "EHPE": 25,
+      "EHVE": 10
+    },
+    "SiRF": {
+      "EHPE": 3,
+	  "EHPE Comment": "3m is for JO EDWARDS_1003198_20120722_130040.SBN",
+      "SDOS": 2.5
+    },
+    "UBX": {
+      "hAcc": 25,
+      "sAcc": 10
+    }
+  }
+}
