@@ -2,7 +2,7 @@
   "Paths": {
     "InputDir": "../gps-spikes/gpslogs",
     "OutputDir": "../gps-spikes/docs/gallery",
-    "SubDir": "gt-11"
+    "SubDir": "."
   },
   "Extensions": [
     ".fit",
@@ -128,7 +128,7 @@
     "SiRF": {
       "EHPE": 3,
 	  "EHPE Comment": "3m is for JO EDWARDS_1003198_20120722_130040.SBN",
-      "SDOS": 2.5
+      "SDOS": 3
     },
     "UBX": {
       "hAcc": 25,
