@@ -1,4 +1,5 @@
 {
+  "GitHub": "https://github.com/Logiqx/gps-spikes",
   "Paths": {
     "InputDir": "../gps-spikes/gpslogs",
     "OutputDir": "../gps-spikes/docs/gallery",
