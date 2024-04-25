@@ -8,17 +8,16 @@ FROM jupyter/base-notebook:${NOTEBOOK_VERSION} AS builder
 
 # Copy the required project files
 WORKDIR /home/jovyan/work/gps-wizard
-COPY --chown=jovyan:users python/*.*py* ./python/
 COPY --chown=jovyan:users python/core/*.*py* ./python/core/
 COPY --chown=jovyan:users python/readers/*.*py* ./python/readers/
 COPY --chown=jovyan:users python/writers/*.*py* ./python/writers/
 
 # Convert Jupyter notebooks to regular Python scripts
-RUN jupyter nbconvert --to python python/*.ipynb python/core/*.ipynb python/readers/*.ipynb python/writers/*.ipynb && \
-    rm python/*.ipynb python/core/*.ipynb python/readers/*.ipynb python/writers/*.ipynb
+RUN jupyter nbconvert --to python python/core/*.ipynb python/readers/*.ipynb python/writers/*.ipynb && \
+    rm python/core/*.ipynb python/readers/*.ipynb python/writers/*.ipynb
 
 # Ensure project file permissions are correct
-RUN chmod 755 python/*.py python/core/*.py python/readers/*.py python/writers/*.py
+RUN chmod 755 python/core/*.py python/readers/*.py python/writers/*.py
 
 # Create final image from Python 3 (Debian Slim)
 FROM python:${PYTHON_VERSION}-slim-${DEBIAN_VERSION}
