@@ -138,3 +138,10 @@ The Python language was chosen for the sake of clarity; it is very readable and 
 
 The code that assesses the accuracy of Pythagoras for the purposes of alpha racing is also [available](https://github.com/Logiqx/gps-wizard/blob/main/python/examples/haversine_vs_pythagoras.ipynb) in GitHub.
 
+
+
+#### Addendum
+
+Tracks that contains a lot of slow speed may benefit from a slight tweak to the minimum speed logic:
+
+> Live 10s > 1 m/s
