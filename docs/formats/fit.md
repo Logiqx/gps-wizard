@@ -64,6 +64,15 @@ The enhanced altitude and speed could also be intended for other speed records. 
 
 
 
+### Magic Values
+
+The binary value of speed in a FIT file may be 0xFFFF which is 65.535 m/s, or 127.37 knots.
+
+These values should not be taken literally.
+
+
+
+
 ### Manufacturer Variations
 
 A dedicated [page](../fit.md) describes the subtle differences between FIT files from different manufacturers.
