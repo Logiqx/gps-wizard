@@ -29,6 +29,33 @@ Notes:
 
 
 
+### Firmware Details
+
+Changes to the OAO header, since the documentation at [Motion-GPS.com](https://www.motion-gps.com/motion/documentation/oao-file-format.html).
+
+Previously:
+
+```c
+best_t    bests_gybe_min  [5];
+uint32_t  elevation_gain;
+```
+
+Nowadays:
+
+```c
+best_t    bests_gybe_min  [5];
+uint32_t  elevation_gain;
+
+best_t    bests_over_2s  [5];
+
+uint16_t  firmware;
+int16_t   timezone;
+uint8_t   frequency;
+uint8_t   one_log_per_day;
+```
+
+
+
 ### TODO
 
 Thoughts:
