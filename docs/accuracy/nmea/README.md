@@ -43,7 +43,7 @@ Notes:
 - **PSRFEPE** (SiRF) - EHPE, EVPE, EHVE, EHE. According to gpsd, SiRF have never confirmed whether it is 1-sigma.
   - [ERINOME-I User Manual](https://www.we-online.com/components/products/manual/2614011037000_Manual_Erinome-I_2614011037000_rev1.8.pdf) (Qualcomm SirfStar V 5e B01) - see page 73, or search for $PSRFEPE
   - [ELARA-I User Manual](https://www.we-online.com/components/products/manual/2613011037000_Elara-I%202613011037000%20Manual_rev1.8.pdf) (Qualcomm SirfStar V 5e B01) - see page 74, or search for $PSRFEPE
-- **PUBX,0** (x-box) - Position - probably **1-sigma**
+- **PUBX,0** (u-blox) - Position - probably **1-sigma**
   - includes hAcc, vAcc but no sAcc or cAcc
 
 
