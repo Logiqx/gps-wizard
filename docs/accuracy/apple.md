@@ -2,20 +2,28 @@
 
 Summary:
 
+- 1st Gen (Apr 2015) - no GPS
 - Series 1 (Sep 2016) - no GPS
-- Series 2 (Sep 2016) - could be almost anything
-- Series 3 (Sep 2017) - could be almost anything - Intel, Broadcom, Qualcomm, MediaTek, etc.
+- Series 2 (Sep 2016) - suspect Qualcomm MDM9635M, like the series 3
+- Series 3 (Sep 2017) - confirmed as **Qualcomm** MDM9635M
 - Series 4 (Sep 2018) - suspect **Intel** XMM7560 like the iPhone XS / XR
 - Series 5 (Sep 2019) - suspect **Intel** XMM7660 like the iPhone 11
 - Series 6 (Sep 2020) - confirmed as **Broadcom** BCM47754
   - SE "1st Gen" (Sep 2020) - suspect **Broadcom** BCM47754, just like the Series 6
-
 - Series 7 (Oct 2021) - confirmed as **Broadcom** BCM47764
-- Series 8 (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
-  - SE "2nd Gen" (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
-  - Ultra (Sep 2022) - suspect **Broadcom** (e.g. BCM47764, BCM47765 or BCM4778)
+- Series 8 (Sep 2022) - suspect **Skyworks** + **Intel**, just like the SE "2nd Gen"
+  - Originally suspected Broadcom (e.g. BCM47764, BCM47765 or BCM4778)
+  - SE "2nd Gen" (Sep 2022)
+    - **Skyworks** GPS LNA with filter and LB (low band) front-end module + **Intel** baseband processors/RF transceiver
+    - Originally suspected Broadcom (e.g. BCM47764, BCM47765 or BCM4778)
+
+  - Ultra (Sep 2022)
+    - Skyworks + Intel like the SE (2nd Gen) or Broadcom?
+    - Originally suspected Broadcom (e.g. BCM47764, BCM47765 or BCM4778)
+
 - Series 9 (Sep 2023) - unknown
   - Ultra 2 (Sep 2023) - unknown
+- Series 10 (Sep 2024) - unknown
 
 
 
@@ -25,9 +33,19 @@ Links:
 
 
 
+#### 1st Gen
+
+Released in Apr 2015. No GPS.
+
+No GPS.
+
+
+
 #### Series 1
 
-[teardown](https://www.ifixit.com/Teardown/Apple+Watch+Teardown/40655)
+Released in Sep 2016. No GPS.
+
+[teardown](https://www.ifixit.com/Teardown/Apple+Watch+Teardown/40655) + [another](https://appleinsider.com/articles/15/04/30/teardown-shows-apple-watch-s1-chip-has-custom-cpu-512mb-ram-8gb-storage) + [techinsights](https://www.techinsights.com/blog/apple-watch-teardown)
 
 Apple [specification](https://support.apple.com/kb/sp745?locale=en_GB) confirms lack of support for GPS
 
@@ -35,18 +53,26 @@ Apple [specification](https://support.apple.com/kb/sp745?locale=en_GB) confirms 
 
 #### Series 2
 
+Released in Sep 2016.
+
 [teardown](https://www.ifixit.com/Teardown/Apple+Watch+Series+2+Teardown/67385)
 
 Apple [specification](https://support.apple.com/kb/SP746?locale=en_GB) says it supports GPS and GLONASS
+
+Suspect Qualcomm MDM9635M which was used in the iPhone 6s and iPhone 6s (Sep 2015) and series 3 watch (Sep 2017).
 
 
 
 #### Series 3
 
-Released in Sep 2017
+Released in Sep 2017.
 
 - [teardown](https://www.ifixit.com/Teardown/Apple+Watch+Series+3+Teardown/97521) shows an ST Microelectronics [ST33G1M2](http://www.st.com/content/ccc/resource/technical/document/data_brief/81/c6/7d/4e/ae/23/4e/72/DM00095982.pdf/files/DM00095982.pdf/jcr:content/translations/en.DM00095982.pdf) 32 bit MCU so the GPS chip must be separate
 - Broadcom and Qualcomm components are [inside](https://seekingalpha.com/article/4113383-qualcomm-inside-apple-watch-series-3) the watch so it could be either supplier (or someone like Intel or MediaTek)
+  - [techinsights](https://www.techinsights.com/blog/apple-watch-series-3-teardown) shows the Qualcomm MDM9635M LTE modem which sits between iPhone 6 and 7 - see [theapplewiki](https://theapplewiki.com/wiki/MDM9635) and [wikipedia](https://en.wikipedia.org/wiki/Qualcomm_Gobi)
+  - [EDN asia](https://www.ednasia.com/apple_watch_packs_qualcomm_lte/) has some details about the MDM9635M
+  - Qualcomm MDM9635M was used in iPhone 6s and iPhone 6s, released in Sep 2015
+
 - Bosch gyro + accelerometer (FY LEE C7P)
 
 
@@ -130,6 +156,16 @@ Maybe uses a newish Broadcom chip - e.g. BCM47764 (like series 7), BCM47765, or 
 
 
 
+#### SE Second generation
+
+Released: September 2022
+
+[teardown](https://electronics360.globalspec.com/article/19799/techinsights-teardown-apple-watch-second-generation)
+
+Skyworks GPS LNA with filter and LB (low band) front-end module + Intel baseband processors/RF transceiver with memory.
+
+
+
 ### Phones
 
 [Where is a navigation chip in my iPhone?](https://medium.com/@ilyakorogodin/where-is-a-navigation-chip-in-my-iphone-92ab55a61863) by Ilya Korogodin May 2022
@@ -157,6 +193,7 @@ Maybe uses a newish Broadcom chip - e.g. BCM47764 (like series 7), BCM47765, or 
 - iPhone 6 released Sep 2014
   - **Qualcomm** [MDM9625](https://www.qualcomm.com/products/technology/modems/snapdragon-modems-4g-lte-x5) Snapdragon X5 LTE Modem (IZat gpsOneGen 8B) with WTR1625L RF transceiver - [teardown](https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213)
   - A-GPS and GLONASS but no mention of BeiDou - [Apple](https://support.apple.com/kb/SP705?locale=en_GB)
+- iPhone 6s and iPhone 6s Plus released Sep 2015
 - iPhone 7 release Sep 2016 had two versions
   - **Intel** [XMM7360](https://www.intel.com/content/www/us/en/products/sku/66649/intel-xmm-7360/specifications.html) LTE Modem paired with two Intel SMARTi 5 RF transceivers (PMB5750)
     - AT&T and T-Mobile - [teardown](https://www.macrumors.com/2016/09/16/iphone-7-chipworks-teardown/)
@@ -195,5 +232,4 @@ Note about the Qualcomm Snapdragon [X75](https://www.qualcomm.com/products/techn
 
 - [Apple plans to drop key Broadcom chip to use in-house design](https://www.japantimes.co.jp/news/2023/01/10/business/apple-in-house-chip-plans/) -  The Japan Times
   - Mentions replacing Broadcom and Qualcomm components but not sure of they mean GNSS.
-
 
