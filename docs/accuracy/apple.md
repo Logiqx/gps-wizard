@@ -15,7 +15,7 @@ Summary:
 - SE "1st Gen" (Sep 2020) - suspect the **Intel** baseband processor
   - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
     - Same systems supported as the iPhone 8 / X - GPS, GLONASS, Galileo, and QZSS
-- Series 6 (Sep 2020) - confirmed as **Broadcom **BCM47754
+- Series 6 (Sep 2020) - confirmed as **Broadcom** BCM47754
   - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
   - Skyworks LNA / filter + Broadcom BCM47754 in teardown
 - Series 7 (Oct 2021) - confirmed as **Broadcom** BCM47764
