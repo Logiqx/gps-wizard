@@ -4,32 +4,66 @@ Summary:
 
 - 1st Gen (Apr 2015) - no GPS
 - Series 1 (Sep 2016) - no GPS
-- Series 2 (Sep 2016) - suspect Qualcomm MDM9635M, like the series 3
-- Series 3 (Sep 2017) - confirmed as **Qualcomm** MDM9635M
-- Series 4 (Sep 2018) - suspect **Intel** XMM7560 like the iPhone XS / XR
-- Series 5 (Sep 2019) - suspect **Intel** XMM7660 like the iPhone 11
-- Series 6 (Sep 2020) - confirmed as **Broadcom** BCM47754
-  - SE "1st Gen" (Sep 2020) - suspect **Broadcom** BCM47754, just like the Series 6
+- Series 2 (Sep 2016) - suspect Qualcomm
+  - Suspect the baseband processor - e.g. Qualcomm
+- Series 3 (Sep 2017) - suspect the **Qualcomm** baseband processor
+  - Baseband processor is the Qualcomm MDM9635M
+- Series 4 (Sep 2018) - suspect the **Intel** baseband processor
+  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+- Series 5 (Sep 2019) - suspect the **Intel** baseband processor
+  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+- SE "1st Gen" (Sep 2020) - suspect the **Intel** baseband processor
+  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+    - Same systems supported as the iPhone 8 / X - GPS, GLONASS, Galileo, and QZSS
+- Series 6 (Sep 2020) - confirmed as **Broadcom **BCM47754
+  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+  - Skyworks LNA / filter + Broadcom BCM47754 in teardown
 - Series 7 (Oct 2021) - confirmed as **Broadcom** BCM47764
-- Series 8 (Sep 2022) - suspect **Skyworks** + **Intel**, just like the SE "2nd Gen"
-  - Originally suspected Broadcom (e.g. BCM47764, BCM47765 or BCM4778)
-  - SE "2nd Gen" (Sep 2022)
-    - **Skyworks** GPS LNA with filter and LB (low band) front-end module + **Intel** baseband processors/RF transceiver
-    - Originally suspected Broadcom (e.g. BCM47764, BCM47765 or BCM4778)
-
-  - Ultra (Sep 2022)
-    - Skyworks + Intel like the SE (2nd Gen) or Broadcom?
-    - Originally suspected Broadcom (e.g. BCM47764, BCM47765 or BCM4778)
-
-- Series 9 (Sep 2023) - unknown
-  - Ultra 2 (Sep 2023) - unknown
-- Series 10 (Sep 2024) - unknown
+  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+  - Skyworks RF power amplifier + Broadcom BCM47764 in teardown
+    - The multi-band capability of the BCM47764 is not utilized
+- SE "2nd Gen" (Sep 2022) - confirmed as the **Intel** baseband processor
+  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+    - Same systems as the iPhone 8 / X - GPS, GLONASS, Galileo, and QZSS
+  - Skyworks front-end module + Intel baseband processor in teardown
+    - Skyworks GPS LNA with filter and LB (low band) front-end module
+    - Intel baseband processors/RF transceiver
+- Series 8 (Sep 2022) - suspect Broadcom
+  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+  - Perhaps Broadcom - e.g. BCM47764, BCM47765 or BCM4778?
+- Ultra (Sep 2022) - suspect Broadcom
+  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+  - Perhaps Broadcom - e.g. BCM47764, BCM47765 or BCM4778?
+    - Needs to be something that supports multi-band GNSS...
+- Series 9 (Sep 2023) - suspect Broadcom
+  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+  - Perhaps Broadcom - e.g. BCM47764, BCM47765 or BCM4778?
+- Ultra 2 (Sep 2023) - suspect Broadcom
+  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+  - Perhaps Broadcom - e.g. BCM47764, BCM47765 or BCM4778?
+    - Needs to be something that supports multi-band GNSS...
+- Series 10 (Sep 2024) - suspect Broadcom
+  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+  - Perhaps Broadcom - e.g. BCM47764, BCM47765 or BCM4778?
+  
 
 
 
 Links:
 
 - [Comparison of models](https://en.wikipedia.org/wiki/Apple_Watch#Comparison_of_models) on Wikipedia
+
+- Apple [Wiki](https://theapplewiki.com/wiki/Baseband_Device) for possible baseband processors:
+
+  - Intel PMB9955 is used quite extensively
+    - TechInsights believe it to be the Intel XMM7560 LTE Advanced Pro 4G LTE Baseband Processor
+    - Intel XMM7560 was used in the iPhone 8 and X, which were both released in Nov 2017
+
+  - Another source that lists the baseband processors is available at [TechLabz](https://www.techlabz.uk/blog/apple-watch-prices)
+
+  
+  
+  
 
 
 
@@ -122,6 +156,7 @@ Technical specifications for [Series 6](https://support.apple.com/kb/SP826) and 
 Teardown - [Wearables: Apple Watch Series 6 evolution](https://www.reverse-costing.com/teardown-notes/apple-watch-series-6-evolution/):
 
 - Apple processor
+- **Skyworks** LNA / filter Skyxxxx44
 - **Broadcom** [BCM47754](chipsets/README.md) chipset (BCM47754KUBG) - not capable of dual frequency
 - Broadcom BCM15924 sensing SOC
 - Teardown suggest series 5 (or even 4) also included Broadcom GNSS chip
@@ -134,17 +169,26 @@ Released Oct 2021. Supports Beidou according to Wikipedia.
 
 Technical specifications for [Series 7](https://support.apple.com/kb/SP860) from Apple - GPS, GLONASS, Galileo, QZSS, and BeiDou
 
+- **Skyworks** RF power amplifier
 - **Broadcom** [BCM47764](http://www.szmjd.com/proclass-read-id-1193992.html) chipset (BCM47764KUBG). Is this the predecessor of the [BCM47765](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47765)?
 - Bosch-accelerometer and gyroscope chip
 - [Apple watch7 features detailed Apple Watch 7 teardown evaluation did not find interesting new features](https://iphonewired.com/news/268068/) - iPhone Wired
 
 
 
+#### SE First generation
+
+Released Oct 2021.
+
+Technical specifications for [SE](hhttps://www.apple.com/uk/apple-watch-se/specs/) from Apple - L1 GPS, GNSS, Galileo and QZSS.
+
+No BeiDou like Series 7.
+
+
+
 #### Series 8
 
 Released Oct 2022, along with SE (2nd generation) and Ultra.
-
-Technical specifications for [SE (2nd generation)](https://support.apple.com/kb/SP877) from Apple - L1 GPS, GLONASS, Galileo, and QZSS - n.b. no BeiDou
 
 Technical specifications for [Series 8](https://support.apple.com/kb/SP878) and [Ultra](https://support.apple.com/kb/SP879) from Apple - L1 GPS, GLONASS, Galileo, QZSS, and BeiDou
 
@@ -159,6 +203,8 @@ Maybe uses a newish Broadcom chip - e.g. BCM47764 (like series 7), BCM47765, or 
 #### SE Second generation
 
 Released: September 2022
+
+Technical specifications for [SE (2nd generation)](https://support.apple.com/kb/SP877) from Apple - L1 GPS, GLONASS, Galileo, and QZSS - no BeiDou like Series 8 or Ultra
 
 [teardown](https://electronics360.globalspec.com/article/19799/techinsights-teardown-apple-watch-second-generation)
 
