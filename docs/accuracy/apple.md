@@ -39,12 +39,14 @@ Summary:
   - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
   - Perhaps Broadcom - e.g. BCM47764, BCM47765 or BCM4778?
 - Ultra 2 (Sep 2023) - suspect Broadcom
-  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
-  - Perhaps Broadcom - e.g. BCM47764, BCM47765 or BCM4778?
-    - Needs to be something that supports multi-band GNSS...
+  - Apple S9 SiP (System-in-Package)
+    - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+    - Perhaps Broadcom for GNSS - e.g. BCM47764, BCM47765 or BCM4778?
+      - Needs to be something that supports multi-band GNSS...
 - Series 10 (Sep 2024) - suspect Broadcom
-  - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
-  - Perhaps Broadcom - e.g. BCM47764, BCM47765 or BCM4778?
+  - Apple System in Package (SiP) Assembly
+    - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
+    - Perhaps Broadcom for GNSS - e.g. BCM47764, BCM47765 or BCM4778?
   
 
 
@@ -89,7 +91,9 @@ Apple [specification](https://support.apple.com/kb/sp745?locale=en_GB) confirms 
 
 Released in Sep 2016.
 
-[teardown](https://www.ifixit.com/Teardown/Apple+Watch+Series+2+Teardown/67385)
+iFixIt [teardown](https://www.ifixit.com/Teardown/Apple+Watch+Series+2+Teardown/67385)
+
+TechInsights [teardown](https://www.techinsights.com/blog/apple-watch-series-2-teardown) includes a photo after plasma etching, possibly showing a Broadcom chip - BCM????? but no sure if it is GPS
 
 Apple [specification](https://support.apple.com/kb/SP746?locale=en_GB) says it supports GPS and GLONASS
 
@@ -219,13 +223,14 @@ Skyworks GPS LNA with filter and LB (low band) front-end module + Intel baseband
 - iPhone 3G released Jul 2008 used the [Infineon PMB 2525 Hammer-head II](http://datasheet.elcodis.com/pdf2/118/83/1188394/pmb2525.pdf) and was GPS only
 - iPhone 4
   - GSM released Jun 2010 used the **Broadcom** [BCM4750](https://web.archive.org/web/20100124164839/https://www.broadcom.com/products/GPS/GPS-Silicon-Solutions/BCM4750) and was GPS only (up to 2 Hz) - [product brief](http://www.droid-developers.org/images/e/e5/BCM4750.pdf)
+    - TechnInsights [teardown](https://www.techinsights.com/blog/apple-iphone-4-teardown) shows the Broadcom BCM4750
   - CDMA released Jun 2010 used the **Qualcomm** MDM6600 baseband processor and was GPS only - main role was as a modem
     - Fuses a multichannel analog transceiver HJ11-VF535–200 and a multisystem digital baseband processor HJ11-VJ130 into a single module
     - The solution was named by Qualcomm as IZat gpsOneGen 8.
 - iPhone 4S released in Oct 2011
   - **Qualcomm** MDM6610 baseband processor 
   - Added support for GLONASS but only enabled in cases of weak GPS signals or a low number of visible GPS satellites
-  - [teardown](https://www.macrumors.com/2011/10/13/iphone-4s-teardown-underway/) identifies the MDM6610 and refers to the MDM6600 in the CDMA iPhone 4
+  - Teardowns [1](https://www.macrumors.com/2011/10/13/iphone-4s-teardown-underway/) and [2](https://www.techinsights.com/blog/apple-iphone-4s-teardown) identify the MDM6610 and refer to the MDM6600 in the CDMA iPhone 4
 
 > As we can see, the fusion of GNSS and telecommunication functions in a single chip became mainstream. Since the iPhone 4 model, we cannot isolate a special GNSS chip: repair it, calculate the cost, calculate power consumption, and so on. The GNSS receiver disappeared as a separated object.
 
@@ -233,16 +238,22 @@ Skyworks GPS LNA with filter and LB (low band) front-end module + Intel baseband
   - **Qualcomm** MDM9615 Snapdragon X5 LTE Modem (IZat gpsOneGen 8A) - [fun fact](https://disruptive.asia/qualcomm-chip-iphone-5-android/)
   - In contrast to MDM6610, MDM9615 is just a digital baseband processor
   - The analogue processing was taken out to the Qualcomm RTR8600 RF transceiver.  
+  - TechInsights [teardown](https://www.techinsights.com/blog/apple-iphone-5-teardown) describes the Qualcomm MDM9615 and RTR8600
 - iPhone 5S, 5C released Sep 2013, adding support for BeiDou - [teardown](https://www.ifixit.com/Teardown/iPhone+5s+Teardown/17383)
   - **Qualcomm** MDM9615 Snapdragon X5 LTE Modem
   - iPhones 5S and 5C used a Qualcomm [WTR1605L](https://investor.qualcomm.com/news-events/press-releases/detail/63/qualcomm-introduces-28nm-mass-market-ltedc-hspa-chipsets) RF transceiver instead of the RTR8600
 - iPhone 6 released Sep 2014
-  - **Qualcomm** [MDM9625](https://www.qualcomm.com/products/technology/modems/snapdragon-modems-4g-lte-x5) Snapdragon X5 LTE Modem (IZat gpsOneGen 8B) with WTR1625L RF transceiver - [teardown](https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213)
+  - **Qualcomm** [MDM9625](https://www.qualcomm.com/products/technology/modems/snapdragon-modems-4g-lte-x5) Snapdragon X5 LTE Modem (IZat gpsOneGen 8B) with WTR1625L RF transceiver - teardowns [1](https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213) + [2](https://www.techinsights.com/blog/apple-iphone-6-and-iphone-6-plus-teardown)
   - A-GPS and GLONASS but no mention of BeiDou - [Apple](https://support.apple.com/kb/SP705?locale=en_GB)
 - iPhone 6s and iPhone 6s Plus released Sep 2015
+  - TechInsights [teardown](https://www.techinsights.com/blog/apple-iphone-6s-teardown) confirms the **Qualcomm** MDM9635M LTE Cat. 6 Modem
+
 - iPhone 7 release Sep 2016 had two versions
   - **Intel** [XMM7360](https://www.intel.com/content/www/us/en/products/sku/66649/intel-xmm-7360/specifications.html) LTE Modem paired with two Intel SMARTi 5 RF transceivers (PMB5750)
     - AT&T and T-Mobile - [teardown](https://www.macrumors.com/2016/09/16/iphone-7-chipworks-teardown/)
+    - TechInsights show the following in their [teardown](https://www.techinsights.com/blog/apple-iphone-7-teardown) of the Intel version of the iPhone 7
+      - **Intel** PMB9943 LTE modem - confirmed as the Intel XMM7360 modem
+      - **Broadcom** BCM47734
   - **Qualcomm** [MDM9645](https://www.qualcomm.com/products/technology/modems/snapdragon-modems-4g-lte-x12) Snapdragon X12 LTE Modem with Qualcomm WTR3925 RF transceiver - see [teardown](https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382) 
     - Verizon and Sprint, due to lack of support for CDMA from Intel because of licensing issues
   - Assisted GPS, GLONASS, Galileo, and QZSS - [Apple](https://support.apple.com/kb/SP743?locale=en_GB)
@@ -254,6 +265,7 @@ Skyworks GPS LNA with filter and LB (low band) front-end module + Intel baseband
   - "Built-in GPS/GNSS" - [Apple](https://support.apple.com/kb/SP767?locale=en_GB)
 - iPhone XS and XR released Oct / Nov 2018 replaced Qualcomm completely, due to CDMA support:
   - **Intel** [XMM7560](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7560-brief.html) modem - GPS, GLONASS, Galileo and Beidou
+    - TechnInsights [teardown](https://www.techinsights.com/blog/apple-iphone-xs-max-teardown) confirms the Intel XMM7560 LTE Advanced Pro 4G LTE Baseband Processor
 - iPhone 11 released in Sep 2019
   - **Intel** [XMM7660](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7660-brief.html) modem paired with Intel 5765 P10 A15 08B13 H1925 RF transceiver - GPS, Galileo, GLONASS, and BeiDou
 - iPhone 12 released Oct 2020
