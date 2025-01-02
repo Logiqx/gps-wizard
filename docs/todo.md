@@ -110,7 +110,6 @@ Consider adding the following writers:
 
 ### Articles
 
-- Move doppler-speed-resolution from gps-guides to gps-wizard
 - Filtering
   - Acceleration
   - Crash detection
