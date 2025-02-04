@@ -1,11 +1,13 @@
-### Watches
+## Apple Watches
 
-Summary:
+### Summary
+
+#### History
 
 - 1st Gen (Apr 2015) - no GPS
 - Series 1 (Sep 2016) - no GPS
 - Series 2 (Sep 2016) - suspect Qualcomm
-  - Suspect the baseband processor - e.g. Qualcomm
+  - Suspect the baseband processor - e.g. Qualcomm MDM9635M
 - Series 3 (Sep 2017) - suspect the **Qualcomm** baseband processor
   - Baseband processor is the Qualcomm MDM9635M
 - Series 4 (Sep 2018) - suspect the **Intel** baseband processor
@@ -47,27 +49,44 @@ Summary:
   - Apple System in Package (SiP) Assembly
     - Baseband processor is the Intel PMB9955 which contains an Intel XMM7560
     - Perhaps Broadcom for GNSS - e.g. BCM47764, BCM47765 or BCM4778?
-  
+
+- Ultra 3 (probably 2025) - continue with Broadcom?
+  - [TechNode](https://technode.com/2024/12/12/mediatek-beats-intel-to-supply-modem-chips-for-apple-watch/) story about MediaTek replacing the Intel modem in the new Ultra
+  - The [MediaTek 5G Modems](https://www.mediatek.com/technology/5g/5g-modem) do not mention GNSS, so suspect staying with Broadcom
 
 
 
-Links:
+#### Intel
 
-- [Comparison of models](https://en.wikipedia.org/wiki/Apple_Watch#Comparison_of_models) on Wikipedia
+- [Intel XMM modems](https://en.m.wikipedia.org/wiki/Intel_XMM_modems) - Wikipedia
+  - 5G - cancelled
+  - 4G
+    - XMM 7660 released Q3 2019
+    - XMM 7560 released Q3 2018
+      - [Intel® XMM™ 7560 Modem Product Brief](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7560-brief.html)
+    - XMM 7480 released Q3 2017
+    - XMM 7360 released Q3 2016
 
-- Apple [Wiki](https://theapplewiki.com/wiki/Baseband_Device) for possible baseband processors:
 
+
+
+#### Links
+
+- Apple watch comparisons
+  - [Apple Watch Ultra 2 vs Apple Watch Series 10](https://www.apple.com/uk/watch/compare/?modelList=watch-ultra-2,watch-series-10)
+  - [Comparison of models](https://en.wikipedia.org/wiki/Apple_Watch#Comparison_of_models) on Wikipedia
+- Apple [Wiki](https://theapplewiki.com/wiki/Baseband_Device) for possible baseband processors
   - Intel PMB9955 is used quite extensively
     - TechInsights believe it to be the Intel XMM7560 LTE Advanced Pro 4G LTE Baseband Processor
     - Intel XMM7560 was used in the iPhone 8 and X, which were both released in Nov 2017
-
   - Another source that lists the baseband processors is available at [TechLabz](https://www.techlabz.uk/blog/apple-watch-prices)
+- [MediaTek beats Intel to supply modem chips for Apple Watch](https://technode.com/2024/12/12/mediatek-beats-intel-to-supply-modem-chips-for-apple-watch/) - TechNode
+  - See [MediaTek 5G Modems](https://www.mediatek.com/technology/5g/5g-modem) which do not mention GNSS
+  - See [MediaTek Dimensity 9400](https://www.mediatek.com/products/smartphones/mediatek-dimensity-9400) for processor, unlikely to be used because it competes with Apple
 
-  
-  
-  
 
 
+### Watch Details
 
 #### 1st Gen
 
@@ -89,6 +108,8 @@ Apple [specification](https://support.apple.com/kb/sp745?locale=en_GB) confirms 
 
 #### Series 2
 
+No cellular capabilities, so not baseband (modem) from the likes of Qualcom
+
 Released in Sep 2016.
 
 iFixIt [teardown](https://www.ifixit.com/Teardown/Apple+Watch+Series+2+Teardown/67385)
@@ -97,7 +118,7 @@ TechInsights [teardown](https://www.techinsights.com/blog/apple-watch-series-2-t
 
 Apple [specification](https://support.apple.com/kb/SP746?locale=en_GB) says it supports GPS and GLONASS
 
-Suspect Qualcomm MDM9635M which was used in the iPhone 6s and iPhone 6s (Sep 2015) and series 3 watch (Sep 2017).
+Suspect Qualcomm MDM9635M which was used in the iPhone 6s and iPhone 6s Plus (Sep 2015) and series 3 watch (Sep 2017).
 
 
 
@@ -210,13 +231,21 @@ Released: September 2022
 
 Technical specifications for [SE (2nd generation)](https://support.apple.com/kb/SP877) from Apple - L1 GPS, GLONASS, Galileo, and QZSS - no BeiDou like Series 8 or Ultra
 
-[teardown](https://electronics360.globalspec.com/article/19799/techinsights-teardown-apple-watch-second-generation)
-
 Skyworks GPS LNA with filter and LB (low band) front-end module + Intel baseband processors/RF transceiver with memory.
 
 
 
-### Phones
+#### Ultra 2
+
+[teardown](https://electronics360.globalspec.com/article/19799/techinsights-teardown-apple-watch-second-generation) shows "MB/HM front-end module" from Broadcom.
+
+
+
+
+
+## Apple Phones
+
+#### History
 
 [Where is a navigation chip in my iPhone?](https://medium.com/@ilyakorogodin/where-is-a-navigation-chip-in-my-iphone-92ab55a61863) by Ilya Korogodin May 2022
 
@@ -290,4 +319,3 @@ Note about the Qualcomm Snapdragon [X75](https://www.qualcomm.com/products/techn
 
 - [Apple plans to drop key Broadcom chip to use in-house design](https://www.japantimes.co.jp/news/2023/01/10/business/apple-in-house-chip-plans/) -  The Japan Times
   - Mentions replacing Broadcom and Qualcomm components but not sure of they mean GNSS.
-
