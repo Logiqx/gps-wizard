@@ -83,6 +83,7 @@ Second generation dual frequency GNSS chip - e.g. BCM47764, BCM47765:
   - TODO - Need to confirm whether series 8 uses BCM4776x or BCM4778.
 
 - Used in Google Pixel 6 / 6a / 6 Pro and 7 / 7a / 7 Pro
+  - [BCM47765 in Pixel 6 Pro](https://www.techinsights.com/blog/teardown/google-pixel-6-pro-teardown) on TechInsights
 - [Second Generation Dual-Frequency GNSS chip](https://www.broadcom.com/products/wireless/gnss-gps-socs/bcm47765) on Broadcom
 - Cannot find product brief...
 - Quectel_LC29D_GNSS_Protocol_Specification_V1.0 lists PGLOR_SPD, PGLOR_FIX, PGLOR_SAT, **PGLOR_LSQ**, PGLOR_PWR, PGLOR_STA
@@ -190,6 +191,7 @@ MC20&MC30_GNSS_Protocol_Specification_V1.2 - 2018-08-29
 
 #### XMM 7360
 
+
 - [Intel Corporation Launches New LTE and Connectivity Solutions](https://www.fool.com/investing/general/2015/03/03/intel-corporation-launches-new-lte-and-connectivit.aspx)
   - "Intel is also offering an in-house GNSS solution, as well as an in-house NFC solution. I believe the former comes from Intel's acquisition of ST-Ericsson's GNSS solutions"
 
@@ -272,7 +274,6 @@ PMTK500 GNSS FIX CONTROL ACK
 
 
 ### Telit MT
-
 MediaTek chipset - model TBC
 
 Telit MT GNSS Software User Guide - 2016-05-16
