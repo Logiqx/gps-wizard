@@ -276,7 +276,6 @@ Skyworks GPS LNA with filter and LB (low band) front-end module + Intel baseband
   - A-GPS and GLONASS but no mention of BeiDou - [Apple](https://support.apple.com/kb/SP705?locale=en_GB)
 - iPhone 6s and iPhone 6s Plus released Sep 2015
   - TechInsights [teardown](https://www.techinsights.com/blog/apple-iphone-6s-teardown) confirms the **Qualcomm** MDM9635M LTE Cat. 6 Modem
-
 - iPhone 7 release Sep 2016 had two versions
   - **Intel** [XMM7360](https://www.intel.com/content/www/us/en/products/sku/66649/intel-xmm-7360/specifications.html) LTE Modem paired with two Intel SMARTi 5 RF transceivers (PMB5750)
     - AT&T and T-Mobile - [teardown](https://www.macrumors.com/2016/09/16/iphone-7-chipworks-teardown/)
@@ -299,13 +298,24 @@ Skyworks GPS LNA with filter and LB (low band) front-end module + Intel baseband
   - **Intel** [XMM7660](https://www.intel.com/content/www/us/en/products/docs/wireless-products/mobile-communications/xmm-7660-brief.html) modem paired with Intel 5765 P10 A15 08B13 H1925 RF transceiver - GPS, Galileo, GLONASS, and BeiDou
 - iPhone 12 released Oct 2020
   - **Qualcomm** Snapdragon [X55](https://www.qualcomm.com/products/technology/modems/snapdragon-x55-5g-modem) 5G modem-RF system, plus Qualcomm [SDR865](https://www.techinsights.com/blog/analysis-qualcomms-snapdragon-sdr865-transceiver-supporting-5g-sub-6-ghz-and-lte-services) RF transceiver - [WikiChip](https://en.wikichip.org/wiki/qualcomm/snapdragon_800/865?utm_content=cmp-true) / [Inside GNSS](https://insidegnss.com/qualcomms-new-chip-more-power-more-features-same-ol-gnss/)
-  - GPS, GLONASS, Galileo, QZSS and BeiDou - [Apple](https://www.apple.com/uk/iphone-12/specs/)
+  - GPS, GLONASS, Galileo, QZSS and BeiDou - [Apple](https://support.apple.com/en-gb/111876)
 - iPhone 13 released Sep 2021
   - **Qualcomm** Snapdragon [X60](https://www.qualcomm.com/products/technology/modems/snapdragon-x60-5g-modem) 5G modem-RF system, plus Qualcomm [SDR868](https://www.techinsights.com/products/bfr-2102-801) RF transceiver
-  - [teardown summary](https://uk.pcmag.com/mobile-phones/135925/teardown-confirms-qualcomm-modems-in-the-iphone-13-pro) + [teardown](https://www.ifixit.com/Teardown/iPhone+13+Pro+Teardown/144928) - [Apple](https://www.apple.com/uk/iphone-13/specs/)
+  - [teardown summary](https://uk.pcmag.com/mobile-phones/135925/teardown-confirms-qualcomm-modems-in-the-iphone-13-pro) + [teardown](https://www.ifixit.com/Teardown/iPhone+13+Pro+Teardown/144928)
+  - GPS, GLONASS, Galileo, QZSS and BeiDou - [Apple](https://support.apple.com/en-gb/111872)
 - iPhone 14 released Sep 2022
   - **Qualcomm** Snapdragon [X65](https://www.qualcomm.com/products/technology/modems/snapdragon-x65-5g-modem-rf-system) 5G modem-RF system, plus (presumably) Qualcomm RF transceiver
-  - [Inside GNSS](https://insidegnss.com/snapdragon-modem-rf-systems-power-telits-new-5g-m-2-module) - different product but maybe relevant - [Apple](https://www.apple.com/uk/iphone-14/specs/)
+  - iFixit [teardown](https://www.ifixit.com/News/64865/iphone-14-teardown) shows the Qualcomm X65
+  - GPS, GLONASS, Galileo, QZSS and BeiDou - [Apple](https://support.apple.com/en-gb/111850)
+  - Telit's 5G M.2 module also uses the X65 and may provide some insights - [Inside GNSS](https://insidegnss.com/snapdragon-modem-rf-systems-power-telits-new-5g-m-2-module)
+- iPhone 15 released Sep 2023
+  - **Qualcomm** Snapdragon [X70](https://www.qualcomm.com/products/technology/modems/snapdragon-x70-modem-rf-system) 5G modem-RF system, plus (presumably) Qualcomm RF transceiver
+  - iFixit [teardown](https://www.ifixit.com/News/82867/iphone-15-teardown-reveals-software-lockdown) shows the Qualcomm X70
+  - GPS, GLONASS, Galileo, QZSS and BeiDou - [Apple](https://www.apple.com/uk/iphone-15/specs/)
+- iPhone 16 released Sep 2024
+  - **Apple** [C1](https://www.computerworld.com/article/3829149/everything-we-know-about-apples-c1-5g-modem-in-iphone-16e.html) modem
+  - iFixit [teardown](https://www.ifixit.com/News/108430/iphone-16e-teardown-never-before-has-skipping-the-upgrade-made-more-sense) shows the Qualcomm X70
+  - GPS, GLONASS, Galileo, QZSS and BeiDou - [Apple](https://support.apple.com/en-gb/121029)
 
 > So, how does a regular navigation receiver look in 2022? It has dissolved in telecommunication chips. The chips are developed by a few big companies.
 
