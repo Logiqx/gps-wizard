@@ -32,7 +32,7 @@ The effect of these errors can be illustrated with a stationary GNSS receiver, r
 
 #### Speed Accuracy
 
-The GNSS chipset within a receiver also calculate Speed Over Ground (SOG) but it does not calculate this by measuring the distances between points. The GNSS signals are subject to the same Doppler effect that causes the pitch of a police siren or racing car to change, depending on whether it is getting closer or farther away. GNSS receivers constantly monitor the Doppler shift (change in carrier frequency) whilst acquiring and tracking the signals, but this information provides an additional benefit. The Doppler shifts themselves can be used to calculate the speed of the receiver!
+The GNSS chipset within a receiver also calculate Speed Over Ground (SOG) but it does not calculate this by measuring the distances between points. The GNSS signals are subject to the same Doppler effect that causes the pitch of a police siren or sound of a racing car to change, depending on whether it is getting closer or farther away. GNSS receivers constantly monitor the Doppler shift (change in carrier frequency) whilst acquiring and tracking the signals, but this information provides an additional benefit. The Doppler shifts themselves can be used to calculate the speed of the receiver!
 
 The benefit of the Doppler-derived speeds is that they are immune to the majority of error sources that affect positional accuracy. This is why websites such as GPS-Speedsurfing have been using Doppler-derived speeds for their rankings for almost 20 years. Generally speaking, errors in the Doppler-derived speeds are an order of magnitude lower than the errors in position-derived speeds. However, GNSS chipsets from some manufacturers (including u-blox) may also use an approach called carrier-smoothing which improves the pseudo-range measurements and thus positional accuracy.
 
@@ -112,7 +112,9 @@ For 2 secs, 10 secs and un-gated 500 m it is widely recognised that that use of 
 
 Filtering / smoothing of positional data prior to interpolation (calculating intersection with the start / finish line) may slightly improve the reliability of position-derived results, but will not entirely mitigate the risks associated with positional data.
 
-Filtering / smoothing and interpolation will almost certainly be required for time-derived results. Failure to do so will result in occasional errors up to 0.2 or 0.3 kts relating to the start / finish points, additional to any errors due to changes in positional inaccuracies during the run.
+Filtering / smoothing and interpolation will almost certainly be required for time-derived results. Failure to do so could result in occasional errors up to 0.4 kts at 45 knots and with 10 Hz logging, additional to any error due to changes in positional inaccuracies.
+
+20 Hz logging will increase the resolution (how close the start and finish points are to the start / finish lines) but will not increase accuracy per-se. If the higher logging rate requires a reduction in the number of GNSS constellations then positional accuracy may actually decrease.
 
 As mentioned earlier, position-derived results using filtering / smoothing and interpolation are essentially the same as time-derived results using filtering / smoothing and interpolation. For most runs, position / time derived results should be similar to Doppler-derived results.
 
