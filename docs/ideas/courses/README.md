@@ -106,7 +106,7 @@ This is essentially what has been done inside GPSResults during the history of t
 
 For 2 secs, 10 secs and un-gated 500 m it is widely recognised that that use of Doppler-derived speeds produces much more accurate results. It becomes somewhat more nuanced when it comes to calculating results for the gated 500 m.
 
-- Errors relating to Doppler-derived speeds are cumulative (over 500 meters) but to a large extent cancel each other out, essentially oscillating around the true values. There are some exceptions to this rule though, such as when the signal reception is significantly impaired.
+- Errors relating to Doppler-derived speeds are cumulative (over 500 meters) but to a large extent cancel out, essentially oscillating around the true values. There are some exceptions to this rule though, such as when the signal reception is significantly impaired.
 
 - Errors relating to position-derived / time-derived results are primarily dependent on the accuracy of the start and end points. Positional errors tend to be similar for adjacent and nearby points, but they can change by several meters during a 500 m run.
 
@@ -114,7 +114,7 @@ Filtering / smoothing of positional data prior to interpolation (calculating int
 
 Filtering / smoothing and interpolation will almost certainly be required for time-derived results. Failure to do so could result in occasional errors up to 0.4 kts at 45 knots and with 10 Hz logging, additional to any error due to changes in positional inaccuracies.
 
-20 Hz logging will increase the resolution (how close the start and finish points are to the start / finish lines) but will not increase accuracy per-se. If the higher logging rate requires a reduction in the number of GNSS constellations then positional accuracy may actually decrease.
+20 Hz logging will increase the resolution (how close the start and finish points are to the start / finish lines) but will not increase accuracy per-se. If the higher logging rate requires a reduction in the number of GNSS constellations then positional accuracy may decrease.
 
 As mentioned earlier, position-derived results using filtering / smoothing and interpolation are essentially the same as time-derived results using filtering / smoothing and interpolation. For most runs, position / time derived results should be similar to Doppler-derived results.
 
