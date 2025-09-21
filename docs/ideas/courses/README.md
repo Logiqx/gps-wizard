@@ -104,26 +104,26 @@ This is essentially what has been done inside GPSResults during the history of t
 
 ### Which is Best?
 
-For 2 secs, 10 secs and un-gated 500 m it is widely recognised that that use of Doppler-derived speeds produces much more accurate results. It becomes Somewhat more nuanced when it comes to calculating results for the gated 500 m.
+For 2 secs, 10 secs and un-gated 500 m it is widely recognised that that use of Doppler-derived speeds produces much more accurate results. It becomes somewhat more nuanced when it comes to calculating results for the gated 500 m.
 
-- Errors relating to Doppler-derived speeds are cumulative (over 500 meters) but to a large extent cancel each other out, essentially oscillating around the true values. There are exceptions to this rule though, such as when the signal reception is significantly impaired.
+- Errors relating to Doppler-derived speeds are cumulative (over 500 meters) but to a large extent cancel each other out, essentially oscillating around the true values. There are some exceptions to this rule though, such as when the signal reception is significantly impaired.
 
-- Errors relating to position-derived / time-derived results are primarily dependent on the accuracy of the start and end points. Positional errors tend to be similar for adjacent and nearby points, but they can sometimes change by several meters during a 500 m run.
+- Errors relating to position-derived / time-derived results are primarily dependent on the accuracy of the start and end points. Positional errors tend to be similar for adjacent and nearby points, but they can change by several meters during a 500 m run.
 
-Filtering / smoothing of positional data prior to interpolation (calculating the intersection with the start / finish line) may slightly improve the reliability of position-derived results, but will not entirely mitigate the risks associated with positional data.
+Filtering / smoothing of positional data prior to interpolation (calculating intersection with the start / finish line) may slightly improve the reliability of position-derived results, but will not entirely mitigate the risks associated with positional data.
 
-However, filtering / smoothing and interpolation will almost certainly be required for time-derived results. Failure to do so will result in occasional errors up to 0.2 or 0.3 kts relating to the start / finish, which will be in addition to any errors due to changes in positional inaccuracies during the run.
+Filtering / smoothing and interpolation will almost certainly be required for time-derived results. Failure to do so will result in occasional errors up to 0.2 or 0.3 kts relating to the start / finish points, additional to any errors due to changes in positional inaccuracies during the run.
 
-As mentioned earlier in this document, position-derived results using filtering / smoothing and interpolation are essentially the same as time-derived results using filtering / smoothing and interpolation. For the majority of runs, these results are likely to be very close to Doppler-derived results.
+As mentioned earlier, position-derived results using filtering / smoothing and interpolation are essentially the same as time-derived results using filtering / smoothing and interpolation. For most runs, position / time derived results should be similar to Doppler-derived results.
 
 
 
 ### How to Test?
 
-Testing may take place during or outside of an official competition.
+Testing of a GNSS logger such as the LISA may take place during an official competition or at any other time.
 
-If a GNSS logger such as the LISA is capable of calculating results for a 500 m course, it would be good to log all of the runs to the SD card.
+If the GNSS logger is capable of calculating results for a 500 m course, it would be useful if it logs all gated results to the SD card.
 
-In this way the real-time results calculated after each run can be compared to the Doppler-derived and position-derived results of GPSResults.
+In this way the real-time results can easily be compared to the Doppler-derived and position-derived results of GPSResults.
 
-Confirming the reliability of the results will probably require a fair amount of testing, but I would be happy to assist / review the results.
+Confirming the reliability of the results will require a fair amount of testing, but I would be happy to assist / review the results.
