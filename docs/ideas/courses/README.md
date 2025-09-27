@@ -129,3 +129,22 @@ If the GNSS logger is capable of calculating results for a 500 m course, it woul
 In this way the real-time results can easily be compared to the Doppler-derived and position-derived results of GPSResults.
 
 Confirming the reliability of the results will require a fair amount of testing, but I would be happy to assist / review the results.
+
+
+
+### Further Work
+
+Notes:
+
+- The gates for GPSResults have adjacent corners that represent a 501 meter course, consistent with Prince of Speed wording.
+- GPSResults appears to be using [Vincenty's formula](https://en.wikipedia.org/wiki/Vincenty%27s_formulae) for 501.0 meters, because the [Haversine](https://en.wikipedia.org/wiki/Haversine_formula) formula produces 501.4 meters.
+
+Investigations:
+
+- Replicate the GPSResults time / distance results in Python.
+- Compare doppler and positional results, re-calculating Farrel Cup runs and looking for significant differences.
+
+Python examples:
+
+- [Line intersection](intersection.md) will be useful for calculating start / end points for interpolated start / end times
+- [Bearing](bearing.md) may be useful for identifying the general direction of the course
