@@ -1,0 +1,74 @@
+- background
+  - calculating speeds down a 500 meter / 1852 meter course is a software problem
+  - to the best of my knowledge, nobody has documented how perform such calculations
+  - the closest is Manfred's paper from 2007 but it does not consider fixed courses
+  - implementation is not trivial and will require some careful thought
+  - it makes sense to properly investigate the various approaches
+  - findings should be documented and made readily available, prior to implementation
+
+- 4 methods for calculating speed over 500 meters are described in Manfred's paper
+  - my terminology of PD-speed and DD-speed
+  - accumulated PD-speed
+  - projected PD-speed
+  - accumulated DD-speed
+  - projected DD-speed (appendix 1 + 2)
+
+- linear interpolation
+  - Useful at 1 Hz due to speeds approximating 20 m/s
+  - considers the slowest segment at the start or end of the run
+
+- 500 meter + 1852 meter courses
+  - geofencing
+  - projected PD-speed, accumulated PD-speed or DD-speed
+  - angle of course vs projected speed of run
+    - calculation of projected DD-speed can consider the angle of the course
+    - calculation of projected PD-speed needs to be rotated
+  - linear interpolation for start and end?
+
+- High frequency logging
+  - 5 Hz, 10 Hz, 20 Hz
+  - Noise / jitter
+  - distance travelled in 200 ms @ 40 kts = 4 meters
+  - linear interpolation becomes less useful
+
+- Impact of positional errors
+  - Measurement error, maybe 2 to 4 meters
+  - Ephemeris changes every 30 mins to 2 hrs
+  - Assuming 2 m error in both directions (start and end) that is so 4 m in total
+  - 496 / 500 * 40 = 39.68 kts, 504 / 500 * 40 = 40.32 kts, thus +/- 0.32 kts and 0.64 kts possible difference
+  - The issue is that the accuracy of the start and end points each have huge significance
+  - The safest bet is the DD-speeds because individual errors are diluted and potentially cancel out
+
+- Analysis of 2024 + 2025 POS data
+  - calculate projected DD-speed
+  - calculate projected PD-speed
+  - validate using GPSResults
+  - understanding hAcc and sAcc
+  - Mortefon example
+    - perhaps PD-speed be used as a sanity check the DD-speed?
+	- analogy of using Doppler to verify TDCP measurements
+
+- Analysis of WR attempt in June 2025
+  - collate video times
+  - collate Motion / ESP / LISA logs
+  - verify projected DD-speed
+  - verify projected PD-speed
+
+- Assessment of available devices
+  - accuracy of Motions
+  - accuracy of ESP
+  - accuracy of LISA
+
+- Development of open source algorithm(s)
+  - accumulated DD-speed
+  - projected PD-speed
+  - accumulated PD-speed (optional)
+  - quality filters (e.g. sats, sAcc, hAcc, etc)
+  - include test data from POS
+  - include unit tests
+
+- GPS enhancements - LISA / ESP / APPro
+  - User interface
+  - Filters (e.g. sats, sAcc, hAcc, etc)
+  - Log file (e.g. all runs)
+  - Longer term would be real-time via WiFi
