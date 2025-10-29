@@ -10,7 +10,7 @@ Summary:
 - Galaxy Watch (Aug 2018) - **Broadcom** BCM47758
 - Galaxy Watch Active (Mar 2019) - **Broadcom** BCM47758
 - Galaxy Watch Active 2 (Sep 2019) - suspect **Broadcom** BCM47758
-- Galaxy Watch 3 (Aug 2020) - suspect **Broadcom** BCM47758
+- Galaxy Watch 3 (Aug 2020) - **Broadcom** BCM47755
 - Galaxy Watch 4 (Aug 2021)  - **Samsung** Exynos W920
 - Galaxy Watch 5 (Aug 2022)  - **Samsung** Exynos W920
 - Galaxy Watch 6 (Jul 2023)  - **Samsung** Exynos W930
@@ -40,6 +40,7 @@ Summary:
 - August 2020
 - Samsung Exynos 9110 which supports GNSS; GPS, GLONASS, Beidou, Galileo
 - [Teardown](https://www.ifixit.com/Teardown/Samsung+Galaxy+Watch3+Teardown/135891) from Aug 2020 links mentions **Broadcom** GNSS Location Hub, linking to BCM4775x page. Can we assume it still used the BCM47758?
+  - Zooming in to the image it is possible to see the **BCM47755**
   - The [Wiki](https://en.wikipedia.org/wiki/Samsung_Galaxy_Watch_series) does not mention BCM4775 after Mar 2019 - Galaxy Watch Active
 
 
