@@ -154,7 +154,7 @@ Released Apr 2015
   - GLONASS, Beidou, GPS
 
 - Samsung [Exynos 7420](https://semiconductor.samsung.com/processor/mobile-processor/exynos-7-octa-7420/)
-  - [teardown](https://ko.ifixit.com/Teardown/Samsung+Galaxy+S6+Teardown/39174?revisionid=HEAD)
+  - [teardown](https://ko.ifixit.com/Teardown/Samsung+Galaxy+S6+Teardown/39174) + [another](https://www.techinsights.com/blog/samsung-galaxy-s6-teardown)
   - **Broadcom** BCM4773 but blank in the GPSTest database
     - GPS, GLONASS, SBAS, QZSS and BeiDou
 - [S6 review](https://www.anandtech.com/show/9146/the-samsung-galaxy-s6-and-s6-edge-review/12) - Apr 2015
@@ -245,6 +245,7 @@ Released Mar 2020
 - Supports dual frequency according to [Android developer site](https://developer.android.com/guide/topics/sensors/gnss#supported-devices)
   - Exynos version provides accumulated delta range (ADR) / carrier phase.
   - Snapdragon version does not provide ADR.
+- https://pubmed.ncbi.nlm.nih.gov/34960412/
 
 
 
