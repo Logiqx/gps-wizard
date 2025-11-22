@@ -86,13 +86,19 @@ The speed metrics described above can also be used to produce percentage metrics
 
 #### Scores
 
-Overall scores can be calculated by combining the average speed (200 meters) and min percentage metric.
+Overall scores can be calculated by combining the average speed (200 meters) and min % metric.
 
 - Score = overall speed (200 meters) * min % * 10
   - 20 kts overall speed * 0.6 * 10 = score of 120
   - 15 kts overall speed * 0.8 * 10 = score of 120
 
-Higher speeds have the potential for higher scores, but they can be beaten by slower gybes that are better executed.
+Alternatively, it could be calculated by combining the average speed (200 meters) and exit % metric.
+
+- score = overall speed (200 meters) * exit % * 10
+  - 20 kts overall speed * 0.75 * 10 = score of 150
+  - 15 kts overall speed * 1.00 * 10 = score of 150
+
+In both cases higher speeds have the potential for higher scores, but can be beaten by better executed slower gybes.
 
 The ultimate goal is to minimise speed loss and maximise the speed throughout the gybe for the best possible score.
 
