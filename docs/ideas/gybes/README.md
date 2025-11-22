@@ -31,19 +31,19 @@ The second example shows a windfoil gybe which was initiated at 20 kts but dropp
 
 ![example-bad](img/example-bad.png)
 
-It can easily be seen how the data points for the gybe exit are bunched up, due to the slow speeds (around 4 kts) and thus making it a bad gybe.
+It can easily be seen how the data points for the gybe exit are bunched up due to the slow speeds, and thus making it a bad gybe.
 
 
 
 ### Fundamentals
 
-Prior to performing any calculations it is necessary to decide which data points constitute each gybe.
+Prior to calculating any gybe metrics it is necessary to decide which data points constitute each gybe.
 
 One relatively simple approach would be to consider all of the possible mid-points for the gybe. An accumulated distance of 100 meters prior to the mid-point point dictates the start point, and accumulated distance of 100 meters after to mid-point dictates the end point.
 
 The straight-line distance between the start point and end point can be calculated for every possible mid-point. Theoretically, the "best choice" of mid-point for the gybe will be the one with the shortest distance between the start and end points.
 
-The goal is to see a nicely balanced entry (100 meters ) and exit (100 meters). The example below illustrates how the shortest possible grey line will result in the best choice of mid-point, whilst considering the preceding 100 meters and following 100 meters.
+The goal is to see a comparable entry (100 meters ) and exit (100 meters). The example below illustrates how the shortest possible grey line will result in the best possible mid-point, just by considering the preceding 100 meters and following 100 meters.
 
 ![data-points](img/data-points.png)
 
@@ -51,7 +51,7 @@ The goal is to see a nicely balanced entry (100 meters ) and exit (100 meters). 
 
 ### Metrics
 
-Once the mid-point of a gybe has been established it will be straightforward to calculate a variety of useful metrics.
+Once the mid-point of a gybe has been established it is easy to calculate a variety of useful metrics.
 
 #### Simple Metrics
 
