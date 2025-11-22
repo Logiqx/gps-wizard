@@ -94,7 +94,7 @@ Overall scores can be calculated by combining the average speed (200 meters) and
 
 Alternatively, it could be calculated by combining the average speed (200 meters) and exit % metric.
 
-- score = overall speed (200 meters) * exit % * 10
+- Score = overall speed (200 meters) * exit % * 10
   - 20 kts overall speed * 0.75 * 10 = score of 150
   - 15 kts overall speed * 1.00 * 10 = score of 150
 
