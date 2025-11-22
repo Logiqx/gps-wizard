@@ -39,7 +39,7 @@ It can easily be seen how the data points for the gybe exit are bunched up due t
 
 Prior to calculating any gybe metrics it is necessary to decide which data points constitute each gybe.
 
-One relatively simple approach would be to consider all of the possible mid-points for the gybe. An accumulated distance of 100 meters prior to the mid-point point dictates the start point, and accumulated distance of 100 meters after to mid-point dictates the end point.
+One relatively simple approach would be to consider all of the possible mid-points for the gybe. An accumulated distance of 100 meters prior to the mid-point dictates the start point, and accumulated distance of 100 meters after to mid-point dictates the end point.
 
 The straight-line distance between the start point and end point can be calculated for every possible mid-point. Theoretically, the "best choice" of mid-point for the gybe will be the one with the shortest distance between the start and end points.
 
@@ -111,6 +111,12 @@ Gybe detection also needs to consider course over ground (COG) for the entry and
 Doppler-derived speeds should be used for all speed calculations and accumulated distances.
 
 This is consistent with everything else in the speedsailing world, since it is the most accurate measurement.
+
+#### Distance Calculations
+
+Distance calculations should use the latitude + longitude values, just like the alpha racing algorithms.
+
+Several algorithms exist, but optimisations for [proximity detection](../../alpha-racing/README.md#proximity-detection) in alpha racing can also be applied.
 
 #### Activity Profiles
 
