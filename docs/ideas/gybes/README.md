@@ -139,6 +139,12 @@ The logic really isn't any different, just the initial distinction of tacks and 
 
 
 
+### Waterspeed
+
+How these ideas could be applied to Waterspeed is discussed in a separate document, accessible via this [link](waterspeed.md).
+
+
+
 ### Summary
 
 This document describes some ideas for gybe (and tack) analysis, but without testing them in a prototype.
