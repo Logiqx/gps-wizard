@@ -62,7 +62,7 @@ The eight jibe metrics offer a range of different insights, each focusing on dif
 
 The existing metric "Average Jibe Speed" isn't particularly useful for windsurfing, perhaps not winging either?
 
-Metrics for the best 5 jibes are less sensitive to patchy winds, and offer more insight than overall averages.
+Metrics for the best 5 jibes are less sensitive to fickle winds, and offer more insight than overall averages.
 
 
 
