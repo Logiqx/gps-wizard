@@ -1,4 +1,4 @@
-## Water Speed Jibes
+## Waterspeed Tacks & Jibes
 
 This is just to capture some thoughts regarding what could be shown in Waterspeed.
 
