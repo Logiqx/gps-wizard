@@ -40,11 +40,11 @@ Notes:
 
 ### Session Summary
 
-The session summary currently includes the four metrics highlighted in red.
+The session summary currently includes the four jibe metrics highlighted in red.
 
 ![waterspeed-session](img/waterspeed-session.jpg)
 
-In addition to the number of jibes and % missed, it would be useful to see the following stats:
+In addition to the Number of Jibes and % missed, it would be useful to see the following stats:
 
 - Best Jibe Speed - already available
 - Best Min Speed
@@ -58,11 +58,11 @@ The concept of the best 5 gybes is also appealing to people in the Waterspeed gr
 - 5 x Retained Speed (%)
 - 5 x Jibe Score
 
-These four metrics can all be used to rank sessions, based on different aspects of jibing.
+The eight jibe metrics offer a range of different insights, each focusing on different aspects of jibing.
 
 The existing metric "Average Jibe Speed" isn't particularly useful for windsurfing, perhaps not winging either?
 
-The "best 5" metrics could replace the "Average Jibe Speed", and less sensitive to patchy / inconsistent winds.
+Metrics for the best 5 jibes are less sensitive to patchy winds, and offer more insight than overall averages.
 
 
 
