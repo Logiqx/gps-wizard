@@ -31,7 +31,10 @@ Aside from improving the choice of start / end points, some additional metrics w
 - Retained Speed (%) = Min Speed / Entry Speed
 - Score (integer) = Average Speed * Retained Speed (%) * 10
 
-n.b. Min Speed and Retained Speed are the key jibe metrics reported by [GpsarPro](https://gpsactionreplay.free.fr/) and [GPS Speedreader](https://github.com/prichterich/GPS-Speedreader).
+Notes:
+
+- Min Speed and Retained Speed are the key jibe metrics reported by [GpsarPro](https://gpsactionreplay.free.fr/) and [GPS Speedreader](https://github.com/prichterich/GPS-Speedreader)
+- Min Speed is required to calculate Retained Speed, and Retained Speed is required to calculate the Score
 
 
 
