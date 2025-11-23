@@ -42,11 +42,11 @@ In addition, it would be beneficial to show the following stats:
 The concept of the best 5 gybes is also appealing to people in the Waterspeed group chat.
 
 - 5 x Average Speed
-- 5 x Entry Speed
-- 5 x Exit Speed
 - 5 x Min Speed
 - 5 x Retained Speed (%)
 - 5 x Score
+
+These four metrics (based on the 5 best results) could be used rank sessions, based on different aspects of jibing.
 
 The average jibe / tack speed for an entire session isn't particularly useful for windsurfing, perhaps not for winging either?
 
