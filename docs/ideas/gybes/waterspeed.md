@@ -1,6 +1,8 @@
 ## Waterspeed Tacks & Jibes
 
-This is just to capture some thoughts regarding what could be shown in Waterspeed.
+I created a generic [document](README.md) describing some useful metrics for jibe analysis.
+
+This new document captures some thoughts that relate specifically to Waterspeed.
 
 
 
