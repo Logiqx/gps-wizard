@@ -1,8 +1,16 @@
 ## Waterspeed Tacks & Jibes
 
-I created a generic [document](README.md) describing some useful metrics for jibe analysis.
+Author: Michael George
 
-This new document captures some thoughts that relate specifically to Waterspeed.
+Date created: 22 Nov 2025
+
+
+
+### Introduction
+
+Some generic jibe and tack metrics were discussed in an earlier document - see [link](README.md).
+
+Some of those metrics are applicable to Waterspeed and discussed within this document.
 
 
 
