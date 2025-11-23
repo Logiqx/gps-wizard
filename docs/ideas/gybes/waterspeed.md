@@ -47,11 +47,11 @@ The concept of the best 5 gybes is also appealing to people in the Waterspeed gr
 - 5 x Retained Speed (%)
 - 5 x Jibe Score
 
-These four metrics (based on the 5 best results) can be used to rank sessions, based on different aspects of jibing.
+These four metrics can all be used to rank sessions, based on different aspects of jibing.
 
-The current metric Average Jibe Speed isn't particularly useful for windsurfing, perhaps not for winging either?
+The current metric "Average Jibe Speed" isn't particularly useful for windsurfing, perhaps not winging either?
 
-The "best 5" metrics could supersede the "Average Jibe Speed", far less sensitive to patchy / inconsistent winds.
+The "best 5" metrics could replace the "Average Jibe Speed", and less sensitive to patchy / inconsistent winds.
 
 
 
