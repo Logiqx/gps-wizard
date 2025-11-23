@@ -32,7 +32,6 @@ The session summary currently includes the four metrics highlighted in red.
 
 In addition, it would be beneficial to show the following stats:
 
-- Best Average Speed
 - Best Entry Speed
 - Best Exit Speed
 - Best Min Speed
@@ -46,7 +45,7 @@ The concept of the best 5 gybes is also appealing to people in the Waterspeed gr
 - 5 x Retained Speed (%)
 - 5 x Score
 
-These four metrics (based on the 5 best results) could be used rank sessions, based on different aspects of jibing.
+These four metrics (based on the 5 best results) can be used to rank sessions, based on different aspects of jibing.
 
 The average jibe / tack speed for an entire session isn't particularly useful for windsurfing, perhaps not for winging either?
 
@@ -57,3 +56,9 @@ The "best 5" metrics could perhaps supersede "Average Jibe Speed".
 ### Tacking
 
 Everything discussed above also applies to tacking since all of the metrics are equally useful.
+
+The additional stats would make the Tacks & Jibes section rather cluttered, so probably worth splitting them apart.
+
+This just illustrates the idea with the current stats, not showing the stats proposed earlier in this document.
+
+![waterspeed-split](img/waterspeed-split.jpg)
