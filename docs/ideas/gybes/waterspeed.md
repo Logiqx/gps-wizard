@@ -21,7 +21,7 @@ Individual jibes currently show the following metrics:
 - Average Speed
 - Entry Speed
 - Exit Speed
-- Disparity (%) = 1 - Exit Speed / Entry Speed
+- Disparity (%) = (Exit Speed - Entry Speed) / Entry Speed
 
 ![waterspeed-gybe](img/waterspeed-gybe.jpg)
 
