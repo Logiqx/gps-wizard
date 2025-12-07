@@ -1,8 +1,14 @@
 ## GPS Exchange Format (GPX) - Advice
 
+Date created: 17 Nov 2023
+
+Date updated: 18 Jul 2024
+
+
+
 ### Readers
 
-The following sections are to provide guidance for GPX readers.
+The following sections are to provide guidance for software that is importing GPX files.
 
 Common elements such as speed, course, and heartrate may be represented in a number of different ways.
 
@@ -20,7 +26,7 @@ However, GPX readers should search for all representations of SOG, if they wish 
 | ----------- | ----------------- | ------------------------------------------- | :---: | :----------------------------------------------------------: | :---------------------------------------------------------- |
 | 1.0         | `<speed>`         | .                                           | Y | Y | Original representation                  |
 | 1.1         | `<speed>`         | .                                           | N | N | Possible hack but rarely seen |
-| 1.1         | `<gpxdata:speed>` | `<extensions>`                              | N | (N) | COROS and various phone applications, originally used supported by GPSAR for Suunto |
+| 1.1         | `<gpxdata:speed>` | `<extensions>`                              | N | (N) | COROS and various phone applications, originally used by Suunto app(s) |
 | 1.1         | `<gpxdata:speed>` | `<extensions>/<gpxtpx:TrackPointExtension>` | N | N | Invalidates TrackPointExtension<br />- Waterspeed (GPSAR) |
 | 1.1         | `<gpxtpx:speed>`  | `<extensions>/<gpxtpx:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Hoolan<br />- Waterspeed (Strava)<br />- Waterspeed (Google) |
 | 1.1 | `<ns3:speed>` | `<extensions>/<ns3:TrackPointExtension>` | Y | Y | TrackPointExtension v2<br />- Garmin (proposed) |
