@@ -14,6 +14,8 @@ Common elements such as speed, course, and heartrate may be represented in a num
 
 This document catalogues the different representations of these elements that need to be supported by GPX readers.
 
+Some of the representations are essentially the same, but some XML readers are overly sensitive to the namespace prefix.
+
 
 
 #### Speed over Ground
