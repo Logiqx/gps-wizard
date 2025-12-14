@@ -66,19 +66,19 @@ The benefit of using a 1 second moving average is that all subsequent calculatio
 
 A previous article discussed the concept of [aliasing](https://logiqx.github.io/gps-details/general/aliasing/) which can be present in 1 Hz recordings from some GPS loggers, including the Motion and ESP-GPS. The chart below shows 5 Hz data (blue) and 1 Hz data (red) during a short walk. Pace / walking speed can easily be estimated using the 5 Hz data and 1 second moving average, but the 1 Hz data is practically useless due to the nature of the aliasing.
 
-Whilst this walking example may seem unrelated to windsurfing, it can be useful when trying to determine whether a device is prone to aliasing, and can also be used to create data to replicate (or exceed) the maximum acceleration possible on a windsurfer. A separate article will discuss the nuances of acceleration in the context of 5 Hz and 10 Hz data. Within the scope of this document, reliable 1 Hz data is the primary focus.
+This may seem unrelated to windsurfing, but it can be useful when trying to determine whether a device is prone to aliasing, and for creating data to replicate (or exceed) the maximum acceleration possible on a windsurfer. A separate article will discuss the nuances of acceleration in the context of 5 Hz and 10 Hz data. Within the scope of this document, reliable 1 Hz data is the primary focus.
 
 ![7-walking.png](img/7-walking.png)
 
 
 
 
-The original 5 Hz measurements (orange) may be a good representation of the arm speed, but suitable filtering is required prior to downsampling. In this scenario, even a simple 1 second moving average (blue) provides a reasonable measure of instantaneous speed of the walker.
+The original 5 Hz measurements (orange) may be a good representation of the arm speed, but suitable filtering is required prior to downsampling. In this particular scenario, even a simple 1 second moving average (blue) provides a reasonable estimate of the instantaneous speed of the walker.
 
 ![8-walking-5hz.png](img/8-walking-5hz.png)
 
 
-Whilst the original 5 Hz data provides some insights into the actual arm movements (but potentially includes measurement errors as well), some form of filtering / smoothing clearly needs to be done, prior to downsampling. Calculating 1 second averages prior to downsampling will mean the data is a lot more useful in subsequent analysis, since the 1 Hz data will not contain significant aliasing artefacts.
+Whilst the original 5 Hz data provides some insights into the actual arm movements (but potentially includes measurement errors as well), some form of filtering / smoothing clearly needs to be done, prior to downsampling. Calculating 1 second averages prior to downsampling improves any subsequent analysis, since the 1 Hz data will not contain irrelevancies and aliasing artefacts.
 
 ![9-walking-1hz.png](img/9-walking-1hz.png)
 
@@ -86,14 +86,15 @@ Whilst the original 5 Hz data provides some insights into the actual arm movemen
 
 ### Conclusions
 
-The production of 1 Hz data through downsampling alone can be problematic, certainly for subsequent speed analysis and measures such as "max 2 seconds". It is highly advisable that conversions from 5 Hz / 10 Hz data to 1 Hz data implement some kind of filter, prior to the downsampling. This can is applicable to GPS devices such as the Motion, ESP and LISA when they produce GPX exports containing 1 Hz data.
+The production of 1 Hz data through downsampling alone can be problematic, certainly for subsequent speed analysis and measures such as "max 2 seconds". It is highly advisable that conversions to 1 Hz implement some kind of filter, prior to the downsampling. This is applicable to popular GPS devices such as the Motion, ESP and LISA when they produce GPX exports containing 1 Hz data.
 
-The most obvious filter is a simple 1 second moving average. The efficacy of such a filter was demonstrated earlier and subsequent speed results calculated from the 1 Hz data will never exceed the original 5 Hz / 10 Hz data. A trailing moving average should be implemented (not centred moving average), since the speeds from the trailing average will be best-aligned with position-derived speeds in the 1 Hz data.
+The easiest option is a simple 1 second moving average. The efficacy of such a filter was demonstrated earlier and speed results calculated from the 1 Hz data will never exceed the original 5 Hz / 10 Hz data. A trailing moving average should be implemented (not centred moving average), since the speeds from the trailing average will be best-aligned with position-derived speeds in the 1 Hz data.
 
 
 
 ### Next Steps
 
-Discuss this topic with key stakeholders and the various developers; software and hardware. Sadly there is no active development on the Motion, so it is highly unlikely that it will be modified in the near future, but the ESP and LISA can benefit from these ideas.
+Discuss this topic with key stakeholders and the various developers; software and hardware. Sadly there is no active development on the Motion, so it is highly unlikely that it will be modified in the near future, but both the ESP and LISA would benefit from these ideas.
 
-There are people who have recently built an ESP for themselves and intending to post their results to the Waterspeed app. In this context, it would be best if the GPX files of the ESP (and LISA) were to calculate 1 second moving averages, prior to the downsampling.
+There are people who have recently built an ESP GPS and intending to upload the GPX files to the Waterspeed app. In this context, it would be best if the 1 Hz GPX files of the ESP (and LISA) were to implement 1 second moving averages, prior to the downsampling.
+
