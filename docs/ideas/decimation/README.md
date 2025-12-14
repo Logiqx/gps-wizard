@@ -66,6 +66,8 @@ The benefit of using a 1 second moving average is that all subsequent calculatio
 
 An earlier article discussed the concept of [aliasing](https://logiqx.github.io/gps-details/general/aliasing/) present in 1 Hz recordings from some GPS loggers, including the Motion and ESP-GPS. The chart below shows 5 Hz data (blue) and 1 Hz data (red) during a short walk. The 5 Hz data can be used to determine a relatively good estimate of the pace / walking speed using of a simple 1 second moving average, but the 1 Hz data is almost useless due to the nature of the aliasing.
 
+Whilst walking may seem unrelated to windsurfing, it is useful when trying to determine whether a device is prone to aliasing, and to create data which exceeds the maximum acceleration possible on a windsurfer. A separate article will discuss the nuances of acceleration in the context of 5 Hz and 10 Hz data. Within the scope of this document, accurate 1 Hz data is the primary focus.
+
 ![7-walking.png](img/7-walking.png)
 
 
