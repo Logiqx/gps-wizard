@@ -13,6 +13,7 @@
 List of existing articles:
 
 - [Gybe Analysis](ideas/gybes/README.md) - thoughts on gybe / tack analysis
+- [Decimation](ideas/decimation/README.md) - necessary approach when converting to 1 Hz
 - [Gated 500 m](ideas/courses/README.md) - thoughts on how to calculate 500 m course
 - [Alpha Racing](alpha-racing/README.md) - optimizing an algorithm to determine alpha racing results
 - [Filtering](filtering/README.md) - assessing the quality of GPS data and filtering out bad results
