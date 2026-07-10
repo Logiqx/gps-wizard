@@ -1,0 +1,133 @@
+{
+  "GitHub": "https://github.com/Logiqx/ubx-cfg",
+  "Paths": {
+    "InputDir": "../ubx-cfg/gpslogs/syrac/",
+    "OutputDir": "../ubx-cfg/docs/testing/syrac/",
+    "SubDir": "test-2"
+  },
+  "Extensions": [
+    ".fit",
+    ".oao",
+    ".sbn",
+    ".sbp",
+    ".ubx"
+  ],
+  "Chipsets": {
+    "SiRF": [
+      ".sbn",
+      ".sbp"
+    ],
+    "UBX": [
+      ".oao",
+      ".ubx"
+    ]
+  },
+  "Charts": {
+    "Default": [
+      {
+        "title": "Speed over Ground (SOG)",
+        "label": "Speed (knots)",
+        "field": "sog",
+        "scale": 1.9438
+      },
+      {
+        "title": "Number of Satellites",
+        "label": "Satellites",
+        "field": "sat"
+      },
+      {
+        "title": "Horizontal Dilution of Precision (HDOP)",
+        "label": "HDOP",
+        "field": "hdop"
+      },
+      {
+        "title": "Positional Dilution of Precision (PDOP)",
+        "label": "PDOP",
+        "field": "pdop"
+      },
+      {
+        "title": "Estimated Horizontal Position Error (EHPE)",
+        "label": "EHPE (m)",
+        "field": "ehpe"
+      },
+      {
+        "title": "Estimated Horizontal Velocity Error (EHPE)",
+        "label": "EHVE (knots)",
+        "field": "ehve",
+        "scale": 1.9438
+      }
+    ],
+    "SiRF": [
+      {
+        "title": "Speed over Ground (SOG)",
+        "label": "Speed (knots)",
+        "field": "sog",
+        "scale": 1.9438
+      },
+      {
+        "title": "Number of Satellites",
+        "label": "Satellites",
+        "field": "sat"
+      },
+      {
+        "title": "Horizontal Dilution of Precision (HDOP)",
+        "label": "HDOP",
+        "field": "hdop"
+      },
+      {
+        "title": "Estimated Horizontal Position Error (EHPE)",
+        "label": "EHPE (m)",
+        "field": "ehpe"
+      },
+      {
+        "title": "Standard Deviation of Speed (SDOS)",
+        "label": "SDOS (knots)",
+        "field": "ehve",
+        "scale": 1.9438
+      }
+    ],
+    "UBX": [
+      {
+        "title": "Speed over Ground (SOG)",
+        "label": "Speed (knots)",
+        "field": "sog",
+        "scale": 1.9438
+      },
+      {
+        "title": "Number of Satellites",
+        "label": "Satellites",
+        "field": "sat"
+      },
+      {
+        "title": "Horizontal Dilution of Precision (HDOP)",
+        "label": "HDOP",
+        "field": "hdop"
+      },
+      {
+        "title": "Positional Dilution of Precision (PDOP)",
+        "label": "PDOP",
+        "field": "pdop"
+      },
+      {
+        "title": "Horizontal Accuracy (hAcc)",
+        "label": "hAcc (m)",
+        "field": "ehpe"
+      },
+      {
+        "title": "Speed Accuracy (sAcc)",
+        "label": "sAcc (knots)",
+        "field": "ehve",
+        "scale": 1.9438
+      }
+    ]
+  },
+  "Filters": {
+    "Default": {
+      "Skip": 1800
+    },
+    "SiRF": {
+    },
+    "UBX": {
+    }
+  }
+}
