@@ -1,0 +1,49 @@
+Filename	Description
+D1_2607090003.sbp	GPS + Galileo @ 15 Hz
+D1_2607091307.sbp	GPS + Galileo + GLONASS @ 15 Hz
+D1_2607102311.sbp	GPS + Galileo + GLONASS, 24 sats @ 15 Hz
+D1_2607112346.sbp	GPS + Galileo + BeiDou, 28 sats @ 5 Hz
+D1_2607130203.sbp	GPS + Galileo + BeiDou, 28 sats @ 5 Hz
+D1_2607131349.sbp	GPS + Galileo + BeiDou, 28 sats @ 10 Hz
+D1_2607140032.sbp	GPS + Galileo + BeiDou, 28 sats @ 10 Hz
+D2__2607090003.sbp	GPS + Galileo @ 20 Hz
+D2__2607091307.sbp	GPS + Galileo @ 20 Hz
+D2__2607102312.sbp	GPS + Galileo + BeiDou, 24 sats @ 15 Hz
+D2__2607112346.sbp	GPS + Galileo + BeiDou, 28 sats @ 5 Hz
+D2__2607130201.sbp	GPS + Galileo + BeiDou, 24 sats @ 5 Hz
+D2__2607131349.sbp	GPS + Galileo + BeiDou, 24 sats @ 10 Hz
+D2__2607140033.sbp	GPS + Galileo + BeiDou, 28 sats @ 10 Hz
+D3__2607090003.sbp	GPS + GLONASS @ 15 Hz
+D3__2607091314.sbp	GPS + Galileo @ 15 Hz
+D3__2607102311.sbp	GPS + Galileo + GLONASS, 28 sats @ 15 Hz
+D3__2607112345.sbp	GPS + Galileo + BeiDou, 32 sats @ 5 Hz
+D3__2607130201.sbp	GPS + Galileo + BeiDou, 28 sats @ 5 Hz
+D3__2607131348.sbp	GPS + Galileo + BeiDou, 28 sats @ 10 Hz
+D3__2607140033.sbp	GPS + Galileo + BeiDou, 28 sats @ 5 Hz
+D5_2607090004.sbp	GPS + GLONASS @ 20 Hz
+D5_2607091307.sbp	GPS + Galileo + BeiDou @ 15 Hz
+D5_2607102311.sbp	GPS + Galileo + BeiDou, 28 sats @ 15 Hz
+D5_2607112346.sbp	GPS + Galileo + BeiDou, 32 sats @ 5 Hz
+D5_2607130202.sbp	GPS + Galileo + BeiDou, 32 sats @ 5 Hz
+D5_2607131349.sbp	GPS + Galileo + BeiDou, 20 sats @ 10 Hz
+D5_2607140031.sbp	GPS + Galileo + BeiDou, 28 sats @ 5 Hz
+S3__2607090003.sbp	GPS + Galileo + GLONASS @ 10 Hz
+S3__2607091314.sbp	GPS + Galileo @ 10 Hz
+S3__2607102311.sbp	GPS + Galileo, 20 sats @ 15 Hz
+S3__2607120443.sbp	GPS + Galileo, 24 sats @ 5 Hz
+S3__2607131349.sbp	GPS + Galileo, 24 sats @ 10 Hz
+SY1__2607090003.sbp	GPS + GLONASS @ 10 Hz
+SY1__2607091314.sbp	GPS + Galileo @ 10 Hz
+SY1__2607102311.sbp	GPS + Galileo + GLONASS, 20 sats @ 15 Hz
+SY1__2607112345.sbp	GPS + Galileo + BeiDou, 24 sats @ 5 Hz
+SY1__2607130200.sbp	GPS + Galileo + BeiDou, 24 sats @ 5 Hz
+SY1__2607131350.sbp	GPS + Galileo + BeiDou, 24 sats @ 10 Hz
+SY1__2607140034.sbp	GPS + Galileo + BeiDou, 28 sats @ 10 Hz
+SY2_2607090003.sbp	GPS + Galileo @ 10 Hz
+SY2_2607091314.sbp	GPS + Galileo + GLONASS @ 10 Hz
+SY2_2607102311.sbp	GPS + Galileo + GLONASS, 32 sats @ 10 Hz
+SY2_2607112345.sbp	GPS + Galileo + BeiDou, 32 sats @ 10 Hz
+SY2_2607130203.sbp	GPS + Galileo + BeiDou, 20 sats @ 5 Hz
+SY2_2607131349.sbp	GPS + Galileo + BeiDou, 20 sats @ 10 Hz
+SY2_2607140033.sbp	GPS + Galileo + BeiDou, 28 sats @ 5 Hz
+ubxGPS_2607140032.sbp	GPS + Galileo + GLONASS, 32 sats @ 5 Hz

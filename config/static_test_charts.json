@@ -3,7 +3,7 @@
   "Paths": {
     "InputDir": "../ubx-cfg/gpslogs/syrac/",
     "OutputDir": "../ubx-cfg/docs/testing/syrac/",
-    "SubDir": "test-2"
+    "SubDir": "test-1"
   },
   "Extensions": [
     ".fit",
@@ -62,17 +62,20 @@
         "title": "Speed over Ground (SOG)",
         "label": "Speed (knots)",
         "field": "sog",
-        "scale": 1.9438
+        "scale": 1.9438,
+        "limit": 0.3
       },
       {
         "title": "Number of Satellites",
         "label": "Satellites",
-        "field": "sat"
+        "field": "sat",
+        "limit": 32
       },
       {
         "title": "Horizontal Dilution of Precision (HDOP)",
         "label": "HDOP",
-        "field": "hdop"
+        "field": "hdop",
+        "limit": 1.0
       },
       {
         "title": "Estimated Horizontal Position Error (EHPE)",
@@ -80,10 +83,11 @@
         "field": "ehpe"
       },
       {
-        "title": "Standard Deviation of Speed (SDOS)",
-        "label": "SDOS (knots)",
+        "title": "Speed Accuracy (sAcc)",
+        "label": "sAcc (knots)",
         "field": "ehve",
-        "scale": 1.9438
+        "scale": 1.9438,
+        "limit": 0.3
       }
     ],
     "UBX": [
@@ -123,7 +127,8 @@
   },
   "Filters": {
     "Default": {
-      "Skip": 1800
+      "SkipStart": 1800,
+      "SkipEnd": 300
     },
     "SiRF": {
     },
