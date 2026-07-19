@@ -2,14 +2,14 @@
 
 ### Overview
 
-The ESP GPS is gaining popularity and there is a desire for more flexible logging, facilitating run verification at WST events, etc.
+The ESP GPS is gaining popularity and it would be great if the GPY format were to offer more flexible logging.
 
-The following items have previously been useful when investigating issues.
+The following items have proven to be very useful when investigating GPS data quality.
 
 - Altitude (MSL) in mm
 - Horizontal error in mm
 
-This proposal for GPY 1.1 introduces the concept of "minimal" type definitions, building upon the existing 0xE0 and 0xD0 frames. The minimal type definitions also guarantee forward and backward compatibility of GPY files, without being overly complicated.
+This proposal for GPY 1.1 introduces the concept of "minimal" type definitions, building upon the existing 0xE0 and 0xD0 frames. The concept also ensures forward and backward compatibility of any future GPY enhancements, without being overly complicated.
 
 
 
@@ -49,7 +49,7 @@ The "minimal" type definition uses the idea of inheritance and extending base ty
   - Readers expecting 0xD1 (20 bytes payload) may encounter the "vanilla" 0xD0
     - Use the entire 16 bytes of the 0xD0 payload
 - Back in 2022 the concept of "custom" records was also discussed for the GPY format
-  - This concept is a lot simpler, but it still meets most of the immediate requirements
+  - The inheritence concept is a lot simpler, but it still meets most of the immediate requirements
 
 
 
@@ -59,10 +59,10 @@ It may also be worth adding the remaining OAO fields in GPY 1.1.
 
 - 0xE2 uncompressed "reference" record
   - Payload = 48 bytes, total = 52 bytes
-  - Like 0xE1 but adding verticalErr (u4) and courseError (u4)
-- 0xD2 compressed "minimal" record
+  - Extends 0xE1 by adding verticalErr (u4) and courseError (u4)
+- 0xD2 compressed "delta" record
   - Payload = 24 bytes, total = 28 bytes
-  - Like 0xD1 but adding delta verticalErr (i2) and courseError (u2)
+  - Extends 0xD1 by adding delta verticalErr (i2) and courseError (u2)
 
 
 
@@ -86,7 +86,7 @@ The following tables may help to clarify the concepts within the GPY 1.1 proposa
 
 
 
-#### Type Definition Frame
+#### Record Type Definition
 
 The type definition frames provide the information ensuring forward and backward compatibility.
 
@@ -109,7 +109,13 @@ Notes:
 
 #### GNSS PVT Frame (uncompressed)
 
-The uncompressed frames come in 3 flavours; 0xE0 (vanilla GPY), 0xE1 (+ heightMsl and horizontalErrDelta), and 0xE2 (+ remaining items).
+The uncompressed / reference frames come in 3 flavours
+
+- 0xE0 - "vanilla" GPY
+- 0xE1 - adds heightMsl and horizontalErrDelta
+- 0xE2 - adds the remaining OAO items
+
+The table below shows how they all share a common structure.
 
 | Name     | Type | Units | Scale             | Description                            |  0xE0  |  0xE1  |  0xE2  |
 | -------- | :----: | :----: | :----: | -------------------------------------- | :----: | :----: | :----: |
@@ -139,7 +145,15 @@ Notes:
 
 #### GNSS PVT Frame (compressed)
 
-The compressed frames come in 3 flavours; 0xE0 (vanilla GPY), 0xE1 (+ heightMsl and horizontalErrDelta), and 0xE2 (+ remaining items).
+The compressed / delta frames come in 3 flavours; 
+
+The compressed / delta frames come in 3 flavours
+
+- 0xE0 - "vanilla" GPY
+- 0xE1 - adds heightMsl and horizontalErrDelta
+- 0xE2 - adds the remaining OAO items
+
+The table below shows how they all share a common structure.
 
 | Name           | Type | Units | Scale             | Description                            | 0xD0 | 0xD1 | 0xD2 |
 | -------------- | :----: | :----: | :----: | -------------------------------------- | :--: | :--: | :--: |
@@ -164,8 +178,8 @@ The compressed frames come in 3 flavours; 0xE0 (vanilla GPY), 0xE1 (+ heightMsl 
 Notes:
 
 - Scale of 1 x 10<sup>-3</sup> typically indicates mm or mm/s
-- course and courseErr are adversely affected by truncation issues, if delta processing implements integer division
-- courseErr can simply be rounded and scaled in 0xD1 and 0xD2 (i.e. ranging from 0 to 360.00) to avoid such issues
+- course and courseErr are potentially affected by truncation issues, whenever delta processing uses integer division
+- courseErr can simply be rounded and scaled in 0xD1 and 0xD2 (i.e. values of 0 to 360.00) to avoid such issues
 
 
 
@@ -175,10 +189,11 @@ A few initial thoughts about the work required:
 
 - Implementing the different types of logging should be relatively straightforward in the ESP GPS
   - Users will need to choose the type of logging, perhaps referred to as level 1 (default) / 2 / 3
-  - The appropriate frame types can then be logged, following some minor changes to the code
+  - The appropriate data can then be logged, but it requires some minor changes to existing code
 - GPSResults and GPS Speedreader will also require some minor modifications
-  - However, they will only need to know the structure of 0xE2 and 0xD2
-  - The type type definitions frames (0xF1) will provide the actual sizes of PVT frames in the GPY
+  - However, they only really need to know the structure of 0xE2 and 0xD2
+  - The 0xE1, 0xE0, 0xD1, and 0xD0 frames simply contain a subset of 0xE2 and 0xD2
+  - The type type definitions frames (0xF1) provide the actual sizes of GNSS PVT frames in the GPY
 
 Once implemented, future GPY enhancements should be possible without impacting existing applications.
 
@@ -188,13 +203,13 @@ Once implemented, future GPY enhancements should be possible without impacting e
 
 This proposal aims to enhance GPY in a way that is pragmatic, and not overly complicated.
 
-  - It addresses the immediate requirements for additional items in GPY files
-  - ESP GPS users can choose the level of logging, perhaps referred to as 1 (default) / 2 / 3
+  - It addresses the immediate requirement for additional PVT fields in GPY files
+  - ESP GPS users can choose the required logging, perhaps referred to as 1 (default) / 2 / 3
 
 The main concept introduced into GPY is the "minimal" type definition (0xF1).
 
-  - 0xE1 + 0xD1 are derived from 0xE0 + 0xD0, and have multiple benefits, e.g. WST events
-  - 0xE2 + 0xD2 include everything from OAO, and are useful for GNSS investigations
+  - 0xE1 + 0xD1 are derived from 0xE0 + 0xD0, and would be used during WST events
+  - 0xE2 + 0xD2 include everything from OAO, and are useful during GNSS investigations
 
 Some thoughts about altitude / elevation, which is often useful when diagnosing issues.
 
