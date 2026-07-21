@@ -96,9 +96,11 @@ The header frame (0xF0) contains information about the device and its GNSS confi
 | flags             |   u1    |   -   |   -   | Flags (default 0)          |
 | length            |   u2    |   -   |   -   | Length (0x004C)            |
 | deviceDescription | u1 * 16 |   -   |   -   | e.g. ESP-GPS               |
-| deviceName        | u1 * 16 |   -   |   -   | e.g. Boom                  |
-| serialNumber      | u1 * 16 |   -   |   -   | e.g. MAC address           |
-| firmwareVersion   | u1 * 16 |   -   |   -   | e.g. S/W version           |
+| deviceName        | u1 * 16 |   -   |   -   | e.g. K888                  |
+| serialNumber      | u1 * 16 |   -   |   -   | e.g. 8B61FC1ADB0           |
+| firmwareVersion   | u1 * 16 |   -   |   -   | e.g. V 6.05beta            |
+| chipsetName       | u1 * 16 |   -   |   -   | e.g. u-blox M10            |
+| chipsetVersion    | u1 * 16 |   -   |   -   | e.g. ROM SPG 5.10          |
 | signals           |   u2    |   -   |   -   | GNSS signals               |
 | maxSats           |   u1    |   -   |   -   | e.g. 28                    |
 | sampleRate        |   u1    |  Hz   |   -   | e.g. 10 Hz                 |
