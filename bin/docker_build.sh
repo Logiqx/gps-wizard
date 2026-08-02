@@ -22,6 +22,7 @@ run_py_script readers/sbn_reader.py
 run_py_script readers/sbp_reader.py
 run_py_script readers/tcx_reader.py
 run_py_script readers/ubx_reader.py
+run_py_script readers/vkx_reader.py
 run_py_script writers/base_writer.py
 run_py_script writers/csv_writer.py
 run_py_script writers/gpx_writer.py

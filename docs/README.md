@@ -33,6 +33,8 @@ The following formats can all be loaded using dedicated file readers:
   - Support for TrainingCenterDatabase and ActivityExtension.
 - [UBX](formats/ubx.md) - u-blox Binary.
   - Support for NAV-PVT messages.
+- [VKX](formats/vkx.md) - Vakaros VKX Telemetry Log.
+  - Support for Position, Velocity, and Orientation rows.
 
 Notes:
 
