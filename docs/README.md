@@ -19,6 +19,8 @@ The following formats can all be loaded using dedicated file readers:
 - [GPX](formats/gpx.md) - GPS Exchange Format.
   - Support for GPX 1.0 and GPX 1.1 - see additional [notes](gpx/README.md).
   - Future ideas / proposals for GPX - see [link](/gpx-ideas/)
+- [GPY](formats/gpy.md) - Compact format for GNSS data.
+  - Support for GNSS frames - 0xE0 and 0xD0.
 - [NMEA](formats/nmea.md) - National Marine Electronics Association.
   - Support for RMC and GGA sentences - both required, see additional [notes](nmea/README.md).
 - [OAO](formats/oao.md) - "OnAndOn" Binary.

@@ -15,6 +15,7 @@ run_py_script core/track.py
 run_py_script readers/base_reader.py
 run_py_script readers/fit_reader.py
 run_py_script readers/gpx_reader.py
+run_py_script readers/gpy_reader.py
 run_py_script readers/nmea_reader.py
 run_py_script readers/oao_reader.py
 run_py_script readers/sirf_reader.py
