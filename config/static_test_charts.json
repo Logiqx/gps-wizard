@@ -1,9 +1,9 @@
 {
   "GitHub": "https://github.com/Logiqx/ubx-cfg",
   "Paths": {
-    "InputDir": "../ubx-cfg/gpslogs/syrac/",
-    "OutputDir": "../ubx-cfg/docs/testing/syrac/",
-    "SubDir": "test-1"
+    "InputDir": "../ubx-cfg/gpslogs/lisa/2026-06-14/",
+    "OutputDir": "../ubx-cfg/gpslogs/lisa/2026-06-14/png/",
+    "SubDir": "logs"
   },
   "Extensions": [
     ".fit",
@@ -28,33 +28,39 @@
         "title": "Speed over Ground (SOG)",
         "label": "Speed (knots)",
         "field": "sog",
-        "scale": 1.9438
+        "scale": 1.9438,
+        "limit": 0.3
       },
       {
         "title": "Number of Satellites",
         "label": "Satellites",
-        "field": "sat"
+        "field": "sat",
+        "limit": 32
       },
       {
         "title": "Horizontal Dilution of Precision (HDOP)",
         "label": "HDOP",
-        "field": "hdop"
+        "field": "hdop",
+        "limit": 1.0
       },
       {
         "title": "Positional Dilution of Precision (PDOP)",
         "label": "PDOP",
-        "field": "pdop"
+        "field": "pdop",
+        "limit": 1.0
       },
       {
         "title": "Estimated Horizontal Position Error (EHPE)",
         "label": "EHPE (m)",
-        "field": "ehpe"
+        "field": "ehpe",
+        "limit": 1.0
       },
       {
         "title": "Estimated Horizontal Velocity Error (EHPE)",
         "label": "EHVE (knots)",
         "field": "ehve",
-        "scale": 1.9438
+        "scale": 1.9438,
+        "limit": 0.3
       }
     ],
     "SiRF": [
@@ -80,7 +86,8 @@
       {
         "title": "Estimated Horizontal Position Error (EHPE)",
         "label": "EHPE (m)",
-        "field": "ehpe"
+        "field": "ehpe",
+        "limit": 1.0
       },
       {
         "title": "Speed Accuracy (sAcc)",
@@ -95,33 +102,39 @@
         "title": "Speed over Ground (SOG)",
         "label": "Speed (knots)",
         "field": "sog",
-        "scale": 1.9438
+        "scale": 1.9438,
+        "limit": 0.3
       },
       {
         "title": "Number of Satellites",
         "label": "Satellites",
-        "field": "sat"
+        "field": "sat",
+        "limit": 32
       },
       {
         "title": "Horizontal Dilution of Precision (HDOP)",
         "label": "HDOP",
-        "field": "hdop"
+        "field": "hdop",
+        "limit": 1.0
       },
       {
         "title": "Positional Dilution of Precision (PDOP)",
         "label": "PDOP",
-        "field": "pdop"
+        "field": "pdop",
+        "limit": 1.0
       },
       {
         "title": "Horizontal Accuracy (hAcc)",
         "label": "hAcc (m)",
-        "field": "ehpe"
+        "field": "ehpe",
+        "limit": 1.0
       },
       {
         "title": "Speed Accuracy (sAcc)",
         "label": "sAcc (knots)",
         "field": "ehve",
-        "scale": 1.9438
+        "scale": 1.9438,
+        "limit": 0.3
       }
     ]
   },
