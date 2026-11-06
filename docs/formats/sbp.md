@@ -46,7 +46,7 @@ Annotations using my [Python code](https://github.com/Logiqx/gps-wizard/blob/mai
 Notes:
 
 - The payload includes message ID (0xfd), User Name, Serial Number, Log Rate, Firmware Version.
-  - Locosys defined the serial number is MAX CHAR(8), so 3 bytes of a MAC address be be used as CHAR(8).
+  - Locosys stores the serial number as MAX CHAR(8), but the ESP stores the MAC address as CHAR(12).
 - The message ID of 0xdf has been observed in SBP files from the GW-60, and includes some additional fields.
   - e.g. `GW60USER,168605168,2,V1.3A0926C,0.0h,00,`
 
@@ -83,5 +83,4 @@ Notes:
 During the testing of the GPS Wizard modules, it was observed that GPSResults does not handle SDOP and VSDOP being unavailable in SBP files. This results in +/- figures of 0.000 being reported by GPSResults for SBP tracks missing SDOP and VSDOP which is incorrect / misleading.
 
 GPS Wizard will ignore the last 2 bytes of the SBP files when SDOP and VSDOP are unpopulated; e.g. GT-11 tracks.
-
 

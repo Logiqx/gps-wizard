@@ -46,7 +46,7 @@ Annotations using my [Python code](https://github.com/Logiqx/gps-wizard/blob/mai
 Notes:
 
 - The payload includes message ID (0xfd), User Name, Serial Number, Log Rate, Firmware Version.
-  - Locosys defined the serial number is MAX CHAR(8), so 3 bytes of a MAC address be be used as CHAR(8).
+  - Locosys stores the serial number as MAX CHAR(8), but the ESP stores the MAC address as CHAR(12).
 
 
 
