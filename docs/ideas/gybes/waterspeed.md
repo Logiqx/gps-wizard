@@ -1,22 +1,26 @@
-## Waterspeed Tacks & Jibes
+## Waterspeed - Tacks & Jibes
 
 Author: Michael George
 
 Date created: 23 Nov 2025
 
+Last updated: 8 Nov 2026
+
 
 
 ### Introduction
 
-Some generic jibe and tack metrics were discussed in an earlier document - see [link](README.md).
+The concepts relating to jibes and tacks are discussed in a more detailed document - see [link](README.md).
 
-Some of those metrics are applicable to Waterspeed and discussed within this document.
+That document also discusses the importance of selecting suitable start and end points.
+
+Some of the proposed metrics such as scores are also applicable to Waterspeed.
 
 
 
 ### Individual Jibes
 
-Individual jibes currently show the following metrics:
+Waterspeed currently shows the following gybe metrics:
 
 - Average Speed
 - Entry Speed
@@ -25,16 +29,19 @@ Individual jibes currently show the following metrics:
 
 ![waterspeed-gybe](img/waterspeed-gybe.jpg)
 
-Aside from improving the choice of start / end points, some additional metrics would be appreciated:
+Aside from choosing suitable start / end points, some additional metrics would be appreciated:
 
-- Min Speed
-- Retained Speed (%) = Min Speed / Entry Speed
-- Score (integer) = Average Speed * Retained Speed (%) * 10
+- Min Speed = Slowest speed during the gybe
+- Efficiency (%) = Exit Speed / Entry Speed
+  - This should be capped at 100% to to prevent riders from gaming the system
+- Retained Speed (%) = Minimum Speed / Entry Speed
+  - This metric can never exceed 100%
+- Score (integer) = (Average Speed * Efficiency * 5) + (Min Speed * 5)
 
 Notes:
-
 - Min Speed and Retained Speed are the key jibe metrics reported by [GpsarPro](https://gpsactionreplay.free.fr/) and [GPS Speedreader](https://github.com/prichterich/GPS-Speedreader)
-- Min Speed is required to calculate Retained Speed, and Retained Speed is required to calculate the Score
+- Min Speed is required for Retained Speed, and Retained Speed is required to calculate the Score
+- This approach has already been successfully implemented by [speedsurf.app](https://speedsurf.app/)
 
 
 
