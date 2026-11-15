@@ -3,7 +3,7 @@
   "Paths": {
     "InputDir": "../gps-spikes/gpslogs",
     "OutputDir": "../gps-spikes/docs/gallery",
-    "SubDir": "."
+    "SubDir": "motion/gpstc"
   },
   "Extensions": [
     ".fit",

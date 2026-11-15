@@ -1,0 +1,153 @@
+{
+  "GitHub": "https://github.com/Logiqx/ubx-cfg",
+  "Paths": {
+    "InputDir": "sessions/",
+    "OutputDir": "sessions/png/",
+    "SubDir": "2026-11-04"
+  },
+  "Extensions": [
+    ".fit",
+    ".gpy",
+    ".oao",
+    ".sbn",
+    ".sbp",
+    ".ubx"
+  ],
+  "Chipsets": {
+    "SiRF": [
+      ".sbn",
+      ".sbp"
+    ],
+    "UBX": [
+      ".gpy",
+      ".oao",
+      ".ubx"
+    ]
+  },
+  "Charts": {
+    "Default": [
+      {
+        "title": "Speed over Ground (SOG)",
+        "label": "Speed (knots)",
+        "field": "sog",
+        "scale": 1.9438,
+        "limit": 25
+      },
+      {
+        "title": "Number of Satellites",
+        "label": "Satellites",
+        "field": "sat",
+        "limit": 32
+      },
+      {
+        "title": "Horizontal Dilution of Precision (HDOP)",
+        "label": "HDOP",
+        "field": "hdop",
+        "limit": 1.6
+      },
+      {
+        "title": "Positional Dilution of Precision (PDOP)",
+        "label": "PDOP",
+        "field": "pdop",
+        "limit": 1.6
+      },
+      {
+        "title": "Estimated Horizontal Position Error (EHPE)",
+        "label": "EHPE (m)",
+        "field": "ehpe",
+        "limit": 2.0
+      },
+      {
+        "title": "Estimated Horizontal Velocity Error (EHVE)",
+        "label": "EHVE (knots)",
+        "field": "ehve",
+        "scale": 1.9438,
+        "limit": 0.5
+      }
+    ],
+    "SiRF": [
+      {
+        "title": "Speed over Ground (SOG)",
+        "label": "Speed (knots)",
+        "field": "sog",
+        "scale": 1.9438,
+        "limit": 0.5
+      },
+      {
+        "title": "Number of Satellites",
+        "label": "Satellites",
+        "field": "sat",
+        "limit": 32
+      },
+      {
+        "title": "Horizontal Dilution of Precision (HDOP)",
+        "label": "HDOP",
+        "field": "hdop",
+        "limit": 2.0
+      },
+      {
+        "title": "Estimated Horizontal Position Error (EHPE)",
+        "label": "EHPE (m)",
+        "field": "ehpe",
+        "limit": 2.0
+      },
+      {
+        "title": "Standard Deviation of Speed (SDOS)",
+        "label": "SDOS (knots)",
+        "field": "ehve",
+        "scale": 1.9438,
+        "limit": 0.5
+      }
+    ],
+    "UBX": [
+      {
+        "title": "Speed over Ground (SOG)",
+        "label": "Speed (knots)",
+        "field": "sog",
+        "scale": 1.9438,
+        "limit": 0.5
+      },
+      {
+        "title": "Number of Satellites",
+        "label": "Satellites",
+        "field": "sat",
+        "limit": 32
+      },
+      {
+        "title": "Horizontal Dilution of Precision (HDOP)",
+        "label": "HDOP",
+        "field": "hdop",
+        "limit": 2.0
+      },
+      {
+        "title": "Positional Dilution of Precision (PDOP)",
+        "label": "PDOP",
+        "field": "pdop",
+        "limit": 2.0
+      },
+      {
+        "title": "Horizontal Accuracy (hAcc)",
+        "label": "hAcc (m)",
+        "field": "ehpe",
+        "limit": 2.0
+      },
+      {
+        "title": "Speed Accuracy (sAcc)",
+        "label": "sAcc (knots)",
+        "field": "ehve",
+        "scale": 1.9438,
+        "limit": 0.5
+      }
+    ]
+  },
+  "Filters": {
+    "Default": {
+      "SkipStart": 5,
+      "SkipEnd": 5
+    },
+    "SiRF": {
+    },
+    "UBX": {
+    }
+  }
+}
