@@ -37,7 +37,7 @@ The GPX 1.0 schema includes support for `<course>` (course over ground) and `<sp
 
 Unfortunately the `<speed>` and `<course>` elements were accidentally removed from GPX 1.1, necessitating the use of `<extensions>`.
 
-It was not until some time around 2015 when Garmin released a GPX extension [schema](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) that supported speed and course.
+It was not until some time around 2015 when Garmin released a GPX extension [schema](https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) that supported speed and course.
 
 ```xml
 <trkpt lat="50.5710623" lon="-2.4563484">
@@ -144,7 +144,7 @@ This is a valid `<gpx>` element for a GPX 1.1 file which is using the TrackPoint
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          https://www.topografix.com/GPX/1/1/gpx.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v2
-                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+                         https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
 The additional namespaces in a GPX 1.1 document are given a prefix (e.g. "gpxtpx" as above) but these may vary. For example, Garmin Connect typically uses "ns3", whereas other software often use "gpxtpx" for TrackPointExtension.
@@ -157,11 +157,11 @@ The additional namespaces in a GPX 1.1 document are given a prefix (e.g. "gpxtpx
 
 Garmin's latest trackpoint extension is v2 (circa 2015). It introduced "speed", "course" and "bearing":
 
-- TrackPointExtension v2 - http://www.garmin.com/xmlschemas/TrackPointExtension/v2 - [TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
+- TrackPointExtension v2 - http://www.garmin.com/xmlschemas/TrackPointExtension/v2 - [TrackPointExtensionv2.xsd](https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
 
 The original version of TrackPointExtension (circa 2009) is still being used by various pieces of software:
 
-- TrackPointExtension v1 - http://www.garmin.com/xmlschemas/TrackPointExtension/v1 - [TrackPointExtensionv1.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)
+- TrackPointExtension v1 - http://www.garmin.com/xmlschemas/TrackPointExtension/v1 - [TrackPointExtensionv1.xsd](https://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)
 
 
 
@@ -169,8 +169,8 @@ The original version of TrackPointExtension (circa 2009) is still being used by 
 
 The following Garmin GPX extensions (circa 2006) have all been superseded by TrackPointExtension v1 + v2:
 
-- GpxExtensions v3 - http://www.garmin.com/xmlschemas/GpxExtensions/v3 - [GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
-- GpxExtensions v2 - http://www.garmin.com/xmlschemas/GpxExtensions/v2 - [GpxExtensionsv2.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv2.xsd)
+- GpxExtensions v3 - http://www.garmin.com/xmlschemas/GpxExtensions/v3 - [GpxExtensionsv3.xsd](https://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
+- GpxExtensions v2 - http://www.garmin.com/xmlschemas/GpxExtensions/v2 - [GpxExtensionsv2.xsd](https://www.garmin.com/xmlschemas/GpxExtensionsv2.xsd)
 - GpxExtensions v1 - removed from the web
 
 

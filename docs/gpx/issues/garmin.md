@@ -32,9 +32,9 @@ This example has been fixed by hand to ensure strict compliance with the GPX 1.1
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          https://www.topografix.com/GPX/1/1/gpx-strict.xsd
                          http://www.garmin.com/xmlschemas/GpxExtensions/v3
-                         https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd
+                         https://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v2
-                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+                         https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
   <metadata>
     <link href="connect.garmin.com">
       <text>Garmin Connect</text>
@@ -89,7 +89,7 @@ Ideally the schema location of TrackPointExtension should also be added for clar
 <gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          https://www.topografix.com/GPX/1/1/gpx.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v1
-                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+                         https://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
 ```
 
 
@@ -108,30 +108,9 @@ The namespace can either be removed, or the URL can be added to the `xsi:schemaL
 <gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          https://www.topografix.com/GPX/1/1/gpx.xsd
                          http://www.garmin.com/xmlschemas/GpxExtensions/v3
-                         https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd
+                         https://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v1
-                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
-```
-
-
-
-#### 301 Redirects
-
-There is an issue with the server redirects on the Garmin website. For example:
-
-```
-http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd ->
-https://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd ->
-https://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd/ ->
-https://www.garmin.com/en-US
-```
-
-The correct redirects should be as follows:
-
-```
-http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd ->
-https://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd ->
-https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd
+                         https://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
 ```
 
 
@@ -178,9 +157,9 @@ This would only require a minor change to the `<gpx>` element, switching to `Tra
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          https://www.topografix.com/GPX/1/1/gpx.xsd
                          http://www.garmin.com/xmlschemas/GpxExtensions/v3
-                         https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd
+                         https://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v2
-                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+                         https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
 With the `<gpx>` element referring to `TrackPointExtension/v2` it is then possible to include `<ns3:speed>` and `<ns3:course>`:

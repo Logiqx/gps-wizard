@@ -38,8 +38,8 @@ Namespaces:
 | Prefix  | Namespace                                                    |
 | ------- | ------------------------------------------------------------ |
 | gpxdata | http://www.cluetrust.com/XML/GPXDATA/1/0<br/>[https://www.cluetrust.com/Schemas/gpxdata10.xsd](https://www.cluetrust.com/Schemas/gpxdata10.xsd) |
-| gpxtpx  | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
-| ns3     | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
+| gpxtpx  | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
+| ns3     | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
 
 
 
@@ -62,8 +62,8 @@ Namespaces:
 
 | Prefix | Namespace                                                    |
 | ------ | ------------------------------------------------------------ |
-| gpxtpx | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
-| ns3    | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
+| gpxtpx | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
+| ns3    | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
 
 
 
@@ -85,8 +85,8 @@ Namespaces:
 | Prefix  | Namespace                                                    |
 | ------- | ------------------------------------------------------------ |
 | gpxdata | http://www.cluetrust.com/XML/GPXDATA/1/0<br/>[https://www.cluetrust.com/Schemas/gpxdata10.xsd](https://www.cluetrust.com/Schemas/gpxdata10.xsd) |
-| gpxtpx  | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
-| ns3     | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
+| gpxtpx  | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
+| ns3     | http://www.garmin.com/xmlschemas/TrackPointExtension/v2<br />[https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) |
 
 
 

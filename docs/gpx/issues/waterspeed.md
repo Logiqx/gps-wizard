@@ -26,7 +26,7 @@ This example has been fixed by hand to ensure compliance with the GPX 1.1 schema
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          https://www.topografix.com/GPX/1/1/gpx-strict.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v2
-                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+                         https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
   <metadata>
     <time>2022-10-29T12:55:24.000Z</time>
   </metadata>
@@ -93,10 +93,10 @@ The URL for the Garmin extension needs to be added to `xsi:schemaLocation`:
 <gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          https://www.topografix.com/GPX/1/1/gpx.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v2
-                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+                         https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
-n.b. The subdomain hosting the Garmin extensions is now https://www8.garmin.com.
+n.b. The subdomain hosting the Garmin extensions is https://www.garmin.com.
 
 
 
@@ -223,7 +223,7 @@ This would be a fully compliant GPX file as described in this document. The GPX 
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          https://www.topografix.com/GPX/1/1/gpx.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v2 
-                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+                         https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
 A trackpoint would only require `<gpxtpx:speed>` for speed:
@@ -258,7 +258,7 @@ This would be a modified version of the universal GPX export. The GPX header wou
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          https://www.topografix.com/GPX/1/1/gpx.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v2 
-                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+                         https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
 ```
 
 Note the addition of `xmlns:gpxdata` in the GPX header but the lack of a corresponding XSD in `xsi:schemaLocation`.

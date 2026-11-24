@@ -98,7 +98,7 @@ Use of `<gpxdata:speed>` has now been prevalent for quite some years and is supp
 
 #### The Garmin Approach
 
-Garmin added speed and course to v2 of their [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema, some time around 2015.
+Garmin added speed and course to v2 of their [TrackPointExtension](https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema, some time around 2015.
 
 This means that with the appropriate GPX header (i.e. defining the namespace and schemaLocation) it is possible to include `<speed>` and `<course>` elements in GPX 1.1 files.
 
@@ -112,7 +112,7 @@ An example header:
      xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 https://www.topografix.com/GPX/1/1/gpx.xsd 
-       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd"
+       http://www.garmin.com/xmlschemas/TrackPointExtension/v2 https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd"
 ```
 
 Trackpoints can then include speed and course (plus data such as heartrate) inside the `<extensions>` element:
@@ -144,7 +144,7 @@ Notes:
 
 #### Downside of the Garmin Approach
 
-At this time (Nov 2023), neither [GpsarPro](http://www.gpsactionreplay.com/), [GPSResults](https://www.gps-speed.com/) nor [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) support version 2 of Garmin's [TrackPointExtension](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema, although both authors plan to add support in the near future.
+At this time (Nov 2023), neither [GpsarPro](http://www.gpsactionreplay.com/), [GPSResults](https://www.gps-speed.com/) nor [GPS-Speedsurfing.com](https://www.gps-speedsurfing.com/) support version 2 of Garmin's [TrackPointExtension](https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd) schema, although both authors plan to add support in the near future.
 
 This means that although you can create a GPX 1.1 compliant file containing speed and course thanks to the Garmin extension, both elements will be ignored by some popular speed surfing software.
 
@@ -205,7 +205,7 @@ You will also need to add the "gpxdata" namespace and schema location to the GPX
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          https://www.topografix.com/GPX/1/1/gpx.xsd
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v2
-                         https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd
+                         https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd
                          http://www.cluetrust.com/XML/GPXDATA/1/0
                          https://www.cluetrust.com/Schemas/gpxdata10.xsd">
 ```

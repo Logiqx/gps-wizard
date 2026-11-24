@@ -15,9 +15,9 @@ The GPX files created by Hoolan do include an appropriate header, as shown in th
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1
                          http://www.topografix.com/GPX/1/1/gpx.xsd 
                          http://www.garmin.com/xmlschemas/GpxExtensions/v3
-                         http://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd 
+                         http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd 
                          http://www.garmin.com/xmlschemas/TrackPointExtension/v2
-                         http://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd"
+                         http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd"
      creator="Hoolan Ltd"
      version="1.1">
   <metadata>

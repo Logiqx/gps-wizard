@@ -90,7 +90,7 @@ Schema: [https://www.topografix.com/GPX/gpx_modified/0/1/gpx_modified.xsd](https
 
 Namespace: [http://www.garmin.com/xmlschemas/TrackPointExtension/v2](http://www.garmin.com/xmlschemas/TrackPointExtension/v2)
 
-Schema: [https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
+Schema: [https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd](https://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd)
 
 Contains the following generic trackpoint items:
 
@@ -118,7 +118,7 @@ Notes:
 
 Namespace: [http://www.garmin.com/xmlschemas/TrackPointExtension/v1](http://www.garmin.com/xmlschemas/TrackPointExtension/v1)
 
-Schema: [https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd](https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)
+Schema: [https://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd](https://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd)
 
 Contains the following generic trackpoint items:
 
@@ -152,7 +152,7 @@ Notes:
 
 Namespace: [http://www.garmin.com/xmlschemas/GpxExtensions/v3](http://www.garmin.com/xmlschemas/GpxExtensions/v3)
 
-Schema: [https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd](https://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
+Schema: [https://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd](https://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd)
 
 Contains the following generic trackpoint items:
 
